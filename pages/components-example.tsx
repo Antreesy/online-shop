@@ -39,16 +39,16 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.uikit_grid}>
-          <CustomButton className={styles.example_button}>
+          <CustomButton>
             Custom Button
           </CustomButton>
-          <CustomButton className={styles.example_button} disabled>
+          <CustomButton disabled>
             Disabled Button
           </CustomButton>
-          <CustomButton className={styles.example_button_outlined}>
+          <CustomButton variant="outlined">
             Custom Outlined Button
           </CustomButton>
-          <CustomButton className={styles.example_button_outlined} disabled>
+          <CustomButton variant="outlined" disabled>
             Disabled Outlined Button
           </CustomButton>
         </div>

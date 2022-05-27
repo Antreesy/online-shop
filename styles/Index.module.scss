@@ -115,40 +115,6 @@
   flex-flow: row wrap;
   margin-bottom: 2rem;
 
-  & .example_button {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1.17;
-    color: #fff;
-    text-transform: none;
-    background-color: #8100ef;
-    background: linear-gradient(90deg, #00f5ff -53%, #8100ef 128%)
-  }
-  
-  & .example_button:disabled {
-    background: #ddd;
-  }
-  
-  & .example_button_outlined {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1.17;
-    color: #000;
-    text-transform: none;
-    border-radius: 4px;
-    border: solid 2px #000;
-    background-color: transparent;
-  }
-  
-  & .example_button_outlined:hover {
-    background: #ddd;
-  }
-  & .example_button_outlined:disabled {
-    color: #666;
-    border-color: #666;
-    background: #ddd;
-  }
-
   & > *:not(:last-child) {
     margin-right: 1rem;
   }

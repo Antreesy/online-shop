@@ -1,3 +1,13 @@
+html {
+  box-sizing: border-box;
+
+  & *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+}
+
 html,
 body {
   padding: 0;
@@ -28,8 +38,4 @@ h6,
 p {
   margin-top: 0;
   margin-bottom: 0;
-}
-
-* {
-  box-sizing: border-box;
 }
