@@ -5,7 +5,7 @@ import Head from "next/head";
 import { store } from "../store/store";
 
 import { CacheProvider, EmotionCache } from "@emotion/react";
-import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
+import { ThemeProvider, StyledEngineProvider, CssBaseline, createTheme } from "@mui/material";
 
 import createEmotionCache from "../utils/createEmotionCache";
 import lightThemeOptions from "../styles/theme/lightThemeOptions";
@@ -30,10 +30,12 @@ const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
       </Head>
 
       <Provider store={store}>
-        <CacheProvider value={clientSideEmotionCache}>
+        <CacheProvider value={emotionCache}>
           <ThemeProvider theme={lightTheme}>
-            <CssBaseline />
-            <Component {...pageProps} />
+            <StyledEngineProvider injectFirst>
+              <CssBaseline />
+              <Component {...pageProps} />
+            </StyledEngineProvider>
           </ThemeProvider>
         </CacheProvider>
       </Provider>
