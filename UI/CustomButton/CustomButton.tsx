@@ -37,7 +37,12 @@ const CustomButton: React.FC<CustomButtonProps> = (props) => {
   } = props;
 
   // Local functions
-  const buttonClass = classNames(styles.button, className);
+  const buttonClass = classNames(
+    styles.button,
+    {[styles.contained_button] : variant === "contained"},
+    {[styles.outlined_button] : variant === "outlined"},
+    className,
+  );
 
   return (
     <Button
