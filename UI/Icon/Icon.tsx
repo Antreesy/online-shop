@@ -1,10 +1,13 @@
 import React from "react";
+import { icons } from "../../shared/consts/icons";
 import s from "./icon.module.scss";
 
+type IconType = typeof icons[number];
+
 interface IconProps {
-  className: string;
+  type: IconType;
 }
 
-export const Icon: React.FC<IconProps> = ({ className }) => {
-  return <span className={s.icon + " " + s[className]}></span>;
+export const Icon: React.FC<IconProps> = ({ type }) => {    
+  return <span className={s.icon + " " + s[type]}></span>;
 };

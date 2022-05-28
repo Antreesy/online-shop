@@ -90,7 +90,7 @@ const Home: NextPage = () => {
         </div>
         <div>
           <h3>Icon pack</h3>
-          {icons.map(icon => <span key={icon}>Name: {icon}, Icon: <Icon className={icon} /> <br /></span>)}
+          {icons.map(icon => <span key={icon}>Name: {icon}, Icon: <Icon type={icon} /> <br /></span>)}
         </div>
       </main>
 
