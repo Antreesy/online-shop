@@ -8,6 +8,7 @@ import Link from "next/link";
 
 //Project Styles
 import styles from "../styles/Index.module.scss";
+import { Progressbar } from "../UI";
 
 const Index: NextPage = () => {
   return (
@@ -18,6 +19,8 @@ const Index: NextPage = () => {
 
       <main className={styles.main}>
         <h1>Welcome to Ilonsi shop!</h1>
+
+        <Progressbar/>
 
         <p className={styles.description}>
           UI Kit is on{" "}
