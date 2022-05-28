@@ -1,19 +1,19 @@
 //Global Dependencies
-import React from "react";
-import classNames from "classnames";
+import React from "react"
+import classNames from "classnames"
 
 //Project Components
-import { Button } from "@mui/material";
-import { Icon, IconType } from "UI/Icon/Icon";
+import { Button } from "@mui/material"
+import { Icon, IconType } from "UI/Icon/Icon"
 
 //Project Styles
-import s from "./Button.module.scss";
+import s from "./Button.module.scss"
 
 //Local Interfaces
 interface ButtonProps {
-  className?: string;
-  disabled?: boolean;
-  variant?: "text" | "outlined" | "contained";
+  className?: string
+  disabled?: boolean
+  variant?: "text" | "outlined" | "contained"
   color?:
     | "primary"
     | "inherit"
@@ -21,11 +21,11 @@ interface ButtonProps {
     | "success"
     | "error"
     | "info"
-    | "warning";
-  children?: React.ReactNode;
-  iconLeft?: IconType;
-  iconRight?: IconType;
-  onClick?: () => void;
+    | "warning"
+  children?: React.ReactNode
+  iconLeft?: IconType
+  iconRight?: IconType
+  onClick?: () => void
 }
 
 const CustomButton: React.FC<ButtonProps> = (props) => {
@@ -39,7 +39,7 @@ const CustomButton: React.FC<ButtonProps> = (props) => {
     iconLeft,
     iconRight,
     onClick,
-  } = props;
+  } = props
 
   // Local functions
   const buttonClass = classNames(
@@ -51,7 +51,7 @@ const CustomButton: React.FC<ButtonProps> = (props) => {
       [s.icon_button]: !children,
     },
     className,
-  );
+  )
 
   return (
     <Button
@@ -65,7 +65,7 @@ const CustomButton: React.FC<ButtonProps> = (props) => {
       {children}
       {!!iconRight && <Icon type={iconRight} />}
     </Button>
-  );
-};
+  )
+}
 
-export default CustomButton;
+export default CustomButton
