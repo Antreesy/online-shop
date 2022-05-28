@@ -1,2 +1,40 @@
+@import "/styles/fonts.scss"; 
+@import "/styles/colors.scss"; 
+
 .button {
+  font-weight: $fw-semibold;
+  font-size: 18px;
+  line-height: 1.5;
+  text-transform: none;
+  border-radius: 4px;
+
+  @media screen and (max-width: 700px) {
+    font-size: 12px;
+  }
+}
+
+.contained_button {
+  color: $color-white;
+  background-color: $color-purple;
+  background: $main-gradient;
+
+  &:disabled {
+    background: $color-grey-c;
+  }
+}
+
+.outlined_button {
+  border: solid 2px $color-black;
+  color: $color-black;
+  background-color: transparent;
+
+  &:hover {
+    border: solid 2px $color-black;
+    background-color: $color-grey-c;
+  }
+
+  &:disabled {
+    border: solid 2px $color-grey-9;
+    background-color: $color-grey-c;
+  }
 }
