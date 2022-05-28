@@ -19,6 +19,7 @@ import { CustomButton } from "../UI";
 
 //Project Styles
 import styles from "../styles/Index.module.scss";
+import { CustomTabs } from "../UI/CustomTabs/CustomTabs";
 
 const Home: NextPage = () => {
   return (
@@ -92,6 +93,10 @@ const Home: NextPage = () => {
               />
             </RadioGroup>
           </FormControl>
+        </div>
+        <div>
+          <h3>Tabs</h3>
+          <CustomTabs labels={["Sign In", "Sign Up"]} width="200px"/>
         </div>
       </main>
 

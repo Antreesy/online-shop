@@ -1,0 +1,27 @@
+.tabs {
+  border-radius: 10px;
+  border: 3px solid rgb(255, 255, 255);
+  box-shadow: 0 5px 5px rgb(194, 194, 194);
+
+  .tab {
+    transition: all ease 0.5s;
+    color: black;
+    border-radius: 10px;
+    text-transform: none;
+    font-size: 20px;
+  }
+  .tab:focus {
+    transition: all ease 0.5s;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+  }
+
+  div > span {
+    border-radius: 10px;
+    z-index: -1;
+    height: 100%;
+    background-color: #8100ef;
+  }
+}
