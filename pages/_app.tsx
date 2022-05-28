@@ -1,26 +1,37 @@
-import React from "react";
-import { Provider } from "react-redux";
-import type { AppProps } from "next/app";
-import Head from "next/head";
-import { store } from "../store/store";
+import React from "react"
+import { Provider } from "react-redux"
+import type { AppProps } from "next/app"
+import Head from "next/head"
+import { store } from "store/store"
 
-import { CacheProvider, EmotionCache } from "@emotion/react";
-import { ThemeProvider, StyledEngineProvider, CssBaseline, createTheme } from "@mui/material";
+import { CacheProvider, EmotionCache } from "@emotion/react"
+import {
+  ThemeProvider,
+  StyledEngineProvider,
+  CssBaseline,
+  createTheme,
+} from "@mui/material"
 
+<<<<<<< HEAD
 import createEmotionCache from "../utils/createEmotionCache";
 import lightThemeOptions from "../styles/theme/lightThemeOptions";
 import "../styles/globals.scss";
 import { appWithTranslation } from 'next-i18next';
+=======
+import createEmotionCache from "utils/createEmotionCache"
+import lightThemeOptions from "styles/theme/lightThemeOptions"
+import "styles/globals.scss"
+>>>>>>> 3c54b344f4fc805353b3371fb9e9062c0ba9fc65
 
 interface MyAppProps extends AppProps {
-  emotionCache?: EmotionCache;
+  emotionCache?: EmotionCache
 }
 
-const clientSideEmotionCache = createEmotionCache();
-const lightTheme = createTheme(lightThemeOptions);
+const clientSideEmotionCache = createEmotionCache()
+const lightTheme = createTheme(lightThemeOptions)
 
 const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
-  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
 
   return (
     <>
@@ -41,7 +52,11 @@ const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
         </CacheProvider>
       </Provider>
     </>
-  );
-};
+  )
+}
 
+<<<<<<< HEAD
 export default appWithTranslation(MyApp);
+=======
+export default MyApp
+>>>>>>> 3c54b344f4fc805353b3371fb9e9062c0ba9fc65
