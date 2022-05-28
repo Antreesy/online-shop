@@ -6,45 +6,39 @@ import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 
-
 //Project Styles
 import styles from "styles/Index.module.scss"
 
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
 export async function getStaticProps({ locale }: any) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common' , 'footer'])),
-      // Will be passed to the page component as props
+      ...(await serverSideTranslations(locale, ["common", "footer"])),
+   
     },
-  };
+  }
 }
 
-import { useTranslation } from "next-i18next";
-import LangRoute from "../Сomponents/LanguageRouting/LangRoute";
+import { useTranslation } from "next-i18next"
+import LangRoute from "../Сomponents/LanguageRouting/LangRoute"
 
 const Index: NextPage = (props: any) => {
-
-  const { t } = useTranslation('common')
+  const { t } = useTranslation("common")
   return (
     <div className={styles.container}>
       <Head>
         <title>ILONSI SHOP | Homepage</title>
       </Head>
 
-
-
       <main className={styles.main}>
-        <h1>Welcome to Ilonsi shop!
+        <h1>
+          Welcome to Ilonsi shop!
           {props.locale}
-          {t('hello')}
-
+          {t("hello")}
         </h1>
-        <LangRoute lng='en'/>
-        <LangRoute lng='ru'/>
-     
-
+        <LangRoute lng="en" />
+        <LangRoute lng="ru" />
 
         <p className={styles.description}>
           UI Kit is on{" "}

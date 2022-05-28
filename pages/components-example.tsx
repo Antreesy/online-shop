@@ -22,11 +22,9 @@ import { icons } from "shared/consts/icons"
 
 //Project Styles
 import s from "styles/ComponentsExample.module.scss"
-
+import Checkboxs from "Сomponents/Checkboxs/Checkboxs"
 
 const Home: NextPage = () => {
-
-
   return (
     <div className={s.container}>
       <Head>
@@ -101,10 +99,11 @@ const Home: NextPage = () => {
               </RadioGroup>
             </FormControl>
           </div>
+
+          <div>
+            <Checkboxs/>
+          </div>
         </div>
-
-
-
       </main>
 
       <footer className={s.footer}>
