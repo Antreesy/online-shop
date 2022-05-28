@@ -16,6 +16,7 @@ import {
 } from "@mui/material"
 import { Icon } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
+import RadioButtonGroup from "UI/RadioButtonsGroup/RadioButtonGroup"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
@@ -32,6 +33,18 @@ const Home: NextPage = () => {
 
       <main className={s.main}>
         <h1>UI Kit page</h1>
+
+        <h2>Project Radio Buttons</h2>
+        <RadioButtonGroup
+          title="Gender"
+          elements={[{value:'female',label:'Female'},{value:'male',label:'Male'}]}
+          initialValue=''
+        />
+        <RadioButtonGroup
+          title="Type"
+          elements={[{value:'string',label:'String'},{value:'number',label:'Number'},{value:'boolean',label:'Boolean'},{value:'any',label:'Any'}]}
+          initialValue=''
+        />
 
         <p className={s.description}>
           Go back to{" "}

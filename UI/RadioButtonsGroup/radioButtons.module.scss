@@ -1,0 +1,14 @@
+@import "/styles/colors.scss";
+
+.title{
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 900;
+    color: $color-purple;
+}
+
+.radio_buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
