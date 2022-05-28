@@ -6,18 +6,43 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
+
 //Project Styles
 import styles from "../styles/Index.module.scss";
 
-const Index: NextPage = () => {
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export async function getStaticProps({ locale }: any) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common' , 'footer'])),
+      // Will be passed to the page component as props
+    },
+  };
+}
+
+import { useTranslation } from "next-i18next";
+// import LangsBar from "../Сomponents/LangsBar";
+
+const Index: NextPage = (props: any) => {
+
+  const { t } = useTranslation('common')
   return (
     <div className={styles.container}>
       <Head>
         <title>ILONSI SHOP | Homepage</title>
       </Head>
 
+
+
       <main className={styles.main}>
-        <h1>Welcome to Ilonsi shop!</h1>
+        <h1>Welcome to Ilonsi shop!
+          {props.locale}
+          {t('hello')}
+
+        </h1>
+     
+
 
         <p className={styles.description}>
           UI Kit is on{" "}

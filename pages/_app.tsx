@@ -10,6 +10,7 @@ import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
 import createEmotionCache from "../utils/createEmotionCache";
 import lightThemeOptions from "../styles/theme/lightThemeOptions";
 import "../styles/globals.scss";
+import { appWithTranslation } from 'next-i18next';
 
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
@@ -41,4 +42,4 @@ const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
   );
 };
 
-export default MyApp;
+export default appWithTranslation(MyApp);

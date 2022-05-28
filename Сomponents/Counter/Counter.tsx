@@ -1,6 +1,8 @@
 //Global Dependencies
 import { useState } from "react";
-
+// import { useTranslation } from "react-i18next";
+// import i18next from "i18next";
+// import '../../features/i18n'
 //Project Dependencies
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import {
@@ -22,6 +24,7 @@ const Counter: React.FC = () => {
   const dispatch = useAppDispatch();
   const count = useAppSelector(selectCount);
   const [incrementAmount, setIncrementAmount] = useState<number>(0);
+  // const { t } = useTranslation()
 
   return (
     <>
@@ -54,6 +57,8 @@ const Counter: React.FC = () => {
           +1
         </CustomButton>
       </div>
+
+      {/* {t('title')} */}
     </>
   );
 };
