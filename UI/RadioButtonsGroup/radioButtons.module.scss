@@ -1,12 +1,11 @@
 @import "/styles/colors.scss";
 
 .radio_button > span:first-child{
-    color: #8100ef;
+    color: $color-purple;
 }
 
 .title{
     font-size: 14px;
-    font-family: inherit;
     font-weight: 900;
     color: $color-purple;
 }

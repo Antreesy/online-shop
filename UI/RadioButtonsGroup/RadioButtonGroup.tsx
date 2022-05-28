@@ -18,12 +18,13 @@ const RadioButtonGroup: FC<RadioButtonGroupProps> = (props) => {
     const {
         title,
         elements,
+        initialValue,
     } = props
     
-    const [value, setValue] = useState('female')
+    const [value, setValue] = useState(initialValue)
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setValue((event.target as HTMLInputElement).value);
+        setValue(event.target.value);
     };
 
     return(
