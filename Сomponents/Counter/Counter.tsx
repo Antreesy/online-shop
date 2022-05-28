@@ -2,16 +2,16 @@
 import { useState } from "react";
 
 //Project Dependencies
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "store/hooks";
 import {
   decrement,
   increment,
   incrementByAmount,
   selectCount,
-} from "../../store/slices/counterSlice";
+} from "store/slices/counterSlice";
 
 //Project Components
-import { CustomButton } from "../../UI";
+import { Button } from "UI";
 import { TextField } from "@mui/material";
 
 //Project Styles
@@ -33,26 +33,26 @@ const Counter: React.FC = () => {
           onChange={(e) => setIncrementAmount(Number(e.target.value))}
           type="number"
         />
-        <CustomButton
+        <Button
           className={styles.button}
           onClick={() => dispatch(incrementByAmount(Number(incrementAmount)))}
         >
           Increment by amount
-        </CustomButton>
+        </Button>
       </div>
       <div className={styles.wrapper}>
-        <CustomButton
+        <Button
           className={styles.button}
           onClick={() => dispatch(decrement())}
         >
           -1
-        </CustomButton>
-        <CustomButton
+        </Button>
+        <Button
           className={styles.button}
           onClick={() => dispatch(increment())}
         >
           +1
-        </CustomButton>
+        </Button>
       </div>
     </>
   );

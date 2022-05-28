@@ -4,12 +4,13 @@ import classNames from "classnames";
 
 //Project Components
 import { Button } from "@mui/material";
+import { Icon, IconType } from "UI/Icon/Icon";
 
 //Project Styles
-import styles from "./customButton.module.scss";
+import s from "./Button.module.scss";
 
 //Local Interfaces
-interface CustomButtonProps {
+interface ButtonProps {
   className?: string;
   disabled?: boolean;
   variant?: "text" | "outlined" | "contained";
@@ -21,26 +22,34 @@ interface CustomButtonProps {
     | "error"
     | "info"
     | "warning";
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  iconLeft?: IconType;
+  iconRight?: IconType;
   onClick?: () => void;
 }
 
-const CustomButton: React.FC<CustomButtonProps> = (props) => {
+const CustomButton: React.FC<ButtonProps> = (props) => {
   // Props destructuring
   const {
-    children,
-    disabled = false,
     className = "",
+    disabled = false,
     variant = "contained",
     color = "primary",
+    children = null,
+    iconLeft,
+    iconRight,
     onClick,
   } = props;
 
   // Local functions
   const buttonClass = classNames(
-    styles.button,
-    {[styles.contained_button] : variant === "contained"},
-    {[styles.outlined_button] : variant === "outlined"},
+    s.button,
+    {
+      [s.contained_button]: variant === "contained",
+      [s.outlined_button]: variant === "outlined",
+      [s.text_button]: variant === "text",
+      [s.icon_button]: !children,
+    },
     className,
   );
 
@@ -52,7 +61,9 @@ const CustomButton: React.FC<CustomButtonProps> = (props) => {
       color={color}
       onClick={onClick}
     >
+      {!!iconLeft && <Icon type={iconLeft} />}
       {children}
+      {!!iconRight && <Icon type={iconRight} />}
     </Button>
   );
 };

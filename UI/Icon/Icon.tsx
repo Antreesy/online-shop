@@ -1,8 +1,8 @@
 import React from "react";
-import { icons } from "../../shared/consts/icons";
+import { icons } from "shared/consts/icons";
 import s from "./icon.module.scss";
 
-type IconType = typeof icons[number];
+export type IconType = typeof icons[number];
 
 interface IconProps {
   type: IconType;
