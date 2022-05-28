@@ -1,10 +1,10 @@
 //Global Dependencies
-import type { NextPage } from "next";
+import type { NextPage } from 'next'
 
 //Project Components
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
+import Head from 'next/head'
+import Image from 'next/image'
+import Link from 'next/link'
 import {
   Button,
   Checkbox,
@@ -14,11 +14,11 @@ import {
   FormLabel,
   Radio,
   RadioGroup,
-} from "@mui/material";
-import { CustomButton } from "../UI";
+} from '@mui/material'
+import { CustomButton } from '../UI'
 
 //Project Styles
-import styles from "../styles/Index.module.scss";
+import styles from '../styles/Index.module.scss'
 
 const Home: NextPage = () => {
   return (
@@ -31,25 +31,19 @@ const Home: NextPage = () => {
         <h1>UI Kit page</h1>
 
         <p className={styles.description}>
-          Go back to{" "}
+          Go back to{' '}
           <Link href="/">
             <a className={styles.title__link}>/index</a>
-          </Link>{" "}
+          </Link>{' '}
           page
         </p>
 
         <div className={styles.uikit_grid}>
-          <CustomButton>
-            Custom Button
-          </CustomButton>
-          <CustomButton disabled>
-            Disabled Button
-          </CustomButton>
+          <CustomButton>Custom Button</CustomButton>
+          <CustomButton disabled>Disabled Button</CustomButton>
         </div>
         <div className={styles.uikit_grid}>
-          <CustomButton variant="outlined">
-            Outlined Button
-          </CustomButton>
+          <CustomButton variant="outlined">Outlined Button</CustomButton>
           <CustomButton variant="outlined" disabled>
             Disabled Button
           </CustomButton>
@@ -101,14 +95,14 @@ const Home: NextPage = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" "}
+          Powered by{' '}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
