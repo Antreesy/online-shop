@@ -22,7 +22,7 @@ import { icons } from "shared/consts/icons"
 
 //Project Styles
 import s from "styles/ComponentsExample.module.scss"
-import Checkboxs from "Сomponents/Checkboxs/Checkboxs"
+import CheckboxItem from "Сomponents/Checkboxs/Checkboxs"
 
 const Home: NextPage = () => {
   return (
@@ -101,7 +101,9 @@ const Home: NextPage = () => {
           </div>
 
           <div>
-            <Checkboxs/>
+            <CheckboxItem label="Man"/>
+            <CheckboxItem label="Women"/>
+            <CheckboxItem label="Unisex"/>
           </div>
         </div>
       </main>
