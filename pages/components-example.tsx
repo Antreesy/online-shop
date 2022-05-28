@@ -21,7 +21,7 @@ import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 import { icons } from "shared/consts/icons"
 
 //Project Styles
-import { CustomTabs } from "../UI/CustomTabs/CustomTabs";
+import { CustomTabs } from "../UI/CustomTabs/CustomTabs"
 import s from "styles/ComponentsExample.module.scss"
 
 const Home: NextPage = () => {
@@ -102,7 +102,7 @@ const Home: NextPage = () => {
         </div>
         <div>
           <h3>Tabs</h3>
-          <CustomTabs labels={["Sign In", "Sign Up"]} width="200px"/>
+          <CustomTabs labels={["Sign In", "Sign Up"]} width="200px" />
         </div>
       </main>
 
