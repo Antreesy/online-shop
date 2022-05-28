@@ -2,16 +2,16 @@
 import { useState } from "react";
 
 //Project Dependencies
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "store/hooks";
 import {
   decrement,
   increment,
   incrementByAmount,
   selectCount,
-} from "../../store/slices/counterSlice";
+} from "store/slices/counterSlice";
 
 //Project Components
-import { CustomButton } from "../../UI";
+import { CustomButton } from "UI";
 import { TextField } from "@mui/material";
 
 //Project Styles

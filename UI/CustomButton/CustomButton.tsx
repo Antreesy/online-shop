@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 //Project Components
 import { Button } from "@mui/material";
-import { Icon, IconType } from "../Icon/Icon";
+import { Icon, IconType } from "UI/Icon/Icon";
 
 //Project Styles
 import s from "./customButton.module.scss";

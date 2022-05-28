@@ -5,10 +5,10 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { Counter } from "../Сomponents";
+import { Counter } from "Сomponents";
 
 //Project Styles
-import styles from "../styles/Index.module.scss";
+import styles from "styles/Index.module.scss";
 
 const ReduxExample: NextPage = () => {
   return (

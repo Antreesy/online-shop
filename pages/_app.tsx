@@ -2,14 +2,14 @@ import React from "react";
 import { Provider } from "react-redux";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { store } from "../store/store";
+import { store } from "store/store";
 
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import { ThemeProvider, StyledEngineProvider, CssBaseline, createTheme } from "@mui/material";
 
-import createEmotionCache from "../utils/createEmotionCache";
-import lightThemeOptions from "../styles/theme/lightThemeOptions";
-import "../styles/globals.scss";
+import createEmotionCache from "utils/createEmotionCache";
+import lightThemeOptions from "styles/theme/lightThemeOptions";
+import "styles/globals.scss";
 
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
