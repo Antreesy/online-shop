@@ -21,26 +21,33 @@ interface CustomButtonProps {
     | "error"
     | "info"
     | "warning";
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  iconLeft?: React.ReactNode;
+  iconRight?: React.ReactNode;
   onClick?: () => void;
 }
 
 const CustomButton: React.FC<CustomButtonProps> = (props) => {
   // Props destructuring
   const {
-    children,
-    disabled = false,
     className = "",
+    disabled = false,
     variant = "contained",
     color = "primary",
+    children = null,
+    iconLeft,
+    iconRight,
     onClick,
   } = props;
 
   // Local functions
   const buttonClass = classNames(
     styles.button,
-    {[styles.contained_button] : variant === "contained"},
-    {[styles.outlined_button] : variant === "outlined"},
+    {
+      [styles.contained_button]: variant === "contained",
+      [styles.outlined_button]: variant === "outlined",
+      [styles.icon_button]: !children,
+    },
     className,
   );
 
@@ -52,7 +59,9 @@ const CustomButton: React.FC<CustomButtonProps> = (props) => {
       color={color}
       onClick={onClick}
     >
+      {iconLeft}
       {children}
+      {iconRight}
     </Button>
   );
 };
