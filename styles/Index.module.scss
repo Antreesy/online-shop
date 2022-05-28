@@ -1,3 +1,5 @@
+@import "/styles/colors.scss";
+
 .container {
   padding: 0 2rem;
 }
@@ -62,16 +64,6 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
-}
-
-.uikit_grid {
-  display: flex;
-  flex-flow: row wrap;
-  margin-bottom: 2rem;
-
-  & > *:not(:last-child) {
-    margin-right: 1rem;
-  }
 }
 
 @media (max-width: 600px) {

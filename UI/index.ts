@@ -1,3 +1,5 @@
-import { CustomButton } from "./CustomButton";
+import { Button } from "./Button";
+import { Icon } from "./Icon";
 
-export { CustomButton };
+export { Button };
+export { Icon };
