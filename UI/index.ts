@@ -1,5 +1,5 @@
-import { CustomButton } from "./CustomButton";
-import { Progressbar } from "./Progressbar";
+import { Button } from "./Button";
+import { Icon } from "./Icon";
 
-export { CustomButton };
-export { Progressbar };
+export { Button };
+export { Icon };
