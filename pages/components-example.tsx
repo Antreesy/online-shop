@@ -1,10 +1,10 @@
 //Global Dependencies
-import type { NextPage } from 'next'
+import type { NextPage } from "next"
 
 //Project Components
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
+import Head from "next/head"
+import Image from "next/image"
+import Link from "next/link"
 import {
   Checkbox,
   FormControl,
@@ -13,15 +13,15 @@ import {
   FormLabel,
   Radio,
   RadioGroup,
-} from "@mui/material";
-import { Icon } from "UI";
-import ButtonExamples from "Сomponents/Examples/ButtonExamples";
+} from "@mui/material"
+import { Icon } from "UI"
+import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 
 //Project Helpers
-import {icons} from "shared/consts/icons"
+import { icons } from "shared/consts/icons"
 
 //Project Styles
-import s from "styles/ComponentsExample.module.scss";
+import s from "styles/ComponentsExample.module.scss"
 
 const Home: NextPage = () => {
   return (
@@ -46,7 +46,11 @@ const Home: NextPage = () => {
 
         <h2>Icons Pack</h2>
         <div className={s.grid}>
-          {icons.map(icon => <span key={icon} className={s.icon_example}>{icon}: <Icon type={icon} /> {" "}</span>)}
+          {icons.map((icon) => (
+            <span key={icon} className={s.icon_example}>
+              {icon}: <Icon type={icon} />{" "}
+            </span>
+          ))}
         </div>
 
         <div>
@@ -81,7 +85,11 @@ const Home: NextPage = () => {
                   control={<Radio />}
                   label="Female"
                 />
-                <FormControlLabel value="male" control={<Radio />} label="Male" />
+                <FormControlLabel
+                  value="male"
+                  control={<Radio />}
+                  label="Male"
+                />
                 <FormControlLabel
                   value="other"
                   control={<Radio />}

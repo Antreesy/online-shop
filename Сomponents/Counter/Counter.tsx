@@ -1,27 +1,27 @@
 //Global Dependencies
-import { useState } from "react";
+import { useState } from "react"
 
 //Project Dependencies
-import { useAppDispatch, useAppSelector } from "store/hooks";
+import { useAppDispatch, useAppSelector } from "store/hooks"
 import {
   decrement,
   increment,
   incrementByAmount,
   selectCount,
-} from "store/slices/counterSlice";
+} from "store/slices/counterSlice"
 
 //Project Components
-import { Button } from "UI";
-import { TextField } from "@mui/material";
+import { Button } from "UI"
+import { TextField } from "@mui/material"
 
 //Project Styles
-import styles from "./counter.module.scss";
+import styles from "./counter.module.scss"
 
 const Counter: React.FC = () => {
   // Hooks
-  const dispatch = useAppDispatch();
-  const count = useAppSelector(selectCount);
-  const [incrementAmount, setIncrementAmount] = useState<number>(0);
+  const dispatch = useAppDispatch()
+  const count = useAppSelector(selectCount)
+  const [incrementAmount, setIncrementAmount] = useState<number>(0)
 
   return (
     <>
@@ -41,21 +41,15 @@ const Counter: React.FC = () => {
         </Button>
       </div>
       <div className={styles.wrapper}>
-        <Button
-          className={styles.button}
-          onClick={() => dispatch(decrement())}
-        >
+        <Button className={styles.button} onClick={() => dispatch(decrement())}>
           -1
         </Button>
-        <Button
-          className={styles.button}
-          onClick={() => dispatch(increment())}
-        >
+        <Button className={styles.button} onClick={() => dispatch(increment())}>
           +1
         </Button>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Counter;
+export default Counter
