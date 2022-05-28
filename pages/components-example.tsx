@@ -15,10 +15,54 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
-import { CustomButton } from "../UI";
+import { CustomButton, Icon } from "../UI";
 
 //Project Styles
 import styles from "../styles/Index.module.scss";
+
+const icons = [
+  "out_of_stock",
+  "critical_stock",
+  "download",
+  "close_cross",
+  "arrow_down",
+  "price_tag",
+  "credit_card",
+  "earth",
+  "package-return",
+  "delivery_ready",
+  "getting_ready",
+  "hanger",
+  "products_on_sale",
+  "out_sign",
+  "brand_name",
+  "brand_display_name",
+  "data",
+  "shop",
+  "discount",
+  "edit",
+  "date",
+  "dashboard",
+  "upload",
+  "mark",
+  "size",
+  "okay",
+  "location",
+  "resize_textarea",
+  "trash_can",
+  "exclamation",
+  "arrow_right",
+  "arrow_left",
+  "social_networks",
+  "basket",
+  "account",
+  "search",
+  "bell_filled",
+  "about",
+  "bell_outlined",
+  "off_sale",
+  "heart",
+];
 
 const Home: NextPage = () => {
   return (
@@ -39,17 +83,11 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.uikit_grid}>
-          <CustomButton>
-            Custom Button
-          </CustomButton>
-          <CustomButton disabled>
-            Disabled Button
-          </CustomButton>
+          <CustomButton>Custom Button</CustomButton>
+          <CustomButton disabled>Disabled Button</CustomButton>
         </div>
         <div className={styles.uikit_grid}>
-          <CustomButton variant="outlined">
-            Outlined Button
-          </CustomButton>
+          <CustomButton variant="outlined">Outlined Button</CustomButton>
           <CustomButton variant="outlined" disabled>
             Disabled Button
           </CustomButton>
@@ -92,6 +130,10 @@ const Home: NextPage = () => {
               />
             </RadioGroup>
           </FormControl>
+        </div>
+        <div>
+          <h3>Icon pack</h3>
+          {icons.map(icon => <span key={icon}><Icon className={icon} /></span>)}
         </div>
       </main>
 
