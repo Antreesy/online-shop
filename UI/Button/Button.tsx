@@ -7,10 +7,10 @@ import { Button } from "@mui/material";
 import { Icon, IconType } from "UI/Icon/Icon";
 
 //Project Styles
-import s from "./customButton.module.scss";
+import s from "./Button.module.scss";
 
 //Local Interfaces
-interface CustomButtonProps {
+interface ButtonProps {
   className?: string;
   disabled?: boolean;
   variant?: "text" | "outlined" | "contained";
@@ -28,7 +28,7 @@ interface CustomButtonProps {
   onClick?: () => void;
 }
 
-const CustomButton: React.FC<CustomButtonProps> = (props) => {
+const CustomButton: React.FC<ButtonProps> = (props) => {
   // Props destructuring
   const {
     className = "",

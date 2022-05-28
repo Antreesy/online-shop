@@ -1,4 +1,4 @@
-import { CustomButton } from "UI";
+import { Button } from "UI";
 
 import s from "styles/ComponentsExample.module.scss";
 
@@ -6,83 +6,83 @@ const ButtonExamples: React.FC = () => {
   return (
     <div className={s.grid}>
       <div className={s.grid_inner}>
-        <CustomButton>
+        <Button>
           Default
-        </CustomButton>
-        <CustomButton disabled>
+        </Button>
+        <Button disabled>
           Disabled
-        </CustomButton>
-        <CustomButton variant="outlined">
+        </Button>
+        <Button variant="outlined">
           Outlined
-        </CustomButton>
-        <CustomButton variant="outlined" disabled>
+        </Button>
+        <Button variant="outlined" disabled>
           Disabled
-        </CustomButton>
+        </Button>
       </div>
 
       <div className={s.grid_inner}>
-        <CustomButton
+        <Button
           className={s.button_clear}
           iconLeft="close_cross"
         />
-        <CustomButton
+        <Button
           className={s.button_search}
           iconLeft="search"
         >
           Search
-        </CustomButton>
-        <CustomButton
+        </Button>
+        <Button
           className={s.button_clean}
           iconLeft="trash_can"
         >
           Clean
-        </CustomButton>
-        <CustomButton
+        </Button>
+        <Button
           className={s.button_excel}
           iconLeft="download"
         >
           Excel Download
-        </CustomButton>
+        </Button>
       </div>
 
       <div className={s.grid_inner}>
-        <CustomButton
+        <Button
           className={s.button_back}
           iconLeft="arrow_left"
         >
           Back
-        </CustomButton>
-        <CustomButton
+        </Button>
+        <Button
           className={s.button_facebook}
           variant="outlined"
         >
           Sign In
-        </CustomButton>
-        <CustomButton
+        </Button>
+        <Button
           className={s.button_smalltext}
           variant="text"
         >
           Forget Password?
-        </CustomButton>
+        </Button>
       </div>
 
       <div className={s.grid_inner}>
-        <CustomButton
+        <Button
           className={s.button_black}
         >
           Confirm
-        </CustomButton>
-        <CustomButton
+        </Button>
+        <Button
           className={s.button_purple}
         >
           Approve
-        </CustomButton>
+        </Button>
         <div className={s.card_example}>
           <h3>Simple Card</h3>
           <p>Lorem ipsum dolor sit amet</p>
-          <CustomButton>
+          <Button>
             Stretch to width
-          </CustomButton>
+          </Button>
         </div>
       </div>
     </div>
