@@ -1,21 +1,21 @@
 //Global Dependencies
-import { useState } from "react";
+import { useState } from 'react';
 
 //Project Dependencies
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import {
   decrement,
   increment,
   incrementByAmount,
   selectCount,
-} from "../../store/slices/counterSlice";
+} from '../../store/slices/counterSlice';
 
 //Project Components
-import { CustomButton } from "../../UI";
-import { TextField } from "@mui/material";
+import { CustomButton } from '../../UI';
+import { TextField } from '@mui/material';
 
 //Project Styles
-import styles from "./counter.module.scss";
+import styles from './counter.module.scss';
 
 const Counter: React.FC = () => {
   // Hooks
@@ -31,7 +31,7 @@ const Counter: React.FC = () => {
         <TextField
           value={incrementAmount}
           onChange={(e) => setIncrementAmount(Number(e.target.value))}
-          type="number"
+          type='number'
         />
         <CustomButton
           className={styles.button}
