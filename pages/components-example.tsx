@@ -15,7 +15,8 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
-import { CustomButton } from "../UI";
+import { CustomButton, Icon } from "../UI";
+import {icons} from "../shared/consts/icons"
 
 //Project Styles
 import styles from "../styles/Index.module.scss";
@@ -39,17 +40,11 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.uikit_grid}>
-          <CustomButton>
-            Custom Button
-          </CustomButton>
-          <CustomButton disabled>
-            Disabled Button
-          </CustomButton>
+          <CustomButton>Custom Button</CustomButton>
+          <CustomButton disabled>Disabled Button</CustomButton>
         </div>
         <div className={styles.uikit_grid}>
-          <CustomButton variant="outlined">
-            Outlined Button
-          </CustomButton>
+          <CustomButton variant="outlined">Outlined Button</CustomButton>
           <CustomButton variant="outlined" disabled>
             Disabled Button
           </CustomButton>
@@ -92,6 +87,10 @@ const Home: NextPage = () => {
               />
             </RadioGroup>
           </FormControl>
+        </div>
+        <div>
+          <h3>Icon pack</h3>
+          {icons.map(icon => <span key={icon}>Name: {icon}, Icon: <Icon type={icon} /> <br /></span>)}
         </div>
       </main>
 
