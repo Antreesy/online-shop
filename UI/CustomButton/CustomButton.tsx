@@ -6,7 +6,7 @@ import classNames from "classnames";
 import { Button } from "@mui/material";
 
 //Project Styles
-import styles from "./customButton.module.scss";
+import s from "./customButton.module.scss";
 
 //Local Interfaces
 interface CustomButtonProps {
@@ -42,11 +42,12 @@ const CustomButton: React.FC<CustomButtonProps> = (props) => {
 
   // Local functions
   const buttonClass = classNames(
-    styles.button,
+    s.button,
     {
-      [styles.contained_button]: variant === "contained",
-      [styles.outlined_button]: variant === "outlined",
-      [styles.icon_button]: !children,
+      [s.contained_button]: variant === "contained",
+      [s.outlined_button]: variant === "outlined",
+      [s.text_button]: variant === "text",
+      [s.icon_button]: !children,
     },
     className,
   );

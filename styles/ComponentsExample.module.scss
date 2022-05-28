@@ -1,3 +1,4 @@
+@import "/styles/fonts.scss";
 @import "/styles/colors.scss";
 
 .container {
@@ -59,7 +60,7 @@
 .grid_inner {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: flex-start;
   margin-right: 2rem;
 
@@ -119,6 +120,11 @@
     border-color: $color-purple;
     background-color: $color-purple-a20;
   }
+}
+
+.button_smalltext {
+  font-size: 13px;
+  font-weight: $fw-regular;
 }
 
 .card_example {

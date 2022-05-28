@@ -41,11 +41,24 @@
 
   &:hover {
     border: solid 2px $color-black;
-    background-color: $color-grey-c;
+    background-color: $color-black-a20;
   }
 
   &:disabled {
     border: solid 2px $color-grey-9;
-    background-color: $color-grey-c;
+    background-color: $color-black-a20;
+  }
+}
+
+.text_button {
+  color: $color-black;
+  background-color: transparent;
+
+  &:hover {
+    background-color: $color-black-a20;
+  }
+
+  &:disabled {
+    background-color: $color-black-a20;
   }
 }

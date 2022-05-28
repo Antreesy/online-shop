@@ -22,29 +22,29 @@ import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 //Project Styles
-import styles from "../styles/ComponentsExample.module.scss";
+import s from "../styles/ComponentsExample.module.scss";
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div className={s.container}>
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
 
-      <main className={styles.main}>
+      <main className={s.main}>
         <h1>UI Kit page</h1>
 
-        <p className={styles.description}>
+        <p className={s.description}>
           Go back to{" "}
           <Link href="/">
-            <a className={styles.title__link}>/index</a>
+            <a className={s.title__link}>/index</a>
           </Link>{" "}
           page
         </p>
 
         <h2>Buttons Example</h2>
-        <div className={styles.grid}>
-          <div className={styles.grid_inner}>
+        <div className={s.grid}>
+          <div className={s.grid_inner}>
             <CustomButton>
               Default
             </CustomButton>
@@ -59,69 +59,77 @@ const Home: NextPage = () => {
             </CustomButton>
           </div>
 
-          <div className={styles.grid_inner}>
+          <div className={s.grid_inner}>
             <CustomButton
-              className={styles.button_clear}
+              className={s.button_clear}
               iconLeft={<ClearIcon />}
             />
             <CustomButton
-              className={styles.button_search}
+              className={s.button_search}
               iconLeft={<SearchIcon />}
             >
               Search
             </CustomButton>
             <CustomButton
-              className={styles.button_clean}
+              className={s.button_clean}
               iconLeft={<DeleteOutlineOutlinedIcon />}
             >
               Clean
             </CustomButton>
             <CustomButton
-              className={styles.button_excel}
+              className={s.button_excel}
               iconLeft={<FileDownloadOutlinedIcon />}
             >
               Excel Download
             </CustomButton>
           </div>
 
-          <div className={styles.grid_inner}>
+          <div className={s.grid_inner}>
             <CustomButton
-              className={styles.button_back}
+              className={s.button_back}
               iconLeft={<ArrowBackIcon />}
             >
               Back
             </CustomButton>
             <CustomButton
-              className={styles.button_facebook}
+              className={s.button_facebook}
               variant="outlined"
             >
               Sign In
             </CustomButton>
             <CustomButton
-              className={styles.button_black}
+              className={s.button_smalltext}
+              variant="text"
+            >
+              Forget Password?
+            </CustomButton>
+          </div>
+
+          <div className={s.grid_inner}>
+            <CustomButton
+              className={s.button_black}
             >
               Confirm
             </CustomButton>
             <CustomButton
-              className={styles.button_purple}
+              className={s.button_purple}
             >
               Approve
             </CustomButton>
-          </div>
-
-          <div className={styles.card_example}>
-            <h3>Simple Card</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis optio eos illum consequatur ducimus.</p>
-            <CustomButton>
-              Stretch to width
-            </CustomButton>
+            <div className={s.card_example}>
+              <h3>Simple Card</h3>
+              <p>Lorem ipsum dolor sit amet</p>
+              <CustomButton>
+                Stretch to width
+              </CustomButton>
+            </div>
           </div>
         </div>
 
         <div>
           <h2>Checkboxes and Radio Buttons Example</h2>
 
-          <div className={styles.grid}>
+          <div className={s.grid}>
             <FormGroup>
               <FormControlLabel
                 control={<Checkbox defaultChecked />}
@@ -162,14 +170,14 @@ const Home: NextPage = () => {
         </div>
       </main>
 
-      <footer className={styles.footer}>
+      <footer className={s.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
         >
           Powered by{" "}
-          <span className={styles.logo}>
+          <span className={s.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
