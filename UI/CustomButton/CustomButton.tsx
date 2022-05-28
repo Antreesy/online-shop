@@ -4,6 +4,7 @@ import classNames from "classnames";
 
 //Project Components
 import { Button } from "@mui/material";
+import { Icon, IconType } from "../Icon/Icon";
 
 //Project Styles
 import s from "./customButton.module.scss";
@@ -22,8 +23,8 @@ interface CustomButtonProps {
     | "info"
     | "warning";
   children?: React.ReactNode;
-  iconLeft?: React.ReactNode;
-  iconRight?: React.ReactNode;
+  iconLeft?: IconType;
+  iconRight?: IconType;
   onClick?: () => void;
 }
 
@@ -60,9 +61,9 @@ const CustomButton: React.FC<CustomButtonProps> = (props) => {
       color={color}
       onClick={onClick}
     >
-      {iconLeft}
+      {!!iconLeft && <Icon type={iconLeft} />}
       {children}
-      {iconRight}
+      {!!iconRight && <Icon type={iconRight} />}
     </Button>
   );
 };

@@ -14,12 +14,9 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
-import { CustomButton } from "../UI";
-import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
-import SearchIcon from '@mui/icons-material/Search';
-import ClearIcon from '@mui/icons-material/Clear';
-import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { CustomButton, Icon } from "../UI";
+
+import {icons} from "../shared/consts/icons"
 
 //Project Styles
 import s from "../styles/ComponentsExample.module.scss";
@@ -62,23 +59,23 @@ const Home: NextPage = () => {
           <div className={s.grid_inner}>
             <CustomButton
               className={s.button_clear}
-              iconLeft={<ClearIcon />}
+              iconLeft="close_cross"
             />
             <CustomButton
               className={s.button_search}
-              iconLeft={<SearchIcon />}
+              iconLeft="search"
             >
               Search
             </CustomButton>
             <CustomButton
               className={s.button_clean}
-              iconLeft={<DeleteOutlineOutlinedIcon />}
+              iconLeft="trash_can"
             >
               Clean
             </CustomButton>
             <CustomButton
               className={s.button_excel}
-              iconLeft={<FileDownloadOutlinedIcon />}
+              iconLeft="download"
             >
               Excel Download
             </CustomButton>
@@ -87,7 +84,7 @@ const Home: NextPage = () => {
           <div className={s.grid_inner}>
             <CustomButton
               className={s.button_back}
-              iconLeft={<ArrowBackIcon />}
+              iconLeft="arrow_left"
             >
               Back
             </CustomButton>
@@ -124,6 +121,11 @@ const Home: NextPage = () => {
               </CustomButton>
             </div>
           </div>
+        </div>
+
+        <h2>Icons Pack</h2>
+        <div className={s.grid}>
+          {icons.map(icon => <span key={icon} className={s.icon_example}>{icon}: <Icon type={icon} /> {" "}</span>)}
         </div>
 
         <div>
