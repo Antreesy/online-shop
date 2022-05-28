@@ -22,7 +22,7 @@ export async function getStaticProps({ locale }: any) {
 }
 
 import { useTranslation } from "next-i18next";
-// import LangsBar from "../Сomponents/LangsBar";
+import LangRoute from "../Сomponents/LanguageRouting/LangRoute";
 
 const Index: NextPage = (props: any) => {
 
@@ -41,6 +41,8 @@ const Index: NextPage = (props: any) => {
           {t('hello')}
 
         </h1>
+        <LangRoute lng='en'/>
+        <LangRoute lng='ru'/>
      
 
 
