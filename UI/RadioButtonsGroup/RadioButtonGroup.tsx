@@ -1,8 +1,12 @@
-import { RadioGroup, Typography } from "@mui/material"
-import { FC, useState } from "react"
-import RadioButton, { RadioButtonProps } from "UI/RadioButton/RadioButton"
+import { FormControlLabel, Radio, RadioGroup, Typography } from "@mui/material"
+import { FC, ReactNode, useState } from "react"
 
 import s from "./radioButtons.module.scss"
+
+interface RadioButtonProps {
+    value: string;
+    label: string;
+}
 
 interface RadioButtonGroupProps {
     title: string;
@@ -32,13 +36,16 @@ const RadioButtonGroup: FC<RadioButtonGroupProps> = (props) => {
                 onChange={handleChange}
                 className={s.radio_buttons}
             >
-                {
-                    elements.map(({value, label}, index) => {
-                        return(
-                            <RadioButton key={index} value={value} label={label} />
-                        )
-                    })
-                }
+            {elements.map(({value, label}, index) => {
+                return(
+                    <FormControlLabel
+                        className={s.radio_button}
+                        value={value}
+                        control={<Radio />}
+                        label={label}
+                    />
+                )
+            })}
             </RadioGroup>
         </div>
         
