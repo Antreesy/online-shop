@@ -20,7 +20,10 @@ import { CustomButton } from "../UI";
 //Project Styles
 import styles from "../styles/Index.module.scss";
 
+
 const Home: NextPage = () => {
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -93,6 +96,9 @@ const Home: NextPage = () => {
             </RadioGroup>
           </FormControl>
         </div>
+
+
+
       </main>
 
       <footer className={styles.footer}>
