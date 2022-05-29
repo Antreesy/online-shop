@@ -1,13 +1,13 @@
 //Global Dependencies
-import type { NextPage } from "next";
+import type { NextPage } from "next"
 
 //Project Components
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
+import Head from "next/head"
+import Image from "next/image"
+import Link from "next/link"
 
 //Project Styles
-import styles from "../styles/Index.module.scss";
+import styles from "styles/Index.module.scss"
 
 const Index: NextPage = () => {
   return (
@@ -49,7 +49,7 @@ const Index: NextPage = () => {
         </a>
       </footer>
     </div>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index

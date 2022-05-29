@@ -1,26 +1,19 @@
 //Global Dependencies
-import type { NextPage } from "next";
+import type { NextPage } from "next"
 
 //Project Components
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import {
-  Button,
-  Checkbox,
-  FormControl,
-  FormControlLabel,
-  FormGroup,
-  FormLabel,
-  Radio,
-  RadioGroup,
-} from "@mui/material";
+import Head from "next/head"
+import Image from "next/image"
+import Link from "next/link"
+import { DatePicker, Icon, RadioGroup, CheckboxGroup, Tabs } from "UI"
+import ButtonExamples from "Сomponents/Examples/ButtonExamples"
+import AccordionExamples from "Сomponents/Examples/AccordionExamples"
 
-import { CustomButton, CheckboxGroup } from "../UI";
+//Project Helpers
+import { icons } from "shared/consts/icons"
 
 //Project Styles
-import s from "../styles/Index.module.scss";
-
+import s from "styles/ComponentsExample.module.scss"
 
 const Home: NextPage = () => {
   return (
@@ -40,80 +33,92 @@ const Home: NextPage = () => {
           page
         </p>
 
-        <div className={s.uikit_grid}>
-          <CustomButton className={s.example_button}>
-            Custom Button
-          </CustomButton>
-          <CustomButton className={s.example_button} disabled>
-            Disabled Button
-          </CustomButton>
-          <CustomButton className={s.example_button_outlined}>
-            Custom Outlined Button
-          </CustomButton>
-          <CustomButton className={s.example_button_outlined} disabled>
-            Disabled Outlined Button
-          </CustomButton>
-        </div>
+        <Tabs
+          labels={[
+            "Buttons",
+            "Inputs and Pickers",
+            "Icons",
+            "Tabs",
+            "Checkboxes and Radio",
+            "Accordion",
+          ]}
+          values={[
+            <ButtonExamples key={"Buttons"} />,
 
-        <div className={s.uikit_grid}>
-          <Button variant="contained">Contained Button</Button>
-          <Button variant="outlined">Outlined Button</Button>
-          <Button variant="contained" disabled>
-            Disabled Button
-          </Button>
-          <Link href="/">
-            <Button variant="contained" color="secondary">
-              Link Button
-            </Button>
-          </Link>
-        </div>
+            <div key={"Inputs and Pickers"} className={s.grid}>
+              <div>
+                <h2>DatePicker</h2>
+                <DatePicker initValue={new Date()} onChange={() => {}} />
+              </div>
+            </div>,
 
-        <div className={s.uikit_grid}>
-          <FormGroup>
-            <FormControlLabel
-              control={<Checkbox defaultChecked />}
-              label="Checkbox"
-            />
-            <FormControlLabel
-              control={<Checkbox color="secondary" />}
-              label="Another checkbox"
-            />
-            <FormControlLabel
-              disabled
-              control={<Checkbox />}
-              label="Disabled checkbox"
-            />
-          </FormGroup>
+            <div key={"Icons"} className={s.grid}>
+              {icons.map((icon) => (
+                <span key={icon} className={s.icon_example}>
+                  {icon}: <Icon type={icon} />{" "}
+                </span>
+              ))}
+            </div>,
 
-          <FormControl>
-            <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
-            <RadioGroup
-              aria-labelledby="demo-radio-buttons-group-label"
-              defaultValue="female"
-              name="radio-buttons-group"
-            >
-              <FormControlLabel
-                value="female"
-                control={<Radio />}
-                label="Female"
+            <div key={"Tabs"} className={s.tabs}>
+              <p className={s.description}>default</p>
+              <Tabs
+                labels={["Sign In", "Sign Up"]}
+                values={["Sign In", "Sign Up"]}
+                width="200px"
+                variant="default"
               />
-              <FormControlLabel value="male" control={<Radio />} label="Male" />
-              <FormControlLabel
-                value="other"
-                control={<Radio />}
-                label="Helicopter"
+              <p className={s.description}>spaces</p>
+              <Tabs
+                labels={["Sign In", "Sign Up"]}
+                values={["Sign In", "Sign Up"]}
+                width="200px"
+                variant="spaces"
               />
-            </RadioGroup>
-          </FormControl>
-        </div>
+              <p className={s.description}>without_border</p>
+              <Tabs
+                labels={["Sign In", "Sign Up"]}
+                values={["Sign In", "Sign Up"]}
+                width="200px"
+                variant="without_border"
+              />
+            </div>,
+
+            <div key={"Checkboxes and Radio"} className={s.grid}>
+              <div>
+                <p>Rounded Checkboxes</p>
+                <CheckboxGroup rounded label={["Men", "Women", "Unisex"]} />
+                <p>Square Checkboxes</p>
+                <CheckboxGroup label={["Men", "Women", "Unisex"]} />
+                
+                <p>Gender</p>
+                <RadioGroup
+                  elements={[
+                    { value: "female", label: "Female" },
+                    { value: "male", label: "Male" },
+                  ]}
+                />
+                <p>Type</p>
+                <RadioGroup
+                  elements={[
+                    { value: "string", label: "String" },
+                    { value: "number", label: "Number" },
+                    { value: "boolean", label: "Boolean" },
+                    { value: "any", label: "Any" },
+                  ]}
+                />
+              </div>
+            </div>,
+
+            <div key={"Accordion"}>
+              <AccordionExamples />
+            </div>,
+          ]}
+          width="250px"
+          variant="default"
+        />
       </main>
-      <div>
-        <h2>Custom Checkboxes</h2>
-
-        <CheckboxGroup rounded label={['Men', 'Women', 'Unisex']} />
-        <CheckboxGroup rounded={false} label={['Men', 'Women', 'Unisex']} />
-
-      </div>
+      <div></div>
 
       <footer className={s.footer}>
         <a
@@ -128,7 +133,7 @@ const Home: NextPage = () => {
         </a>
       </footer>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

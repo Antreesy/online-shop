@@ -1,14 +1,14 @@
 //Global Dependencies
-import type { NextPage } from "next";
+import type { NextPage } from "next"
 
 //Project Components
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import { Counter } from "../Сomponents";
+import Head from "next/head"
+import Image from "next/image"
+import Link from "next/link"
+import { Counter } from "Сomponents"
 
 //Project Styles
-import styles from "../styles/Index.module.scss";
+import styles from "styles/Index.module.scss"
 
 const ReduxExample: NextPage = () => {
   return (
@@ -44,7 +44,7 @@ const ReduxExample: NextPage = () => {
         </a>
       </footer>
     </div>
-  );
-};
+  )
+}
 
-export default ReduxExample;
+export default ReduxExample
