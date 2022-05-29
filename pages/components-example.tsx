@@ -103,23 +103,31 @@ const Home: NextPage = () => {
           <div>
             <h2>Accordion</h2>
             <Accordion
-              summary={"default"}
+              header={"default"}
             >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
               lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
             <Accordion
               width="400px"
-              summary={"Detail"}
-              details={"Detail"}
+              header={"Detail"}
+              openTitle={"Detail"}
             >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
               lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
             <Accordion
               width="600px"
-              summary={"black, Detail, width: 600px, fontWeight: 400"}
-              fontWeight = {"400"}
-              details={"Detail"}
-              summary_color="black"
+              header={"black, Detail, width: 600px, fontWeight: 400"}
+              fontWeight_header = {"400"}
+              fontWeight_openTitle = {"800"}
+              openTitle={"Detail"}
+              header_color="black"
+              openTitle_color="black"
             >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
               lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
+              <Accordion header={"hello"} backgroundColor="black">
+                <div className={s.accordion_children}>
+                {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+              lacus ex, sit amet blandit leo lobortis eget.`}
+                </div>
+              </Accordion>
           </div>
         </div>
         <div className={s.tabs}>

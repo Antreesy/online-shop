@@ -6,30 +6,41 @@ import s from "./accordion.module.scss"
 interface AccordionProps {
   children: React.ReactElement | string
   width?: string
-  summary: React.ReactElement | string
-  details?: string
-  summary_color?: string
-  fontWeight?: string
+  header: React.ReactElement | string
+  openTitle?: string
+  header_color?: string
+  fontWeight_header?: string
+  fontWeight_openTitle?: string
+  openTitle_color?: string
+  backgroundColor?: string
 }
 
 const CustomAccordion: React.FC<AccordionProps> = (props) => {
   const {
     children,
     width = "200px",
-    summary,
-    details = "",
-    summary_color = "#8202ef",
-    fontWeight = "600",
+    header,
+    openTitle = "",
+    header_color = "#8202ef",
+    openTitle_color = "#8202ef",
+    fontWeight_header = "600",
+    fontWeight_openTitle = "600",
+    backgroundColor = "white",
   } = props
   return (
     <div>
-      <Accordion className={s.accordion} sx={{ width }}>
+      <Accordion className={s.accordion} sx={{ width, backgroundColor }}>
         <AccordionSummary
-          expandIcon={<Icon type="arrow_down" color="#8202ef" />}
+          expandIcon={<Icon type="arrow_down" color={openTitle_color} />}
         >
-          <span style={{ color: summary_color, fontWeight }}>{summary}</span>
-          <div className={s.details} style={{ fontWeight }}>
-            {details}
+          <span style={{ color: header_color, fontWeight: fontWeight_header }}>
+            {header}
+          </span>
+          <div
+            className={s.details}
+            style={{ fontWeight: fontWeight_openTitle, color: openTitle_color }}
+          >
+            {openTitle}
           </div>
         </AccordionSummary>
         <AccordionDetails>{children}</AccordionDetails>
