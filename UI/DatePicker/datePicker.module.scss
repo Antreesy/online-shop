@@ -1,0 +1,21 @@
+@import "styles/colors.scss";
+
+.datePicker {
+  & > div {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
+
+    & > input {
+      font-size: 18px;
+    }
+
+    & > fieldset {
+      border: none;
+    }
+  }
+
+  & button {
+    color: $color-purple;
+  }
+}

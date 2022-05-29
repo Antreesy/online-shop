@@ -6,7 +6,7 @@ import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 
-import { Icon, RadioGroup } from "UI"
+import { DatePicker, Icon, RadioGroup } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 
 //Project Helpers
@@ -35,11 +35,24 @@ const Home: NextPage = () => {
         </p>
 
         <Tabs
-          labels={["Buttons", "Icons", "Tabs", "Checkboxes and Radio"]}
+          labels={[
+            "Buttons",
+            "Inputs and Pickers",
+            "Icons",
+            "Tabs",
+            "Checkboxes and Radio",
+          ]}
           values={[
-            <ButtonExamples key={0} />,
+            <ButtonExamples key={"Buttons"} />,
 
-            <div key={1} className={s.grid}>
+            <div key={"Inputs and Pickers"} className={s.grid}>
+              <div>
+                <h2>DatePicker</h2>
+                <DatePicker initValue={new Date()} onChange={() => {}} />
+              </div>
+            </div>,
+
+            <div key={"Icons"} className={s.grid}>
               {icons.map((icon) => (
                 <span key={icon} className={s.icon_example}>
                   {icon}: <Icon type={icon} />{" "}
@@ -47,7 +60,7 @@ const Home: NextPage = () => {
               ))}
             </div>,
 
-            <div key={2} className={s.tabs}>
+            <div key={"Tabs"} className={s.tabs}>
               <p className={s.description}>default</p>
               <Tabs
                 labels={["Sign In", "Sign Up"]}
@@ -71,7 +84,7 @@ const Home: NextPage = () => {
               />
             </div>,
 
-            <div key={3} className={s.grid}>
+            <div key={"Checkboxes and Radio"} className={s.grid}>
               <div>
                 <p>Gender</p>
                 <RadioGroup
@@ -92,7 +105,7 @@ const Home: NextPage = () => {
               </div>
             </div>,
           ]}
-          width="1000px"
+          width="250px"
           variant="default"
         />
       </main>
