@@ -1,87 +1,21 @@
 @import "styles/colors.scss";
 
-.inputWrapper {
-  position: relative;
+.datePicker {
+  & > div {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
 
-  & div {
-    margin: 0;
-  }
-
-  & button {
-    padding: 4px;
-    margin-right: 0;
-  }
-
-  & input ~ fieldset > legend {
-    visibility: hidden;
-    max-width: 0.01px;
-  }
-}
-
-.inputWrapper.isInside {
-  & button {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-
-  & input + button {
-    top: initial;
-    right: 24px;
-    margin-right: 4px;
-  }
-
-  & input {
-    font-size: 14px !important;
-  }
-}
-
-.inputWrapper.isOutside {
-  display: flex;
-  align-items: center;
-
-  & > div:first-child {
-    width: calc(100% - 32px);
-  }
-}
-
-.customInputBase {
-  position: relative;
-  font-size: 0.9rem !important;
-  // min-height: $inputs-height-md;
-
-  &:hover fieldset {
-    border: 1px solid $color-purple !important;
-    box-shadow: -1px 2px 10px 0px rgba(34, 60, 80, 0.16);
-  }
-
-  &:hover input:disabled + fieldset {
-    border: 1px solid $color-grey-6 !important;
-    box-shadow: none;
-  }
-
-  input {
-    font-size: 14px !important;
-    height: 1em !important;
-    box-shadow: 0 4px 3px #eee inset;
-    border-radius: 4px;
-
-    &:focus + fieldset {
-      border-color: $color-purple-d !important;
-      border-width: 2px !important;
+    & > input {
+      font-size: 18px;
     }
 
-    &:disabled {
-      -webkit-text-fill-color: rgba(0, 0, 0, 0.38);
+    & > fieldset {
+      border: none;
     }
   }
 
   & button {
-    padding: 4px;
-  }
-
-  .clrBtn {
-    width: 20px;
-    height: 20px;
+    color: $color-purple;
   }
 }
