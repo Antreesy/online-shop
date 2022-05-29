@@ -24,17 +24,18 @@ const CustomTabs: React.FC<TabsProps> = (props) => {
         onChange={handleChange}
         className={s["tabs" + "_" + variant]}
       >
-        {labels && labels.map((label, index) => {
-          return (
-            <Tab
-              key={label}
-              label={label}
-              className={s.tab}
-              sx={{ width }}
-              onClick={() => setValueIndex(index)}
-            />
-          )
-        })}
+        {labels &&
+          labels.map((label, index) => {
+            return (
+              <Tab
+                key={label}
+                label={label}
+                className={s.tab}
+                sx={{ width }}
+                onClick={() => setValueIndex(index)}
+              />
+            )
+          })}
       </Tabs>
       {values && values[valueIndex]}
     </div>

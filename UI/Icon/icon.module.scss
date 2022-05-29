@@ -1,147 +1,146 @@
 @font-face {
-    font-family: 'icons';
-    src:  url('fonts/icons.eot?aarepb');
-    src:  url('fonts/icons.eot?aarepb#iefix') format('embedded-opentype'),
-      url('fonts/icons.ttf?aarepb') format('truetype'),
-      url('fonts/icons.woff?aarepb') format('woff'),
-      url('fonts/icons.svg?aarepb#icons') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-  }
-  
-  .icon {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'icons' !important;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-  
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .out_of_stock:before {
-    content: "\e92d";
-  }
-  .critical_stock:before {
-    content: "\e92e";
-  }
-  .download:before {
-    content: "\e902";
-  }
-  .close_cross:before {
-    content: "\e904";
-  }
-  .arrow_down:before {
-    content: "\e91b";
-  }
-  .price_tag:before {
-    content: "\e900";
-  }
-  .credit_card:before {
-    content: "\e901";
-  }
-  .earth:before {
-    content: "\e903";
-  }
-  .package-return:before {
-    content: "\e905";
-  }
-  .delivery_ready:before {
-    content: "\e906";
-  }
-  .getting_ready:before {
-    content: "\e907";
-  }
-  .hanger:before {
-    content: "\e908";
-  }
-  .products_on_sale:before {
-    content: "\e909";
-  }
-  .out_sign:before {
-    content: "\e90a";
-  }
-  .brand_name:before {
-    content: "\e90b";
-  }
-  .brand_display_name:before {
-    content: "\e90c";
-  }
-  .data:before {
-    content: "\e90d";
-  }
-  .shop:before {
-    content: "\e90e";
-  }
-  .discount:before {
-    content: "\e90f";
-  }
-  .edit:before {
-    content: "\e910";
-  }
-  .date:before {
-    content: "\e911";
-  }
-  .dashboard:before {
-    content: "\e912";
-  }
-  .upload:before {
-    content: "\e913";
-  }
-  .mark:before {
-    content: "\e914";
-  }
-  .size:before {
-    content: "\e915";
-  }
-  .okay:before {
-    content: "\e916";
-  }
-  .location:before {
-    content: "\e917";
-  }
-  .resize_textarea:before {
-    content: "\e918";
-  }
-  .trash_can:before {
-    content: "\e919";
-  }
-  .exclamation:before {
-    content: "\e91a";
-  }
-  .arrow_right:before {
-    content: "\e91c";
-  }
-  .arrow_left:before {
-    content: "\e91d";
-  }
-  .basket:before {
-    content: "\e926";
-  }
-  .account:before {
-    content: "\e927";
-  }
-  .search:before {
-    content: "\e928";
-  }
-  .bell_filled:before {
-    content: "\e929";
-  }
-  .about:before {
-    content: "\e92a";
-  }
-  .bell_outlined:before {
-    content: "\e92b";
-  }
-  .off_sale:before {
-    content: "\e92c";
-  }
-  .heart:before {
-    content: "\e9da";
-  }
-  
+  font-family: "icons";
+  src: url("fonts/icons.eot?aarepb");
+  src: url("fonts/icons.eot?aarepb#iefix") format("embedded-opentype"),
+    url("fonts/icons.ttf?aarepb") format("truetype"),
+    url("fonts/icons.woff?aarepb") format("woff"),
+    url("fonts/icons.svg?aarepb#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icons" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.out_of_stock:before {
+  content: "\e92d";
+}
+.critical_stock:before {
+  content: "\e92e";
+}
+.download:before {
+  content: "\e902";
+}
+.close_cross:before {
+  content: "\e904";
+}
+.arrow_down:before {
+  content: "\e91b";
+}
+.price_tag:before {
+  content: "\e900";
+}
+.credit_card:before {
+  content: "\e901";
+}
+.earth:before {
+  content: "\e903";
+}
+.package-return:before {
+  content: "\e905";
+}
+.delivery_ready:before {
+  content: "\e906";
+}
+.getting_ready:before {
+  content: "\e907";
+}
+.hanger:before {
+  content: "\e908";
+}
+.products_on_sale:before {
+  content: "\e909";
+}
+.out_sign:before {
+  content: "\e90a";
+}
+.brand_name:before {
+  content: "\e90b";
+}
+.brand_display_name:before {
+  content: "\e90c";
+}
+.data:before {
+  content: "\e90d";
+}
+.shop:before {
+  content: "\e90e";
+}
+.discount:before {
+  content: "\e90f";
+}
+.edit:before {
+  content: "\e910";
+}
+.date:before {
+  content: "\e911";
+}
+.dashboard:before {
+  content: "\e912";
+}
+.upload:before {
+  content: "\e913";
+}
+.mark:before {
+  content: "\e914";
+}
+.size:before {
+  content: "\e915";
+}
+.okay:before {
+  content: "\e916";
+}
+.location:before {
+  content: "\e917";
+}
+.resize_textarea:before {
+  content: "\e918";
+}
+.trash_can:before {
+  content: "\e919";
+}
+.exclamation:before {
+  content: "\e91a";
+}
+.arrow_right:before {
+  content: "\e91c";
+}
+.arrow_left:before {
+  content: "\e91d";
+}
+.basket:before {
+  content: "\e926";
+}
+.account:before {
+  content: "\e927";
+}
+.search:before {
+  content: "\e928";
+}
+.bell_filled:before {
+  content: "\e929";
+}
+.about:before {
+  content: "\e92a";
+}
+.bell_outlined:before {
+  content: "\e92b";
+}
+.off_sale:before {
+  content: "\e92c";
+}
+.heart:before {
+  content: "\e9da";
+}
