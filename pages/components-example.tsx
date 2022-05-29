@@ -36,10 +36,9 @@ const Home: NextPage = () => {
 
         <h2>Project Radio Buttons</h2>
         <RadioButtonGroup
-          initialValue=''
+          elements={[{value:'female',label:'Female'},{value:'male',label:'Male'}]}
         />
         <RadioButtonGroup
-          initialValue=''
           elements={[{value:'string',label:'String'},{value:'number',label:'Number'},{value:'boolean',label:'Boolean'},{value:'any',label:'Any'}]}
         />
 
