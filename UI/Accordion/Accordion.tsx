@@ -33,9 +33,9 @@ const CustomAccordion: React.FC<AccordionProps> = (props) => {
         <AccordionSummary
           expandIcon={<Icon type="arrow_down" color={openTitle_color} />}
         >
-          <span style={{ color: header_color, fontWeight: fontWeight_header }}>
+          <div style={{ color: header_color, fontWeight: fontWeight_header }}>
             {header}
-          </span>
+          </div>
           <div
             className={s.details}
             style={{ fontWeight: fontWeight_openTitle, color: openTitle_color }}

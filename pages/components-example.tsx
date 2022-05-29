@@ -94,30 +94,6 @@ const Home: NextPage = () => {
                   control={<Checkbox />}
                   label="Disabled checkbox"
                 />
-                <div className={s.tabs}>
-                  <h2>Tabs</h2>
-                  <div>default</div>
-                  <Tabs
-                    labels={["Sign In", "Sign Up"]}
-                    values={["Sign In", "Sign Up"]}
-                    width="200px"
-                    variant="default"
-                  />
-                  <div>spaces</div>
-                  <Tabs
-                    labels={["Sign In", "Sign Up"]}
-                    values={["Sign In", "Sign Up"]}
-                    width="200px"
-                    variant="spaces"
-                  />
-                  <div>without_border</div>
-                  <Tabs
-                    labels={["Sign In", "Sign Up"]}
-                    values={["Sign In", "Sign Up"]}
-                    width="200px"
-                    variant="without_border"
-                  />
-                </div>
               </FormGroup>
               <FormControl>
                 <FormLabel id="demo-radio-buttons-group-label">
@@ -147,34 +123,34 @@ const Home: NextPage = () => {
               </FormControl>
             </div>,
             <div>
-              <h2>Accordion</h2>
-              <Accordion
-                header={"default"}
-              >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-        lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
-              <Accordion
-                width="400px"
-                header={"Detail"}
-                openTitle={"Detail"}
-              >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-        lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
-              <Accordion
-                width="600px"
-                header={"black, Detail, width: 600px, fontWeight: 400"}
-                fontWeight_header={"400"}
-                fontWeight_openTitle={"800"}
-                openTitle={"Detail"}
-                header_color="black"
-                openTitle_color="black"
-              >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-        lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
-              <Accordion header={"hello"} backgroundColor="black">
-                <div className={s.accordion_children}>
-                  {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-        lacus ex, sit amet blandit leo lobortis eget.`}
-                </div>
-              </Accordion>
-            </div>,
+            <h2>Accordion</h2>
+            <Accordion
+              header={"default"}
+            >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+      lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
+            <Accordion
+              width="400px"
+              header={"Detail"}
+              openTitle={"Detail"}
+            >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+      lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
+            <Accordion
+              width="600px"
+              header={"black, Detail, width: 600px, fontWeight: 400"}
+              fontWeight_header={"400"}
+              fontWeight_openTitle={"800"}
+              openTitle={"Detail"}
+              header_color="black"
+              openTitle_color="black"
+            >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+      lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
+            <Accordion header={"hello"} backgroundColor="black">
+              <div className={s.accordion_children}>
+                {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+      lacus ex, sit amet blandit leo lobortis eget.`}
+              </div>
+            </Accordion>
+          </div>,
           ]}
           width="1000px"
           variant="default"
