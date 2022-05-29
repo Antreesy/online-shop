@@ -26,8 +26,6 @@ const Home: NextPage = () => {
       <main className={s.main}>
         <h1>UI Kit page</h1>
 
-        <div key={1} className={s.grid}></div>
-
         <p className={s.description}>
           Go back to{" "}
           <Link href="/">

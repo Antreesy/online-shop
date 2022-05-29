@@ -1,8 +1,4 @@
-@import "/styles/fonts.scss";
-@import "/styles/colors.scss";
-
 .radio_group {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
 }
