@@ -5,7 +5,7 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
-import { DatePicker, Icon, RadioGroup, Accordion, Tabs } from "UI"
+import { DatePicker, Icon, RadioGroup, CheckboxGroup, Tabs } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 import AccordionExamples from "Сomponents/Examples/AccordionExamples"
 
@@ -83,9 +83,23 @@ const Home: NextPage = () => {
                 variant="without_border"
               />
             </div>,
-            
+
             <div key={"Checkboxes and Radio"} className={s.grid}>
               <div>
+                <p>Rounded Checkboxes</p>
+                <CheckboxGroup rounded labels={["Men", "Women", "Unisex"]} />
+                <p>Square Checkboxes</p>
+                <CheckboxGroup
+                  color="#000"
+                  labels={["Men", "Women", "Unisex"]}
+                />
+                <p>Colored Checkboxes</p>
+                <CheckboxGroup
+                  color="#ff4e4e"
+                  colorChecked="#25754a"
+                  labels={["Men", "Women", "Unisex"]}
+                />
+
                 <p>Gender</p>
                 <RadioGroup
                   elements={[
@@ -113,6 +127,7 @@ const Home: NextPage = () => {
           variant="default"
         />
       </main>
+      <div></div>
 
       <footer className={s.footer}>
         <a
