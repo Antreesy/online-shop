@@ -54,6 +54,7 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 1200px;
+  padding-top: 2rem;
   margin-bottom: 2rem;
 }
 
@@ -144,5 +145,15 @@
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  > div {
+    margin: 5px;
   }
 }

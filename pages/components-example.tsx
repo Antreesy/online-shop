@@ -22,6 +22,7 @@ import RadioButtonGroup from "UI/RadioButtonsGroup/RadioButtonGroup"
 import { icons } from "shared/consts/icons"
 
 //Project Styles
+import { Tabs } from "../UI"
 import s from "styles/ComponentsExample.module.scss"
 
 const Home: NextPage = () => {
@@ -58,64 +59,91 @@ const Home: NextPage = () => {
           page
         </p>
 
-        <h2>Buttons Example</h2>
-        <ButtonExamples />
+        <Tabs
+          labels={["Buttons", "Icons", "Tabs", "Checkboxes"]}
+          values={[
+            <ButtonExamples key={0} />,
 
-        <h2>Icons Pack</h2>
-        <div className={s.grid}>
-          {icons.map((icon) => (
-            <span key={icon} className={s.icon_example}>
-              {icon}: <Icon type={icon} />{" "}
-            </span>
-          ))}
-        </div>
+            <div key={1} className={s.grid}>
+              {icons.map((icon) => (
+                <span key={icon} className={s.icon_example}>
+                  {icon}: <Icon type={icon} />{" "}
+                </span>
+              ))}
+            </div>,
 
-        <div>
-          <h2>Checkboxes and Radio Buttons Example</h2>
-
-          <div className={s.grid}>
-            <FormGroup>
-              <FormControlLabel
-                control={<Checkbox defaultChecked />}
-                label="Checkbox"
+            <div key={2} className={s.tabs}>
+              <p className={s.description}>default</p>
+              <Tabs
+                labels={["Sign In", "Sign Up"]}
+                values={["Sign In", "Sign Up"]}
+                width="200px"
+                variant="default"
               />
-              <FormControlLabel
-                control={<Checkbox color="secondary" />}
-                label="Another checkbox"
+              <p className={s.description}>spaces</p>
+              <Tabs
+                labels={["Sign In", "Sign Up"]}
+                values={["Sign In", "Sign Up"]}
+                width="200px"
+                variant="spaces"
               />
-              <FormControlLabel
-                disabled
-                control={<Checkbox />}
-                label="Disabled checkbox"
+              <p className={s.description}>without_border</p>
+              <Tabs
+                labels={["Sign In", "Sign Up"]}
+                values={["Sign In", "Sign Up"]}
+                width="200px"
+                variant="without_border"
               />
-            </FormGroup>
+            </div>,
 
-            <FormControl>
-              <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
-              <RadioGroup
-                aria-labelledby="demo-radio-buttons-group-label"
-                defaultValue="female"
-                name="radio-buttons-group"
-              >
+            <div key={3} className={s.grid}>
+              <FormGroup>
                 <FormControlLabel
-                  value="female"
-                  control={<Radio />}
-                  label="Female"
+                  control={<Checkbox defaultChecked />}
+                  label="Checkbox"
                 />
                 <FormControlLabel
-                  value="male"
-                  control={<Radio />}
-                  label="Male"
+                  control={<Checkbox color="secondary" />}
+                  label="Another checkbox"
                 />
                 <FormControlLabel
-                  value="other"
-                  control={<Radio />}
-                  label="Helicopter"
+                  disabled
+                  control={<Checkbox />}
+                  label="Disabled checkbox"
                 />
-              </RadioGroup>
-            </FormControl>
-          </div>
-        </div>
+              </FormGroup>
+
+              <FormControl>
+                <FormLabel id="demo-radio-buttons-group-label">
+                  Gender
+                </FormLabel>
+                <RadioGroup
+                  aria-labelledby="demo-radio-buttons-group-label"
+                  defaultValue="female"
+                  name="radio-buttons-group"
+                >
+                  <FormControlLabel
+                    value="female"
+                    control={<Radio />}
+                    label="Female"
+                  />
+                  <FormControlLabel
+                    value="male"
+                    control={<Radio />}
+                    label="Male"
+                  />
+                  <FormControlLabel
+                    value="other"
+                    control={<Radio />}
+                    label="Helicopter"
+                  />
+                </RadioGroup>
+              </FormControl>
+            </div>,
+          ]}
+          width="1000px"
+          variant="default"
+        />
       </main>
 
       <footer className={s.footer}>
