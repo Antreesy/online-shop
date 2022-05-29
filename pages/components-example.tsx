@@ -6,7 +6,7 @@ import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 
-import { Icon, RadioGroup } from "UI"
+import { DatePicker, Icon, RadioGroup } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 
 //Project Helpers
@@ -33,6 +33,8 @@ const Home: NextPage = () => {
           </Link>{" "}
           page
         </p>
+
+        <DatePicker initValue={new Date()} onChange={()=>{}} />
 
         <Tabs
           labels={["Buttons", "Icons", "Tabs", "Checkboxes and Radio"]}
