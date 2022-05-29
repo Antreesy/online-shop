@@ -14,11 +14,14 @@ import {
   FormLabel,
   Radio,
   RadioGroup,
+  Slider,
 } from "@mui/material";
 import { CustomButton } from "../UI";
 
 //Project Styles
 import styles from "../styles/Index.module.scss";
+
+import SliderLabel from "../UI/Slider/Slider";
 
 const Home: NextPage = () => {
   return (
@@ -105,6 +108,10 @@ const Home: NextPage = () => {
           </FormControl>
         </div>
       </main>
+
+      <div>
+        <SliderLabel/>
+      </div>
 
       <footer className={styles.footer}>
         <a
