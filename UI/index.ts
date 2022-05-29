@@ -1,5 +1,5 @@
-import { Button } from "./Button";
-import { Icon } from "./Icon";
+import { Tabs } from "./Tabs"
+import { Button } from "./Button"
+import { Icon } from "./Icon"
 
-export { Button };
-export { Icon };
+export { Tabs, Icon, Button }

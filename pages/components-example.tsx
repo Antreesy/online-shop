@@ -21,6 +21,7 @@ import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 import { icons } from "shared/consts/icons"
 
 //Project Styles
+import { Tabs } from "../UI"
 import s from "styles/ComponentsExample.module.scss"
 
 const Home: NextPage = () => {
@@ -98,6 +99,30 @@ const Home: NextPage = () => {
               </RadioGroup>
             </FormControl>
           </div>
+        </div>
+        <div className={s.tabs}>
+          <h2>Tabs</h2>
+          <div>default</div>
+          <Tabs
+            labels={["Sign In", "Sign Up"]}
+            values={["Sign In", "Sign Up"]}
+            width="200px"
+            variant="default"
+          />
+          <div>spaces</div>
+          <Tabs
+            labels={["Sign In", "Sign Up"]}
+            values={["Sign In", "Sign Up"]}
+            width="200px"
+            variant="spaces"
+          />
+          <div>without_border</div>
+          <Tabs
+            labels={["Sign In", "Sign Up"]}
+            values={["Sign In", "Sign Up"]}
+            width="200px"
+            variant="without_border"
+          />
         </div>
       </main>
 
