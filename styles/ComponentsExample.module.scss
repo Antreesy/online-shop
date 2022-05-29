@@ -159,6 +159,25 @@
   }
 }
 
-.accordion_children{
-  color: white
+.accordion_bold_black {
+  width: 400px;
+  font-weight: $fw-bold;
+}
+
+.accordion_header_bold_purple {
+  font-weight: $fw-bold;
+  color: $color-purple;
+}
+
+.black_background {
+  background-color: $color-black;
+}
+
+.dark_accordion {
+  width: 500px;
+  color: $color-grey-c;
+}
+
+.accordion_title_purple {
+  color: $color-purple;
 }

@@ -1,47 +1,29 @@
-@import url("/UI/Accordion/Accordion.tsx");
+@import "styles/fonts.scss";
+@import "styles/colors.scss";
 
 .accordion {
   box-shadow: none;
-  &.background_black {
-    background-color: black;
-    color: white;
+  color: $color-black;
+  font-weight: $fw-regular;
+  background-color: transparent;
+}
+
+.summary {
+  & > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
   }
-  .header {
-    &.bold_black {
-      color: black;
-      font-weight: bold;
-    }
-    &thin_black {
-      color: black;
-      font-weight: normal;
-    }
-    &.bold_violet {
-      color: #8100ef;
-      font-weight: bold;
-    }
-    &thin_violet {
-      color: #8100ef;
-      font-weight: normal;
-    }
-  }
-  .openTitle {
-    position: absolute;
-    right: 35px;
-    &.bold_black {
-      color: black;
-      font-weight: bold;
-    }
-    &thin_black {
-      color: black;
-      font-weight: normal;
-    }
-    &.bold_violet {
-      color: #8100ef;
-      font-weight: bold;
-    }
-    &thin_violet {
-      color: #8100ef;
-      font-weight: normal;
+
+  & > div:last-child {
+    & > span {
+      position: relative;
+      &::before {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        transform-origin: center;
+      }
     }
   }
 }

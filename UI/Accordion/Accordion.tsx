@@ -1,46 +1,49 @@
+import cn from "classnames"
+
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material"
-import React from "react"
-import { Icon } from "UI/Icon"
+import { Icon } from "UI"
+
 import s from "./accordion.module.scss"
 
 interface AccordionProps {
-  children: React.ReactElement | string
-  width?: string
-  header: React.ReactElement | string
+  children: React.ReactNode
+  header: React.ReactNode
   openTitle?: string
-  headerClassname?: "bold_black" | "thin_black" | "bold_violet" | "thin_violet"
-  openTitleClassname?: "bold_black" | "thin_black" | "bold_violet" | "thin_violet"
-  arrowClassname?: string
-  classname?: "background_black" | ""
+  className?: string
+  summaryClassName?: string
+  headerClassName?: string
+  openTitleClassName?: string
   arrowColor?: string
 }
 
 const CustomAccordion: React.FC<AccordionProps> = (props) => {
   const {
     children,
-    width = "200px",
     header,
     openTitle = "",
-    headerClassname = "thin_black",
-    openTitleClassname = "thin_black",
-    classname = "",
-    arrowColor = "black"
+    className,
+    summaryClassName,
+    headerClassName,
+    openTitleClassName,
+    arrowColor = "#8100ef",
   } = props
+
+  const accordionClass = cn(s.accordion, className)
+  const summaryClass = cn(s.summary, summaryClassName)
+
   return (
     <div>
-      <Accordion className={s.accordion + " " + s[classname]} sx={{ width }}>
-        <AccordionSummary expandIcon={<Icon type="arrow_down" color={arrowColor}/>}>
-          <div className={s.header + " " + s[headerClassname]}>{header}</div>
-          <div className={s.openTitle + " " + s[openTitleClassname]}>
-            {openTitle}
-          </div>
+      <Accordion className={accordionClass}>
+        <AccordionSummary
+          className={summaryClass}
+          expandIcon={<Icon type="arrow_down" color={arrowColor} />}
+        >
+          <span className={headerClassName}>{header}</span>
+          <span className={openTitleClassName}>{openTitle}</span>
         </AccordionSummary>
         <AccordionDetails>{children}</AccordionDetails>
       </Accordion>
-
-      
     </div>
-
   )
 }
 

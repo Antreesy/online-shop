@@ -7,6 +7,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { DatePicker, Icon, RadioGroup, Accordion, Tabs } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
+import AccordionExamples from "Сomponents/Examples/AccordionExamples"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
@@ -82,6 +83,7 @@ const Home: NextPage = () => {
                 variant="without_border"
               />
             </div>,
+            
             <div key={"Checkboxes and Radio"} className={s.grid}>
               <div>
                 <p>Gender</p>
@@ -102,39 +104,10 @@ const Home: NextPage = () => {
                 />
               </div>
             </div>,
+
             <div key={"Accordion"}>
-            <h2>Accordion</h2>
-            <Accordion 
-              header={"default"}
-            >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-    lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
-            <Accordion
-              width="400px"
-              header={"Detail"}
-              headerClassname={"bold_black"}
-              openTitle={"Detail"}
-            >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-    lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
-            <Accordion
-              headerClassname={"bold_violet"}
-              width="600px"
-              header={"header"}
-              openTitle={"Detail"}
-            >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-    lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
-            <Accordion
-              header={"hello"}
-              classname={"background_black"}
-              openTitleClassname="bold_violet"
-              openTitle="hello"
-              arrowColor="#8100ef"
-            >
-              <div className={s.accordion_children}>
-                {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-    lacus ex, sit amet blandit leo lobortis eget.`}
-              </div>
-            </Accordion>
-          </div>,
+              <AccordionExamples />
+            </div>,
           ]}
           width="250px"
           variant="default"
