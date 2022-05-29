@@ -1,5 +1,6 @@
 import { Button } from "./Button"
 import { Icon } from "./Icon"
 import { Accordion } from "./Accordion"
+import { Tabs } from "./Tabs"
 
-export { Button, Icon, Accordion }
+export { Tabs, Icon, Button, Accordion }
