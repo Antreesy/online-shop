@@ -1,24 +1,37 @@
-import { FormControlLabel, Radio, RadioGroup, Typography } from "@mui/material"
-import { FC, ReactNode, useState } from "react"
+import {
+    Accordion,
+    AccordionDetails,
+    AccordionSummary,
+    FormControlLabel,
+    Radio, 
+    RadioGroup,
+    Typography 
+} from "@mui/material"
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { FC, useState } from "react"
 
 import s from "./radioButtons.module.scss"
 
-interface RadioButtonProps {
+interface RadioButton {
     value: string;
     label: string;
 }
 
 interface RadioButtonGroupProps {
     title: string;
-    elements: Array<RadioButtonProps>;
-    initialValue: any;
+    initialValue: string;
+    elements?: RadioButton[];
+    acordion?: boolean;
+    className?: string;
 }
 
 const RadioButtonGroup: FC<RadioButtonGroupProps> = (props) => {
     const {
         title,
-        elements,
         initialValue,
+        elements = [{value:'female',label:'Female'},{value:'male',label:'Male'}],
+        acordion=false,
+        className
     } = props
     
     const [value, setValue] = useState(initialValue)
@@ -27,31 +40,66 @@ const RadioButtonGroup: FC<RadioButtonGroupProps> = (props) => {
         setValue(event.target.value);
     };
 
-    return(
-        <div className={s.radio_group}>
-            <Typography
-                className={s.title}
-            >{title}</Typography>
-            <RadioGroup
-                value={value}
-                onChange={handleChange}
-                className={s.radio_buttons}
-            >
-            {elements.map(({value, label}, index) => {
-                return(
-                    <FormControlLabel
-                        key={index}
-                        className={s.radio_button}
+    if (acordion) {
+        return(
+            <Accordion className={className}>
+                <AccordionSummary 
+                    expandIcon={<ExpandMoreIcon/>}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                    className={s.radio_group}
+                >
+                    <Typography
+                        className={s.title}
+                    >{title}</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <RadioGroup
                         value={value}
-                        control={<Radio checkedIcon={<SvgFill/>} />}
-                        label={label}
-                    />
-                )
-            })}
-            </RadioGroup>
-        </div>
-        
-    )
+                        onChange={handleChange}
+                        className={s.radio_buttons}
+                    >
+                    {elements && elements.map(({value, label}, index) => {
+                        return(
+                            <FormControlLabel
+                                key={index}
+                                className={s.radio_button}
+                                value={value}
+                                control={<Radio checkedIcon={<SvgFill/>} />}
+                                label={label}
+                            />
+                        )
+                    })}
+                    </RadioGroup>
+                </AccordionDetails>
+            </Accordion>
+        )
+    } else {
+        return(
+            <div className={s.radio_group}>
+                <Typography
+                    className={s.title}
+                >{title}</Typography>
+                <RadioGroup
+                    value={value}
+                    onChange={handleChange}
+                    className={s.radio_buttons}
+                >
+                {elements && elements.map(({value, label}, index) => {
+                    return(
+                        <FormControlLabel
+                            key={index}
+                            className={s.radio_button}
+                            value={value}
+                            control={<Radio checkedIcon={<SvgFill/>} />}
+                            label={label}
+                        />
+                    )
+                })}
+                </RadioGroup>
+            </div>
+        )
+    }    
 }
 
 const SvgFill = () => {
