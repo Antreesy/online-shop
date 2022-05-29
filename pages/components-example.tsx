@@ -5,23 +5,13 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
-import {
-  Checkbox,
-  FormControl,
-  FormControlLabel,
-  FormGroup,
-  FormLabel,
-  Radio,
-  RadioGroup,
-} from "@mui/material"
-import { Accordion, Icon } from "UI"
+import { DatePicker, Icon, RadioGroup, Accordion, Tabs } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
 
 //Project Styles
-import { Tabs } from "../UI"
 import s from "styles/ComponentsExample.module.scss"
 
 const Home: NextPage = () => {
@@ -43,11 +33,25 @@ const Home: NextPage = () => {
         </p>
 
         <Tabs
-          labels={["Buttons", "Icons", "Tabs", "Checkboxes", "Accordion"]}
+          labels={[
+            "Buttons",
+            "Inputs and Pickers",
+            "Icons",
+            "Tabs",
+            "Checkboxes and Radio",
+            "Accordion",
+          ]}
           values={[
-            <ButtonExamples key={0} />,
+            <ButtonExamples key={"Buttons"} />,
 
-            <div key={1} className={s.grid}>
+            <div key={"Inputs and Pickers"} className={s.grid}>
+              <div>
+                <h2>DatePicker</h2>
+                <DatePicker initValue={new Date()} onChange={() => {}} />
+              </div>
+            </div>,
+
+            <div key={"Icons"} className={s.grid}>
               {icons.map((icon) => (
                 <span key={icon} className={s.icon_example}>
                   {icon}: <Icon type={icon} />{" "}
@@ -55,7 +59,7 @@ const Home: NextPage = () => {
               ))}
             </div>,
 
-            <div key={2} className={s.tabs}>
+            <div key={"Tabs"} className={s.tabs}>
               <p className={s.description}>default</p>
               <Tabs
                 labels={["Sign In", "Sign Up"]}
@@ -78,79 +82,61 @@ const Home: NextPage = () => {
                 variant="without_border"
               />
             </div>,
-
-            <div key={3} className={s.grid}>
-              <FormGroup>
-                <FormControlLabel
-                  control={<Checkbox defaultChecked />}
-                  label="Checkbox"
-                />
-                <FormControlLabel
-                  control={<Checkbox color="secondary" />}
-                  label="Another checkbox"
-                />
-                <FormControlLabel
-                  disabled
-                  control={<Checkbox />}
-                  label="Disabled checkbox"
-                />
-              </FormGroup>
-              <FormControl>
-                <FormLabel id="demo-radio-buttons-group-label">
-                  Gender
-                </FormLabel>
+            <div key={"Checkboxes and Radio"} className={s.grid}>
+              <div>
+                <p>Gender</p>
                 <RadioGroup
-                  aria-labelledby="demo-radio-buttons-group-label"
-                  defaultValue="female"
-                  name="radio-buttons-group"
-                >
-                  <FormControlLabel
-                    value="female"
-                    control={<Radio />}
-                    label="Female"
-                  />
-                  <FormControlLabel
-                    value="male"
-                    control={<Radio />}
-                    label="Male"
-                  />
-                  <FormControlLabel
-                    value="other"
-                    control={<Radio />}
-                    label="Helicopter"
-                  />
-                </RadioGroup>
-              </FormControl>
+                  elements={[
+                    { value: "female", label: "Female" },
+                    { value: "male", label: "Male" },
+                  ]}
+                />
+                <p>Type</p>
+                <RadioGroup
+                  elements={[
+                    { value: "string", label: "String" },
+                    { value: "number", label: "Number" },
+                    { value: "boolean", label: "Boolean" },
+                    { value: "any", label: "Any" },
+                  ]}
+                />
+              </div>
             </div>,
-            <div>
-              <h2>Accordion</h2>
-              <Accordion
-                header={"default"}
-              >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-      lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
-              <Accordion
-                width="400px"
-                header={"Detail"}
-                headerClassname={"bold_black"}
-                openTitle={"Detail"}
-              >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-      lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
-              <Accordion
-                headerClassname={"bold_violet"}
-                width="600px"
-                header={"header"}
-                openTitle={"Detail"}
-              >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-      lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
-              <Accordion header={"hello"} classname={"background_black"} openTitleClassname="bold_violet" openTitle="hello" arrowColor="#8100ef">
-                <div className={s.accordion_children}>
-                  {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-      lacus ex, sit amet blandit leo lobortis eget.`}
-                </div>
-              </Accordion>
-            </div>,
+            <div key={"Accordion"}>
+            <h2>Accordion</h2>
+            <Accordion 
+              header={"default"}
+            >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+    lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
+            <Accordion
+              width="400px"
+              header={"Detail"}
+              headerClassname={"bold_black"}
+              openTitle={"Detail"}
+            >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+    lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
+            <Accordion
+              headerClassname={"bold_violet"}
+              width="600px"
+              header={"header"}
+              openTitle={"Detail"}
+            >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+    lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
+            <Accordion
+              header={"hello"}
+              classname={"background_black"}
+              openTitleClassname="bold_violet"
+              openTitle="hello"
+              arrowColor="#8100ef"
+            >
+              <div className={s.accordion_children}>
+                {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+    lacus ex, sit amet blandit leo lobortis eget.`}
+              </div>
+            </Accordion>
+          </div>,
           ]}
-          width="1000px"
+          width="250px"
           variant="default"
         />
       </main>
