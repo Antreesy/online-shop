@@ -5,18 +5,9 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
-import {
-  Checkbox,
-  FormControl,
-  FormControlLabel,
-  FormGroup,
-  FormLabel,
-  Radio,
-  RadioGroup,
-} from "@mui/material"
-import { Icon } from "UI"
+
+import { Icon, RadioGroup } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
-import RadioButtonGroup from "UI/RadioButtonsGroup/RadioButtonGroup"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
@@ -35,21 +26,7 @@ const Home: NextPage = () => {
       <main className={s.main}>
         <h1>UI Kit page</h1>
 
-        <h2>Project Radio Buttons</h2>
-        <RadioButtonGroup
-          elements={[
-            { value: "female", label: "Female" },
-            { value: "male", label: "Male" },
-          ]}
-        />
-        <RadioButtonGroup
-          elements={[
-            { value: "string", label: "String" },
-            { value: "number", label: "Number" },
-            { value: "boolean", label: "Boolean" },
-            { value: "any", label: "Any" },
-          ]}
-        />
+        <div key={1} className={s.grid}></div>
 
         <p className={s.description}>
           Go back to{" "}
@@ -60,7 +37,7 @@ const Home: NextPage = () => {
         </p>
 
         <Tabs
-          labels={["Buttons", "Icons", "Tabs", "Checkboxes"]}
+          labels={["Buttons", "Icons", "Tabs", "Checkboxes and Radio"]}
           values={[
             <ButtonExamples key={0} />,
 
@@ -97,48 +74,24 @@ const Home: NextPage = () => {
             </div>,
 
             <div key={3} className={s.grid}>
-              <FormGroup>
-                <FormControlLabel
-                  control={<Checkbox defaultChecked />}
-                  label="Checkbox"
-                />
-                <FormControlLabel
-                  control={<Checkbox color="secondary" />}
-                  label="Another checkbox"
-                />
-                <FormControlLabel
-                  disabled
-                  control={<Checkbox />}
-                  label="Disabled checkbox"
-                />
-              </FormGroup>
-
-              <FormControl>
-                <FormLabel id="demo-radio-buttons-group-label">
-                  Gender
-                </FormLabel>
+              <div>
+                <p>Gender</p>
                 <RadioGroup
-                  aria-labelledby="demo-radio-buttons-group-label"
-                  defaultValue="female"
-                  name="radio-buttons-group"
-                >
-                  <FormControlLabel
-                    value="female"
-                    control={<Radio />}
-                    label="Female"
-                  />
-                  <FormControlLabel
-                    value="male"
-                    control={<Radio />}
-                    label="Male"
-                  />
-                  <FormControlLabel
-                    value="other"
-                    control={<Radio />}
-                    label="Helicopter"
-                  />
-                </RadioGroup>
-              </FormControl>
+                  elements={[
+                    { value: "female", label: "Female" },
+                    { value: "male", label: "Male" },
+                  ]}
+                />
+                <p>Type</p>
+                <RadioGroup
+                  elements={[
+                    { value: "string", label: "String" },
+                    { value: "number", label: "Number" },
+                    { value: "boolean", label: "Boolean" },
+                    { value: "any", label: "Any" },
+                  ]}
+                />
+              </div>
             </div>,
           ]}
           width="1000px"
