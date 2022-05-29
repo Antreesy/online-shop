@@ -1,7 +1,5 @@
-import { CustomTabs } from "./CustomTabs"
+import { Tabs } from "./Tabs"
 import { Button } from "./Button"
 import { Icon } from "./Icon"
 
-export { CustomTabs }
-export { Button }
-export { Icon }
+export { Tabs, Icon, Button }
