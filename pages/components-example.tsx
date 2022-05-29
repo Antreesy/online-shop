@@ -5,9 +5,9 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
-
-import { DatePicker, Icon, RadioGroup, Tabs } from "UI"
+import { DatePicker, Icon, RadioGroup, Accordion, Tabs } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
+import AccordionExamples from "Сomponents/Examples/AccordionExamples"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
@@ -40,6 +40,7 @@ const Home: NextPage = () => {
             "Icons",
             "Tabs",
             "Checkboxes and Radio",
+            "Accordion",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -82,7 +83,7 @@ const Home: NextPage = () => {
                 variant="without_border"
               />
             </div>,
-
+            
             <div key={"Checkboxes and Radio"} className={s.grid}>
               <div>
                 <p>Gender</p>
@@ -102,6 +103,10 @@ const Home: NextPage = () => {
                   ]}
                 />
               </div>
+            </div>,
+
+            <div key={"Accordion"}>
+              <AccordionExamples />
             </div>,
           ]}
           width="250px"
