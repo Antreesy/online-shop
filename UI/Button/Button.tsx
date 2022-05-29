@@ -1,6 +1,6 @@
 //Global Dependencies
 import React from "react"
-import classNames from "classnames"
+import cn from "classnames"
 
 //Project Components
 import { Button } from "@mui/material"
@@ -13,6 +13,8 @@ import s from "./Button.module.scss"
 interface ButtonProps {
   className?: string
   disabled?: boolean
+  icon?: boolean
+  rounded?: boolean
   variant?: "text" | "outlined" | "contained"
   color?:
     | "primary"
@@ -33,22 +35,25 @@ const CustomButton: React.FC<ButtonProps> = (props) => {
   const {
     className = "",
     disabled = false,
+    rounded = false,
     variant = "contained",
     color = "primary",
     children = null,
+    icon,
     iconLeft,
     iconRight,
     onClick,
   } = props
 
   // Local functions
-  const buttonClass = classNames(
+  const buttonClass = cn(
     s.button,
     {
       [s.contained_button]: variant === "contained",
       [s.outlined_button]: variant === "outlined",
       [s.text_button]: variant === "text",
-      [s.icon_button]: !children,
+      [s.icon_button]: !children || icon,
+      [s.rounded_button]: rounded,
     },
     className,
   )
