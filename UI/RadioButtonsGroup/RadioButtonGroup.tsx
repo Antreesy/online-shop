@@ -1,13 +1,8 @@
 import {
-    Accordion,
-    AccordionDetails,
-    AccordionSummary,
     FormControlLabel,
     Radio, 
     RadioGroup,
-    Typography 
 } from "@mui/material"
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { FC, useState } from "react"
 
 import s from "./radioButtons.module.scss"
@@ -18,19 +13,15 @@ interface RadioButton {
 }
 
 interface RadioButtonGroupProps {
-    title: string;
     initialValue: string;
     elements?: RadioButton[];
-    acordion?: boolean;
     className?: string;
 }
 
 const RadioButtonGroup: FC<RadioButtonGroupProps> = (props) => {
     const {
-        title,
         initialValue,
         elements = [{value:'female',label:'Female'},{value:'male',label:'Male'}],
-        acordion=false,
         className
     } = props
     
@@ -40,66 +31,27 @@ const RadioButtonGroup: FC<RadioButtonGroupProps> = (props) => {
         setValue(event.target.value);
     };
 
-    if (acordion) {
-        return(
-            <Accordion className={className}>
-                <AccordionSummary 
-                    expandIcon={<ExpandMoreIcon/>}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                    className={s.radio_group}
-                >
-                    <Typography
-                        className={s.title}
-                    >{title}</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                    <RadioGroup
+    return(
+        <div className={s.radio_group}>
+            <RadioGroup
+                value={value}
+                onChange={handleChange}
+                className={s.radio_buttons}
+            >
+            {elements && elements.map(({value, label}, index) => {
+                return(
+                    <FormControlLabel
+                        key={index}
+                        className={s.radio_button}
                         value={value}
-                        onChange={handleChange}
-                        className={s.radio_buttons}
-                    >
-                    {elements && elements.map(({value, label}, index) => {
-                        return(
-                            <FormControlLabel
-                                key={index}
-                                className={s.radio_button}
-                                value={value}
-                                control={<Radio checkedIcon={<SvgFill/>} />}
-                                label={label}
-                            />
-                        )
-                    })}
-                    </RadioGroup>
-                </AccordionDetails>
-            </Accordion>
-        )
-    } else {
-        return(
-            <div className={s.radio_group}>
-                <Typography
-                    className={s.title}
-                >{title}</Typography>
-                <RadioGroup
-                    value={value}
-                    onChange={handleChange}
-                    className={s.radio_buttons}
-                >
-                {elements && elements.map(({value, label}, index) => {
-                    return(
-                        <FormControlLabel
-                            key={index}
-                            className={s.radio_button}
-                            value={value}
-                            control={<Radio checkedIcon={<SvgFill/>} />}
-                            label={label}
-                        />
-                    )
-                })}
-                </RadioGroup>
-            </div>
-        )
-    }    
+                        control={<Radio checkedIcon={<SvgFill/>} />}
+                        label={label}
+                    />
+                )
+            })}
+            </RadioGroup>
+        </div>
+    )
 }
 
 const SvgFill = () => {

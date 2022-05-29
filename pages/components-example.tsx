@@ -36,14 +36,11 @@ const Home: NextPage = () => {
 
         <h2>Project Radio Buttons</h2>
         <RadioButtonGroup
-          title="Gender"
           initialValue=''
         />
         <RadioButtonGroup
-          title="Type"
           initialValue=''
           elements={[{value:'string',label:'String'},{value:'number',label:'Number'},{value:'boolean',label:'Boolean'},{value:'any',label:'Any'}]}
-          acordion={true}
         />
 
         <p className={s.description}>
