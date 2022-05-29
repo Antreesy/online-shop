@@ -15,47 +15,47 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
-import { CustomButton } from "../UI";
+
+import { CustomButton, CheckboxGroup } from "../UI";
 
 //Project Styles
-import styles from "../styles/Index.module.scss";
+import s from "../styles/Index.module.scss";
 
 
-import CustomCheckbox from "../UI/CheckboxGroup/Checkbox";
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div className={s.container}>
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
 
-      <main className={styles.main}>
+      <main className={s.main}>
         <h1>UI Kit page</h1>
 
-        <p className={styles.description}>
+        <p className={s.description}>
           Go back to{" "}
           <Link href="/">
-            <a className={styles.title__link}>/index</a>
+            <a className={s.title__link}>/index</a>
           </Link>{" "}
           page
         </p>
 
-        <div className={styles.uikit_grid}>
-          <CustomButton className={styles.example_button}>
+        <div className={s.uikit_grid}>
+          <CustomButton className={s.example_button}>
             Custom Button
           </CustomButton>
-          <CustomButton className={styles.example_button} disabled>
+          <CustomButton className={s.example_button} disabled>
             Disabled Button
           </CustomButton>
-          <CustomButton className={styles.example_button_outlined}>
+          <CustomButton className={s.example_button_outlined}>
             Custom Outlined Button
           </CustomButton>
-          <CustomButton className={styles.example_button_outlined} disabled>
+          <CustomButton className={s.example_button_outlined} disabled>
             Disabled Outlined Button
           </CustomButton>
         </div>
 
-        <div className={styles.uikit_grid}>
+        <div className={s.uikit_grid}>
           <Button variant="contained">Contained Button</Button>
           <Button variant="outlined">Outlined Button</Button>
           <Button variant="contained" disabled>
@@ -68,7 +68,7 @@ const Home: NextPage = () => {
           </Link>
         </div>
 
-        <div className={styles.uikit_grid}>
+        <div className={s.uikit_grid}>
           <FormGroup>
             <FormControlLabel
               control={<Checkbox defaultChecked />}
@@ -109,22 +109,20 @@ const Home: NextPage = () => {
       </main>
       <div>
         <h2>Custom Checkboxes</h2>
-        <CustomCheckbox radius={true} >
-          Men
-        </CustomCheckbox>
-        <CustomCheckbox radius={false} colorGray={true} >
-          Women
-        </CustomCheckbox>
+
+        <CheckboxGroup rounded label={['Men', 'Women', 'Unisex']} />
+        <CheckboxGroup rounded={false} label={['Men', 'Women', 'Unisex']} />
+
       </div>
 
-      <footer className={styles.footer}>
+      <footer className={s.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
         >
           Powered by{" "}
-          <span className={styles.logo}>
+          <span className={s.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>

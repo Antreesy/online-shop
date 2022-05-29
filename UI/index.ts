@@ -1,3 +1,6 @@
 import { CustomButton } from "./CustomButton";
+import { CheckboxGroup } from "./CheckboxGroup";
 
-export { CustomButton };
+
+export { CustomButton, CheckboxGroup };
+
