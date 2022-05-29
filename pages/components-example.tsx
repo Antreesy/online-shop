@@ -34,6 +34,7 @@ const Home: NextPage = () => {
         </p>
 
         <Tabs
+          className={s.example_tabs}
           labels={[
             "Buttons",
             "Inputs and Pickers",
@@ -65,22 +66,18 @@ const Home: NextPage = () => {
               <Tabs
                 labels={["Sign In", "Sign Up"]}
                 values={["Sign In", "Sign Up"]}
-                width="200px"
-                variant="default"
               />
               <p className={s.description}>spaces</p>
               <Tabs
                 labels={["Sign In", "Sign Up"]}
                 values={["Sign In", "Sign Up"]}
-                width="200px"
                 variant="spaces"
               />
-              <p className={s.description}>without_border</p>
+              <p className={s.description}>no_border</p>
               <Tabs
                 labels={["Sign In", "Sign Up"]}
                 values={["Sign In", "Sign Up"]}
-                width="200px"
-                variant="without_border"
+                variant="no_border"
               />
             </div>,
 
@@ -123,11 +120,8 @@ const Home: NextPage = () => {
               <AccordionExamples />
             </div>,
           ]}
-          width="250px"
-          variant="default"
         />
       </main>
-      <div></div>
 
       <footer className={s.footer}>
         <a

@@ -1,83 +1,75 @@
-.tabs_default {
+@import "styles/fonts.scss";
+@import "styles/colors.scss";
+
+.tabs {
   border-radius: 10px;
-  border: 3px solid rgb(255, 255, 255);
-  box-shadow: 0 3px 5px rgb(226, 226, 226);
 
   .tab {
-    transition: all ease 0.5s;
-    color: black;
-    border-radius: 10px;
-    text-transform: none;
+    font-weight: $fw-semibold;
     font-size: 20px;
-    font-weight: 600;
+    color: $color-black;
+    text-transform: none;
+
+    transition-property: border, color, font-weight;
+    transition: ease 0.5s;
   }
   .tab:focus {
-    transition: all ease 0.5s;
     border: none;
     outline: none;
-    color: white;
+    color: $color-white;
     border-radius: 10px;
-    font-weight: 400;
+    font-weight: $fw-regular;
   }
+}
 
-  div > span {
+.tabs_default {
+  border: 3px solid $color-white;
+  box-shadow: 0 3px 5px $color-grey-e2;
+
+  & > div > span {
     border-radius: 10px;
     z-index: -1;
     height: 100%;
-    background-color: #8100ef;
+    background-color: $color-purple;
   }
 }
 
 .tabs_spaces {
-  border-radius: 10px;
-  box-shadow: 0 0px 5px rgb(226, 226, 226);
+  box-shadow: 0 0px 5px $color-grey-e2;
 
   .tab {
-    font-weight: 400;
-    transition: all ease 0.5s;
-    color: black;
+    font-weight: $fw-regular;
     border-radius: 10px;
-    text-transform: none;
-    font-size: 20px;
   }
-  .tab:focus {
-    transition: all ease 0.5s;
-    border: none;
-    outline: none;
-    color: #8100ef;
-    border-radius: 10px;
-    font-weight: 600;
+  .tab:focus,
+  .tab:active {
+    font-weight: $fw-semibold;
+    color: $color-purple;
   }
 
-  div > span {
+  & > div > span {
     display: none;
   }
 }
 
-.tabs_without_border {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  box-shadow: 3px -3px 5px rgb(226, 226, 226);
+.tabs_no_border {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: 3px -3px 5px $color-grey-e2;
 
   .tab {
-    transition: all ease 0.5s;
-    color: black;
-    text-transform: none;
-    font-size: 20px;
-    font-weight: 600;
+    font-weight: $fw-semibold;
   }
-  .tab:focus {
-    transition: all ease 0.5s;
-    border: none;
-    outline: none;
-    color: white;
-    font-weight: 400;
+  .tab:focus,
+  .tab:active {
+    font-weight: $fw-regular;
+    color: $color-white;
   }
 
-  div > span {
+  & > div > span {
     z-index: -1;
     height: 100%;
-    background-color: #8100ef;
+    background-color: $color-purple;
     width: 100%;
   }
 }
