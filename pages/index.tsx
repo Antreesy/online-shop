@@ -1,5 +1,6 @@
 //Global Dependencies
-import type { NextPage } from "next"
+import type { GetStaticProps, NextPage } from "next"
+
 
 //Project Components
 import Head from "next/head"
@@ -8,17 +9,20 @@ import Link from "next/link"
 
 //Project Styles
 import styles from "styles/Index.module.scss"
-
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
-export async function getStaticProps({ locale }: any) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["common", "footer"])),
-   
-    },
+export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common', 'footer']))
   }
-}
+})
+// export async function getStaticProps({ locale }: any) {
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(locale, ["common", "footer"])),
+//     },
+//   }
+// }
 
 import { useTranslation } from "next-i18next"
 import LangRoute from "../Сomponents/LanguageRouting/LangRoute"
@@ -35,6 +39,7 @@ const Index: NextPage = (props: any) => {
         <h1>
           Welcome to Ilonsi shop!
           {props.locale}
+
           {t("hello")}
         </h1>
         <LangRoute lng="en" />
