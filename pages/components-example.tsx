@@ -87,10 +87,19 @@ const Home: NextPage = () => {
             <div key={"Checkboxes and Radio"} className={s.grid}>
               <div>
                 <p>Rounded Checkboxes</p>
-                <CheckboxGroup rounded label={["Men", "Women", "Unisex"]} />
+                <CheckboxGroup rounded labels={["Men", "Women", "Unisex"]} />
                 <p>Square Checkboxes</p>
-                <CheckboxGroup label={["Men", "Women", "Unisex"]} />
-                
+                <CheckboxGroup
+                  color="#000"
+                  labels={["Men", "Women", "Unisex"]}
+                />
+                <p>Colored Checkboxes</p>
+                <CheckboxGroup
+                  color="#ff4e4e"
+                  colorChecked="#25754a"
+                  labels={["Men", "Women", "Unisex"]}
+                />
+
                 <p>Gender</p>
                 <RadioGroup
                   elements={[

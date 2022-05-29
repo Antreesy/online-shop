@@ -1,7 +1,10 @@
-.check > svg {
-    position: absolute;
-    top: 2px;
-    left: -22px;
-    width: 14px;
-    font-weight: 800;
+@import "styles/colors.scss";
+
+.group {
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
 }
