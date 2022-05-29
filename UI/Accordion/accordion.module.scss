@@ -1,0 +1,11 @@
+@import url("/UI/Accordion/Accordion.tsx");
+
+.accordion {
+  box-shadow: none;
+  .details {
+    color: #8202ef;
+    position: absolute;
+    right: 35px;
+    top: 17px;
+  }
+}

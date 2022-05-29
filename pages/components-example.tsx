@@ -14,7 +14,7 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material"
-import { Icon } from "UI"
+import { Accordion, Icon } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 
 //Project Helpers
@@ -97,6 +97,28 @@ const Home: NextPage = () => {
                 />
               </RadioGroup>
             </FormControl>
+          </div>
+
+          <div>
+            <h2>Accordion</h2>
+            <Accordion
+              summary={"default"}
+            >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+              lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
+            <Accordion
+              width="400px"
+              summary={"Detail"}
+              details={"Detail"}
+            >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+              lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
+            <Accordion
+              width="600px"
+              summary={"black, Detail, width: 600px, fontWeight: 400"}
+              fontWeight = {"400"}
+              details={"Detail"}
+              summary_color="black"
+            >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+              lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
           </div>
         </div>
       </main>

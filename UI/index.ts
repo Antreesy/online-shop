@@ -1,5 +1,5 @@
-import { Button } from "./Button";
-import { Icon } from "./Icon";
+import { Button } from "./Button"
+import { Icon } from "./Icon"
+import { Accordion } from "./Accordion"
 
-export { Button };
-export { Icon };
+export { Button, Icon, Accordion }
