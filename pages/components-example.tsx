@@ -42,118 +42,143 @@ const Home: NextPage = () => {
           page
         </p>
 
-        <h2>Buttons Example</h2>
-        <ButtonExamples />
+        <Tabs
+          labels={["Buttons", "Icons", "Tabs", "Checkboxes", "Accordion"]}
+          values={[
+            <ButtonExamples key={0} />,
 
-        <h2>Icons Pack</h2>
-        <div className={s.grid}>
-          {icons.map((icon) => (
-            <span key={icon} className={s.icon_example}>
-              {icon}: <Icon type={icon} />{" "}
-            </span>
-          ))}
-        </div>
+            <div key={1} className={s.grid}>
+              {icons.map((icon) => (
+                <span key={icon} className={s.icon_example}>
+                  {icon}: <Icon type={icon} />{" "}
+                </span>
+              ))}
+            </div>,
 
-        <div>
-          <h2>Checkboxes and Radio Buttons Example</h2>
-
-          <div className={s.grid}>
-            <FormGroup>
-              <FormControlLabel
-                control={<Checkbox defaultChecked />}
-                label="Checkbox"
+            <div key={2} className={s.tabs}>
+              <p className={s.description}>default</p>
+              <Tabs
+                labels={["Sign In", "Sign Up"]}
+                values={["Sign In", "Sign Up"]}
+                width="200px"
+                variant="default"
               />
-              <FormControlLabel
-                control={<Checkbox color="secondary" />}
-                label="Another checkbox"
+              <p className={s.description}>spaces</p>
+              <Tabs
+                labels={["Sign In", "Sign Up"]}
+                values={["Sign In", "Sign Up"]}
+                width="200px"
+                variant="spaces"
               />
-              <FormControlLabel
-                disabled
-                control={<Checkbox />}
-                label="Disabled checkbox"
+              <p className={s.description}>without_border</p>
+              <Tabs
+                labels={["Sign In", "Sign Up"]}
+                values={["Sign In", "Sign Up"]}
+                width="200px"
+                variant="without_border"
               />
-            </FormGroup>
+            </div>,
 
-            <FormControl>
-              <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
-              <RadioGroup
-                aria-labelledby="demo-radio-buttons-group-label"
-                defaultValue="female"
-                name="radio-buttons-group"
-              >
+            <div key={3} className={s.grid}>
+              <FormGroup>
                 <FormControlLabel
-                  value="female"
-                  control={<Radio />}
-                  label="Female"
+                  control={<Checkbox defaultChecked />}
+                  label="Checkbox"
                 />
                 <FormControlLabel
-                  value="male"
-                  control={<Radio />}
-                  label="Male"
+                  control={<Checkbox color="secondary" />}
+                  label="Another checkbox"
                 />
                 <FormControlLabel
-                  value="other"
-                  control={<Radio />}
-                  label="Helicopter"
+                  disabled
+                  control={<Checkbox />}
+                  label="Disabled checkbox"
                 />
-              </RadioGroup>
-            </FormControl>
-          </div>
-
-          <div>
-            <h2>Accordion</h2>
-            <Accordion
-              header={"default"}
-            >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-              lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
-            <Accordion
-              width="400px"
-              header={"Detail"}
-              openTitle={"Detail"}
-            >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-              lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
-            <Accordion
-              width="600px"
-              header={"black, Detail, width: 600px, fontWeight: 400"}
-              fontWeight_header = {"400"}
-              fontWeight_openTitle = {"800"}
-              openTitle={"Detail"}
-              header_color="black"
-              openTitle_color="black"
-            >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-              lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
+                <div className={s.tabs}>
+                  <h2>Tabs</h2>
+                  <div>default</div>
+                  <Tabs
+                    labels={["Sign In", "Sign Up"]}
+                    values={["Sign In", "Sign Up"]}
+                    width="200px"
+                    variant="default"
+                  />
+                  <div>spaces</div>
+                  <Tabs
+                    labels={["Sign In", "Sign Up"]}
+                    values={["Sign In", "Sign Up"]}
+                    width="200px"
+                    variant="spaces"
+                  />
+                  <div>without_border</div>
+                  <Tabs
+                    labels={["Sign In", "Sign Up"]}
+                    values={["Sign In", "Sign Up"]}
+                    width="200px"
+                    variant="without_border"
+                  />
+                </div>
+              </FormGroup>
+              <FormControl>
+                <FormLabel id="demo-radio-buttons-group-label">
+                  Gender
+                </FormLabel>
+                <RadioGroup
+                  aria-labelledby="demo-radio-buttons-group-label"
+                  defaultValue="female"
+                  name="radio-buttons-group"
+                >
+                  <FormControlLabel
+                    value="female"
+                    control={<Radio />}
+                    label="Female"
+                  />
+                  <FormControlLabel
+                    value="male"
+                    control={<Radio />}
+                    label="Male"
+                  />
+                  <FormControlLabel
+                    value="other"
+                    control={<Radio />}
+                    label="Helicopter"
+                  />
+                </RadioGroup>
+              </FormControl>
+            </div>,
+            <div>
+              <h2>Accordion</h2>
+              <Accordion
+                header={"default"}
+              >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+        lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
+              <Accordion
+                width="400px"
+                header={"Detail"}
+                openTitle={"Detail"}
+              >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+        lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
+              <Accordion
+                width="600px"
+                header={"black, Detail, width: 600px, fontWeight: 400"}
+                fontWeight_header={"400"}
+                fontWeight_openTitle={"800"}
+                openTitle={"Detail"}
+                header_color="black"
+                openTitle_color="black"
+              >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+        lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
               <Accordion header={"hello"} backgroundColor="black">
                 <div className={s.accordion_children}>
-                {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-              lacus ex, sit amet blandit leo lobortis eget.`}
+                  {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+        lacus ex, sit amet blandit leo lobortis eget.`}
                 </div>
               </Accordion>
-          </div>
-        </div>
-        <div className={s.tabs}>
-          <h2>Tabs</h2>
-          <div>default</div>
-          <Tabs
-            labels={["Sign In", "Sign Up"]}
-            values={["Sign In", "Sign Up"]}
-            width="200px"
-            variant="default"
-          />
-          <div>spaces</div>
-          <Tabs
-            labels={["Sign In", "Sign Up"]}
-            values={["Sign In", "Sign Up"]}
-            width="200px"
-            variant="spaces"
-          />
-          <div>without_border</div>
-          <Tabs
-            labels={["Sign In", "Sign Up"]}
-            values={["Sign In", "Sign Up"]}
-            width="200px"
-            variant="without_border"
-          />
-        </div>
+            </div>,
+          ]}
+          width="1000px"
+          variant="default"
+        />
       </main>
 
       <footer className={s.footer}>

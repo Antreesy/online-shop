@@ -54,6 +54,7 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 1200px;
+  padding-top: 2rem;
   margin-bottom: 2rem;
 }
 
@@ -147,11 +148,12 @@
   }
 }
 
-.tabs{
+.tabs {
   display: flex;
   flex-direction: column;
   align-items: center;
-  > div{
+  padding-top: 2rem;
+  > div {
     margin: 5px;
   }
 }
