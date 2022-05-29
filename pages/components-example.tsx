@@ -6,14 +6,13 @@ import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 
-import { DatePicker, Icon, RadioGroup } from "UI"
+import { DatePicker, Icon, RadioGroup, Tabs } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
 
 //Project Styles
-import { Tabs } from "../UI"
 import s from "styles/ComponentsExample.module.scss"
 
 const Home: NextPage = () => {

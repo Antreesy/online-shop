@@ -24,6 +24,10 @@
   padding: 6px;
 }
 
+.rounded_button {
+  border-radius: 50%;
+}
+
 .contained_button {
   color: $color-white;
   background-color: $color-purple;
