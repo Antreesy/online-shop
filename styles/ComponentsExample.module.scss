@@ -1,0 +1,160 @@
+@import "/styles/fonts.scss";
+@import "/styles/colors.scss";
+
+.container {
+  padding: 0 2rem;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.description {
+  margin: 1rem 0;
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.grid {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.grid_inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-right: 2rem;
+
+  & > *:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+.button_back,
+.button_add {
+  background: $color-white;
+  color: $color-purple;
+
+  &:hover {
+    background-color: $color-purple-a20;
+  }
+}
+
+.button_clear,
+.button_black {
+  background: $color-black;
+
+  &:hover {
+    background-color: $color-grey-3;
+  }
+}
+
+.button_excel {
+  background: $color-green;
+
+  &:hover {
+    background-color: $color-green-d;
+  }
+}
+
+.button_search,
+.button_purple {
+  background: $color-purple;
+
+  &:hover {
+    background-color: $color-purple-d;
+  }
+}
+
+.button_clean {
+  background: $color-red;
+
+  &:hover {
+    background-color: $color-red-d;
+  }
+}
+
+.button_facebook {
+  color: $color-purple;
+  border-color: $color-purple;
+
+  &:hover {
+    border-color: $color-purple;
+    background-color: $color-purple-a20;
+  }
+}
+
+.button_smalltext {
+  font-size: 13px;
+  font-weight: $fw-regular;
+}
+
+.card_example {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  padding: 10px;
+  border: 2px solid $color-black;
+  border-radius: 10px;
+}
+
+.icon_example {
+  width: 20%;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  > div {
+    margin: 5px;
+  }
+}

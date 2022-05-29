@@ -1,13 +1,13 @@
-import React from "react";
-import { icons } from "../../shared/consts/icons";
-import s from "./icon.module.scss";
+import React from "react"
+import { icons } from "shared/consts/icons"
+import s from "./icon.module.scss"
 
-type IconType = typeof icons[number];
+export type IconType = typeof icons[number]
 
 interface IconProps {
-  type: IconType;
+  type: IconType
 }
 
-export const Icon: React.FC<IconProps> = ({ type }) => {    
-  return <span className={s.icon + " " + s[type]}></span>;
-};
+export const Icon: React.FC<IconProps> = ({ type }) => {
+  return <span className={s.icon + " " + s[type]}></span>
+}
