@@ -37,7 +37,10 @@ const CustomAccordion: React.FC<AccordionProps> = (props) => {
         </AccordionSummary>
         <AccordionDetails>{children}</AccordionDetails>
       </Accordion>
+
+      
     </div>
+
   )
 }
 
