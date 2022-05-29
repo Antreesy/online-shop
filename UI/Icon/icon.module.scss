@@ -38,6 +38,7 @@
 }
 .arrow_down:before {
   content: "\e91b";
+  font-size: 10px;
 }
 .price_tag:before {
   content: "\e900";
@@ -143,4 +144,7 @@
 }
 .heart:before {
   content: "\e9da";
+}
+.plus:before {
+  content: "\e92f";
 }
