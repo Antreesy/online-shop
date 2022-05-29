@@ -123,34 +123,32 @@ const Home: NextPage = () => {
               </FormControl>
             </div>,
             <div>
-            <h2>Accordion</h2>
-            <Accordion
-              header={"default"}
-            >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+              <h2>Accordion</h2>
+              <Accordion
+                header={"default"}
+              >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
       lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
-            <Accordion
-              width="400px"
-              header={"Detail"}
-              openTitle={"Detail"}
-            >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+              <Accordion
+                width="400px"
+                header={"Detail"}
+                headerClassname={"bold_black"}
+                openTitle={"Detail"}
+              >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
       lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
-            <Accordion
-              width="600px"
-              header={"black, Detail, width: 600px, fontWeight: 400"}
-              fontWeight_header={"400"}
-              fontWeight_openTitle={"800"}
-              openTitle={"Detail"}
-              header_color="black"
-              openTitle_color="black"
-            >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+              <Accordion
+                headerClassname={"bold_violet"}
+                width="600px"
+                header={"header"}
+                openTitle={"Detail"}
+              >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
       lacus ex, sit amet blandit leo lobortis eget.`}</Accordion>
-            <Accordion header={"hello"} backgroundColor="black">
-              <div className={s.accordion_children}>
-                {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
+              <Accordion header={"hello"} classname={"background_black"} openTitleClassname="bold_violet" openTitle="hello" arrowColor="#8100ef">
+                <div className={s.accordion_children}>
+                  {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
       lacus ex, sit amet blandit leo lobortis eget.`}
-              </div>
-            </Accordion>
-          </div>,
+                </div>
+              </Accordion>
+            </div>,
           ]}
           width="1000px"
           variant="default"

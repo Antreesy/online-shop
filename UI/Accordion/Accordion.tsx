@@ -8,11 +8,11 @@ interface AccordionProps {
   width?: string
   header: React.ReactElement | string
   openTitle?: string
-  header_color?: string
-  fontWeight_header?: string
-  fontWeight_openTitle?: string
-  openTitle_color?: string
-  backgroundColor?: string
+  headerClassname?: "bold_black" | "thin_black" | "bold_violet" | "thin_violet"
+  openTitleClassname?: "bold_black" | "thin_black" | "bold_violet" | "thin_violet"
+  arrowClassname?: string
+  classname?: "background_black" | ""
+  arrowColor?: string
 }
 
 const CustomAccordion: React.FC<AccordionProps> = (props) => {
@@ -21,25 +21,17 @@ const CustomAccordion: React.FC<AccordionProps> = (props) => {
     width = "200px",
     header,
     openTitle = "",
-    header_color = "#8202ef",
-    openTitle_color = "#8202ef",
-    fontWeight_header = "600",
-    fontWeight_openTitle = "600",
-    backgroundColor = "white",
+    headerClassname = "thin_black",
+    openTitleClassname = "thin_black",
+    classname = "",
+    arrowColor = "black"
   } = props
   return (
     <div>
-      <Accordion className={s.accordion} sx={{ width, backgroundColor }}>
-        <AccordionSummary
-          expandIcon={<Icon type="arrow_down" color={openTitle_color} />}
-        >
-          <div style={{ color: header_color, fontWeight: fontWeight_header }}>
-            {header}
-          </div>
-          <div
-            className={s.details}
-            style={{ fontWeight: fontWeight_openTitle, color: openTitle_color }}
-          >
+      <Accordion className={s.accordion + " " + s[classname]} sx={{ width }}>
+        <AccordionSummary expandIcon={<Icon type="arrow_down" color={arrowColor}/>}>
+          <div className={s.header + " " + s[headerClassname]}>{header}</div>
+          <div className={s.openTitle + " " + s[openTitleClassname]}>
             {openTitle}
           </div>
         </AccordionSummary>

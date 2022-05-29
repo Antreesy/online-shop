@@ -2,10 +2,46 @@
 
 .accordion {
   box-shadow: none;
-  .details {
-    color: #8202ef;
+  &.background_black {
+    background-color: black;
+    color: white;
+  }
+  .header {
+    &.bold_black {
+      color: black;
+      font-weight: bold;
+    }
+    &thin_black {
+      color: black;
+      font-weight: normal;
+    }
+    &.bold_violet {
+      color: #8100ef;
+      font-weight: bold;
+    }
+    &thin_violet {
+      color: #8100ef;
+      font-weight: normal;
+    }
+  }
+  .openTitle {
     position: absolute;
     right: 35px;
-    top: 17px;
+    &.bold_black {
+      color: black;
+      font-weight: bold;
+    }
+    &thin_black {
+      color: black;
+      font-weight: normal;
+    }
+    &.bold_violet {
+      color: #8100ef;
+      font-weight: bold;
+    }
+    &thin_violet {
+      color: #8100ef;
+      font-weight: normal;
+    }
   }
 }
