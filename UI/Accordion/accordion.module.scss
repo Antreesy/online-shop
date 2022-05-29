@@ -15,15 +15,4 @@
     align-items: center;
     padding-right: 10px;
   }
-
-  & > div:last-child {
-    & > span {
-      position: relative;
-      &::before {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        transform-origin: center;
-      }
-    }
-  }
 }
