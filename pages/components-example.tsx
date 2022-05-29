@@ -20,6 +20,8 @@ import { CustomButton } from "../UI";
 //Project Styles
 import styles from "../styles/Index.module.scss";
 
+
+import CustomCheckbox from "../UI/CheckboxGroup/Checkbox";
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -105,6 +107,15 @@ const Home: NextPage = () => {
           </FormControl>
         </div>
       </main>
+      <div>
+        <h2>Custom Checkboxes</h2>
+        <CustomCheckbox radius={true} >
+          Men
+        </CustomCheckbox>
+        <CustomCheckbox radius={false} colorGray={true} >
+          Women
+        </CustomCheckbox>
+      </div>
 
       <footer className={styles.footer}>
         <a

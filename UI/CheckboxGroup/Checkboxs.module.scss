@@ -1,0 +1,15 @@
+.check > svg {
+    position: absolute;
+    top: 2px;
+    left: -22px;
+    width: 14px;
+    font-weight: 800;
+}
+.customCheckbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.colorGray{
+    color: gray;
+}
