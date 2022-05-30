@@ -153,10 +153,11 @@
 .card_example {
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 200px;
   padding: 10px;
   border: 2px solid $color-black;
   border-radius: 10px;
+  height: 300px;
 }
 
 .icon_example {
@@ -199,4 +200,9 @@
 .example_tabs {
   margin: 0 auto;
   width: fit-content;
+}
+
+.carousel {
+  margin-top: 30px;
+  width: 1024px;
 }

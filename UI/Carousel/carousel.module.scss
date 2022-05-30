@@ -1,0 +1,29 @@
+@import "styles/style.scss";
+
+.swiperBtn {
+  position: absolute;
+  z-index: 2;
+  background-color: $color-purple-a60;
+  color: $color-white;
+  border: none;
+  height: 25%;
+  transition: opacity ease-in 0.1s;
+}
+
+.swiperBtn:active {
+  opacity: 0.7;
+}
+
+.prev {
+  left: 0px;
+}
+
+.next {
+  right: 0px;
+}
+
+.swiper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
