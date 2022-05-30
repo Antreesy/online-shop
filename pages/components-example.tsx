@@ -8,6 +8,7 @@ import Link from "next/link"
 import { DatePicker, Icon, RadioGroup, CheckboxGroup, Tabs } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 import AccordionExamples from "Сomponents/Examples/AccordionExamples"
+import { Logo } from "Сomponents/Logo"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
@@ -123,6 +124,7 @@ const Home: NextPage = () => {
         />
       </main>
 
+      <Logo className={s.header_logo} type="dark" />
       <footer className={s.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
