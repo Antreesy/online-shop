@@ -57,29 +57,27 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 1200px;
-  padding-top: 2rem;
-  margin-bottom: 2rem;
 
   @include mobile {
     width: 100%;
     flex-direction: column;
-    padding: 0 20px;
+    padding: 1rem 20px;
   }
 
   @include tablet {
     width: 100%;
     flex-direction: column;
-    padding: 0 40px;
+    padding: 1rem 40px;
   }
 
   @include laptop {
     width: 100%;
-    padding: 0 60px;
+    padding: 1rem 60px;
   }
 
   @include desktop {
     width: 100%;
-    padding: 0 80px;
+    padding: 1rem 80px;
   }
 }
 

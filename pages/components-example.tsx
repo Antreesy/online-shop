@@ -35,14 +35,6 @@ const Home: NextPage = () => {
       <main className={s.main}>
         <h1>UI Kit page</h1>
 
-        <p className={s.description}>
-          Go back to{" "}
-          <Link href="/">
-            <a className={s.title__link}>/index</a>
-          </Link>{" "}
-          page
-        </p>
-
         <Tabs
           className={s.example_tabs}
           labels={[

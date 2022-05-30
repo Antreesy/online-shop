@@ -1,5 +1,7 @@
+import Link from "next/link"
 import { Button, SocialIcon } from "UI"
 import { Logo } from "Сomponents"
+
 import s from "./header.module.scss"
 
 interface HeaderProps {}
@@ -33,7 +35,11 @@ const Header: React.FC<HeaderProps> = (props) => {
           />
         </div>
 
-        <Logo className={s.header__logo} type="light" />
+        <Link href={"/"}>
+          <a className={s.header__logo}>
+            <Logo type="light" />
+          </a>
+        </Link>
 
         <div className={s.bottom_right_group}>
           <Button

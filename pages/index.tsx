@@ -30,7 +30,6 @@ const Index: NextPage = (props: any) => {
       <Header />
 
       <main className={styles.main}>
-        <h1>Welcome to Ilonsi shop!</h1>
         <h2>
           {props.locale}
           {t("hello")}

@@ -78,6 +78,14 @@
   gap: 6px;
 }
 
+.header__logo {
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .header__button {
   background: transparent;
   color: $color-white;
