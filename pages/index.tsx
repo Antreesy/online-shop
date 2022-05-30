@@ -1,23 +1,41 @@
 //Global Dependencies
-import type { NextPage } from "next"
+import type { GetStaticProps, NextPage } from "next"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { useTranslation } from "next-i18next"
 
 //Project Components
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
+import LangRoute from "Сomponents/LanguageRouting/LangRoute"
+import { Header } from "Сomponents/Header"
 
 //Project Styles
 import styles from "styles/pages/Index.module.scss"
 
-const Index: NextPage = () => {
+export const getStaticProps: GetStaticProps = async ({ locale = "en" }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common", "footer"])),
+  },
+})
+
+const Index: NextPage = (props: any) => {
+  const { t } = useTranslation("common")
   return (
     <div className={styles.container}>
       <Head>
         <title>ILONSI SHOP | Homepage</title>
       </Head>
 
+      <Header />
+
       <main className={styles.main}>
-        <h1>Welcome to Ilonsi shop!</h1>
+        <h2>
+          {props.locale}
+          {t("hello")}
+        </h2>
+        <LangRoute lng="en" />
+        <LangRoute lng="ru" />
 
         <p className={styles.description}>
           UI Kit is on{" "}
