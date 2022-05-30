@@ -59,7 +59,7 @@ const Upload: FC<IUpload> = (props) => {
   }
 
   const filesHandler = (e: any) => {
-    let files
+    let files: File[]
 
     if (drag) {
       e.preventDefault()
