@@ -1,14 +1,24 @@
 import { NextPage } from "next"
-import Image from "next/image"
 import React from "react"
-import image from "../public/background1.png"
-import s from "../styles/theme/page-not-found.module.scss"
+import { Button } from "UI"
+import s from "../styles/pages/page-not-found.module.scss"
 
 const PageNotFound: NextPage = () => {
   return (
+      <>
     <div className={s.background}>
-      <Image src={image} />
+      
     </div>
+    <div className={s.content}>
+        <h1>Page Not Found</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla varius
+          porta pharetra. Curabitur dolor sit amet venenatis purus ante.
+        </p>
+        <br />
+        <Button className={s.button_purple}>Return to homepage</Button>
+      </div>
+    </>
   )
 }
 
