@@ -7,7 +7,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 //Project Styles
-import styles from "styles/Index.module.scss"
+import styles from "styles/pages/Index.module.scss"
 
 const Index: NextPage = () => {
   return (
