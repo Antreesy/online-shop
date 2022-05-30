@@ -41,17 +41,23 @@ const theme = createMuiTheme({
 
 )
 
+interface SliderProps {
+  min?: number,
+  max: number,
+  values: number[]
+}
 
-export default function SliderLabel() {
+const SliderLabel: React.FC<SliderProps> = (props) => {
+  const { min = 0, max, values } = props
 
-  const [value, setValue] = React.useState<number[]>([0, 10]);
+  const [value, setValue] = React.useState<number[]>(values);
   const marks = [
     {
-      value: 0,
+      value: min,
       label: `Min:${value[0]}`,
     },
     {
-      value: 10,
+      value: max,
       label: `Max:${value[1]}`,
     },
   ];
@@ -64,16 +70,18 @@ export default function SliderLabel() {
 
       <Box sx={{ width: 200 }}>
         <Slider
-          getAriaLabel={() => 'Temperature range'}
+          getAriaLabel={() => 'range'}
           value={value}
           defaultValue={0}
           onChange={handleChange}
           valueLabelDisplay="auto"
           marks={marks}
-          max={10}
+          min={min}
+          max={max}
         />
       </Box>
     </ThemeProvider>
 
   );
 }
+export default SliderLabel;

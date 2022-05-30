@@ -110,7 +110,7 @@ const Home: NextPage = () => {
       </main>
 
       <div>
-        <SliderLabel/>
+        <SliderLabel min={0} max={50} values={[0,10]}/>
       </div>
 
       <footer className={styles.footer}>
