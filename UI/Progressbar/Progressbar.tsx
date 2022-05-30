@@ -11,7 +11,6 @@ import { StepIconProps } from "@mui/material/StepIcon"
 
 import styles from "./progressbar.module.scss"
 
-
 const ColorlibConnector = styled(StepConnector)(() => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
     top: 22,
@@ -24,8 +23,7 @@ const ColorlibConnector = styled(StepConnector)(() => ({
   },
 }))
 
-const ColorlibStepIconRoot = styled("div")<{
-}>(() => ({
+const ColorlibStepIconRoot = styled("div")<{}>(() => ({
   backgroundColor: "#fff",
   border: "3px solid #7429e6",
   zIndex: 1,
@@ -50,16 +48,14 @@ function ColorlibStepIcon(props: StepIconProps) {
   }
 
   return (
-    <ColorlibStepIconRoot
-      className={className}
-    >
+    <ColorlibStepIconRoot className={className}>
       {icons[String(props.icon)]}
     </ColorlibStepIconRoot>
   )
 }
 const steps = ["Select campaign settings", "Create an ad group", "Create an ad"]
 
-const Progressbar: FC = () => {
+const ProgressBar: FC = () => {
   return (
     <Stack sx={{ width: "100%" }}>
       <Stepper
@@ -77,4 +73,4 @@ const Progressbar: FC = () => {
   )
 }
 
-export default Progressbar
+export default ProgressBar
