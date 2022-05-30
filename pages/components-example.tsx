@@ -14,7 +14,7 @@ import AccordionExamples from "Сomponents/Examples/AccordionExamples"
 import { icons } from "shared/consts/icons"
 
 //Project Styles
-import s from "styles/ComponentsExample.module.scss"
+import s from "styles/pages/ComponentsExample.module.scss"
 
 import SliderLabel from "../UI/Slider/Slider";
 

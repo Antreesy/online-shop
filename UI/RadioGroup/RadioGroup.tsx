@@ -29,7 +29,7 @@ const IconRadio = ({ checked }: { checked?: boolean }) => (
         cy="10"
         r="8.5"
         stroke="#8100ef"
-        stroke-width="1.5"
+        strokeWidth="1.5"
         fill="transparent"
       />
     )}
