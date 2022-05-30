@@ -4,7 +4,7 @@ import { Checkbox, FormGroup, FormControlLabel } from "@mui/material"
 
 import s from "./checkBoxGroup.module.scss"
 
-interface CustomProps {
+interface CheckboxProps {
   labels: string | string[]
   rounded?: boolean
   className?: string
@@ -74,7 +74,7 @@ const IconCheckbox = (props: IconProps) => {
   )
 }
 
-const CheckboxGroup: React.FC<CustomProps> = (props) => {
+const CheckboxGroup: React.FC<CheckboxProps> = (props) => {
   const {
     rounded = false,
     labels,
@@ -93,6 +93,7 @@ const CheckboxGroup: React.FC<CustomProps> = (props) => {
     <FormGroup className={groupClass}>
       {labelsArray?.map((label: string) => (
         <FormControlLabel
+          key={label}
           control={
             <Checkbox
               icon={<IconCheckbox rounded={rounded} color={color} />}

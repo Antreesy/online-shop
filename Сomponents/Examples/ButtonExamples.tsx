@@ -1,6 +1,6 @@
 import { Button } from "UI"
 
-import s from "styles/ComponentsExample.module.scss"
+import s from "styles/pages/ComponentsExample.module.scss"
 
 const ButtonExamples: React.FC = () => {
   return (
