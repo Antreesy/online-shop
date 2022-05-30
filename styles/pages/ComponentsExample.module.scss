@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  
+
   @include mobile {
     padding-top: $header-mobile-height;
   }

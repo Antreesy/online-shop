@@ -65,8 +65,7 @@
   align-items: center;
 }
 
-.email,
-.socials {
+.email {
   color: $color-white;
 }
 
@@ -74,9 +73,15 @@
   color: $color-grey-60;
 }
 
+.socials {
+  display: flex;
+  gap: 6px;
+}
+
 .header__button {
   background: transparent;
   color: $color-white;
+  font-size: 14px;
 
   &:hover {
     background: $color-purple;
@@ -95,6 +100,7 @@
 
 .header__lang {
   background: $color-purple;
+  font-size: 14px;
 
   &:hover {
     background-color: $color-purple-d;

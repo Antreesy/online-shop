@@ -1,4 +1,4 @@
-import { Button } from "UI"
+import { Button, SocialIcon } from "UI"
 import { Logo } from "Сomponents"
 import s from "./header.module.scss"
 
@@ -13,9 +13,9 @@ const Header: React.FC<HeaderProps> = (props) => {
           lipsum as it is sometimes known, is dummy
         </span>
         <div className={s.socials}>
-          <span>fb </span>
-          <span>in </span>
-          <span>yt</span>
+          <SocialIcon type="facebook" />
+          <SocialIcon type="instagram" />
+          <SocialIcon type="youtube" />
         </div>
       </div>
       <div className={s.header__bottom}>
