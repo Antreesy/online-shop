@@ -22,7 +22,8 @@ const Upload: FC<IUpload> = (props) => {
 
   const [drag, setDrag] = useState(false)
   const [error, setError] = useState("")
-  const fileInputRef: any = useRef<HTMLInputElement>()
+  const fileInputRef: React.RefObject<HTMLInputElement> =
+    useRef<HTMLInputElement>(null)
 
   const dragLeaveHandler = (e: React.DragEvent) => {
     e.preventDefault()
@@ -66,7 +67,7 @@ const Upload: FC<IUpload> = (props) => {
       files = [...e.dataTransfer.files]
       setDrag(false)
     } else {
-      files = Array.from(fileInputRef.current.files)
+      files = Array.from(fileInputRef.current?.files || [])
     }
 
     const isCorrectInput: boolean = checkInputFiles(files)
@@ -82,7 +83,7 @@ const Upload: FC<IUpload> = (props) => {
         onDragLeave={(e) => dragLeaveHandler(e)}
         onDragOver={(e) => dragOverHandler(e)}
         onDrop={(e) => filesHandler(e)}
-        onClick={() => fileInputRef.current.click()}
+        onClick={() => fileInputRef.current?.click()}
       >
         <input
           onChange={filesHandler}
