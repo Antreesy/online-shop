@@ -5,9 +5,20 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
-import { DatePicker, Icon, RadioGroup, CheckboxGroup, Tabs } from "UI"
+import {
+  DatePicker,
+  Icon,
+  RadioGroup,
+  CheckboxGroup,
+  SocialIcon,
+  Tabs,
+} from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 import AccordionExamples from "Сomponents/Examples/AccordionExamples"
+
+import facebookIcon from "public/assets/icons/facebook.svg"
+import instagramIcon from "public/assets/icons/instagram.svg"
+import youtubeIcon from "public/assets/icons/youtube.svg"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
@@ -59,6 +70,11 @@ const Home: NextPage = () => {
                   {icon}: <Icon type={icon} />{" "}
                 </span>
               ))}
+              <div style={{ backgroundColor: "#1c1c1c" }}>
+                <SocialIcon type="facebook" />
+                <SocialIcon type="instagram" />
+                <SocialIcon type="youtube" />
+              </div>
             </div>,
 
             <div key={"Tabs"} className={s.tabs}>
