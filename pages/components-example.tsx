@@ -21,6 +21,7 @@ import { icons } from "shared/consts/icons"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
+import { AlertBox } from "UI/AlertBox"
 
 const Home: NextPage = () => {
   return (
@@ -126,6 +127,10 @@ const Home: NextPage = () => {
               <AccordionExamples />
             </div>,
           ]}
+        />
+
+        <AlertBox
+          text="lorem5 lorem5 lorem5 lorem5 lorem5 lorem5 lorem5 v vlorem5lorem5 lorem5 vlorem5lorem5 lorem5lorem5 v vlorem5"
         />
       </main>
 
