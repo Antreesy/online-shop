@@ -4,6 +4,7 @@ import Stack from "@mui/material/Stack"
 import Stepper from "@mui/material/Stepper"
 import Step from "@mui/material/Step"
 import StepLabel from "@mui/material/StepLabel"
+import StepButton from "@mui/material/StepButton"
 import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector"
@@ -16,10 +17,18 @@ const ColorlibConnector = styled(StepConnector)(() => ({
     top: 22,
   },
 
+  [`&.${stepConnectorClasses.active}`]: {
+    [`& .${stepConnectorClasses.line}`]: {
+      height: 3,
+      border: 1,
+      backgroundColor: "#7429e6",
+    },
+  },
+
   [`& .${stepConnectorClasses.line}`]: {
     height: 3,
     border: 1,
-    backgroundColor: "#7429e6",
+    backgroundColor: "#ccc",
   },
 }))
 
@@ -52,6 +61,10 @@ function ColorlibStepIcon(props: StepIconProps) {
       {icons[String(props.icon)]}
     </ColorlibStepIconRoot>
   )
+}
+
+function handleStep() {
+  console.log("hy")
 }
 const steps = ["Select campaign settings", "Create an ad group", "Create an ad"]
 
