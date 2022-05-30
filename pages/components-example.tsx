@@ -15,11 +15,7 @@ import {
 } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 import AccordionExamples from "Сomponents/Examples/AccordionExamples"
-import { Logo } from "Сomponents/Logo"
-
-import facebookIcon from "public/assets/icons/facebook.svg"
-import instagramIcon from "public/assets/icons/instagram.svg"
-import youtubeIcon from "public/assets/icons/youtube.svg"
+import { Header } from "Сomponents/Header"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
@@ -34,16 +30,10 @@ const Home: NextPage = () => {
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
 
+      <Header />
+
       <main className={s.main}>
         <h1>UI Kit page</h1>
-
-        <p className={s.description}>
-          Go back to{" "}
-          <Link href="/">
-            <a className={s.title__link}>/index</a>
-          </Link>{" "}
-          page
-        </p>
 
         <Tabs
           className={s.example_tabs}
@@ -140,7 +130,6 @@ const Home: NextPage = () => {
         />
       </main>
 
-      <Logo className={s.header_logo} type="dark" />
       <footer className={s.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

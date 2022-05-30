@@ -15,6 +15,7 @@ interface ButtonProps {
   disabled?: boolean
   icon?: boolean
   rounded?: boolean
+  disableElevation?: boolean
   variant?: "text" | "outlined" | "contained"
   color?:
     | "primary"
@@ -34,8 +35,9 @@ const CustomButton: React.FC<ButtonProps> = (props) => {
   // Props destructuring
   const {
     className = "",
-    disabled = false,
-    rounded = false,
+    disabled,
+    rounded,
+    disableElevation,
     variant = "contained",
     color = "primary",
     children = null,
@@ -62,6 +64,7 @@ const CustomButton: React.FC<ButtonProps> = (props) => {
     <Button
       className={buttonClass}
       disabled={disabled}
+      disableElevation={disableElevation}
       variant={variant}
       color={color}
       onClick={onClick}
