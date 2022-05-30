@@ -6,9 +6,10 @@ import type { NextPage } from "next"
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { DatePicker, Icon, RadioGroup, CheckboxGroup, Tabs } from "UI"
+import { DatePicker, Icon, RadioGroup, CheckboxGroup, Tabs, SocialIcon } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 import AccordionExamples from "Сomponents/Examples/AccordionExamples"
+import { Header } from "Сomponents/Header"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
@@ -25,16 +26,10 @@ const Home: NextPage = () => {
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
 
+      <Header />
+
       <main className={s.main}>
         <h1>UI Kit page</h1>
-
-        <p className={s.description}>
-          Go back to{" "}
-          <Link href="/">
-            <a className={s.title__link}>/index</a>
-          </Link>{" "}
-          page
-        </p>
 
         <Tabs
           className={s.example_tabs}
@@ -62,6 +57,11 @@ const Home: NextPage = () => {
                   {icon}: <Icon type={icon} />{" "}
                 </span>
               ))}
+              <div style={{ backgroundColor: "#1c1c1c" }}>
+                <SocialIcon type="facebook" />
+                <SocialIcon type="instagram" />
+                <SocialIcon type="youtube" />
+              </div>
             </div>,
 
             <div key={"Tabs"} className={s.tabs}>
@@ -124,10 +124,11 @@ const Home: NextPage = () => {
             </div>,
           ]}
         />
+        <div>
+          <SliderLabel min={0} max={50} value={[0, 30]} />
+        </div>
       </main>
-      <div>
-        <SliderLabel min={0} max={50} values={[0, 10]} />
-      </div>
+
 
 
       <footer className={s.footer}>
