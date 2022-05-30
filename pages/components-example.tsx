@@ -5,24 +5,16 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
-import {
-  Checkbox,
-  FormControl,
-  FormControlLabel,
-  FormGroup,
-  FormLabel,
-  Radio,
-  RadioGroup,
-} from "@mui/material"
-import { Icon} from "UI"
+import { DatePicker, Icon, RadioGroup, CheckboxGroup, Tabs } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
+import AccordionExamples from "Сomponents/Examples/AccordionExamples"
+import { Logo } from "Сomponents/Logo"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
 
 //Project Styles
-import s from "styles/ComponentsExample.module.scss"
-import { Progressbar } from "UI/Progressbar"
+import s from "styles/pages/ComponentsExample.module.scss"
 
 const Home: NextPage = () => {
   return (
@@ -42,68 +34,97 @@ const Home: NextPage = () => {
           page
         </p>
 
-        <h2>Buttons Example</h2>
-        <ButtonExamples />
+        <Tabs
+          className={s.example_tabs}
+          labels={[
+            "Buttons",
+            "Inputs and Pickers",
+            "Icons",
+            "Tabs",
+            "Checkboxes and Radio",
+            "Accordion",
+          ]}
+          values={[
+            <ButtonExamples key={"Buttons"} />,
 
-        <h2>Icons Pack</h2>
-        <div className={s.grid}>
-          {icons.map((icon) => (
-            <span key={icon} className={s.icon_example}>
-              {icon}: <Icon type={icon} />{" "}
-            </span>
-          ))}
-        </div>
+            <div key={"Inputs and Pickers"} className={s.grid}>
+              <div>
+                <h2>DatePicker</h2>
+                <DatePicker initValue={new Date()} onChange={() => {}} />
+              </div>
+            </div>,
 
-        <div>
-          <h2>Checkboxes and Radio Buttons Example</h2>
+            <div key={"Icons"} className={s.grid}>
+              {icons.map((icon) => (
+                <span key={icon} className={s.icon_example}>
+                  {icon}: <Icon type={icon} />{" "}
+                </span>
+              ))}
+            </div>,
 
-          <div className={s.grid}>
-            <FormGroup>
-              <FormControlLabel
-                control={<Checkbox defaultChecked />}
-                label="Checkbox"
+            <div key={"Tabs"} className={s.tabs}>
+              <p className={s.description}>default</p>
+              <Tabs
+                labels={["Sign In", "Sign Up"]}
+                values={["Sign In", "Sign Up"]}
               />
-              <FormControlLabel
-                control={<Checkbox color="secondary" />}
-                label="Another checkbox"
+              <p className={s.description}>spaces</p>
+              <Tabs
+                labels={["Sign In", "Sign Up"]}
+                values={["Sign In", "Sign Up"]}
+                variant="spaces"
               />
-              <FormControlLabel
-                disabled
-                control={<Checkbox />}
-                label="Disabled checkbox"
+              <p className={s.description}>no_border</p>
+              <Tabs
+                labels={["Sign In", "Sign Up"]}
+                values={["Sign In", "Sign Up"]}
+                variant="no_border"
               />
-            </FormGroup>
+            </div>,
 
-            <FormControl>
-              <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
-              <RadioGroup
-                aria-labelledby="demo-radio-buttons-group-label"
-                defaultValue="female"
-                name="radio-buttons-group"
-              >
-                <FormControlLabel
-                  value="female"
-                  control={<Radio />}
-                  label="Female"
+            <div key={"Checkboxes and Radio"} className={s.grid}>
+              <div>
+                <p>Rounded Checkboxes</p>
+                <CheckboxGroup rounded labels={["Men", "Women", "Unisex"]} />
+                <p>Square Checkboxes</p>
+                <CheckboxGroup
+                  color="#000"
+                  labels={["Men", "Women", "Unisex"]}
                 />
-                <FormControlLabel
-                  value="male"
-                  control={<Radio />}
-                  label="Male"
+                <p>Colored Checkboxes</p>
+                <CheckboxGroup
+                  color="#ff4e4e"
+                  colorChecked="#25754a"
+                  labels={["Men", "Women", "Unisex"]}
                 />
-                <FormControlLabel
-                  value="other"
-                  control={<Radio />}
-                  label="Helicopter"
-                />
-              </RadioGroup>
-            </FormControl>
-          </div>
-        </div>
 
-        <Progressbar/>
+                <p>Gender</p>
+                <RadioGroup
+                  elements={[
+                    { value: "female", label: "Female" },
+                    { value: "male", label: "Male" },
+                  ]}
+                />
+                <p>Type</p>
+                <RadioGroup
+                  elements={[
+                    { value: "string", label: "String" },
+                    { value: "number", label: "Number" },
+                    { value: "boolean", label: "Boolean" },
+                    { value: "any", label: "Any" },
+                  ]}
+                />
+              </div>
+            </div>,
+
+            <div key={"Accordion"}>
+              <AccordionExamples />
+            </div>,
+          ]}
+        />
       </main>
 
+      <Logo className={s.header_logo} type="dark" />
       <footer className={s.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

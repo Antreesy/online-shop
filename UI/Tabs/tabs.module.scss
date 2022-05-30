@@ -1,0 +1,74 @@
+@import "styles/style.scss";
+
+.tabs {
+  border-radius: 10px;
+
+  .tab {
+    font-weight: $fw-semibold;
+    font-size: 20px;
+    color: $color-black;
+    text-transform: none;
+
+    transition-property: border, color, font-weight;
+    transition: ease 0.5s;
+  }
+  .tab:focus {
+    border: none;
+    outline: none;
+    color: $color-white;
+    border-radius: 10px;
+    font-weight: $fw-regular;
+  }
+}
+
+.tabs_default {
+  border: 3px solid $color-white;
+  box-shadow: 0 3px 5px $color-grey-e2;
+
+  & > div > span {
+    border-radius: 10px;
+    z-index: -1;
+    height: 100%;
+    background-color: $color-purple;
+  }
+}
+
+.tabs_spaces {
+  box-shadow: 0 0px 5px $color-grey-e2;
+
+  .tab {
+    font-weight: $fw-regular;
+    border-radius: 10px;
+  }
+  .tab:focus,
+  .tab:active {
+    font-weight: $fw-semibold;
+    color: $color-purple;
+  }
+
+  & > div > span {
+    display: none;
+  }
+}
+
+.tabs_no_border {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: 3px -3px 5px $color-grey-e2;
+
+  .tab {
+    font-weight: $fw-semibold;
+  }
+  .tab:focus,
+  .tab:active {
+    font-weight: $fw-regular;
+    color: $color-white;
+  }
+
+  & > div > span {
+    z-index: -1;
+    height: 100%;
+    background-color: $color-purple;
+    width: 100%;
+  }
+}
