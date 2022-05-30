@@ -1,5 +1,4 @@
-@import "/styles/fonts.scss"; 
-@import "/styles/colors.scss"; 
+@import "styles/style.scss";
 
 .button {
   display: flex;
@@ -13,7 +12,7 @@
   text-transform: none;
   border-radius: 4px;
 
-  @media screen and (max-width: 700px) {
+  @include mobile {
     font-size: 12px;
   }
 }
@@ -22,6 +21,10 @@
   min-width: 45px;
   aspect-ratio: 1 / 1;
   padding: 6px;
+}
+
+.rounded_button {
+  border-radius: 50%;
 }
 
 .contained_button {

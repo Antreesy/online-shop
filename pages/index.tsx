@@ -1,31 +1,22 @@
 //Global Dependencies
 import type { GetStaticProps, NextPage } from "next"
-
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { useTranslation } from "next-i18next"
 
 //Project Components
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
+import LangRoute from "Сomponents/LanguageRouting/LangRoute"
 
 //Project Styles
-import styles from "styles/Index.module.scss"
-import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import styles from "styles/pages/Index.module.scss"
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+export const getStaticProps: GetStaticProps = async ({ locale = "en" }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ['common', 'footer']))
-  }
+    ...(await serverSideTranslations(locale, ["common", "footer"])),
+  },
 })
-// export async function getStaticProps({ locale }: any) {
-//   return {
-//     props: {
-//       ...(await serverSideTranslations(locale, ["common", "footer"])),
-//     },
-//   }
-// }
-
-import { useTranslation } from "next-i18next"
-import LangRoute from "../Сomponents/LanguageRouting/LangRoute"
 
 const Index: NextPage = (props: any) => {
   const { t } = useTranslation("common")
@@ -36,12 +27,11 @@ const Index: NextPage = (props: any) => {
       </Head>
 
       <main className={styles.main}>
-        <h1>
-          Welcome to Ilonsi shop!
+        <h1>Welcome to Ilonsi shop!</h1>
+        <h2>
           {props.locale}
-
           {t("hello")}
-        </h1>
+        </h2>
         <LangRoute lng="en" />
         <LangRoute lng="ru" />
 
