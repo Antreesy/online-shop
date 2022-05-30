@@ -15,6 +15,7 @@ import { icons } from "shared/consts/icons"
 //Project Styles
 import { Tabs } from "../UI"
 import s from "styles/ComponentsExample.module.scss"
+import { Upload } from "UI/Upload"
 
 const Home: NextPage = () => {
   return (
@@ -95,6 +96,8 @@ const Home: NextPage = () => {
           width="1000px"
           variant="default"
         />
+
+        <Upload title="Select or Drag Image" filesNumber={3} />
       </main>
 
       <footer className={s.footer}>
