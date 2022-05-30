@@ -1,0 +1,39 @@
+@import "styles/fonts.scss";
+@import "styles/colors.scss";
+
+.select_label {
+  min-width: 100px;
+}
+
+.select {
+  position: relative;
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: $fw-medium;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
+
+  & > div {
+    border: 1px solid transparent;
+  }
+
+  & > fieldset {
+    border: 1px solid transparent;
+  }
+
+  &:focus {
+    outline: 1px solid red;
+  }
+}
+
+.item {
+  font-size: 12px;
+  font-weight: $fw-medium;
+}
+
+.selectIcon {
+  color: $color-purple;
+  position: absolute;
+  right: 6%;
+}

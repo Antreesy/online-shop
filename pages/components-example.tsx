@@ -5,12 +5,13 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
-import { DatePicker, Icon, RadioGroup, CheckboxGroup, Tabs } from "UI"
+import { DatePicker, Icon, RadioGroup, CheckboxGroup, Select, Tabs } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 import AccordionExamples from "Сomponents/Examples/AccordionExamples"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
+import { countries } from "shared/consts/countries"
 
 //Project Styles
 import s from "styles/ComponentsExample.module.scss"
@@ -46,11 +47,16 @@ const Home: NextPage = () => {
           values={[
             <ButtonExamples key={"Buttons"} />,
 
-            <div key={"Inputs and Pickers"} className={s.grid}>
-              <div>
+            <div key={"Inputs and Pickers"} className={s.grid_column}>
+                <h2>Select</h2>
+                <Select items={["one", "two", "three"]} onChange={() => {}} />
+                <Select
+                  placeholder="Country*"
+                  items={countries.map((country) => `${country.label} (+${country.phone})`)}
+                  onChange={() => {}}
+                />
                 <h2>DatePicker</h2>
                 <DatePicker initValue={new Date()} onChange={() => {}} />
-              </div>
             </div>,
 
             <div key={"Icons"} className={s.grid}>
