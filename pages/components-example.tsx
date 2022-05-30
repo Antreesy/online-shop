@@ -9,6 +9,7 @@ import { DatePicker, Icon, RadioGroup, CheckboxGroup, Tabs } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 import AccordionExamples from "Сomponents/Examples/AccordionExamples"
 import { Header } from "Сomponents/Header"
+import { Logo } from "Сomponents/Logo"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
