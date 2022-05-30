@@ -2,9 +2,13 @@ import React from "react"
 import { Provider } from "react-redux"
 import type { AppProps } from "next/app"
 import Head from "next/head"
+import { appWithTranslation } from "next-i18next"
 import { store } from "store/store"
 
 import { CacheProvider, EmotionCache } from "@emotion/react"
+import createEmotionCache from "utils/createEmotionCache"
+import lightThemeOptions from "styles/theme/lightThemeOptions"
+
 import {
   ThemeProvider,
   StyledEngineProvider,
@@ -12,10 +16,6 @@ import {
   createTheme,
 } from "@mui/material"
 
-import { appWithTranslation } from "next-i18next"
-
-import createEmotionCache from "utils/createEmotionCache"
-import lightThemeOptions from "styles/theme/lightThemeOptions"
 import "styles/globals.scss"
 
 interface MyAppProps extends AppProps {
@@ -50,6 +50,4 @@ const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
   )
 }
 
-
 export default appWithTranslation(MyApp)
-

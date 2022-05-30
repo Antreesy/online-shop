@@ -1,5 +1,4 @@
 //Global Dependencies
-
 import { useState } from "react"
 
 //Project Dependencies
@@ -20,7 +19,6 @@ import styles from "./counter.module.scss"
 
 const Counter: React.FC = () => {
   // Hooks
-
   const dispatch = useAppDispatch()
   const count = useAppSelector(selectCount)
   const [incrementAmount, setIncrementAmount] = useState<number>(0)
@@ -50,8 +48,6 @@ const Counter: React.FC = () => {
           +1
         </Button>
       </div>
-
-      {/* {t('title')} */}
     </>
   )
 }
