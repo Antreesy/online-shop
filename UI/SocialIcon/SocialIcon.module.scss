@@ -1,0 +1,36 @@
+.hexagon {
+  position: relative;
+  width: 36px;
+  height: 31px;
+  background: #7c00e6;
+  -webkit-clip-path: polygon(
+    25% 0%,
+    75% 0%,
+    100% 50%,
+    75% 100%,
+    25% 100%,
+    0% 50%
+  );
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.hexagon__inside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0.5px;
+  left: 0.5px;
+  right: 0.5px;
+  bottom: 0.5px;
+  background: #1c1c1c;
+  -webkit-clip-path: polygon(
+    25% 0%,
+    75% 0%,
+    100% 50%,
+    75% 100%,
+    25% 100%,
+    0% 50%
+  );
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
