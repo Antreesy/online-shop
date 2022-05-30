@@ -8,6 +8,7 @@ import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 import LangRoute from "Сomponents/LanguageRouting/LangRoute"
+import { Header } from "Сomponents/Header"
 
 //Project Styles
 import styles from "styles/pages/Index.module.scss"
@@ -25,6 +26,8 @@ const Index: NextPage = (props: any) => {
       <Head>
         <title>ILONSI SHOP | Homepage</title>
       </Head>
+
+      <Header />
 
       <main className={styles.main}>
         <h1>Welcome to Ilonsi shop!</h1>

@@ -8,6 +8,7 @@ import Link from "next/link"
 import { DatePicker, Icon, RadioGroup, CheckboxGroup, Tabs } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 import AccordionExamples from "Сomponents/Examples/AccordionExamples"
+import { Header } from "Сomponents/Header"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
@@ -21,6 +22,9 @@ const Home: NextPage = () => {
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
+
+      
+      <Header />
 
       <main className={s.main}>
         <h1>UI Kit page</h1>
