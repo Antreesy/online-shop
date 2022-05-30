@@ -5,17 +5,17 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
-
-import { Icon, RadioGroup } from "UI"
+import { DatePicker, Icon, RadioGroup, CheckboxGroup, Tabs } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
+import AccordionExamples from "Сomponents/Examples/AccordionExamples"
+import { Logo } from "Сomponents/Logo"
+import { Upload } from "UI/Upload"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
 
 //Project Styles
-import { Tabs } from "../UI"
-import s from "styles/ComponentsExample.module.scss"
-import { Upload } from "UI/Upload"
+import s from "styles/pages/ComponentsExample.module.scss"
 
 const Home: NextPage = () => {
   return (
@@ -36,11 +36,26 @@ const Home: NextPage = () => {
         </p>
 
         <Tabs
-          labels={["Buttons", "Icons", "Tabs", "Checkboxes and Radio"]}
+          className={s.example_tabs}
+          labels={[
+            "Buttons",
+            "Inputs and Pickers",
+            "Icons",
+            "Tabs",
+            "Checkboxes and Radio",
+            "Accordion",
+          ]}
           values={[
-            <ButtonExamples key={0} />,
+            <ButtonExamples key={"Buttons"} />,
 
-            <div key={1} className={s.grid}>
+            <div key={"Inputs and Pickers"} className={s.grid}>
+              <div>
+                <h2>DatePicker</h2>
+                <DatePicker initValue={new Date()} onChange={() => {}} />
+              </div>
+            </div>,
+
+            <div key={"Icons"} className={s.grid}>
               {icons.map((icon) => (
                 <span key={icon} className={s.icon_example}>
                   {icon}: <Icon type={icon} />{" "}
@@ -48,32 +63,42 @@ const Home: NextPage = () => {
               ))}
             </div>,
 
-            <div key={2} className={s.tabs}>
+            <div key={"Tabs"} className={s.tabs}>
               <p className={s.description}>default</p>
               <Tabs
                 labels={["Sign In", "Sign Up"]}
                 values={["Sign In", "Sign Up"]}
-                width="200px"
-                variant="default"
               />
               <p className={s.description}>spaces</p>
               <Tabs
                 labels={["Sign In", "Sign Up"]}
                 values={["Sign In", "Sign Up"]}
-                width="200px"
                 variant="spaces"
               />
-              <p className={s.description}>without_border</p>
+              <p className={s.description}>no_border</p>
               <Tabs
                 labels={["Sign In", "Sign Up"]}
                 values={["Sign In", "Sign Up"]}
-                width="200px"
-                variant="without_border"
+                variant="no_border"
               />
             </div>,
 
-            <div key={3} className={s.grid}>
+            <div key={"Checkboxes and Radio"} className={s.grid}>
               <div>
+                <p>Rounded Checkboxes</p>
+                <CheckboxGroup rounded labels={["Men", "Women", "Unisex"]} />
+                <p>Square Checkboxes</p>
+                <CheckboxGroup
+                  color="#000"
+                  labels={["Men", "Women", "Unisex"]}
+                />
+                <p>Colored Checkboxes</p>
+                <CheckboxGroup
+                  color="#ff4e4e"
+                  colorChecked="#25754a"
+                  labels={["Men", "Women", "Unisex"]}
+                />
+
                 <p>Gender</p>
                 <RadioGroup
                   elements={[
@@ -92,14 +117,17 @@ const Home: NextPage = () => {
                 />
               </div>
             </div>,
+
+            <div key={"Accordion"}>
+              <AccordionExamples />
+            </div>,
           ]}
-          width="1000px"
-          variant="default"
         />
 
         <Upload title="Select or Drag Image" filesNumber={3} />
       </main>
 
+      <Logo className={s.header_logo} type="dark" />
       <footer className={s.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

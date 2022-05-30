@@ -1,5 +1,4 @@
-@import "/styles/fonts.scss";
-@import "/styles/colors.scss";
+@import "styles/style.scss";
 
 .container {
   padding: 0 2rem;
@@ -56,6 +55,28 @@
   max-width: 1200px;
   padding-top: 2rem;
   margin-bottom: 2rem;
+
+  @include mobile {
+    width: 100%;
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  @include tablet {
+    width: 100%;
+    flex-direction: column;
+    padding: 0 40px;
+  }
+
+  @include laptop {
+    width: 100%;
+    padding: 0 60px;
+  }
+
+  @include desktop {
+    width: 100%;
+    padding: 0 80px;
+  }
 }
 
 .grid_inner {
@@ -70,7 +91,8 @@
   }
 }
 
-.button_back {
+.button_back,
+.button_add {
   background: $color-white;
   color: $color-purple;
 
@@ -141,13 +163,6 @@
   width: 20%;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-}
-
 .tabs {
   display: flex;
   flex-direction: column;
@@ -156,4 +171,32 @@
   > div {
     margin: 5px;
   }
+}
+
+.accordion_bold_black {
+  width: 400px;
+  font-weight: $fw-bold;
+}
+
+.accordion_header_bold_purple {
+  font-weight: $fw-bold;
+  color: $color-purple;
+}
+
+.black_background {
+  background-color: $color-black;
+}
+
+.dark_accordion {
+  width: 500px;
+  color: $color-grey-c;
+}
+
+.accordion_title_purple {
+  color: $color-purple;
+}
+
+.example_tabs {
+  margin: 0 auto;
+  width: fit-content;
 }
