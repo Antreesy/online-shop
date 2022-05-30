@@ -14,6 +14,7 @@ import { icons } from "shared/consts/icons"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
+import SupportSection from "Сomponents/SupportSection/SupportSection"
 
 const Home: NextPage = () => {
   return (
@@ -122,6 +123,9 @@ const Home: NextPage = () => {
           ]}
         />
       </main>
+      <div>
+        <SupportSection />
+      </div>
 
       <footer className={s.footer}>
         <a
