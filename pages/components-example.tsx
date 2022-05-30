@@ -13,9 +13,8 @@ import {
   SocialIcon,
   Tabs,
 } from "UI"
-import ButtonExamples from "Сomponents/Examples/ButtonExamples"
-import AccordionExamples from "Сomponents/Examples/AccordionExamples"
-import { Header } from "Сomponents/Header"
+import {AccordionExamples, ButtonExamples} from "Сomponents/Examples"
+import { Header } from "Сomponents"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"

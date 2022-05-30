@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write **/*.tsx --write **/*.scss"
+    "format": "prettier --write **/*.ts --write **/*.tsx --write **/*.scss"
   },
   "dependencies": {
     "@emotion/cache": "^11.7.1",
