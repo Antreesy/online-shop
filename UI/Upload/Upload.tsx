@@ -1,23 +1,23 @@
 import classNames from "classnames"
-import React, { FC, useRef, useState } from "react"
+import { FC, useRef, useState } from "react"
 import { Icon } from "UI/Icon"
 import s from "./upload.module.scss"
 
-interface IUpload {
+interface UploadProps {
   title: string
   className?: string
   formats?: string[]
   maxSize?: number
-  filesNumber?: number
+  maxFileNumber?: number
 }
 
-const Upload: FC<IUpload> = (props) => {
+const Upload: FC<UploadProps> = (props) => {
   const {
     title,
     className,
     formats = ["jpg", "png", "jpeg"],
     maxSize = 10000000,
-    filesNumber = 1,
+    maxFileNumber = 1,
   } = props
 
   const [drag, setDrag] = useState(false)
@@ -36,8 +36,8 @@ const Upload: FC<IUpload> = (props) => {
   }
 
   const checkInputFiles = (files: File[]) => {
-    if (files.length !== filesNumber) {
-      setError(`Error number of files it must be ${filesNumber}`)
+    if (files.length !== maxFileNumber) {
+      setError(`Error number of files it must be ${maxFileNumber}`)
       return false
     }
     for (let i = 0; i < files.length; i++) {
