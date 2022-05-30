@@ -14,7 +14,7 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material"
-import { Icon } from "UI"
+import { Icon} from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 
 //Project Helpers
@@ -22,6 +22,7 @@ import { icons } from "shared/consts/icons"
 
 //Project Styles
 import s from "styles/ComponentsExample.module.scss"
+import { Progressbar } from "UI/Progressbar"
 
 const Home: NextPage = () => {
   return (
@@ -99,6 +100,8 @@ const Home: NextPage = () => {
             </FormControl>
           </div>
         </div>
+
+        <Progressbar/>
       </main>
 
       <footer className={s.footer}>
