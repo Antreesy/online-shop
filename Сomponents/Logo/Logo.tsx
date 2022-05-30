@@ -1,20 +1,22 @@
-import Image from 'next/image'
-import Light from './Logo.png'
-import Dark from './DarkLogo.png'
+import Image from "next/image"
 
+import LightLogo from "public/assets/img/LightLogo.png"
+import DarkLogo from "public/assets/img/DarkLogo.png"
 
 interface LogoProps {
-    width: number,
-    height: number,
-    type: string
+  className?: string
+  type: "light" | "dark"
 }
+
 const Logo: React.FC<LogoProps> = (props) => {
-    const { width, height, type } = props
-    return (
-        <Image src={type === 'light' ? Light : Dark} width={width} height={height} />
-    )
+  const { className, type } = props
+
+  return (
+    <Image
+      src={type === "light" ? LightLogo : DarkLogo}
+      className={className}
+    />
+  )
 }
 
 export default Logo
-
-

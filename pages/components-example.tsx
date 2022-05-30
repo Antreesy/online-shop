@@ -8,13 +8,13 @@ import Link from "next/link"
 import { DatePicker, Icon, RadioGroup, CheckboxGroup, Tabs } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 import AccordionExamples from "Сomponents/Examples/AccordionExamples"
+import { Logo } from "Сomponents/Logo"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
-import Logo from "Сomponents/Logo/Logo"
 
 const Home: NextPage = () => {
   return (
@@ -50,7 +50,7 @@ const Home: NextPage = () => {
             <div key={"Inputs and Pickers"} className={s.grid}>
               <div>
                 <h2>DatePicker</h2>
-                <DatePicker initValue={new Date()} onChange={() => { }} />
+                <DatePicker initValue={new Date()} onChange={() => {}} />
               </div>
             </div>,
 
@@ -124,7 +124,7 @@ const Home: NextPage = () => {
         />
       </main>
 
-      <Logo width={90} height={100} type="dark"/>
+      <Logo className={s.header_logo} type="dark" />
       <footer className={s.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
