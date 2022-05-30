@@ -1,3 +1,3 @@
-import Progressbar from './Progressbar';
+import ProgressBar from "./ProgressBar"
 
-export {Progressbar};
+export { ProgressBar }

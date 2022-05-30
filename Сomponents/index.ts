@@ -1,4 +1,4 @@
-import { Counter } from "./Counter";
-import { Logo } from "./Logo";
+import { Counter } from "./Counter"
+import { Logo } from "./Logo"
 
-export { Counter, Logo };
+export { Counter, Logo }

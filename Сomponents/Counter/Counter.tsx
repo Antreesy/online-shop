@@ -31,7 +31,7 @@ const Counter: React.FC = () => {
         <TextField
           value={incrementAmount}
           onChange={(e) => setIncrementAmount(Number(e.target.value))}
-          type='number'
+          type="number"
         />
         <Button
           className={styles.button}

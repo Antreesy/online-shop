@@ -12,6 +12,7 @@ import {
   CheckboxGroup,
   SocialIcon,
   Tabs,
+  ProgressBar,
 } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 import AccordionExamples from "Сomponents/Examples/AccordionExamples"
@@ -35,6 +36,8 @@ const Home: NextPage = () => {
       <main className={s.main}>
         <h1>UI Kit page</h1>
 
+        <ProgressBar />
+        
         <Tabs
           className={s.example_tabs}
           labels={[
