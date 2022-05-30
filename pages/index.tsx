@@ -8,7 +8,7 @@ import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 import LangRoute from "Сomponents/LanguageRouting/LangRoute"
-import { Header } from "Сomponents/Header"
+import { Header } from "Сomponents"
 
 //Project Styles
 import styles from "styles/pages/Index.module.scss"
