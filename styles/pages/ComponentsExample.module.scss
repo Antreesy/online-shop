@@ -1,5 +1,4 @@
-@import "/styles/fonts.scss";
-@import "/styles/colors.scss";
+@import "styles/style.scss";
 
 .container {
   padding: 0 2rem;
@@ -56,6 +55,28 @@
   max-width: 1200px;
   padding-top: 2rem;
   margin-bottom: 2rem;
+
+  @include mobile {
+    width: 100%;
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  @include tablet {
+    width: 100%;
+    flex-direction: column;
+    padding: 0 40px;
+  }
+
+  @include laptop {
+    width: 100%;
+    padding: 0 60px;
+  }
+
+  @include desktop {
+    width: 100%;
+    padding: 0 80px;
+  }
 }
 
 .grid_inner {
@@ -140,13 +161,6 @@
 
 .icon_example {
   width: 20%;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
 }
 
 .tabs {
