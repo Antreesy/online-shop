@@ -1,0 +1,20 @@
+@import "styles/style.scss";
+
+.hexagon {
+  position: relative;
+  width: 29px;
+  height: 24px;
+
+  & > span:first-child {
+    position: absolute !important;
+    inset: 0.5px;
+  }
+
+  & > span:last-child {
+    position: absolute !important;
+    inset: 0;
+    margin: auto !important;
+    width: 12px !important;
+    height: 12px !important;
+  }
+}

@@ -1,0 +1,70 @@
+.background {
+  background-image: url("../../public/background1.png");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.content {
+  position: absolute;
+  top: 30vh;
+  width: 400px;
+  right: 15vw;
+
+  h1 {
+    font-size: 40px;
+  }
+}
+
+@media all and (max-width: 1280px) {
+  .content {
+    right: 5vw;
+  }
+}
+
+@media all and (max-width: 1150px) {
+  .content {
+    right: 2vw;
+    width: 350px;
+  }
+}
+
+@media all and (max-width: 1050px) {
+  .content {
+    right: 2vw;
+    width: 300px;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  .content {
+    right: 2vw;
+    width: 250px;
+  }
+}
+
+@media all and (max-width: 920px) {
+  .content {
+    width: 500px;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .background {
+    background-image: url("../../public/background2.png");
+  }
+}
+
+@media all and (max-width: 500px) {
+  .content {
+    width: 300px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .background {
+    background-image: url("../../public/background3.png");
+  }
+}

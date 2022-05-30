@@ -1,21 +1,25 @@
 //Global Dependencies
-import type { NextPage } from "next";
+import type { NextPage } from "next"
+
 //Project Components
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import { DatePicker, Icon, RadioGroup, CheckboxGroup, Tabs } from "UI";
-import ButtonExamples from "Сomponents/Examples/ButtonExamples";
-import AccordionExamples from "Сomponents/Examples/AccordionExamples";
-import { Logo } from "Сomponents/Logo";
-import SizePickerExamples from "../Сomponents/Examples/SizePickerExamples";
+import Head from "next/head"
+import Image from "next/image"
+import {
+  DatePicker,
+  Icon,
+  RadioGroup,
+  CheckboxGroup,
+  SocialIcon,
+  Tabs,
+} from "UI"
+import { AccordionExamples, ButtonExamples } from "Сomponents/Examples"
+import { Header, SizePicker } from "Сomponents"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
-
 
 const Home: NextPage = () => {
   return (
@@ -24,16 +28,10 @@ const Home: NextPage = () => {
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
 
+      <Header />
+
       <main className={s.main}>
         <h1>UI Kit page</h1>
-
-        <p className={s.description}>
-          Go back to{" "}
-          <Link href="/">
-            <a className={s.title__link}>/index</a>
-          </Link>{" "}
-          page
-        </p>
 
         <Tabs
           className={s.example_tabs}
@@ -51,8 +49,10 @@ const Home: NextPage = () => {
 
             <div key={"Inputs and Pickers"} className={s.grid}>
               <div>
-                <h2>DatePicker</h2>
+                <h2>Date Picker</h2>
                 <DatePicker initValue={new Date()} onChange={() => {}} />
+                <h2>Size Picker</h2>
+                <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
               </div>
             </div>,
 
@@ -62,6 +62,11 @@ const Home: NextPage = () => {
                   {icon}: <Icon type={icon} />{" "}
                 </span>
               ))}
+              <div style={{ backgroundColor: "#1c1c1c" }}>
+                <SocialIcon type="facebook" />
+                <SocialIcon type="instagram" />
+                <SocialIcon type="youtube" />
+              </div>
             </div>,
 
             <div key={"Tabs"} className={s.tabs}>
@@ -122,14 +127,10 @@ const Home: NextPage = () => {
             <div key={"Accordion"}>
               <AccordionExamples />
             </div>,
-              <div key={"Radio Button"} >
-                <SizePickerExamples />
-              </div>
           ]}
         />
       </main>
 
-      <Logo className={s.header_logo} type="dark" />
       <footer className={s.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
