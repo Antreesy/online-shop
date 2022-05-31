@@ -7,12 +7,11 @@ interface SectionHeaderProps {
     onActionClick?:()=>void,
 }
 
-const SectionHeader: React.FC<SectionHeaderProps> = ({title="Favorites" , actionText="", onActionClick}) => {
+const SectionHeader: React.FC<SectionHeaderProps> = ({title , actionText, onActionClick}) => {
     return (
         <div className={s.sectionHeader}>
             <p className={s.sectionHeader__title}>{title}</p>
-            <p className={s.sectionHeader__actionText} onClick={onActionClick}>{actionText}</p>
-            <div className={s.circle}></div>
+            <p><a href="#" onClick={onActionClick} className={s.sectionHeader__actionText}>{actionText}</a></p>
         </div>
     )
 };

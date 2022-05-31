@@ -34,7 +34,7 @@ const Home: NextPage = () => {
       <main className={s.main}>
       
         <h1>UI Kit page</h1>
-        <SectionHeader actionText={"All Orders"} />
+        <SectionHeader title ={"My Orders"} actionText={"All Orders"} />
 
         <Tabs
           className={s.example_tabs}
