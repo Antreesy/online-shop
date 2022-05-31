@@ -1,19 +1,29 @@
-import React from "react";
+import cn from "classnames"
+
 import s from "./sectionHeader.module.scss"
 
 interface SectionHeaderProps {
-    title?: string,
-    actionText: String,
-    onActionClick?:()=>void,
+  title?: string
+  actionText?: string
+  className?: string
+  onActionClick?: () => void
 }
 
-const SectionHeader: React.FC<SectionHeaderProps> = ({title , actionText, onActionClick}) => {
-    return (
-        <div className={s.sectionHeader}>
-            <p className={s.sectionHeader__title}>{title}</p>
-            <p><a href="#" onClick={onActionClick} className={s.sectionHeader__actionText}>{actionText}</a></p>
-        </div>
-    )
-};
+const SectionHeader: React.FC<SectionHeaderProps> = (props) => {
+  const { title, actionText, className, onActionClick } = props
 
-export default SectionHeader;
+  const sectionHeaderClass = cn(s.sectionHeader, className)
+
+  return (
+    <div className={sectionHeaderClass}>
+      <p className={s.title}>{title}</p>
+      {!!actionText && (
+        <a href="#" onClick={onActionClick} className={s.actionText}>
+          {actionText}
+        </a>
+      )}
+    </div>
+  )
+}
+
+export default SectionHeader
