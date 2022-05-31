@@ -1,9 +1,12 @@
-import React from "react"
-import { Button } from "UI"
+import React, { useState } from "react"
+import { Button, Icon } from "UI"
 
 import s from "styles/pages/ComponentsExample.module.scss"
+import { ModalWindow } from "UI/ModalWindow"
 
 const ButtonExamples: React.FC = () => {
+  const [open, setOpen] = useState(false)
+
   return (
     <div className={s.grid}>
       <div className={s.grid_inner}>
@@ -44,6 +47,18 @@ const ButtonExamples: React.FC = () => {
         <Button className={s.button_add} icon iconLeft="plus" rounded />
         <Button className={s.button_black}>Confirm</Button>
         <Button className={s.button_purple}>Approve</Button>
+        <Button onClick={() => setOpen(true)} className={s.button_purple}>
+          Modal Window
+        </Button>
+        <ModalWindow
+          open={open}
+          setOpen={setOpen}
+          iconType="okay"
+          title="You are now is ready"
+          textContent="We received the request to create a membership. We will get back to you via e-mail within 24 hours."
+        >
+          / Something else /
+        </ModalWindow>
       </div>
     </div>
   )
