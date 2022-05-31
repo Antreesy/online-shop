@@ -1,78 +1,96 @@
 import { useState } from "react"
 
-import Box from "@mui/material/Box"
-import Drawer from "@mui/material/Drawer"
-import { Button } from "UI"
-import List from "@mui/material/List"
-import Divider from "@mui/material/Divider"
-import ListItem from "@mui/material/ListItem"
-import ListItemButton from "@mui/material/ListItemButton"
-import ListItemIcon from "@mui/material/ListItemIcon"
-import ListItemText from "@mui/material/ListItemText"
-import InboxIcon from "@mui/icons-material/MoveToInbox"
-import MailIcon from "@mui/icons-material/Mail"
+import Link from "next/link"
+import { Drawer } from "@mui/material"
 
-export default function BurgerMenu() {
+import { Button } from "UI"
+import { Logo } from "../Logo"
+
+import Box from "@mui/material/Box"
+import List from "@mui/material/List"
+import ListItem from "@mui/material/ListItem"
+
+import s from "./burgerMenu.module.scss"
+
+export type DrawerItemTypes = { text: string; href: string }
+
+interface BurgerMenuProps {
+  items: DrawerItemTypes[]
+}
+
+const BurgerMenu: React.FC<BurgerMenuProps> = (props) => {
+  const { items } = props
+
   const [open, setOpen] = useState<boolean>(false)
 
-  const toggleDrawer =
-    () => (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event.type === "keydown" &&
-        ((event as React.KeyboardEvent).key === "Tab" ||
-          (event as React.KeyboardEvent).key === "Shift")
-      ) {
-        return
-      }
-
-      setOpen(false)
+  const closeDrawer = () => (event: React.KeyboardEvent | React.MouseEvent) => {
+    if (
+      event.type === "keydown" &&
+      ((event as React.KeyboardEvent).key === "Tab" ||
+        (event as React.KeyboardEvent).key === "Shift")
+    ) {
+      return
     }
 
-  const BurgerList = () => (
-    <Box
-      sx={{ width: 250 }}
-      role="presentation"
-      onClick={toggleDrawer()}
-      onKeyDown={toggleDrawer()}
-    >
-      <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  )
+    setOpen(false)
+  }
 
-  const handleOpen = () => {
-    setOpen(true)
+  const toggleMenu = () => {
+    setOpen((prev) => !prev)
   }
 
   return (
     <>
-      <Button disableElevation iconLeft="resize_textarea" onClick={handleOpen} />
-      <Drawer anchor={"left"} open={open} onClose={toggleDrawer()}>
-        <BurgerList />
+      <Button
+        className={s.openButton}
+        disableElevation
+        icon
+        onClick={toggleMenu}
+      />
+      <Drawer
+        anchor={"left"}
+        open={open}
+        onClose={closeDrawer()}
+        PaperProps={{
+          sx: { backgroundColor: "transparent", boxShadow: "none" },
+        }}
+      >
+        <Box
+          className={s.drawerBox}
+          role="presentation"
+          onClick={closeDrawer()}
+          onKeyDown={closeDrawer()}
+        >
+          <div className={s.drawerBox_header}>
+            <Link href={"/"}>
+              <a className={s.drawerBox_logo}>
+                <Logo type="dark" />
+              </a>
+            </Link>
+            <Button
+              className={s.closeButton}
+              disableElevation
+              iconLeft="close_cross"
+              onClick={toggleMenu}
+            />
+          </div>
+
+          <List className={s.drawerBox_menu}>
+            {items.map((item, index) => (
+              <ListItem key={index} className={s.drawerBox_item} disablePadding>
+                <Link href={item.href}>
+                  <a className={s.drawerBox_link}>
+                    <span>{item.text}</span>
+                    <span />
+                  </a>
+                </Link>
+              </ListItem>
+            ))}
+          </List>
+        </Box>
       </Drawer>
     </>
   )
 }
+
+export default BurgerMenu
