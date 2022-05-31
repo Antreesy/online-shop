@@ -6,6 +6,7 @@ import { Icon } from "./Icon"
 import { RadioGroup } from "./RadioGroup"
 import { SocialIcon } from "./SocialIcon"
 import { Tabs } from "./Tabs"
+import { FileSelect } from "./FileSelect"
 
 export {
   Accordion,
@@ -16,4 +17,5 @@ export {
   RadioGroup,
   SocialIcon,
   Tabs,
+  FileSelect,
 }

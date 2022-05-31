@@ -12,8 +12,9 @@ import {
   CheckboxGroup,
   SocialIcon,
   Tabs,
+  FileSelect,
 } from "UI"
-import {AccordionExamples, ButtonExamples} from "Сomponents/Examples"
+import { AccordionExamples, ButtonExamples } from "Сomponents/Examples"
 import { Header } from "Сomponents"
 
 //Project Helpers
@@ -43,6 +44,7 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
+            "File Select",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -124,6 +126,9 @@ const Home: NextPage = () => {
 
             <div key={"Accordion"}>
               <AccordionExamples />
+            </div>,
+            <div key={"File Select"}>
+              <FileSelect />
             </div>,
           ]}
         />
