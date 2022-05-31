@@ -1,3 +1,5 @@
+import React, { useState } from "react"
+
 //Global Dependencies
 import type { NextPage } from "next"
 
@@ -11,17 +13,25 @@ import {
   CheckboxGroup,
   SocialIcon,
   Tabs,
+  FileSelect,
 } from "UI"
-import { AccordionExamples, ButtonExamples } from "Сomponents/Examples"
-import { Header, SizePicker } from "Сomponents"
+
+import {
+  AccordionExamples,
+  ButtonExamples,
+  CardExample,
+} from "Сomponents/Examples"
+import { Header, Logo, SizePicker } from "Сomponents"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
+import { Carousel } from "UI/Carousel"
 
 const Home: NextPage = () => {
+  const [value, setValue] = useState<File | null>(null)
   return (
     <div className={s.container}>
       <Head>
@@ -42,6 +52,8 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
+            "File Select",
+            "Carousel",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -66,6 +78,7 @@ const Home: NextPage = () => {
                 <SocialIcon type="instagram" />
                 <SocialIcon type="youtube" />
               </div>
+              <Logo type="dark" />
             </div>,
 
             <div key={"Tabs"} className={s.tabs}>
@@ -125,6 +138,13 @@ const Home: NextPage = () => {
 
             <div key={"Accordion"}>
               <AccordionExamples />
+            </div>,
+            <div key={"File Select"}>
+              <FileSelect value={value} setValue={setValue} />
+            </div>,
+
+            <div key={"Carousel"} className={s.carousel}>
+              <Carousel items={new Array(10).fill(CardExample)} />
             </div>,
           ]}
         />

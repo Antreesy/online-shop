@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import {
   FormControl,
   FormControlLabel,
@@ -37,15 +37,10 @@ const SizePicker: React.FC<SizePickerProps> = (props) => {
     },
   })
 
-  // Inspired by blueprintjs
   function BpRadio(props: RadioProps) {
     return (
       <Radio
-        sx={{
-          "&:hover": {
-            bgcolor: "transparent",
-          },
-        }}
+        className={s.radio}
         disableRipple
         color="default"
         checkedIcon={<BpCheckedIcon />}
@@ -57,25 +52,13 @@ const SizePicker: React.FC<SizePickerProps> = (props) => {
   return (
     <div>
       <RadioGroup>
-        <FormControl className={s.RadioGroup_Size_Picker}>
+        <FormControl className={s.sizePicker}>
           {labels.map((label) => (
             <FormControlLabel
               key={label}
               value={label}
               control={<BpRadio />}
               label={label}
-              sx={{
-                "& .MuiFormControlLabel-root": {
-                  position: "relative",
-                },
-                "& .MuiFormControlLabel-label": {
-                  position: "absolute",
-                  paddingLeft: "23.5px",
-                },
-                "& .MuiRadio-root": {
-                  width: "65px",
-                },
-              }}
             />
           ))}
         </FormControl>
