@@ -22,8 +22,10 @@ import { icons } from "shared/consts/icons"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
+import { useState } from "react"
 
 const Home: NextPage = () => {
+  const [value, setValue] = useState<File | null >(null)
   return (
     <div className={s.container}>
       <Head>
@@ -128,7 +130,7 @@ const Home: NextPage = () => {
               <AccordionExamples />
             </div>,
             <div key={"File Select"}>
-              <FileSelect />
+              <FileSelect value={value} setValue={setValue} />
             </div>,
           ]}
         />

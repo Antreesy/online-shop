@@ -1,16 +1,20 @@
-import React, { useState } from "react"
+import React from "react"
 import s from "./file-select.module.scss"
 
-const FileSelect = () => {
-  const [value, setValue] = useState<File>()
+interface FileSelectProps {
+  value: File | null
+  setValue: (file: File) => void
+}
+
+const FileSelect: React.FC<FileSelectProps> = (props) => {
+  const { value, setValue } = props
   return (
     <div className={s.fileSelect}>
       <input value={value?.name} className={s.input} />
       <input
         className={s.fileInput}
         type={"file"}
-        
-        onChange={(e) => setValue(e.target.files?.[0])}
+        onChange={(e) => e.target.files?.[0] && setValue(e.target.files?.[0])}
       />
 
       <button className={s.button}>Select</button>
