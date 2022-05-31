@@ -1,22 +1,35 @@
+import React, { useState } from "react"
+
 //Global Dependencies
 import type { NextPage } from "next"
 
 //Project Components
 import Head from "next/head"
 import Image from "next/image"
-import Link from "next/link"
 import {
+  Carousel,
   DatePicker,
   Icon,
   RadioGroup,
   CheckboxGroup,
   SocialIcon,
   Tabs,
+  FileSelect,
 } from "UI"
-import ButtonExamples from "Сomponents/Examples/ButtonExamples"
-import AccordionExamples from "Сomponents/Examples/AccordionExamples"
-import { Logo } from "Сomponents/Logo"
-import { Header } from "Сomponents/Header"
+
+import {
+  AccordionExamples,
+  ButtonExamples,
+  CardExample,
+} from "Сomponents/Examples"
+
+import {
+  Header,
+  Logo,
+  Notification,
+  SectionHeader,
+  SizePicker,
+} from "Сomponents"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
@@ -26,6 +39,8 @@ import s from "styles/pages/ComponentsExample.module.scss"
 import { Upload } from "UI/Upload"
 
 const Home: NextPage = () => {
+  const [isRead, setIsRead] = useState<boolean>(false)
+  const [value, setValue] = useState<File | null>(null)
   return (
     <div className={s.container}>
       <Head>
@@ -35,7 +50,11 @@ const Home: NextPage = () => {
       <Header />
 
       <main className={s.main}>
-        <h1>UI Kit page</h1>
+        <SectionHeader
+          className={s.title}
+          title={"UI Kit page"}
+          actionText={"All Orders"}
+        />
 
         <Tabs
           className={s.example_tabs}
@@ -46,14 +65,17 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
+            "File Select",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
 
             <div key={"Inputs and Pickers"} className={s.grid}>
               <div>
-                <h2>DatePicker</h2>
+                <h2>Date Picker</h2>
                 <DatePicker initValue={new Date()} onChange={() => {}} />
+                <h2>Size Picker</h2>
+                <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
               </div>
             </div>,
 
@@ -68,44 +90,56 @@ const Home: NextPage = () => {
                 <SocialIcon type="instagram" />
                 <SocialIcon type="youtube" />
               </div>
+              <Logo type="dark" />
             </div>,
 
-            <div key={"Tabs"} className={s.tabs}>
-              <p className={s.description}>default</p>
-              <Tabs
-                labels={["Sign In", "Sign Up"]}
-                values={["Sign In", "Sign Up"]}
-              />
-              <p className={s.description}>spaces</p>
-              <Tabs
-                labels={["Sign In", "Sign Up"]}
-                values={["Sign In", "Sign Up"]}
-                variant="spaces"
-              />
-              <p className={s.description}>no_border</p>
-              <Tabs
-                labels={["Sign In", "Sign Up"]}
-                values={["Sign In", "Sign Up"]}
-                variant="no_border"
-              />
+            <div key={"Tabs"} className={s.grid}>
+              <div>
+                <p className={s.description}>default</p>
+                <Tabs
+                  labels={["Sign In", "Sign Up"]}
+                  values={["Sign In", "Sign Up"]}
+                />
+              </div>
+              <div>
+                <p className={s.description}>spaces</p>
+                <Tabs
+                  labels={["Sign In", "Sign Up"]}
+                  values={["Sign In", "Sign Up"]}
+                  variant="spaces"
+                />
+              </div>
+              <div>
+                <p className={s.description}>no_border</p>
+                <Tabs
+                  labels={["Sign In", "Sign Up"]}
+                  values={["Sign In", "Sign Up"]}
+                  variant="no_border"
+                />
+              </div>
             </div>,
 
             <div key={"Checkboxes and Radio"} className={s.grid}>
               <div>
                 <p>Rounded Checkboxes</p>
                 <CheckboxGroup rounded labels={["Men", "Women", "Unisex"]} />
+              </div>
+              <div>
                 <p>Square Checkboxes</p>
                 <CheckboxGroup
                   color="#000"
                   labels={["Men", "Women", "Unisex"]}
                 />
+              </div>
+              <div>
                 <p>Colored Checkboxes</p>
                 <CheckboxGroup
                   color="#ff4e4e"
                   colorChecked="#25754a"
                   labels={["Men", "Women", "Unisex"]}
                 />
-
+              </div>
+              <div>
                 <p>Gender</p>
                 <RadioGroup
                   elements={[
@@ -127,6 +161,30 @@ const Home: NextPage = () => {
 
             <div key={"Accordion"}>
               <AccordionExamples />
+            </div>,
+            <div key={"File Select"}>
+              <FileSelect value={value} setValue={setValue} />
+            </div>,
+          ]}
+        />
+
+        <SectionHeader className={s.title} title={"Components page"} />
+
+        <Tabs
+          className={s.example_tabs}
+          labels={["Notification", "Carousel"]}
+          values={[
+            <div key="Notification">
+              <Notification setIsRead={setIsRead} header={"Notification"}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                quam sequi vitae eius iusto perspiciatis facilis nesciunt
+                dignissimos provident ipsum? Nobis repellat atque ab nam magni
+                voluptas expedita facere recusandae.
+              </Notification>
+            </div>,
+
+            <div key={"Carousel"} className={s.carousel}>
+              <Carousel items={new Array(10).fill(CardExample)} />
             </div>,
           ]}
         />
