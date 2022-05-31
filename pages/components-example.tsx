@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 //Global Dependencies
 import type { NextPage } from "next"
 
@@ -11,13 +13,15 @@ import {
   CheckboxGroup,
   SocialIcon,
   Tabs,
+  FileSelect,
 } from "UI"
+
 import {
   AccordionExamples,
   ButtonExamples,
   CardExample,
 } from "Сomponents/Examples"
-import { Header, Notification } from "Сomponents"
+import { Header, Notification, Logo } from "Сomponents"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
@@ -29,6 +33,7 @@ import { useState } from "react"
 
 const Home: NextPage = () => {
   const [isRead, setIsRead] = useState<boolean>(false)
+  const [value, setValue] = useState<File | null>(null)
   return (
     <div className={s.container}>
       <Head>
@@ -49,6 +54,7 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
+            "File Select",
             "Carousel",
           ]}
           values={[
@@ -72,6 +78,7 @@ const Home: NextPage = () => {
                 <SocialIcon type="instagram" />
                 <SocialIcon type="youtube" />
               </div>
+              <Logo type="dark" />
             </div>,
 
             <div key={"Tabs"} className={s.tabs}>
@@ -131,6 +138,9 @@ const Home: NextPage = () => {
 
             <div key={"Accordion"}>
               <AccordionExamples />
+            </div>,
+            <div key={"File Select"}>
+              <FileSelect value={value} setValue={setValue} />
             </div>,
 
             <div key={"Carousel"} className={s.carousel}>
