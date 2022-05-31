@@ -29,6 +29,7 @@ import { icons } from "shared/consts/icons"
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
 import { Carousel } from "UI/Carousel"
+import { AddButton } from "UI/AddButton"
 
 const Home: NextPage = () => {
   const [value, setValue] = useState<File | null>(null)
@@ -54,6 +55,7 @@ const Home: NextPage = () => {
             "Accordion",
             "File Select",
             "Carousel",
+            "Add Button",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -143,6 +145,34 @@ const Home: NextPage = () => {
 
             <div key={"Carousel"} className={s.carousel}>
               <Carousel items={new Array(10).fill(CardExample)} />
+            </div>,
+
+            <div key={"AddButton"} className={s.addbuttonlist}>
+              <div>
+                <AddButton />
+              </div>
+              <div>
+                <AddButton
+                  title="Add New Card"
+                  titleColor="primary"
+                  bgColor="primary"
+                />
+              </div>
+              <div>
+                <AddButton
+                  title="Add New Address"
+                  titleColor="secondary"
+                  bgColor="primary"
+                />
+              </div>
+              <div>
+                <AddButton
+                  title="Add Product"
+                  titleColor="secondary"
+                  bgColor="secondary"
+                  size="large"
+                />
+              </div>
             </div>,
           ]}
         />
