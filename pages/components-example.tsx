@@ -3,10 +3,17 @@ import type { NextPage } from "next"
 
 //Project Components
 
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import { DatePicker, Icon, RadioGroup, CheckboxGroup, Tabs, SocialIcon } from "UI"
+import Head from "next/head"
+import Image from "next/image"
+import Link from "next/link"
+import {
+  DatePicker,
+  Icon,
+  RadioGroup,
+  CheckboxGroup,
+  Tabs,
+  SocialIcon,
+} from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 import AccordionExamples from "Сomponents/Examples/AccordionExamples"
 import { Header } from "Сomponents/Header"
@@ -17,7 +24,7 @@ import { icons } from "shared/consts/icons"
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
 
-import SliderLabel from "../UI/Slider/Slider";
+import SliderLabel from "../UI/Slider/Slider"
 
 const Home: NextPage = () => {
   return (
@@ -47,7 +54,7 @@ const Home: NextPage = () => {
             <div key={"Inputs and Pickers"} className={s.grid}>
               <div>
                 <h2>DatePicker</h2>
-                <DatePicker initValue={new Date()} onChange={() => { }} />
+                <DatePicker initValue={new Date()} onChange={() => {}} />
               </div>
             </div>,
 
@@ -128,8 +135,6 @@ const Home: NextPage = () => {
           <SliderLabel min={0} max={50} value={[0, 30]} />
         </div>
       </main>
-
-
 
       <footer className={s.footer}>
         <a

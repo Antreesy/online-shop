@@ -1,18 +1,18 @@
-import React from 'react';
-import Box from '@mui/material/Box';
-import Slider from '@mui/material/Slider';
-import s from './Slider.module.scss'
+import React from "react"
+import Box from "@mui/material/Box"
+import Slider from "@mui/material/Slider"
+import s from "./Slider.module.scss"
 
 interface SliderProps {
-  min?: number,
-  max?: number,
-  value: [number, number],
+  min?: number
+  max?: number
+  value: [number, number]
 }
 
 const SliderLabel: React.FC<SliderProps> = (props) => {
   const { min = 0, max = 10, value } = props
 
-  const [values, setValue] = React.useState<number[]>(value);
+  const [values, setValue] = React.useState<number[]>(value)
   const marks = [
     {
       value: min,
@@ -22,15 +22,15 @@ const SliderLabel: React.FC<SliderProps> = (props) => {
       value: max,
       label: `Max:${values[1]}`,
     },
-  ];
+  ]
   const handleChange = (event: Event, newValue: number | number[]) => {
-    setValue(newValue as number[]);
-  };
+    setValue(newValue as number[])
+  }
 
   return (
     <Box sx={{ width: 200 }}>
       <Slider
-        getAriaLabel={() => 'range'}
+        getAriaLabel={() => "range"}
         value={value}
         defaultValue={0}
         onChange={handleChange}
@@ -41,6 +41,6 @@ const SliderLabel: React.FC<SliderProps> = (props) => {
         marks={marks}
       />
     </Box>
-  );
+  )
 }
-export default SliderLabel;
+export default SliderLabel
