@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useState } from "react"
 
 //Global Dependencies
 import type { NextPage } from "next"
@@ -21,7 +21,7 @@ import {
   ButtonExamples,
   CardExample,
 } from "Сomponents/Examples"
-import { Header, Logo, SectionHeader } from "Сomponents"
+import { Header, Logo, SectionHeader, SizePicker } from "Сomponents"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
@@ -64,8 +64,10 @@ const Home: NextPage = () => {
 
             <div key={"Inputs and Pickers"} className={s.grid}>
               <div>
-                <h2>DatePicker</h2>
+                <h2>Date Picker</h2>
                 <DatePicker initValue={new Date()} onChange={() => {}} />
+                <h2>Size Picker</h2>
+                <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
               </div>
             </div>,
 
