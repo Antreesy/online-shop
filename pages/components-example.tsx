@@ -4,7 +4,6 @@ import type { NextPage } from "next"
 //Project Components
 import Head from "next/head"
 import Image from "next/image"
-import Link from "next/link"
 import {
   DatePicker,
   Icon,
@@ -13,7 +12,11 @@ import {
   SocialIcon,
   Tabs,
 } from "UI"
-import {AccordionExamples, ButtonExamples} from "Сomponents/Examples"
+import {
+  AccordionExamples,
+  ButtonExamples,
+  CardExample,
+} from "Сomponents/Examples"
 import { Header } from "Сomponents"
 
 //Project Helpers
@@ -21,6 +24,7 @@ import { icons } from "shared/consts/icons"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
+import { Carousel } from "UI/Carousel"
 
 const Home: NextPage = () => {
   return (
@@ -43,6 +47,7 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
+            "Carousel",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -124,6 +129,10 @@ const Home: NextPage = () => {
 
             <div key={"Accordion"}>
               <AccordionExamples />
+            </div>,
+
+            <div key={"Carousel"} className={s.carousel}>
+              <Carousel items={new Array(10).fill(CardExample)} />
             </div>,
           ]}
         />
