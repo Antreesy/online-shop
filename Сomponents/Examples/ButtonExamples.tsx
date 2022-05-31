@@ -1,3 +1,4 @@
+import React from "react"
 import { Button } from "UI"
 
 import s from "styles/pages/ComponentsExample.module.scss"
@@ -15,8 +16,6 @@ const ButtonExamples: React.FC = () => {
       </div>
 
       <div className={s.grid_inner}>
-        <Button className={s.button_clear} icon iconLeft="close_cross" />
-        <Button className={s.button_add} icon iconLeft="plus" rounded />
         <Button className={s.button_search} iconLeft="search">
           Search
         </Button>
@@ -41,13 +40,10 @@ const ButtonExamples: React.FC = () => {
       </div>
 
       <div className={s.grid_inner}>
+        <Button className={s.button_clear} icon iconLeft="close_cross" />
+        <Button className={s.button_add} icon iconLeft="plus" rounded />
         <Button className={s.button_black}>Confirm</Button>
         <Button className={s.button_purple}>Approve</Button>
-        <div className={s.card_example}>
-          <h3>Simple Card</h3>
-          <p>Lorem ipsum dolor sit amet</p>
-          <Button>Stretch to width</Button>
-        </div>
       </div>
     </div>
   )
