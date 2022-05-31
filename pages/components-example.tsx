@@ -123,10 +123,7 @@ const Home: NextPage = () => {
               <AccordionExamples />
             </div>,
             <div key={"Carousel"} className={s.carousel}>
-              <Carousel
-                items={new Array(10).fill(CardExample)}
-                autoplayDelay={2500}
-              />
+              <Carousel items={new Array(10).fill(CardExample)} />
             </div>,
           ]}
         />

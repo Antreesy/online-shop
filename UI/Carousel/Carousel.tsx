@@ -12,7 +12,7 @@ import "swiper/css/navigation"
 import s from "./carousel.module.scss"
 interface CarouselProps {
   items: React.ReactElement[]
-  autoplayDelay: number
+  autoplayDelay?: number
 }
 
 const Carousel: React.FC<CarouselProps> = ({ items, autoplayDelay }) => {
@@ -42,10 +42,14 @@ const Carousel: React.FC<CarouselProps> = ({ items, autoplayDelay }) => {
           slidesPerGroup={1}
           centeredSlides={true}
           initialSlide={1}
-          autoplay={{
-            delay: autoplayDelay,
-            disableOnInteraction: false,
-          }}
+          autoplay={
+            autoplayDelay
+              ? {
+                  delay: autoplayDelay,
+                  disableOnInteraction: false,
+                }
+              : false
+          }
           loop={true}
           navigation={{
             nextEl: nextRef.current,
