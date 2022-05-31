@@ -22,8 +22,13 @@
   right: 0px;
 }
 
-.swiper {
+.flex {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.isEmptyText {
+  font-size: 2rem;
+  width: fit-content;
 }
