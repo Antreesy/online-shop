@@ -14,7 +14,7 @@ import {
   Tabs,
 } from "UI"
 import {AccordionExamples, ButtonExamples} from "Сomponents/Examples"
-import { Header } from "Сomponents"
+import { Header , SectionHeader } from "Сomponents"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
@@ -32,7 +32,9 @@ const Home: NextPage = () => {
       <Header />
 
       <main className={s.main}>
+      
         <h1>UI Kit page</h1>
+        <SectionHeader actionText={"All Orders"} />
 
         <Tabs
           className={s.example_tabs}

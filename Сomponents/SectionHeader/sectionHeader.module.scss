@@ -1,0 +1,34 @@
+.sectionHeader {
+    position: relative;
+    width: 1278px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000000;
+    border-radius: 5px;
+    padding: 0 89px 0 25px;
+    &__title {
+        font-family: Spartan;
+        font-weight: 600;
+        font-size: 18px;
+        color: #fff;
+    }
+    &__actionText {
+        font-family: Spartan;
+        font-weight: 600;
+        font-size: 18px;
+        color: #fff;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+.circle {
+    position: absolute;
+    right: 0px;
+    bottom: 50%;
+    width: 40px;
+    height: 35px;
+    background: linear-gradient(45deg, #00F5FF ,#8100EF);
+    border-radius: 0 12% 0 100%;
+}
