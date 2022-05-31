@@ -1,7 +1,8 @@
-import { List } from "@mui/material"
 import Link from "next/link"
-import { Button, SocialIcon } from "UI"
 import { Logo } from "Сomponents"
+
+import { List } from "@mui/material"
+import { Accordion, Button, SocialIcon } from "UI"
 
 import s from "./Footer.module.scss"
 
@@ -12,15 +13,17 @@ const Footer: React.FC<FooterProps> = (props) => {
     <footer className={s.footer}>
       <div className={s.footer__content}>
         <div className={s.footer__left}>
-          <Link href={"/"}>
-            <a className={s.footer__logo}>
-              <Logo type="light" />
-            </a>
-          </Link>
-          <div className={s.socials}>
-            <SocialIcon type="facebook" />
-            <SocialIcon type="instagram" />
-            <SocialIcon type="youtube" />
+          <div className={s.footer__top}>
+            <Link href={"/"}>
+              <a className={s.footer__logo}>
+                <Logo type="light" />
+              </a>
+            </Link>
+            <div className={s.socials}>
+              <SocialIcon type="facebook" />
+              <SocialIcon type="instagram" />
+              <SocialIcon type="youtube" />
+            </div>
           </div>
           <p className={s.footer__text}>
             Lorem Ipsum is simply dummy text of the printing and been the
@@ -82,7 +85,10 @@ const Footer: React.FC<FooterProps> = (props) => {
           </nav>
         </div>
       </div>
-      <span className={s.footer__span}>Bigfil Project House</span>
+      <div className={s.footer__copyright}>
+        <span className={s.footer__span}>ILONSI © Copyright</span>
+        <span className={s.footer__span}>Bigfil Project House</span>
+      </div>
     </footer>
   )
 }
