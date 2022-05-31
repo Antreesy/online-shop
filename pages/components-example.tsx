@@ -24,7 +24,7 @@ import s from "styles/pages/ComponentsExample.module.scss"
 
 const Home: NextPage = () => {
   return (
-    <div className={s.container}>
+    <div className={s.home}>
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
