@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import React from "react"
 import { styled } from "@mui/material/styles"
 import Stack from "@mui/material/Stack"
 import Stepper from "@mui/material/Stepper"
@@ -9,9 +9,10 @@ import StepConnector, {
 } from "@mui/material/StepConnector"
 import { StepIconProps } from "@mui/material/StepIcon"
 
-import styles from "./progressbar.module.scss"
+import s from "./progressbar.module.scss"
 
 interface ProgressBarProps {
+  steps: string[],
   currentStep: number;
 }
 
@@ -88,7 +89,7 @@ const steps = [
   "Create an ad",
 ]
 
-const ProgressBar: FC<ProgressBarProps> = (props) => {
+const ProgressBar: React.FC<ProgressBarProps> = (props) => {
 const {currentStep } = props
 
   return (
