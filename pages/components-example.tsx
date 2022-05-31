@@ -42,7 +42,6 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
-            "Size Picker",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,

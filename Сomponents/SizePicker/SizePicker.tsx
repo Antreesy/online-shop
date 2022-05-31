@@ -1,4 +1,11 @@
-import { FormControl, FormControlLabel, Radio, RadioProps } from "@mui/material"
+import React from "react";
+import {
+  FormControl,
+  FormControlLabel,
+  Radio,
+  RadioProps,
+  RadioGroup,
+} from "@mui/material"
 import { styled } from "@mui/material/styles"
 
 import s from "./sizePicker.module.scss"
@@ -11,20 +18,18 @@ const SizePicker: React.FC<SizePickerProps> = (props) => {
   const { labels } = props
   const BpIcon = styled("span")(({ theme }) => ({
     borderRadius: "3px",
-    width: 40,
-    height: 40,
-    boxShadow:
-      theme.palette.mode === "dark"
-        ? "0 0 0 1px rgb(16 22 26 / 40%)"
-        : "inset 0 0 0 1px rgba(16,22,26,.2), inset 0 -1px 0 rgba(16,22,26,.1)",
+    width: 50,
+    height: 50,
+    border: "none",
+    backgroundColor: "#e9e9e9",
     "input:hover ~ &": {
-      backgroundColor: theme.palette.mode === "dark" ? "#30404d" : "#ebf1f5",
+      backgroundColor: theme.palette.mode === "dark" ? "#b6b6b6" : "#b6b6b6",
     },
   }))
 
   const BpCheckedIcon = styled(BpIcon)({
     backgroundColor: "#cccccc",
-    border: "1px solid #cccccc",
+    border: "2px solid #2c2c2c",
     "&:before": {
       content: '""',
     },
@@ -51,17 +56,31 @@ const SizePicker: React.FC<SizePickerProps> = (props) => {
     )
   }
   return (
-    <div className={s.SizePicker}>
-      <FormControl className="">
-        {labels.map((label) => (
-          <FormControlLabel
-            key={label}
-            value={label}
-            control={<BpRadio />}
-            label={label}
-          />
-        ))}
-      </FormControl>
+    <div>
+      <RadioGroup>
+        <FormControl className={s.RadioGroup_Size_Picker}>
+          {labels.map((label) => (
+            <FormControlLabel
+              key={label}
+              value={label}
+              control={<BpRadio />}
+              label={label}
+              sx={{
+                "& .MuiFormControlLabel-root": {
+                  position: "relative",
+                },
+                "& .MuiFormControlLabel-label": {
+                  position: "absolute",
+                  paddingLeft: "23.5px",
+                },
+                "& .MuiRadio-root": {
+                  width: "65px",
+                },
+              }}
+            />
+          ))}
+        </FormControl>
+      </RadioGroup>
     </div>
   )
 }
