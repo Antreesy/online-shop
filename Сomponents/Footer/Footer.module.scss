@@ -1,0 +1,193 @@
+@import "styles/style.scss";
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 90px 185px 10px;
+  background-color: #1c1c1c;
+  color: #fff;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -70px;
+    bottom: -70px;
+    width: 170px;
+    height: 170px;
+    border-radius: 100%;
+    background-image: linear-gradient(137deg, #8100ef 7%, #00f5ff 126%);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1246px;
+    height: 5px;
+    object-fit: contain;
+    background-image: linear-gradient(to left, #8100ef 100%, #00f5ff 0%);
+  }
+  &__content {
+    display: flex;
+    padding-bottom: 103px;
+    position: relative;
+
+    &::after {
+      font-family: "";
+      content: "ILONSI";
+      position: absolute;
+      right: -45px;
+      bottom: -20px;
+      width: 255px;
+      height: 86px;
+      opacity: 0.08;
+      font-size: 120px;
+    }
+  }
+  &__left {
+    margin-right: 170px;
+    max-width: 320px;
+    width: 100%;
+  }
+  &__text {
+    font-family: "League Spartan";
+    padding-top: 45px;
+    object-fit: contain;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    text-align: left;
+    color: #7e7e7e;
+  }
+  &__right {
+    width: 100%;
+  }
+  &__right h4 {
+    font-family: "League Spartan";
+    font-size: 17px;
+    font-weight: normal;
+    color: #8100ef;
+  }
+  &__form p {
+    object-fit: contain;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: normal;
+    text-align: left;
+    color: #7e7e7e;
+  }
+  &__form form {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+  &__form form input {
+    outline: none;
+    width: 437px;
+    height: 50px;
+    object-fit: contain;
+    background-color: #434343;
+    border: none;
+    padding: 0px 12px;
+    border-radius: 5px 0px 0px 5px;
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+  }
+  &__form form input::placeholder {
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+  }
+  &__button {
+    width: 106px;
+    height: 50px;
+    object-fit: contain;
+    background: #8100ef;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    color: #fff;
+    border-radius: 0px 5px 5px 0px;
+  }
+  &__button:hover {
+    background: #6402b9;
+  }
+  &__navigate {
+    margin-top: 45px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  &__navigate ul {
+    display: flex;
+    align-self: start;
+    flex-direction: column;
+    list-style: none;
+  }
+  &__navigate ul h4 {
+    padding-bottom: 15px;
+  }
+  &__navigate ul a {
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.79;
+    letter-spacing: normal;
+    text-align: left;
+    color: #7e7e7e;
+    transition: 0.3s;
+  }
+  &__navigate ul a:hover {
+    color: #acacac;
+  }
+  &__span {
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.23;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+  }
+}
+.socials {
+  padding-top: 35px;
+  display: flex;
+  align-items: center;
+}
+.socials div {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+}
+.socials img {
+  width: 30px;
+  height: 30px;
+}
