@@ -1,5 +1,4 @@
-import React from "react"
-import s from "./file-select.module.scss"
+import s from "./fileSelect.module.scss"
 
 interface FileSelectProps {
   value: File | null

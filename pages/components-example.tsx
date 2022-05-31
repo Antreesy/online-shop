@@ -21,7 +21,7 @@ import {
   ButtonExamples,
   CardExample,
 } from "Сomponents/Examples"
-import { Header } from "Сomponents"
+import { Header, Logo } from "Сomponents"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
@@ -76,6 +76,7 @@ const Home: NextPage = () => {
                 <SocialIcon type="instagram" />
                 <SocialIcon type="youtube" />
               </div>
+              <Logo type="dark" />
             </div>,
 
             <div key={"Tabs"} className={s.tabs}>
