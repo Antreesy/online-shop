@@ -1,0 +1,41 @@
+@import "styles/style.scss";
+
+.price {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: fit-content;
+    font-size: 20px;
+    font-family: "League Spartan";
+
+    --price-default-color: #000;
+    --price-old-color: #888888;
+    --price-sale-color: #8100EF;
+    margin: 0 10px;
+}
+
+.def {
+    color: var(--price-default-color);
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.old {
+    color: var(--price-old-color);
+    font-weight: 100;
+    &::after {
+        position: absolute;
+        content: "";
+        height: 2px;
+        width: 100%;
+        top: 40%;
+        background-color: var(--price-old-color);
+    };
+    font-size: 13px;
+}
+
+.sale {
+    color: var(--price-sale-color);
+    font-weight: bold;
+    font-size: 17px;
+}

@@ -12,6 +12,7 @@ import {
   CheckboxGroup,
   SocialIcon,
   Tabs,
+  Price
 } from "UI"
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 import AccordionExamples from "Сomponents/Examples/AccordionExamples"
@@ -44,6 +45,7 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
+            "Price"
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -126,6 +128,10 @@ const Home: NextPage = () => {
             <div key={"Accordion"}>
               <AccordionExamples />
             </div>,
+
+            <div className={s.price_wrapper}>
+              <Price price={1030} type="old" /> <Price price={730} type="sale" />
+            </div>
           ]}
         />
       </main>
