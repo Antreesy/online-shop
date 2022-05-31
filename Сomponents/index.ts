@@ -1,3 +1,5 @@
-import { Counter } from "./Counter";
+import { Counter } from "./Counter"
+import { Header } from "./Header"
+import { Logo } from "./Logo"
 
-export { Counter };
+export { Counter, Header, Logo }

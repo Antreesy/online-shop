@@ -4,11 +4,20 @@ import type { NextPage } from "next"
 //Project Components
 import Head from "next/head"
 import Image from "next/image"
-import Link from "next/link"
-import { DatePicker, Icon, RadioGroup, CheckboxGroup, Tabs } from "UI"
-import ButtonExamples from "Сomponents/Examples/ButtonExamples"
-import AccordionExamples from "Сomponents/Examples/AccordionExamples"
-import CardExample from "Сomponents/Examples/CardExample"
+import {
+  DatePicker,
+  Icon,
+  RadioGroup,
+  CheckboxGroup,
+  SocialIcon,
+  Tabs,
+} from "UI"
+import {
+  AccordionExamples,
+  ButtonExamples,
+  CardExample,
+} from "Сomponents/Examples"
+import { Header } from "Сomponents"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
@@ -24,16 +33,10 @@ const Home: NextPage = () => {
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
 
+      <Header />
+
       <main className={s.main}>
         <h1>UI Kit page</h1>
-
-        <p className={s.description}>
-          Go back to{" "}
-          <Link href="/">
-            <a className={s.title__link}>/index</a>
-          </Link>{" "}
-          page
-        </p>
 
         <Tabs
           className={s.example_tabs}
@@ -62,6 +65,11 @@ const Home: NextPage = () => {
                   {icon}: <Icon type={icon} />{" "}
                 </span>
               ))}
+              <div style={{ backgroundColor: "#1c1c1c" }}>
+                <SocialIcon type="facebook" />
+                <SocialIcon type="instagram" />
+                <SocialIcon type="youtube" />
+              </div>
             </div>,
 
             <div key={"Tabs"} className={s.tabs}>
@@ -122,6 +130,7 @@ const Home: NextPage = () => {
             <div key={"Accordion"}>
               <AccordionExamples />
             </div>,
+
             <div key={"Carousel"} className={s.carousel}>
               <Carousel items={new Array(10).fill(CardExample)} />
             </div>,

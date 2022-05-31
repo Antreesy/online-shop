@@ -2,14 +2,15 @@ import React, { useRef, useState, useEffect } from "react"
 
 import { Swiper as SwiperObj, Navigation, Autoplay } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
+import "swiper/css"
+import "swiper/css/navigation"
+
 import cn from "classnames"
 
 import { Icon } from "UI"
 
-import "swiper/css"
-import "swiper/css/navigation"
-
 import s from "./carousel.module.scss"
+
 interface CarouselProps {
   items: React.ReactElement[]
   autoplayDelay?: number
@@ -34,7 +35,7 @@ const Carousel: React.FC<CarouselProps> = ({ items, autoplayDelay }) => {
 
   return (
     <>
-      {items.length !== 0 && (
+      {items.length !== 0 ? (
         <Swiper
           modules={[Navigation, Autoplay]}
           slidesPerView={4}
@@ -68,8 +69,7 @@ const Carousel: React.FC<CarouselProps> = ({ items, autoplayDelay }) => {
             <SwiperSlide key={Math.random()}>{item}</SwiperSlide>
           ))}
         </Swiper>
-      )}
-      {items.length === 0 && (
+      ) : (
         <div className={s.flex}>
           <p className={s.isEmptyText}>There are no images yet.</p>
         </div>
