@@ -33,7 +33,7 @@ const SizePicker: React.FC<SizePickerProps> = (props) => {
       content: '""',
     },
     "input:hover ~ &": {
-      backgroundColor: "#969696",
+      backgroundColor: "#c2c2c2",
     },
   })
 
