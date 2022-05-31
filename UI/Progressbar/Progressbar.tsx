@@ -4,7 +4,6 @@ import Stack from "@mui/material/Stack"
 import Stepper from "@mui/material/Stepper"
 import Step from "@mui/material/Step"
 import StepLabel from "@mui/material/StepLabel"
-import StepButton from "@mui/material/StepButton"
 import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector"
@@ -12,31 +11,40 @@ import { StepIconProps } from "@mui/material/StepIcon"
 
 import styles from "./progressbar.module.scss"
 
-const ColorlibConnector = styled(StepConnector)(() => ({
+interface ProgressBarProps {
+  currentStep: number;
+}
+
+const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
     top: 22,
   },
-
   [`&.${stepConnectorClasses.active}`]: {
     [`& .${stepConnectorClasses.line}`]: {
-      height: 3,
-      border: 1,
-      backgroundColor: "#7429e6",
+      backgroundColor: "#8100ef",
     },
   },
-
+  [`&.${stepConnectorClasses.completed}`]: {
+    [`& .${stepConnectorClasses.line}`]: {
+      backgroundColor: "#8100ef",
+    },
+  },
   [`& .${stepConnectorClasses.line}`]: {
     height: 3,
-    border: 1,
-    backgroundColor: "#ccc",
+    border: 0,
+    backgroundColor:
+      theme.palette.mode === "dark" ? theme.palette.grey[800] : "#f5f5f5",
+    borderRadius: 1,
   },
 }))
 
-const ColorlibStepIconRoot = styled("div")<{}>(() => ({
-  backgroundColor: "#fff",
-  border: "3px solid #7429e6",
+const ColorlibStepIconRoot = styled("div")<{
+  ownerState: { completed?: boolean; active?: boolean }
+}>(({ theme, ownerState }) => ({
+  backgroundColor:
+    theme.palette.mode === "dark" ? theme.palette.grey[700] : "#f5f5f5",
   zIndex: 1,
-  color: "#7429e6",
+  color: "#8100ef",
   fontSize: 17,
   fontWeight: 700,
   width: 50,
@@ -45,6 +53,14 @@ const ColorlibStepIconRoot = styled("div")<{}>(() => ({
   borderRadius: "50%",
   justifyContent: "center",
   alignItems: "center",
+  border: "4px solid #f5f5f5",
+  background: "#fff",
+  ...(ownerState.active && {
+    border: "4px solid #8122ef",
+  }),
+  ...(ownerState.completed && {
+    border: "4px solid #8122ef",
+  }),
 }))
 
 function ColorlibStepIcon(props: StepIconProps) {
@@ -57,23 +73,29 @@ function ColorlibStepIcon(props: StepIconProps) {
   }
 
   return (
-    <ColorlibStepIconRoot className={className}>
+    <ColorlibStepIconRoot
+      ownerState={{ completed, active }}
+      className={className}
+    >
       {icons[String(props.icon)]}
     </ColorlibStepIconRoot>
   )
 }
 
-function handleStep() {
-  console.log("hy")
-}
-const steps = ["Select campaign settings", "Create an ad group", "Create an ad"]
+const steps = [
+  "Select master blaster campaign settings",
+  "Create an ad group",
+  "Create an ad",
+]
 
-const ProgressBar: FC = () => {
+const ProgressBar: FC<ProgressBarProps> = (props) => {
+const {currentStep } = props
+
   return (
     <Stack sx={{ width: "100%" }}>
       <Stepper
         alternativeLabel
-        activeStep={1}
+        activeStep={currentStep}
         connector={<ColorlibConnector />}
       >
         {steps.map((label) => (

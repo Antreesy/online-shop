@@ -14,7 +14,7 @@ import {
   Tabs,
   ProgressBar,
 } from "UI"
-import {AccordionExamples, ButtonExamples} from "Сomponents/Examples"
+import { AccordionExamples, ButtonExamples } from "Сomponents/Examples"
 import { Header } from "Сomponents"
 
 //Project Helpers
@@ -24,6 +24,7 @@ import { icons } from "shared/consts/icons"
 import s from "styles/pages/ComponentsExample.module.scss"
 
 const Home: NextPage = () => {
+  const currentStep = 1;
   return (
     <div className={s.container}>
       <Head>
@@ -35,8 +36,8 @@ const Home: NextPage = () => {
       <main className={s.main}>
         <h1>UI Kit page</h1>
 
-        <ProgressBar />
-        
+        <ProgressBar currentStep={currentStep}/>
+
         <Tabs
           className={s.example_tabs}
           labels={[
