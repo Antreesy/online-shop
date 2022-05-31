@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write **/*.tsx --write **/*.scss"
+    "format": "prettier --write **/*.ts --write **/*.tsx --write **/*.scss"
   },
   "dependencies": {
     "@emotion/cache": "^11.7.1",
@@ -27,7 +27,8 @@
     "next-i18next": "^11.0.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "react-redux": "^8.0.2"
+    "react-redux": "^8.0.2",
+    "swiper": "^8.1.6"
   },
   "devDependencies": {
     "@types/node": "17.0.35",

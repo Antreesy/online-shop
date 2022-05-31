@@ -1,13 +1,27 @@
+import { useState } from "react"
+
 //Global Dependencies
 import type { NextPage } from "next"
 
 //Project Components
 import Head from "next/head"
 import Image from "next/image"
-import Link from "next/link"
-import { DatePicker, Icon, RadioGroup, CheckboxGroup, Tabs } from "UI"
-import ButtonExamples from "Сomponents/Examples/ButtonExamples"
-import AccordionExamples from "Сomponents/Examples/AccordionExamples"
+import {
+  DatePicker,
+  Icon,
+  RadioGroup,
+  CheckboxGroup,
+  SocialIcon,
+  Tabs,
+  FileSelect,
+} from "UI"
+
+import {
+  AccordionExamples,
+  ButtonExamples,
+  CardExample,
+} from "Сomponents/Examples"
+import { Header, Logo } from "Сomponents"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
@@ -15,24 +29,20 @@ import { icons } from "shared/consts/icons"
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
 import SupportSection from "Сomponents/SupportSection/SupportSection"
+import { Carousel } from "UI/Carousel"
 
 const Home: NextPage = () => {
+  const [value, setValue] = useState<File | null>(null)
   return (
     <div className={s.container}>
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
 
+      <Header />
+
       <main className={s.main}>
         <h1>UI Kit page</h1>
-
-        <p className={s.description}>
-          Go back to{" "}
-          <Link href="/">
-            <a className={s.title__link}>/index</a>
-          </Link>{" "}
-          page
-        </p>
 
         <Tabs
           className={s.example_tabs}
@@ -43,6 +53,8 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
+            "File Select",
+            "Carousel",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -60,6 +72,12 @@ const Home: NextPage = () => {
                   {icon}: <Icon type={icon} />{" "}
                 </span>
               ))}
+              <div style={{ backgroundColor: "#1c1c1c" }}>
+                <SocialIcon type="facebook" />
+                <SocialIcon type="instagram" />
+                <SocialIcon type="youtube" />
+              </div>
+              <Logo type="dark" />
             </div>,
 
             <div key={"Tabs"} className={s.tabs}>
@@ -119,6 +137,13 @@ const Home: NextPage = () => {
 
             <div key={"Accordion"}>
               <AccordionExamples />
+            </div>,
+            <div key={"File Select"}>
+              <FileSelect value={value} setValue={setValue} />
+            </div>,
+
+            <div key={"Carousel"} className={s.carousel}>
+              <Carousel items={new Array(10).fill(CardExample)} />
             </div>,
           ]}
         />

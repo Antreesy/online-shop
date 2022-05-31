@@ -2,12 +2,7 @@
 
 .supportSection {
     width: 100%;
-    min-height: 395px;
-    background-color: aliceblue;
-    border: 1px solid gray;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
     padding: 0 43px;
     box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.05);
     background-color: #fff;
@@ -17,10 +12,12 @@
 
 .wrapper {
     width: 90%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: auto;
+    padding: 15px 0;
 
     @include mobile {
         flex-direction: column;
@@ -33,7 +30,6 @@
     margin-top: 35px;
 
     @include laptop {
-        // flex-direction: column;
         width: 100%;
     }
 
@@ -48,8 +44,15 @@
 
     .btn:not(:last-child) {
         margin-right: 20px;
-        // margin-bottom:10px ;
 
+        @include tablet {
+            margin-right: 0;
+
+        }
+
+        @include mobile {
+            margin-right: 0;
+        }
     }
 }
 
@@ -57,20 +60,16 @@
     border-color: rgba(129, 0, 239, 0.8);
     color: rgba(129, 0, 239, 0.8);
 
-    @include laptop {
-
-        margin-top: 10px;
-    }
-
     @include tablet {
+        margin-top: 15px;
 
-        margin-top: 10px;
+
     }
 
     @include mobile {
-
-        margin-top: 10px;
+        margin-top: 15px;
     }
+
 }
 
 .heading {
@@ -115,10 +114,10 @@
 
 .content {
     margin-left: 15px;
-    width: 60%;
+    width: 50%;
 }
 
 .img {
-    width: 40%;
+    width: 50%;
     height: 100%;
 }
