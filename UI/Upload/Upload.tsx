@@ -10,7 +10,7 @@ interface UploadProps {
   maxSize?: number
   minWidth?: number
   minHeight?: number
-  maxFileNumber?: number
+  filesNumber?: number
 }
 
 const Upload: FC<UploadProps> = (props) => {
@@ -18,7 +18,7 @@ const Upload: FC<UploadProps> = (props) => {
     title = "Select or Drag Image",
     formats = ["jpg", "png", "jpeg"],
     maxSize = 10000000,
-    maxFileNumber = 5,
+    filesNumber = 5,
     minWidth = 1920,
     minHeight = 1080,
     className,
@@ -40,8 +40,8 @@ const Upload: FC<UploadProps> = (props) => {
   }
 
   const checkInputImageFormat = (files: File[]) => {
-    if (files.length !== maxFileNumber) {
-      setError(`Error number of files it must be ${maxFileNumber}`)
+    if (files.length !== filesNumber) {
+      setError(`Error number of files it must be ${filesNumber}`)
       return false
     }
 
