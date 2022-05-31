@@ -1,4 +1,4 @@
-import { DrawerItemTypes } from "Сomponents/BurgerMenu/BurgerMenu";
+import { DrawerItemTypes } from "Сomponents/BurgerMenu/BurgerMenu"
 
 export const DrawerItems: DrawerItemTypes[] = [
   { text: "About", href: "/about" },

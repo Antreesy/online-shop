@@ -79,7 +79,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  
+
   @include mobile-tablet {
     display: none;
   }
@@ -110,7 +110,7 @@
   font-weight: $fw-regular;
   font-size: 14px;
   color: $color-grey-60;
-  
+
   @include mobile {
     display: none;
   }
@@ -150,7 +150,7 @@
   &:hover {
     background: $color-purple;
   }
-    
+
   @include mobile-tablet {
     margin-left: 8px;
     width: 29px;
@@ -174,7 +174,7 @@
     width: 33px;
     background: $color-purple;
     color: $color-white;
-  
+
     &:hover {
       background: $color-purple-d;
     }
@@ -196,7 +196,7 @@
     width: 33px;
     border-color: $color-purple;
     color: $color-white;
-  
+
     &:hover {
       border-color: $color-purple;
       background: $color-purple;
