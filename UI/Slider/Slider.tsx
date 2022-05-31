@@ -6,7 +6,7 @@ import s from "./Slider.module.scss"
 interface SliderProps {
   min?: number
   max?: number
-  value: [number, number]
+  value: number[]
 }
 
 const SliderLabel: React.FC<SliderProps> = (props) => {
@@ -31,7 +31,7 @@ const SliderLabel: React.FC<SliderProps> = (props) => {
     <Box sx={{ width: 200 }}>
       <Slider
         getAriaLabel={() => "range"}
-        value={value}
+        value={values}
         defaultValue={0}
         onChange={handleChange}
         valueLabelDisplay="auto"
