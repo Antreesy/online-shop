@@ -17,7 +17,7 @@ import {
   ButtonExamples,
   CardExample,
 } from "Сomponents/Examples"
-import { Header } from "Сomponents"
+import { Header, Notification } from "Сomponents"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
@@ -25,8 +25,10 @@ import { icons } from "shared/consts/icons"
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
 import { Carousel } from "UI/Carousel"
+import { useState } from "react"
 
 const Home: NextPage = () => {
+  const [isRead, setIsRead] = useState<boolean>(false)
   return (
     <div className={s.container}>
       <Head>
@@ -135,6 +137,17 @@ const Home: NextPage = () => {
               <Carousel items={new Array(10).fill(CardExample)} />
             </div>,
           ]}
+        />
+
+        <h1>Components page</h1>
+
+        <Tabs
+          className={s.example_tabs}
+          labels={["Notification"]}
+          values={[<div key="Notification">
+            <Notification setIsRead={setIsRead} header={"Notification"} />
+            <Notification setIsRead={setIsRead} header={"Notification"} />
+          </div>]}
         />
       </main>
 
