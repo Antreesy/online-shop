@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button, SocialIcon } from "UI"
 import { Logo } from "Сomponents"
-
+import BurgerMenu from "../BurgerMenu/BurgerMenu"
 import s from "./header.module.scss"
 
 interface HeaderProps {}
@@ -22,11 +22,7 @@ const Header: React.FC<HeaderProps> = (props) => {
       </div>
       <div className={s.header__bottom}>
         <div className={s.bottom_left_group}>
-          <Button
-            className={s.header__burger}
-            disableElevation
-            iconLeft="resize_textarea"
-          />
+          <BurgerMenu />
           <Button
             className={s.header__button}
             icon
