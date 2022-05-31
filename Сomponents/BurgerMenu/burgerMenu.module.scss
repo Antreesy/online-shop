@@ -1,6 +1,8 @@
 @import "styles/style.scss";
 
 .openButton {
+  width: 48px;
+  padding: 4px;
   background-color: transparent;
   background-image: url(../../public/assets/icons/burgerMenu.svg);
   background-repeat: no-repeat;
@@ -10,6 +12,10 @@
   &:hover {
     background-color: transparent;
     background-image: url(../../public/assets/icons/burgerMenu-white.svg);
+  }
+
+  @include mobile {
+    width: 46px;
   }
 }
 
