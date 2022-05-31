@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 //Global Dependencies
 import type { NextPage } from "next"
 
@@ -21,7 +19,7 @@ import {
   ButtonExamples,
   CardExample,
 } from "Сomponents/Examples"
-import { Header, Notification, Logo } from "Сomponents"
+import { Header, Logo, Notification } from "Сomponents"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
@@ -154,10 +152,16 @@ const Home: NextPage = () => {
         <Tabs
           className={s.example_tabs}
           labels={["Notification"]}
-          values={[<div key="Notification">
-            <Notification setIsRead={setIsRead} header={"Notification"} />
-            <Notification setIsRead={setIsRead} header={"Notification"} />
-          </div>]}
+          values={[
+            <div key="Notification">
+              <Notification setIsRead={setIsRead} header={"Notification"}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                quam sequi vitae eius iusto perspiciatis facilis nesciunt
+                dignissimos provident ipsum? Nobis repellat atque ab nam magni
+                voluptas expedita facere recusandae.
+              </Notification>
+            </div>,
+          ]}
         />
       </main>
 
