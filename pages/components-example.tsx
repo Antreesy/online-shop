@@ -21,7 +21,7 @@ import {
   ButtonExamples,
   CardExample,
 } from "Сomponents/Examples"
-import { Header, Logo, SizePicker } from "Сomponents"
+import { Header, Logo, SectionHeader, SizePicker } from "Сomponents"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
@@ -41,7 +41,11 @@ const Home: NextPage = () => {
       <Header />
 
       <main className={s.main}>
-        <h1>UI Kit page</h1>
+        <SectionHeader
+          className={s.title}
+          title={"UI Kit page"}
+          actionText={"All Orders"}
+        />
 
         <Tabs
           className={s.example_tabs}
