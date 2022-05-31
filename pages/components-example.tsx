@@ -1,3 +1,5 @@
+import React, { useState } from "react"
+
 //Global Dependencies
 import type { NextPage } from "next"
 
@@ -5,6 +7,7 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import Image from "next/image"
 import {
+  Carousel,
   DatePicker,
   Icon,
   RadioGroup,
@@ -19,15 +22,20 @@ import {
   ButtonExamples,
   CardExample,
 } from "Сomponents/Examples"
-import { Header, Logo, Notification } from "Сomponents"
+
+import {
+  Header,
+  Logo,
+  Notification,
+  SectionHeader,
+  SizePicker,
+} from "Сomponents"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
-import { Carousel } from "UI/Carousel"
-import { useState } from "react"
 
 const Home: NextPage = () => {
   const [isRead, setIsRead] = useState<boolean>(false)
@@ -41,7 +49,11 @@ const Home: NextPage = () => {
       <Header />
 
       <main className={s.main}>
-        <h1>UI Kit page</h1>
+        <SectionHeader
+          className={s.title}
+          title={"UI Kit page"}
+          actionText={"All Orders"}
+        />
 
         <Tabs
           className={s.example_tabs}
@@ -53,15 +65,16 @@ const Home: NextPage = () => {
             "Checkboxes and Radio",
             "Accordion",
             "File Select",
-            "Carousel",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
 
             <div key={"Inputs and Pickers"} className={s.grid}>
               <div>
-                <h2>DatePicker</h2>
+                <h2>Date Picker</h2>
                 <DatePicker initValue={new Date()} onChange={() => {}} />
+                <h2>Size Picker</h2>
+                <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
               </div>
             </div>,
 
@@ -79,42 +92,53 @@ const Home: NextPage = () => {
               <Logo type="dark" />
             </div>,
 
-            <div key={"Tabs"} className={s.tabs}>
-              <p className={s.description}>default</p>
-              <Tabs
-                labels={["Sign In", "Sign Up"]}
-                values={["Sign In", "Sign Up"]}
-              />
-              <p className={s.description}>spaces</p>
-              <Tabs
-                labels={["Sign In", "Sign Up"]}
-                values={["Sign In", "Sign Up"]}
-                variant="spaces"
-              />
-              <p className={s.description}>no_border</p>
-              <Tabs
-                labels={["Sign In", "Sign Up"]}
-                values={["Sign In", "Sign Up"]}
-                variant="no_border"
-              />
+            <div key={"Tabs"} className={s.grid}>
+              <div>
+                <p className={s.description}>default</p>
+                <Tabs
+                  labels={["Sign In", "Sign Up"]}
+                  values={["Sign In", "Sign Up"]}
+                />
+              </div>
+              <div>
+                <p className={s.description}>spaces</p>
+                <Tabs
+                  labels={["Sign In", "Sign Up"]}
+                  values={["Sign In", "Sign Up"]}
+                  variant="spaces"
+                />
+              </div>
+              <div>
+                <p className={s.description}>no_border</p>
+                <Tabs
+                  labels={["Sign In", "Sign Up"]}
+                  values={["Sign In", "Sign Up"]}
+                  variant="no_border"
+                />
+              </div>
             </div>,
 
             <div key={"Checkboxes and Radio"} className={s.grid}>
               <div>
                 <p>Rounded Checkboxes</p>
                 <CheckboxGroup rounded labels={["Men", "Women", "Unisex"]} />
+              </div>
+              <div>
                 <p>Square Checkboxes</p>
                 <CheckboxGroup
                   color="#000"
                   labels={["Men", "Women", "Unisex"]}
                 />
+              </div>
+              <div>
                 <p>Colored Checkboxes</p>
                 <CheckboxGroup
                   color="#ff4e4e"
                   colorChecked="#25754a"
                   labels={["Men", "Women", "Unisex"]}
                 />
-
+              </div>
+              <div>
                 <p>Gender</p>
                 <RadioGroup
                   elements={[
@@ -140,18 +164,14 @@ const Home: NextPage = () => {
             <div key={"File Select"}>
               <FileSelect value={value} setValue={setValue} />
             </div>,
-
-            <div key={"Carousel"} className={s.carousel}>
-              <Carousel items={new Array(10).fill(CardExample)} />
-            </div>,
           ]}
         />
 
-        <h1>Components page</h1>
+        <SectionHeader className={s.title} title={"Components page"} />
 
         <Tabs
           className={s.example_tabs}
-          labels={["Notification"]}
+          labels={["Notification", "Carousel"]}
           values={[
             <div key="Notification">
               <Notification setIsRead={setIsRead} header={"Notification"}>
@@ -160,6 +180,10 @@ const Home: NextPage = () => {
                 dignissimos provident ipsum? Nobis repellat atque ab nam magni
                 voluptas expedita facere recusandae.
               </Notification>
+            </div>,
+
+            <div key={"Carousel"} className={s.carousel}>
+              <Carousel items={new Array(10).fill(CardExample)} />
             </div>,
           ]}
         />
