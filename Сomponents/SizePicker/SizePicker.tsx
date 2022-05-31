@@ -10,7 +10,7 @@ import { styled } from "@mui/material/styles"
 
 import s from "./sizePicker.module.scss"
 
-interface SizePickerProps {
+ type SizePickerProps = {
   labels: string[]
 }
 
@@ -53,14 +53,18 @@ const SizePicker: React.FC<SizePickerProps> = (props) => {
     <div>
       <RadioGroup>
         <FormControl className={s.sizePicker}>
-          {labels.map((label) => (
-            <FormControlLabel
-              key={label}
-              value={label}
-              control={<BpRadio />}
-              label={label}
-            />
-          ))}
+          {labels === "" || labels === undefined || labels === null ?
+              "Нету размеров одежды" :
+              (
+              labels.map((label) => (
+                  <FormControlLabel
+                      key={label}
+                      value={label}
+                      control={<BpRadio />}
+                      label={label}
+                  />
+              ))
+          )}
         </FormControl>
       </RadioGroup>
     </div>
