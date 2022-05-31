@@ -4,20 +4,24 @@ import { Icon } from "UI/Icon"
 import s from "./upload.module.scss"
 
 interface UploadProps {
-  title: string
+  title?: string
   className?: string
   formats?: string[]
   maxSize?: number
+  minWidth?: number
+  minHeight?: number
   maxFileNumber?: number
 }
 
 const Upload: FC<UploadProps> = (props) => {
   const {
-    title,
-    className,
+    title = "Select or Drag Image",
     formats = ["jpg", "png", "jpeg"],
     maxSize = 10000000,
-    maxFileNumber = 1,
+    maxFileNumber = 5,
+    minWidth = 1920,
+    minHeight = 1080,
+    className,
   } = props
 
   const [drag, setDrag] = useState(false)
@@ -35,17 +39,19 @@ const Upload: FC<UploadProps> = (props) => {
     setDrag(true)
   }
 
-  const checkInputFiles = (files: File[]) => {
+  const checkInputImageFormat = (files: File[]) => {
     if (files.length !== maxFileNumber) {
       setError(`Error number of files it must be ${maxFileNumber}`)
       return false
     }
+
     for (let i = 0; i < files.length; i++) {
       if (files[i].size > maxSize) {
         setError(`Error maximum size of file ${maxSize} got ${files[i].size}`)
         return false
       }
     }
+
     const filesFormats = files.map((file) => {
       return file.type.split("/")[1]
     })
@@ -55,11 +61,29 @@ const Upload: FC<UploadProps> = (props) => {
         return false
       }
     }
+
     setError("")
     return true
   }
 
-  const filesHandler = (e: any) => {
+  const checkImageFormatSize = (file: File) => {
+    return new Promise((resolve, reject) => {
+      const img = new Image()
+      img.src = URL.createObjectURL(file)
+      img.addEventListener("load", function () {
+        if (minWidth > img.width || minHeight > img.height) {
+          setError(
+            `Error width or height it must be ${minWidth} x ${minHeight}`,
+          )
+          resolve(false)
+        } else {
+          resolve(true)
+        }
+      })
+    })
+  }
+
+  const filesHandler = async (e: any) => {
     let files: File[]
 
     if (drag) {
@@ -70,10 +94,18 @@ const Upload: FC<UploadProps> = (props) => {
       files = Array.from(fileInputRef.current?.files || [])
     }
 
-    const isCorrectInput: boolean = checkInputFiles(files)
+    const isCorrectInput: boolean = checkInputImageFormat(files)
+    const promises = []
     if (isCorrectInput) {
-      console.log(files) //files correct
+      for (let i = 0; i < files.length; i++) {
+        promises.push(checkImageFormatSize(files[i]))
+      }
     }
+    Promise.all(promises).then((res) => {
+      if (res.every((res) => res)) {
+        console.log(files) // files correct
+      }
+    })
   }
 
   return (
@@ -94,8 +126,8 @@ const Upload: FC<UploadProps> = (props) => {
         />
         <Icon type="upload" />
         {title}
+        <div className={s.error}>{error}</div>
       </div>
-      <div className={s.error}>{error}</div>
     </>
   )
 }

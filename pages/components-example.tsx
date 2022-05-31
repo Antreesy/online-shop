@@ -16,7 +16,6 @@ import {
 import ButtonExamples from "Сomponents/Examples/ButtonExamples"
 import AccordionExamples from "Сomponents/Examples/AccordionExamples"
 import { Logo } from "Сomponents/Logo"
-import { Upload } from "UI/Upload"
 import { Header } from "Сomponents/Header"
 
 //Project Helpers
@@ -24,6 +23,7 @@ import { icons } from "shared/consts/icons"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
+import { Upload } from "UI/Upload"
 
 const Home: NextPage = () => {
   return (
@@ -131,7 +131,7 @@ const Home: NextPage = () => {
           ]}
         />
 
-        <Upload title="Select or Drag Image" filesNumber={3} />
+        <Upload />
       </main>
 
       <footer className={s.footer}>
