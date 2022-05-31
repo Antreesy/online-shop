@@ -28,7 +28,6 @@ const SizePicker: React.FC<SizePickerProps> = (props) => {
   }))
 
   const BpCheckedIcon = styled(BpIcon)({
-    backgroundColor: "#cccccc",
     border: "2px solid #2c2c2c",
     "&:before": {
       content: '""',
