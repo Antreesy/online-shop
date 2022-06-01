@@ -36,6 +36,7 @@ import { icons } from "shared/consts/icons"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
+import { Range } from "UI/Range"
 
 const Home: NextPage = () => {
   const [isRead, setIsRead] = useState<boolean>(false)
@@ -54,6 +55,8 @@ const Home: NextPage = () => {
           title={"UI Kit page"}
           actionText={"All Orders"}
         />
+
+      <Range/>
 
         <Tabs
           className={s.example_tabs}
