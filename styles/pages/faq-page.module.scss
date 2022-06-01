@@ -1,6 +1,47 @@
-.breadCrumbs{
+@import "styles/style.scss";
+
+.breadCrumbs {
     width: 100%;
     height: 50px;
     background: #dedede;
-    margin-top: 140px;
+    margin-top: 137px;
+}
+
+.container {
+    max-width: 1640px;
+    margin: 0 auto;
+    display: flex;
+    height: min-content;
+    // align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 0 15px 30px 0;
+}
+
+.leftSide {
+    object-fit: contain;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
+    background-color: #fff;
+    width: 317px;
+    height: 575px;
+    margin-right: 24px;
+
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.accordions {
+    object-fit: contain;
+    border-radius: 5px;
+    border: solid 1px #888;
+    background-color: #fff;
+}
+
+.heading {
+    margin-top: 50px;
+    margin-bottom: 25px;
+    color: #8100ef;
 }

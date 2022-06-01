@@ -28,6 +28,7 @@ import { icons } from "shared/consts/icons"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
+import SupportSection from "Сomponents/SupportSection/SupportSection"
 import { Carousel } from "UI/Carousel"
 import AddresCard from "Сomponents/AddresCard/AddresCard"
 
@@ -62,7 +63,7 @@ const Home: NextPage = () => {
             <div key={"Inputs and Pickers"} className={s.grid}>
               <div>
                 <h2>DatePicker</h2>
-                <DatePicker initValue={new Date()} onChange={() => {}} />
+                <DatePicker initValue={new Date()} onChange={() => { }} />
               </div>
             </div>,
 
@@ -148,7 +149,8 @@ const Home: NextPage = () => {
           ]}
         />
       </main>
-          <AddresCard title="first titile" number="123456789" address="Lorem ipsum" country="Lorem Ipsum ISTAMBUL"/>
+      <AddresCard title="first titile" number="123456789" address="Lorem ipsum" country="Lorem Ipsum ISTAMBUL" />
+      
       <footer className={s.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

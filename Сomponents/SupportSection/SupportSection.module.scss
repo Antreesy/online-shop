@@ -1,0 +1,124 @@
+@import "styles/style.scss";
+
+.supportSection {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 0 43px;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    border: none;
+    border-radius: 3px;
+    height: max-content;
+}
+
+.wrapper {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    margin: auto;
+    padding: 15px 0;
+
+    @include mobile {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+}
+
+.buttons {
+    display: flex;
+    margin-top: 35px;
+
+    @include laptop {
+        width: 100%;
+    }
+
+    @include tablet {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    @include mobile {
+        flex-direction: column;
+    }
+
+    .btn:not(:last-child) {
+        margin-right: 20px;
+
+        @include tablet {
+            margin-right: 0;
+
+        }
+
+        @include mobile {
+            margin-right: 0;
+        }
+    }
+}
+
+.btnItem {
+    border-color: rgba(129, 0, 239, 0.8);
+    color: rgba(129, 0, 239, 0.8);
+
+    @include tablet {
+        margin-top: 15px;
+
+
+    }
+
+    @include mobile {
+        margin-top: 15px;
+    }
+
+}
+
+.heading {
+    color: rgba(129, 0, 239, 0.8);
+    margin-bottom: 15px;
+
+
+    @include tablet {
+        text-align: center;
+    }
+
+    @include mobile {
+        text-align: center;
+    }
+}
+
+.subTitle {
+    font-size: 23px;
+    margin-bottom: 20px;
+
+
+    @include tablet {
+        text-align: center;
+    }
+
+    @include mobile {
+        text-align: center;
+    }
+}
+
+.text {
+    font-size: 15px;
+
+    @include tablet {
+        text-align: center;
+    }
+
+    @include mobile {
+        text-align: center;
+    }
+}
+
+.content {
+    margin-left: 15px;
+    width: 60%;
+}
+
+.img {
+    width: 30%;
+    height: 100%;
+}
