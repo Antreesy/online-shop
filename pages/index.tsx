@@ -10,6 +10,8 @@ import Link from "next/link"
 import LangRoute from "Сomponents/LanguageRouting/LangRoute"
 import { Header, Footer } from "Сomponents"
 
+import { footerNav } from "shared/constants/footernav"
+
 //Project Styles
 import styles from "styles/pages/Index.module.scss"
 
@@ -54,7 +56,7 @@ const Index: NextPage = (props: any) => {
         </p>
       </main>
 
-      <Footer />
+      <Footer links={footerNav} />
     </>
   )
 }

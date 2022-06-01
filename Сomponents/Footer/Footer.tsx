@@ -1,17 +1,15 @@
 import Link from "next/link"
 import { Logo } from "Сomponents"
 
-import { List } from "@mui/material"
-import { Accordion, Button, SocialIcon } from "UI"
+import { Button, SocialIcon } from "UI"
 
-import { Navigation } from "./Navigation"
-import { footerNav } from "shared/consts/footernav"
+import { Navigation, NavigationProps } from "./Navigation"
 
 import s from "./footer.module.scss"
 
-interface FooterProps {}
+interface FooterProps extends NavigationProps {}
 
-const Footer: React.FC<FooterProps> = (props) => {
+const Footer: React.FC<FooterProps> = ({ links }) => {
   return (
     <>
       <footer className={s.footer}>
@@ -31,7 +29,7 @@ const Footer: React.FC<FooterProps> = (props) => {
               </div>
             </div>
 
-            <p className={s.left_group_descr}>
+            <p className={s.left_group_description}>
               Lorem Ipsum is simply dummy text of the printing and been the
               industry’s standard dummy text 1500s, when an unknown printer took
               a galley of type make a type specimen book. It has survived n
@@ -57,7 +55,7 @@ const Footer: React.FC<FooterProps> = (props) => {
               </form>
             </div>
 
-            <Navigation links={footerNav} />
+            <Navigation links={links} />
           </div>
         </div>
       </footer>
