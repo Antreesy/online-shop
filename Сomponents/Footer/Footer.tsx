@@ -4,92 +4,68 @@ import { Logo } from "Сomponents"
 import { List } from "@mui/material"
 import { Accordion, Button, SocialIcon } from "UI"
 
-import s from "./Footer.module.scss"
+import { Navigation } from "./Navigation"
+import { footerNav } from "shared/consts/footernav"
+
+import s from "./footer.module.scss"
 
 interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = (props) => {
   return (
-    <footer className={s.footer}>
-      <div className={s.footer__content}>
-        <div className={s.footer__left}>
-          <div className={s.footer__top}>
-            <Link href={"/"}>
-              <a className={s.footer__logo}>
-                <Logo type="light" />
-              </a>
-            </Link>
-            <div className={s.socials}>
-              <SocialIcon type="facebook" />
-              <SocialIcon type="instagram" />
-              <SocialIcon type="youtube" />
+    <>
+      <footer className={s.footer}>
+        <div className={s.content}>
+          <div className={s.left_group}>
+            <div className={s.left_top_group}>
+              <Link href={"/"}>
+                <a className={s.logo}>
+                  <Logo type="light" />
+                </a>
+              </Link>
+
+              <div className={s.socials}>
+                <SocialIcon type="facebook" />
+                <SocialIcon type="instagram" />
+                <SocialIcon type="youtube" />
+              </div>
             </div>
-          </div>
-          <p className={s.footer__text}>
-            Lorem Ipsum is simply dummy text of the printing and been the
-            industry’s standard dummy text 1500s, when an unknown printer took a
-            galley of type make a type specimen book. It has survived n
-          </p>
-        </div>
-        <div className={s.footer__right}>
-          <div className={s.footer__form}>
-            <h4>News Letter</h4>
-            <p>
+
+            <p className={s.left_group_descr}>
               Lorem Ipsum is simply dummy text of the printing and been the
-              industry’
+              industry’s standard dummy text 1500s, when an unknown printer took
+              a galley of type make a type specimen book. It has survived n
             </p>
-            <form>
-              <input type="text" placeholder="E-mail" />
-              <Button className={s.footer__button} disableElevation>
-                Send
-              </Button>
-            </form>
           </div>
-          <nav className={s.footer__navigate}>
-            <List>
-              <h4>About Us</h4>
-              <Link href={"/"}>Hakkımızda</Link>
-              <Link href={"/"}>İnsan Kaynakları</Link>
-              <Link href={"/"}>Kurumsal</Link>
-              <Link href={"/"}>Markalar</Link>
-            </List>
-            <List>
-              <h4>Membership</h4>
-              <Link href={"/"}>Lorem Ipsum is simply </Link>
-              <Link href={"/"}>dummy text of the printing</Link>
-              <Link href={"/"}>and been the industry’s</Link>
-              <Link href={"/"}>standard dummy text</Link>
-            </List>
-            <List>
-              <h4>Categories</h4>
-              <Link href={"/"}>Lorem Ipsum</Link>
-              <Link href={"/"}>dummy text of</Link>
-              <Link href={"/"}>printing and</Link>
-              <Link href={"/"}>beenindustry’s</Link>
-              <Link href={"/"}>standard dummy text</Link>
-            </List>
-            <List>
-              <h4>Ilonsi</h4>
-              <Link href={"/"}>Lorem Ipsum </Link>
-              <Link href={"/"}>dummy text of</Link>
-              <Link href={"/"}>printing and beenindustry’s</Link>
-            </List>
-            <List>
-              <h4>Contact</h4>
-              <Link href={"/"}>Lorem Ipsum</Link>
-              <Link href={"/"}>dummy text of</Link>
-              <Link href={"/"}>printing and</Link>
-              <Link href={"/"}>beenindustry’s</Link>
-              <Link href={"/"}>standard dummy text</Link>
-            </List>
-          </nav>
+
+          <div className={s.right_group}>
+            <div className={s.news_letter}>
+              <h4 className={s.news_letter_caption}>News Letter</h4>
+              <p className={s.news_letter_descr}>
+                Lorem Ipsum is simply dummy text of the printing and been the
+                industry’
+              </p>
+              <form className={s.news_letter_form}>
+                <input
+                  className={s.news_letter_input}
+                  type="email"
+                  placeholder="E-mail"
+                />
+                <Button className={s.news_letter_button} disableElevation>
+                  Send
+                </Button>
+              </form>
+            </div>
+
+            <Navigation links={footerNav} />
+          </div>
         </div>
+      </footer>
+      <div className={s.copyright}>
+        <span>ILONSI © Copyright</span>
+        <span>Bigfil Project House</span>
       </div>
-      <div className={s.footer__copyright}>
-        <span className={s.footer__span}>ILONSI © Copyright</span>
-        <span className={s.footer__span}>Bigfil Project House</span>
-      </div>
-    </footer>
+    </>
   )
 }
 

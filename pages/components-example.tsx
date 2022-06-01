@@ -42,7 +42,7 @@ const Home: NextPage = () => {
   const [isRead, setIsRead] = useState<boolean>(false)
   const [value, setValue] = useState<File | null>(null)
   return (
-    <div className={s.home}>
+    <>
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
@@ -201,7 +201,7 @@ const Home: NextPage = () => {
       </main>
 
       <Footer />
-    </div>
+    </>
   )
 }
 
