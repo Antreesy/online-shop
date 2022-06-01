@@ -8,6 +8,7 @@ import { FileSelect } from "./FileSelect"
 import { Icon } from "./Icon"
 import { RadioGroup } from "./RadioGroup"
 import { Range } from "./Range"
+import { Slider } from "./Slider"
 import { SocialIcon } from "./SocialIcon"
 import { Tabs } from "./Tabs"
 
@@ -22,6 +23,7 @@ export {
   Icon,
   Range,
   RadioGroup,
+  Slider,
   SocialIcon,
   Tabs,
 }

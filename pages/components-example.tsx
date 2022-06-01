@@ -4,6 +4,7 @@ import { useState } from "react"
 import type { NextPage } from "next"
 
 //Project Components
+
 import Head from "next/head"
 import Image from "next/image"
 import {
@@ -21,6 +22,7 @@ import {
   FileSelect,
   RadioGroup,
   Range,
+  Slider,
   SocialIcon,
   Tabs,
 } from "UI"
@@ -89,6 +91,8 @@ const Home: NextPage = () => {
                 />
                 <h2>Size Picker</h2>
                 <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
+                <h2>Slider</h2>
+                <Slider min={0} max={50} value={[0, 30]} />
               </div>
             </div>,
 
