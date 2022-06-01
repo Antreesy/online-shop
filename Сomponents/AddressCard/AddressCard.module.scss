@@ -16,24 +16,32 @@
     justify-content: space-between;
     margin-bottom: 23px;
 
+    @include mobile {
+        flex-direction: column;
+        align-items: start;
+    }
+
     .title {
         color: $color-purple;
         font-size: 18px;
         font-weight: bold;
-        font-stretch: normal;
-        font-style: normal;
         line-height: 1.17;
+
+        @include mobile {
+            margin-bottom: 7px;
+        }
     }
 
     .icons {
         display: flex;
         cursor: pointer;
+
         div {
             &:last-child {
                 margin-left: 10px;
             }
-            span{
-                margin-left: 7px;
+            span.span {
+                margin-left: 5px;
             }
         }
     }
