@@ -1,12 +1,17 @@
 import { NextPage } from "next"
-import { Header } from "Сomponents"
-import cn from 'classnames'
-import s from '../styles/pages/faq-page.module.scss'
-import SupportSection from "Сomponents/SupportSection/SupportSection"
+
+import Head from "next/head"
+import { Header, SupportSection } from "Сomponents"
 import { Accordion } from "UI"
+
+import s from '../styles/pages/faq-page.module.scss'
+
 const FaqPage: NextPage = () => {
     return (
-        <>
+        <div>
+            <Head>
+                <title>ILONSI SHOP | FAQ page</title>
+            </Head>
             <Header />
             <div className={s.breadCrumbs}>Breadcrumbs</div>
             <div className={s.container}>
@@ -36,7 +41,7 @@ const FaqPage: NextPage = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

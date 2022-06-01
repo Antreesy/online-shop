@@ -1,3 +1,4 @@
+import { SupportSection } from './SupportSection';
 import { BurgerMenu } from "./BurgerMenu"
 import { Counter } from "./Counter"
 import { Header } from "./Header"
@@ -14,4 +15,5 @@ export {
   Notification,
   SectionHeader,
   SizePicker,
+  SupportSection,
 }
