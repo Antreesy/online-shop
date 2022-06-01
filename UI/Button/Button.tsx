@@ -17,14 +17,6 @@ interface ButtonProps {
   rounded?: boolean
   disableElevation?: boolean
   variant?: "text" | "outlined" | "contained"
-  color?:
-    | "primary"
-    | "inherit"
-    | "secondary"
-    | "success"
-    | "error"
-    | "info"
-    | "warning"
   children?: React.ReactNode
   iconLeft?: IconType
   iconRight?: IconType
@@ -32,14 +24,12 @@ interface ButtonProps {
 }
 
 const CustomButton: React.FC<ButtonProps> = (props) => {
-  // Props destructuring
   const {
     className = "",
     disabled,
     rounded,
     disableElevation,
     variant = "contained",
-    color = "primary",
     children = null,
     icon,
     iconLeft,
@@ -47,7 +37,6 @@ const CustomButton: React.FC<ButtonProps> = (props) => {
     onClick,
   } = props
 
-  // Local functions
   const buttonClass = cn(
     s.button,
     {
@@ -66,7 +55,6 @@ const CustomButton: React.FC<ButtonProps> = (props) => {
       disabled={disabled}
       disableElevation={disableElevation}
       variant={variant}
-      color={color}
       onClick={onClick}
     >
       {!!iconLeft && <Icon type={iconLeft} />}

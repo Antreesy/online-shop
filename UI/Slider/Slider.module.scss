@@ -1,11 +1,27 @@
-.slider {
-  color: #8100ef;
+@import "styles/style.scss";
+
+.sliderWrapper {
+  max-width: 200px;
 }
 
-.slider span[data-index="0"] {
+.slider {
+  color: $color-purple;
+}
+
+.markLabel {
+  font-size: 20px;
+  font-weight: $fw-regular;
+  color: $color-black;
   border-radius: 1px;
 }
 
+.slider span[data-index="0"],
 .slider span[data-index="1"] {
   border-radius: 1px;
+}
+
+.rail,
+.mark {
+  color: $color-grey-a5;
+  background-color: $color-grey-a5;
 }

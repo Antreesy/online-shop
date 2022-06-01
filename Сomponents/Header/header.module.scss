@@ -1,11 +1,17 @@
 @import "styles/style.scss";
 
-.header {
+.header,
+.header_light {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  z-index: 10;
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: column;
   height: $header-desktop-height;
+  background-color: $color-grey-1c;
 
   @include mobile {
     height: $header-mobile-height;
@@ -15,37 +21,58 @@
     content: "";
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -5px;
     width: 36%;
     height: 5px;
     background-image: linear-gradient(to right, #8100ef 53%, #00f5ff 100%);
+
+    @include mobile-tablet {
+      width: 50%;
+    }
   }
 }
 
-.header__top,
-.header__bottom {
+.header_light {
+  height: 118px;
+  align-items: center;
+  background-color: $color-grey-f4;
+
+  @include mobile-tablet {
+    height: 83px;
+  }
+}
+
+.top_group,
+.bottom_group {
   display: flex;
   flex: 0 0 100%;
   justify-content: space-between;
   align-items: center;
   padding: 0 75px;
-}
 
-.header__top {
-  height: 51px;
-  background-color: $color-grey-14;
+  @include tablet {
+    padding: 0 45px;
+  }
 
   @include mobile {
-    height: 47px;
+    padding: 0 16px;
   }
 }
 
-.header__bottom {
-  height: 86px;
-  background-color: $color-grey-1c;
+.top_group {
+  max-height: 51px;
+  background-color: $color-grey-14;
 
   @include mobile {
-    height: 83px;
+    max-height: 47px;
+  }
+}
+
+.bottom_group {
+  max-height: 86px;
+
+  @include mobile {
+    max-height: 83px;
   }
 
   & > * {
@@ -63,51 +90,159 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 6px;
+
+  @include mobile-tablet {
+    display: none;
+  }
+}
+
+.bottom_right_group_mobile {
+  display: none;
+
+  @include mobile-tablet {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+  }
 }
 
 .email {
+  font-weight: $fw-regular;
+  font-size: 14px;
   color: $color-white;
+
+  @include mobile {
+    font-size: 11px;
+  }
 }
 
 .caption {
+  font-weight: $fw-regular;
+  font-size: 14px;
   color: $color-grey-60;
+
+  @include mobile {
+    display: none;
+  }
 }
 
 .socials {
   display: flex;
   gap: 6px;
+
+  @include mobile-tablet {
+    gap: 9px;
+  }
 }
 
-.header__logo {
+.logo {
   width: fit-content;
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include mobile-tablet {
+    height: 53px;
+
+    & > * {
+      height: 100% !important;
+    }
+  }
 }
 
-.header__button {
+.button_search {
   background: transparent;
   color: $color-white;
-  font-size: 14px;
+  font-size: 27px;
+  margin-left: 20px;
 
   &:hover {
     background: $color-purple;
   }
-}
 
-.header__burger {
-  background: transparent;
-  color: $color-purple;
-
-  &:hover {
-    background-color: $color-purple-d;
-    color: $color-white;
+  @include mobile-tablet {
+    margin-left: 8px;
+    width: 29px;
+    padding: 4px;
+    font-size: 21px;
   }
 }
 
-.header__lang {
+.button_account {
+  padding: 6px;
+  background: transparent;
+  color: $color-white;
+  font-weight: $fw-regular;
+  font-size: 14px;
+  white-space: nowrap;
+
+  &:hover {
+    background: $color-purple;
+  }
+
+  @include mobile-tablet {
+    width: 33px;
+    background: $color-purple;
+    color: $color-white;
+
+    &:hover {
+      background: $color-purple-d;
+    }
+  }
+}
+
+.button_basket {
+  padding: 6px;
+  background: transparent;
+  color: $color-white;
+  font-weight: $fw-regular;
+  font-size: 14px;
+  white-space: nowrap;
+
+  &:hover {
+    background: $color-purple;
+  }
+
+  @include mobile-tablet {
+    width: 33px;
+    border-color: $color-purple;
+    color: $color-white;
+
+    &:hover {
+      border-color: $color-purple;
+      background: $color-purple;
+    }
+  }
+}
+
+.button_lang_top {
+  display: none;
+  min-width: 28px;
+  padding: 4px;
+  font-size: 12px;
+  font-weight: $fw-medium;
+  color: $color-white;
+
+  & > span {
+    padding-left: 2px;
+    font-size: 9px;
+  }
+
+  &:hover {
+    background-color: $color-purple-d;
+  }
+
+  @include mobile-tablet {
+    display: block;
+  }
+}
+
+.button_lang_bottom {
   background: $color-purple;
+  font-weight: $fw-medium;
   font-size: 14px;
 
   &:hover {
