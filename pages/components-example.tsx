@@ -16,6 +16,7 @@ import {
   Tabs,
   FileSelect,
   AddButton,
+  Input,
 } from "UI"
 
 import {
@@ -41,6 +42,7 @@ import s from "styles/pages/ComponentsExample.module.scss"
 const Home: NextPage = () => {
   const [isRead, setIsRead] = useState<boolean>(false)
   const [value, setValue] = useState<File | null>(null)
+  const [inputValue, setInputValue] = useState<string>("")
   return (
     <div className={s.container}>
       <Head>
@@ -66,6 +68,7 @@ const Home: NextPage = () => {
             "Checkboxes and Radio",
             "Accordion",
             "File Select",
+            "Input",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -169,6 +172,13 @@ const Home: NextPage = () => {
             </div>,
             <div key={"File Select"}>
               <FileSelect value={value} setValue={setValue} />
+            </div>,
+            <div key={"Input"}>
+              <Input
+                label="First"
+                setValue={setInputValue}
+                value={inputValue}
+              />
             </div>,
           ]}
         />

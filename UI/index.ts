@@ -9,6 +9,7 @@ import { Icon } from "./Icon"
 import { RadioGroup } from "./RadioGroup"
 import { SocialIcon } from "./SocialIcon"
 import { Tabs } from "./Tabs"
+import { Input } from "./Input"
 
 export {
   Accordion,
@@ -19,6 +20,7 @@ export {
   DatePicker,
   FileSelect,
   Icon,
+  Input,
   RadioGroup,
   SocialIcon,
   Tabs,
