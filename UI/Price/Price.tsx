@@ -2,7 +2,7 @@ import cn from "classnames"
 
 import s from "./price.module.scss"
 
-enum CurrencyType {
+export enum CurrencyType {
   LT = "LT",
   USD = "USD",
 }
@@ -12,7 +12,7 @@ interface PriceProps {
   oldPrice?: number
   currency?: CurrencyType
   currencyFirst?: boolean
-  type?: "order" | "cart" | "old" | "sale" | "sale_black" | "primary"
+  type: "order" | "cart" | "old" | "sale" | "sale_black" | "primary"
 }
 
 type PriceElement = {

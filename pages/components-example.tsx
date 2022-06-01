@@ -133,13 +133,14 @@ const Home: NextPage = () => {
             <div key={"Price"}>
                 <Price price={2030} oldPrice={2030} type="sale_black" />
                 <br/>
-              <ProductItem />
+                <div className={s.product_item_wrapper}>
+                  <ProductItem type={"sale"}/>
+                </div>
+              
             </div>
           ]}
         />
       </main>
-
-      <ProductItem />
 
       <footer className={s.footer}>
         <a

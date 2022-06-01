@@ -1,0 +1,129 @@
+@import "styles/style.scss";
+
+$product-title-color: #8100ef;
+$product-description-color: #888888;
+$product-image-bgr-color: #f4f4f4;
+$add-button-color: #000000;
+
+.product_item_container {
+  width: auto;
+  max-width: 600px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.product_favourites {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 18px;
+  z-index: 10;
+
+  & > span {
+    cursor: pointer;
+
+    &:hover {
+      color: lighten($product-title-color, 10%);
+    }
+  }
+}
+
+.isFavorite {
+  color: $product-title-color;
+}
+
+.product_item_top {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 276px;
+  max-width: 300px;
+  color: #000;
+  font-size: 14px;
+  padding-bottom: 15px;
+
+  .product_item_image {
+    background-color: $product-image-bgr-color;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+  }
+
+  .img {
+    transform: scale(0.75);
+  }
+}
+
+.product_item_bottom {
+  min-width: 276px;
+  max-width: 276px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+
+  .add_button_true,
+  .add_button_false {
+    position: absolute;
+    top: 3px;
+    right: -20px;
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: $add-button-color;
+      width: 14px;
+      height: 2px;
+      top: 6px;
+      border-radius: 1px;
+    }
+  }
+
+  .add_button_false::before {
+    background-color: $product-title-color;
+  }
+
+  .add_button_true:after {
+    position: absolute;
+    content: "";
+    background-color: $add-button-color;
+    width: 2px;
+    height: 14px;
+    left: 6px;
+  }
+
+  .product_item_description {
+    line-height: 1.5em;
+    margin-bottom: 5px;
+  }
+
+  .product_title {
+    font-weight: bold;
+    color: $product-title-color;
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .product_subtitle {
+    align-self: start;
+    font-size: 14px;
+    margin-bottom: 3px;
+  }
+
+  .product_subtitle ~ p {
+    font-size: 13px;
+    line-height: 1.3rem;
+    color: $product-description-color;
+  }
+
+  .price {
+    margin-bottom: 10px;
+  }
+}
