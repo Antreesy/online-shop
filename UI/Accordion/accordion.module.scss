@@ -5,6 +5,10 @@
   color: $color-black;
   font-weight: $fw-regular;
   background-color: transparent;
+
+  &::before {
+    background-color: transparent;
+  }
 }
 
 .summary {
