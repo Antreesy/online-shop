@@ -22,6 +22,7 @@ import {
   ButtonExamples,
   CardExample,
 } from "Сomponents/Examples"
+import ProfileSidebar from "../Сomponents/ProfileSidebar/ProfileSidebar"
 
 import {
   Header,
@@ -64,6 +65,7 @@ const Home: NextPage = () => {
             "Checkboxes and Radio",
             "Accordion",
             "File Select",
+            "Profile Sidebar",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -167,6 +169,21 @@ const Home: NextPage = () => {
             </div>,
             <div key={"File Select"}>
               <FileSelect value={value} setValue={setValue} />
+            </div>,
+
+            <div key={"Sidebar"} className={s.profileSidebar}>
+              <ProfileSidebar
+                labels={[
+                  "profile",
+                  "Address",
+                  "Order",
+                  "Payment",
+                  "Notification",
+                  "Favorite",
+                  "Help",
+                  "Sign Out",
+                ]}
+              />
             </div>,
           ]}
         />
