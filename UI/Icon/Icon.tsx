@@ -1,4 +1,3 @@
-import React from "react"
 import { icons } from "shared/consts/icons"
 import s from "./icon.module.scss"
 
