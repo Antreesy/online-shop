@@ -6,7 +6,7 @@ import type { NextPage } from "next"
 //Project Components
 
 import Head from "next/head"
-import Image from "next/image"
+
 import {
   AccordionExamples,
   ButtonExamples,
@@ -29,6 +29,7 @@ import {
 } from "UI"
 
 import {
+  Footer,
   Header,
   Logo,
   Notification,
@@ -37,7 +38,8 @@ import {
 } from "Сomponents"
 
 //Project Helpers
-import { icons } from "shared/consts/icons"
+import { icons } from "shared/constants/icons"
+import { footerNav } from "shared/constants/footernav"
 import { Currency } from "shared/enums/currency"
 
 //Project Styles
@@ -47,7 +49,7 @@ const Home: NextPage = () => {
   const [isRead, setIsRead] = useState<boolean>(false)
   const [value, setValue] = useState<File | null>(null)
   return (
-    <div className={s.container}>
+    <>
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
@@ -235,19 +237,8 @@ const Home: NextPage = () => {
         />
       </main>
 
-      <footer className={s.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={s.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+      <Footer links={footerNav} />
+    </>
   )
 }
 
