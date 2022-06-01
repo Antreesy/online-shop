@@ -7,6 +7,13 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import Image from "next/image"
 import {
+  AccordionExamples,
+  ButtonExamples,
+  CardExample,
+} from "Сomponents/Examples"
+
+import {
+  AddButton,
   Carousel,
   CheckboxGroup,
   DatePicker,
@@ -18,11 +25,7 @@ import {
   Tabs,
 } from "UI"
 
-import {
-  AccordionExamples,
-  ButtonExamples,
-  CardExample,
-} from "Сomponents/Examples"
+
 
 import {
   Header,
@@ -184,7 +187,7 @@ const Home: NextPage = () => {
 
         <Tabs
           className={s.example_tabs}
-          labels={["Notification", "Carousel"]}
+          labels={["Notification", "Carousel", "Add Button"]}
           values={[
             <div key="Notification">
               <Notification
@@ -202,6 +205,34 @@ const Home: NextPage = () => {
 
             <div key={"Carousel"} className={s.carousel}>
               <Carousel items={new Array(10).fill(CardExample)} />
+            </div>,
+
+            <div key={"AddButton"} className={s.addbuttonlist}>
+              <div>
+                <AddButton />
+              </div>
+              <div>
+                <AddButton
+                  title="Add New Card"
+                  titleColor="primary"
+                  bgColor="primary"
+                />
+              </div>
+              <div>
+                <AddButton
+                  title="Add New Address"
+                  titleColor="secondary"
+                  bgColor="primary"
+                />
+              </div>
+              <div>
+                <AddButton
+                  title="Add Product"
+                  titleColor="secondary"
+                  bgColor="secondary"
+                  largeSize={true}
+                />
+              </div>
             </div>,
           ]}
         />

@@ -1,6 +1,7 @@
 @import "styles/style.scss";
 
-.header {
+.header,
+.header_light {
   position: fixed;
   top: 0;
   left: 0;
@@ -25,9 +26,19 @@
     height: 5px;
     background-image: linear-gradient(to right, #8100ef 53%, #00f5ff 100%);
 
-    @include mobile {
+    @include mobile-tablet {
       width: 50%;
     }
+  }
+}
+
+.header_light {
+  height: 118px;
+  align-items: center;
+  background-color: $color-grey-f4;
+
+  @include mobile-tablet {
+    height: 83px;
   }
 }
 
