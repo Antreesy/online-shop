@@ -15,6 +15,7 @@ import {
   SocialIcon,
   Tabs,
   FileSelect,
+  AddButton,
 } from "UI"
 
 import {
@@ -36,9 +37,6 @@ import { icons } from "shared/consts/icons"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
-
-import { Carousel } from "UI/Carousel"
-import { AddButton } from "UI/AddButton"
 
 const Home: NextPage = () => {
   const [isRead, setIsRead] = useState<boolean>(false)
@@ -68,8 +66,6 @@ const Home: NextPage = () => {
             "Checkboxes and Radio",
             "Accordion",
             "File Select",
-            "Carousel",
-            "Add Button",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -181,7 +177,7 @@ const Home: NextPage = () => {
 
         <Tabs
           className={s.example_tabs}
-          labels={["Notification", "Carousel"]}
+          labels={["Notification", "Carousel", "Add Button"]}
           values={[
             <div key="Notification">
               <Notification

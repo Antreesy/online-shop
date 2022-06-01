@@ -31,6 +31,7 @@ const AddButton: React.FC<AddButtonProps> = ({
     <Button
       onClick={onClick}
       className={cn(s.size, titleColorClass, bgColorClass, btnSizeStyles)}
+      mode="defaultVariantOff"
     >
       <div className={cn(s.iconContainer, iconSize)}>
         <Icon type="plus" />
