@@ -79,6 +79,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 6px;
 
   @include mobile-tablet {
     display: none;
@@ -160,6 +161,7 @@
 }
 
 .button_account {
+  padding: 6px;
   background: transparent;
   color: $color-white;
   font-weight: $fw-regular;
@@ -182,6 +184,7 @@
 }
 
 .button_basket {
+  padding: 6px;
   background: transparent;
   color: $color-white;
   font-weight: $fw-regular;

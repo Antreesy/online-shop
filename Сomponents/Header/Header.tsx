@@ -13,8 +13,9 @@ const Header: React.FC<HeaderProps> = (props) => {
   return (
     <header className={s.header}>
       <div className={s.top_group}>
-        <span className={s.email}>info@ilonsi.com</span>
-
+        <Link href="mailto:info@ilonsi.com" className={s.email}>
+          info@ilonsi.com
+        </Link>
         <span className={s.caption}>
           lipsum as it is sometimes known, is dummy
         </span>

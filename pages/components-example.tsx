@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 
 //Global Dependencies
 import type { NextPage } from "next"
@@ -75,7 +75,12 @@ const Home: NextPage = () => {
             <div key={"Inputs and Pickers"} className={s.grid}>
               <div>
                 <h2>Date Picker</h2>
-                <DatePicker initValue={new Date()} onChange={() => {}} />
+                <DatePicker
+                  initValue={new Date()}
+                  onChange={() => {
+                    return
+                  }}
+                />
                 <h2>Size Picker</h2>
                 <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
               </div>
@@ -177,7 +182,12 @@ const Home: NextPage = () => {
           labels={["Notification", "Carousel"]}
           values={[
             <div key="Notification">
-              <Notification setIsRead={setIsRead} header={"Notification"}>
+              <Notification
+                onRead={() => {
+                  setIsRead(true)
+                }}
+                header={"Notification"}
+              >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
                 quam sequi vitae eius iusto perspiciatis facilis nesciunt
                 dignissimos provident ipsum? Nobis repellat atque ab nam magni
