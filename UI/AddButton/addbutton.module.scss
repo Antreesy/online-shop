@@ -1,50 +1,47 @@
 @import "styles/style.scss";
 
-.size {
+.addButton {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.defaultSize {
   min-height: 85px;
 
   @include mobile {
     min-height: 54px;
   }
+
+  &.primaryColor {
+    color: $color-purple;
+  }
+
+  &.secondaryColor {
+    color: $color-black;
+  }
+
+  &.greyBgColor {
+    background: $color-grey-e2;
+
+    &:hover {
+      background: $color-grey-e2;
+    }
+  }
+
+  &.whiteBgColor {
+    background: $color-white;
+
+    &:hover {
+      background-color: $color-white;
+    }
+  }
 }
 
-.largeSize {
+.large {
   display: flex;
   flex-direction: column;
-  min-height: 300px;
+  min-height: 150px;
   @include mobile {
-    min-height: 150px;
-  }
-}
-
-.primaryColor {
-  color: $color-purple;
-}
-
-.secondaryColor {
-  color: $color-black;
-}
-
-.primaryBG {
-  background: $color-grey-e2;
-
-  &:hover {
-    background: $color-grey-e2;
-  }
-}
-
-.secondaryBG {
-  background: $color-white;
-
-  &:hover {
-    background-color: $color-white;
+    min-height: 80px;
   }
 }
 

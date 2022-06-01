@@ -8,31 +8,35 @@ import s from "./addbutton.module.scss"
 
 interface AddButtonProps {
   title?: string
-  titleColor?: "primary" | "secondary"
-  bgColor?: "primary" | "secondary"
-  largeSize?: boolean
+  color?: "primary" | "secondary"
+  bgColor?: "grey" | "white"
+  large?: boolean
   onClick?: () => void
 }
 
 const AddButton: React.FC<AddButtonProps> = ({
-  titleColor = "primary",
-  bgColor = "primary",
+  color = "primary",
+  bgColor = "grey",
   title,
-  largeSize,
+  large,
   onClick,
 }) => {
-  const titleColorClass =
-    titleColor === "primary" ? s.primaryColor : s.secondaryColor
-  const bgColorClass = bgColor === "primary" ? s.primaryBG : s.secondaryBG
-  const btnSizeStyles = largeSize ? s.largeSize : s.defaultSize
-  const iconSize = largeSize ? s.iconLarge : s.iconDefault
+  const addButtonClass = cn(
+    s.addButton,
+    color === "primary" ? s.primaryColor : s.secondaryColor,
+    bgColor === "grey" ? s.greyBgColor : s.whiteBgColor,
+    { [s.large]: large },
+  )
+
+  const iconClass = cn(s.iconContainer, large ? s.iconLarge : s.iconDefault)
 
   return (
     <Button
       onClick={onClick}
-      className={cn(s.size, titleColorClass, bgColorClass, btnSizeStyles)}
+      className={addButtonClass}
+      disableElevation={large}
     >
-      <div className={cn(s.iconContainer, iconSize)}>
+      <div className={iconClass}>
         <Icon type="plus" />
       </div>
       {title && <div className={s.title}>{title}</div>}
@@ -41,35 +45,3 @@ const AddButton: React.FC<AddButtonProps> = ({
 }
 
 export default AddButton
-
-// const AddButton: React.FC<AddButtonProps> = ({
-//   titleColor = "primary",
-//   bgColor = "primary",
-//   title,
-//   largeSize,
-//   onClick,
-// }) => {
-//   const addButtonClass = cn(
-//     s.addButton,
-//     titleColor === "primary" ? s.primaryColor : s.secondaryColor,
-//     bgColor === "primary" ? s.primaryBG : s.secondaryBG,
-//     largeSize ? s.largeSize : s.defaultSize,
-//   )
-
-//   const iconClass = cn(s.iconContainer, largeSize ? s.iconLarge : s.iconDefault)
-
-//   return (
-//     <Button
-//       onClick={onClick}
-//       className={addButtonClass}
-//       // mode="defaultVariantOff"
-//     >
-//       <div className={iconClass}>
-//         <Icon type="plus" />
-//       </div>
-//       {title && <div className={s.title}>{title}</div>}
-//     </Button>
-//   )
-// }
-
-// export default AddButton

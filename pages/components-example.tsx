@@ -25,8 +25,6 @@ import {
   Tabs,
 } from "UI"
 
-
-
 import {
   Header,
   Logo,
@@ -212,25 +210,17 @@ const Home: NextPage = () => {
                 <AddButton />
               </div>
               <div>
-                <AddButton
-                  title="Add New Card"
-                  titleColor="primary"
-                  bgColor="primary"
-                />
+                <AddButton title="Add New Card" color="primary" />
               </div>
               <div>
-                <AddButton
-                  title="Add New Address"
-                  titleColor="secondary"
-                  bgColor="primary"
-                />
+                <AddButton title="Add New Address" color="secondary" />
               </div>
               <div>
                 <AddButton
                   title="Add Product"
-                  titleColor="secondary"
-                  bgColor="secondary"
-                  largeSize={true}
+                  color="secondary"
+                  bgColor="white"
+                  large
                 />
               </div>
             </div>,
