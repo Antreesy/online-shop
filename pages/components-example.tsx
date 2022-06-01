@@ -200,7 +200,7 @@ const Home: NextPage = () => {
           ]}
         />
       </main>
-      <AddressCard title="title" address="nskjjknsjnkjdvmkjewnlkjwnljcnwjklen" />
+      <AddressCard title="title" text="nskjjknsjnkjdvmkjewnlkjwnljcnwjklen" />
       <footer className={s.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

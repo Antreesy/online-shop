@@ -1,13 +1,12 @@
 @import 'styles/style.scss';
 
-.addresCard {
+.addressCard {
     max-width: 660px;
     padding: 28px 31.9px 23px 25px;
     object-fit: contain;
     border-radius: 5px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
     background-color: #fff;
-    margin-bottom: 100px; //Надо будет убрать
 }
 
 .titleBox {
