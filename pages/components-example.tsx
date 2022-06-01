@@ -1,27 +1,31 @@
-import React, { useState } from "react"
+import { useState } from "react"
 
 //Global Dependencies
 import type { NextPage } from "next"
 
 //Project Components
+
 import Head from "next/head"
 import Image from "next/image"
-import {
-  Carousel,
-  DatePicker,
-  Icon,
-  RadioGroup,
-  CheckboxGroup,
-  SocialIcon,
-  Tabs,
-  FileSelect,
-} from "UI"
-
 import {
   AccordionExamples,
   ButtonExamples,
   CardExample,
 } from "Сomponents/Examples"
+
+import {
+  AddButton,
+  Carousel,
+  CheckboxGroup,
+  DatePicker,
+  Icon,
+  FileSelect,
+  RadioGroup,
+  Range,
+  Slider,
+  SocialIcon,
+  Tabs,
+} from "UI"
 
 import {
   Header,
@@ -33,6 +37,7 @@ import {
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
+import { Currency } from "shared/enums/currency"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
@@ -56,6 +61,12 @@ const Home: NextPage = () => {
           actionText={"All Orders"}
         />
 
+        <Range
+          minQuantity={10000}
+          maxQuantity={1000000}
+          currency={Currency.RUB}
+        />
+
         <Tabs
           className={s.example_tabs}
           labels={[
@@ -73,9 +84,16 @@ const Home: NextPage = () => {
             <div key={"Inputs and Pickers"} className={s.grid}>
               <div>
                 <h2>Date Picker</h2>
-                <DatePicker initValue={new Date()} onChange={() => {}} />
+                <DatePicker
+                  initValue={new Date()}
+                  onChange={() => {
+                    return
+                  }}
+                />
                 <h2>Size Picker</h2>
                 <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
+                <h2>Slider</h2>
+                <Slider min={0} max={50} value={[0, 30]} />
               </div>
             </div>,
 
@@ -172,10 +190,15 @@ const Home: NextPage = () => {
 
         <Tabs
           className={s.example_tabs}
-          labels={["Notification", "Carousel"]}
+          labels={["Notification", "Carousel", "Add Button"]}
           values={[
             <div key="Notification">
-              <Notification setIsRead={setIsRead} header={"Notification"}>
+              <Notification
+                onRead={() => {
+                  setIsRead(true)
+                }}
+                header={"Notification"}
+              >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
                 quam sequi vitae eius iusto perspiciatis facilis nesciunt
                 dignissimos provident ipsum? Nobis repellat atque ab nam magni
@@ -185,6 +208,26 @@ const Home: NextPage = () => {
 
             <div key={"Carousel"} className={s.carousel}>
               <Carousel items={new Array(10).fill(CardExample)} />
+            </div>,
+
+            <div key={"AddButton"} className={s.addbuttonlist}>
+              <div>
+                <AddButton />
+              </div>
+              <div>
+                <AddButton title="Add New Card" color="primary" />
+              </div>
+              <div>
+                <AddButton title="Add New Address" color="secondary" />
+              </div>
+              <div>
+                <AddButton
+                  title="Add Product"
+                  color="secondary"
+                  bgColor="white"
+                  large
+                />
+              </div>
             </div>,
           ]}
         />

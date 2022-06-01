@@ -1,6 +1,6 @@
 import { BurgerMenu } from "./BurgerMenu"
 import { Counter } from "./Counter"
-import { Header } from "./Header"
+import { Header, HeaderLight } from "./Header"
 import { Logo } from "./Logo"
 import { Notification } from "./Notification"
 import { SectionHeader } from "./SectionHeader"
@@ -10,6 +10,7 @@ export {
   BurgerMenu,
   Counter,
   Header,
+  HeaderLight,
   Logo,
   Notification,
   SectionHeader,

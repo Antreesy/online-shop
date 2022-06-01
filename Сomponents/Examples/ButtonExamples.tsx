@@ -1,4 +1,3 @@
-import React from "react"
 import { Button } from "UI"
 
 import s from "styles/pages/ComponentsExample.module.scss"

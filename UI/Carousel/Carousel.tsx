@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react"
+import { useRef, useState, useEffect } from "react"
 
 import { Swiper as SwiperObj, Navigation, Autoplay } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
