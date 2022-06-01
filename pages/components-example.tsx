@@ -29,6 +29,7 @@ import { icons } from "shared/consts/icons"
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
 import { Carousel } from "UI/Carousel"
+import AddressCard from "Сomponents/AddressCard/AddressCard"
 
 const Home: NextPage = () => {
   const [value, setValue] = useState<File | null>(null)
@@ -147,7 +148,7 @@ const Home: NextPage = () => {
           ]}
         />
       </main>
-
+          <AddressCard title="title" address="nskjjknsjnkjdvmkjewnlkjwnljcnwjklen"/>
       <footer className={s.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

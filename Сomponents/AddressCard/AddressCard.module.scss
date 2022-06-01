@@ -1,0 +1,44 @@
+@import 'styles/style.scss';
+
+.addresCard {
+    max-width: 660px;
+    padding: 28px 31.9px 23px 25px;
+    object-fit: contain;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
+    background-color: #fff;
+    margin-bottom: 100px; //Надо будет убрать
+}
+
+.titleBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 23px;
+
+    .title {
+        color: $color-purple;
+        font-size: 18px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.17;
+    }
+
+    .icons {
+        display: flex;
+        cursor: pointer;
+        div {
+            &:last-child {
+                margin-left: 10px;
+            }
+            span{
+                margin-left: 7px;
+            }
+        }
+    }
+}
+
+.content {
+    font-size: 16px;
+}
