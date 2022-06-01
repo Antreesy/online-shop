@@ -24,7 +24,13 @@ import { icons } from "shared/consts/icons"
 import s from "styles/pages/ComponentsExample.module.scss"
 
 const Home: NextPage = () => {
-  const currentStep = 1;
+  const currentStep = 3;
+  const steps = [
+    "Select master blaster campaign settings",
+    "Create an ad group",
+    "Create an ad group",
+    "hi",
+  ]
   return (
     <div className={s.container}>
       <Head>
@@ -36,7 +42,7 @@ const Home: NextPage = () => {
       <main className={s.main}>
         <h1>UI Kit page</h1>
 
-        <ProgressBar currentStep={currentStep}/>
+        <ProgressBar currentStep={currentStep} steps={steps}/>
 
         <Tabs
           className={s.example_tabs}
