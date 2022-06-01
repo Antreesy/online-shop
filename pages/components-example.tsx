@@ -29,6 +29,7 @@ import {
   Notification,
   SectionHeader,
   SizePicker,
+  AddressCard,
 } from "Сomponents"
 
 //Project Helpers
@@ -36,7 +37,7 @@ import { icons } from "shared/consts/icons"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
-import AddressCard from "Сomponents/AddressCard/AddressCard"
+
 
 
 const Home: NextPage = () => {

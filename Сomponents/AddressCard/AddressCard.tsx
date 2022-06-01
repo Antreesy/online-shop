@@ -1,4 +1,5 @@
-import { Icon } from 'UI'
+import { Icon, Button } from 'UI'
+
 import s from './AddressCard.module.scss';
 
 interface AddressCardProps {
@@ -11,15 +12,14 @@ const AddressCard: React.FC<AddressCardProps> = (props) => {
     return (
         <div className={s.addressCard}>
             <div className={s.titleBox}>
-                <div className={s.title}>{title}</div>
+                <span className={s.title}>{title}</span>
                 <div className={s.icons}>
-                    <div><Icon type='edit' color='#8100ef'/> <span className={s.span}>Edit</span></div>
-                    <div><Icon type='trash_can' color='#8100ef'/><span className={s.span}>Delete</span></div>
+                    <Button variant='text'><Icon type='edit' color='#8100ef' /> <span className={s.span}>Edit</span></Button>
+                    <Button variant='text'><Icon type='trash_can' color='#8100ef' /><span className={s.span}>Delete</span></Button>
                 </div>
             </div>
-            <div className={s.content}>
                 <p>{text}</p>
-            </div>
+            
         </div>
     )
 }
