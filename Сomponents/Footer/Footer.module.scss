@@ -140,7 +140,7 @@
   }
   &__navigate ul {
     display: flex;
-    align-self: start;
+    align-self: flex-start;
     flex-direction: column;
     list-style: none;
   }
@@ -294,7 +294,7 @@
     }
     &__top {
       display: flex;
-      align-items: start;
+      align-items: flex-start;
       justify-content: space-between;
     }
     &__navigate {
