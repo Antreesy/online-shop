@@ -41,6 +41,9 @@ import { Range } from "UI/Range"
 const Home: NextPage = () => {
   const [isRead, setIsRead] = useState<boolean>(false)
   const [value, setValue] = useState<File | null>(null)
+  const minQuantity = 10000
+  const maxQuantity = 100000
+  const currency = "TL"
   return (
     <div className={s.container}>
       <Head>
@@ -56,7 +59,11 @@ const Home: NextPage = () => {
           actionText={"All Orders"}
         />
 
-      <Range/>
+        <Range
+          minQuantity={minQuantity}
+          maxQuantity={maxQuantity}
+          currency={currency}
+        />
 
         <Tabs
           className={s.example_tabs}
