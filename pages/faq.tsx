@@ -1,14 +1,18 @@
 import { NextPage } from "next"
 
 import Head from "next/head"
-import { Header, SupportSection } from "Сomponents"
+import { Footer, Header, SupportSection } from "Сomponents"
 import { Accordion } from "UI"
+import { footerNav } from "shared/constants/footernav"
+import { questions } from "shared/constants/questions"
+// import {  } from "shared/constants/footernav"
+
 
 import s from '../styles/pages/faq-page.module.scss'
 
 const FaqPage: NextPage = () => {
     return (
-        <div>
+        <>
             <Head>
                 <title>ILONSI SHOP | FAQ page</title>
             </Head>
@@ -20,28 +24,16 @@ const FaqPage: NextPage = () => {
                     <SupportSection />
                     <h1 className={s.heading}>FAQ</h1>
                     <div className={s.accordions}>
-                        <Accordion header={'first'}>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam dolorem odio ea quasi alias repellat dignissimos? Nostrum eaque eum doloribus minima quaerat numquam dolores illo? Nam consequatur doloribus nostrum.
-                        </Accordion>
-                        <Accordion header={'second'}>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam dolorem odio ea quasi alias repellat dignissimos? Nostrum eaque eum doloribus minima quaerat numquam dolores illo? Nam consequatur doloribus nostrum.
-                        </Accordion>
-                        <Accordion header={'third'}>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam dolorem odio ea quasi alias repellat dignissimos? Nostrum eaque eum doloribus minima quaerat numquam dolores illo? Nam consequatur doloribus nostrum.
-                        </Accordion>
-                        <Accordion header={'fourth'}>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam dolorem odio ea quasi alias repellat dignissimos? Nostrum eaque eum doloribus minima quaerat numquam dolores illo? Nam consequatur doloribus nostrum.
-                        </Accordion>
-                        <Accordion header={'fivth'}>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam dolorem odio ea quasi alias repellat dignissimos? Nostrum eaque eum doloribus minima quaerat numquam dolores illo? Nam consequatur doloribus nostrum.
-                        </Accordion>
-                        <Accordion header={'six'}>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam dolorem odio ea quasi alias repellat dignissimos? Nostrum eaque eum doloribus minima quaerat numquam dolores illo? Nam consequatur doloribus nostrum.
-                        </Accordion>
+                        {questions.map(({ header, content }) => {
+                            return <Accordion header={header}>
+                                {content}
+                            </Accordion>
+                        })}
                     </div>
                 </div>
             </div>
-        </div>
+            <Footer links={footerNav} />
+        </>
     )
 }
 

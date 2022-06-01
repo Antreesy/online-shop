@@ -36,6 +36,9 @@
     @include mobile {
         flex-direction: column;
     }
+    .btn{
+        margin-bottom: 15px;
+    }
 
     .btn:not(:last-child) {
         margin-right: 20px;
@@ -52,23 +55,21 @@
 }
 
 .btnItem {
-    border-color: rgba(129, 0, 239, 0.8);
-    color: rgba(129, 0, 239, 0.8);
+    border-color: $color-purple;
+    color: $color-purple;
 
     @include tablet {
-        margin-top: 15px;
-
-
+        margin-bottom: 15px;
     }
 
     @include mobile {
-        margin-top: 15px;
+        margin-bottom: 15px;
     }
 
 }
 
 .heading {
-    color: rgba(129, 0, 239, 0.8);
+    color: $color-purple;
     margin-bottom: 15px;
 
 
@@ -108,7 +109,6 @@
 }
 
 .content {
-    margin-left: 15px;
     width: 60%;
 }
 
