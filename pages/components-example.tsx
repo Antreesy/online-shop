@@ -22,13 +22,13 @@ import {
   CardExample,
 } from "Сomponents/Examples"
 import { Header, Logo, SizePicker } from "Сomponents"
+import { Carousel } from "UI/Carousel";
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
-import { Carousel } from "UI/Carousel"
 
 const Home: NextPage = () => {
   const [value, setValue] = useState<File | null>(null)
@@ -54,6 +54,7 @@ const Home: NextPage = () => {
             "Accordion",
             "File Select",
             "Carousel",
+            "Profile Sidebar"
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
