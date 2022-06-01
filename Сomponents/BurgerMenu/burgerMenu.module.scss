@@ -1,0 +1,137 @@
+@import "styles/style.scss";
+
+.openButton {
+  width: 48px;
+  padding: 4px;
+  background-color: transparent;
+  background-image: url(../../public/assets/icons/burgerMenu.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90% 90%;
+
+  &:hover {
+    background-color: transparent;
+    background-image: url(../../public/assets/icons/burgerMenu-white.svg);
+  }
+
+  @include mobile {
+    width: 46px;
+  }
+}
+
+.closeButton {
+  color: $color-black;
+  background: transparent;
+  min-width: 23px;
+  width: 23px;
+  height: 23px;
+  font-size: 23px;
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  @include mobile {
+    font-size: 23px;
+  }
+}
+
+.drawerBox {
+  margin-top: 48px;
+  width: 415px;
+  height: 100vh;
+  overflow: hidden;
+  border-bottom-right-radius: 10px;
+  background-color: $color-grey-ed;
+  background-image: url(../../public/assets/img/LightLogo.svg);
+  background-repeat: no-repeat;
+  background-position: 50% calc(100% + 100px);
+  background-size: 235px;
+
+  @include mobile {
+    margin-top: 0;
+    width: 100vw;
+    height: 100%;
+    border-radius: 0;
+  }
+}
+
+.drawerBox_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 75px;
+  border-radius: 0 0 5px 5px;
+  background-color: $color-grey-f4;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.07);
+
+  @include mobile {
+    padding: 20px 55px;
+  }
+}
+
+.drawerBox_logo {
+  width: 72px;
+  height: 55px;
+
+  > * {
+    height: 100%;
+  }
+}
+
+.drawerBox_main {
+  overflow: auto;
+  height: 100%;
+  padding: 0 75px;
+
+  @include mobile {
+    padding: 0 55px;
+  }
+}
+
+.drawerBox_item {
+  border-bottom: 1px solid $color-grey-ba;
+}
+
+.drawerBox_link {
+  position: relative;
+  z-index: 0;
+
+  width: 100%;
+  padding: 30px 0;
+
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: $fw-medium;
+  color: $color-black;
+
+  & > span:first-child {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:hover {
+    font-weight: $fw-semibold;
+    color: $color-purple;
+
+    & > span:last-child {
+      position: relative;
+      z-index: 0;
+
+      &::after {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        content: "";
+        width: 16px;
+        height: 16px;
+        border-radius: 8px;
+        background: $light-gradient;
+      }
+    }
+  }
+
+  @include mobile {
+    font-size: 16px;
+  }
+}
