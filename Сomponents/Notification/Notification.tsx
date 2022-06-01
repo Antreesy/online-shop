@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import cn from "classnames"
 
 import { Accordion } from "UI"
@@ -10,10 +10,11 @@ interface NotificationProps {
   className?: string
   header: React.ReactNode
   children: React.ReactNode
+  onRead?: () => void
 }
 
 const Notification: React.FC<NotificationProps> = (props) => {
-  const { header, read, children, className } = props
+  const { header, read, children, className, onRead } = props
   const [isRead, setIsRead] = useState<boolean>(read ?? false)
 
   const notificationClass = cn(s.notification, className)
