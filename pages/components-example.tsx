@@ -36,6 +36,7 @@ import { icons } from "shared/consts/icons"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
+import { ItemCounter } from "UI/ItemCounter"
 
 const Home: NextPage = () => {
   const [isRead, setIsRead] = useState<boolean>(false)
@@ -65,6 +66,7 @@ const Home: NextPage = () => {
             "Checkboxes and Radio",
             "Accordion",
             "File Select",
+            "Counters",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -163,6 +165,23 @@ const Home: NextPage = () => {
             </div>,
             <div key={"File Select"}>
               <FileSelect value={value} setValue={setValue} />
+            </div>,
+            <div key={"Counters"} style={{ display: "flex" }}>
+              <ItemCounter
+                onChange={(quantity, id) => {
+                  console.log(quantity, id)
+                }}
+                quantity={5}
+                id="13"
+              />
+              <ItemCounter
+                onChange={(quantity, id) => {
+                  console.log(quantity, id)
+                }}
+                quantity={5}
+                id="13"
+                large
+              />
             </div>,
           ]}
         />
