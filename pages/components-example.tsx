@@ -29,6 +29,7 @@ import {
   Notification,
   SectionHeader,
   SizePicker,
+  BreadCrumbs,
 } from "Сomponents"
 
 //Project Helpers
@@ -36,7 +37,6 @@ import { icons } from "shared/consts/icons"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
-import BreadCrumbs from "Сomponents/Breadcrumbs/Breadcrumbs"
 
 const Home: NextPage = () => {
   const [isRead, setIsRead] = useState<boolean>(false)
@@ -48,6 +48,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Header />
+      <BreadCrumbs/>
 
       <main className={s.main}>
         <SectionHeader
@@ -64,8 +65,7 @@ const Home: NextPage = () => {
             "Icons",
             "Tabs",
             "Checkboxes and Radio",
-            "Accordion",
-            "Breadcrumbs"
+            "Accordion"
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -166,9 +166,6 @@ const Home: NextPage = () => {
 
             <div key={"Accordion"}>
               <AccordionExamples />
-            </div>,
-            <div key={"Breadcrumbs"}>
-              <BreadCrumbs/>
             </div>
           ]}
         />

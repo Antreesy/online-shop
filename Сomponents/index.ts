@@ -5,6 +5,7 @@ import { Logo } from "./Logo"
 import { Notification } from "./Notification"
 import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
+import { BreadCrumbs } from './Breadcrumbs'
 
 export {
   BurgerMenu,
@@ -14,4 +15,5 @@ export {
   Notification,
   SectionHeader,
   SizePicker,
+  BreadCrumbs
 }

@@ -1,10 +1,8 @@
 import * as React from "react"
-import Breadcrumbs from "@mui/material/Breadcrumbs"
-import Typography from "@mui/material/Typography"
-import Link from "@mui/material/Link"
-import Stack from "@mui/material/Stack"
+import { Breadcrumbs, Typography, Link, Stack } from "@mui/material"
 import { useRouter } from "next/router"
-
+import classNames from "classnames"
+import s from "./breadcrumbs.module.scss"
 
 const BreadCrumbs = () => {
   const router = useRouter()
@@ -12,14 +10,22 @@ const BreadCrumbs = () => {
   path.shift()
   const activeRoute = path.pop()
   return (
-    <Stack spacing={2}>
+    <Stack className={s.main} spacing={2}>
       <Breadcrumbs separator="-" aria-label="breadcrumb">
+        <Link className={classNames(s.route, s.breadcrumb)} key="1" href="/">
+          Home
+        </Link>
         {path.map((route) => (
-          <Link underline="hover" key="1" color="inherit" href={`/${route}`}>
+          <Link
+            className={classNames(s.route, s.breadcrumb)}
+            underline="hover"
+            key="1"
+            href={`/${route}`}
+          >
             {route}
           </Link>
         ))}
-        <Typography key="3" color="text.primary">
+        <Typography className={classNames(s.active, s.breadcrumb)} key="3">
           {activeRoute}
         </Typography>
       </Breadcrumbs>
