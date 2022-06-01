@@ -212,3 +212,12 @@
 .addbuttonlist > div {
   margin-bottom: 30px;
 }
+
+.creditcard {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 900px;
+}

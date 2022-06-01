@@ -43,4 +43,4 @@ $color-red-a40: rgba(255, 77, 77, 0.4);
 $color-red-a20: rgba(255, 77, 77, 0.2);
 
 $main-gradient: linear-gradient(90deg, $color-cyan -53%, $color-purple 128%);
-$light-gradient: linear-gradient(90deg, #00f5ff -5%, #8100ef 210%);
+$light-gradient: linear-gradient(90deg, $color-cyan -5%, color-purple 210%);

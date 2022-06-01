@@ -9,6 +9,7 @@ import { Icon } from "./Icon"
 import { RadioGroup } from "./RadioGroup"
 import { SocialIcon } from "./SocialIcon"
 import { Tabs } from "./Tabs"
+import { CreditCard } from "./CreditCard"
 
 export {
   Accordion,
@@ -22,4 +23,5 @@ export {
   RadioGroup,
   SocialIcon,
   Tabs,
+  CreditCard,
 }

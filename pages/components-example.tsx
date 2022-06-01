@@ -16,6 +16,7 @@ import {
   Tabs,
   FileSelect,
   AddButton,
+  CreditCard,
 } from "UI"
 
 import {
@@ -66,6 +67,7 @@ const Home: NextPage = () => {
             "Checkboxes and Radio",
             "Accordion",
             "File Select",
+            "Credit Card",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -169,6 +171,34 @@ const Home: NextPage = () => {
             </div>,
             <div key={"File Select"}>
               <FileSelect value={value} setValue={setValue} />
+            </div>,
+            <div key={"Credit Card"} className={s.creditcard}>
+              <CreditCard
+                size={200}
+                colored
+                cardNumber="**** **** **** ****"
+                cardHolder="Alex Gurnet"
+                expireDate="01/2023"
+                onDelete={() => {
+                  console.log("test")
+                }}
+              />
+              <CreditCard
+                size={250}
+                cardNumber="1234 1234 1234 1234"
+                cardHolder="Test Testovich"
+                expireDate="01/2023"
+              />
+              <CreditCard
+                size={300}
+                colored
+                cardNumber="1234 1234 1234 1234"
+                cardHolder="Alex Gurnet"
+                expireDate="01/2023"
+                onDelete={() => {
+                  console.log("test")
+                }}
+              />
             </div>,
           ]}
         />
