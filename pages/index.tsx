@@ -1,4 +1,5 @@
 //Global Dependencies
+import React from "react"
 import type { GetStaticProps, NextPage } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useTranslation } from "next-i18next"
@@ -8,6 +9,7 @@ import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 import LangRoute from "Сomponents/LanguageRouting/LangRoute"
+import { Header } from "Сomponents"
 
 //Project Styles
 import styles from "styles/pages/Index.module.scss"
@@ -26,8 +28,9 @@ const Index: NextPage = (props: any) => {
         <title>ILONSI SHOP | Homepage</title>
       </Head>
 
+      <Header />
+
       <main className={styles.main}>
-        <h1>Welcome to Ilonsi shop!</h1>
         <h2>
           {props.locale}
           {t("hello")}
