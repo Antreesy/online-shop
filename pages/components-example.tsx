@@ -27,10 +27,8 @@ import { Header, Logo } from "Сomponents"
 import { icons } from "shared/consts/icons"
 
 //Project Styles
-import s from "styles/pages/ComponentsExample.module.scss"
-import SupportSection from "Сomponents/SupportSection/SupportSection"
 import { Carousel } from "UI/Carousel"
-import AddresCard from "Сomponents/AddresCard/AddresCard"
+import s from "styles/pages/ComponentsExample.module.scss"
 
 const Home: NextPage = () => {
   const [value, setValue] = useState<File | null>(null)
@@ -149,7 +147,6 @@ const Home: NextPage = () => {
           ]}
         />
       </main>
-      <AddresCard title="first titile" number="123456789" address="Lorem ipsum" country="Lorem Ipsum ISTAMBUL" />
       
       <footer className={s.footer}>
         <a
