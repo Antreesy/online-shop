@@ -1,4 +1,5 @@
 import { Accordion } from "./Accordion"
+import { AddButton } from "./AddButton"
 import { Button } from "./Button"
 import { Carousel } from "./Carousel"
 import { CheckboxGroup } from "./CheckboxGroup"
@@ -13,6 +14,7 @@ export {
   Accordion,
   Button,
   Carousel,
+  AddButton,
   CheckboxGroup,
   DatePicker,
   FileSelect,
