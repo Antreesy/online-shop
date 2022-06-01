@@ -20,6 +20,7 @@ import {
   DatePicker,
   Icon,
   FileSelect,
+  FileUpload,
   RadioGroup,
   Range,
   Slider,
@@ -41,7 +42,6 @@ import { Currency } from "shared/enums/currency"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
-import { Upload } from "UI/Upload"
 
 const Home: NextPage = () => {
   const [isRead, setIsRead] = useState<boolean>(false)
@@ -94,6 +94,8 @@ const Home: NextPage = () => {
                 <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
                 <h2>Slider</h2>
                 <Slider min={0} max={50} value={[0, 30]} />
+                <h2>File Upload</h2>
+                <FileUpload />
               </div>
             </div>,
 
@@ -231,8 +233,6 @@ const Home: NextPage = () => {
             </div>,
           ]}
         />
-
-        <Upload />
       </main>
 
       <footer className={s.footer}>

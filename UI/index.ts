@@ -5,6 +5,7 @@ import { Carousel } from "./Carousel"
 import { CheckboxGroup } from "./CheckboxGroup"
 import { DatePicker } from "./DatePicker"
 import { FileSelect } from "./FileSelect"
+import { FileUpload } from "./FileUpload"
 import { Icon } from "./Icon"
 import { RadioGroup } from "./RadioGroup"
 import { Range } from "./Range"
@@ -20,6 +21,7 @@ export {
   CheckboxGroup,
   DatePicker,
   FileSelect,
+  FileUpload,
   Icon,
   Range,
   RadioGroup,

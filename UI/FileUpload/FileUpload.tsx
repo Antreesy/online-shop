@@ -1,9 +1,10 @@
-import classNames from "classnames"
 import { FC, useRef, useState } from "react"
-import { Icon } from "UI/Icon"
-import s from "./upload.module.scss"
+import cn from "classnames"
 
-interface UploadProps {
+import { Icon } from "UI/Icon"
+import s from "./fileUpload.module.scss"
+
+interface FileUploadProps {
   title?: string
   className?: string
   formats?: string[]
@@ -13,7 +14,7 @@ interface UploadProps {
   filesNumber?: number
 }
 
-const Upload: FC<UploadProps> = (props) => {
+const FileUpload: FC<FileUploadProps> = (props) => {
   const {
     title = "Select or Drag Image",
     formats = ["jpg", "png", "jpeg"],
@@ -40,7 +41,9 @@ const Upload: FC<UploadProps> = (props) => {
   }
 
   const checkInputImageFormat = (files: File[]) => {
-    if (files.length !== filesNumber) {
+    setError("")
+
+    if (files.length > filesNumber) {
       setError(`Error number of files it must be ${filesNumber}`)
       return false
     }
@@ -52,9 +55,8 @@ const Upload: FC<UploadProps> = (props) => {
       }
     }
 
-    const filesFormats = files.map((file) => {
-      return file.type.split("/")[1]
-    })
+    const filesFormats = files.map((file) => file.type.split("/")[1])
+
     for (let i = 0; i < files.length; i++) {
       if (!formats.includes(filesFormats[i])) {
         setError(`Error format file it must be ${formats}`)
@@ -62,12 +64,11 @@ const Upload: FC<UploadProps> = (props) => {
       }
     }
 
-    setError("")
     return true
   }
 
   const checkImageFormatSize = (file: File) => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       const img = new Image()
       img.src = URL.createObjectURL(file)
       img.addEventListener("load", function () {
@@ -109,27 +110,25 @@ const Upload: FC<UploadProps> = (props) => {
   }
 
   return (
-    <>
-      <div
-        className={classNames(s.upload, className)}
-        onDragLeave={(e) => dragLeaveHandler(e)}
-        onDragOver={(e) => dragOverHandler(e)}
-        onDrop={(e) => filesHandler(e)}
-        onClick={() => fileInputRef.current?.click()}
-      >
-        <input
-          onChange={filesHandler}
-          ref={fileInputRef}
-          type="file"
-          hidden
-          multiple
-        />
-        <Icon type="upload" />
-        {title}
-        <div className={s.error}>{error}</div>
-      </div>
-    </>
+    <div
+      className={cn(s.upload, className)}
+      onDragLeave={(e) => dragLeaveHandler(e)}
+      onDragOver={(e) => dragOverHandler(e)}
+      onDrop={(e) => filesHandler(e)}
+      onClick={() => fileInputRef.current?.click()}
+    >
+      <input
+        onChange={filesHandler}
+        ref={fileInputRef}
+        type="file"
+        hidden
+        multiple
+      />
+      <Icon type="upload" />
+      {title}
+      <div className={s.error}>{error}</div>
+    </div>
   )
 }
 
-export default Upload
+export default FileUpload
