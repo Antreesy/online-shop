@@ -16,11 +16,7 @@ const PageNotFound: NextPage = () => {
           porta pharetra. Curabitur dolor sit amet venenatis purus ante.
         </p>
         <br />
-        <Link href={"/"}>
-          <a>
-            <Button className={s.button_purple}>Return to homepage</Button>
-          </a>
-        </Link>
+        <Button className={s.button_purple}>Return to homepage</Button>
       </div>
     </>
   )

@@ -1,74 +1,43 @@
-import React from "react"
-import {
-  FormControl,
-  FormControlLabel,
-  Radio,
-  RadioProps,
-  RadioGroup,
-} from "@mui/material"
-import { styled } from "@mui/material/styles"
+import { FormControl, FormControlLabel, Radio, RadioGroup } from "@mui/material"
 
 import s from "./sizePicker.module.scss"
 
-interface SizePickerProps {
-  labels: string[]
-}
+export type SizePickerLabels = "S" | "M" | "L" | "XL" | "XXL" | "3XL"
 
+type SizePickerProps = {
+  labels: SizePickerLabels[]
+}
 
 const SizePicker: React.FC<SizePickerProps> = (props) => {
   const { labels } = props
-  const BpIcon = styled("span")(({ theme }) => ({
-    borderRadius: "3px",
-    width: 50,
-    height: 50,
-    border: "none",
-    backgroundColor: "#e9e9e9",
-    "input:hover ~ &": {
-      backgroundColor: theme.palette.mode === "dark" ? "#b6b6b6" : "#b6b6b6",
-    },
-  }))
 
-  const BpCheckedIcon = styled(BpIcon)({
-    border: "2px solid #2c2c2c",
-    "&:before": {
-      content: '""',
-    },
-    "input:hover ~ &": {
-      backgroundColor: "#c2c2c2",
-    },
-  })
+  const BpIcon = () => <span className={s.radioIcon} />
+  const BpCheckedIcon = () => <span className={s.radioIconChecked} />
 
-  function BpRadio(props: RadioProps) {
-    return (
-      <Radio
-        className={s.radio}
-        disableRipple
-        color="default"
-        checkedIcon={<BpCheckedIcon />}
-        icon={<BpIcon />}
-        {...props}
-      />
-    )
-  }
   return (
-    <div>
-      <RadioGroup>
-        <FormControl className={s.sizePicker}>
-          {labels === undefined || labels === null ?
-              "Нету размеров одежды" :
-              (
-              labels.map((label) => (
-                  <FormControlLabel
-                      key={label}
-                      value={label}
-                      control={<BpRadio />}
-                      label={label}
-                  />
-              ))
-          )}
-        </FormControl>
+    <FormControl>
+      <RadioGroup className={s.sizePicker}>
+        {labels.length ? (
+          labels.map((label) => (
+            <FormControlLabel
+              key={label}
+              value={label}
+              control={
+                <Radio
+                  className={s.radio}
+                  disableRipple
+                  icon={<BpIcon />}
+                  checkedIcon={<BpCheckedIcon />}
+                />
+              }
+              label={label}
+            />
+          ))
+        ) : (
+          <span>No available sizes</span>
+        )}
       </RadioGroup>
-    </div>
+    </FormControl>
   )
 }
 

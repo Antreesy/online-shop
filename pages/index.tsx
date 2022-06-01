@@ -1,4 +1,5 @@
 //Global Dependencies
+import React from "react"
 import type { GetStaticProps, NextPage } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useTranslation } from "next-i18next"
