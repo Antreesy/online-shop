@@ -13,7 +13,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
   @include mobile {
     padding-top: $header-mobile-height;
   }
@@ -21,8 +20,6 @@
 .footer {
   display: flex;
   flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
 }
@@ -218,4 +215,8 @@
   -webkit-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.addbuttonlist > div {
+  margin-bottom: 30px;
 }

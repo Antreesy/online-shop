@@ -4,35 +4,44 @@ import { useState } from "react"
 import type { NextPage } from "next"
 
 //Project Components
+
 import Head from "next/head"
-import Image from "next/image"
-import {
-  Carousel,
-  DatePicker,
-  Icon,
-  RadioGroup,
-  CheckboxGroup,
-  SocialIcon,
-  Tabs,
-  FileSelect,
-} from "UI"
 
 import {
   AccordionExamples,
   ButtonExamples,
   CardExample,
 } from "Сomponents/Examples"
-import ProfileSidebar from "../Сomponents/ProfileSidebar/ProfileSidebar"
 
 import {
+  AddButton,
+  Carousel,
+  CheckboxGroup,
+  DatePicker,
+  Icon,
+  FileSelect,
+  FileUpload,
+  RadioGroup,
+  Range,
+  Slider,
+  SocialIcon,
+  Tabs,
+} from "UI"
+
+import {
+  Footer,
   Header,
   Logo,
   Notification,
   SectionHeader,
   SizePicker,
 } from "Сomponents"
+import ProfileSidebar from "../Сomponents/ProfileSidebar/ProfileSidebar";
+
 //Project Helpers
-import { icons } from "shared/consts/icons"
+import { icons } from "shared/constants/icons"
+import { footerNav } from "shared/constants/footernav"
+import { Currency } from "shared/enums/currency"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
@@ -41,7 +50,7 @@ const Home: NextPage = () => {
   const [isRead, setIsRead] = useState<boolean>(false)
   const [value, setValue] = useState<File | null>(null)
   return (
-    <div className={s.container}>
+    <>
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
@@ -53,6 +62,12 @@ const Home: NextPage = () => {
           className={s.title}
           title={"UI Kit page"}
           actionText={"All Orders"}
+        />
+
+        <Range
+          minQuantity={10000}
+          maxQuantity={1000000}
+          currency={Currency.RUB}
         />
 
         <Tabs
@@ -81,6 +96,10 @@ const Home: NextPage = () => {
                 />
                 <h2>Size Picker</h2>
                 <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
+                <h2>Slider</h2>
+                <Slider min={0} max={50} value={[0, 30]} />
+                <h2>File Upload</h2>
+                <FileUpload />
               </div>
             </div>,
 
@@ -192,7 +211,7 @@ const Home: NextPage = () => {
 
         <Tabs
           className={s.example_tabs}
-          labels={["Notification", "Carousel"]}
+          labels={["Notification", "Carousel", "Add Button"]}
           values={[
             <div key="Notification">
               <Notification
@@ -211,23 +230,32 @@ const Home: NextPage = () => {
             <div key={"Carousel"} className={s.carousel}>
               <Carousel items={new Array(10).fill(CardExample)} />
             </div>,
+
+            <div key={"AddButton"} className={s.addbuttonlist}>
+              <div>
+                <AddButton />
+              </div>
+              <div>
+                <AddButton title="Add New Card" color="primary" />
+              </div>
+              <div>
+                <AddButton title="Add New Address" color="secondary" />
+              </div>
+              <div>
+                <AddButton
+                  title="Add Product"
+                  color="secondary"
+                  bgColor="white"
+                  large
+                />
+              </div>
+            </div>,
           ]}
         />
       </main>
 
-      <footer className={s.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={s.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+      <Footer links={footerNav} />
+    </>
   )
 }
 
