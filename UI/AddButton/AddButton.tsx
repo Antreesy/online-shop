@@ -10,7 +10,7 @@ interface AddButtonProps {
   title?: string
   titleColor?: "primary" | "secondary"
   bgColor?: "primary" | "secondary"
-  size?: "large" | "default"
+  largeSize?: boolean
   onClick?: () => void
 }
 
@@ -18,14 +18,14 @@ const AddButton: React.FC<AddButtonProps> = ({
   titleColor = "primary",
   bgColor = "primary",
   title,
-  size,
+  largeSize,
   onClick,
 }) => {
   const titleColorClass =
     titleColor === "primary" ? s.primaryColor : s.secondaryColor
   const bgColorClass = bgColor === "primary" ? s.primaryBG : s.secondaryBG
-  const btnSizeStyles = size === "large" ? s.largeSize : s.defaultSize
-  const iconSize = size === "large" ? s.iconLarge : s.iconDefault
+  const btnSizeStyles = largeSize ? s.largeSize : s.defaultSize
+  const iconSize = largeSize ? s.iconLarge : s.iconDefault
 
   return (
     <Button

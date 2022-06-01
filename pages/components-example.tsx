@@ -170,7 +170,7 @@ const Home: NextPage = () => {
                   title="Add Product"
                   titleColor="secondary"
                   bgColor="secondary"
-                  size="large"
+                  largeSize={true}
                 />
               </div>
             </div>,
