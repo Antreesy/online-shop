@@ -8,13 +8,14 @@ import Head from "next/head"
 import Image from "next/image"
 import {
   Carousel,
+  CheckboxGroup,
   DatePicker,
   Icon,
+  FileSelect,
   RadioGroup,
-  CheckboxGroup,
+  Range,
   SocialIcon,
   Tabs,
-  FileSelect,
 } from "UI"
 
 import {
@@ -33,17 +34,14 @@ import {
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
+import { Currency } from "shared/enums/currency"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
-import { Range } from "UI/Range"
 
 const Home: NextPage = () => {
   const [isRead, setIsRead] = useState<boolean>(false)
   const [value, setValue] = useState<File | null>(null)
-  const minQuantity = 10000
-  const maxQuantity = 100000
-  const currency = "TL"
   return (
     <div className={s.container}>
       <Head>
@@ -60,9 +58,9 @@ const Home: NextPage = () => {
         />
 
         <Range
-          minQuantity={minQuantity}
-          maxQuantity={maxQuantity}
-          currency={currency}
+          minQuantity={10000}
+          maxQuantity={1000000}
+          currency={Currency.RUB}
         />
 
         <Tabs

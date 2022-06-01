@@ -6,6 +6,7 @@ import { DatePicker } from "./DatePicker"
 import { FileSelect } from "./FileSelect"
 import { Icon } from "./Icon"
 import { RadioGroup } from "./RadioGroup"
+import { Range } from "./Range"
 import { SocialIcon } from "./SocialIcon"
 import { Tabs } from "./Tabs"
 
@@ -17,6 +18,7 @@ export {
   DatePicker,
   FileSelect,
   Icon,
+  Range,
   RadioGroup,
   SocialIcon,
   Tabs,

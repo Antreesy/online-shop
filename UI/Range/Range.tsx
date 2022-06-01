@@ -1,34 +1,34 @@
-import { Box } from "@mui/material"
-import React  from "react"
+import React from "react"
+
+import { Currency } from "shared/enums/currency"
+
 import s from "./range.module.scss"
 
-
 interface RangeProps {
-  minQuantity: number, 
-  maxQuantity: number, 
-  currency: string,
+  minQuantity?: number
+  maxQuantity?: number
+  currency?: Currency
 }
 
 const Range: React.FC<RangeProps> = (props) => {
-
-const {minQuantity, maxQuantity, currency} = props
+  const {
+    minQuantity = 0,
+    maxQuantity = 1000000,
+    currency = Currency.USD,
+  } = props
 
   return (
-    <Box
-      className={s.box}
-      sx={{
-        width: 410,
-        hegth: 65,
-        borderRadius: 1,
-        backgroundColor: "#ccc",
-      }}
-    >
-      <div>
-        <span className={s.min}>{minQuantity}{currency}</span>
-        <span className={s.space}>-</span>
-        <span className={s.max}>{maxQuantity}{currency}</span>
-      </div>
-    </Box>
+    <div className={s.box}>
+      <span className={s.min}>
+        {minQuantity}
+        {currency}
+      </span>
+      <span className={s.space}>-</span>
+      <span className={s.max}>
+        {maxQuantity}
+        {currency}
+      </span>
+    </div>
   )
 }
 
