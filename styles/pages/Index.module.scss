@@ -1,4 +1,4 @@
-@import "/styles/colors.scss";
+@import "styles/style.scss";
 
 .container {
   padding: 0 2rem;
@@ -7,11 +7,16 @@
 .main {
   min-height: 100vh;
   padding: 4rem 0;
+  padding-top: $header-desktop-height;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+
+  @include mobile {
+    padding-top: $header-mobile-height;
+  }
 }
 
 .footer {
@@ -66,7 +71,7 @@
   max-width: 800px;
 }
 
-@media (max-width: 600px) {
+@include mobile {
   .grid {
     width: 100%;
     flex-direction: column;

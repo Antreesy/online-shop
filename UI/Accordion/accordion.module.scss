@@ -1,0 +1,21 @@
+@import "styles/style.scss";
+
+.accordion {
+  box-shadow: none;
+  color: $color-black;
+  font-weight: $fw-regular;
+  background-color: transparent;
+
+  &::before {
+    background-color: transparent;
+  }
+}
+
+.summary {
+  & > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+  }
+}

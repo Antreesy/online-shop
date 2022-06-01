@@ -14,7 +14,9 @@ interface ButtonProps {
   className?: string
   disabled?: boolean
   icon?: boolean
+  mode?: "defaultVariantOff" | "defaultVariantOn"
   rounded?: boolean
+  disableElevation?: boolean
   variant?: "text" | "outlined" | "contained"
   color?:
     | "primary"
@@ -33,9 +35,11 @@ interface ButtonProps {
 const CustomButton: React.FC<ButtonProps> = (props) => {
   // Props destructuring
   const {
+    mode = "defaultVariantOn",
     className = "",
-    disabled = false,
-    rounded = false,
+    disabled,
+    rounded,
+    disableElevation,
     variant = "contained",
     color = "primary",
     children = null,
@@ -49,7 +53,8 @@ const CustomButton: React.FC<ButtonProps> = (props) => {
   const buttonClass = cn(
     s.button,
     {
-      [s.contained_button]: variant === "contained",
+      [s.contained_button]:
+        mode === "defaultVariantOn" && variant === "contained",
       [s.outlined_button]: variant === "outlined",
       [s.text_button]: variant === "text",
       [s.icon_button]: !children || icon,
@@ -62,6 +67,7 @@ const CustomButton: React.FC<ButtonProps> = (props) => {
     <Button
       className={buttonClass}
       disabled={disabled}
+      disableElevation={disableElevation}
       variant={variant}
       color={color}
       onClick={onClick}

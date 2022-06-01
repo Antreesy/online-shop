@@ -1,5 +1,4 @@
-@import "/styles/fonts.scss";
-@import "/styles/colors.scss";
+@import "styles/style.scss";
 
 .container {
   padding: 0 2rem;
@@ -8,13 +7,17 @@
 .main {
   min-height: 100vh;
   padding: 4rem 0;
+  padding-top: $header-desktop-height;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-}
 
+  @include mobile {
+    padding-top: $header-mobile-height;
+  }
+}
 .footer {
   display: flex;
   flex: 1;
@@ -32,7 +35,7 @@
 }
 
 .title {
-  margin: 0;
+  margin: 1rem 0;
   line-height: 1.15;
   font-size: 4rem;
 }
@@ -54,8 +57,28 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 1200px;
-  padding-top: 2rem;
-  margin-bottom: 2rem;
+
+  @include mobile {
+    width: 100%;
+    flex-direction: column;
+    padding: 1rem 20px;
+  }
+
+  @include tablet {
+    width: 100%;
+    flex-direction: column;
+    padding: 1rem 40px;
+  }
+
+  @include laptop {
+    width: 100%;
+    padding: 1rem 60px;
+  }
+
+  @include desktop {
+    width: 100%;
+    padding: 1rem 80px;
+  }
 }
 
 .grid_inner {
@@ -132,21 +155,15 @@
 .card_example {
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 200px;
   padding: 10px;
   border: 2px solid $color-black;
   border-radius: 10px;
+  height: 300px;
 }
 
 .icon_example {
   width: 20%;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
 }
 
 .tabs {
@@ -157,4 +174,41 @@
   > div {
     margin: 5px;
   }
+}
+
+.accordion_bold_black {
+  width: 400px;
+  font-weight: $fw-bold;
+}
+
+.accordion_header_bold_purple {
+  font-weight: $fw-bold;
+  color: $color-purple;
+}
+
+.black_background {
+  background-color: $color-black;
+}
+
+.dark_accordion {
+  width: 500px;
+  color: $color-grey-c;
+}
+
+.accordion_title_purple {
+  color: $color-purple;
+}
+
+.example_tabs {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.carousel {
+  margin-top: 30px;
+  width: 1024px;
+}
+
+.addbuttonlist > div {
+  margin-bottom: 30px;
 }

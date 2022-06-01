@@ -8,7 +8,7 @@ import Link from "next/link"
 import { Counter } from "Сomponents"
 
 //Project Styles
-import styles from "styles/Index.module.scss"
+import styles from "styles/pages/Index.module.scss"
 
 const ReduxExample: NextPage = () => {
   return (

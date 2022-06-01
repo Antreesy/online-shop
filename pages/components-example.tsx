@@ -1,53 +1,89 @@
+import { useState } from "react"
+
 //Global Dependencies
 import type { NextPage } from "next"
 
 //Project Components
 import Head from "next/head"
 import Image from "next/image"
-import Link from "next/link"
+import {
+  Carousel,
+  DatePicker,
+  Icon,
+  RadioGroup,
+  CheckboxGroup,
+  SocialIcon,
+  Tabs,
+  FileSelect,
+  AddButton,
+} from "UI"
 
-import { DatePicker, Icon, RadioGroup, Tabs } from "UI"
-import ButtonExamples from "Сomponents/Examples/ButtonExamples"
+import {
+  AccordionExamples,
+  ButtonExamples,
+  CardExample,
+} from "Сomponents/Examples"
+
+import {
+  Header,
+  Logo,
+  Notification,
+  SectionHeader,
+  SizePicker,
+} from "Сomponents"
 
 //Project Helpers
 import { icons } from "shared/consts/icons"
 
 //Project Styles
-import s from "styles/ComponentsExample.module.scss"
+import s from "styles/pages/ComponentsExample.module.scss"
+import { ColorPicker } from "UI/ColorPicker"
 
 const Home: NextPage = () => {
+  const [isRead, setIsRead] = useState<boolean>(false)
+  const [value, setValue] = useState<File | null>(null)
   return (
     <div className={s.container}>
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
 
-      <main className={s.main}>
-        <h1>UI Kit page</h1>
+      <Header />
 
-        <p className={s.description}>
-          Go back to{" "}
-          <Link href="/">
-            <a className={s.title__link}>/index</a>
-          </Link>{" "}
-          page
-        </p>
+      <main className={s.main}>
+        <SectionHeader
+          className={s.title}
+          title={"UI Kit page"}
+          actionText={"All Orders"}
+        />
 
         <Tabs
+          className={s.example_tabs}
           labels={[
             "Buttons",
             "Inputs and Pickers",
             "Icons",
             "Tabs",
             "Checkboxes and Radio",
+            "Accordion",
+            "File Select",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
 
             <div key={"Inputs and Pickers"} className={s.grid}>
               <div>
-                <h2>DatePicker</h2>
-                <DatePicker initValue={new Date()} onChange={() => {}} />
+                <h2>Date Picker</h2>
+                <DatePicker
+                  initValue={new Date()}
+                  onChange={() => {
+                    return
+                  }}
+                />
+                <h2>Color Picker</h2>
+                <ColorPicker/>
+                <h2>Size Picker</h2>
+                <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
               </div>
             </div>,
 
@@ -57,33 +93,60 @@ const Home: NextPage = () => {
                   {icon}: <Icon type={icon} />{" "}
                 </span>
               ))}
+              <div style={{ backgroundColor: "#1c1c1c" }}>
+                <SocialIcon type="facebook" />
+                <SocialIcon type="instagram" />
+                <SocialIcon type="youtube" />
+              </div>
+              <Logo type="dark" />
             </div>,
 
-            <div key={"Tabs"} className={s.tabs}>
-              <p className={s.description}>default</p>
-              <Tabs
-                labels={["Sign In", "Sign Up"]}
-                values={["Sign In", "Sign Up"]}
-                width="200px"
-                variant="default"
-              />
-              <p className={s.description}>spaces</p>
-              <Tabs
-                labels={["Sign In", "Sign Up"]}
-                values={["Sign In", "Sign Up"]}
-                width="200px"
-                variant="spaces"
-              />
-              <p className={s.description}>without_border</p>
-              <Tabs
-                labels={["Sign In", "Sign Up"]}
-                values={["Sign In", "Sign Up"]}
-                width="200px"
-                variant="without_border"
-              />
+            <div key={"Tabs"} className={s.grid}>
+              <div>
+                <p className={s.description}>default</p>
+                <Tabs
+                  labels={["Sign In", "Sign Up"]}
+                  values={["Sign In", "Sign Up"]}
+                />
+              </div>
+              <div>
+                <p className={s.description}>spaces</p>
+                <Tabs
+                  labels={["Sign In", "Sign Up"]}
+                  values={["Sign In", "Sign Up"]}
+                  variant="spaces"
+                />
+              </div>
+              <div>
+                <p className={s.description}>no_border</p>
+                <Tabs
+                  labels={["Sign In", "Sign Up"]}
+                  values={["Sign In", "Sign Up"]}
+                  variant="no_border"
+                />
+              </div>
             </div>,
 
             <div key={"Checkboxes and Radio"} className={s.grid}>
+              <div>
+                <p>Rounded Checkboxes</p>
+                <CheckboxGroup rounded labels={["Men", "Women", "Unisex"]} />
+              </div>
+              <div>
+                <p>Square Checkboxes</p>
+                <CheckboxGroup
+                  color="#000"
+                  labels={["Men", "Women", "Unisex"]}
+                />
+              </div>
+              <div>
+                <p>Colored Checkboxes</p>
+                <CheckboxGroup
+                  color="#ff4e4e"
+                  colorChecked="#25754a"
+                  labels={["Men", "Women", "Unisex"]}
+                />
+              </div>
               <div>
                 <p>Gender</p>
                 <RadioGroup
@@ -103,9 +166,68 @@ const Home: NextPage = () => {
                 />
               </div>
             </div>,
+
+            <div key={"Accordion"}>
+              <AccordionExamples />
+            </div>,
+            <div key={"File Select"}>
+              <FileSelect value={value} setValue={setValue} />
+            </div>,
           ]}
-          width="250px"
-          variant="default"
+        />
+
+        <SectionHeader className={s.title} title={"Components page"} />
+
+        <Tabs
+          className={s.example_tabs}
+          labels={["Notification", "Carousel", "Add Button"]}
+          values={[
+            <div key="Notification">
+              <Notification
+                onRead={() => {
+                  setIsRead(true)
+                }}
+                header={"Notification"}
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                quam sequi vitae eius iusto perspiciatis facilis nesciunt
+                dignissimos provident ipsum? Nobis repellat atque ab nam magni
+                voluptas expedita facere recusandae.
+              </Notification>
+            </div>,
+
+            <div key={"Carousel"} className={s.carousel}>
+              <Carousel items={new Array(10).fill(CardExample)} />
+            </div>,
+
+            <div key={"AddButton"} className={s.addbuttonlist}>
+              <div>
+                <AddButton />
+              </div>
+              <div>
+                <AddButton
+                  title="Add New Card"
+                  titleColor="primary"
+                  bgColor="primary"
+                />
+              </div>
+              <div>
+                <AddButton
+                  title="Add New Address"
+                  titleColor="secondary"
+                  bgColor="primary"
+                />
+              </div>
+              <div>
+                <AddButton
+                  title="Add Product"
+                  titleColor="secondary"
+                  bgColor="secondary"
+                  largeSize={true}
+                />
+              </div>
+            </div>,
+          ]}
         />
       </main>
 

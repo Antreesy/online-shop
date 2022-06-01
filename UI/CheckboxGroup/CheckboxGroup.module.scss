@@ -1,0 +1,10 @@
+@import "styles/style.scss";
+
+.group {
+  display: flex;
+  flex-direction: row;
+
+  @include mobile-tablet {
+    flex-direction: column;
+  }
+}
