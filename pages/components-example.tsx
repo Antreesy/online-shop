@@ -21,6 +21,8 @@ import { Header } from "Сomponents/Header"
 //Project Helpers
 import { icons } from "shared/consts/icons"
 
+import {ProductItem} from "../UI/ProductItem/index"
+
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
 
@@ -128,13 +130,16 @@ const Home: NextPage = () => {
             <div key={"Accordion"}>
               <AccordionExamples />
             </div>,
-
-            <div className={s.price_wrapper}>
-              <Price price={1030} type="old" /> <Price price={730} type="sale" />
+            <div key={"Price"}>
+                <Price price={2030} oldPrice={2030} type="sale_black" />
+                <br/>
+              <ProductItem />
             </div>
           ]}
         />
       </main>
+
+      <ProductItem />
 
       <footer className={s.footer}>
         <a
