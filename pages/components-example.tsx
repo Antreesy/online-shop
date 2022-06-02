@@ -21,6 +21,7 @@ import {
   DatePicker,
   Icon,
   Input,
+  ItemCounter,
   FileSelect,
   FileUpload,
   RadioGroup,
@@ -84,6 +85,7 @@ const Home: NextPage = () => {
             "Checkboxes and Radio",
             "Accordion",
             "Price",
+            "Counters",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -264,6 +266,10 @@ const Home: NextPage = () => {
                 maxQuantity={1000000}
                 currency={Currency.RUB}
               />
+            </div>,
+            <div key={"Counters"} style={{ display: "flex" }}>
+              <ItemCounter initValue={5} />
+              <ItemCounter initValue={5} large />
             </div>,
           ]}
         />
