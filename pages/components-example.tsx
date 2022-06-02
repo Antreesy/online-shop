@@ -175,9 +175,41 @@ const Home: NextPage = () => {
             </div>,
             <div key={"Input"}>
               <Input
-                label="First"
+                label="default"
                 setValue={setInputValue}
                 value={inputValue}
+              />
+              <Input
+                variant="footer"
+                buttonLabel="button"
+                label="footer"
+                setValue={setInputValue}
+                value={inputValue}
+                placeholder={"value"}
+              />
+              <Input
+                variant="black_button"
+                buttonLabel="button"
+                label="modal"
+                setValue={setInputValue}
+                value={inputValue}
+                placeholder={"value"}
+              />
+              <Input
+                variant="blue_outline"
+                buttonLabel="button"
+                label="blue_outline"
+                setValue={setInputValue}
+                value={inputValue}
+                placeholder={"value"}
+              />
+               <Input
+                buttonLabel="button"
+                label="className: error"
+                setValue={setInputValue}
+                value={inputValue}
+                className={"error"}
+                placeholder={"value"}
               />
             </div>,
           ]}
