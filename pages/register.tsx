@@ -4,20 +4,20 @@ import type { NextPage } from "next"
 //Project Components
 import Head from "next/head"
 
-import { Card, Input } from "UI"
+import { Card } from "UI"
 
 import { HeaderLight } from "Сomponents"
 import picForBrands from "public/assets/img/pic_for_brands.png"
 import picForInfluencers from "public/assets/img/pic_for_influencers.png"
 
 //Project Styles
-import s from "styles/pages/Influencers.module.scss"
+import s from "styles/pages/Register.module.scss"
 
 const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>ILONSI SHOP | Influencers</title>
+        <title>ILONSI SHOP | Register</title>
       </Head>
 
       <HeaderLight />
