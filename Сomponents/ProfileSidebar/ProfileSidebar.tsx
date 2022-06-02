@@ -33,7 +33,7 @@ const ProfileSidebar: React.FC<ProfileSidebarProps> = (props) => {
                 <Link href={""}>
                   <a
                     href="# "
-                    className={state === label ? `${sidebar.active}` : null}
+                    className={state === label ? `${sidebar.active}` : undefined}
                     onClick={() => handleClick(label)}
                   >
                     {label}
