@@ -51,13 +51,11 @@ const ButtonExamples: React.FC = () => {
           Modal Window
         </Button>
         <ModalWindow
-          open={open}
+          isOpen={open}
           setOpen={setOpen}
           iconType="okay"
-          title="You are now is ready"
-          textContent="We received the request to create a membership. We will get back to you via e-mail within 24 hours."
         >
-          / Something else /
+          Whatever you want
         </ModalWindow>
       </div>
     </div>

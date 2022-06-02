@@ -1,49 +1,55 @@
-import { FC, ReactNode } from "react"
+import { FC, ReactNode, useEffect, useState } from "react"
+import { createPortal } from 'react-dom';
 
 import s from "./modalWindow.module.scss"
 import { Modal } from "@mui/material"
-import CloseIcon from "@mui/icons-material/Close"
 import { Box } from "@mui/system"
 import { Icon } from "UI/Icon"
+import { IconType } from "UI/Icon/Icon";
 
 interface ModalWindowProps {
-  open: boolean
+  isOpen: boolean
   setOpen: React.Dispatch<React.SetStateAction<boolean>>
-  iconType?: string
-  title?: string
-  textContent?: string
+  iconType?: IconType
   children?: ReactNode
 }
 
 const ModalWindow: FC<ModalWindowProps> = (props) => {
   const {
-    open,
+    isOpen,
     setOpen,
     iconType = false,
-    title,
-    textContent,
     children,
   } = props
 
-  return (
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+    return () => setMounted(false)
+  },[])
+
+  return mounted ? createPortal((
     <Modal
       classes={{ root: s.modal }}
-      open={open}
+      open={isOpen}
       onClose={() => setOpen(false)}
     >
       <Box className={s.content} onClick={(e) => e.stopPropagation()}>
-        <CloseIcon className={s.close} onClick={() => setOpen(false)} />
+        <Icon
+          className={s.close}
+          type="close_cross"
+          onClick={() => setOpen(false)}
+        />
         {iconType ? (
           <div className={s.iconWrapper}>
             <Icon type={iconType} />
           </div>
         ) : null}
-        <div className={s.title}>{title}</div>
-        <div className={s.textContent}>{textContent}</div>
         {children}
       </Box>
     </Modal>
-  )
+  ), document.getElementById("modal__root")) : null
 }
 
 export default ModalWindow

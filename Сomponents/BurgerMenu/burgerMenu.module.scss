@@ -28,7 +28,7 @@
   font-size: 23px;
 
   &:hover {
-    background-color: $color-grey-9;
+    background-color: transparent;
   }
 
   @include mobile {
@@ -39,12 +39,13 @@
 .drawerBox {
   margin-top: 48px;
   width: 415px;
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
   border-bottom-right-radius: 10px;
   background-color: $color-grey-ed;
   background-image: url(../../public/assets/img/LightLogo.svg);
   background-repeat: no-repeat;
-  background-position: 50% 123%;
+  background-position: 50% calc(100% + 100px);
   background-size: 235px;
 
   @include mobile {
@@ -52,7 +53,6 @@
     width: 100vw;
     height: 100%;
     border-radius: 0;
-    background-position: 50% 120%;
   }
 }
 
@@ -79,7 +79,9 @@
   }
 }
 
-.drawerBox_menu {
+.drawerBox_main {
+  overflow: auto;
+  height: 100%;
   padding: 0 75px;
 
   @include mobile {
