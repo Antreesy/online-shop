@@ -1,6 +1,7 @@
 import { Accordion } from "./Accordion"
 import { AddButton } from "./AddButton"
 import { Button } from "./Button"
+import { Card } from "./Card"
 import { Carousel } from "./Carousel"
 import { CheckboxGroup } from "./CheckboxGroup"
 import { CreditCard } from "./CreditCard"
@@ -20,6 +21,7 @@ export {
   Accordion,
   AddButton,
   Button,
+  Card,
   Carousel,
   CheckboxGroup,
   CreditCard,

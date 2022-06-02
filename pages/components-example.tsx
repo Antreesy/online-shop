@@ -14,6 +14,7 @@ import {
 
 import {
   AddButton,
+  Card,
   Carousel,
   CheckboxGroup,
   CreditCard,
@@ -83,6 +84,7 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
+            "Card",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -248,6 +250,25 @@ const Home: NextPage = () => {
 
             <div key={"Accordion"}>
               <AccordionExamples />
+            </div>,
+
+            <div key={"Card"}>
+              <div className={s.cards}>
+                <Card
+                  className={s.card_big}
+                  imageSrc="/../public/assets/img/picture_1.png"
+                  title="Gizem Sancak"
+                  buttonTitle="Go To Store"
+                  topButtonTitle="Follow"
+                />
+                <Card
+                  className={s.card_small}
+                  imageSrc="/../public/assets/img/picture_2.png"
+                  title="Gizem Sancak"
+                  buttonTitle="Go To Store"
+                  isButtonHidden
+                />
+              </div>
             </div>,
           ]}
         />

@@ -68,7 +68,7 @@
     border-bottom-left-radius: 0;
     padding: 0 20px;
     color: $color-white;
-    
+
     &:hover {
       background: $color-purple-d;
     }
@@ -145,9 +145,9 @@
   border: 2px solid $color-red;
 }
 
-.errorText{
+.errorText {
   display: flex;
   align-items: center;
   gap: 4px;
-  color: $color-red
+  color: $color-red;
 }
