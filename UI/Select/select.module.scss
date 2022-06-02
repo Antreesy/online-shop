@@ -8,6 +8,7 @@
 
 .select {
   position: relative;
+  max-width: 300px;
   width: 100%;
   border: 1px solid transparent;
   border-radius: 5px;
@@ -32,10 +33,6 @@
   }
 }
 
-.focused {
-  outline: 1px solid red;
-}
-
 .item {
   font-size: 12px;
   font-weight: $fw-medium;
@@ -45,6 +42,11 @@
   color: $color-purple;
   position: absolute;
   right: 6%;
+}
+
+.error {
+  font-size: 12px;
+  color: $color-red;
 }
 
 .scrollbar {

@@ -39,7 +39,7 @@ import {
 
 //Project Helpers
 import { icons } from "shared/constants/icons"
-import { countries } from "shared/constants/countries"
+import { countriesForSelect } from "shared/constants/countries"
 import { footerNav } from "shared/constants/footernav"
 import { Currency } from "shared/enums/currency"
 
@@ -96,7 +96,11 @@ const Home: NextPage = () => {
               <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
               <h2>Select</h2>
               <Select
-                items={["one", "two", "three"]}
+                items={[
+                  { title: "one", value: 1 },
+                  { title: "two", value: 2 },
+                  { title: "three", value: 3 },
+                ]}
                 onChange={() => {
                   return
                 }}
@@ -104,9 +108,7 @@ const Home: NextPage = () => {
               <Select
                 label="Select"
                 placeholder="Country*"
-                items={countries.map(
-                  (country) => `${country.label} (+${country.phone})`,
-                )}
+                items={countriesForSelect()}
                 onChange={() => {
                   return
                 }}

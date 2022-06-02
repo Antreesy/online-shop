@@ -8,20 +8,25 @@ import { Icon } from "UI"
 import "simplebar-react/dist/simplebar.min.css"
 import s from "./select.module.scss"
 
-interface IProps {
+type SelectItem = {
+  title: string
+  value: string | number
+}
+
+interface SelectProps {
   className?: string
   selectClassName?: string
   itemClassName?: string
-  error?: boolean
-  disabled?: boolean
+  isError?: boolean
+  isDisabled?: boolean
   label?: string
   placeholder?: string
-  items: string[]
+  items: SelectItem[]
   initValue?: string
-  onChange(selected: string): void
+  onChange(selected: string | number): void
 }
 
-const CustomSelect = (props: IProps) => {
+const CustomSelect: React.FC<SelectProps> = (props) => {
   const {
     className,
     selectClassName,
@@ -31,13 +36,15 @@ const CustomSelect = (props: IProps) => {
     label,
     onChange,
     initValue,
+    isError,
+    isDisabled,
   } = props
 
-  const [value, setValue] = useState<string>(initValue ?? placeholder)
+  const [value, setValue] = useState<string | number>(initValue ?? placeholder)
 
-  const handleSelect = (item: string) => {
-    onChange(item)
-    setValue(item)
+  const handleSelect = (value: string | number) => {
+    onChange(value)
+    setValue(value)
   }
 
   const selectIcon = () => <Icon type="arrow_down" className={s.selectIcon} />
@@ -55,6 +62,7 @@ const CustomSelect = (props: IProps) => {
       <Select
         className={selectClass}
         IconComponent={selectIcon}
+        disabled={isDisabled}
         variant="outlined"
         labelId="select-label"
         value={value}
@@ -81,8 +89,12 @@ const CustomSelect = (props: IProps) => {
           {placeholder}
         </MenuItem>
         {items.map((item) => (
-          <MenuItem sx={{ display: "none" }} key={item} value={item}>
-            {item}
+          <MenuItem
+            sx={{ display: "none" }}
+            key={item.title}
+            value={item.value}
+          >
+            {item.title}
           </MenuItem>
         ))}
 
@@ -96,18 +108,28 @@ const CustomSelect = (props: IProps) => {
             return (
               <MenuItem
                 className={itemClass}
-                key={item}
-                value={item}
+                key={item.title}
+                value={item.value}
                 onClick={() => {
-                  handleSelect(item)
+                  handleSelect(item.value)
                 }}
               >
-                {item}
+                {item.title}
               </MenuItem>
             )
           })}
         </SimpleBar>
+        {!items.length && (
+          <MenuItem
+            sx={{ pointerEvents: "none"}}
+            key={"no-items"}
+            value={""}
+          >
+            Nothing to select
+          </MenuItem>
+        )}
       </Select>
+      {isError && <span className={s.error}>error</span>}
     </>
   )
 }
