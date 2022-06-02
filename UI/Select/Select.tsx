@@ -1,15 +1,12 @@
-import {
-  InputLabel,
-  Menu,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-} from "@mui/material"
 import { useState } from "react"
+import SimpleBar from "simplebar-react"
 import cn from "classnames"
 
-import s from "./select.module.scss"
+import { InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material"
 import { Icon } from "UI"
+
+import "simplebar-react/dist/simplebar.min.css"
+import s from "./select.module.scss"
 
 interface IProps {
   className?: string
@@ -68,9 +65,12 @@ const CustomSelect = (props: IProps) => {
               borderRadius: "0 0 5px 5px",
               borderTop: "2px solid black",
               maxHeight: "200px",
-              scrollbarColor: "#8100ef",
+              overflow: "hidden",
             },
           },
+        }}
+        classes={{
+          select: s.select,
         }}
       >
         <MenuItem
@@ -80,13 +80,15 @@ const CustomSelect = (props: IProps) => {
         >
           {placeholder}
         </MenuItem>
-        {items.map((item) => {
-          return (
-            <MenuItem className={itemClass} key={item} value={item}>
-              {item}
-            </MenuItem>
-          )
-        })}
+        <SimpleBar style={{ maxHeight: 180}} className={s.scrollbar} autoHide={false}>
+          {items.map((item) => {
+            return (
+              <MenuItem className={itemClass} key={item} value={item}>
+                {item}
+              </MenuItem>
+            )
+          })}
+        </SimpleBar>
       </Select>
     </>
   )

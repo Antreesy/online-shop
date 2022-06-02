@@ -84,38 +84,36 @@ const Home: NextPage = () => {
           values={[
             <ButtonExamples key={"Buttons"} />,
 
-            <div key={"Inputs and Pickers"} className={s.grid}>
-              <div>
-                <h2>Date Picker</h2>
-                <DatePicker
-                  initValue={new Date()}
-                  onChange={() => {
-                    return
-                  }}
-                />
-                <h2>Size Picker</h2>
-                <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
-                <h2>Select</h2>
-                <Select
-                  items={["one", "two", "three"]}
-                  onChange={() => {
-                    return
-                  }}
-                />
-                <Select
-                  placeholder="Country*"
-                  items={countries.map(
-                    (country) => `${country.label} (+${country.phone})`,
-                  )}
-                  onChange={() => {
-                    return
-                  }}
-                />
-                <h2>Slider</h2>
-                <Slider min={0} max={50} value={[0, 30]} />
-                <h2>File Upload</h2>
-                <FileUpload />
-              </div>
+            <div key={"Inputs and Pickers"} className={s.grid_column}>
+              <h2>Date Picker</h2>
+              <DatePicker
+                initValue={new Date()}
+                onChange={() => {
+                  return
+                }}
+              />
+              <h2>Size Picker</h2>
+              <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
+              <h2>Select</h2>
+              <Select
+                items={["one", "two", "three"]}
+                onChange={() => {
+                  return
+                }}
+              />
+              <Select
+                placeholder="Country*"
+                items={countries.map(
+                  (country) => `${country.label} (+${country.phone})`,
+                )}
+                onChange={() => {
+                  return
+                }}
+              />
+              <h2>Slider</h2>
+              <Slider min={0} max={50} value={[0, 30]} />
+              <h2>File Upload</h2>
+              <FileUpload />
             </div>,
 
             <div key={"Icons"} className={s.grid}>

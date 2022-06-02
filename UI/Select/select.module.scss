@@ -1,5 +1,4 @@
-@import "styles/fonts.scss";
-@import "styles/colors.scss";
+@import "styles/style.scss";
 
 .select_label {
   min-width: 100px;
@@ -19,12 +18,20 @@
   }
 
   & > fieldset {
-    border: 1px solid transparent;
+    border-color: transparent !important;
   }
 
-  &:focus {
-    outline: 1px solid red;
+  &:focus-within {
+    border: 1px solid transparent;
+
+    & > fieldset {
+      border-color: transparent !important;
+    }
   }
+}
+
+.focused {
+  outline: 1px solid red;
 }
 
 .item {
@@ -36,4 +43,21 @@
   color: $color-purple;
   position: absolute;
   right: 6%;
+}
+
+.scrollbar {
+  & > div:last-child {
+    right: 15px;
+    width: 8px;
+    background-color: $color-grey-f4;
+    border-radius: 5px;
+
+    & > div::before {
+      left: 0;
+      right: 0;
+      width: 7px;
+      opacity: 1;
+      background: $color-purple;
+    }
+  } 
 }
