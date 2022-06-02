@@ -35,9 +35,9 @@ const CustomSelect = (props: IProps) => {
 
   const [value, setValue] = useState<string>(initValue ?? placeholder)
 
-  const onChangeValue = (event: SelectChangeEvent<string>) => {
-    onChange(event.target.value)
-    setValue(event.target.value)
+  const handleSelect = (item: string) => {
+    onChange(item)
+    setValue(item)
   }
 
   const selectIcon = () => <Icon type="arrow_down" className={s.selectIcon} />
@@ -58,7 +58,6 @@ const CustomSelect = (props: IProps) => {
         variant="outlined"
         labelId="select-label"
         value={value}
-        onChange={onChangeValue}
         MenuProps={{
           PaperProps: {
             sx: {
@@ -73,6 +72,7 @@ const CustomSelect = (props: IProps) => {
           select: s.select,
         }}
       >
+        {/* Hidden items */}
         <MenuItem
           sx={{ display: "none" }}
           key={placeholder}
@@ -80,6 +80,13 @@ const CustomSelect = (props: IProps) => {
         >
           {placeholder}
         </MenuItem>
+        {items.map((item) => (
+          <MenuItem sx={{ display: "none" }} key={item} value={item}>
+            {item}
+          </MenuItem>
+        ))}
+
+        {/* Visible items */}
         <SimpleBar
           style={{ maxHeight: 180 }}
           className={s.scrollbar}
@@ -87,7 +94,14 @@ const CustomSelect = (props: IProps) => {
         >
           {items.map((item) => {
             return (
-              <MenuItem className={itemClass} key={item} value={item}>
+              <MenuItem
+                className={itemClass}
+                key={item}
+                value={item}
+                onClick={() => {
+                  handleSelect(item)
+                }}
+              >
                 {item}
               </MenuItem>
             )
