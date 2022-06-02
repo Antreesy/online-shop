@@ -33,13 +33,13 @@ import {
 } from "UI"
 
 import {
+  BreadCrumbs,
   Footer,
   Header,
   Logo,
   Notification,
   SectionHeader,
   SizePicker,
-  BreadCrumbs,
 } from "Сomponents"
 
 //Project Helpers

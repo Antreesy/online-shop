@@ -1,6 +1,7 @@
 import { Breadcrumbs, Typography, Link, Stack } from "@mui/material"
 import { useRouter } from "next/router"
 import cn from "classnames"
+
 import s from "./breadcrumbs.module.scss"
 
 const BreadCrumbs = () => {
@@ -9,6 +10,7 @@ const BreadCrumbs = () => {
   const newPath = path.slice(1)
   const activeRoute = path.slice(-1)
   const routePath = path.slice()
+
   return (
     <Stack className={s.main} spacing={2}>
       <Breadcrumbs className={s.nav} separator="-" aria-label="breadcrumb">
@@ -21,7 +23,7 @@ const BreadCrumbs = () => {
           key="1"
           href="/"
         >
-          <p className={s.testi}>Home</p>
+          Home
         </Link>
         {newPath.slice(0, newPath.length - 1).map((route) => (
           <Link
@@ -29,10 +31,10 @@ const BreadCrumbs = () => {
             key="1"
             href={`/${newPath.slice(0, routePath.indexOf(route)).join("/")}`}
           >
-            <p className={s.testi}>{route}</p>
+            {route}
           </Link>
         ))}
-        {activeRoute[0] === "" ? null : (
+        {activeRoute[0] !== "" && (
           <Typography className={cn(s.active, s.breadcrumb)} key="3">
             {activeRoute}
           </Typography>
