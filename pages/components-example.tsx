@@ -256,21 +256,14 @@ const Home: NextPage = () => {
               <div className={s.cards}>
                 <Card
                   className={s.card_big}
-                  image="/../public/assets/img/picture_1.png"
+                  imageSrc="/../public/assets/img/picture_1.png"
                   title="Gizem Sancak"
                   buttonTitle="Go To Store"
                   topButtonTitle="Follow"
                 />
                 <Card
                   className={s.card_small}
-                  image="/../public/assets/img/picture_2.png"
-                  title="Gizem Sancak"
-                  buttonTitle="Go To Store"
-                  isButtonHidden
-                />
-                <Card
-                  className={s.card_hor}
-                  image="/../public/assets/img/picture_3.png"
+                  imageSrc="/../public/assets/img/picture_2.png"
                   title="Gizem Sancak"
                   buttonTitle="Go To Store"
                   isButtonHidden

@@ -1,0 +1,206 @@
+@import "styles/style.scss";
+
+.main {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  padding-top: $header-light-desktop-height;
+  background-color: $color-grey-ed;
+
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: -120px;
+    width: 240px;
+    height: 240px;
+    border-radius: 120px;
+    background-image: linear-gradient(76deg, $color-cyan 5%, $color-purple 51%);
+  }
+
+  @include mobile {
+    padding-top: $header-light-mobile-height;
+
+    &::after {
+      top: 30px;
+      right: -60px;
+      width: 120px;
+      height: 120px;
+      border-radius: 120px;
+      background-image: linear-gradient(
+        76deg,
+        $color-cyan 5%,
+        $color-purple 51%
+      );
+    }
+  }
+}
+
+.scrollContainer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 90px 14%;
+  height: fit-content;
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    bottom: 0px;
+    width: 36%;
+    height: 5px;
+    background-image: $main-gradient-revert;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: -100px;
+    bottom: -80px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    border: 1px solid $color-purple;
+    background-clip: content-box;
+  }
+
+  @include tablet-laptop {
+    padding: 50px 10%;
+  }
+
+  @include mobile {
+    padding: 50px 20px 200px;
+    &::before {
+      width: 67%;
+    }
+    &::after {
+      width: 120px;
+      height: 120px;
+      left: -50px;
+      bottom: -40px;
+    }
+  }
+}
+
+.heading {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 30px;
+  font-size: 38px;
+  font-weight: $fw-medium;
+  line-height: 45px;
+  text-align: center;
+
+  & > span {
+    position: relative;
+    z-index: inherit;
+  }
+
+  &::before {
+    position: absolute;
+    z-index: 0;
+    top: -20px;
+    right: -20px;
+    content: "";
+    width: 47px;
+    height: 47px;
+    border-radius: 47px;
+    background-image: linear-gradient(
+      76deg,
+      $color-cyan 5%,
+      $color-purple 251%
+    );
+  }
+
+  @include mobile-tablet {
+    margin-bottom: 17px;
+    font-size: 22px;
+    line-height: 25px;
+
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.description {
+  max-width: 1800px;
+  width: 95%;
+  margin-bottom: 50px;
+  font-size: 13px;
+  font-weight: $fw-regular;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.card_wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  margin: 0 auto;
+  gap: 52px;
+  max-width: 1360px;
+  height: 367px;
+  width: 100%;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+}
+
+.card {
+  width: 100%;
+
+  @include mobile {
+    min-height: 216px;
+    max-width: 343px;
+    width: 100%;
+  }
+}
+
+.card_brand {
+  width: 100%;
+
+  @include mobile {
+    min-height: 216px;
+    max-width: 343px;
+    width: 100%;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.66);
+    background-image: url("../../public/assets/img/YSL.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

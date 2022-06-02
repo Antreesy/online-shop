@@ -1,13 +1,13 @@
 import cn from "classnames"
 
-import Image from "next/image"
+import Image, { ImageProps } from "next/image"
 import { Button } from "UI"
 
 import s from "./card.module.scss"
 
 interface CardProps {
-  title: string
-  image: string
+  title?: string
+  imageSrc: ImageProps["src"]
   className?: string
   buttonTitle: string
   isButtonHidden?: boolean
@@ -18,8 +18,8 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = (props) => {
   const {
-    title,
-    image,
+    imageSrc,
+    title = "",
     className,
     buttonTitle,
     isButtonHidden = false,
@@ -29,11 +29,11 @@ const Card: React.FC<CardProps> = (props) => {
   } = props
 
   const cardClass = cn(s.card, className)
-  const contentClass = cn(s.content, { [s.content_hidden]: !isButtonHidden })
+  const contentClass = cn(s.content, { [s.content_hidden]: isButtonHidden })
 
   return (
     <div className={cardClass}>
-      <Image src={image} alt={title} layout="fill" />
+      <Image src={imageSrc} alt={title} layout="fill" />
 
       <div className={s.hiddenContainer}>
         <div className={contentClass}>

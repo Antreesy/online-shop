@@ -12,6 +12,10 @@
       font-weight: $fw-semibold;
     }
 
+    & .button {
+      background: rgba($color: $color-purple-d, $alpha: 0.8);
+    }
+
     & .content {
       transform: translateY(0);
     }
@@ -80,6 +84,12 @@
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   font-size: 17px;
+
+  @include mobile {
+    height: 40px;
+    font-size: 14x;
+    border-radius: 0;
+  }
 }
 
 .topButton {
