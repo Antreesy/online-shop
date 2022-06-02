@@ -16,6 +16,7 @@ import {
   AddButton,
   Carousel,
   CheckboxGroup,
+  CreditCard,
   DatePicker,
   Icon,
   FileSelect,
@@ -79,7 +80,6 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
-            "File Select",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -117,6 +117,8 @@ const Home: NextPage = () => {
               <Slider min={0} max={50} value={[0, 30]} />
               <h2>File Upload</h2>
               <FileUpload />
+              <h2>File Select</h2>
+              <FileSelect value={value} setValue={setValue} />
             </div>,
 
             <div key={"Icons"} className={s.grid}>
@@ -202,9 +204,6 @@ const Home: NextPage = () => {
             <div key={"Accordion"}>
               <AccordionExamples />
             </div>,
-            <div key={"File Select"}>
-              <FileSelect value={value} setValue={setValue} />
-            </div>,
           ]}
         />
 
@@ -212,7 +211,7 @@ const Home: NextPage = () => {
 
         <Tabs
           className={s.example_tabs}
-          labels={["Notification", "Carousel", "Add Button"]}
+          labels={["Notification", "Carousel", "Add Button", "Credit Card"]}
           values={[
             <div key="Notification">
               <Notification
@@ -250,6 +249,43 @@ const Home: NextPage = () => {
                   large
                 />
               </div>
+            </div>,
+
+            <div key={"Credit Card"} className={s.creditcard}>
+              <CreditCard
+                size={200}
+                isColored
+                key={1}
+                isHidden
+                id={8375}
+                cardNumber="1234 8547 7294 3959"
+                cardHolder="Test Test"
+                expireDate="01/2023"
+                onDelete={() => {
+                  console.log("test")
+                }}
+              />
+              <CreditCard
+                size={250}
+                key={2}
+                isHidden
+                id={7335}
+                cardNumber="1234 1234 1234 1234"
+                cardHolder="Test Test"
+                expireDate="01/2023"
+              />
+              <CreditCard
+                size={300}
+                key={3}
+                id={2341}
+                isColored
+                cardNumber="1234 1234 1234 1234"
+                cardHolder="Test Test"
+                expireDate="01/2023"
+                onDelete={() => {
+                  console.log("test")
+                }}
+              />
             </div>,
           ]}
         />

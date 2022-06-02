@@ -3,6 +3,7 @@ import { AddButton } from "./AddButton"
 import { Button } from "./Button"
 import { Carousel } from "./Carousel"
 import { CheckboxGroup } from "./CheckboxGroup"
+import { CreditCard } from "./CreditCard"
 import { DatePicker } from "./DatePicker"
 import { FileSelect } from "./FileSelect"
 import { FileUpload } from "./FileUpload"
@@ -20,6 +21,7 @@ export {
   Button,
   Carousel,
   CheckboxGroup,
+  CreditCard,
   DatePicker,
   FileSelect,
   FileUpload,
