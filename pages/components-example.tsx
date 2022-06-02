@@ -30,7 +30,6 @@ import {
 } from "UI"
 
 import {
-  Background,
   Footer,
   Header,
   Logo,
@@ -273,9 +272,6 @@ const Home: NextPage = () => {
           ]}
         />
       </main>
-
-      <Background image={bg} />
-
       <Footer links={footerNav} />
     </>
   )

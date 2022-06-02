@@ -7,7 +7,7 @@ import { Logo } from "./Logo"
 import { Notification } from "./Notification"
 import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
-
+import { ProfileSidebar } from './ProfileSidebar';
 export {
   BurgerMenu,
   Counter,
@@ -19,4 +19,6 @@ export {
   SectionHeader,
   SizePicker,
   SupportSection,
+  ProfileSidebar
+
 }

@@ -1,7 +1,7 @@
 import { NextPage } from "next"
 
 import Head from "next/head"
-import { Footer, Header, SupportSection } from "Сomponents"
+import { Footer, Header, ProfileSidebar, SupportSection } from "Сomponents"
 import { Accordion } from "UI"
 import { footerNav } from "shared/constants/footernav"
 import { questions } from "shared/constants/questions"
@@ -19,7 +19,19 @@ const FaqPage: NextPage = () => {
             <Header />
             <div className={s.breadCrumbs}>Breadcrumbs</div>
             <div className={s.container}>
-                <div className={s.leftSide}></div>
+                <div className={s.leftSide}>
+                    <ProfileSidebar
+                        labels={[
+                            "profile",
+                            "Address",
+                            "Order",
+                            "Payment",
+                            "Notification",
+                            "Favorite",
+                            "Help",
+                            "Sign Out",
+                        ]} />
+                </div>
                 <div className={s.mainContent}>
                     <SupportSection />
                     <h1 className={s.heading}>FAQ</h1>

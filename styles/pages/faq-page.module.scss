@@ -18,12 +18,12 @@
 }
 
 .leftSide {
-    object-fit: contain;
+    // object-fit: contain;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
     background-color: #fff;
-    width: 317px;
-    height: 575px;
     margin-right: 24px;
+    height: max-content;
+    padding: 0 0 30px 0;
 
 }
 
