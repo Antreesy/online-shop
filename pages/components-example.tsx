@@ -14,10 +14,13 @@ import {
 
 import {
   AddButton,
+  Card,
   Carousel,
   CheckboxGroup,
+  CreditCard,
   DatePicker,
   Icon,
+  Input,
   FileSelect,
   FileUpload,
   RadioGroup,
@@ -50,6 +53,7 @@ import { ModalWindow } from "UI/ModalWindow"
 const Home: NextPage = () => {
   const [isRead, setIsRead] = useState<boolean>(false)
   const [value, setValue] = useState<File | null>(null)
+  const [inputValue, setInputValue] = useState<string>("")
   return (
     <>
       <Head>
@@ -75,17 +79,60 @@ const Home: NextPage = () => {
           className={s.example_tabs}
           labels={[
             "Buttons",
-            "Inputs and Pickers",
+            "Inputs",
+            "Pickers",
             "Icons",
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
-            "File Select",
+            "Card",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
 
-            <div key={"Inputs and Pickers"} className={s.grid_column}>
+            <div key={"Inputs"}>
+              <Input
+                label="default"
+                setValue={setInputValue}
+                value={inputValue}
+              />
+              <Input
+                variant="footer"
+                buttonLabel="button"
+                label="footer"
+                setValue={setInputValue}
+                value={inputValue}
+                placeholder={"value"}
+              />
+              <Input
+                variant="black_button"
+                isRequired={true}
+                buttonLabel="button"
+                label="modal"
+                setValue={setInputValue}
+                value={inputValue}
+                placeholder={"value"}
+              />
+              <Input
+                variant="blue_outline"
+                buttonLabel="button"
+                label="blue_outline"
+                setValue={setInputValue}
+                value={inputValue}
+                placeholder={"value"}
+              />
+              <Input
+                buttonLabel="button"
+                label="className: error"
+                setValue={setInputValue}
+                value={inputValue}
+                className={"error"}
+                placeholder={"value"}
+                errorText={"error"}
+              />
+            </div>,
+
+            <div key={"Pickers"} className={s.grid_column}>
               <h2>Date Picker</h2>
               <DatePicker
                 initValue={new Date()}
@@ -118,6 +165,8 @@ const Home: NextPage = () => {
               <Slider min={0} max={50} value={[0, 30]} />
               <h2>File Upload</h2>
               <FileUpload />
+              <h2>File Select</h2>
+              <FileSelect value={value} setValue={setValue} />
             </div>,
 
             <div key={"Icons"} className={s.grid}>
@@ -203,8 +252,24 @@ const Home: NextPage = () => {
             <div key={"Accordion"}>
               <AccordionExamples />
             </div>,
-            <div key={"File Select"}>
-              <FileSelect value={value} setValue={setValue} />
+
+            <div key={"Card"}>
+              <div className={s.cards}>
+                <Card
+                  className={s.card_big}
+                  imageSrc="/../public/assets/img/picture_1.png"
+                  title="Gizem Sancak"
+                  buttonTitle="Go To Store"
+                  topButtonTitle="Follow"
+                />
+                <Card
+                  className={s.card_small}
+                  imageSrc="/../public/assets/img/picture_2.png"
+                  title="Gizem Sancak"
+                  buttonTitle="Go To Store"
+                  isButtonHidden
+                />
+              </div>
             </div>,
           ]}
         />
@@ -213,7 +278,7 @@ const Home: NextPage = () => {
 
         <Tabs
           className={s.example_tabs}
-          labels={["Notification", "Carousel", "Add Button"]}
+          labels={["Notification", "Carousel", "Add Button", "Credit Card"]}
           values={[
             <div key="Notification">
               <Notification
@@ -251,6 +316,43 @@ const Home: NextPage = () => {
                   large
                 />
               </div>
+            </div>,
+
+            <div key={"Credit Card"} className={s.creditcard}>
+              <CreditCard
+                size={200}
+                isColored
+                key={1}
+                isHidden
+                id={8375}
+                cardNumber="1234 8547 7294 3959"
+                cardHolder="Test Test"
+                expireDate="01/2023"
+                onDelete={() => {
+                  console.log("test")
+                }}
+              />
+              <CreditCard
+                size={250}
+                key={2}
+                isHidden
+                id={7335}
+                cardNumber="1234 1234 1234 1234"
+                cardHolder="Test Test"
+                expireDate="01/2023"
+              />
+              <CreditCard
+                size={300}
+                key={3}
+                id={2341}
+                isColored
+                cardNumber="1234 1234 1234 1234"
+                cardHolder="Test Test"
+                expireDate="01/2023"
+                onDelete={() => {
+                  console.log("test")
+                }}
+              />
             </div>,
           ]}
         />
