@@ -34,6 +34,7 @@ import {
 
 import {
   BreadCrumbs,
+  ColorPicker,
   Footer,
   Header,
   Logo,
@@ -51,7 +52,6 @@ import { Currency } from "shared/enums/currency"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
-import { ColorPicker } from "UI/ColorPicker"
 
 const Home: NextPage = () => {
   const [isRead, setIsRead] = useState<boolean>(false)

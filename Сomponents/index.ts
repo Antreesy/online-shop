@@ -1,5 +1,6 @@
 import { BreadCrumbs } from "./Breadcrumbs"
 import { BurgerMenu } from "./BurgerMenu"
+import { ColorPicker } from "./ColorPicker"
 import { Counter } from "./Counter"
 import { Footer } from "./Footer"
 import { Header, HeaderLight } from "./Header"
@@ -11,6 +12,7 @@ import { SizePicker } from "./SizePicker"
 export {
   BreadCrumbs,
   BurgerMenu,
+  ColorPicker,
   Counter,
   Footer,
   Header,
