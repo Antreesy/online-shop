@@ -1,0 +1,127 @@
+@import "styles/style.scss";
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  padding-top: $header-desktop-height + 35px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  //background-color: #ededed;
+
+  @include mobile {
+    padding: $header-mobile-height + 25px 35px 32px;
+  }
+}
+
+.wrapper {
+  max-width: 483px;
+  padding: 4px;
+  border-radius: 10px;
+  box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.04);
+  //background-color: white;
+
+  @include mobile {
+    padding: 3px;
+
+    button {
+      height: 45px;
+      min-width: 261px;
+    }
+  }
+}
+
+.tabs {
+  width: 100%;
+
+  div {
+    button {
+      width: 231px;
+    }
+  }
+}
+
+
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 11px;
+  margin-top: 24px;
+
+  input {
+    box-sizing: border-box;
+    width: 361px;
+    height: 46px;
+    margin-bottom: 3px;
+  }
+
+  @include mobile {
+    gap: 5px;
+
+    input {
+      box-sizing: border-box;
+      width: 261px;
+      height: 40px;
+      margin-bottom: 3px;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    width: 359px;
+  }
+}
+
+.text {
+  width: 361px;
+
+  span {
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.6px;
+    text-align: left;
+    color: #a3a3a3;
+  }
+}
+
+.form_footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 19px;
+  font-size: 12px;
+  line-height: 18px;
+  width: 100%;
+}
+
+.facebook {
+  color: #6402b9;
+  border-color: #6402b9;
+  margin: 11px 0 16px 0;
+}
+
+.facebook_signup {
+  margin-bottom: 32px;
+}
+
+.inputs_signup {
+  margin-bottom: 20px;
+}
+
+.btn {
+  height: 55px;
+  min-width: 359px;
+}
