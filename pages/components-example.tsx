@@ -29,6 +29,7 @@ import {
   Slider,
   SocialIcon,
   Tabs,
+  Price,
 } from "UI"
 
 import {
@@ -68,12 +69,6 @@ const Home: NextPage = () => {
           actionText={"All Orders"}
         />
 
-        <Range
-          minQuantity={10000}
-          maxQuantity={1000000}
-          currency={Currency.RUB}
-        />
-
         <Tabs
           className={s.example_tabs}
           labels={[
@@ -84,7 +79,7 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
-            "Card",
+            "Price",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -252,23 +247,17 @@ const Home: NextPage = () => {
               <AccordionExamples />
             </div>,
 
-            <div key={"Card"}>
-              <div className={s.cards}>
-                <Card
-                  className={s.card_big}
-                  imageSrc="/../public/assets/img/picture_1.png"
-                  title="Gizem Sancak"
-                  buttonTitle="Go To Store"
-                  topButtonTitle="Follow"
-                />
-                <Card
-                  className={s.card_small}
-                  imageSrc="/../public/assets/img/picture_2.png"
-                  title="Gizem Sancak"
-                  buttonTitle="Go To Store"
-                  isButtonHidden
-                />
-              </div>
+            <div key={"Price"}>
+              <Price oldPrice={2030} price={1930} type="order" />
+              <Price oldPrice={2030} price={1930} type="cart" />
+              <Price oldPrice={2030} price={1930} type="primary" />
+              <Price oldPrice={2030} price={1930} type="sale" />
+              <Price oldPrice={2030} price={1930} type="sale_black" />
+              <Range
+                minQuantity={10000}
+                maxQuantity={1000000}
+                currency={Currency.RUB}
+              />
             </div>,
           ]}
         />
@@ -277,7 +266,13 @@ const Home: NextPage = () => {
 
         <Tabs
           className={s.example_tabs}
-          labels={["Notification", "Carousel", "Add Button", "Credit Card"]}
+          labels={[
+            "Notification",
+            "Carousel",
+            "Add Button",
+            "Credit Card",
+            "Card",
+          ]}
           values={[
             <div key="Notification">
               <Notification
@@ -352,6 +347,25 @@ const Home: NextPage = () => {
                   console.log("test")
                 }}
               />
+            </div>,
+
+            <div key={"Card"}>
+              <div className={s.cards}>
+                <Card
+                  className={s.card_big}
+                  imageSrc="/../public/assets/img/picture_1.png"
+                  title="Gizem Sancak"
+                  buttonTitle="Go To Store"
+                  topButtonTitle="Follow"
+                />
+                <Card
+                  className={s.card_small}
+                  imageSrc="/../public/assets/img/picture_2.png"
+                  title="Gizem Sancak"
+                  buttonTitle="Go To Store"
+                  isButtonHidden
+                />
+              </div>
             </div>,
           ]}
         />
