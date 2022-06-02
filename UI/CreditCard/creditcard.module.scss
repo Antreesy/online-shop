@@ -1,0 +1,60 @@
+@import "styles/style.scss";
+
+.cardColored {
+  background: $main-gradient;
+}
+
+.cardDefault {
+  background: $color-grey-c;
+}
+
+.cardContent {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 26px;
+  height: 100%;
+  font-weight: $fw-bold;
+
+  @include mobile {
+    padding: 20px;
+  }
+}
+
+.cardLeftSideClasses {
+  display: flex;
+  flex-direction: column;
+  color: $color-white;
+  margin-bottom: 15px;
+}
+
+.withButton {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.withoutButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.cardRightSide {
+  color: $color-white;
+}
+
+.expireDate {
+  color: $color-white;
+  font-weight: $fw-regular;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.deleteBtn {
+  align-self: flex-end;
+  color: $color-white;
+}
