@@ -32,18 +32,16 @@ const CustomAccordion: React.FC<AccordionProps> = (props) => {
   const summaryClass = cn(s.summary, summaryClassName)
 
   return (
-    <div>
-      <Accordion className={accordionClass}>
-        <AccordionSummary
-          className={summaryClass}
-          expandIcon={<Icon type="arrow_down" color={arrowColor} />}
-        >
-          <span className={headerClassName}>{header}</span>
-          <span className={openTitleClassName}>{openTitle}</span>
-        </AccordionSummary>
-        <AccordionDetails>{children}</AccordionDetails>
-      </Accordion>
-    </div>
+    <Accordion className={accordionClass}>
+      <AccordionSummary
+        className={summaryClass}
+        expandIcon={<Icon type="arrow_down" color={arrowColor} />}
+      >
+        <span className={headerClassName}>{header}</span>
+        <span className={openTitleClassName}>{openTitle}</span>
+      </AccordionSummary>
+      <AccordionDetails className={s.details}>{children}</AccordionDetails>
+    </Accordion>
   )
 }
 

@@ -1,14 +1,16 @@
 //Global Dependencies
+import React from "react"
 import type { GetStaticProps, NextPage } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useTranslation } from "next-i18next"
 
 //Project Components
 import Head from "next/head"
-import Image from "next/image"
 import Link from "next/link"
 import LangRoute from "Сomponents/LanguageRouting/LangRoute"
-import { Header } from "Сomponents"
+import { Header, Footer } from "Сomponents"
+
+import { footerNav } from "shared/constants/footernav"
 
 //Project Styles
 import styles from "styles/pages/Index.module.scss"
@@ -22,7 +24,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = "en" }) => ({
 const Index: NextPage = (props: any) => {
   const { t } = useTranslation("common")
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>ILONSI SHOP | Homepage</title>
       </Head>
@@ -54,19 +56,8 @@ const Index: NextPage = (props: any) => {
         </p>
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+      <Footer links={footerNav} />
+    </>
   )
 }
 
