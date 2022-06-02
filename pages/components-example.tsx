@@ -55,7 +55,6 @@ import { Currency } from "shared/enums/currency"
 import s from "styles/pages/ComponentsExample.module.scss"
 
 const Home: NextPage = () => {
-  const [isRead, setIsRead] = useState<boolean>(false)
   const [value, setValue] = useState<File | null>(null)
   const [inputValue, setInputValue] = useState<string>("")
   return (
@@ -287,12 +286,7 @@ const Home: NextPage = () => {
           ]}
           values={[
             <div key="Notification">
-              <Notification
-                onRead={() => {
-                  setIsRead(true)
-                }}
-                header={"Notification"}
-              >
+              <Notification header={"Notification"}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
                 quam sequi vitae eius iusto perspiciatis facilis nesciunt
                 dignissimos provident ipsum? Nobis repellat atque ab nam magni

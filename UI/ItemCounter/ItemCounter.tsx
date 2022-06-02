@@ -29,13 +29,9 @@ const ItemCounter: React.FC<ItemCounterProps> = (props) => {
 
   return (
     <div className={counterClass}>
-      <Button onClick={onDecrement} className={s.button}>
-        -
-      </Button>
+      <Button onClick={onDecrement} className={s.button} iconLeft="minus" />
       <div className={s.value}>{value}</div>
-      <Button onClick={onIncrement} className={s.button}>
-        +
-      </Button>
+      <Button onClick={onIncrement} className={s.button} iconLeft="plus" />
     </div>
   )
 }

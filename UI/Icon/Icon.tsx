@@ -16,7 +16,5 @@ interface IconProps {
 export const Icon: React.FC<IconProps> = (props) => {
   const { type, color, className } = props
 
-  return (
-    <span style={{ color }} className={cn(s.icon, s[type], className)} />
-  )
+  return <span style={{ color }} className={cn(s.icon, s[type], className)} />
 }
