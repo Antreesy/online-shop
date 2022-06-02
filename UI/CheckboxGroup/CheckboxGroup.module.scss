@@ -1,10 +1,10 @@
-@import "styles/colors.scss";
+@import "styles/style.scss";
 
 .group {
   display: flex;
   flex-direction: row;
 
-  @media (max-width: 700px) {
+  @include mobile-tablet {
     flex-direction: column;
   }
 }

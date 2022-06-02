@@ -1,7 +1,7 @@
 import React from "react"
 import cn from "classnames"
 
-import { icons } from "shared/consts/icons"
+import { icons } from "shared/constants/icons"
 
 import s from "./icon.module.scss"
 

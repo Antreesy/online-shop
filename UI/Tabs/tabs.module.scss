@@ -1,5 +1,4 @@
-@import "styles/fonts.scss";
-@import "styles/colors.scss";
+@import "styles/style.scss";
 
 .tabs {
   border-radius: 10px;
@@ -26,6 +25,11 @@
   border: 3px solid $color-white;
   box-shadow: 0 3px 5px $color-grey-e2;
 
+  & .tab.active {
+    color: $color-white;
+    font-weight: $fw-regular;
+  }
+
   & > div > span {
     border-radius: 10px;
     z-index: -1;
@@ -40,11 +44,12 @@
   .tab {
     font-weight: $fw-regular;
     border-radius: 10px;
-  }
-  .tab:focus,
-  .tab:active {
-    font-weight: $fw-semibold;
-    color: $color-purple;
+
+    &:focus,
+    &.active {
+      font-weight: $fw-semibold;
+      color: $color-purple;
+    }
   }
 
   & > div > span {
@@ -59,11 +64,12 @@
 
   .tab {
     font-weight: $fw-semibold;
-  }
-  .tab:focus,
-  .tab:active {
-    font-weight: $fw-regular;
-    color: $color-white;
+
+    &:focus,
+    &.active {
+      font-weight: $fw-regular;
+      color: $color-white;
+    }
   }
 
   & > div > span {

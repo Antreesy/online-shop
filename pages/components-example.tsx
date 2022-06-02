@@ -1,38 +1,74 @@
+import { useState } from "react"
+
 //Global Dependencies
 import type { NextPage } from "next"
 
 //Project Components
 import Head from "next/head"
-import Image from "next/image"
-import Link from "next/link"
-import { DatePicker, Icon, RadioGroup, CheckboxGroup, Select, Tabs } from "UI"
-import ButtonExamples from "Сomponents/Examples/ButtonExamples"
-import AccordionExamples from "Сomponents/Examples/AccordionExamples"
+
+import {
+  AccordionExamples,
+  ButtonExamples,
+  CardExample,
+} from "Сomponents/Examples"
+
+import {
+  AddButton,
+  Carousel,
+  CheckboxGroup,
+  DatePicker,
+  Icon,
+  FileSelect,
+  FileUpload,
+  RadioGroup,
+  Range,
+  Select,
+  Slider,
+  SocialIcon,
+  Tabs,
+} from "UI"
+
+import {
+  Footer,
+  Header,
+  Logo,
+  Notification,
+  SectionHeader,
+  SizePicker,
+} from "Сomponents"
 
 //Project Helpers
-import { icons } from "shared/consts/icons"
-import { countries } from "shared/consts/countries"
+import { icons } from "shared/constants/icons"
+import { countries } from "shared/constants/countries"
+import { footerNav } from "shared/constants/footernav"
+import { Currency } from "shared/enums/currency"
 
 //Project Styles
-import s from "styles/ComponentsExample.module.scss"
+import s from "styles/pages/ComponentsExample.module.scss"
 
 const Home: NextPage = () => {
+  const [isRead, setIsRead] = useState<boolean>(false)
+  const [value, setValue] = useState<File | null>(null)
   return (
-    <div className={s.container}>
+    <>
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
 
-      <main className={s.main}>
-        <h1>UI Kit page</h1>
+      <Header />
 
-        <p className={s.description}>
-          Go back to{" "}
-          <Link href="/">
-            <a className={s.title__link}>/index</a>
-          </Link>{" "}
-          page
-        </p>
+      <main className={s.main}>
+        <SectionHeader
+          className={s.title}
+          title={"UI Kit page"}
+          actionText={"All Orders"}
+        />
+
+        <Range
+          minQuantity={10000}
+          maxQuantity={1000000}
+          currency={Currency.RUB}
+        />
 
         <Tabs
           className={s.example_tabs}
@@ -43,20 +79,43 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
+            "File Select",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
 
-            <div key={"Inputs and Pickers"} className={s.grid_column}>
+            <div key={"Inputs and Pickers"} className={s.grid}>
+              <div>
+                <h2>Date Picker</h2>
+                <DatePicker
+                  initValue={new Date()}
+                  onChange={() => {
+                    return
+                  }}
+                />
+                <h2>Size Picker</h2>
+                <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
                 <h2>Select</h2>
-                <Select items={["one", "two", "three"]} onChange={() => {}} />
+                <Select
+                  items={["one", "two", "three"]}
+                  onChange={() => {
+                    return
+                  }}
+                />
                 <Select
                   placeholder="Country*"
-                  items={countries.map((country) => `${country.label} (+${country.phone})`)}
-                  onChange={() => {}}
+                  items={countries.map(
+                    (country) => `${country.label} (+${country.phone})`,
+                  )}
+                  onChange={() => {
+                    return
+                  }}
                 />
-                <h2>DatePicker</h2>
-                <DatePicker initValue={new Date()} onChange={() => {}} />
+                <h2>Slider</h2>
+                <Slider min={0} max={50} value={[0, 30]} />
+                <h2>File Upload</h2>
+                <FileUpload />
+              </div>
             </div>,
 
             <div key={"Icons"} className={s.grid}>
@@ -65,44 +124,61 @@ const Home: NextPage = () => {
                   {icon}: <Icon type={icon} />{" "}
                 </span>
               ))}
+              <div style={{ backgroundColor: "#1c1c1c" }}>
+                <SocialIcon type="facebook" />
+                <SocialIcon type="instagram" />
+                <SocialIcon type="youtube" />
+              </div>
+              <Logo type="dark" />
             </div>,
 
-            <div key={"Tabs"} className={s.tabs}>
-              <p className={s.description}>default</p>
-              <Tabs
-                labels={["Sign In", "Sign Up"]}
-                values={["Sign In", "Sign Up"]}
-              />
-              <p className={s.description}>spaces</p>
-              <Tabs
-                labels={["Sign In", "Sign Up"]}
-                values={["Sign In", "Sign Up"]}
-                variant="spaces"
-              />
-              <p className={s.description}>no_border</p>
-              <Tabs
-                labels={["Sign In", "Sign Up"]}
-                values={["Sign In", "Sign Up"]}
-                variant="no_border"
-              />
+            <div key={"Tabs"} className={s.grid}>
+              <div>
+                <p className={s.description}>default</p>
+                <Tabs
+                  labels={["Sign In", "Sign Up"]}
+                  values={["Sign In", "Sign Up"]}
+                />
+              </div>
+              <div>
+                <p className={s.description}>spaces</p>
+                <Tabs
+                  labels={["Sign In", "Sign Up"]}
+                  values={["Sign In", "Sign Up"]}
+                  variant="spaces"
+                />
+              </div>
+              <div>
+                <p className={s.description}>no_border</p>
+                <Tabs
+                  labels={["Sign In", "Sign Up"]}
+                  values={["Sign In", "Sign Up"]}
+                  variant="no_border"
+                />
+              </div>
             </div>,
 
             <div key={"Checkboxes and Radio"} className={s.grid}>
               <div>
                 <p>Rounded Checkboxes</p>
                 <CheckboxGroup rounded labels={["Men", "Women", "Unisex"]} />
+              </div>
+              <div>
                 <p>Square Checkboxes</p>
                 <CheckboxGroup
                   color="#000"
                   labels={["Men", "Women", "Unisex"]}
                 />
+              </div>
+              <div>
                 <p>Colored Checkboxes</p>
                 <CheckboxGroup
                   color="#ff4e4e"
                   colorChecked="#25754a"
                   labels={["Men", "Women", "Unisex"]}
                 />
-
+              </div>
+              <div>
                 <p>Gender</p>
                 <RadioGroup
                   elements={[
@@ -125,23 +201,61 @@ const Home: NextPage = () => {
             <div key={"Accordion"}>
               <AccordionExamples />
             </div>,
+            <div key={"File Select"}>
+              <FileSelect value={value} setValue={setValue} />
+            </div>,
+          ]}
+        />
+
+        <SectionHeader className={s.title} title={"Components page"} />
+
+        <Tabs
+          className={s.example_tabs}
+          labels={["Notification", "Carousel", "Add Button"]}
+          values={[
+            <div key="Notification">
+              <Notification
+                onRead={() => {
+                  setIsRead(true)
+                }}
+                header={"Notification"}
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                quam sequi vitae eius iusto perspiciatis facilis nesciunt
+                dignissimos provident ipsum? Nobis repellat atque ab nam magni
+                voluptas expedita facere recusandae.
+              </Notification>
+            </div>,
+
+            <div key={"Carousel"} className={s.carousel}>
+              <Carousel items={new Array(10).fill(CardExample)} />
+            </div>,
+
+            <div key={"AddButton"} className={s.addbuttonlist}>
+              <div>
+                <AddButton />
+              </div>
+              <div>
+                <AddButton title="Add New Card" color="primary" />
+              </div>
+              <div>
+                <AddButton title="Add New Address" color="secondary" />
+              </div>
+              <div>
+                <AddButton
+                  title="Add Product"
+                  color="secondary"
+                  bgColor="white"
+                  large
+                />
+              </div>
+            </div>,
           ]}
         />
       </main>
 
-      <footer className={s.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={s.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+      <Footer links={footerNav} />
+    </>
   )
 }
 

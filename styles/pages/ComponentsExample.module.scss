@@ -1,5 +1,4 @@
-@import "/styles/fonts.scss";
-@import "/styles/colors.scss";
+@import "styles/style.scss";
 
 .container {
   padding: 0 2rem;
@@ -8,18 +7,19 @@
 .main {
   min-height: 100vh;
   padding: 4rem 0;
+  padding-top: $header-desktop-height;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  @include mobile {
+    padding-top: $header-mobile-height;
+  }
 }
-
 .footer {
   display: flex;
   flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
 }
@@ -32,7 +32,7 @@
 }
 
 .title {
-  margin: 0;
+  margin: 1rem 0;
   line-height: 1.15;
   font-size: 4rem;
 }
@@ -57,6 +57,28 @@
   padding-top: 2rem;
   margin-bottom: 2rem;
   gap: 5px;
+
+  @include mobile {
+    width: 100%;
+    flex-direction: column;
+    padding: 1rem 20px;
+  }
+
+  @include tablet {
+    width: 100%;
+    flex-direction: column;
+    padding: 1rem 40px;
+  }
+
+  @include laptop {
+    width: 100%;
+    padding: 1rem 60px;
+  }
+
+  @include desktop {
+    width: 100%;
+    padding: 1rem 80px;
+  }
 }
 
 .grid_column {
@@ -144,21 +166,15 @@
 .card_example {
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 200px;
   padding: 10px;
   border: 2px solid $color-black;
   border-radius: 10px;
+  height: 300px;
 }
 
 .icon_example {
   width: 20%;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
 }
 
 .tabs {
@@ -197,4 +213,13 @@
 .example_tabs {
   margin: 0 auto;
   width: fit-content;
+}
+
+.carousel {
+  margin-top: 30px;
+  width: 1024px;
+}
+
+.addbuttonlist > div {
+  margin-bottom: 30px;
 }
