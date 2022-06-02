@@ -7,7 +7,6 @@
   padding-top: $header-light-desktop-height;
   background-color: $color-grey-ed;
 
-
   &::after {
     content: "";
     position: absolute;
@@ -50,8 +49,6 @@
   }
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-
-
 }
 
 .container {

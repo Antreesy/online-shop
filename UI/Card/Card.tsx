@@ -42,7 +42,9 @@ const Card: React.FC<CardProps> = (props) => {
         </div>
       </div>
 
-      {!!topButtonTitle && <span className={s.topButton}>{topButtonTitle}</span>}
+      {!!topButtonTitle && (
+        <span className={s.topButton}>{topButtonTitle}</span>
+      )}
     </div>
   )
 }
