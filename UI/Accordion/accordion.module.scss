@@ -5,13 +5,25 @@
   color: $color-black;
   font-weight: $fw-regular;
   background-color: transparent;
+
+  &::before {
+    background-color: transparent;
+  }
 }
 
 .summary {
+  min-height: auto !important;
+  padding: 16px;
+
   & > div:first-child {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-right: 10px;
+    margin: 0;
   }
+}
+
+.details {
+  padding: 0 16px;
 }
