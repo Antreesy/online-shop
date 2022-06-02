@@ -1,0 +1,102 @@
+@import "styles/style.scss";
+
+.card {
+  position: relative;
+
+  & img {
+    object-fit: cover;
+  }
+
+  &:hover {
+    & .title {
+      font-weight: $fw-semibold;
+    }
+
+    & .button {
+      background: rgba($color: $color-purple-d, $alpha: 0.8);
+    }
+
+    & .content {
+      transform: translateY(0);
+    }
+
+    &::before {
+      transition: all 0.3s ease-in;
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1) rotate(160deg);
+    }
+  }
+
+  &::before {
+    content: "";
+    height: 75%;
+    aspect-ratio: 3/4;
+    position: absolute;
+    transition: all 0.3s ease-in;
+    border: 4px solid $color-purple;
+    z-index: 1;
+    transform: scale(0.3) rotate(-20deg);
+    top: 0%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.hiddenContainer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  transition: transform 0.3s ease-out;
+}
+.content_hidden {
+  transform: translateY(55px);
+}
+
+.title {
+  width: 100%;
+  color: $color-white;
+  font-size: 36px;
+  font-weight: $fw-light;
+  text-align: center;
+  transition: all 0.3s ease-out;
+}
+
+.button {
+  color: $color-white;
+  height: 54px;
+  width: 100%;
+  background: rgba($color: $color-purple, $alpha: 0.8);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  font-size: 17px;
+
+  @include mobile {
+    height: 40px;
+    font-size: 14x;
+    border-radius: 0;
+  }
+}
+
+.topButton {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  font-size: 12px;
+  font-weight: $fw-semibold;
+  color: $color-white;
+}

@@ -75,18 +75,24 @@ const BurgerMenu: React.FC<BurgerMenuProps> = (props) => {
             />
           </div>
 
-          <List className={s.drawerBox_menu}>
-            {items.map((item, index) => (
-              <ListItem key={index} className={s.drawerBox_item} disablePadding>
-                <Link href={item.href}>
-                  <a className={s.drawerBox_link}>
-                    <span>{item.text}</span>
-                    <span />
-                  </a>
-                </Link>
-              </ListItem>
-            ))}
-          </List>
+          <div className={s.drawerBox_main}>
+            <List className={s.drawerBox_menu}>
+              {items.map((item, index) => (
+                <ListItem
+                  key={index}
+                  className={s.drawerBox_item}
+                  disablePadding
+                >
+                  <Link href={item.href}>
+                    <a className={s.drawerBox_link}>
+                      <span>{item.text}</span>
+                      <span />
+                    </a>
+                  </Link>
+                </ListItem>
+              ))}
+            </List>
+          </div>
         </Box>
       </Drawer>
     </>

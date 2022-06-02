@@ -3,7 +3,7 @@ import { Button, SocialIcon } from "UI"
 import { Logo } from "Сomponents"
 import BurgerMenu from "../BurgerMenu/BurgerMenu"
 
-import { DrawerItems } from "shared/consts/menuItems"
+import { DrawerItems } from "shared/constants/menuItems"
 
 import s from "./header.module.scss"
 
@@ -13,8 +13,9 @@ const Header: React.FC<HeaderProps> = (props) => {
   return (
     <header className={s.header}>
       <div className={s.top_group}>
-        <span className={s.email}>info@ilonsi.com</span>
-
+        <Link href="mailto:info@ilonsi.com" className={s.email}>
+          info@ilonsi.com
+        </Link>
         <span className={s.caption}>
           lipsum as it is sometimes known, is dummy
         </span>

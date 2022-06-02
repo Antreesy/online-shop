@@ -1,4 +1,3 @@
-import React from "react"
 import cn from "classnames"
 
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material"
@@ -41,7 +40,7 @@ const CustomAccordion: React.FC<AccordionProps> = (props) => {
         <span className={headerClassName}>{header}</span>
         <span className={openTitleClassName}>{openTitle}</span>
       </AccordionSummary>
-      <AccordionDetails>{children}</AccordionDetails>
+      <AccordionDetails className={s.details}>{children}</AccordionDetails>
     </Accordion>
   )
 }
