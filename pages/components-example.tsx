@@ -175,8 +175,11 @@ const Home: NextPage = () => {
             <div key={"Credit Card"} className={s.creditcard}>
               <CreditCard
                 size={200}
-                colored
-                cardNumber="**** **** **** ****"
+                isColored
+                key={1}
+                isHidden
+                id={8375}
+                cardNumber="1234 8547 7294 3959"
                 cardHolder="Alex Gurnet"
                 expireDate="01/2023"
                 onDelete={() => {
@@ -185,13 +188,18 @@ const Home: NextPage = () => {
               />
               <CreditCard
                 size={250}
+                key={2}
+                isHidden
+                id={7335}
                 cardNumber="1234 1234 1234 1234"
                 cardHolder="Test Testovich"
                 expireDate="01/2023"
               />
               <CreditCard
                 size={300}
-                colored
+                key={3}
+                id={2341}
+                isColored
                 cardNumber="1234 1234 1234 1234"
                 cardHolder="Alex Gurnet"
                 expireDate="01/2023"

@@ -6,62 +6,68 @@ import IconButton from "@mui/material/IconButton"
 import cn from "classnames"
 
 import { Icon } from "UI/Icon"
+import { creditcardConsts } from "shared/consts/creditcard"
 
 import s from "./creditcard.module.scss"
-
 interface CreditCardProps {
   size?: number
-  colored?: boolean
+  isColored?: boolean
   cardNumber: string
   cardHolder: string
   expireDate: string
-  onDelete?: () => void
+  isHidden?: boolean
+  id?: number
+  onDelete?: (id: number) => void
 }
 
-const aspectRatio = 1.85
-const minHeight = 200
-const baseCardNumberIndex = 16
-const baseExpireNumberIndex = 22
-const baseDeleteBtnIndex = 10
-
 const CreditCard: React.FC<CreditCardProps> = ({
-  size = minHeight,
-  colored = false,
+  size = creditcardConsts.MIN_HEIGHT,
+  isColored = false,
   cardNumber,
   cardHolder,
   expireDate,
+  isHidden = false,
+  id,
   onDelete,
 }) => {
-  const sizeNumber = size < minHeight ? minHeight : size
-  const cardClasses = colored ? s.cardColored : s.cardDefault
+  const sizeNumber =
+    size < creditcardConsts.MIN_HEIGHT ? creditcardConsts.MIN_HEIGHT : size
+  const cardClasses = isColored ? s.cardColored : s.cardDefault
   const cardRightSideClasses = onDelete
     ? cn(s.withButton, s.cardLeftSide)
     : cn(s.withoutButton, s.cardLeftSide)
 
+  const getRatio = (baseIndex: number): number => {
+    return (size / baseIndex) * creditcardConsts.ASPECT_RATIO
+  }
+
   return (
     <Card
       className={cardClasses}
-      sx={{ width: sizeNumber * aspectRatio, height: sizeNumber }}
+      sx={{
+        width: sizeNumber * creditcardConsts.ASPECT_RATIO,
+        height: sizeNumber,
+      }}
     >
       <CardContent className={s.cardContent}>
         <div
           className={s.cardLeftSideClasses}
           style={{
-            fontSize: `${(size / baseCardNumberIndex) * aspectRatio}px`,
+            fontSize: `${getRatio(creditcardConsts.BASE_CARD_NUMBER_INDEX)}px`,
           }}
         >
-          <div>{cardNumber}</div>
+          <div>{isHidden ? creditcardConsts.HIDDEN_MASK : cardNumber}</div>
           <div>{cardHolder}</div>
         </div>
         <div className={cardRightSideClasses}>
-          {onDelete && (
+          {onDelete && id && (
             <IconButton
               className={s.deleteBtn}
               sx={{
-                width: (size / baseDeleteBtnIndex) * aspectRatio,
-                height: (size / baseDeleteBtnIndex) * aspectRatio,
+                width: getRatio(creditcardConsts.BASE_DELETE_BTN_INDEX),
+                height: getRatio(creditcardConsts.BASE_DELETE_BTN_INDEX),
               }}
-              onClick={onDelete}
+              onClick={() => onDelete(id)}
             >
               <Icon type="trash_can" />
             </IconButton>
@@ -69,15 +75,19 @@ const CreditCard: React.FC<CreditCardProps> = ({
           <div>
             <Card
               sx={{
-                width: (sizeNumber * aspectRatio) / 6,
-                height: sizeNumber / 5,
-                marginRight: 1.5,
+                width:
+                  (sizeNumber * creditcardConsts.ASPECT_RATIO) /
+                  creditcardConsts.WIDTH_DIVISOR,
+                height: sizeNumber / creditcardConsts.HEIGHT_DIVISOR,
+                marginRight: creditcardConsts.CARD_MARGIN_RATIO,
               }}
             ></Card>
             <div
               className={s.expireDate}
               style={{
-                fontSize: `${(size / baseExpireNumberIndex) * aspectRatio}px`,
+                fontSize: `${getRatio(
+                  creditcardConsts.BASE_EXPIRENUMBER_INDEX,
+                )}px`,
               }}
             >
               {expireDate}
