@@ -34,6 +34,7 @@ import {
 
 import {
   BreadCrumbs,
+  ColorPicker,
   Footer,
   Header,
   Logo,
@@ -44,6 +45,7 @@ import {
 
 //Project Helpers
 import { icons } from "shared/constants/icons"
+import { colors } from "shared/constants/colors"
 import { countriesForSelect } from "shared/constants/countries"
 import { footerNav } from "shared/constants/footernav"
 import { Currency } from "shared/enums/currency"
@@ -62,7 +64,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Header />
-      <BreadCrumbs/>
+      <BreadCrumbs />
 
       <main className={s.main}>
         <SectionHeader
@@ -136,6 +138,8 @@ const Home: NextPage = () => {
                   return
                 }}
               />
+              <h2>Color Picker</h2>
+              <ColorPicker colors={colors} />
               <h2>Size Picker</h2>
               <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
               <h2>Select</h2>
