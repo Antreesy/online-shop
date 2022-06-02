@@ -54,6 +54,9 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 1200px;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+  gap: 10px;
 
   @include mobile {
     width: 100%;
@@ -76,6 +79,17 @@
     width: 100%;
     padding: 1rem 80px;
   }
+}
+
+.grid_column {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 1200px;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+  gap: 10px;
 }
 
 .grid_inner {

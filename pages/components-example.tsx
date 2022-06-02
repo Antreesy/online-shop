@@ -4,7 +4,6 @@ import { useState } from "react"
 import type { NextPage } from "next"
 
 //Project Components
-
 import Head from "next/head"
 
 import {
@@ -23,6 +22,7 @@ import {
   FileUpload,
   RadioGroup,
   Range,
+  Select,
   Slider,
   SocialIcon,
   Tabs,
@@ -39,6 +39,7 @@ import {
 
 //Project Helpers
 import { icons } from "shared/constants/icons"
+import { countriesForSelect } from "shared/constants/countries"
 import { footerNav } from "shared/constants/footernav"
 import { Currency } from "shared/enums/currency"
 
@@ -84,22 +85,39 @@ const Home: NextPage = () => {
           values={[
             <ButtonExamples key={"Buttons"} />,
 
-            <div key={"Inputs and Pickers"} className={s.grid}>
-              <div>
-                <h2>Date Picker</h2>
-                <DatePicker
-                  initValue={new Date()}
-                  onChange={() => {
-                    return
-                  }}
-                />
-                <h2>Size Picker</h2>
-                <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
-                <h2>Slider</h2>
-                <Slider min={0} max={50} value={[0, 30]} />
-                <h2>File Upload</h2>
-                <FileUpload />
-              </div>
+            <div key={"Inputs and Pickers"} className={s.grid_column}>
+              <h2>Date Picker</h2>
+              <DatePicker
+                initValue={new Date()}
+                onChange={() => {
+                  return
+                }}
+              />
+              <h2>Size Picker</h2>
+              <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
+              <h2>Select</h2>
+              <Select
+                items={[
+                  { title: "one", value: 1 },
+                  { title: "two", value: 2 },
+                  { title: "three", value: 3 },
+                ]}
+                onChange={() => {
+                  return
+                }}
+              />
+              <Select
+                label="Select"
+                placeholder="Country*"
+                items={countriesForSelect()}
+                onChange={() => {
+                  return
+                }}
+              />
+              <h2>Slider</h2>
+              <Slider min={0} max={50} value={[0, 30]} />
+              <h2>File Upload</h2>
+              <FileUpload />
             </div>,
 
             <div key={"Icons"} className={s.grid}>
