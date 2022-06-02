@@ -1,33 +1,42 @@
-import * as React from "react"
 import { Breadcrumbs, Typography, Link, Stack } from "@mui/material"
 import { useRouter } from "next/router"
-import classNames from "classnames"
+import cn from "classnames"
 import s from "./breadcrumbs.module.scss"
 
 const BreadCrumbs = () => {
   const router = useRouter()
   const path = router.pathname.split("/")
-  path.shift()
-  const activeRoute = path.pop()
+  const newPath = path.slice(1)
+  const activeRoute = path.slice(-1)
+  const routePath = path.slice()
   return (
     <Stack className={s.main} spacing={2}>
-      <Breadcrumbs separator="-" aria-label="breadcrumb">
-        <Link className={classNames(s.route, s.breadcrumb)} key="1" href="/">
-          Home
+      <Breadcrumbs className={s.nav} separator="-" aria-label="breadcrumb">
+        <Link
+          className={
+            newPath[0] === ""
+              ? cn(s.active, s.breadcrumb)
+              : cn(s.route, s.breadcrumb)
+          }
+          key="1"
+          href="/"
+        >
+          <p className={s.testi}>Home</p>
         </Link>
-        {path.map((route) => (
+        {newPath.slice(0, newPath.length - 1).map((route) => (
           <Link
-            className={classNames(s.route, s.breadcrumb)}
-            underline="hover"
+            className={cn(s.route, s.breadcrumb)}
             key="1"
-            href={`/${route}`}
+            href={`/${newPath.slice(0, routePath.indexOf(route)).join("/")}`}
           >
-            {route}
+            <p className={s.testi}>{route}</p>
           </Link>
         ))}
-        <Typography className={classNames(s.active, s.breadcrumb)} key="3">
-          {activeRoute}
-        </Typography>
+        {activeRoute[0] === "" ? null : (
+          <Typography className={cn(s.active, s.breadcrumb)} key="3">
+            {activeRoute}
+          </Typography>
+        )}
       </Breadcrumbs>
     </Stack>
   )
