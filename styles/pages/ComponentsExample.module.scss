@@ -215,10 +215,27 @@
   width: fit-content;
 }
 
-.goToStoreCard {
-  width: 380px;
-  height: 465px;
+.cards {
+  display: flex;
+  
 }
+
+.card_big {
+  width: 380px;
+  height: 466px;
+}
+
+.card_small {
+  width: 276px;
+  height: 300px;
+}
+
+.card_hor {
+  width: 655px;
+  height: 367px;
+}
+
+
 .carousel {
   margin-top: 30px;
   width: 1024px;
