@@ -423,9 +423,10 @@ export const countries = [
   { code: "ZW", label: "Zimbabwe", phone: "263" },
 ]
 
-export const countriesForSelect = () => countries.map((country) => {
-  return {
-    title: `${country.label} (+${country.phone})`,
-    value: country.label,
-  }
-})
+export const countriesForSelect = () =>
+  countries.map((country) => {
+    return {
+      title: `${country.label} (+${country.phone})`,
+      value: country.label,
+    }
+  })

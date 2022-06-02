@@ -50,11 +50,7 @@ const ButtonExamples: React.FC = () => {
         <Button onClick={() => setOpen(true)} className={s.button_purple}>
           Modal Window
         </Button>
-        <ModalWindow
-          isOpen={open}
-          setOpen={setOpen}
-          iconType="okay"
-        >
+        <ModalWindow isOpen={open} setOpen={setOpen} iconType="okay">
           Whatever you want
         </ModalWindow>
       </div>
