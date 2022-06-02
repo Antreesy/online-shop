@@ -19,6 +19,7 @@ import {
   CreditCard,
   DatePicker,
   Icon,
+  Input,
   FileSelect,
   FileUpload,
   RadioGroup,
@@ -50,6 +51,7 @@ import s from "styles/pages/ComponentsExample.module.scss"
 const Home: NextPage = () => {
   const [isRead, setIsRead] = useState<boolean>(false)
   const [value, setValue] = useState<File | null>(null)
+  const [inputValue, setInputValue] = useState<string>("")
   return (
     <>
       <Head>
@@ -75,7 +77,8 @@ const Home: NextPage = () => {
           className={s.example_tabs}
           labels={[
             "Buttons",
-            "Inputs and Pickers",
+            "Inputs",
+            "Pickers",
             "Icons",
             "Tabs",
             "Checkboxes and Radio",
@@ -84,7 +87,49 @@ const Home: NextPage = () => {
           values={[
             <ButtonExamples key={"Buttons"} />,
 
-            <div key={"Inputs and Pickers"} className={s.grid_column}>
+            <div key={"Inputs"}>
+              <Input
+                label="default"
+                setValue={setInputValue}
+                value={inputValue}
+              />
+              <Input
+                variant="footer"
+                buttonLabel="button"
+                label="footer"
+                setValue={setInputValue}
+                value={inputValue}
+                placeholder={"value"}
+              />
+              <Input
+                variant="black_button"
+                isRequired={true}
+                buttonLabel="button"
+                label="modal"
+                setValue={setInputValue}
+                value={inputValue}
+                placeholder={"value"}
+              />
+              <Input
+                variant="blue_outline"
+                buttonLabel="button"
+                label="blue_outline"
+                setValue={setInputValue}
+                value={inputValue}
+                placeholder={"value"}
+              />
+              <Input
+                buttonLabel="button"
+                label="className: error"
+                setValue={setInputValue}
+                value={inputValue}
+                className={"error"}
+                placeholder={"value"}
+                errorText={"error"}
+              />
+            </div>,
+
+            <div key={"Pickers"} className={s.grid_column}>
               <h2>Date Picker</h2>
               <DatePicker
                 initValue={new Date()}

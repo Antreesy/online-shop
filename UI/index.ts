@@ -8,6 +8,7 @@ import { DatePicker } from "./DatePicker"
 import { FileSelect } from "./FileSelect"
 import { FileUpload } from "./FileUpload"
 import { Icon } from "./Icon"
+import { Input } from "./Input"
 import { RadioGroup } from "./RadioGroup"
 import { Range } from "./Range"
 import { Select } from "./Select"
@@ -26,8 +27,9 @@ export {
   FileSelect,
   FileUpload,
   Icon,
-  Range,
+  Input,
   RadioGroup,
+  Range,
   Select,
   Slider,
   SocialIcon,
