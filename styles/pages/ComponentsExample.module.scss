@@ -13,7 +13,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
   @include mobile {
     padding-top: $header-mobile-height;
   }
@@ -21,8 +20,6 @@
 .footer {
   display: flex;
   flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
 }
@@ -57,6 +54,9 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 1200px;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+  gap: 10px;
 
   @include mobile {
     width: 100%;
@@ -79,6 +79,17 @@
     width: 100%;
     padding: 1rem 80px;
   }
+}
+
+.grid_column {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 1200px;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+  gap: 10px;
 }
 
 .grid_inner {
@@ -204,6 +215,25 @@
   width: fit-content;
 }
 
+.cards {
+  display: flex;
+}
+
+.card_big {
+  width: 380px;
+  height: 466px;
+}
+
+.card_small {
+  width: 276px;
+  height: 300px;
+}
+
+.card_hor {
+  width: 655px;
+  height: 367px;
+}
+
 .carousel {
   margin-top: 30px;
   width: 1024px;
@@ -211,4 +241,13 @@
 
 .addbuttonlist > div {
   margin-bottom: 30px;
+}
+
+.creditcard {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 900px;
 }

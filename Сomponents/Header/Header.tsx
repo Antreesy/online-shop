@@ -3,7 +3,7 @@ import { Button, SocialIcon } from "UI"
 import { Logo } from "Сomponents"
 import BurgerMenu from "../BurgerMenu/BurgerMenu"
 
-import { DrawerItems } from "shared/consts/menuItems"
+import { DrawerItems } from "shared/constants/menuItems"
 
 import s from "./header.module.scss"
 
