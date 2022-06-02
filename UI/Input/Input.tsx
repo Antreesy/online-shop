@@ -10,6 +10,8 @@ interface InputProps {
   className?: string
   variant?: "default" | "footer" | "black_button" | "blue_outline"
   buttonLabel?: string
+  isRequired?: boolean
+  errorText?: React.ReactNode
 }
 
 export const Input: React.FC<InputProps> = (props) => {
@@ -21,6 +23,8 @@ export const Input: React.FC<InputProps> = (props) => {
     className = "",
     variant = "default",
     buttonLabel = "",
+    isRequired = false,
+    errorText = ""
   } = props
   return (
     <div className={s[variant]}>
@@ -32,10 +36,12 @@ export const Input: React.FC<InputProps> = (props) => {
         classes={{root: s[className] }}
         className={s.input}
         placeholder={placeholder}
-      />
+        required={isRequired} />
       {variant === "footer" || variant === "black_button" ? (
         <button>{buttonLabel}</button>
       ) : null}
+      {className === "error" && <div className={s.errorText}>{errorText}</div>} 
+      
     </div>
   )
 }

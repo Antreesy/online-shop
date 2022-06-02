@@ -189,6 +189,7 @@ const Home: NextPage = () => {
               />
               <Input
                 variant="black_button"
+                isRequired={true}
                 buttonLabel="button"
                 label="modal"
                 setValue={setInputValue}
@@ -203,13 +204,14 @@ const Home: NextPage = () => {
                 value={inputValue}
                 placeholder={"value"}
               />
-               <Input
+              <Input
                 buttonLabel="button"
                 label="className: error"
                 setValue={setInputValue}
                 value={inputValue}
                 className={"error"}
                 placeholder={"value"}
+                errorText={"error"}
               />
             </div>,
           ]}
