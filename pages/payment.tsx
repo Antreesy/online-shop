@@ -22,7 +22,6 @@ function getWindowWidth(): number {
 
 const Home: NextPage = () => {
   const [windowWidth, setWindowWidth] = useState(getWindowWidth())
-  console.log(windowWidth)
 
   useEffect(() => {
     function handleResize() {
