@@ -48,7 +48,6 @@ import { Currency } from "shared/enums/currency"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
-import { ModalWindow } from "UI/ModalWindow"
 
 const Home: NextPage = () => {
   const [isRead, setIsRead] = useState<boolean>(false)
