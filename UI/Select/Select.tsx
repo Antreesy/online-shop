@@ -80,7 +80,11 @@ const CustomSelect = (props: IProps) => {
         >
           {placeholder}
         </MenuItem>
-        <SimpleBar style={{ maxHeight: 180}} className={s.scrollbar} autoHide={false}>
+        <SimpleBar
+          style={{ maxHeight: 180 }}
+          className={s.scrollbar}
+          autoHide={false}
+        >
           {items.map((item) => {
             return (
               <MenuItem className={itemClass} key={item} value={item}>

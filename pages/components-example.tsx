@@ -102,6 +102,7 @@ const Home: NextPage = () => {
                 }}
               />
               <Select
+                label="Select"
                 placeholder="Country*"
                 items={countries.map(
                   (country) => `${country.label} (+${country.phone})`,
