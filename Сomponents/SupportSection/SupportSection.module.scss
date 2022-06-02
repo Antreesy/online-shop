@@ -36,7 +36,8 @@
     @include mobile {
         flex-direction: column;
     }
-    .btn{
+
+    .btn {
         margin-bottom: 15px;
     }
 
@@ -110,9 +111,31 @@
 
 .content {
     width: 60%;
+
+    @include tablet {
+        width: 80%;
+    }
+
+    @include mobile {
+        width: 80%;
+    }
 }
 
 .img {
     width: 30%;
     height: 100%;
+    padding: 0 10px;
+
+    @include tablet {
+        width: 100%;
+    }
+
+    @include mobile {
+        width: 100%;
+    }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }

@@ -10,7 +10,7 @@ const SupportSection = () => {
     return (
         <section className={s.supportSection}>
             <div className={s.img}>
-                <Image src={image} alt='support' width={300} height={350} />
+                <Image src={image} alt='support' width={350} height={400} />
             </div>
             <div className={s.content}>
                 <h3 className={s.heading}>Hello</h3>
