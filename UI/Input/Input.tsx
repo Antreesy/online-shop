@@ -1,5 +1,6 @@
-import { TextField } from "@mui/material"
-import React from "react"
+import { InputLabel, TextField } from "@mui/material"
+import { Button, Icon } from "UI"
+
 import s from "./input.module.scss"
 
 interface InputProps {
@@ -24,24 +25,31 @@ export const Input: React.FC<InputProps> = (props) => {
     variant = "default",
     buttonLabel = "",
     isRequired = false,
-    errorText = ""
+    errorText = "",
   } = props
   return (
     <div className={s[variant]}>
-      <div className={s.label}>{label}</div>
-      <TextField
-        variant="outlined"
-        onChange={(e) => setValue(e.target.value)}
-        value={value}
-        classes={{root: s[className] }}
-        className={s.input}
-        placeholder={placeholder}
-        required={isRequired} />
-      {variant === "footer" || variant === "black_button" ? (
-        <button>{buttonLabel}</button>
-      ) : null}
-      {className === "error" && <div className={s.errorText}>{errorText}</div>} 
-      
+      <InputLabel className={s.label}>{label}</InputLabel>
+      <div className={s.inputWrapper}>
+        <TextField
+          variant="outlined"
+          onChange={(e) => setValue(e.target.value)}
+          value={value}
+          classes={{ root: s[className] }}
+          className={s.input}
+          placeholder={placeholder}
+          required={isRequired}
+        />
+        {variant === "footer" || variant === "black_button" ? (
+          <Button>{buttonLabel}</Button>
+        ) : null}
+        {className === "error" && (
+          <div className={s.errorText}>
+            <Icon type="exclamation" />
+            <span>{errorText}</span>
+          </div>
+        )}
+      </div>
     </div>
   )
 }
