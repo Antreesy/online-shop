@@ -33,6 +33,7 @@ import {
 } from "UI"
 
 import {
+  BreadCrumbs,
   Footer,
   Header,
   Logo,
@@ -61,6 +62,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Header />
+      <BreadCrumbs/>
 
       <main className={s.main}>
         <SectionHeader
