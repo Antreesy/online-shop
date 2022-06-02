@@ -61,6 +61,7 @@
   .title {
     font-size: 25px;
     margin-bottom: 20px;
+    width: max-content;
 
     @include tablet {
       margin-bottom: 0;
@@ -87,6 +88,8 @@
 
 .link {
   font-size: 18px;
+  padding: 0;
+  margin: 0;
 
   @include tablet {
     display: none;
@@ -124,5 +127,26 @@
 
   @include mobile {
     width: 100%;
+  }
+}
+
+.inputEdit {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  padding-left: 3px;
+}
+
+.icon {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+
+  @include mobile {
+    display: block;
+
   }
 }

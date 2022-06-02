@@ -257,7 +257,13 @@ const Home: NextPage = () => {
         />
       </main>
 
-      <Background image={bg} />
+      <Background
+        image={bg}
+        title="v,dl,vl,d"
+        description="mlksmlkfjsndhfckjshelkjfdsjknfsn hjkng d gbd"
+        link="fdsfds"
+        isEditable={false}
+      />
 
       <Footer links={footerNav} />
     </>
