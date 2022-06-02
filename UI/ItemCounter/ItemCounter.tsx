@@ -29,7 +29,7 @@ const ItemCounter: React.FC<ItemCounterProps> = (props) => {
 
   return (
     <div className={counterClass}>
-      <Button onClick={onDecrement} className={cn(s.button, s.decrement)}>
+      <Button onClick={onDecrement} className={s.button}>
         -
       </Button>
       <div className={s.value}>{value}</div>

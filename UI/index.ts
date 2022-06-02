@@ -10,6 +10,7 @@ import { FileSelect } from "./FileSelect"
 import { FileUpload } from "./FileUpload"
 import { Icon } from "./Icon"
 import { Input } from "./Input"
+import { ItemCounter } from "./ItemCounter"
 import { ModalWindow } from "./ModalWindow"
 import { Price } from "./Price"
 import { RadioGroup } from "./RadioGroup"
@@ -32,6 +33,7 @@ export {
   FileUpload,
   Icon,
   Input,
+  ItemCounter,
   ModalWindow,
   Price,
   RadioGroup,

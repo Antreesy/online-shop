@@ -21,6 +21,7 @@ import {
   DatePicker,
   Icon,
   Input,
+  ItemCounter,
   FileSelect,
   FileUpload,
   RadioGroup,
@@ -52,7 +53,6 @@ import { Currency } from "shared/enums/currency"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
-import { ItemCounter } from "UI/ItemCounter"
 
 const Home: NextPage = () => {
   const [isRead, setIsRead] = useState<boolean>(false)
