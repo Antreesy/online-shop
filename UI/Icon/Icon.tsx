@@ -11,16 +11,12 @@ interface IconProps {
   type: IconType
   color?: string
   className?: string
-  onClick?: () => void
 }
 
 export const Icon: React.FC<IconProps> = (props) => {
-  const { type, color, className, onClick } = props
+  const { type, color, className } = props
+
   return (
-    <span
-      style={{ color }}
-      className={cn(s.icon, s[type], className)}
-      onClick={onClick}
-    ></span>
+    <span style={{ color }} className={cn(s.icon, s[type], className)} />
   )
 }
