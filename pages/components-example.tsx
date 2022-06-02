@@ -4,19 +4,8 @@ import { useState } from "react"
 import type { NextPage } from "next"
 
 //Project Components
+
 import Head from "next/head"
-import Image from "next/image"
-import {
-  Carousel,
-  DatePicker,
-  Icon,
-  RadioGroup,
-  CheckboxGroup,
-  SocialIcon,
-  Tabs,
-  FileSelect,
-  AddButton,
-} from "UI"
 
 import {
   AccordionExamples,
@@ -25,6 +14,22 @@ import {
 } from "Сomponents/Examples"
 
 import {
+  AddButton,
+  Carousel,
+  CheckboxGroup,
+  DatePicker,
+  Icon,
+  FileSelect,
+  FileUpload,
+  RadioGroup,
+  Range,
+  Slider,
+  SocialIcon,
+  Tabs,
+} from "UI"
+
+import {
+  Footer,
   Header,
   Logo,
   Notification,
@@ -33,7 +38,9 @@ import {
 } from "Сomponents"
 
 //Project Helpers
-import { icons } from "shared/consts/icons"
+import { icons } from "shared/constants/icons"
+import { footerNav } from "shared/constants/footernav"
+import { Currency } from "shared/enums/currency"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
@@ -43,7 +50,7 @@ const Home: NextPage = () => {
   const [isRead, setIsRead] = useState<boolean>(false)
   const [value, setValue] = useState<File | null>(null)
   return (
-    <div className={s.container}>
+    <>
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
@@ -55,6 +62,12 @@ const Home: NextPage = () => {
           className={s.title}
           title={"UI Kit page"}
           actionText={"All Orders"}
+        />
+
+        <Range
+          minQuantity={10000}
+          maxQuantity={1000000}
+          currency={Currency.RUB}
         />
 
         <Tabs
@@ -84,6 +97,10 @@ const Home: NextPage = () => {
                 <ColorPicker/>
                 <h2>Size Picker</h2>
                 <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
+                <h2>Slider</h2>
+                <Slider min={0} max={50} value={[0, 30]} />
+                <h2>File Upload</h2>
+                <FileUpload />
               </div>
             </div>,
 
@@ -205,25 +222,17 @@ const Home: NextPage = () => {
                 <AddButton />
               </div>
               <div>
-                <AddButton
-                  title="Add New Card"
-                  titleColor="primary"
-                  bgColor="primary"
-                />
+                <AddButton title="Add New Card" color="primary" />
               </div>
               <div>
-                <AddButton
-                  title="Add New Address"
-                  titleColor="secondary"
-                  bgColor="primary"
-                />
+                <AddButton title="Add New Address" color="secondary" />
               </div>
               <div>
                 <AddButton
                   title="Add Product"
-                  titleColor="secondary"
-                  bgColor="secondary"
-                  largeSize={true}
+                  color="secondary"
+                  bgColor="white"
+                  large
                 />
               </div>
             </div>,
@@ -231,19 +240,8 @@ const Home: NextPage = () => {
         />
       </main>
 
-      <footer className={s.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={s.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+      <Footer links={footerNav} />
+    </>
   )
 }
 
