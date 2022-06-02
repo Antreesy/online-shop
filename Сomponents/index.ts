@@ -6,6 +6,7 @@ import { Logo } from "./Logo"
 import { Notification } from "./Notification"
 import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
+import { Background } from "./Background"
 
 export {
   BurgerMenu,
@@ -17,4 +18,5 @@ export {
   Notification,
   SectionHeader,
   SizePicker,
+  Background
 }

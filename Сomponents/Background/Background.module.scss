@@ -1,0 +1,136 @@
+@import 'styles/style.scss';
+
+.fallbackItem {
+    width: 100%;
+    height: 500px;
+    padding: 50px 72px 25px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+    color: #fff;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+
+    @include tablet {
+        padding: 50px 30px 25px;
+
+    }
+
+    @include mobile {
+        padding: 50px 30px 25px;
+
+    }
+}
+
+.image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.bg {
+  
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.bgButton {
+    display: inline-block;
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn {
+    display: inline-block;
+    align-self: flex-end;
+}
+
+
+
+.titleBox {
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @include mobile {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .title {
+        font-size: 25px;
+        margin-bottom: 20px;
+
+        @include tablet {
+            margin-bottom: 0;
+        }
+
+        @include mobile {
+            margin-bottom: 0;
+        }
+    }
+
+    .linkMobile {
+        font-size: 18px;
+        display: none;
+
+        @include tablet {
+            display: block;
+        }
+
+        @include mobile {
+            display: block;
+        }
+    }
+}
+
+.link {
+    font-size: 18px;
+
+    @include tablet {
+        display: none;
+    }
+
+    @include mobile {
+        display: none;
+    }
+}
+
+
+
+.text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include tablet {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+
+    @include mobile {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+}
+
+.description {
+    width: 50%;
+    font-size: 16px;
+    line-height: 1.2;
+
+    @include tablet {
+        width: 100%;
+    }
+
+    @include mobile {
+        width: 100%;
+    }
+}

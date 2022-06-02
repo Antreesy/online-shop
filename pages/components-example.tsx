@@ -5,6 +5,7 @@ import type { NextPage } from "next"
 
 //Project Components
 import Head from "next/head"
+import bg from 'public/assets/img/background1.png'
 
 import {
   AccordionExamples,
@@ -29,6 +30,7 @@ import {
 } from "UI"
 
 import {
+  Background,
   Footer,
   Header,
   Logo,
@@ -254,6 +256,9 @@ const Home: NextPage = () => {
           ]}
         />
       </main>
+
+
+      <Background image={bg} />
 
       <Footer links={footerNav} />
     </>
