@@ -1,14 +1,13 @@
 import React from "react"
-
-import Card from "@mui/material/Card"
-import CardContent from "@mui/material/CardContent"
-import IconButton from "@mui/material/IconButton"
 import cn from "classnames"
 
-import { Icon } from "UI/Icon"
-import { creditcardConsts } from "shared/consts/creditcard"
+import { Card, CardContent, IconButton } from "@mui/material"
+import { Icon } from "UI"
+
+import { creditcardConsts } from "shared/constants/creditcard"
 
 import s from "./creditcard.module.scss"
+
 interface CreditCardProps {
   size?: number
   isColored?: boolean

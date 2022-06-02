@@ -120,11 +120,7 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
           })}
         </SimpleBar>
         {!items.length && (
-          <MenuItem
-            sx={{ pointerEvents: "none"}}
-            key={"no-items"}
-            value={""}
-          >
+          <MenuItem sx={{ pointerEvents: "none" }} key={"no-items"} value={""}>
             Nothing to select
           </MenuItem>
         )}
