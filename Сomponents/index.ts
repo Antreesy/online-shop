@@ -18,5 +18,5 @@ export {
   Notification,
   SectionHeader,
   SizePicker,
-  Background
+  Background,
 }

@@ -1,2 +1,2 @@
-import Background from "./Background";
-export {Background}
+import Background from "./Background"
+export { Background }

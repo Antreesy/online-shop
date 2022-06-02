@@ -5,7 +5,7 @@ import type { NextPage } from "next"
 
 //Project Components
 import Head from "next/head"
-import bg from 'public/assets/img/background1.png'
+import bg from "public/assets/img/background1.png"
 
 import {
   AccordionExamples,
@@ -256,7 +256,6 @@ const Home: NextPage = () => {
           ]}
         />
       </main>
-
 
       <Background image={bg} />
 
