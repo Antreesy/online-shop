@@ -25,10 +25,12 @@ const FaqPage: NextPage = () => {
                     <h1 className={s.heading}>FAQ</h1>
                     <div className={s.accordions}>
                         {questions.map(({ header, content }) => {
-                            return <Accordion header={header}>
+                            return <Accordion header={header} headerClassName={s.active}>
                                 {content}
                             </Accordion>
                         })}
+
+
                     </div>
                 </div>
             </div>
