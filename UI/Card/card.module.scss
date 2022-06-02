@@ -1,0 +1,93 @@
+@import "styles/style.scss";
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: all 0.3s ease-in;
+  &:hover .card_title {
+    bottom: 60px;
+
+    & ~ .card_button {
+      bottom: 0px;
+    }
+  }
+
+  &:hover .card_frame {
+    transition: all 0.3s ease-in;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) rotate(160deg);
+  }
+}
+
+.card_container_hidden {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.card_frame {
+  width: 310px;
+  height: 380px;
+  position: absolute;
+  border: 4px solid #8100ef;
+  z-index: 10;
+  transform: scale(0.3) rotate(-20deg);
+  top: -16px;
+  opacity: 0;
+  visibility: hidden;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.card_title {
+  color: #fff;
+  z-index: 10;
+  position: absolute;
+  font-size: 36px;
+  width: 100%;
+  bottom: 0px;
+  transition: all 0.2s ease-out;
+}
+
+.card_image_container {
+  position: absolute;
+}
+
+.card_button {
+  position: absolute;
+  color: #fff;
+  z-index: 10;
+  height: 54px;
+  width: 100%;
+  background-color: rgba($color: #8100ef, $alpha: 0.8);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  align-self: flex-end;
+  bottom: -60px;
+  font-size: 17px;
+  text-align: center;
+  transition: all 0.2s ease-out;
+
+  & > span {
+    display: block;
+    width: 100%;
+    margin-top: 14px;
+  }
+}
+
+.button_bottom_hide {
+  bottom: 0px;
+}
+
+.title_fixed {
+  bottom: 60px;
+}

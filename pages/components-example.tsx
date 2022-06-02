@@ -22,6 +22,7 @@ import { icons } from "shared/consts/icons"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
+import { Card } from "../UI/Card/index"
 
 const Home: NextPage = () => {
   return (
@@ -44,6 +45,7 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
+            "Card"
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -126,6 +128,13 @@ const Home: NextPage = () => {
             <div key={"Accordion"}>
               <AccordionExamples />
             </div>,
+            <div key={"Card"}>
+              <div className={s.goToStoreCard}>
+                <Card image="public/assets/img/small_picture.png" title="Gizem Sancak" buttonTitle="Go To Store"/>
+              </div> 
+              
+            </div>,
+
           ]}
         />
       </main>
