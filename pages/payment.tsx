@@ -7,7 +7,7 @@ import { AddButton, CreditCard } from "UI"
 
 import { Footer, Header, SectionHeader } from "Сomponents"
 
-import { debounce } from "utils/debounce"
+import { throttle } from "utils/utils"
 import { footerNav } from "shared/constants/footernav"
 
 import s from "styles/pages/payment.module.scss"
@@ -22,13 +22,14 @@ function getWindowWidth(): number {
 
 const Home: NextPage = () => {
   const [windowWidth, setWindowWidth] = useState(getWindowWidth())
+  console.log(windowWidth)
 
   useEffect(() => {
     function handleResize() {
       setWindowWidth(getWindowWidth())
     }
 
-    window.addEventListener("resize", () => debounce(handleResize, 50))
+    window.addEventListener("resize", () => throttle(handleResize, 100))
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
@@ -84,7 +85,7 @@ const Home: NextPage = () => {
         <AddButton title="Add New Card" />
         <Card className={s.detailsContainer}>
           <CreditCard
-            size={windowWidth < 700 ? 210 : 300}
+            size={windowWidth <= 768 ? 210 : 300}
             isColored
             key={4}
             id={8375}
