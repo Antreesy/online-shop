@@ -30,7 +30,6 @@ import {
   Slider,
   SocialIcon,
   Tabs,
-  Accordion,
   Price,
 } from "UI"
 
@@ -84,8 +83,7 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
-            "File Select",
-            "Profile Sidebar",
+            "Sidebar",
             "Price",
             "Counters",
           ]}
@@ -257,6 +255,27 @@ const Home: NextPage = () => {
               <AccordionExamples />
             </div>,
 
+            <div key={"Sidebar"}>
+              <ProfileSidebar
+                  labels={[
+                    { link: "/", text: "Profile" },
+                    { link: "/", text: "Address" },
+                    { link: "/", text: "Order" },
+                    { link: "/", text: "Payment" },
+                    { link: "/", text: "Notification" },
+                    {link: "/", text: "dashboard",
+                      content: [
+                        { link: "/", text: "Favorite" },
+                      ],
+                    },
+                    { link: "/", text: "Help" },
+                    { link: "/", text: "Sign Out" },
+                  ]}
+              />
+            </div>,
+
+
+
             <div key={"Price"}>
               <Price oldPrice={2030} price={1930} type="order" />
               <Price oldPrice={2030} price={1930} type="cart" />
@@ -272,26 +291,6 @@ const Home: NextPage = () => {
             <div key={"Counters"} style={{ display: "flex" }}>
               <ItemCounter initValue={5} />
               <ItemCounter initValue={5} large />
-            </div>,
-
-            <div key={"Sidebar"}>
-              <ProfileSidebar
-                labels={[
-                  { link: "/", text: "Profile" },
-                  { link: "/", text: "Address" },
-                  { link: "/", text: "Order" },
-                  { link: "/", text: "Payment" },
-                  { link: "/", text: "Notification" },
-                  {link: "/", text: "dashboard",
-                    content: [
-                      { link: "/", text: "Favorite" },
-                    ],
-                  },
-
-                  { link: "/", text: "Help" },
-                  { link: "/", text: "Sign Out" },
-                ]}
-              />
             </div>,
           ]}
         />
