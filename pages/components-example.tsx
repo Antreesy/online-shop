@@ -21,6 +21,7 @@ import {
   DatePicker,
   Icon,
   Input,
+  ItemCounter,
   FileSelect,
   FileUpload,
   RadioGroup,
@@ -29,9 +30,12 @@ import {
   Slider,
   SocialIcon,
   Tabs,
+  Price,
 } from "UI"
 
 import {
+  BreadCrumbs,
+  ColorPicker,
   Footer,
   Header,
   Logo,
@@ -42,6 +46,7 @@ import {
 
 //Project Helpers
 import { icons } from "shared/constants/icons"
+import { colors } from "shared/constants/colors"
 import { countriesForSelect } from "shared/constants/countries"
 import { footerNav } from "shared/constants/footernav"
 import { Currency } from "shared/enums/currency"
@@ -50,7 +55,6 @@ import { Currency } from "shared/enums/currency"
 import s from "styles/pages/ComponentsExample.module.scss"
 
 const Home: NextPage = () => {
-  const [isRead, setIsRead] = useState<boolean>(false)
   const [value, setValue] = useState<File | null>(null)
   const [inputValue, setInputValue] = useState<string>("")
   return (
@@ -60,18 +64,13 @@ const Home: NextPage = () => {
       </Head>
 
       <Header />
+      <BreadCrumbs />
 
       <main className={s.main}>
         <SectionHeader
           className={s.title}
           title={"UI Kit page"}
           actionText={"All Orders"}
-        />
-
-        <Range
-          minQuantity={10000}
-          maxQuantity={1000000}
-          currency={Currency.RUB}
         />
 
         <Tabs
@@ -84,7 +83,8 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
-            "Card",
+            "Price",
+            "Counters",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -139,6 +139,8 @@ const Home: NextPage = () => {
                   return
                 }}
               />
+              <h2>Color Picker</h2>
+              <ColorPicker colors={colors} />
               <h2>Size Picker</h2>
               <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
               <h2>Select</h2>
@@ -252,23 +254,21 @@ const Home: NextPage = () => {
               <AccordionExamples />
             </div>,
 
-            <div key={"Card"}>
-              <div className={s.cards}>
-                <Card
-                  className={s.card_big}
-                  imageSrc="/../public/assets/img/picture_1.png"
-                  title="Gizem Sancak"
-                  buttonTitle="Go To Store"
-                  topButtonTitle="Follow"
-                />
-                <Card
-                  className={s.card_small}
-                  imageSrc="/../public/assets/img/picture_2.png"
-                  title="Gizem Sancak"
-                  buttonTitle="Go To Store"
-                  isButtonHidden
-                />
-              </div>
+            <div key={"Price"}>
+              <Price oldPrice={2030} price={1930} type="order" />
+              <Price oldPrice={2030} price={1930} type="cart" />
+              <Price oldPrice={2030} price={1930} type="primary" />
+              <Price oldPrice={2030} price={1930} type="sale" />
+              <Price oldPrice={2030} price={1930} type="sale_black" />
+              <Range
+                minQuantity={10000}
+                maxQuantity={1000000}
+                currency={Currency.RUB}
+              />
+            </div>,
+            <div key={"Counters"} style={{ display: "flex" }}>
+              <ItemCounter initValue={5} />
+              <ItemCounter initValue={5} large />
             </div>,
           ]}
         />
@@ -277,15 +277,16 @@ const Home: NextPage = () => {
 
         <Tabs
           className={s.example_tabs}
-          labels={["Notification", "Carousel", "Add Button", "Credit Card"]}
+          labels={[
+            "Notification",
+            "Carousel",
+            "Add Button",
+            "Credit Card",
+            "Card",
+          ]}
           values={[
             <div key="Notification">
-              <Notification
-                onRead={() => {
-                  setIsRead(true)
-                }}
-                header={"Notification"}
-              >
+              <Notification header={"Notification"}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
                 quam sequi vitae eius iusto perspiciatis facilis nesciunt
                 dignissimos provident ipsum? Nobis repellat atque ab nam magni
@@ -352,6 +353,25 @@ const Home: NextPage = () => {
                   console.log("test")
                 }}
               />
+            </div>,
+
+            <div key={"Card"}>
+              <div className={s.cards}>
+                <Card
+                  className={s.card_big}
+                  imageSrc="/../public/assets/img/picture_1.png"
+                  title="Gizem Sancak"
+                  buttonTitle="Go To Store"
+                  topButtonTitle="Follow"
+                />
+                <Card
+                  className={s.card_small}
+                  imageSrc="/../public/assets/img/picture_2.png"
+                  title="Gizem Sancak"
+                  buttonTitle="Go To Store"
+                  isButtonHidden
+                />
+              </div>
             </div>,
           ]}
         />
