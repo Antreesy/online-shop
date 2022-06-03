@@ -41,7 +41,7 @@ const CustomTabs: React.FC<TabsProps> = (props) => {
               <Tab
                 key={label}
                 label={label}
-                className={s.tab}
+                className={`${s.tab} ${index === value && s.active}`}
                 onClick={() => setValueIndex(index)}
               />
             )

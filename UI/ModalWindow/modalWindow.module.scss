@@ -1,0 +1,61 @@
+@import "/styles/theme/colors.scss";
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: min-content;
+  min-width: 300px;
+  min-height: 300px;
+  padding: 30px 20px;
+  margin: 30px;
+  border-radius: 7px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
+  background-color: $color-white;
+  & > button:last-child {
+    width: 100%;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 10px;
+  width: 24px;
+  height: 24px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.iconWrapper {
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 100%;
+}
+
+.iconWrapper > span {
+  font-size: 40px;
+  color: $color-purple;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: $color-purple;
+}
+
+.textContent {
+  font-size: 15px;
+  color: $color-black;
+  text-align: center;
+}

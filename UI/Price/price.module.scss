@@ -1,87 +1,66 @@
 @import "styles/style.scss";
 
-$price-order-color: #3A1516;
-$price-old-color: #888888;
-$price-primary-color: #000;
-$price-total-color: #8100EF;
-
-.price {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    width: fit-content;
-    font-size: 20px;
-    font-weight: normal;
-    font-family: "League Spartan";
-}
-
 .price_wrapper {
-    display: flex;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .tablePrice {
-    color: $price-primary-color;
-    font-size: 17px;
+  color: $color-black;
+  font-size: 17px;
 }
 
 .order {
-    color: $price-order-color;
-    font-size: 16px;
+  color: $color-brown;
+  font-size: 16px;
 }
 
-.cart, .sale {
-    color: $price-total-color;
-    font-size: 15px;
-    font-weight: bold;
+.cart,
+.sale {
+  color: $color-purple;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .sale {
-    font-size: 17px;
+  font-size: 17px;
 }
 
 .primary {
-    color: $price-primary-color;
-    font-size: 17px;
+  color: $color-black;
+  font-size: 17px;
 }
 
 .sale_black {
-    color: $price-primary-color;
-    font-size: 30px;
-    font-weight: bold;
+  color: $color-black;
+  font-size: 30px;
+  font-weight: $fw-bold;
 }
 
-.old_vs_sale_black {
-    color: $price-old-color;
-    font-weight: 100;
-    font-size: 25px;
-    position: relative;
-    margin-right: 67px;
-    &::after {
-        position: absolute;
-        content: "";
-        height: 1px;
-        width: 100%;
-        top: 0.7em;
-        left:0;
-        background-color: $price-old-color;
-    };
+.old {
+  display: block;
+  position: relative;
+  color: $color-grey-8;
+  font-weight: $fw-regular;
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 100%;
+    top: 0.6em;
+    left: 0;
+    background-color: $color-grey-8;
+  }
 }
 
-.old_vs_sale {
-    color: $price-old-color;
-    margin-right: 30px;
-    font-weight: 100;
-    font-size: 13px;
-    position: relative;
-    &::after {
-        position: absolute;
-        content: "";
-        height: 2px;
-        width: 100%;
-        top: 0.7em;
-        left:0;
-        background-color: $price-old-color;
-    };
+.old-sale_black {
+  margin-right: 67px;
+  font-size: 25px;
+}
+
+.old-sale {
+  margin-right: 30px;
+  font-size: 13px;
 }

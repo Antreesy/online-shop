@@ -1,0 +1,15 @@
+@import "/styles/style.scss";
+
+.notification {
+  border-bottom: 2px solid rgb(226, 226, 226);
+}
+
+.header {
+  color: $color-purple;
+  font-size: 20px;
+}
+
+.openTitle {
+  color: $color-purple;
+  font-weight: $fw-bold;
+}

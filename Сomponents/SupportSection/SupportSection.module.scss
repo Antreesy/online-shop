@@ -1,0 +1,115 @@
+@import "styles/style.scss";
+
+.supportSection {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: max-content;
+  margin-bottom: 50px;
+  padding: 15px 15px;
+  border: none;
+  border-radius: 3px;
+  background-color: $color-white;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.05);
+
+  @include mobile-tablet {
+    flex-direction: column;
+    margin-bottom: 30px;
+    padding: 0;
+    box-shadow: none;
+  }
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+  padding: 0 10px;
+
+  @include mobile-tablet {
+    width: 100%;
+  }
+}
+
+.content {
+  width: 60%;
+
+  @include mobile-tablet {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.subTitle {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: $fw-medium;
+  color: $color-purple;
+
+  @include mobile-tablet {
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 23px;
+  font-weight: $fw-semibold;
+
+  @include mobile-tablet {
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+.text {
+  width: 70%;
+  margin-bottom: 35px;
+  font-size: 15px;
+
+  @include mobile-tablet {
+    width: 100%;
+    margin: 0 auto 30px;
+    font-size: 12px;
+    text-align: center;
+  }
+}
+
+.buttons_wrapper {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  width: fit-content;
+
+  @include mobile-tablet {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @include laptop {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.button {
+  white-space: nowrap;
+}
+
+.button_outlined {
+  border-color: $color-purple;
+  color: $color-purple;
+
+  &:hover {
+    border-color: $color-purple-d;
+    background-color: $color-purple-a20;
+    color: $color-purple-d;
+  }
+}
