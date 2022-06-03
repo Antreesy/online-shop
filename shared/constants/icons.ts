@@ -41,5 +41,4 @@ export const icons = [
   "off_sale",
   "heart",
   "plus",
-  ""
 ] as const
