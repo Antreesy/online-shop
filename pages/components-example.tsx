@@ -26,7 +26,14 @@ import {
   SocialIcon,
 } from "UI"
 
-import { Footer, Header, Logo, Notification, SectionHeader } from "Сomponents"
+import {
+  AddressCard,
+  Footer,
+  Header,
+  Logo,
+  Notification,
+  SectionHeader,
+} from "Сomponents"
 
 //Project Helpers
 import { footerNav } from "shared/constants/footernav"
@@ -171,7 +178,7 @@ const Home: NextPage = () => {
             <CreditCardExamples key={"Credit Card"} />,
 
             <div key={"Card"}>
-              <div className={s.cards}>
+              <div className={s.grid}>
                 <SampleCard />
                 <Card
                   className={s.card_small}
@@ -179,6 +186,10 @@ const Home: NextPage = () => {
                   title="Gizem Sancak"
                   buttonTitle="Go To Store"
                   isButtonHidden
+                />
+                <AddressCard
+                  title="title"
+                  text="nskjjknsjnkjdvmkjewnlkjwnljcnwjklen"
                 />
               </div>
             </div>,
