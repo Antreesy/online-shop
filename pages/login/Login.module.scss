@@ -117,7 +117,7 @@
     line-height: 1.5;
     letter-spacing: -0.6px;
     text-align: left;
-    color: #a3a3a3;
+    color: $color-grey-a3;
   }
 }
 
@@ -149,8 +149,8 @@
   min-width: 100%;
 
   &_facebook {
-    color: #6402b9;
-    border-color: #6402b9;
+    color: $color-purple;
+    border-color: $color-purple;
     margin: 11px 0 16px 0;
   }
 
