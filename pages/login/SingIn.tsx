@@ -31,8 +31,13 @@ export const SingIn = () => {
     console.log(data)
   })
 
+  const onClickHandler = () => {
+    console.log("Login via Facebook")
+  }
+
   return (
-    <>
+      <div className={s.form_container}>
+
       <form className={s.form}>
         <div className={s.inputs}>
           <Controller
@@ -114,7 +119,7 @@ export const SingIn = () => {
             )}
           />
         </div>
-        <div className={s.text} style={{ marginBottom: "9px" }}>
+        <div className={s.login_text}>
           <span>
             You can reach ilonsi.com Personal Data Protection and Processing
             Conditions within the scope of
@@ -128,12 +133,20 @@ export const SingIn = () => {
         </Button>
       </form>
       <div className={s.form_footer}>
-        <span>Not Registered Yet ? Sign Up</span>
-        <Button variant={"outlined"} className={cn(s.facebook, s.btn)}>
+        <Link href="#">
+          <a>Not Registered Yet ? Sign Up</a>
+        </Link>
+        <Button
+            variant={"outlined"}
+            className={cn(s.btn_facebook, s.btn)}
+            onClick={onClickHandler}
+        >
           Sign In with Facebook
         </Button>
-        <span>Forget Password ?</span>
+        <Link href="#">
+          <a> Forget Password ?</a>
+        </Link>
       </div>
-    </>
+    </div>
   )
 }

@@ -12,7 +12,7 @@
   //background-color: #ededed;
 
   @include mobile {
-    padding: $header-mobile-height + 25px 35px 32px;
+    padding: $header-mobile-height - 25px 35px 32px;
   }
 }
 
@@ -25,10 +25,10 @@
 
   @include mobile {
     padding: 3px;
+    width: 305px;
 
     button {
       height: 45px;
-      min-width: 261px;
     }
   }
 }
@@ -41,9 +41,41 @@
       width: 231px;
     }
   }
+
+  @include mobile {
+    div {
+      button {
+        width: 146px;
+      }
+    }
+  }
+
 }
 
+.form_container {
+  max-width: 361px;
+  margin: 0 auto;
 
+  @include mobile {
+    max-width: 259px
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.6px;
+  text-align: left;
+  color: #a3a3a3;
+}
 
 .inputs {
   display: flex;
@@ -51,6 +83,10 @@
   gap: 10px;
   margin-bottom: 11px;
   margin-top: 24px;
+
+  &__signup {
+    margin-bottom: 20px;
+  }
 
   input {
     box-sizing: border-box;
@@ -60,6 +96,8 @@
   }
 
   @include mobile {
+    margin-top: 16px;
+    margin-bottom: 23px;
     gap: 5px;
 
     input {
@@ -71,20 +109,7 @@
   }
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  button {
-    width: 359px;
-  }
-}
-
 .text {
-  width: 361px;
-
   span {
     font-size: 12px;
     font-weight: normal;
@@ -97,31 +122,46 @@
   }
 }
 
+.login_text{
+  margin-top: 17px;
+  margin-bottom: 9px;
+
+  @include mobile {
+    margin-bottom: 17px;
+  }
+}
+
 .form_footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 19px;
+  padding: 19px 0;
   font-size: 12px;
   line-height: 18px;
   width: 100%;
-}
 
-.facebook {
-  color: #6402b9;
-  border-color: #6402b9;
-  margin: 11px 0 16px 0;
-}
-
-.facebook_signup {
-  margin-bottom: 32px;
-}
-
-.inputs_signup {
-  margin-bottom: 20px;
+  @include mobile {
+    padding: 11px 0 23px;
+  }
 }
 
 .btn {
   height: 55px;
-  min-width: 359px;
+  min-width: 100%;
+
+  &_facebook {
+    color: #6402b9;
+    border-color: #6402b9;
+    margin: 11px 0 16px 0;
+  }
+
+  &_facebook__signup {
+    margin-bottom: 32px;
+  }
+
+  @include mobile {
+    &_facebook {
+      margin: 16px 0 24px 0;
+    }
+  }
 }

@@ -3,6 +3,7 @@ import { Controller, useForm } from "react-hook-form"
 import s from "./Login.module.scss"
 import { Button, Input } from "../../UI"
 import cn from "classnames"
+import Link from "next/link"
 
 interface LoginType {
   email: string
@@ -22,11 +23,15 @@ export const SingUp = () => {
     console.log(data)
   })
 
+  const onClickHandler = () => {
+    console.log("Login via Facebook")
+  }
+
   return (
-    <>
+    <div className={s.form_container}>
       <form className={s.form}>
         <div
-          className={cn(s.inputs, s.inputs_signup)}
+          className={cn(s.inputs, s.inputs__signup)}
           style={{ marginBottom: "" }}
         >
           <Controller
@@ -60,14 +65,17 @@ export const SingUp = () => {
         </Button>
       </form>
       <div className={s.form_footer}>
-        <span>Not Registered Yet ? Sign Up</span>
+        <Link href="#">
+          <a>Not Registered Yet ? Sign Up</a>
+        </Link>
         <Button
           variant={"outlined"}
-          className={cn(s.facebook, s.btn, s.facebook_signup)}
+          className={cn(s.btn_facebook, s.btn, s.btn_facebook__signup)}
+          onClick={onClickHandler}
         >
           Sign In with Facebook
         </Button>
       </div>
-    </>
+    </div>
   )
 }
