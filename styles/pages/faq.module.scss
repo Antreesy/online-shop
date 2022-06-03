@@ -22,11 +22,7 @@
 }
 
 .aside {
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
-  background-color: $color-white;
   margin-right: 24px;
-  height: max-content;
-  padding: 0 0 30px 0;
 
   @include mobile-tablet {
     display: none;

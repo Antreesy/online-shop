@@ -1,5 +1,23 @@
+@import "styles/style.scss";
+
+.desktop {
+  display: block;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.mobile {
+  display: none;
+
+  @include mobile {
+    display: block;
+  }
+}
+
 .profileSidebar {
-  margin: 30px 0 40px 40px;
+  // margin: 30px 0 40px 40px;
   width: 317px;
   border-radius: 0 0 30px 0;
   background-color: #ffffff;
@@ -34,18 +52,9 @@
       font-size: 25px;
     }
   }
-  .mobileAccordion {
-    display: none;
-  }
 
-  @media screen and (max-width: 400px) {
-    .mobileAccordion {
-      display: block;
-    }
-  }
-  .menuSidebarMobile {
+  .menuSidebar {
     margin-top: 49px;
-    height: 764px;
     max-width: 100%;
 
     & ul {
@@ -83,55 +92,55 @@
     }
 
     & .active {
-      color: #8100ef;
+      color: $color-purple;
+      font-weight: $fw-bold;
     }
   }
+  // .menuSidebarDesktop {
+  //   margin-top: 49px;
+  //   height: 764px;
+  //   max-width: 100%;
 
-  .menuSidebarDesktop {
-    margin-top: 49px;
-    height: 764px;
-    max-width: 100%;
+  //   @media screen and (max-width: 400px) {
+  //     display: none;
+  //   }
 
-    @media screen and (max-width: 400px) {
-      display: none;
-    }
+  //   & ul {
+  //     margin-left: 13px;
+  //     width: 217px;
+  //     max-width: 100%;
+  //   }
 
-    & ul {
-      margin-left: 13px;
-      width: 217px;
-      max-width: 100%;
-    }
+  //   & ul > li {
+  //     list-style-type: none;
+  //     font-size: 18px;
+  //     padding-bottom: 15px;
+  //     margin-top: 22px;
+  //     border-bottom: 1px solid #bababa;
 
-    & ul > li {
-      list-style-type: none;
-      font-size: 18px;
-      padding-bottom: 15px;
-      margin-top: 22px;
-      border-bottom: 1px solid #bababa;
+  //     &:hover {
+  //       color: #cccccc;
+  //     }
+  //   }
+  //   & .accordion {
+  //     border-bottom: 1px solid #bababa;
+  //     margin: 0;
+  //     & > div {
+  //       font-size: 18px;
+  //       padding: 16px 16px 0 0;
+  //     }
+  //     .AccordionLi {
+  //       margin-top: 0;
+  //       padding-bottom: 0;
+  //       border: none;
+  //     }
+  //     &:hover:last-child {
+  //       color: #cccccc;
+  //     }
+  //   }
 
-      &:hover {
-        color: #cccccc;
-      }
-    }
-    & .accordion {
-      border-bottom: 1px solid #bababa;
-      margin: 0;
-      & > div {
-        font-size: 18px;
-        padding: 16px 16px 0 0;
-      }
-      .AccordionLi {
-        margin-top: 0;
-        padding-bottom: 0;
-        border: none;
-      }
-      &:hover:last-child {
-        color: #cccccc;
-      }
-    }
-
-    & .active {
-      color: #8100ef;
-    }
-  }
+  //   & .active {
+  //     color: #8100ef;
+  //   }
+  // }
 }
