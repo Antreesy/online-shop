@@ -65,6 +65,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Header />
+      <BreadCrumbs />
 
       <main className={s.main}>
         <SectionHeader

@@ -8,6 +8,8 @@ import { Logo } from "./Logo"
 import { Notification } from "./Notification"
 import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
+import { SupportSection } from "./SupportSection"
+import { ProfileSidebar } from "./ProfileSidebar"
 
 export {
   BreadCrumbs,
@@ -21,4 +23,6 @@ export {
   Notification,
   SectionHeader,
   SizePicker,
+  SupportSection,
+  ProfileSidebar,
 }
