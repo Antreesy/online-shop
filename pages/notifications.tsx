@@ -41,7 +41,19 @@ const FaqPage: NextPage = () => {
           </div>
 
           <div className={s.aside}>
-            <ProfileSidebar labels={[]} />
+            <ProfileSidebar
+              title={"My Account"}
+              labels={[
+                { link: "/account/profile", text: "Profile" },
+                { link: "/account/address", text: "Address" },
+                { link: "/account/orders", text: "Orders" },
+                { link: "/account/payment", text: "Payment" },
+                { link: "/account/notifications", text: "Notifications" },
+                { link: "/account/favorites", text: "Favorites" },
+                { link: "/account/help", text: "Help" },
+                { link: "/account/signout", text: "Sign Out" },
+              ]}
+            />
           </div>
 
           <div className={s.content}>
