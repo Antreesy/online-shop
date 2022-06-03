@@ -17,6 +17,7 @@ interface InputProps {
     | "black_outline"
   buttonLabel?: string
   isRequired?: boolean
+  type?: string
   errorText?: React.ReactNode
 }
 
@@ -30,6 +31,7 @@ export const Input: React.FC<InputProps> = (props) => {
     variant = "default",
     buttonLabel = "",
     isRequired = false,
+    type = "text",
     errorText = "",
   } = props
   return (
@@ -44,6 +46,7 @@ export const Input: React.FC<InputProps> = (props) => {
           className={s.input}
           placeholder={placeholder}
           required={isRequired}
+          type={type}
         />
         {variant === "footer" || variant === "black_button" ? (
           <Button>{buttonLabel}</Button>
