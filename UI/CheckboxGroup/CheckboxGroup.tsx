@@ -11,8 +11,8 @@ interface CheckboxProps {
   checkboxClassName?: string
   color?: string
   colorChecked?: string
-  setValue: (newValue: boolean) => void
-  value: boolean
+  value?: boolean
+  setValue?: (newValue: boolean) => void
 }
 
 interface IconProps {
@@ -100,9 +100,10 @@ const CheckboxGroup: React.FC<CheckboxProps> = (props) => {
           key={label}
           control={
             <Checkbox
+              className={checkboxClass}
               checked={value}
               onChange={(e) => {
-                setValue(e.target.checked)
+                setValue?.(e.target.checked)
               }}
               icon={<IconCheckbox rounded={rounded} color={color} />}
               checkedIcon={
