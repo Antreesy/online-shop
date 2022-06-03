@@ -1,0 +1,66 @@
+@import "/styles/style.scss";
+
+.main {
+  padding-top: 140px;
+  .toolbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    float: right;
+    padding-left: 40px;
+    padding-top: 40px;
+
+    .select {
+      width: 100px;
+      select {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        font-size: 16px;
+        font-family: inherit;
+        height: 60px;
+        margin: 5px;
+        padding: 20px;
+        width: 100px;
+        border: 2px solid $color-black;
+      }
+
+      .icon {
+        font-size: 10px;
+        position: relative;
+        top: -45px;
+        left: 80px;
+      }
+    }
+
+    .search {
+      width: 180px;
+      .icon {
+        position: relative;
+        top: -40px;
+        left: 150px;
+      }
+    }
+  }
+  .cards {
+    flex-grow: 1;
+    padding: 0px 40px;
+    .card {
+      width: 100%;
+      height: 230px;
+      ~ div {
+        padding: 5px;
+        font-weight: $fw-bold;
+      }
+    }
+  }
+  .pagination {
+    text-align: center;
+    font-size: 20px;
+    word-spacing: 20px;
+    padding: 20px 0 50px 0;
+    > span {
+      color: $color-purple;
+    }
+  }
+}
