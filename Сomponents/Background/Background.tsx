@@ -5,7 +5,7 @@ import { Button, Icon } from "UI"
 import cn from "classnames"
 
 import s from "./Background.module.scss"
-import { useRef, useState } from "react"
+import { useState } from "react"
 import Input from "./Input"
 interface BackgroundProps {
     image: any
@@ -19,8 +19,8 @@ interface BackgroundProps {
 
 const Background: React.FC<BackgroundProps> = (props) => {
     const { image, title, description, link, isEditable = false } = props
+    const [linkf, stlink] = useState(link)
 
-    const ref = useRef()
     return (
         <div className={s.fallbackItem}>
             <div className={s.image}>
@@ -35,23 +35,23 @@ const Background: React.FC<BackgroundProps> = (props) => {
                 <div className={s.titleBox}>
                     <Input
                         value={title}
-                        iconVisible={isEditable}
                         className={s.title}
+                        editable={isEditable}
+
                     />
                     <Input
-                        iconClassname={s.icon}
                         className={s.linkMobile}
                         value={'@' + link}
-                        iconVisible={isEditable}
+                        editable={isEditable}
                     />
                 </div>
                 <div className={s.text}>
                     <span className={s.description}>{description}</span>
                     <div >
                         <Input
-                            value={link}
-                            iconVisible={isEditable}
-                            className={s.link}
+                            className={s.l}
+                            value={'@' + link}
+                            editable={isEditable}
                         />
                     </div>
                 </div>

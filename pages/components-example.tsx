@@ -259,10 +259,10 @@ const Home: NextPage = () => {
 
       <Background
         image={bg}
-        title="v,dl,vl,d"
-        description="mlksmlkfjsndhfckjshelkjfdsjknfsn hjkng d gbd"
-        link="fdsfds"
-        isEditable={false}
+        title="TITLE"
+        description="qhihiepoiruiup ifkjndkjfnskjnsifsihfpihdspfhdsfhdshfjsdh"
+        link="SamandarUsmanov"
+        isEditable={true}
       />
 
       <Footer links={footerNav} />

@@ -60,7 +60,7 @@
 
   .title {
     font-size: 25px;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
     width: max-content;
 
     @include tablet {
@@ -76,43 +76,28 @@
     font-size: 18px;
     display: none;
 
-    @include tablet {
-      display: block;
-    }
-
     @include mobile {
       display: block;
     }
   }
 }
 
-.link {
-  font-size: 18px;
-  padding: 0;
-  margin: 0;
 
-  @include tablet {
-    display: none;
-  }
-
-  @include mobile {
-    display: none;
-  }
-}
 
 .text {
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  @include tablet {
-    flex-direction: column-reverse;
-    align-items: flex-start;
-  }
+  .l {
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+    display: flex;
 
-  @include mobile {
-    flex-direction: column-reverse;
-    align-items: flex-start;
+    @include mobile {
+      display: none;
+    }
   }
 }
 
@@ -130,12 +115,12 @@
   }
 }
 
-.inputEdit {
+.inputEditer {
   border: none;
   outline: none;
   background-color: transparent;
   color: #fff;
-  padding-left: 3px;
+
 }
 
 .icon {
@@ -149,4 +134,25 @@
     display: block;
 
   }
+}
+
+.editButton {
+  border: none;
+  display: inline-block;
+  color: #fff;
+  background: none;
+  box-shadow: none;
+
+  &:hover {
+    background: transparent;
+  }
+}
+
+.area {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.editBtn {
+  display: block;
 }
