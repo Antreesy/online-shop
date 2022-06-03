@@ -56,6 +56,14 @@ const Index: NextPage = (props: any) => {
         </p>
 
         <p className={styles.description}>
+          Order success page{" "}
+          <Link href="/order-success">
+            <a className={styles.title__link}>/order-success</a>
+          </Link>{" "}
+          page
+        </p>
+
+        <p className={styles.description}>
           Redux example is on{" "}
           <Link href="/redux-example">
             <a className={styles.title__link}>/redux-example</a>
