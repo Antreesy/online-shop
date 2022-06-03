@@ -14,6 +14,7 @@ import {
 
 import {
   AddButton,
+  AlertBox,
   Carousel,
   CheckboxGroup,
   CreditCard,
@@ -47,7 +48,6 @@ import { Currency } from "shared/enums/currency"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
-import { AlertBox } from "UI/AlertBox"
 
 const Home: NextPage = () => {
   const [isRead, setIsRead] = useState<boolean>(false)
