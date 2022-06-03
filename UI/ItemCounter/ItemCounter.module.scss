@@ -1,0 +1,50 @@
+@import "styles/style.scss";
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 98px;
+  height: 48px;
+  padding: 2px 1px;
+  border-radius: 6px;
+  background-color: $color-grey-f7;
+
+  font-family: Spartan, sans-serif;
+  font-size: 17px;
+  font-weight: $fw-bold;
+  text-align: center;
+  color: $color-grey-82;
+}
+
+.large {
+  border-radius: 4px;
+  padding: 5px 7px;
+  height: 44px;
+  width: 298px;
+  border: solid 1px $color-grey-e0;
+  background-color: $color-white;
+
+  .button {
+    min-width: 43px !important;
+    height: 34px !important;
+    border-radius: 3px !important;
+    background: $color-grey-f7 !important;
+  }
+}
+
+.button {
+  min-width: 27px !important;
+  padding: 0 !important;
+  border-radius: 4px;
+  color: $color-grey-82;
+  background: $color-white !important;
+  box-shadow: none;
+}
+
+.value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  user-select: none;
+}

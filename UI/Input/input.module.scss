@@ -1,0 +1,153 @@
+@import "/styles/style.scss";
+
+.inputWrapper {
+  display: flex;
+}
+
+.default {
+  font-family: inherit;
+  font-size: 15px;
+
+  .label {
+    color: $color-purple;
+    font-weight: $fw-bold;
+    margin-bottom: 5px;
+  }
+
+  .input {
+    box-shadow: 0 0 10px rgb(218, 218, 218);
+    border-radius: 4px;
+    input {
+      &:focus {
+        outline: 2px solid $color-purple;
+        border-radius: 4px;
+      }
+    }
+
+    fieldset {
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+.footer {
+  font-family: inherit;
+  .label {
+    color: $color-purple;
+    font-weight: $fw-bold;
+    margin-bottom: 5px;
+  }
+
+  .input {
+    width: 430px;
+    fieldset {
+      border-radius: 0;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      border: none;
+      outline: none;
+      background-color: #434343;
+      z-index: -1;
+    }
+  }
+
+  input {
+    color: $color-white;
+  }
+
+  button {
+    position: relative;
+    top: 0.5px;
+    font-family: inherit;
+    background: $color-purple;
+    border: none;
+    height: 55px;
+    font-size: 18px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 0 20px;
+    color: $color-white;
+
+    &:hover {
+      background: $color-purple-d;
+    }
+  }
+}
+
+.black_button {
+  font-family: inherit;
+  .label {
+    color: $color-purple;
+    font-weight: $fw-bold;
+    margin-bottom: 5px;
+  }
+
+  .input {
+    box-shadow: 0 0 10px rgb(218, 218, 218);
+    width: 430px;
+    fieldset {
+      border-radius: 0;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      border: none;
+      outline: none;
+      z-index: -1;
+    }
+  }
+
+  button {
+    position: relative;
+    top: 0.5px;
+    font-family: inherit;
+    background: $color-black;
+    border: none;
+    height: 55px;
+    font-size: 18px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 0 20px;
+    color: $color-white;
+
+    &:hover {
+      background: $color-grey-14;
+    }
+  }
+}
+
+.blue_outline {
+  font-family: inherit;
+  font-size: 15px;
+
+  .label {
+    color: $color-purple;
+    font-weight: $fw-bold;
+    margin-bottom: 5px;
+  }
+
+  .input {
+    box-shadow: 0 0 10px rgb(218, 218, 218);
+    border-radius: 4px;
+    input {
+      &:focus {
+        outline: 2px solid rgb(0, 162, 255);
+      }
+    }
+
+    fieldset {
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+.error {
+  border: 2px solid $color-red;
+}
+
+.errorText {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: $color-red;
+}

@@ -15,10 +15,14 @@ import {
 
 import {
   AddButton,
+  Card,
   Carousel,
   CheckboxGroup,
+  CreditCard,
   DatePicker,
   Icon,
+  Input,
+  ItemCounter,
   FileSelect,
   FileUpload,
   RadioGroup,
@@ -27,9 +31,12 @@ import {
   Slider,
   SocialIcon,
   Tabs,
+  Price,
 } from "UI"
 
 import {
+  BreadCrumbs,
+  ColorPicker,
   Footer,
   Header,
   Logo,
@@ -41,6 +48,7 @@ import ProfileSidebar from "../Сomponents/ProfileSidebar/ProfileSidebar";
 
 //Project Helpers
 import { icons } from "shared/constants/icons"
+import { colors } from "shared/constants/colors"
 import { countriesForSelect } from "shared/constants/countries"
 import { footerNav } from "shared/constants/footernav"
 import { Currency } from "shared/enums/currency"
@@ -49,8 +57,8 @@ import { Currency } from "shared/enums/currency"
 import s from "styles/pages/ComponentsExample.module.scss"
 
 const Home: NextPage = () => {
-  const [isRead, setIsRead] = useState<boolean>(false)
   const [value, setValue] = useState<File | null>(null)
+  const [inputValue, setInputValue] = useState<string>("")
   return (
     <>
       <Head>
@@ -58,6 +66,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Header />
+      <BreadCrumbs />
 
       <main className={s.main}>
         <SectionHeader
@@ -66,28 +75,67 @@ const Home: NextPage = () => {
           actionText={"All Orders"}
         />
 
-        <Range
-          minQuantity={10000}
-          maxQuantity={1000000}
-          currency={Currency.RUB}
-        />
-
         <Tabs
           className={s.example_tabs}
           labels={[
             "Buttons",
-            "Inputs and Pickers",
+            "Inputs",
+            "Pickers",
             "Icons",
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
             "File Select",
             "Profile Sidebar",
+            "Price",
+            "Counters",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
 
-            <div key={"Inputs and Pickers"} className={s.grid_column}>
+            <div key={"Inputs"}>
+              <Input
+                label="default"
+                setValue={setInputValue}
+                value={inputValue}
+              />
+              <Input
+                variant="footer"
+                buttonLabel="button"
+                label="footer"
+                setValue={setInputValue}
+                value={inputValue}
+                placeholder={"value"}
+              />
+              <Input
+                variant="black_button"
+                isRequired={true}
+                buttonLabel="button"
+                label="modal"
+                setValue={setInputValue}
+                value={inputValue}
+                placeholder={"value"}
+              />
+              <Input
+                variant="blue_outline"
+                buttonLabel="button"
+                label="blue_outline"
+                setValue={setInputValue}
+                value={inputValue}
+                placeholder={"value"}
+              />
+              <Input
+                buttonLabel="button"
+                label="className: error"
+                setValue={setInputValue}
+                value={inputValue}
+                className={"error"}
+                placeholder={"value"}
+                errorText={"error"}
+              />
+            </div>,
+
+            <div key={"Pickers"} className={s.grid_column}>
               <h2>Date Picker</h2>
               <DatePicker
                 initValue={new Date()}
@@ -95,6 +143,8 @@ const Home: NextPage = () => {
                   return
                 }}
               />
+              <h2>Color Picker</h2>
+              <ColorPicker colors={colors} />
               <h2>Size Picker</h2>
               <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
               <h2>Select</h2>
@@ -120,6 +170,8 @@ const Home: NextPage = () => {
               <Slider min={0} max={50} value={[0, 30]} />
               <h2>File Upload</h2>
               <FileUpload />
+              <h2>File Select</h2>
+              <FileSelect value={value} setValue={setValue} />
             </div>,
 
             <div key={"Icons"} className={s.grid}>
@@ -205,8 +257,22 @@ const Home: NextPage = () => {
             <div key={"Accordion"}>
               <AccordionExamples />
             </div>,
-            <div key={"File Select"}>
-              <FileSelect value={value} setValue={setValue} />
+
+            <div key={"Price"}>
+              <Price oldPrice={2030} price={1930} type="order" />
+              <Price oldPrice={2030} price={1930} type="cart" />
+              <Price oldPrice={2030} price={1930} type="primary" />
+              <Price oldPrice={2030} price={1930} type="sale" />
+              <Price oldPrice={2030} price={1930} type="sale_black" />
+              <Range
+                minQuantity={10000}
+                maxQuantity={1000000}
+                currency={Currency.RUB}
+              />
+            </div>,
+            <div key={"Counters"} style={{ display: "flex" }}>
+              <ItemCounter initValue={5} />
+              <ItemCounter initValue={5} large />
             </div>,
 
             <div key={"Sidebar"} className={s.profileSidebar}>
@@ -230,15 +296,16 @@ const Home: NextPage = () => {
 
         <Tabs
           className={s.example_tabs}
-          labels={["Notification", "Carousel", "Add Button"]}
+          labels={[
+            "Notification",
+            "Carousel",
+            "Add Button",
+            "Credit Card",
+            "Card",
+          ]}
           values={[
             <div key="Notification">
-              <Notification
-                onRead={() => {
-                  setIsRead(true)
-                }}
-                header={"Notification"}
-              >
+              <Notification header={"Notification"}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
                 quam sequi vitae eius iusto perspiciatis facilis nesciunt
                 dignissimos provident ipsum? Nobis repellat atque ab nam magni
@@ -266,6 +333,62 @@ const Home: NextPage = () => {
                   color="secondary"
                   bgColor="white"
                   large
+                />
+              </div>
+            </div>,
+
+            <div key={"Credit Card"} className={s.creditcard}>
+              <CreditCard
+                size={200}
+                isColored
+                key={1}
+                isHidden
+                id={8375}
+                cardNumber="1234 8547 7294 3959"
+                cardHolder="Test Test"
+                expireDate="01/2023"
+                onDelete={() => {
+                  console.log("test")
+                }}
+              />
+              <CreditCard
+                size={250}
+                key={2}
+                isHidden
+                id={7335}
+                cardNumber="1234 1234 1234 1234"
+                cardHolder="Test Test"
+                expireDate="01/2023"
+              />
+              <CreditCard
+                size={300}
+                key={3}
+                id={2341}
+                isColored
+                cardNumber="1234 1234 1234 1234"
+                cardHolder="Test Test"
+                expireDate="01/2023"
+                onDelete={() => {
+                  console.log("test")
+                }}
+              />
+            </div>,
+
+            <div key={"Card"}>
+              <div className={s.cards}>
+                <Card
+                  className={s.card_big}
+                  imageSrc="/../public/assets/img/picture_1.png"
+                  title="Gizem Sancak"
+                  buttonTitle="Go To Store"
+                  topButtonTitle="Follow"
+                />
+                <Card
+                  className={s.card_small}
+                  imageSrc="/../public/assets/img/picture_2.png"
+                  title="Gizem Sancak"
+                  buttonTitle="Go To Store"
+                  isButtonHidden
                 />
               </div>
             </div>,
