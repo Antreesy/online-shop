@@ -9,15 +9,24 @@
   -moz-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.2);
 
+  @media only screen and (max-width: 400px) {
+    width: 375px;
+    margin: 30px auto;
+    border-radius: 0;
+  }
+
   .headerSidebar {
     background-color: white;
     height: 103px;
     max-width: 100%;
     border-radius: 0 0 15px 15px;
+    display: flex;
+    justify-content: space-between;
 
-    -webkit-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.2);
-    box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.2);
+    @media only screen and (max-width: 400px) {
+      display: flex;
+      align-items: center;
+    }
 
     & p {
       padding: 32px 111px 38px 50px;
@@ -29,7 +38,11 @@
     display: none;
   }
 
-  .menuSidebarDesktop,
+  @media screen and (max-width: 400px) {
+    .mobileAccordion {
+      display: block;
+    }
+  }
   .menuSidebarMobile {
     margin-top: 49px;
     height: 764px;
@@ -73,30 +86,52 @@
       color: #8100ef;
     }
   }
-}
 
-.menuSidebarDesktop {
-  @media screen and (max-width: 400px) {
-    display: none;
-  }
-}
-.profileSidebar {
-  @media only screen and (max-width: 400px) {
-    width: 375px;
-    margin: 30px auto;
-    border-radius: 0;
-  }
+  .menuSidebarDesktop {
+    margin-top: 49px;
+    height: 764px;
+    max-width: 100%;
 
-  @media screen and (max-width: 400px) {
-    .mobileAccordion {
-      display: block;
+    @media screen and (max-width: 400px) {
+      display: none;
     }
-  }
-}
 
-.headerSidebar {
-  @media only screen and (max-width: 400px) {
-    display: flex;
-    align-items: center;
+    & ul {
+      margin-left: 13px;
+      width: 217px;
+      max-width: 100%;
+    }
+
+    & ul > li {
+      list-style-type: none;
+      font-size: 18px;
+      padding-bottom: 15px;
+      margin-top: 22px;
+      border-bottom: 1px solid #bababa;
+
+      &:hover {
+        color: #cccccc;
+      }
+    }
+    & .accordion {
+      border-bottom: 1px solid #bababa;
+      margin: 0;
+      & > div {
+        font-size: 18px;
+        padding: 16px 16px 0 0;
+      }
+      .AccordionLi {
+        margin-top: 0;
+        padding-bottom: 0;
+        border: none;
+      }
+      &:hover:last-child {
+        color: #cccccc;
+      }
+    }
+
+    & .active {
+      color: #8100ef;
+    }
   }
 }
