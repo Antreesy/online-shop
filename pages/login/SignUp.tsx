@@ -1,16 +1,17 @@
-import React from "react"
 import { Controller, useForm } from "react-hook-form"
-import s from "./Login.module.scss"
-import { Button, Input } from "../../UI"
 import cn from "classnames"
+
 import Link from "next/link"
+import { Button, Input } from "../../UI"
+
+import s from "./login.module.scss"
 
 interface LoginType {
   email: string
   password: string
 }
 
-export const SingUp = () => {
+export const SignUp = () => {
   const { handleSubmit, control } = useForm<LoginType>({
     criteriaMode: "all",
     defaultValues: {

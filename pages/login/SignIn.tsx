@@ -1,9 +1,10 @@
-import React from "react"
 import { Controller, useForm } from "react-hook-form"
-import s from "./Login.module.scss"
-import { Button, CheckboxGroup, Input } from "../../UI"
 import cn from "classnames"
+
 import Link from "next/link"
+import { Button, CheckboxGroup, Input } from "UI"
+
+import s from "./login.module.scss"
 
 interface LoginType {
   name: string
@@ -14,7 +15,7 @@ interface LoginType {
   isPromo: boolean
 }
 
-export const SingIn = () => {
+export const SignIn = () => {
   const { handleSubmit, control } = useForm<LoginType>({
     criteriaMode: "all",
     defaultValues: {

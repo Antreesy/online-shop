@@ -1,11 +1,13 @@
-import React from "react"
-import { HeaderLight } from "../../Сomponents"
-import { Tabs } from "./../../UI"
-import s from "./Login.module.scss"
-import { SingUp } from "./SingUp"
-import { SingIn } from "./SingIn"
+import { NextPage } from "next"
 
-const Login = () => {
+import { HeaderLight } from "Сomponents"
+import { Tabs } from "UI"
+import { SignUp } from "./SignUp"
+import { SignIn } from "./SignIn"
+
+import s from "./login.module.scss"
+
+const Login: NextPage = () => {
   return (
     <>
       <HeaderLight />
@@ -14,7 +16,7 @@ const Login = () => {
           <div className={s.tabs}>
             <Tabs
               labels={["Sign In", "Sign Up"]}
-              values={[<SingIn key={"SignIn"} />, <SingUp key={"SingUp"} />]}
+              values={[<SignIn key={"Sign In"} />, <SignUp key={"Sign Up"} />]}
             />
           </div>
         </div>
