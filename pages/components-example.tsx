@@ -14,7 +14,6 @@ import {
 
 import {
   AddButton,
-  AlertBox,
   Carousel,
   CheckboxGroup,
   CreditCard,
@@ -30,6 +29,8 @@ import {
   SocialIcon,
   Tabs,
 } from "UI"
+
+import { AlertBox } from "UI/AlertBox"
 
 import {
   Footer,
