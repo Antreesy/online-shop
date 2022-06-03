@@ -36,8 +36,7 @@ export const SingIn = () => {
   }
 
   return (
-      <div className={s.form_container}>
-
+    <div className={s.form_container}>
       <form className={s.form}>
         <div className={s.inputs}>
           <Controller
@@ -125,7 +124,8 @@ export const SingIn = () => {
             Conditions within the scope of
             <Link href="#">
               <a style={{ textDecoration: "underline" }}> KVKK here</a>
-            </Link>.
+            </Link>
+            .
           </span>
         </div>
         <Button className={s.btn} onClick={onSubmit}>
@@ -137,9 +137,9 @@ export const SingIn = () => {
           <a>Not Registered Yet ? Sign Up</a>
         </Link>
         <Button
-            variant={"outlined"}
-            className={cn(s.btn_facebook, s.btn)}
-            onClick={onClickHandler}
+          variant={"outlined"}
+          className={cn(s.btn_facebook, s.btn)}
+          onClick={onClickHandler}
         >
           Sign In with Facebook
         </Button>
