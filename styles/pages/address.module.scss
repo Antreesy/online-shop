@@ -36,14 +36,14 @@
   height: 70px;
   padding: 0 25px;
   border-radius: 5px;
-  background-color: black;
+  background-color: $color-black;
   overflow: hidden;
 
   font-size: 18px;
   font-weight: 600;
   line-height: 24;
   text-align: left;
-  color: #fff;
+  color: $color-white;
 
   @include mobile {
     height: 45px;
