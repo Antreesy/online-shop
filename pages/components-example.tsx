@@ -26,6 +26,7 @@ import {
   Slider,
   SocialIcon,
   Tabs,
+  Accordion,
 } from "UI"
 
 import {
@@ -36,7 +37,7 @@ import {
   SectionHeader,
   SizePicker,
 } from "Сomponents"
-import ProfileSidebar from "../Сomponents/ProfileSidebar/ProfileSidebar";
+import { ProfileSidebar } from "../Сomponents/ProfileSidebar"
 
 //Project Helpers
 import { icons } from "shared/constants/icons"
@@ -190,17 +191,22 @@ const Home: NextPage = () => {
               <FileSelect value={value} setValue={setValue} />
             </div>,
 
-            <div key={"Sidebar"} className={s.profileSidebar}>
+            <div key={"Sidebar"}>
               <ProfileSidebar
                 labels={[
-                  "profile",
-                  "Address",
-                  "Order",
-                  "Payment",
-                  "Notification",
-                  "Favorite",
-                  "Help",
-                  "Sign Out",
+                  { link: "/", text: "Profile" },
+                  { link: "/", text: "Address" },
+                  { link: "/", text: "Order" },
+                  { link: "/", text: "Payment" },
+                  { link: "/", text: "Notification" },
+                  {link: "/", text: "dashboard",
+                    content: [
+                      { link: "/", text: "Favorite" },
+                    ],
+                  },
+
+                  { link: "/", text: "Help" },
+                  { link: "/", text: "Sign Out" },
                 ]}
               />
             </div>,

@@ -1,41 +1,98 @@
-.headerSidebar {
-  background-color: white;
-  height: 103px;
-  border-radius: 0 0 15px 15px;
+.profileSidebar {
+  margin: 30px 0 40px 40px;
+  width: 317px;
+  border-radius: 0 0 30px 0;
+  background-color: #ffffff;
 
   -webkit-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.2);
 
-  & p {
-    padding: 32px 111px 38px 50px;
-    color: #8100ef;
-    font-size: 25px;
-  }
-}
-.menuSidebar {
-  margin-top: 49px;
-
-  & ul {
-    margin-left: 13px;
-    width: 217px;
+  @media only screen and (min-width: 374px) {
+    width: 375px;
+    margin: 30px auto;
+    border-radius: 0;
   }
 
-  & ul > li {
-    list-style-type: none;
-    font-size: 18px;
-    padding-bottom: 22px;
-    border-bottom: 1px solid #bababa;
+  .headerSidebar {
+    background-color: white;
+    height: 103px;
+    border-radius: 0 0 15px 15px;
+    display: flex;
+    justify-content: space-between;
 
-    &:hover {
-      color: #cccccc;
+    @media only screen and (min-width: 374px) {
+      display: flex;
+      align-items: center;
+    }
+
+    & p {
+      padding: 32px 111px 38px 50px;
+      color: #8100ef;
+      font-size: 25px;
+    }
+    .AccountSettingsAdd {
+      display: none;
+      @media only screen and (min-width: 374px) {
+        display: flex;
+        align-items: center;
+        background: #ffffff;
+        color: #8100ef;
+        width: 35px;
+        height: 35px;
+        margin-right: 30px;
+        margin-bottom: 10px;
+      }
     }
   }
 
-  & .active {
-    color: #8100ef;
-  }
-  .test {
-    margin-top: 1px;
+  .menuSidebar {
+    margin-top: 49px;
+    height: 764px;
+    display: block;
+
+    & ul {
+      margin-left: 13px;
+      width: 217px;
+    }
+
+    @media screen and (min-width: 374px) {
+      .setHeight {
+        transition: 500ms ease;
+        display: none;
+
+      }
+    }
+    & ul > li {
+      list-style-type: none;
+      font-size: 18px;
+      padding-bottom: 15px;
+      margin-top: 22px;
+      border-bottom: 1px solid #bababa;
+
+      &:hover {
+        color: #cccccc;
+      }
+    }
+    & .accordion {
+      border-bottom: 1px solid #bababa;
+      margin: 0;
+      & > div {
+        font-size: 18px;
+        padding: 16px 16px 0 0;
+      }
+      .AccordionLi {
+        margin-top: 0;
+        padding-bottom: 0;
+        border: none;
+      }
+      &:hover:last-child {
+        color: #cccccc;
+      }
+    }
+
+    & .active {
+      color: #8100ef;
+    }
   }
 }
