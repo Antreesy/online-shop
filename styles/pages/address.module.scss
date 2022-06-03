@@ -1,0 +1,103 @@
+@import "/styles/style.scss";
+
+.breadcrumbs {
+  padding-top: $header-desktop-height;
+
+  @include mobile {
+    padding-top: $header-mobile-height;
+  }
+}
+
+.content{
+  display: flex;
+  padding: 70px 140px 107px;
+  gap: 45px;
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 16px 50px;
+  }
+}
+
+.sidebar{
+  width: 317px;
+  height: 764px;
+  background-color: red;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 50px;
+}
+
+.info{
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  padding: 0 25px;
+  border-radius: 5px;
+  background-color: black;
+
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24;
+  text-align: left;
+  color: #fff;
+
+  &:after{
+    content: "";
+    position: absolute;
+    width: 51.4px;
+    height: 45px;
+    top: 0;
+    object-fit: contain;
+    background: linear-gradient(257deg, #8100ef 92%, #00f5ff 5%);
+    opacity: 0.75;
+  }
+
+  @include mobile {
+    height: 45px;
+
+    font-size: 12px;
+    line-height: 1.17;
+  }
+}
+
+
+.addBtn{
+  height: 99px;
+  width: 100%;
+
+  button{
+    height: 100%;
+  }
+
+  @include mobile {
+    height: 52px;
+    margin-bottom: 5px;
+  }
+}
+
+
+.btn{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 55px;
+
+  button{
+    min-width: 249px;
+  }
+
+  @include mobile {
+    button{
+      width: 100%;
+    }
+  }
+}
