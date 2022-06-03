@@ -1,40 +1,34 @@
 @import "/styles/style.scss";
 
-.breadcrumbs {
-  padding-top: $header-desktop-height;
-
-  @include mobile {
-    padding-top: $header-mobile-height;
-  }
-}
-
-.content{
+.content {
   display: flex;
-  padding: 70px 140px 107px;
+  padding: $header-desktop-height + 94px 140px 107px;
   gap: 45px;
 
   @include mobile {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding: 0 16px 50px;
+    padding: $header-mobile-height + 24 16px 50px;
   }
 }
 
-.sidebar{
-  width: 317px;
-  height: 764px;
-  background-color: red;
+.sidebar {
+  position: sticky;
 }
 
-.main{
+.main {
   display: flex;
   flex-direction: column;
   width: 100%;
   gap: 50px;
+
+  @include mobile {
+    gap: 25px;
+  }
 }
 
-.info{
+.info {
   position: relative;
   display: flex;
   align-items: center;
@@ -43,23 +37,13 @@
   padding: 0 25px;
   border-radius: 5px;
   background-color: black;
+  overflow: hidden;
 
   font-size: 18px;
   font-weight: 600;
   line-height: 24;
   text-align: left;
   color: #fff;
-
-  &:after{
-    content: "";
-    position: absolute;
-    width: 51.4px;
-    height: 45px;
-    top: 0;
-    object-fit: contain;
-    background: linear-gradient(257deg, #8100ef 92%, #00f5ff 5%);
-    opacity: 0.75;
-  }
 
   @include mobile {
     height: 45px;
@@ -69,13 +53,43 @@
   }
 }
 
+.info::after {
+  content: "";
+  position: absolute;
+  top: -25px;
+  right: -30px;
+  width: 70px;
+  height: 70px;
+  opacity: 0.75;
+  border-radius: 50%;
+  background-image: linear-gradient(76deg, $color-cyan 5%, $color-purple 51%);
+}
 
-.addBtn{
+.addresses {
+  .address {
+    div {
+      border-radius: 0;
+      margin: 0;
+
+      p {
+        min-height: 148px;
+      }
+
+      @include mobile {
+        p {
+          min-height: 64px;
+        }
+      }
+    }
+  }
+}
+
+.addBtn {
   height: 99px;
   width: 100%;
-
-  button{
+  button {
     height: 100%;
+    border-radius: 0 0 5px 5px;
   }
 
   @include mobile {
@@ -84,20 +98,21 @@
   }
 }
 
-
-.btn{
+.btn {
   display: flex;
   justify-content: flex-end;
   width: 100%;
   height: 55px;
 
-  button{
+  button {
+    font-size: 18px;
     min-width: 249px;
   }
 
   @include mobile {
-    button{
+    button {
       width: 100%;
+      font-size: 15px;
     }
   }
 }

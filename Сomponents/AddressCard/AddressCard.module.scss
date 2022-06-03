@@ -15,11 +15,6 @@
   justify-content: space-between;
   margin-bottom: 23px;
 
-  @include mobile {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .title {
     color: $color-purple;
     font-size: 18px;
@@ -28,6 +23,7 @@
 
     @include mobile {
       margin-bottom: 7px;
+      font-size: 12px;
     }
   }
 }
@@ -40,5 +36,15 @@
   color: $color-purple;
   .span {
     color: $color-black;
+  }
+}
+
+.text {
+  font-size: 18px;
+  line-height: 1.94;
+
+  @include mobile {
+    font-size: 13px;
+    line-height: 1.69;
   }
 }
