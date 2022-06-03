@@ -1,4 +1,3 @@
-import { useState } from "react"
 import cn from "classnames"
 
 import { Accordion } from "UI"
@@ -26,6 +25,7 @@ const Notification: React.FC<NotificationProps> = (props) => {
       <span>{title}</span>
     </>
   )
+
   return (
     <div className={notificationClass} onClick={() => onClick && onClick(id)}>
       <Accordion

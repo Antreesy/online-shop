@@ -25,10 +25,10 @@ const FaqPage: NextPage = () => {
       <main className={s.main}>
         <div className={s.container}>
           <div className={s.notfLabel}>
-            <p>
+            <div>
               <Icon type="bell_filled" className={s.notfIcon} />
               <div>Notification</div>
-            </p>{" "}
+            </div>
             <div>
               <Button
                 className={s.notfBtn}
