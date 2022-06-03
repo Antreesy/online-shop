@@ -24,7 +24,10 @@ const SupportSection = () => {
 
         <div className={s.buttons_wrapper}>
           <Button className={s.button}>I have a question about my order</Button>
-          <Button className={cn(s.button, s.button_outlined)} variant="outlined">
+          <Button
+            className={cn(s.button, s.button_outlined)}
+            variant="outlined"
+          >
             I have a different question
           </Button>
         </div>

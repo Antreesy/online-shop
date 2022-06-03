@@ -91,7 +91,7 @@ const Header: React.FC<HeaderProps> = ({ withBreadCrumbs }) => {
           />
         </div>
       </div>
-      
+
       {withBreadCrumbs && <BreadCrumbs />}
     </header>
   )

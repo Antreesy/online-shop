@@ -1,3 +1,3 @@
-import SupportSection from './SupportSection';
+import SupportSection from "./SupportSection"
 
 export { SupportSection }
