@@ -32,6 +32,7 @@ import {
   Header,
   Logo,
   Notification,
+  ProfileSidebar,
   SectionHeader,
 } from "Сomponents"
 
@@ -79,6 +80,7 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
+            "Sidebar",
             "Price",
             "Counters",
           ]}
@@ -109,6 +111,25 @@ const Home: NextPage = () => {
 
             <div key={"Accordion"}>
               <AccordionExamples />
+            </div>,
+
+            <div key={"Sidebar"}>
+              <ProfileSidebar
+                labels={[
+                  { link: "/", text: "Profile" },
+                  { link: "/", text: "Address" },
+                  { link: "/", text: "Order" },
+                  { link: "/", text: "Payment" },
+                  { link: "/", text: "Notification" },
+                  {
+                    link: "/",
+                    text: "Dashboard",
+                    content: [{ link: "/", text: "Favorite" }],
+                  },
+                  { link: "/", text: "Help" },
+                  { link: "/", text: "Sign Out" },
+                ]}
+              />
             </div>,
 
             <div key={"Price"}>

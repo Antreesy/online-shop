@@ -1,3 +1,3 @@
-import ProfileSidebar from "./ProfileSidebar"
+import { ProfileSidebar } from "./ProfileSidebar"
 
 export { ProfileSidebar }
