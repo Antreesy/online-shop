@@ -2,29 +2,36 @@ import { useState } from "react"
 import cn from "classnames"
 
 import { Accordion } from "UI"
+import Image from "next/image"
 
 import s from "./notification.module.scss"
 
 interface NotificationProps {
-  read?: boolean
+  isRead?: boolean
   className?: string
-  header: React.ReactNode
   children: React.ReactNode
-  onRead?: () => void
+  onClick?: (id: number) => void
+  id: number
+  title: string
+  subtitle?: string
 }
 
 const Notification: React.FC<NotificationProps> = (props) => {
-  const { header, read, children, className, onRead } = props
-  const [isRead, setIsRead] = useState<boolean>(read ?? false)
+  const { isRead, children, className, onClick, id, title, subtitle } = props
 
   const notificationClass = cn(s.notification, className)
-
+  const titleBlock = (
+    <>
+      <Image src="/dot.png" layout="fill" />
+      <span>{title}</span>
+    </>
+  )
   return (
-    <div className={notificationClass} onClick={() => setIsRead(true)}>
+    <div className={notificationClass} onClick={() => onClick && onClick(id)}>
       <Accordion
         className={s.accordion}
-        header={header}
-        headerClassName={s.header}
+        header={titleBlock}
+        headerClassName={s.title}
         openTitle="Detail"
         openTitleClassName={s.openTitle}
       >
