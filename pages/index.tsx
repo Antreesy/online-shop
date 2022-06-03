@@ -80,16 +80,17 @@ const Index: NextPage = (props: any) => {
         </p>
 
         <p className={styles.description}>
-          UI Kit -
-          <Link href="/components-example">
-            <a className={styles.title__link}>/components-example</a>
-          </Link>{" "}
-          page
-        </p>
-        <p className={styles.description}>
           Payment page is on{" "}
           <Link href="/payment">
             <a className={styles.title__link}>/payment</a>
+          </Link>{" "}
+          page
+        </p>
+
+        <p className={styles.description}>
+          UI Kit -
+          <Link href="/components-example">
+            <a className={styles.title__link}>/components-example</a>
           </Link>{" "}
           page
         </p>
