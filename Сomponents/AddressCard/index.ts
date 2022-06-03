@@ -1,2 +1,3 @@
-import AddressCard from "./AddressCard";
-export {AddressCard} 
+import AddressCard from "./AddressCard"
+
+export { AddressCard }
