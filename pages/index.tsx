@@ -40,15 +40,15 @@ const Index: NextPage = (props: any) => {
         <LangRoute lng="ru" />
 
         <p className={styles.description}>
-          UI Kit is on{" "}
-          <Link href="/components-example">
-            <a className={styles.title__link}>/components-example</a>
+          Login -{" "}
+          <Link href="/login">
+            <a className={styles.title__link}>/login</a>
           </Link>{" "}
           page
         </p>
 
         <p className={styles.description}>
-          Register is on{" "}
+          Register (for brands / influencers) -{" "}
           <Link href="/register">
             <a className={styles.title__link}>/register</a>
           </Link>{" "}
@@ -56,7 +56,31 @@ const Index: NextPage = (props: any) => {
         </p>
 
         <p className={styles.description}>
-          Redux example is on{" "}
+          Influencers Page -{" "}
+          <Link href="/influencers">
+            <a className={styles.title__link}>/influencers</a>
+          </Link>{" "}
+          page
+        </p>
+
+        <p className={styles.description}>
+          FAQ Page -{" "}
+          <Link href="/faq">
+            <a className={styles.title__link}>/faq</a>
+          </Link>{" "}
+          page
+        </p>
+
+        <p className={styles.description}>
+          UI Kit -{" "}
+          <Link href="/components-example">
+            <a className={styles.title__link}>/components-example</a>
+          </Link>{" "}
+          page
+        </p>
+
+        <p className={styles.description}>
+          Redux example -{" "}
           <Link href="/redux-example">
             <a className={styles.title__link}>/redux-example</a>
           </Link>{" "}

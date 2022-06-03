@@ -141,6 +141,26 @@
   }
 }
 
+.black_outline {
+  font-family: inherit;
+  font-size: 15px;
+
+  .label {
+    color: $color-purple;
+    font-weight: $fw-bold;
+    margin-bottom: 5px;
+  }
+
+  .input {
+    border: 2px solid $color-black;
+    border-radius: 0;
+    fieldset {
+      border: none;
+      outline: none;
+    }
+  }
+}
+
 .error {
   border: 2px solid $color-red;
 }

@@ -1,16 +1,16 @@
 import Link from "next/link"
 import { Button, SocialIcon } from "UI"
-import { BreadCrumbs, BurgerMenu, Logo } from "Сomponents"
+import { Breadcrumbs, BurgerMenu, Logo } from "Сomponents"
 
 import { DrawerItems } from "shared/constants/menuItems"
 
 import s from "./header.module.scss"
 
 interface HeaderProps {
-  withBreadCrumbs?: boolean
+  withBreadcrumbs?: boolean
 }
 
-const Header: React.FC<HeaderProps> = ({ withBreadCrumbs }) => {
+const Header: React.FC<HeaderProps> = ({ withBreadcrumbs }) => {
   return (
     <header className={s.header}>
       <div className={s.top_group}>
@@ -92,7 +92,7 @@ const Header: React.FC<HeaderProps> = ({ withBreadCrumbs }) => {
         </div>
       </div>
 
-      {withBreadCrumbs && <BreadCrumbs />}
+      {withBreadcrumbs && <Breadcrumbs />}
     </header>
   )
 }
