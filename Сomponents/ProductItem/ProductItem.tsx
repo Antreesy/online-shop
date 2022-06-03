@@ -1,28 +1,26 @@
 import { useState } from "react"
 import cn from "classnames"
-import s from "./productItem.module.scss"
 
-import { Icon } from "../Icon/Icon"
 import Image from "next/image"
-
-import { Price } from "UI/Price"
-import { CurrencyType } from "UI/Price/Price"
+import { Icon, Price } from "UI"
 
 import T_shirt from "public/assets/img/T_shirt.png"
+import { Currency } from "shared/enums/currency"
 
+import s from "./productItem.module.scss"
 
 interface ProductItemProps {
-  title: string
-  subtitle: string
-  description: string
-  id: string
-  price: number
-  image: string
-  isFavorite: boolean
+  title?: string
+  subtitle?: string
+  description?: string
+  id?: string
+  price?: number
+  image?: string
+  isFavorite?: boolean
   oldPrice?: number
-  currency?: CurrencyType
+  currency?: Currency
   currencyFirst?: boolean
-  type: "order" | "cart" | "old" | "sale" | "sale_black" | "primary"
+  type: "order" | "cart" | "sale" | "sale_black" | "primary"
   addButton?: boolean
   influencer?: boolean
 }
@@ -34,13 +32,10 @@ const ProductItem: React.FC<ProductItemProps> = (props) => {
     title = "Yves Saint Laurent",
     subtitle = "Black long sleeve men’s jacket",
     description = "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu",
-    id = "123fdref44f",
-    price,
+    price = 0,
+    oldPrice = 0,
     image = T_shirt,
     isFavorite = true,
-    oldPrice,
-    currency,
-    currencyFirst,
     type = "sale",
     influencer = false,
     addButton = true,
@@ -85,7 +80,7 @@ const ProductItem: React.FC<ProductItemProps> = (props) => {
         </div>
 
         <div className={s.price}>
-          <Price price={730} oldPrice={1030} type={type} />
+          <Price price={price} oldPrice={oldPrice} type={type} />
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ import { Footer } from "./Footer"
 import { Header, HeaderLight } from "./Header"
 import { Logo } from "./Logo"
 import { Notification } from "./Notification"
+import { ProductItem } from "./ProductItem"
 import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
 import { SupportSection } from "./SupportSection"
@@ -21,6 +22,7 @@ export {
   HeaderLight,
   Logo,
   Notification,
+  ProductItem,
   SectionHeader,
   SizePicker,
   SupportSection,
