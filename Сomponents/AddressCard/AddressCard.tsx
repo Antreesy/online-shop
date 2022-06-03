@@ -13,13 +13,17 @@ const AddressCard: React.FC<AddressCardProps> = (props) => {
         <div className={s.addressCard}>
             <div className={s.titleBox}>
                 <span className={s.title}>{title}</span>
-                <div className={s.icons}>
-                    <Button variant='text'><Icon type='edit' color='#8100ef' /> <span className={s.span}>Edit</span></Button>
-                    <Button variant='text'><Icon type='trash_can' color='#8100ef' /><span className={s.span}>Delete</span></Button>
+                <div className={s.buttons}>
+                    <Button variant='text' iconLeft='edit' className={s.addressBtn}>
+                        <span className={s.span}>Edit</span>
+                    </Button>
+                    <Button variant='text' iconLeft='trash_can' className={s.addressBtn}>
+                        <span className={s.span}>Delete</span>
+                    </Button>
                 </div>
             </div>
-                <p>{text}</p>
-            
+            <p>{text}</p>
+
         </div>
     )
 }

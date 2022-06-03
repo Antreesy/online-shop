@@ -1,0 +1,66 @@
+@import "styles/style.scss";
+
+.price_wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.tablePrice {
+  color: $color-black;
+  font-size: 17px;
+}
+
+.order {
+  color: $color-brown;
+  font-size: 16px;
+}
+
+.cart,
+.sale {
+  color: $color-purple;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.sale {
+  font-size: 17px;
+}
+
+.primary {
+  color: $color-black;
+  font-size: 17px;
+}
+
+.sale_black {
+  color: $color-black;
+  font-size: 30px;
+  font-weight: $fw-bold;
+}
+
+.old {
+  display: block;
+  position: relative;
+  color: $color-grey-8;
+  font-weight: $fw-regular;
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 100%;
+    top: 0.6em;
+    left: 0;
+    background-color: $color-grey-8;
+  }
+}
+
+.old-sale_black {
+  margin-right: 67px;
+  font-size: 25px;
+}
+
+.old-sale {
+  margin-right: 30px;
+  font-size: 13px;
+}

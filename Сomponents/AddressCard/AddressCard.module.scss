@@ -1,12 +1,12 @@
 @import 'styles/style.scss';
 
 .addressCard {
-    max-width: 660px;
     padding: 28px 31.9px 23px 25px;
     object-fit: contain;
     border-radius: 5px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
     background-color: #fff;
+    margin: 0 10px;
 }
 
 .titleBox {
@@ -30,19 +30,14 @@
             margin-bottom: 7px;
         }
     }
-
-    .icons {
-        display: flex;
-        cursor: pointer;
-
-        div {
-            &:last-child {
-                margin-left: 10px;
-            }
-
-            span.span {
-                margin-left: 5px;
-            }
-        }
+}
+.buttons{
+    display: flex;
+    align-items: center;
+}
+.addressBtn{
+    color: $color-purple;
+    .span{
+        color: #000;
     }
 }
