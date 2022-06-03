@@ -43,7 +43,7 @@ import {
   SectionHeader,
   SizePicker,
 } from "Сomponents"
-import { ProfileSidebar } from "../Сomponents/ProfileSidebar"
+import { ProfileSidebar } from "../Сomponents"
 
 //Project Helpers
 import { icons } from "shared/constants/icons"
