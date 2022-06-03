@@ -17,3 +17,11 @@ export const throttle = (callback: () => void, time: number) => {
     throttlePause = false
   }, time)
 }
+
+export const getWindowWidth = (): number => {
+  if (typeof window !== "undefined") {
+    const { innerWidth: width } = window
+    return width
+  }
+  return -1
+}
