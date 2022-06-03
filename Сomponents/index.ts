@@ -1,4 +1,4 @@
-import { BreadCrumbs } from "./Breadcrumbs"
+import { Breadcrumbs } from "./Breadcrumbs"
 import { BurgerMenu } from "./BurgerMenu"
 import { ColorPicker } from "./ColorPicker"
 import { Counter } from "./Counter"
@@ -8,9 +8,11 @@ import { Logo } from "./Logo"
 import { Notification } from "./Notification"
 import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
+import { SupportSection } from "./SupportSection"
+import { ProfileSidebar } from "./ProfileSidebar"
 
 export {
-  BreadCrumbs,
+  Breadcrumbs,
   BurgerMenu,
   ColorPicker,
   Counter,
@@ -21,4 +23,6 @@ export {
   Notification,
   SectionHeader,
   SizePicker,
+  SupportSection,
+  ProfileSidebar,
 }

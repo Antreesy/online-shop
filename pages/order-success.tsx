@@ -1,16 +1,30 @@
 import type { NextPage } from "next"
 import Head from "next/head"
 
+import { footerNav } from "shared/constants/footernav"
+import { orderSuccess } from "shared/constants/order-success"
 import { Card, Icon } from "UI"
 import { Header, SectionHeader } from "Сomponents"
 import { Footer } from "Сomponents"
-import picForBrands from "public/assets/img/pic_for_brands.png"
-import picForInfluencers from "public/assets/img/pic_for_influencers.png"
 
 import s from "styles/pages/OrderSuccess.module.scss"
-import { footerNav } from "shared/constants/footernav"
 
 const OrderSuccess: NextPage = () => {
+  const {
+    title,
+    textContent,
+    order: {
+      orderNumber,
+      orderDate,
+      situation,
+      paymentMethod,
+      sendingDate,
+      shopingNumber,
+      helpline,
+    },
+    influencerRecomendations,
+  } = orderSuccess
+
   return (
     <>
       <Head>
@@ -23,17 +37,8 @@ const OrderSuccess: NextPage = () => {
         <div className={s.container}>
           <Icon className={s.icon} type="mark" wrapped />
           <div className={s.textContent}>
-            <h1 className={s.title}>
-              Your Order No. XXX has been successfully completed.
-            </h1>
-            <p className={s.description}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-              sit amet ligula sit amet ex pulvinar laoreet eu in odio. Nulla
-              cursus condimentum augue accumsan placerat. Etiam mattis sit amet
-              elit et dignissim. Vestibulum vel convallis diam. Vivamus rutrum
-              diam a orci vestibulum vehicula. Nulla facilisi. Nam bibendum sit
-              amet velit sit amet luctus
-            </p>
+            <h1 className={s.title}>{title}</h1>
+            <p className={s.description}>{textContent}</p>
           </div>
 
           <SectionHeader
@@ -43,62 +48,53 @@ const OrderSuccess: NextPage = () => {
           <div className={s.order}>
             <div className={s.orderTitle}>
               <span>Order number: </span>
-              47383756
+              {orderNumber}
             </div>
             <table className={s.table}>
               <div>
                 <tr>
                   <td>Order date</td>
-                  <td>12.12.2021</td>
+                  <td>{orderDate}</td>
                 </tr>
                 <tr>
                   <td>Situation</td>
-                  <td>New order</td>
+                  <td>{situation}</td>
                 </tr>
                 <tr>
                   <td>Payment method</td>
-                  <td>Credit card</td>
+                  <td>{paymentMethod}</td>
                 </tr>
               </div>
               <div>
                 <tr>
                   <td>Sending date</td>
-                  <td>17.12.2021</td>
+                  <td>{sendingDate}</td>
                 </tr>
                 <tr>
-                  <td>Shopung number</td>
-                  <td>XYZ123</td>
+                  <td>Shoping number</td>
+                  <td>{shopingNumber}</td>
                 </tr>
                 <tr>
                   <td>Helpline</td>
-                  <td>0850 222 34 45</td>
+                  <td>{helpline}</td>
                 </tr>
               </div>
             </table>
           </div>
 
           <div className={s.cards}>
-            <Card
-              className={s.card}
-              imageSrc="/../public/assets/img/picture_2.png"
-              title="Gizem Sancak"
-              buttonTitle="Go To Store"
-              isButtonHidden
-            />
-            <Card
-              className={s.card}
-              imageSrc="/../public/assets/img/picture_2.png"
-              title="Gizem Sancak"
-              buttonTitle="Go To Store"
-              isButtonHidden
-            />
-            <Card
-              className={s.card}
-              imageSrc="/../public/assets/img/picture_2.png"
-              title="Gizem Sancak"
-              buttonTitle="Go To Store"
-              isButtonHidden
-            />
+            {influencerRecomendations.map(({ id, title }) => {
+              return (
+                <Card
+                  key={id}
+                  className={s.card}
+                  imageSrc="/../public/assets/img/picture_2.png"
+                  title={title}
+                  buttonTitle="Go To Store"
+                  isButtonHidden
+                />
+              )
+            })}
           </div>
         </div>
       </div>

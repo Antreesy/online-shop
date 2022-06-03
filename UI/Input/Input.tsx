@@ -9,7 +9,12 @@ interface InputProps {
   value: string
   placeholder?: string
   className?: string
-  variant?: "default" | "footer" | "black_button" | "blue_outline"
+  variant?:
+    | "default"
+    | "footer"
+    | "black_button"
+    | "blue_outline"
+    | "black_outline"
   buttonLabel?: string
   isRequired?: boolean
   errorText?: React.ReactNode
