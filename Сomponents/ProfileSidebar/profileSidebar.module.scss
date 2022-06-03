@@ -14,8 +14,10 @@
     height: 103px;
     max-width: 100%;
     border-radius: 0 0 15px 15px;
-    display: flex;
-    justify-content: space-between;
+
+    -webkit-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.2);
 
     & p {
       padding: 32px 111px 38px 50px;
