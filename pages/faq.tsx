@@ -1,8 +1,9 @@
 import { NextPage } from "next"
-
 import Head from "next/head"
+
 import { Footer, Header, ProfileSidebar, SupportSection } from "Сomponents"
 import { Accordion } from "UI"
+
 import { footerNav } from "shared/constants/footernav"
 import { questions } from "shared/constants/questions"
 

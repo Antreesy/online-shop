@@ -5,7 +5,6 @@ import type { NextPage } from "next"
 
 //Project Components
 import Head from "next/head"
-import bg from "public/assets/img/background1.png"
 
 import {
   AccordionExamples,
@@ -44,7 +43,6 @@ import {
   SectionHeader,
   SizePicker,
 } from "Сomponents"
-import ProfileSidebar from "../Сomponents/ProfileSidebar/ProfileSidebar";
 
 //Project Helpers
 import { icons } from "shared/constants/icons"
@@ -85,8 +83,6 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
-            "File Select",
-            "Profile Sidebar",
             "Price",
             "Counters",
           ]}
@@ -274,21 +270,6 @@ const Home: NextPage = () => {
               <ItemCounter initValue={5} />
               <ItemCounter initValue={5} large />
             </div>,
-
-            <div key={"Sidebar"} className={s.profileSidebar}>
-              <ProfileSidebar
-                labels={[
-                  "profile",
-                  "Address",
-                  "Order",
-                  "Payment",
-                  "Notification",
-                  "Favorite",
-                  "Help",
-                  "Sign Out",
-                ]}
-              />
-            </div>,
           ]}
         />
 
@@ -395,6 +376,7 @@ const Home: NextPage = () => {
           ]}
         />
       </main>
+
       <Footer links={footerNav} />
     </>
   )

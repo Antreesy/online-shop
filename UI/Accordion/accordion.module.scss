@@ -15,7 +15,7 @@
   min-height: auto !important;
   padding: 16px;
 
-  &>div:first-child {
+  & > div:first-child {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,10 +24,13 @@
   }
 }
 
-.details {
-  padding: 0 16px;
+.header {
+  &.active {
+    color: $color-purple;
+    font-weight: $fw-semibold;
+  }
 }
 
-.active {
-  color: #8100ef;
+.details {
+  padding: 0 16px;
 }
