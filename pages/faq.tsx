@@ -5,50 +5,46 @@ import { Footer, Header, ProfileSidebar, SupportSection } from "Сomponents"
 import { Accordion } from "UI"
 import { footerNav } from "shared/constants/footernav"
 import { questions } from "shared/constants/questions"
-// import {  } from "shared/constants/footernav"
 
-
-import s from '../styles/pages/faq-page.module.scss'
+import s from "../styles/pages/faq.module.scss"
 
 const FaqPage: NextPage = () => {
-    return (
-        <>
-            <Head>
-                <title>ILONSI SHOP | FAQ page</title>
-            </Head>
-            <Header />
-            <div className={s.breadCrumbs}>Breadcrumbs</div>
-            <div className={s.container}>
-                <div className={s.leftSide}>
-                    <ProfileSidebar
-                        labels={[
-                            "profile",
-                            "Address",
-                            "Order",
-                            "Payment",
-                            "Notification",
-                            "Favorite",
-                            "Help",
-                            "Sign Out",
-                        ]} />
-                </div>
-                <div className={s.mainContent}>
-                    <SupportSection />
-                    <h1 className={s.heading}>FAQ</h1>
-                    <div className={s.accordions}>
-                        {questions.map(({ header, content }) => {
-                            return <Accordion header={header} headerClassName={s.active}>
-                                {content}
-                            </Accordion>
-                        })}
+  return (
+    <>
+      <Head>
+        <title>ILONSI SHOP | FAQ page</title>
+      </Head>
 
+      <Header withBreadCrumbs />
 
-                    </div>
-                </div>
+      <main className={s.main}>
+        <div className={s.container}>
+          <div className={s.aside}>
+            <ProfileSidebar labels={[]} />
+          </div>
+
+          <div className={s.content}>
+            <SupportSection />
+            <h1 className={s.faq_heading}>FAQ</h1>
+            <div className={s.faq_accordions}>
+              {questions.map(({ header, content }, index) => {
+                return (
+                  <Accordion
+                    key={index}
+                    header={header}
+                    headerClassName={s.acc_header}
+                  >
+                    <p className={s.acc_description}>{content}</p>
+                  </Accordion>
+                )
+              })}
             </div>
-            <Footer links={footerNav} />
-        </>
-    )
+          </div>
+        </div>
+      </main>
+      <Footer links={footerNav} />
+    </>
+  )
 }
 
 export default FaqPage

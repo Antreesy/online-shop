@@ -1,32 +1,33 @@
 export const questions = [
-    {
-        header: "first",
-        content: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam dolorem odio ea quasi alias repellat dignissimos? Nostrum eaque eum doloribus minima quaerat numquam dolores illo? Nam consequatur doloribus nostrum."
-    },
+  {
+    header: "How do I cancel my order?",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore iusto, vero nisi error eveniet repellendus voluptatibus cumque assumenda omnis voluptatem quasi, amet accusamus temporibus facilis quod repellat mollitia quisquam! Ipsum minima molestias voluptates nisi enim modi adipisci incidunt, corporis id repellendus rem consequatur iure tempora fuga labore nobis? Beatae accusamus sequi natus numquam dolores quas nobis exercitationem at. Odit!",
+  },
 
-    {
-        header: "second",
-        content: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam dolorem odio ea quasi alias repellat dignissimos? Nostrum eaque eum doloribus minima quaerat numquam dolores illo? Nam consequatur doloribus nostrum."
-    },
-    {
-        header: "three",
-        content: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam dolorem odio ea quasi alias repellat dignissimos? Nostrum eaque eum doloribus minima quaerat numquam dolores illo? Nam consequatur doloribus nostrum."
-    },
-    {
-        header: "four",
-        content: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam dolorem odio ea quasi alias repellat dignissimos? Nostrum eaque eum doloribus minima quaerat numquam dolores illo? Nam consequatur doloribus nostrum."
-    },
-    {
-        header: "five",
-        content: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam dolorem odio ea quasi alias repellat dignissimos? Nostrum eaque eum doloribus minima quaerat numquam dolores illo? Nam consequatur doloribus nostrum."
-    },
-    {
-        header: "six",
-        content: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam dolorem odio ea quasi alias repellat dignissimos? Nostrum eaque eum doloribus minima quaerat numquam dolores illo? Nam consequatur doloribus nostrum."
-    },
-    {
-        header: "seven",
-        content: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam dolorem odio ea quasi alias repellat dignissimos? Nostrum eaque eum doloribus minima quaerat numquam dolores illo? Nam consequatur doloribus nostrum."
-    },
-
+  {
+    header: "Where can I see the status of my order?",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore iusto, vero nisi error eveniet repellendus voluptatibus cumque assumenda omnis voluptatem quasi, amet accusamus temporibus facilis quod repellat mollitia quisquam! Ipsum minima molestias voluptates nisi enim modi adipisci incidunt, corporis id repellendus rem consequatur iure tempora fuga labore nobis? Beatae accusamus sequi natus numquam dolores quas nobis exercitationem at. Odit!",
+  },
+  {
+    header: "How do I cancel my order?",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore iusto, vero nisi error eveniet repellendus voluptatibus cumque assumenda omnis voluptatem quasi, amet accusamus temporibus facilis quod repellat mollitia quisquam! Ipsum minima molestias voluptates nisi enim modi adipisci incidunt, corporis id repellendus rem consequatur iure tempora fuga labore nobis? Beatae accusamus sequi natus numquam dolores quas nobis exercitationem at. Odit!",
+  },
+  {
+    header: "Where can I see the status of my order?",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore iusto, vero nisi error eveniet repellendus voluptatibus cumque assumenda omnis voluptatem quasi, amet accusamus temporibus facilis quod repellat mollitia quisquam! Ipsum minima molestias voluptates nisi enim modi adipisci incidunt, corporis id repellendus rem consequatur iure tempora fuga labore nobis? Beatae accusamus sequi natus numquam dolores quas nobis exercitationem at. Odit!",
+  },
+  {
+    header: "How do I cancel my order?",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore iusto, vero nisi error eveniet repellendus voluptatibus cumque assumenda omnis voluptatem quasi, amet accusamus temporibus facilis quod repellat mollitia quisquam! Ipsum minima molestias voluptates nisi enim modi adipisci incidunt, corporis id repellendus rem consequatur iure tempora fuga labore nobis? Beatae accusamus sequi natus numquam dolores quas nobis exercitationem at. Odit!",
+  },
+  {
+    header: "Where can I see the status of my order?",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore iusto, vero nisi error eveniet repellendus voluptatibus cumque assumenda omnis voluptatem quasi, amet accusamus temporibus facilis quod repellat mollitia quisquam! Ipsum minima molestias voluptates nisi enim modi adipisci incidunt, corporis id repellendus rem consequatur iure tempora fuga labore nobis? Beatae accusamus sequi natus numquam dolores quas nobis exercitationem at. Odit!",
+  },
 ]
