@@ -56,9 +56,17 @@ const Index: NextPage = (props: any) => {
         </p>
 
         <p className={styles.description}>
-          Influencres Page is on{" "}
+          Influencers Page is on{" "}
           <Link href="/influencers">
             <a className={styles.title__link}>/influencers</a>
+          </Link>{" "}
+          page
+        </p>
+
+        <p className={styles.description}>
+          FAQ Page is on{" "}
+          <Link href="/faq">
+            <a className={styles.title__link}>/faq</a>
           </Link>{" "}
           page
         </p>
