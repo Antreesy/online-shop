@@ -32,9 +32,9 @@ import {
   Header,
   Logo,
   Notification,
+  ProfileSidebar,
   SectionHeader,
 } from "Сomponents"
-import { ProfileSidebar } from "../Сomponents"
 
 //Project Helpers
 import { footerNav } from "shared/constants/footernav"
@@ -123,13 +123,13 @@ const Home: NextPage = () => {
                   { link: "/", text: "Notification" },
                   {
                     link: "/",
-                    text: "dashboard",
+                    text: "Dashboard",
                     content: [{ link: "/", text: "Favorite" }],
                   },
                   { link: "/", text: "Help" },
                   { link: "/", text: "Sign Out" },
                 ]}
-              />
+               title={'Sidebar example1'}/>
             </div>,
 
             <div key={"Price"}>

@@ -1,19 +1,17 @@
 import { NextPage } from "next"
 import Head from "next/head"
 
-import { Footer, Header, ProfileSidebar, SupportSection } from "Сomponents"
-import { Accordion } from "UI"
+import { Footer, Header, ProfileSidebar } from "Сomponents"
 
 import { footerNav } from "shared/constants/footernav"
-import { questions } from "shared/constants/questions"
 
 import s from "styles/pages/faq.module.scss"
 
-const FaqPage: NextPage = () => {
+const Profile: NextPage = () => {
   return (
     <>
       <Head>
-        <title>ILONSI SHOP | FAQ page</title>
+        <title>ILONSI SHOP | Account</title>
       </Head>
 
       <Header withBreadcrumbs />
@@ -37,21 +35,7 @@ const FaqPage: NextPage = () => {
           </div>
 
           <div className={s.content}>
-            <SupportSection />
-            <h1 className={s.faq_heading}>FAQ</h1>
-            <div className={s.faq_accordions}>
-              {questions.map(({ header, content }, index) => {
-                return (
-                  <Accordion
-                    key={index}
-                    header={header}
-                    headerClassName={s.acc_header}
-                  >
-                    <p className={s.acc_description}>{content}</p>
-                  </Accordion>
-                )
-              })}
-            </div>
+            <h1>Address</h1>
           </div>
         </div>
       </main>
@@ -60,4 +44,4 @@ const FaqPage: NextPage = () => {
   )
 }
 
-export default FaqPage
+export default Profile
