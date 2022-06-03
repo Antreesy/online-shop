@@ -37,6 +37,7 @@ import {
   Notification,
   SectionHeader,
   SizePicker,
+  OrderSummary,
 } from "Сomponents"
 
 //Project Helpers
@@ -83,6 +84,7 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
+            "OrderSummarry",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -248,6 +250,10 @@ const Home: NextPage = () => {
 
             <div key={"Accordion"}>
               <AccordionExamples />
+            </div>,
+
+            <div key={"OrderSummary"}>
+              <OrderSummary subtotal={1140} shipping={15} discount={150} kdv={210}/>
             </div>,
           ]}
         />
