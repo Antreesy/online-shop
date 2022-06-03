@@ -1,10 +1,7 @@
 @import "styles/style.scss";
 
 .main {
-  background: #dedede;
-  left: 0;
-  top: 137px;
-  position: absolute;
+  background: $color-grey-de;
   width: 100%;
   padding: 0 75px;
   height: 48px;

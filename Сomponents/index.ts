@@ -1,4 +1,5 @@
-import { BreadCrumbs } from "./Breadcrumbs"
+import { AddressCard } from "./AddressCard"
+import { Breadcrumbs } from "./Breadcrumbs"
 import { BurgerMenu } from "./BurgerMenu"
 import { ColorPicker } from "./ColorPicker"
 import { Counter } from "./Counter"
@@ -12,7 +13,8 @@ import { SupportSection } from "./SupportSection"
 import { ProfileSidebar } from "./ProfileSidebar"
 
 export {
-  BreadCrumbs,
+  AddressCard,
+  Breadcrumbs,
   BurgerMenu,
   ColorPicker,
   Counter,
