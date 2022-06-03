@@ -257,24 +257,22 @@ const Home: NextPage = () => {
 
             <div key={"Sidebar"}>
               <ProfileSidebar
-                  labels={[
-                    { link: "/", text: "Profile" },
-                    { link: "/", text: "Address" },
-                    { link: "/", text: "Order" },
-                    { link: "/", text: "Payment" },
-                    { link: "/", text: "Notification" },
-                    {link: "/", text: "dashboard",
-                      content: [
-                        { link: "/", text: "Favorite" },
-                      ],
-                    },
-                    { link: "/", text: "Help" },
-                    { link: "/", text: "Sign Out" },
-                  ]}
+                labels={[
+                  { link: "/", text: "Profile" },
+                  { link: "/", text: "Address" },
+                  { link: "/", text: "Order" },
+                  { link: "/", text: "Payment" },
+                  { link: "/", text: "Notification" },
+                  {
+                    link: "/",
+                    text: "dashboard",
+                    content: [{ link: "/", text: "Favorite" }],
+                  },
+                  { link: "/", text: "Help" },
+                  { link: "/", text: "Sign Out" },
+                ]}
               />
             </div>,
-
-
 
             <div key={"Price"}>
               <Price oldPrice={2030} price={1930} type="order" />

@@ -38,10 +38,9 @@
     display: none;
   }
 
-  @media screen and (max-width: 400px){
+  @media screen and (max-width: 400px) {
     .mobileAccordion {
       display: block;
-
     }
   }
   .menuSidebarMobile {
@@ -93,7 +92,7 @@
     height: 764px;
     max-width: 100%;
 
-    @media screen and (max-width: 400px){
+    @media screen and (max-width: 400px) {
       display: none;
     }
 

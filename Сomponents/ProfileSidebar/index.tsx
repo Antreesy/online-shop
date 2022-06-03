@@ -1,5 +1,5 @@
 import { ProfileSidebar } from "./ProfileSidebar"
-import {DesktopSidebar} from "./DesktopSidebar";
+import { DesktopSidebar } from "./DesktopSidebar"
 
 export { ProfileSidebar }
-export {DesktopSidebar}
+export { DesktopSidebar }
