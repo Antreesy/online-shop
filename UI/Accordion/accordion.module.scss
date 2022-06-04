@@ -24,6 +24,13 @@
   }
 }
 
+.header {
+  &.active {
+    color: $color-purple;
+    font-weight: $fw-semibold;
+  }
+}
+
 .details {
   padding: 0 16px;
 }

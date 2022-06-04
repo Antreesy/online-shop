@@ -25,10 +25,19 @@
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
   bottom: 0;
   z-index: -1;
-  min-width: 100%;
+  // min-width: 100%;
   min-height: 100%;
+
+  span {
+    span {
+      img {
+        min-height: 100% !important;
+      }
+    }
+  }
 }
 
 .bg {
@@ -74,37 +83,34 @@
 
   .linkMobile {
     font-size: 18px;
-    display: none;
-
-    @include mobile {
-      display: block;
-    }
   }
 }
 
+.boxLinkMobile {
+  position: absolute;
+  bottom: 30px;
+  right: 70px;
 
+  @include tablet {
+    position: static;
+  }
 
-.text {
+  @include mobile {
+    position: static;
+  }
+}
+
+.reverse {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-
-  .l {
-    font-size: 18px;
-    padding: 0;
-    margin: 0;
-    display: flex;
-
-    @include mobile {
-      display: none;
-    }
-  }
+  flex-direction: row-reverse;
 }
 
 .description {
-  width: 50%;
+  width: 60%;
   font-size: 16px;
   line-height: 1.2;
+  padding-right: 10px;
 
   @include tablet {
     width: 100%;
@@ -120,7 +126,6 @@
   outline: none;
   background-color: transparent;
   color: #fff;
-
 }
 
 .icon {
@@ -132,7 +137,6 @@
 
   @include mobile {
     display: block;
-
   }
 }
 
@@ -155,4 +159,8 @@
 
 .editBtn {
   display: block;
+  border: 1px solid gray;
+  background: transparent;
+  border-radius: 5px;
+  color: #fff;
 }

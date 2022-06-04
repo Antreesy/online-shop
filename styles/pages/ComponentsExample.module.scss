@@ -13,6 +13,8 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 42px;
+
   @include mobile {
     padding-top: $header-mobile-height;
   }
@@ -215,6 +217,25 @@
   width: fit-content;
 }
 
+.cards {
+  display: flex;
+}
+
+.card_big {
+  width: 380px;
+  height: 466px;
+}
+
+.card_small {
+  width: 276px;
+  height: 300px;
+}
+
+.card_hor {
+  width: 655px;
+  height: 367px;
+}
+
 .carousel {
   margin-top: 30px;
   width: 1024px;
@@ -222,4 +243,13 @@
 
 .addbuttonlist > div {
   margin-bottom: 30px;
+}
+
+.creditcard {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 900px;
 }
