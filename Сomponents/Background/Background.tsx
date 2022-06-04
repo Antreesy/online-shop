@@ -1,12 +1,10 @@
 import Image from "next/image"
 
-import { Button, Icon } from "UI"
-
-import cn from "classnames"
+import { Button } from "UI"
+import Input from "./Input"
 
 import s from "./Background.module.scss"
-import { useState } from "react"
-import Input from "./Input"
+
 interface BackgroundProps {
   image: string
   title?: string
@@ -19,10 +17,20 @@ interface BackgroundProps {
 
 const Background: React.FC<BackgroundProps> = (props) => {
   const { image, title, description, link, isEditable = false } = props
-  const [linkf, setLink] = useState(link)
 
   return (
     <div className={s.fallbackItem}>
+      {isEditable ? (
+        <div className={s.addImageButton}>
+          <Button
+            variant="outlined"
+            iconLeft="plus"
+            className={s.coverImgBtn}
+          />
+          <p>Cover image</p>
+        </div>
+      ) : null}
+
       <div className={s.image}>
         <Image src={image} className={s.bg} />
       </div>

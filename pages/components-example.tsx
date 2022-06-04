@@ -227,7 +227,7 @@ const Home: NextPage = () => {
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos expedita saepe at ea quam dolorem mollitia soluta atque blanditiis quas in praesentium exercitationem delectus, quasi tempora porro ipsum ex voluptatum.
         "
         link="SamandarUsmanov"
-        isEditable={true}
+        isEditable={false}
       />
       <Footer links={footerNav} />
     </>
