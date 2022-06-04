@@ -1,0 +1,75 @@
+@import "styles/style.scss";
+
+.main {
+  min-height: 100vh;
+  padding-top: calc($header-desktop-height + $breadcrumbs-desktop-height);
+
+  @include mobile {
+    padding-top: calc($header-mobile-height + $breadcrumbs-mobile-height);
+  }
+}
+
+.container {
+  max-width: 1640px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  padding: 70px 50px 40px;
+
+  @include mobile-tablet {
+    padding: 30px 15px 40px;
+  }
+}
+
+.aside {
+  margin-right: 24px;
+
+  @include mobile-tablet {
+    display: none;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq_heading {
+  margin-bottom: 25px;
+  font-size: 25px;
+  font-weight: $fw-bold;
+  line-height: 30px;
+  color: $color-purple;
+
+  @include mobile-tablet {
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-weight: $fw-medium;
+    line-height: 18px;
+  }
+}
+
+.faq_accordions {
+  border-radius: 5px;
+  border: 1px solid $color-grey-8;
+}
+
+.acc_header {
+  font-size: 18px;
+  font-weight: $fw-regular;
+
+  @include mobile-tablet {
+    font-size: 12px;
+  }
+}
+
+.acc_description {
+  font-size: 15px;
+  font-weight: $fw-regular;
+  line-height: 28px;
+
+  @include mobile-tablet {
+    font-size: 10px;
+    line-height: 18px;
+  }
+}

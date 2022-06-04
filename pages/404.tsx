@@ -1,11 +1,17 @@
 import { NextPage } from "next"
+import { useRouter } from "next/router"
 
-import Link from "next/link"
 import { Button } from "UI"
 
 import s from "../styles/pages/page-not-found.module.scss"
 
 const PageNotFound: NextPage = () => {
+  const router = useRouter()
+
+  const handleClick = () => {
+    router.push("/")
+  }
+
   return (
     <>
       <div className={s.background}></div>
@@ -16,11 +22,9 @@ const PageNotFound: NextPage = () => {
           porta pharetra. Curabitur dolor sit amet venenatis purus ante.
         </p>
         <br />
-        <Link href={"/"}>
-          <a>
-            <Button className={s.button_purple}>Return to homepage</Button>
-          </a>
-        </Link>
+        <Button onClick={handleClick} className={s.button_purple}>
+          Return to homepage
+        </Button>
       </div>
     </>
   )

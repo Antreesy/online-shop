@@ -1,14 +1,16 @@
 //Global Dependencies
+import React from "react"
 import type { GetStaticProps, NextPage } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useTranslation } from "next-i18next"
 
 //Project Components
 import Head from "next/head"
-import Image from "next/image"
 import Link from "next/link"
 import LangRoute from "Сomponents/LanguageRouting/LangRoute"
-import { Header } from "Сomponents/Header"
+import { Header, Footer } from "Сomponents"
+
+import { footerNav } from "shared/constants/footernav"
 
 //Project Styles
 import styles from "styles/pages/Index.module.scss"
@@ -22,7 +24,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = "en" }) => ({
 const Index: NextPage = (props: any) => {
   const { t } = useTranslation("common")
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>ILONSI SHOP | Homepage</title>
       </Head>
@@ -38,7 +40,48 @@ const Index: NextPage = (props: any) => {
         <LangRoute lng="ru" />
 
         <p className={styles.description}>
-          UI Kit is on{" "}
+          Login -
+          <Link href="/login">
+            <a className={styles.title__link}>/login</a>
+          </Link>{" "}
+          page
+        </p>
+
+        <p className={styles.description}>
+          Register (for brands / influencers) -
+          <Link href="/register">
+            <a className={styles.title__link}>/register</a>
+          </Link>{" "}
+          page
+        </p>
+
+        <p className={styles.description}>
+          Influencers Page -
+          <Link href="/influencers">
+            <a className={styles.title__link}>/influencers</a>
+          </Link>{" "}
+          page
+        </p>
+
+        <p className={styles.description}>
+
+          Order success
+          <Link href="/order-success">
+            <a className={styles.title__link}>/order-success</a>
+          </Link>{" "}
+          page
+        </p>
+
+        <p className={styles.description}>
+          FAQ Page -
+          <Link href="/faq">
+            <a className={styles.title__link}>/faq</a>
+          </Link>{" "}
+          page
+        </p>
+
+        <p className={styles.description}>
+          UI Kit -{" "}
           <Link href="/components-example">
             <a className={styles.title__link}>/components-example</a>
           </Link>{" "}
@@ -46,27 +89,24 @@ const Index: NextPage = (props: any) => {
         </p>
 
         <p className={styles.description}>
-          Redux example is on{" "}
-          <Link href="/redux-example">
-            <a className={styles.title__link}>/redux-example</a>
+          Profile page -
+          <Link href="/account/profile">
+            <a className={styles.title__link}>/account/profile</a>
+          </Link>{" "}
+          page
+        </p>
+
+        <p className={styles.description}>
+          Payment page is on{" "}
+          <Link href="/payment">
+            <a className={styles.title__link}>/payment</a>
           </Link>{" "}
           page
         </p>
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+      <Footer links={footerNav} />
+    </>
   )
 }
 

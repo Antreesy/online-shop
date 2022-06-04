@@ -2,19 +2,35 @@
 
 .hexagon {
   position: relative;
+  display: block;
   width: 29px;
   height: 24px;
 
   & > span:first-child {
     position: absolute !important;
+    z-index: 1;
+
     inset: 0.5px;
   }
 
   & > span:last-child {
     position: absolute !important;
+    z-index: 1;
+
     inset: 0;
     margin: auto !important;
     width: 12px !important;
     height: 12px !important;
+  }
+
+  &:hover::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    box-shadow: 0 0 15px 10px $color-purple;
   }
 }

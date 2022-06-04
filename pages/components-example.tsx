@@ -3,61 +3,93 @@ import type { NextPage } from "next"
 
 //Project Components
 import Head from "next/head"
-import Image from "next/image"
-import Link from "next/link"
+
 import {
-  DatePicker,
-  Icon,
-  RadioGroup,
-  CheckboxGroup,
-  SocialIcon,
+  AccordionExamples,
+  ButtonExamples,
+  CheckboxExamples,
+  InputExamples,
+  CreditCardExamples,
+  PickerExamples,
+  TabsExamples,
+} from "Сomponents/Examples"
+
+import {
+  AddButton,
+  Card,
+  Carousel,
+  ItemCounter,
+  Range,
   Tabs,
-  Price
+  Price,
+  Icon,
+  SocialIcon,
 } from "UI"
-import ButtonExamples from "Сomponents/Examples/ButtonExamples"
-import AccordionExamples from "Сomponents/Examples/AccordionExamples"
-import { Header } from "Сomponents/Header"
+
+import {
+  AddressCard,
+  Footer,
+  Header,
+  Logo,
+  Notification,
+  ProfileSidebar,
+  SectionHeader,
+} from "Сomponents"
 
 //Project Helpers
-import { icons } from "shared/consts/icons"
-
-import {ProductItem} from "../UI/ProductItem/index"
+import { footerNav } from "shared/constants/footernav"
+import { Currency } from "shared/enums/currency"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
+import { icons } from "shared/constants/icons"
+
+const SampleCard = () => (
+  <Card
+    className={s.card_small}
+    imageSrc="/../public/assets/img/picture_1.png"
+    title="Gizem Sancak"
+    buttonTitle="Go To Store"
+    topButtonTitle="Follow"
+  />
+)
 
 const Home: NextPage = () => {
   return (
-    <div className={s.container}>
+    <>
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
 
-      <Header />
+      <Header withBreadcrumbs />
 
       <main className={s.main}>
-        <h1>UI Kit page</h1>
+        <SectionHeader
+          className={s.title}
+          title={"UI Kit page"}
+          actionText={"All Orders"}
+        />
 
         <Tabs
           className={s.example_tabs}
           labels={[
             "Buttons",
-            "Inputs and Pickers",
+            "Inputs",
+            "Pickers",
             "Icons",
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
-            "Price"
+            "Sidebar",
+            "Price",
+            "Counters",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
 
-            <div key={"Inputs and Pickers"} className={s.grid}>
-              <div>
-                <h2>DatePicker</h2>
-                <DatePicker initValue={new Date()} onChange={() => {}} />
-              </div>
-            </div>,
+            <InputExamples key={"Inputs"} />,
+
+            <PickerExamples key={"Pickers"} />,
 
             <div key={"Icons"} className={s.grid}>
               {icons.map((icon) => (
@@ -70,91 +102,124 @@ const Home: NextPage = () => {
                 <SocialIcon type="instagram" />
                 <SocialIcon type="youtube" />
               </div>
+              <Logo type="dark" />
             </div>,
 
-            <div key={"Tabs"} className={s.tabs}>
-              <p className={s.description}>default</p>
-              <Tabs
-                labels={["Sign In", "Sign Up"]}
-                values={["Sign In", "Sign Up"]}
-              />
-              <p className={s.description}>spaces</p>
-              <Tabs
-                labels={["Sign In", "Sign Up"]}
-                values={["Sign In", "Sign Up"]}
-                variant="spaces"
-              />
-              <p className={s.description}>no_border</p>
-              <Tabs
-                labels={["Sign In", "Sign Up"]}
-                values={["Sign In", "Sign Up"]}
-                variant="no_border"
-              />
-            </div>,
+            <TabsExamples key={"Tabs"} />,
 
-            <div key={"Checkboxes and Radio"} className={s.grid}>
-              <div>
-                <p>Rounded Checkboxes</p>
-                <CheckboxGroup rounded labels={["Men", "Women", "Unisex"]} />
-                <p>Square Checkboxes</p>
-                <CheckboxGroup
-                  color="#000"
-                  labels={["Men", "Women", "Unisex"]}
-                />
-                <p>Colored Checkboxes</p>
-                <CheckboxGroup
-                  color="#ff4e4e"
-                  colorChecked="#25754a"
-                  labels={["Men", "Women", "Unisex"]}
-                />
-
-                <p>Gender</p>
-                <RadioGroup
-                  elements={[
-                    { value: "female", label: "Female" },
-                    { value: "male", label: "Male" },
-                  ]}
-                />
-                <p>Type</p>
-                <RadioGroup
-                  elements={[
-                    { value: "string", label: "String" },
-                    { value: "number", label: "Number" },
-                    { value: "boolean", label: "Boolean" },
-                    { value: "any", label: "Any" },
-                  ]}
-                />
-              </div>
-            </div>,
+            <CheckboxExamples key={"Checkboxes and Radio"} />,
 
             <div key={"Accordion"}>
               <AccordionExamples />
             </div>,
+
+            <div key={"Sidebar"}>
+              <ProfileSidebar
+                labels={[
+                  { link: "/", text: "Profile" },
+                  { link: "/", text: "Address" },
+                  { link: "/", text: "Order" },
+                  { link: "/", text: "Payment" },
+                  { link: "/", text: "Notification" },
+                  {
+                    link: "/",
+                    text: "Dashboard",
+                    content: [{ link: "/", text: "Favorite" }],
+                  },
+                  { link: "/", text: "Help" },
+                  { link: "/", text: "Sign Out" },
+                ]}
+               title={'Sidebar example1'}/>
+            </div>,
+
             <div key={"Price"}>
-                <Price price={2030} oldPrice={2030} type="sale_black" />
-                <br/>
-                <div className={s.product_item_wrapper}>
-                  <ProductItem type={"sale"}/>
-                </div>
-              
-            </div>
+              <Price oldPrice={2030} price={1930} type="order" />
+              <Price oldPrice={2030} price={1930} type="cart" />
+              <Price oldPrice={2030} price={1930} type="primary" />
+              <Price oldPrice={2030} price={1930} type="sale" />
+              <Price oldPrice={2030} price={1930} type="sale_black" />
+              <Range
+                minQuantity={10000}
+                maxQuantity={1000000}
+                currency={Currency.RUB}
+              />
+            </div>,
+            <div key={"Counters"} style={{ display: "flex" }}>
+              <ItemCounter initValue={5} />
+              <ItemCounter initValue={5} large />
+            </div>,
+          ]}
+        />
+
+        <SectionHeader className={s.title} title={"Components page"} />
+
+        <Tabs
+          className={s.example_tabs}
+          labels={[
+            "Notification",
+            "Carousel",
+            "Add Button",
+            "Credit Card",
+            "Card",
+          ]}
+          values={[
+            <div key="Notification">
+              <Notification header={"Notification"}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                quam sequi vitae eius iusto perspiciatis facilis nesciunt
+                dignissimos provident ipsum? Nobis repellat atque ab nam magni
+                voluptas expedita facere recusandae.
+              </Notification>
+            </div>,
+
+            <div key={"Carousel"} className={s.carousel}>
+              <Carousel items={new Array(10).fill(SampleCard)} />
+            </div>,
+
+            <div key={"AddButton"} className={s.addbuttonlist}>
+              <div>
+                <AddButton />
+              </div>
+              <div>
+                <AddButton title="Add New Card" color="primary" />
+              </div>
+              <div>
+                <AddButton title="Add New Address" color="secondary" />
+              </div>
+              <div>
+                <AddButton
+                  title="Add Product"
+                  color="secondary"
+                  bgColor="white"
+                  large
+                />
+              </div>
+            </div>,
+
+            <CreditCardExamples key={"Credit Card"} />,
+
+            <div key={"Card"}>
+              <div className={s.grid}>
+                <SampleCard />
+                <Card
+                  className={s.card_small}
+                  imageSrc="/../public/assets/img/picture_2.png"
+                  title="Gizem Sancak"
+                  buttonTitle="Go To Store"
+                  isButtonHidden
+                />
+                <AddressCard
+                  title="title"
+                  text="nskjjknsjnkjdvmkjewnlkjwnljcnwjklen"
+                />
+              </div>
+            </div>,
           ]}
         />
       </main>
 
-      <footer className={s.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={s.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+      <Footer links={footerNav} />
+    </>
   )
 }
 
