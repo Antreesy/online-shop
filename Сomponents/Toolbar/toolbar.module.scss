@@ -1,0 +1,51 @@
+@import "/styles/style.scss";
+
+.toolbar {
+    display: flex;
+    float: right;
+    .select{
+        width: 120px;
+       > div{
+        padding: 6px;
+        margin: 0;
+        width: 120px;
+       }
+        
+        svg{
+            display: none;
+        }
+        fieldset{
+            width: 105px;
+            outline: none;
+            
+            border: 2px solid black !important;
+            border-radius: 0;
+            
+        }
+
+        .icon{
+            position: relative;
+            font-size: 10px;
+            top: -45px;
+            left: 80px;
+        }
+
+        
+    }
+  
+    .search{
+
+        
+        input{
+         height: 20px;
+         padding-left: 35px;
+
+        }
+        .icon{
+            position: relative;
+            top: -38px;
+            left: 15px;
+        }
+    }
+    
+}

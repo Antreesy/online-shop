@@ -12,6 +12,7 @@ import {
   CreditCardExamples,
   PickerExamples,
   TabsExamples,
+  ToolbarExample,
 } from "Сomponents/Examples"
 
 import {
@@ -140,6 +141,7 @@ const Home: NextPage = () => {
             "Add Button",
             "Credit Card",
             "Card",
+            "Toolbar"
           ]}
           values={[
             <div key="Notification">
@@ -193,6 +195,9 @@ const Home: NextPage = () => {
                 />
               </div>
             </div>,
+            <div key={"Toolbar"}>
+              <ToolbarExample />
+            </div>
           ]}
         />
       </main>

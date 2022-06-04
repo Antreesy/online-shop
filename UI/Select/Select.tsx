@@ -82,6 +82,7 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
       >
         {/* Hidden items */}
         <MenuItem
+        
           sx={{ display: "none" }}
           key={placeholder}
           value={placeholder}
@@ -100,6 +101,7 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
 
         {/* Visible items */}
         <SimpleBar
+        
           style={{ maxHeight: 180 }}
           className={s.scrollbar}
           autoHide={false}
