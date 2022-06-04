@@ -11,6 +11,7 @@ import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
 import { SupportSection } from "./SupportSection"
 import { ProfileSidebar } from "./ProfileSidebar"
+import ProductItem from "UI/ProductItem/ProductItem"
 
 export {
   AddressCard,
@@ -27,4 +28,5 @@ export {
   SizePicker,
   SupportSection,
   ProfileSidebar,
+  ProductItem
 }

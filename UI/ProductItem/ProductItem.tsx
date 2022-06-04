@@ -3,79 +3,65 @@ import cn from "classnames"
 import s from "./productItem.module.scss"
 
 import { Icon } from "../Icon/Icon"
-import Image from "next/image"
+import { PriceProps } from "UI/Price/Price"
+import Image, { ImageProps } from "next/image"
 
 import { Price } from "UI/Price"
-import { CurrencyType } from "UI/Price/Price"
-
-import T_shirt from "public/assets/img/T_shirt.png"
-
 
 interface ProductItemProps {
   title: string
   subtitle: string
   description: string
-  id: string
-  price: number
-  image: string
-  isFavorite: boolean
-  oldPrice?: number
-  currency?: CurrencyType
-  currencyFirst?: boolean
-  type: "order" | "cart" | "old" | "sale" | "sale_black" | "primary"
+  id: number
+  price: PriceProps
+  imageSrc: ImageProps["src"]
+  isFavorite?: boolean
   addButton?: boolean
-  influencer?: boolean
+  toggleFavorite?: (id: number) => void
+  onAddClick?: (id: number) => void
 }
 
 const ProductItem: React.FC<ProductItemProps> = (props) => {
-  const [isAddButton, toggleAddButton] = useState<boolean>(true)
+  const [isAddButton, toggleAddButton] = useState<boolean>(!!props.addButton)
 
   const {
-    title = "Yves Saint Laurent",
-    subtitle = "Black long sleeve men’s jacket",
-    description = "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu",
-    id = "123fdref44f",
+    title,
+    subtitle,
+    description,
+    id,
     price,
-    image = T_shirt,
+    imageSrc,
     isFavorite = true,
-    oldPrice,
-    currency,
-    currencyFirst,
-    type = "sale",
-    influencer = false,
-    addButton = true,
+    onAddClick,
+    toggleFavorite,
   } = props
-
-  const toggleFavorite = () => {
-    console.log("add to user favourite store")
-  }
-
-  const addToCart = () => {
-    console.log("add to user favourite store")
-    toggleAddButton(!isAddButton)
-  }
 
   return (
     <div className={s.product_item_container}>
       <div className={s.product_item_top}>
-        {!influencer ? (
+        {!!toggleFavorite ? (
           <div
             className={cn(s.product_favourites, { [s.isFavorite]: isFavorite })}
-            onClick={toggleFavorite}
+            onClick={() => toggleFavorite(id)}
           >
-            <Icon type="heart" />
+            <Icon type={"heart"} />
           </div>
         ) : null}
         <div className={s.product_item_image}>
-          <Image src={image} className={s.img} />
+          <Image src={imageSrc} className={s.img} alt={title} layout="fill" />
         </div>
       </div>
       <div className={s.product_item_bottom}>
-        {addButton ? (
+        {onAddClick ? (
           <div
-            onClick={addToCart}
-            className={isAddButton ? s.add_button_true : s.add_button_false}
-          ></div>
+            onClick={() => {
+              onAddClick(id)
+              toggleAddButton(!isAddButton)
+            }}
+            className={s.add_button}
+          >
+            <Icon type={isAddButton ? "plus" : "minus"} />
+          </div>
         ) : null}
 
         <div className={s.product_item_description}>
@@ -85,7 +71,7 @@ const ProductItem: React.FC<ProductItemProps> = (props) => {
         </div>
 
         <div className={s.price}>
-          <Price price={730} oldPrice={1030} type={type} />
+          <Price {...price} />
         </div>
       </div>
     </div>
