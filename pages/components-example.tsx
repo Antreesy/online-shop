@@ -32,9 +32,9 @@ import {
   Header,
   Logo,
   Notification,
+  ProductItem,
   ProfileSidebar,
-  SectionHeader,
-  ProductItem
+  SectionHeader
 } from "Сomponents"
 
 //Project Helpers
@@ -139,6 +139,7 @@ const Home: NextPage = () => {
               <Price oldPrice={2030} price={1930} type="primary" />
               <Price oldPrice={2030} price={1930} type="sale" />
               <Price oldPrice={2030} price={1930} type="sale_black" />
+                
               <Range
                 minQuantity={10000}
                 maxQuantity={1000000}

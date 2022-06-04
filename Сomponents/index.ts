@@ -7,11 +7,11 @@ import { Footer } from "./Footer"
 import { Header, HeaderLight } from "./Header"
 import { Logo } from "./Logo"
 import { Notification } from "./Notification"
+import { ProductItem } from "./ProductItem"
 import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
 import { SupportSection } from "./SupportSection"
 import { ProfileSidebar } from "./ProfileSidebar"
-import ProductItem from "UI/ProductItem/ProductItem"
 
 export {
   AddressCard,
@@ -24,9 +24,9 @@ export {
   HeaderLight,
   Logo,
   Notification,
+  ProductItem,
   SectionHeader,
   SizePicker,
   SupportSection,
-  ProfileSidebar,
-  ProductItem
+  ProfileSidebar
 }

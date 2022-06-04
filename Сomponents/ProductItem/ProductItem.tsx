@@ -1,12 +1,13 @@
 import { useState } from "react"
 import cn from "classnames"
-import s from "./productItem.module.scss"
 
-import { Icon } from "../Icon/Icon"
 import { PriceProps } from "UI/Price/Price"
 import Image, { ImageProps } from "next/image"
 
 import { Price } from "UI/Price"
+import { Icon } from "../../UI/Icon/index"
+
+import s from "./productItem.module.scss"
 
 interface ProductItemProps {
   title: string
