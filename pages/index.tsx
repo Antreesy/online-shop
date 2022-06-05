@@ -7,7 +7,6 @@ import { useTranslation } from "next-i18next"
 //Project Components
 import Head from "next/head"
 import Link from "next/link"
-import LangRoute from "Сomponents/LanguageRouting/LangRoute"
 import { Header, Footer } from "Сomponents"
 
 import { footerNav } from "shared/constants/footernav"
@@ -36,8 +35,8 @@ const Index: NextPage = (props: any) => {
           {props.locale}
           {t("hello")}
         </h2>
-        <LangRoute lng="en" />
-        <LangRoute lng="ru" />
+
+
 
         <p className={styles.description}>
           Login -

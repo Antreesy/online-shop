@@ -3,8 +3,10 @@ import { Button, SocialIcon } from "UI"
 import { Breadcrumbs, BurgerMenu, Logo } from "Сomponents"
 
 import { DrawerItems } from "shared/constants/menuItems"
+import LangRoute from "Сomponents/LanguageRouting/LangRoute"
 
 import s from "./header.module.scss"
+import LanguageSelect from "Сomponents/LanguageRouting/LanguageSelect"
 
 interface HeaderProps {
   withBreadcrumbs?: boolean
@@ -33,6 +35,7 @@ const Header: React.FC<HeaderProps> = ({ withBreadcrumbs }) => {
             iconRight="arrow_down"
           >
             En
+
           </Button>
         </div>
       </div>
@@ -68,13 +71,10 @@ const Header: React.FC<HeaderProps> = ({ withBreadcrumbs }) => {
           >
             Basket
           </Button>
-          <Button
-            className={s.button_lang_bottom}
-            disableElevation
-            iconRight="arrow_down"
-          >
-            En
-          </Button>
+          {/*  */}
+          <LanguageSelect />
+
+
         </div>
 
         <div className={s.bottom_right_group_mobile}>
@@ -93,7 +93,7 @@ const Header: React.FC<HeaderProps> = ({ withBreadcrumbs }) => {
       </div>
 
       {withBreadcrumbs && <Breadcrumbs />}
-    </header>
+    </header >
   )
 }
 
