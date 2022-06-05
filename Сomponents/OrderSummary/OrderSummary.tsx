@@ -15,8 +15,14 @@ interface OrderSummaryProps {
 const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
   const { subtotal, shipping, discount, kdv } = props
   const [inputValue, setInputValue] = useState<string>("")
-  const summ =
+  const sum =
     Number(subtotal) + Number(shipping) + Number(discount) + Number(kdv)
+  const getData = [
+    { name: "Subtotal", value: subtotal },
+    { name: "Shipping cost", value: shipping },
+    { name: "Discount", value: discount },
+    { name: "KDV", value: kdv },
+  ]
 
   return (
     <>
@@ -29,7 +35,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
                 label={null}
                 setValue={setInputValue}
                 value={inputValue}
-                placeholder={"value"}
+                placeholder={"HZDASK2410AS"}
               />
             </div>
             <Button className={s.button}>Apply</Button>
@@ -39,40 +45,21 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
 
       <div className={s.reciept}>
         <ul className={s.prices}>
-          <li className={s.price}>
-            <p className={s.name}>Subtotal</p>
-            <p className={s.dots}>:</p>
-            <p className={s.priceValue}>
-              <>₺{subtotal}</>
-            </p>
-          </li>
-          <li className={s.price}>
-            <p className={s.name}>Shipping cost</p>
-            <p className={s.dots}>:</p>
-            <p className={s.priceValue}>
-              <>₺{shipping}</>
-            </p>
-          </li>
-          <li className={s.price}>
-            <p className={s.name}>Discount</p>
-            <p className={s.dots}>:</p>
-            <p className={s.priceValue}>
-              <>₺{discount}</>
-            </p>
-          </li>
-          <li className={s.price}>
-            <p className={s.name}>KDV</p>
-            <p className={s.dots}>:</p>
-            <p className={s.priceValue}>
-              <>₺{kdv}</>
-            </p>
-          </li>
+          {getData.map((data) => (
+             <li key={data.name} className={s.price}>
+             <p className={s.name}>{data.name}</p>
+             <p className={s.dots}>:</p>
+             <p className={s.priceValue}>
+               <>₺{data.value}</>
+             </p>
+           </li> 
+          ))}
         </ul>
 
         <div className={s.submitField}>
           <div className={s.totalField}>
             <p className={s.total}>Total:</p>
-            <p className={s.totalPrice}>₺{summ}</p>
+            <p className={s.totalPrice}>₺{sum}</p>
           </div>
 
           <CheckboxGroup

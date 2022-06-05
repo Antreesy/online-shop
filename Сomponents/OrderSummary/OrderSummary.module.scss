@@ -23,6 +23,10 @@
   margin: 23px 0 28px;
   padding: 0 6px 0;
   @extend %frame;
+
+  @include mobile {
+      max-width: 310px;
+  }
 }
 
 .details {
@@ -42,16 +46,32 @@
   font-style: normal;
   line-height: 1.19;
   letter-spacing: normal;
+
+  @include mobile {
+      width: 92px;
+      height: 41px;
+      font-size: 14px;
+      line-height: 1.21;
+  }
 }
 
 .input {
   width: 216px;
   height: 46px;
+
+  @include mobile {
+      width: 180px;
+      height: 42px;
+  }
 }
 
 .reciept {
   @extend %frame;
   padding: 31px 22px 29px;
+  
+  @include mobile {
+    max-width: 310px;
+}
 }
 
 .prices {
@@ -89,6 +109,10 @@
   letter-spacing: 0.14px;
   text-align: left;
   color: #000;
+
+  @include mobile {
+      left: 180px;
+  }
 }
 
 .priceValue {
@@ -165,4 +189,11 @@
   letter-spacing: normal;
   text-align: center;
   color: #fff;
+
+  @include mobile {
+      width: 300px;
+      height: 45px;
+      font-size: 15px;
+      line-height: 1.2;
+  }
 }
