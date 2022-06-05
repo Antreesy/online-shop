@@ -16,7 +16,7 @@ import styles from "styles/pages/Index.module.scss"
 
 export const getStaticProps: GetStaticProps = async ({ locale = "en" }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common", "footer"])),
+    ...(await serverSideTranslations(locale, ["common", "pnt"])),
   },
 })
 

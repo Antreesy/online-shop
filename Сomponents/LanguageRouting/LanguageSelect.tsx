@@ -7,6 +7,7 @@ import s from './LanguageSelect.module.scss'
 const langs = [
     { code: 'en', title: 'English' },
     { code: 'ru', title: 'Russian' },
+    { code: 'tr', title: 'Türk' },
 ]
 // module.exports.i18n.defaultLanguage
 export default function LanguageSelect() {
