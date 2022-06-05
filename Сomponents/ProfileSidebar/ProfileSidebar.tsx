@@ -1,20 +1,23 @@
-import React, { useState } from "react"
+import React, {useState} from "react"
 import { useRouter } from "next/router"
 
 import { Accordion } from "UI"
 import Link from "next/link"
 
+import { Icon } from "UI"
 import s from "./profileSidebar.module.scss"
+import { IconType } from "UI/Icon/Icon"
 
 type LabelType = {
   link: string
   text: string
+  icon?:IconType
+  iconColor?:string
 }
 
 type LabelTypeWithContent = LabelType & {
   content?: LabelType[]
 }
-
 interface ProfileSidebarProps {
   title: string
   labels: LabelTypeWithContent[]
@@ -23,12 +26,14 @@ interface ProfileSidebarProps {
 export const ProfileSidebar: React.FC<ProfileSidebarProps> = (props) => {
   const { title, labels } = props
   const { pathname } = useRouter()
+  const [text, setLabel] = useState("")
 
-  const SidebarItem = ({ label }: { label: LabelType }) => {
+  const SidebarItem = ({ label }: { label: LabelType  }) => {
     return (
       <li>
-        <Link href={label.link}>
-          <a className={pathname === label.link ? `${s.active}` : undefined}>
+        {label.icon && label.text == text? <Icon type={label.icon}  color={label.iconColor}/> : null}
+        <Link href={""}>
+          <a className={label.text === text ? `${s.active}` : undefined} onClick={() => setLabel(label.text)}>
             {label.text}
           </a>
         </Link>

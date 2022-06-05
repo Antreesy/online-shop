@@ -66,6 +66,9 @@
         color: #cccccc;
       }
     }
+    & ul > li > span {
+      padding-right: 10px;
+    }
     & .accordion {
       border-bottom: 1px solid #bababa;
       margin: 0;
