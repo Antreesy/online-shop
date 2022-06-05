@@ -116,22 +116,63 @@ const Home: NextPage = () => {
             <div key={"Sidebar"}>
               <ProfileSidebar
                 labels={[
-                  { link: "/", text: "Profile", icon: "account", iconColor:"#8100ef"},
-                  { link: "/", text: "Address", icon:"location", iconColor:"#8100ef"},
-                  { link: "/", text: "Order", icon:"basket", iconColor:"#8100ef" },
-                  { link: "/", text: "Payment", icon:"credit_card", iconColor:"#8100ef" },
-                  { link: "/", text: "Notification", icon:"bell_filled", iconColor:"#8100ef" },
+                  {
+                    link: "/",
+                    text: "Profile",
+                    icon: "account",
+                    iconColor: "#8100ef",
+                  },
+                  {
+                    link: "/",
+                    text: "Address",
+                    icon: "location",
+                    iconColor: "#8100ef",
+                  },
+                  {
+                    link: "/",
+                    text: "Order",
+                    icon: "basket",
+                    iconColor: "#8100ef",
+                  },
+                  {
+                    link: "/",
+                    text: "Payment",
+                    icon: "credit_card",
+                    iconColor: "#8100ef",
+                  },
+                  {
+                    link: "/",
+                    text: "Notification",
+                    icon: "bell_filled",
+                    iconColor: "#8100ef",
+                  },
                   {
                     link: "/",
                     text: "Dashboard",
-                    content: [{ link: "/", text: "Favorite", icon:"heart", iconColor:"#8100ef"}],
+                    content: [
+                      {
+                        link: "/",
+                        text: "Favorite",
+                        icon: "heart",
+                        iconColor: "#8100ef",
+                      },
+                    ],
                   },
-                  { link: "/", text: "Help",},
-                  { link: "/", text: "Sign Out", icon:"out_sign", iconColor:"#8100ef"},
+                  {
+                    link: "/",
+                    text: "Help",
+                    icon: "question",
+                    iconColor: "#8100ef",
+                  },
+                  {
+                    link: "/",
+                    text: "Sign Out",
+                    icon: "out_sign",
+                    iconColor: "#8100ef",
+                  },
                 ]}
-               title={'MY ACCOUNT'}
-
-               />
+                title={"MY ACCOUNT"}
+              />
             </div>,
 
             <div key={"Price"}>
@@ -166,7 +207,7 @@ const Home: NextPage = () => {
           ]}
           values={[
             <div key="Notification">
-              <Notification header={"Notification"} >
+              <Notification header={"Notification"}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
                 quam sequi vitae eius iusto perspiciatis facilis nesciunt
                 dignissimos provident ipsum? Nobis repellat atque ab nam magni
