@@ -12,7 +12,6 @@ type LabelType = {
   link: string
   text: string
   icon?: IconType
-  iconColor?: string
 }
 
 type LabelTypeWithContent = LabelType & {
@@ -31,9 +30,9 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = (props) => {
     return (
       <li>
         {label.icon && pathname === label.link ? (
-          <Icon type={label.icon} color={label.iconColor} />
+          <Icon type={label.icon}  />
         ) : null}
-        <Link href={""}>
+        <Link href={label.link}>
           <a className={pathname === label.link ? `${s.active}` : undefined}>
             {label.text}
           </a>

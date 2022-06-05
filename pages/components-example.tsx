@@ -120,31 +120,26 @@ const Home: NextPage = () => {
                     link: "/",
                     text: "Profile",
                     icon: "account",
-                    iconColor: "#8100ef",
                   },
                   {
                     link: "/",
                     text: "Address",
                     icon: "location",
-                    iconColor: "#8100ef",
                   },
                   {
                     link: "/",
                     text: "Order",
                     icon: "basket",
-                    iconColor: "#8100ef",
                   },
                   {
                     link: "/",
                     text: "Payment",
                     icon: "credit_card",
-                    iconColor: "#8100ef",
                   },
                   {
                     link: "/",
                     text: "Notification",
                     icon: "bell_filled",
-                    iconColor: "#8100ef",
                   },
                   {
                     link: "/",
@@ -154,7 +149,6 @@ const Home: NextPage = () => {
                         link: "/",
                         text: "Favorite",
                         icon: "heart",
-                        iconColor: "#8100ef",
                       },
                     ],
                   },
@@ -162,13 +156,11 @@ const Home: NextPage = () => {
                     link: "/",
                     text: "Help",
                     icon: "question",
-                    iconColor: "#8100ef",
                   },
                   {
                     link: "/",
                     text: "Sign Out",
                     icon: "out_sign",
-                    iconColor: "#8100ef",
                   },
                 ]}
                 title={"MY ACCOUNT"}
