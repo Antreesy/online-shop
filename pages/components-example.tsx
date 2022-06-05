@@ -129,7 +129,8 @@ const Home: NextPage = () => {
                   { link: "/", text: "Help" },
                   { link: "/", text: "Sign Out" },
                 ]}
-               title={'Sidebar example1'}/>
+                title={"Sidebar example1"}
+              />
             </div>,
 
             <div key={"Price"}>

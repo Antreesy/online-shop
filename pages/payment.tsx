@@ -10,6 +10,8 @@ import { footerNav } from "shared/constants/footernav"
 import useResize from "shared/hooks/useResize"
 import { creditcardsData } from "shared/consts/creditcardsData"
 
+import { CardForm } from "UI/CardForm"
+
 import s from "styles/pages/payment.module.scss"
 
 const Payment: NextPage = () => {
@@ -41,20 +43,7 @@ const Payment: NextPage = () => {
           ))}
         </Card>
         <AddButton title="Add New Card" />
-        <Card className={s.detailsContainer}>
-          <CreditCard
-            size={width <= 768 ? 210 : 300}
-            isColored
-            key={4}
-            id={8375}
-            cardNumber="1234 8547 7294 3959"
-            cardHolder="Test Test"
-            expireDate="01/2023"
-            onDelete={() => {
-              console.log("test")
-            }}
-          />
-        </Card>
+        <CardForm />
       </main>
 
       <Footer links={footerNav} />

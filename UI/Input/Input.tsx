@@ -19,6 +19,7 @@ interface InputProps {
   isRequired?: boolean
   type?: string
   errorText?: React.ReactNode
+  inputProps?: any
 }
 
 export const Input: React.FC<InputProps> = (props) => {
@@ -33,6 +34,7 @@ export const Input: React.FC<InputProps> = (props) => {
     isRequired = false,
     type = "text",
     errorText = "",
+    inputProps,
   } = props
   return (
     <div className={s[variant]}>
@@ -42,11 +44,12 @@ export const Input: React.FC<InputProps> = (props) => {
           variant="outlined"
           onChange={(e) => setValue(e.target.value)}
           value={value}
-          classes={{ root: s[className] }}
+          classes={{ root: className }}
           className={s.input}
           placeholder={placeholder}
           required={isRequired}
           type={type}
+          inputProps={inputProps}
         />
         {variant === "footer" || variant === "black_button" ? (
           <Button>{buttonLabel}</Button>

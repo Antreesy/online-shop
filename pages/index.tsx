@@ -64,7 +64,6 @@ const Index: NextPage = (props: any) => {
         </p>
 
         <p className={styles.description}>
-
           Order success
           <Link href="/order-success">
             <a className={styles.title__link}>/order-success</a>
