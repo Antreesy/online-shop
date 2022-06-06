@@ -4,7 +4,7 @@ import { Button, Icon } from "UI"
 import s from "./input.module.scss"
 
 interface InputProps {
-  label: React.ReactNode
+  label?: React.ReactNode
   setValue: (newValue: string) => void
   value: string
   placeholder?: string
@@ -36,7 +36,7 @@ export const Input: React.FC<InputProps> = (props) => {
   } = props
   return (
     <div className={s[variant]}>
-      <InputLabel className={s.label}>{label}</InputLabel>
+      {label && <InputLabel className={s.label}>{label}</InputLabel>}
       <div className={s.inputWrapper}>
         <TextField
           variant="outlined"

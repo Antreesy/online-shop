@@ -1,21 +1,11 @@
-import { SelectChangeEvent } from "@mui/material"
-import React, { useState } from "react"
 import { Toolbar } from "Сomponents/Toolbar"
 
 export const ToolbarExample = () => {
-  const [inputValue, setInputValue] = useState<string>("")
-  const [selectValue, setSelectValue] = useState<string>("")
-  const values = ["first", "second", "third"]
+  const values = [
+    { title: "first", value: 1 },
+    { title: "second", value: 2 },
+    { title: "third", value: 3 },
+  ]
 
-  return (
-    <div>
-      <Toolbar
-        inputValue={inputValue}
-        setInputValue={setInputValue}
-        values={values}
-        setSelectValue={setSelectValue}
-        selectValue={selectValue}
-      />
-    </div>
-  )
+  return <Toolbar values={values} />
 }

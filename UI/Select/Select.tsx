@@ -1,14 +1,14 @@
 import { useState } from "react"
 import SimpleBar from "simplebar-react"
 import cn from "classnames"
+import "simplebar-react/dist/simplebar.min.css"
 
 import { InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material"
 import { Icon } from "UI"
 
-import "simplebar-react/dist/simplebar.min.css"
 import s from "./select.module.scss"
 
-type SelectItem = {
+export type SelectItem = {
   title: string
   value: string | number
 }
@@ -17,13 +17,14 @@ interface SelectProps {
   className?: string
   selectClassName?: string
   itemClassName?: string
+  iconClassName?: string
   isError?: boolean
   isDisabled?: boolean
   label?: string
   placeholder?: string
-  items: SelectItem[]
+  values: SelectItem[]
   initValue?: string
-  onChange(selected: string | number): void
+  onChange?: (selected: string | number) => void
 }
 
 const CustomSelect: React.FC<SelectProps> = (props) => {
@@ -31,7 +32,8 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
     className,
     selectClassName,
     itemClassName,
-    items,
+    iconClassName,
+    values,
     placeholder = "Choose option",
     label,
     onChange,
@@ -43,21 +45,25 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
   const [value, setValue] = useState<string | number>(initValue ?? placeholder)
 
   const handleSelect = (value: string | number) => {
-    onChange(value)
+    onChange?.(value)
     setValue(value)
   }
 
-  const selectIcon = () => <Icon type="arrow_down" className={s.selectIcon} />
 
   const labelClass = cn(s.select_label, className)
   const selectClass = cn(s.select, selectClassName)
   const itemClass = cn(s.item, itemClassName)
+  const iconClass = cn(s.selectIcon, iconClassName)
+
+  const selectIcon = () => <Icon type="arrow_down" className={iconClass} />
 
   return (
     <>
-      <InputLabel className={labelClass} id="select-label">
-        {label}
-      </InputLabel>
+      {label && (
+        <InputLabel className={labelClass} id="select-label">
+          {label}
+        </InputLabel>
+      )}
 
       <Select
         className={selectClass}
@@ -80,7 +86,7 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
           select: s.select,
         }}
       >
-        {/* Hidden items */}
+        {/* Hidden values */}
         <MenuItem
           sx={{ display: "none" }}
           key={placeholder}
@@ -88,7 +94,7 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
         >
           {placeholder}
         </MenuItem>
-        {items.map((item) => (
+        {values.map((item) => (
           <MenuItem
             sx={{ display: "none" }}
             key={item.title}
@@ -98,13 +104,13 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
           </MenuItem>
         ))}
 
-        {/* Visible items */}
+        {/* Visible values */}
         <SimpleBar
           style={{ maxHeight: 180 }}
           className={s.scrollbar}
           autoHide={false}
         >
-          {items.map((item) => {
+          {values.map((item) => {
             return (
               <MenuItem
                 className={itemClass}
@@ -119,8 +125,8 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
             )
           })}
         </SimpleBar>
-        {!items.length && (
-          <MenuItem sx={{ pointerEvents: "none" }} key={"no-items"} value={""}>
+        {!values.length && (
+          <MenuItem sx={{ pointerEvents: "none" }} key={"no-values"} value={""}>
             Nothing to select
           </MenuItem>
         )}

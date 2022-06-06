@@ -4,7 +4,7 @@ import { NextPage } from "next"
 import Head from "next/head"
 
 import { Grid } from "@mui/material"
-import { Breadcrumbs, Footer, Header } from "Сomponents"
+import { Breadcrumbs, Footer, Header, Toolbar } from "Сomponents"
 import { Card, Input, Icon, Pagination } from "UI"
 
 import card_image from "public/assets/img/card.png"
@@ -29,24 +29,8 @@ const influencers: NextPage = () => {
           <Breadcrumbs />
         </div>
         <div className={s.container}>
-          <div className={s.toolbar}>
-            <div className={s.search}>
-              <Input
-                label=""
-                value={value}
-                setValue={setValue}
-                variant="black_outline"
-                placeholder={"Search"}
-              />
-              <Icon type="search" className={s.icon} />
-            </div>
-            <div className={s.select}>
-              <select placeholder="Filter" value="Filter">
-                <option>Filter</option>
-              </select>
-              <Icon type="arrow_down" className={s.icon} />
-            </div>
-          </div>
+          <Toolbar className={s.toolbar} values={[]} />
+
           <Grid container spacing={2} className={s.card_wrapper}>
             {Array.from(Array(24)).map((item) => (
               <Grid

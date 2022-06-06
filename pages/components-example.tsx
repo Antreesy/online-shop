@@ -147,7 +147,7 @@ const Home: NextPage = () => {
             "Add Button",
             "Credit Card",
             "Card",
-            "Toolbar"
+            "Toolbar",
             "ProductItem",
           ]}
           values={[

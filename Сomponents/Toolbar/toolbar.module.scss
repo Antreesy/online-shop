@@ -2,43 +2,57 @@
 
 .toolbar {
   display: flex;
-  float: right;
-  .select {
-    width: 120px;
-    > div {
-      padding: 6px;
-      margin: 0;
-      width: 120px;
-    }
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+}
 
-    svg {
-      display: none;
-    }
-    fieldset {
-      width: 105px;
-      outline: none;
+.search {
+  position: relative;
+  max-width: 386px;
+  width: 100%;
+  height: 55px;
 
-      border: 2px solid black !important;
-      border-radius: 0;
-    }
+  input {
+    padding-left: 35px;
 
-    .icon {
-      position: relative;
-      font-size: 10px;
-      top: -45px;
-      left: 80px;
+    &::placeholder {
+      opacity: 1;
+      font-weight: $fw-medium;
     }
   }
 
-  .search {
-    input {
-      height: 20px;
-      padding-left: 35px;
-    }
-    .icon {
-      position: relative;
-      top: -38px;
-      left: 15px;
+  @include mobile {
+    max-width: 100%;
+  }
+}
+
+.searchIcon {
+  position: absolute;
+  top: calc(50% - 0.5em);
+  left: 15px;
+}
+
+.select {
+  width: 122px;
+  height: 55px;
+  border: 2px solid $color-black !important;
+  border-radius: 0;
+  box-sizing: border-box;
+  box-shadow: none;
+
+  @include mobile {
+    max-width: 100%;
+    width: 100%;
+
+    & > div {
+      max-width: 100%;
     }
   }
+}
+
+.selectIcon {
+  color: $color-black;
+  font-size: 10px;
+  right: 10px;
 }
