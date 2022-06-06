@@ -43,6 +43,7 @@ import { Currency } from "shared/enums/currency"
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
 import { icons } from "shared/constants/icons"
+import OrderItem from "Сomponents/OrderItem/OrderItem"
 
 const SampleCard = () => (
   <Card
@@ -129,7 +130,7 @@ const Home: NextPage = () => {
                   { link: "/", text: "Help" },
                   { link: "/", text: "Sign Out" },
                 ]}
-               title={'Sidebar example1'}/>
+                title={'Sidebar example1'} />
             </div>,
 
             <div key={"Price"}>
@@ -217,6 +218,8 @@ const Home: NextPage = () => {
           ]}
         />
       </main>
+
+      <OrderItem />
 
       <Footer links={footerNav} />
     </>

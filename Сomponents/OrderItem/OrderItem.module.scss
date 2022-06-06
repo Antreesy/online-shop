@@ -1,0 +1,308 @@
+@import 'styles/style.scss';
+
+.orderItem {
+    padding-top: 35px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 3px 25px 0 rgba(0, 0, 0, 0.06);
+    width: 90%;
+    margin-bottom: 200px;
+    margin: auto;
+
+
+    >p {
+        font-size: 18px;
+        background-color: #ededed;
+        padding: 20px 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+
+.mainInfo {
+    margin: 0px 35px 35px 35px;
+
+    @include mobile {
+        margin: 0px 20px 20px 20px;
+    }
+}
+
+.orderTop {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding-bottom: 35px;
+
+    @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 0px;
+        border: none;
+
+    }
+}
+
+.orderBottom {
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 10px;
+    }
+}
+
+.topLeft {
+    display: flex;
+    width: 100%;
+
+    @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.topRight {
+    font-size: 18px;
+
+    @include mobile {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+
+    }
+}
+
+.cashItem {
+    height: 100%;
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
+    padding-right: 50px;
+    font-size: 18px;
+
+    @include tablet {
+        padding-right: 20px;
+    }
+
+    @include mobile {
+        padding-right: 0;
+        border: none;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:last-child {
+            border-bottom: 1px solid #d0d0d0;
+        }
+    }
+}
+
+.cashItem:not(:first-child) {
+    padding-left: 30px;
+
+    @include mobile {
+        padding-left: 0;
+    }
+}
+
+.userBox {
+    display: flex;
+    align-items: center;
+
+    @include mobile {
+        margin-bottom: 18px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    span {
+        text-decoration: underline;
+        font-size: 18px;
+    }
+
+    .userBtn {
+        width: 70px;
+        height: 70px;
+        border-radius: 100%;
+        margin-right: 25px;
+        background-color: #fff;
+        color: $color-purple;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    }
+}
+
+.detailBtn {
+    font-size: 18px;
+    padding-left: 60px;
+    padding-right: 60px;
+
+    @include mobile {
+        width: 100%;
+    }
+}
+
+.title {
+    color: $color-purple;
+}
+
+.ordersInformation {
+    display: flex;
+    padding: 35px 100px;
+
+    @include tablet {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    @include mobile {
+        flex-direction: column;
+        padding: 20px;
+    }
+}
+
+.deliveryInfo {
+    width: 50%;
+    border-right: 1px solid #d0d0d0;
+
+    @include tablet {
+        border-right: none;
+        border-bottom: 1px solid #d0d0d0;
+        width: 100%;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+    }
+
+    @include mobile {
+        width: 100%;
+        border-bottom: 1px solid #d0d0d0;
+        padding-bottom: 20px;
+        border-right: none;
+        margin-bottom: 30px;
+
+    }
+
+    padding-right: 30px;
+
+    h2 {
+        margin-bottom: 20px;
+    }
+}
+
+.paymentInfo {
+    width: 50%;
+    padding-left: 120px;
+
+    @include tablet {
+        width: 100%;
+
+        padding-left: 0;
+    }
+
+    @include mobile {
+        width: 100%;
+
+        padding-left: 0;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    p {
+        display: flex;
+        justify-content: space-between;
+
+        @include mobile {
+            font-size: 15px;
+        }
+    }
+}
+
+.amountPaid {
+    color: $color-purple;
+    padding-top: 20px;
+}
+
+
+.cardsArea {
+    padding: 30px;
+
+    >p {
+        color: $color-purple;
+        text-decoration: underline;
+        margin-bottom: 30px;
+    }
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+   
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cardItem {
+    display: flex;
+    margin-bottom: 20px;
+    margin-right: 20px;
+
+    @include tablet {
+        flex-direction: column;
+    }
+
+    @include mobile {
+        flex-direction: column;
+    }
+}
+
+.image {
+    min-width: 15rem;
+    height: 16.25rem;
+    width: 15rem;
+    background-color: #f4f4f4;
+    margin-right: 20px;
+
+    @include tablet {
+        min-width: none;
+        width: 152px;
+        height: 164px;
+    }
+
+    @include mobile {
+        min-width: none;
+        width: 152px;
+        height: 164px;
+    }
+}
+
+.cardInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text {
+    .title {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .subtitile {
+        margin-bottom: 5px;
+
+
+    }
+
+    .description {
+        color: #888888;
+    }
+}
