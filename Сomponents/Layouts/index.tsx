@@ -1,10 +1,12 @@
 import React from "react"
+import { useRouter } from "next/router"
 
 import { CommonLayout } from "./CommonLayout"
 import { ProfileLayout } from "./ProfileLayouut"
 import { LightLayout } from "./LightLayout"
 
-import { useRouter } from "next/router"
+import { profilePaths, lightPaths, basePaths } from "shared/constants/paths"
+import { Roles } from "shared/enums/roles"
 
 export interface LayoutProps {
   children: React.ReactElement
@@ -12,17 +14,18 @@ export interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const router = useRouter()
-  console.log(router)
-  if (router.pathname.startsWith("/account")) {
-    return <ProfileLayout>{children}</ProfileLayout>
-  } else if (router.pathname.startsWith("/faq")) {
-    return <ProfileLayout>{children}</ProfileLayout>
-  } else if (router.pathname.startsWith("/register")) {
+
+  const findPath = (element: string) =>
+    router.pathname.startsWith(`/${element}`)
+
+  if (profilePaths.find(findPath)) {
+    return <ProfileLayout role={Roles.CUSTOMER}>{children}</ProfileLayout>
+  } else if (lightPaths.find(findPath)) {
     return <LightLayout>{children}</LightLayout>
-  } else if (router.pathname.startsWith("/login")) {
-    return <LightLayout>{children}</LightLayout>
-  } else {
+  } else if (basePaths.find(findPath)) {
     return <CommonLayout>{children}</CommonLayout>
+  } else {
+    return children
   }
 }
 

@@ -4,28 +4,22 @@ import { Footer, Header, ProfileSidebar } from "Сomponents"
 import { footerNav } from "shared/constants/footernav"
 import { LayoutProps } from ".."
 
+import { Roles } from "shared/enums/roles"
+import { sidebarTabs } from "shared/constants/sidebartabs"
 import s from "./profilelayout.module.scss"
 
-const ProfileLayout: React.FC<LayoutProps> = ({ children }) => {
+interface ProfileLayoutProps extends LayoutProps {
+  role: Roles
+}
+
+const ProfileLayout: React.FC<ProfileLayoutProps> = ({ children, role }) => {
   return (
     <>
       <Header withBreadcrumbs />
       <main className={s.main}>
         <div className={s.container}>
           <div className={s.aside}>
-            <ProfileSidebar
-              title={"My Account"}
-              labels={[
-                { link: "/account/profile", text: "Profile" },
-                { link: "/account/address", text: "Address" },
-                { link: "/account/orders", text: "Orders" },
-                { link: "/account/payment", text: "Payment" },
-                { link: "/account/notifications", text: "Notifications" },
-                { link: "/account/favorites", text: "Favorites" },
-                { link: "/account/help", text: "Help" },
-                { link: "/account/signout", text: "Sign Out" },
-              ]}
-            />
+            <ProfileSidebar title={"My Account"} labels={sidebarTabs[role]} />
           </div>
           {children}
         </div>

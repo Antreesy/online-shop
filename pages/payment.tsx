@@ -7,7 +7,7 @@ import { AddButton, CreditCard } from "UI"
 import { SectionHeader } from "Сomponents"
 
 import useResize from "shared/hooks/useResize"
-import { creditcardsData } from "shared/consts/creditcardsData"
+import { creditcardsData } from "shared/constants/creditcardsData"
 
 import s from "styles/pages/payment.module.scss"
 

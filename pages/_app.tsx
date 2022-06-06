@@ -54,32 +54,3 @@ const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
 }
 
 export default appWithTranslation(MyApp)
-
-// import React from 'react'
-// import App from 'next/app'
-// import SiteLayout from '../components/SiteLayout'
-// import AccountSettingsLayout from '../components/AccountSettingsLayout'
-
-// class MyApp extends App {
-//   render() {
-//     const { Component, pageProps, router } = this.props
-
-//     if (router.pathname.startsWith('/account-settings/')) {
-//       return (
-//         <SiteLayout>
-//           <AccountSettingsLayout>
-//             <Component {...pageProps}></Component>
-//           </AccountSettingsLayout>
-//         </SiteLayout>
-//       )
-//     }
-
-//     return (
-//       <SiteLayout>
-//         <Component {...pageProps}></Component>
-//       </SiteLayout>
-//     )
-//   }
-// }
-
-// export default MyApp
