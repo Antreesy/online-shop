@@ -62,3 +62,13 @@ $main-gradient-revert: linear-gradient(
   $color-purple 100%
 );
 $light-gradient: linear-gradient(90deg, $color-cyan -5%, $color-purple 210%);
+$purple50-cyan100-gradient: linear-gradient(
+  90deg,
+  $color-purple 50%,
+  $color-cyan 100%
+);
+$cyan0-purple50-gradient: linear-gradient(
+  90deg,
+  $color-cyan 0%,
+  $color-purple 50%
+);

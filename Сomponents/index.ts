@@ -12,6 +12,7 @@ import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
 import { SupportSection } from "./SupportSection"
 import { ProfileSidebar } from "./ProfileSidebar"
+import { RegisterFormsStepTwo, RegisterFormStepOne } from "./RegisterForms"
 
 export {
   AddressCard,
@@ -28,5 +29,7 @@ export {
   SectionHeader,
   SizePicker,
   SupportSection,
-  ProfileSidebar
+  ProfileSidebar,
+  RegisterFormsStepTwo,
+  RegisterFormStepOne,
 }
