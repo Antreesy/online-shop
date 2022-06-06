@@ -1,12 +1,10 @@
 import Link from "next/link"
 import { Button, SocialIcon } from "UI"
-import { Breadcrumbs, BurgerMenu, Logo } from "Сomponents"
+import { Breadcrumbs, BurgerMenu, Logo, LanguageSelect } from "Сomponents"
 
 import { DrawerItems } from "shared/constants/menuItems"
-import LangRoute from "Сomponents/LanguageRouting/LangRoute"
 
 import s from "./header.module.scss"
-import LanguageSelect from "Сomponents/LanguageRouting/LanguageSelect"
 
 interface HeaderProps {
   withBreadcrumbs?: boolean

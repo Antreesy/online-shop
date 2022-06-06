@@ -16,7 +16,7 @@ import styles from "styles/pages/Index.module.scss"
 
 export const getStaticProps: GetStaticProps = async ({ locale = "en" }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common", "pnt"])),
+    ...(await serverSideTranslations(locale, ["common"])),
   },
 })
 
@@ -35,9 +35,6 @@ const Index: NextPage = (props: any) => {
           {props.locale}
           {t("hello")}
         </h2>
-
-
-
         <p className={styles.description}>
           Login -
           <Link href="/login">

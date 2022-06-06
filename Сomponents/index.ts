@@ -5,6 +5,7 @@ import { ColorPicker } from "./ColorPicker"
 import { Counter } from "./Counter"
 import { Footer } from "./Footer"
 import { Header, HeaderLight } from "./Header"
+import { LanguageSelect } from "./LanguageRouting"
 import { Logo } from "./Logo"
 import { Notification } from "./Notification"
 import { SectionHeader } from "./SectionHeader"
@@ -21,6 +22,7 @@ export {
   Footer,
   Header,
   HeaderLight,
+  LanguageSelect,
   Logo,
   Notification,
   SectionHeader,
