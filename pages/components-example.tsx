@@ -1,7 +1,5 @@
-//Global Dependencies
 import type { NextPage } from "next"
 
-//Project Components
 import Head from "next/head"
 
 import {
@@ -16,6 +14,7 @@ import {
 
 import {
   AddButton,
+  AlertBox,
   Card,
   Carousel,
   ItemCounter,
@@ -37,13 +36,11 @@ import {
   SectionHeader,
 } from "Сomponents"
 
-//Project Helpers
 import { icons } from "shared/constants/icons"
 import { sidebarItems } from "shared/constants/sidebarItems"
 import { footerNav } from "shared/constants/footernav"
 import { Currency } from "shared/enums/currency"
 
-//Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
 
 const SampleCard = () => (
@@ -153,6 +150,8 @@ const Home: NextPage = () => {
           ]}
           values={[
             <div key="Notification">
+              <AlertBox text="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem" />
+
               <Notification title={"Notification"}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
                 quam sequi vitae eius iusto perspiciatis facilis nesciunt
