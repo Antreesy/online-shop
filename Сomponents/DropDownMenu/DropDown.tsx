@@ -1,23 +1,22 @@
-import * as React from "react"
+import React from "react"
+import { useRouter } from "next/router"
+import { Button } from "../../UI"
+import Link from "next/link"
 import Popover from "@mui/material/Popover"
 import Typography from "@mui/material/Typography"
-import { Button } from "../../UI"
 import s from "../Header/header.module.scss"
 import sn from "./dropDown.module.scss"
-import Link from "next/link"
-import { useRouter } from "next/router"
 
-type dropDownType = {
+type DropDownType = {
   link: string
   text: string
 }
 
 interface DropDownProps {
-  labels: dropDownType[]
+  labels: DropDownType[]
 }
 
-export const DropDown: React.FC<DropDownProps> = (props) => {
-  const { labels } = props
+export const DropDown: React.FC<DropDownProps> = ({ labels }) => {
   const { pathname } = useRouter()
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null)
 
@@ -29,8 +28,8 @@ export const DropDown: React.FC<DropDownProps> = (props) => {
     setAnchorEl(null)
   }
 
-  const open = Boolean(anchorEl)
-  const id = open ? "simple-popover" : undefined
+  const IsOpen = Boolean(anchorEl)
+  const id = IsOpen ? "simple-popover" : undefined
 
   return (
     <div>
@@ -43,7 +42,7 @@ export const DropDown: React.FC<DropDownProps> = (props) => {
       />
       <Popover
         id={id}
-        open={open}
+        open={IsOpen}
         anchorEl={anchorEl}
         onClose={handleClose}
         anchorOrigin={{
@@ -62,7 +61,7 @@ export const DropDown: React.FC<DropDownProps> = (props) => {
         <Typography sx={{ p: 2 }}>
           {labels.map((label, index) => (
             <Link href={label.link} key={index}>
-              <a key={index} className={sn.MenuItem}>
+              <a className={sn.MenuItem}>
                 <span className={pathname === label.text ? sn.active : ""}>
                   {label.text}
                 </span>

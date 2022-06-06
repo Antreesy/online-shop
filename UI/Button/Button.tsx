@@ -20,7 +20,7 @@ interface ButtonProps {
   children?: React.ReactNode
   iconLeft?: IconType
   iconRight?: IconType
-  onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const CustomButton: React.FC<ButtonProps> = (props) => {
