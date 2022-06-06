@@ -12,6 +12,7 @@ import { Icon } from "./Icon"
 import { Input } from "./Input"
 import { ItemCounter } from "./ItemCounter"
 import { ModalWindow } from "./ModalWindow"
+import { Pagination } from "./Pagination"
 import { Price } from "./Price"
 import { RadioGroup } from "./RadioGroup"
 import { Range } from "./Range"
@@ -35,6 +36,7 @@ export {
   Input,
   ItemCounter,
   ModalWindow,
+  Pagination,
   Price,
   RadioGroup,
   Range,
