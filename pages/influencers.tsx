@@ -69,7 +69,7 @@ const influencers: NextPage = () => {
               </Grid>
             ))}
           </Grid>
-          <Pagination className={s.pagination} pagesCount={4} isShort/>
+          <Pagination className={s.pagination} pagesCount={4} isShort />
         </div>
       </main>
 
