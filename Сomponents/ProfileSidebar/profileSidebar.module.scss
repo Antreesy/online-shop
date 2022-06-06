@@ -1,97 +1,90 @@
 @import "styles/style.scss";
 
 .profileSidebar {
-  margin: 30px 0 40px 40px;
   width: 317px;
   border-radius: 0 0 30px 0;
-  background-color: #ffffff;
-  max-width: 100%;
+  background-color: $color-white;
   padding-bottom: 30px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
 
-  -webkit-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.2);
-  box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.2);
-
-  @media only screen and (max-width: 400px) {
-    width: 375px;
-    margin: 30px auto 0 auto;
+  @include mobile {
+    width: 100%;
     border-radius: 0;
   }
+}
 
-  .headerSidebar {
-    background-color: white;
-    height: 103px;
-    max-width: 100%;
-    border-radius: 0 0 15px 15px;
+.headerSidebar {
+  background-color: $color-white;
+  height: 103px;
+  max-width: 100%;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.05);
 
-    -webkit-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.2);
-    box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.2);
-
-    @media only screen and (max-width: 400px) {
-      display: flex;
-      align-items: center;
-
-      -webkit-box-shadow: none;
-      -moz-box-shadow: none;
-      box-shadow: none;
-    }
-
-    & p {
-      padding: 30px 75px 38px 50px;
-      color: #8100ef;
-      font-size: 25px;
-    }
-  }
-
-  .menuSidebar {
-    margin-top: 49px;
-    max-width: 100%;
-
-    & ul {
-      margin-left: 13px;
-      width: 217px;
-      max-width: 100%;
-    }
-
-    & ul > li {
-      list-style-type: none;
-      font-size: 18px;
-      padding-bottom: 15px;
-      margin-top: 22px;
-      border-bottom: 1px solid #bababa;
-
-      &:hover {
-        color: #cccccc;
-      }
-    }
-    & ul > li > span {
-      padding-right: 10px;
-      color: #8100ef;
-    }
-    & .accordion {
-      border-bottom: 1px solid #bababa;
-      margin: 0;
-      & > div {
-        font-size: 18px;
-        padding: 16px 16px 0 0;
-      }
-      .AccordionLi {
-        margin-top: 0;
-        padding-bottom: 0;
-        border: none;
-      }
-      &:hover:last-child {
-        color: #cccccc;
-      }
-    }
-
-    & .active {
-      color: $color-purple;
-      font-weight: $fw-bold;
-    }
+  @include mobile {
+    display: flex;
+    align-items: center;
+    box-shadow: none;
   }
 }
+
+.sidebar_title {
+  padding: 37px 110px 37px 50px;
+  font-size: 25px;
+  font-weight: $fw-semibold;
+  color: $color-purple;
+  white-space: nowrap;
+}
+
+.menuSidebar {
+  margin-top: 49px;
+  max-width: 100%;
+
+  & .active {
+    color: $color-purple;
+    font-weight: $fw-bold;
+  }
+}
+
+.menu_list {
+  margin-left: 13px;
+  width: 217px;
+  max-width: 100%;
+}
+
+.menu_item {
+  list-style-type: none;
+  font-size: 18px;
+  padding-bottom: 15px;
+  margin-top: 22px;
+  border-bottom: 1px solid $color-grey-ba;
+
+  &:hover {
+    color: $color-grey-c;
+  }
+}
+
+.menu_item > span {
+  padding-right: 10px;
+  color: $color-purple;
+}
+
+.accordion {
+  border-bottom: 1px solid $color-grey-ba;
+  margin: 0;
+  & > div {
+    font-size: 18px;
+    padding: 16px 16px 0 0;
+  }
+  .AccordionLi {
+    margin-top: 0;
+    padding-bottom: 0;
+    border: none;
+  }
+  &:hover:last-child {
+    color: $color-grey-c;
+  }
+}
+
 .desktop {
   display: block;
 

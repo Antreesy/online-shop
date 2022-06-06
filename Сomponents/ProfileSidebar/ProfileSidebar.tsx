@@ -14,7 +14,7 @@ type LabelType = {
   icon?: IconType
 }
 
-type LabelTypeWithContent = LabelType & {
+export type LabelTypeWithContent = LabelType & {
   content?: LabelType[]
 }
 interface ProfileSidebarProps {
@@ -28,7 +28,7 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = (props) => {
 
   const SidebarItem = ({ label }: { label: LabelType }) => {
     return (
-      <li>
+      <li className={s.menu_item}>
         {label.icon && pathname === label.link ? (
           <Icon type={label.icon} />
         ) : null}
@@ -57,7 +57,7 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = (props) => {
     return (
       <div className={s.menuSidebar}>
         {labels.length ? (
-          <ul>
+          <ul className={s.menu_list}>
             {labels.map((label, index) =>
               label.content && label.content.length ? (
                 <AccordionSidebarItem key={index} label={label} />
@@ -75,21 +75,19 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = (props) => {
 
   return (
     <>
-      <div className={s.desktop}>
-        <div className={s.profileSidebar}>
+      <div className={s.profileSidebar}>
+        <div className={s.desktop}>
           <div className={s.headerSidebar}>
-            <p>{title}</p>
+            <p className={s.sidebar_title}>{title}</p>
           </div>
           <MenuList labels={labels} />
         </div>
-      </div>
 
-      <div className={s.mobile}>
-        <div className={s.profileSidebar}>
+        <div className={s.mobile}>
           <Accordion
             header={title}
             className={s.mobileAccordion}
-            headerClassName={s.headerSidebar}
+            headerClassName={s.sidebar_title}
           >
             <MenuList labels={labels} />
           </Accordion>

@@ -1,7 +1,8 @@
 import React, {FC} from 'react';
 import styles from './BrandButton.module.scss';
 import cn from 'classnames';
-import {BrandButtonProps} from "../BurgerMenu/BurgerMenu.props";
+import {BrandButtonProps} from "./BrandButton.props";
+
 import {Icon} from "../../UI";
 import {useRouter} from "next/router";
 
@@ -9,13 +10,13 @@ const BrandButton:FC<BrandButtonProps> = (props):JSX.Element => {
 	const router = useRouter();
 	const {
 		icon,
-		h3_title='title',
+		h3_title='Some text',
 		h3_value=0,
 		last_day=0,
 		delays=0,
 		appearance='white',
 		size='small',
-		smallBtnText='some text',
+		smallBtnText='Total something',
 		smallBtnNumber=0
 	} = props;
 	return (

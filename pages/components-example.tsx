@@ -34,16 +34,17 @@ import {
   Notification,
   ProductItem,
   ProfileSidebar,
-  SectionHeader
+  SectionHeader,
 } from "Сomponents"
 
 //Project Helpers
+import { icons } from "shared/constants/icons"
+import { sidebarItems } from "shared/constants/sidebarItems"
 import { footerNav } from "shared/constants/footernav"
 import { Currency } from "shared/enums/currency"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
-import { icons } from "shared/constants/icons"
 
 const SampleCard = () => (
   <Card
@@ -115,57 +116,7 @@ const Home: NextPage = () => {
             </div>,
 
             <div key={"Sidebar"}>
-              <ProfileSidebar
-                labels={[
-                  {
-                    link: "/",
-                    text: "Profile",
-                    icon: "account",
-                  },
-                  {
-                    link: "/",
-                    text: "Address",
-                    icon: "location",
-                  },
-                  {
-                    link: "/",
-                    text: "Order",
-                    icon: "basket",
-                  },
-                  {
-                    link: "/",
-                    text: "Payment",
-                    icon: "credit_card",
-                  },
-                  {
-                    link: "/",
-                    text: "Notification",
-                    icon: "bell_filled",
-                  },
-                  {
-                    link: "/",
-                    text: "Dashboard",
-                    content: [
-                      {
-                        link: "/",
-                        text: "Favorite",
-                        icon: "heart",
-                      },
-                    ],
-                  },
-                  {
-                    link: "/",
-                    text: "Help",
-                    icon: "question",
-                  },
-                  {
-                    link: "/",
-                    text: "Sign Out",
-                    icon: "out_sign",
-                  },
-                ]}
-                title={"MY ACCOUNT"}
-              />
+              <ProfileSidebar labels={sidebarItems} title={"MY ACCOUNT"} />
             </div>,
 
             <div key={"Price"}>
@@ -174,7 +125,7 @@ const Home: NextPage = () => {
               <Price oldPrice={2030} price={1930} type="primary" />
               <Price oldPrice={2030} price={1930} type="sale" />
               <Price oldPrice={2030} price={1930} type="sale_black" />
-                
+
               <Range
                 minQuantity={10000}
                 maxQuantity={1000000}
@@ -198,11 +149,11 @@ const Home: NextPage = () => {
             "Add Button",
             "Credit Card",
             "Card",
-            "ProductItem"
+            "ProductItem",
           ]}
           values={[
             <div key="Notification">
-              <Notification header={"Notification"}>
+              <Notification title={"Notification"}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
                 quam sequi vitae eius iusto perspiciatis facilis nesciunt
                 dignissimos provident ipsum? Nobis repellat atque ab nam magni
@@ -257,35 +208,35 @@ const Home: NextPage = () => {
               <div className={s.grid}>
                 <ProductItem
                   title="Yves Saint Laurent"
-                  subtitle = "Black long sleeve men’s jacket"
-                  description = "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
-                  id = {1}
-                  price = {{
+                  subtitle="Black long sleeve men’s jacket"
+                  description="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
+                  id={1}
+                  price={{
                     oldPrice: 2030,
                     price: 2030,
-                    type: "sale"
+                    type: "sale",
                   }}
                   imageSrc="/../public/assets/img/T_shirt.png"
                 />
               </div>
-              <div className={s.grid} style={{width: 300}}>
+              <div className={s.grid} style={{ width: 300 }}>
                 <ProductItem
                   title="Yves Saint Laurent"
-                  subtitle = "Black long sleeve men’s jacket"
-                  description = "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
-                  id = {1}
-                  price = {{
+                  subtitle="Black long sleeve men’s jacket"
+                  description="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
+                  id={1}
+                  price={{
                     oldPrice: 2030,
                     price: 2030,
-                    type: "sale"
+                    type: "sale",
                   }}
                   imageSrc="/../public/assets/img/T_shirt.png"
-                  isFavorite = {false}
-                  onAddClick = {() => console.log("onAddClick")}
-                  toggleFavorite = {() => console.log("toggleFavorite")}
+                  isFavorite={false}
+                  onAddClick={() => console.log("onAddClick")}
+                  toggleFavorite={() => console.log("toggleFavorite")}
                 />
               </div>
-            </div>
+            </div>,
           ]}
         />
       </main>

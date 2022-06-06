@@ -10,13 +10,21 @@ interface NotificationProps {
   className?: string
   children: React.ReactNode
   onClick?: (id: number) => void
-  id: number
+  id?: number
   title: string
   subtitle?: string
 }
 
 const Notification: React.FC<NotificationProps> = (props) => {
-  const { isRead, children, className, onClick, id, title, subtitle } = props
+  const {
+    isRead,
+    children,
+    className,
+    onClick,
+    id = 0,
+    title,
+    subtitle,
+  } = props
 
   const notificationClass = cn(s.notification, className)
   const titleBlock = (
