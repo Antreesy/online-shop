@@ -4,6 +4,8 @@ import Head from "next/head"
 import { appWithTranslation } from "next-i18next"
 import { store } from "store/store"
 
+import { Layout } from "Сomponents"
+
 import { CacheProvider, EmotionCache } from "@emotion/react"
 import createEmotionCache from "utils/createEmotionCache"
 import lightThemeOptions from "styles/theme/lightThemeOptions"
@@ -40,7 +42,9 @@ const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
           <ThemeProvider theme={lightTheme}>
             <StyledEngineProvider injectFirst>
               <CssBaseline />
-              <Component {...pageProps} />
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
             </StyledEngineProvider>
           </ThemeProvider>
         </CacheProvider>
@@ -50,3 +54,32 @@ const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
 }
 
 export default appWithTranslation(MyApp)
+
+// import React from 'react'
+// import App from 'next/app'
+// import SiteLayout from '../components/SiteLayout'
+// import AccountSettingsLayout from '../components/AccountSettingsLayout'
+
+// class MyApp extends App {
+//   render() {
+//     const { Component, pageProps, router } = this.props
+
+//     if (router.pathname.startsWith('/account-settings/')) {
+//       return (
+//         <SiteLayout>
+//           <AccountSettingsLayout>
+//             <Component {...pageProps}></Component>
+//           </AccountSettingsLayout>
+//         </SiteLayout>
+//       )
+//     }
+
+//     return (
+//       <SiteLayout>
+//         <Component {...pageProps}></Component>
+//       </SiteLayout>
+//     )
+//   }
+// }
+
+// export default MyApp

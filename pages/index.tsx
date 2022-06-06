@@ -8,9 +8,6 @@ import { useTranslation } from "next-i18next"
 import Head from "next/head"
 import Link from "next/link"
 import LangRoute from "Сomponents/LanguageRouting/LangRoute"
-import { Header, Footer } from "Сomponents"
-
-import { footerNav } from "shared/constants/footernav"
 
 //Project Styles
 import styles from "styles/pages/Index.module.scss"
@@ -28,10 +25,7 @@ const Index: NextPage = (props: any) => {
       <Head>
         <title>ILONSI SHOP | Homepage</title>
       </Head>
-
-      <Header />
-
-      <main className={styles.main}>
+      <div className={styles.main}>
         <h2>
           {props.locale}
           {t("hello")}
@@ -64,7 +58,6 @@ const Index: NextPage = (props: any) => {
         </p>
 
         <p className={styles.description}>
-
           Order success
           <Link href="/order-success">
             <a className={styles.title__link}>/order-success</a>
@@ -103,9 +96,7 @@ const Index: NextPage = (props: any) => {
           </Link>{" "}
           page
         </p>
-      </main>
-
-      <Footer links={footerNav} />
+      </div>
     </>
   )
 }

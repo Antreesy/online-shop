@@ -1,14 +1,5 @@
 @import "styles/style.scss";
 
-.main {
-  min-height: 100vh;
-  padding-top: calc($header-desktop-height + $breadcrumbs-desktop-height);
-
-  @include mobile {
-    padding-top: calc($header-mobile-height + $breadcrumbs-mobile-height);
-  }
-}
-
 .container {
   max-width: 1640px;
   width: 100%;

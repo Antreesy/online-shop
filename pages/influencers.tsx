@@ -4,11 +4,10 @@ import { NextPage } from "next"
 import Head from "next/head"
 
 import { Grid } from "@mui/material"
-import { Breadcrumbs, Footer, Header } from "Сomponents"
+import { Breadcrumbs } from "Сomponents"
 import { Card, Input, Icon } from "UI"
 
 import card_image from "public/assets/img/card.png"
-import { footerNav } from "shared/constants/footernav"
 
 import s from "styles/pages/influencers.module.scss"
 
@@ -20,8 +19,6 @@ const influencers: NextPage = () => {
       <Head>
         <title>ILONSI SHOP | Influencers</title>
       </Head>
-
-      <Header />
 
       <main className={s.main}>
         <div className={s.background} />
@@ -74,8 +71,6 @@ const influencers: NextPage = () => {
           </div>
         </div>
       </main>
-
-      <Footer links={footerNav} />
     </>
   )
 }

@@ -1,11 +1,9 @@
 import type { NextPage } from "next"
 import Head from "next/head"
 
-import { footerNav } from "shared/constants/footernav"
 import { orderSuccess } from "shared/constants/order-success"
 import { Card, Icon } from "UI"
-import { Header, SectionHeader } from "Сomponents"
-import { Footer } from "Сomponents"
+import { SectionHeader } from "Сomponents"
 
 import s from "styles/pages/OrderSuccess.module.scss"
 
@@ -30,8 +28,6 @@ const OrderSuccess: NextPage = () => {
       <Head>
         <title>Order Success Page</title>
       </Head>
-
-      <Header />
 
       <div className={s.main}>
         <div className={s.container}>
@@ -98,8 +94,6 @@ const OrderSuccess: NextPage = () => {
           </div>
         </div>
       </div>
-
-      <Footer links={footerNav} />
     </>
   )
 }
