@@ -37,12 +37,13 @@ import {
 } from "Сomponents"
 
 //Project Helpers
+import { icons } from "shared/constants/icons"
+import { sidebarItems } from "shared/constants/sidebarItems"
 import { footerNav } from "shared/constants/footernav"
 import { Currency } from "shared/enums/currency"
 
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
-import { icons } from "shared/constants/icons"
 
 const SampleCard = () => (
   <Card
@@ -114,57 +115,7 @@ const Home: NextPage = () => {
             </div>,
 
             <div key={"Sidebar"}>
-              <ProfileSidebar
-                labels={[
-                  {
-                    link: "/",
-                    text: "Profile",
-                    icon: "account",
-                  },
-                  {
-                    link: "/",
-                    text: "Address",
-                    icon: "location",
-                  },
-                  {
-                    link: "/",
-                    text: "Order",
-                    icon: "basket",
-                  },
-                  {
-                    link: "/",
-                    text: "Payment",
-                    icon: "credit_card",
-                  },
-                  {
-                    link: "/",
-                    text: "Notification",
-                    icon: "bell_filled",
-                  },
-                  {
-                    link: "/",
-                    text: "Dashboard",
-                    content: [
-                      {
-                        link: "/",
-                        text: "Favorite",
-                        icon: "heart",
-                      },
-                    ],
-                  },
-                  {
-                    link: "/",
-                    text: "Help",
-                    icon: "question",
-                  },
-                  {
-                    link: "/",
-                    text: "Sign Out",
-                    icon: "out_sign",
-                  },
-                ]}
-                title={"MY ACCOUNT"}
-              />
+              <ProfileSidebar labels={sidebarItems} title={"MY ACCOUNT"} />
             </div>,
 
             <div key={"Price"}>
@@ -199,7 +150,7 @@ const Home: NextPage = () => {
           ]}
           values={[
             <div key="Notification">
-              <Notification header={"Notification"}>
+              <Notification title={"Notification"}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
                 quam sequi vitae eius iusto perspiciatis facilis nesciunt
                 dignissimos provident ipsum? Nobis repellat atque ab nam magni
