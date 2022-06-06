@@ -10,10 +10,11 @@ interface PaginationProps {
   className?: string
   pagesCount: number
   isShort?: boolean
+  onChange?: () => void
 }
 
 const CustomPagination: React.FC<PaginationProps> = (props) => {
-  const { className, pagesCount, isShort } = props
+  const { className, pagesCount, isShort, onChange } = props
   const router = useRouter()
 
   const [page, setPage] = useState<number>(1)
@@ -28,6 +29,7 @@ const CustomPagination: React.FC<PaginationProps> = (props) => {
   const handleChange = (event: React.ChangeEvent<unknown>, page: number) => {
     router.push(`${router.pathname}/?page=${page}`)
     setPage(page)
+    onChange?.()
   }
 
   return (
