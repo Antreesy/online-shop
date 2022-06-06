@@ -33,8 +33,9 @@ import {
   Logo,
   Notification,
   ProductItem,
+  ProductItemList,
   ProfileSidebar,
-  SectionHeader
+  SectionHeader,
 } from "Сomponents"
 
 //Project Helpers
@@ -44,6 +45,7 @@ import { Currency } from "shared/enums/currency"
 //Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
 import { icons } from "shared/constants/icons"
+import { productItems } from "shared/constants/productItems"
 
 const SampleCard = () => (
   <Card
@@ -130,7 +132,8 @@ const Home: NextPage = () => {
                   { link: "/", text: "Help" },
                   { link: "/", text: "Sign Out" },
                 ]}
-               title={'Sidebar example1'}/>
+                title={"Sidebar example1"}
+              />
             </div>,
 
             <div key={"Price"}>
@@ -139,7 +142,7 @@ const Home: NextPage = () => {
               <Price oldPrice={2030} price={1930} type="primary" />
               <Price oldPrice={2030} price={1930} type="sale" />
               <Price oldPrice={2030} price={1930} type="sale_black" />
-                
+
               <Range
                 minQuantity={10000}
                 maxQuantity={1000000}
@@ -163,7 +166,8 @@ const Home: NextPage = () => {
             "Add Button",
             "Credit Card",
             "Card",
-            "ProductItem"
+            "ProductItem",
+            "ProductItemList",
           ]}
           values={[
             <div key="Notification">
@@ -222,35 +226,40 @@ const Home: NextPage = () => {
               <div className={s.grid}>
                 <ProductItem
                   title="Yves Saint Laurent"
-                  subtitle = "Black long sleeve men’s jacket"
-                  description = "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
-                  id = {1}
-                  price = {{
+                  subtitle="Black long sleeve men’s jacket"
+                  description="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
+                  id={1}
+                  price={{
                     oldPrice: 2030,
                     price: 2030,
-                    type: "sale"
+                    type: "sale",
                   }}
                   imageSrc="/../public/assets/img/T_shirt.png"
                 />
               </div>
-              <div className={s.grid} style={{width: 300}}>
+              <div className={s.grid} style={{ width: 300 }}>
                 <ProductItem
                   title="Yves Saint Laurent"
-                  subtitle = "Black long sleeve men’s jacket"
-                  description = "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
-                  id = {1}
-                  price = {{
+                  subtitle="Black long sleeve men’s jacket"
+                  description="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
+                  id={1}
+                  price={{
                     oldPrice: 2030,
                     price: 2030,
-                    type: "sale"
+                    type: "sale",
                   }}
                   imageSrc="/../public/assets/img/T_shirt.png"
-                  isFavorite = {false}
-                  onAddClick = {() => console.log("onAddClick")}
-                  toggleFavorite = {() => console.log("toggleFavorite")}
+                  isFavorite={false}
+                  onAddClick={() => console.log("onAddClick")}
+                  toggleFavorite={() => console.log("toggleFavorite")}
                 />
               </div>
-            </div>
+            </div>,
+            <div key="ProductItemLIst">
+              {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+              {/* @ts-ignore */}
+              <ProductItemList productItemList={productItems} />
+            </div>,
           ]}
         />
       </main>

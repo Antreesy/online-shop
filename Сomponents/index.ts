@@ -8,6 +8,7 @@ import { Header, HeaderLight } from "./Header"
 import { Logo } from "./Logo"
 import { Notification } from "./Notification"
 import { ProductItem } from "./ProductItem"
+import { ProductItemList } from "./ProductItemList"
 import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
 import { SupportSection } from "./SupportSection"
@@ -25,8 +26,9 @@ export {
   Logo,
   Notification,
   ProductItem,
+  ProductItemList,
   SectionHeader,
   SizePicker,
   SupportSection,
-  ProfileSidebar
+  ProfileSidebar,
 }
