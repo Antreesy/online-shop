@@ -5,6 +5,8 @@ import { Breadcrumbs, BurgerMenu, Logo } from "Сomponents"
 import { DrawerItems } from "shared/constants/menuItems"
 
 import s from "./header.module.scss"
+import { DropDown } from "../DropDownMenu"
+import * as React from "react"
 
 interface HeaderProps {
   withBreadcrumbs?: boolean
@@ -78,10 +80,14 @@ const Header: React.FC<HeaderProps> = ({ withBreadcrumbs }) => {
         </div>
 
         <div className={s.bottom_right_group_mobile}>
-          <Button
-            className={s.button_account}
-            disableElevation
-            iconLeft="account"
+          <DropDown
+            labels={[
+              { link: "/", text: "My Account" },
+              { link: "/", text: "Favorites" },
+              { link: "/", text: "Notifications" },
+              { link: "/", text: "My Coupons" },
+              { link: "/", text: "Sign Out" },
+            ]}
           />
           <Button
             className={s.button_basket}

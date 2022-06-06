@@ -1,0 +1,21 @@
+@import "styles/style.scss";
+.popover {
+  display: none;
+  @media screen and (max-width: 400px) {
+    display: block;
+    position: absolute;
+    top: 30px;
+  }
+  & .MenuItem {
+    font-size: 16px;
+    display: block;
+    text-align: start;
+    border-bottom: 1px solid #bababa;
+    padding-bottom: 10px;
+    margin-top: 6px;
+  }
+}
+.active {
+  color: $color-purple;
+  font-weight: $fw-bold;
+}

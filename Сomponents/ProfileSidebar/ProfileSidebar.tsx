@@ -30,7 +30,7 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = (props) => {
     return (
       <li>
         {label.icon && pathname === label.link ? (
-          <Icon type={label.icon}  />
+          <Icon type={label.icon} />
         ) : null}
         <Link href={label.link}>
           <a className={pathname === label.link ? `${s.active}` : ""}>
