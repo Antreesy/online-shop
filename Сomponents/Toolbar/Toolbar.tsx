@@ -36,7 +36,11 @@ export const Toolbar: React.FC<ToolbarProps> = (props) => {
       </div>
       <div className={s.select}>
         <FormControl>
-          <Select value={selectValue} onChange={(e) => setSelectValue(e.target.value)} displayEmpty>
+          <Select
+            value={selectValue}
+            onChange={(e) => setSelectValue(e.target.value)}
+            displayEmpty
+          >
             <MenuItem value="">Filter</MenuItem>
             {values.map((value) => (
               <MenuItem value={value} key={value}>

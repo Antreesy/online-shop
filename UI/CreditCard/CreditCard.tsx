@@ -8,7 +8,7 @@ import { creditcardConsts } from "shared/constants/creditcard"
 
 import s from "./creditcard.module.scss"
 
-interface CreditCardProps {
+export interface CreditCardProps {
   size?: number
   isColored?: boolean
   cardNumber: string

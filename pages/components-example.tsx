@@ -1,7 +1,5 @@
-//Global Dependencies
 import type { NextPage } from "next"
 
-//Project Components
 import Head from "next/head"
 
 import {
@@ -17,6 +15,7 @@ import {
 
 import {
   AddButton,
+  AlertBox,
   Card,
   Carousel,
   ItemCounter,
@@ -33,16 +32,17 @@ import {
   Header,
   Logo,
   Notification,
+  ProductItem,
+  ProfileSidebar,
   SectionHeader,
 } from "Сomponents"
 
-//Project Helpers
+import { icons } from "shared/constants/icons"
+import { sidebarItems } from "shared/constants/sidebarItems"
 import { footerNav } from "shared/constants/footernav"
 import { Currency } from "shared/enums/currency"
 
-//Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
-import { icons } from "shared/constants/icons"
 
 const SampleCard = () => (
   <Card
@@ -80,6 +80,7 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
+            "Sidebar",
             "Price",
             "Counters",
           ]}
@@ -112,12 +113,17 @@ const Home: NextPage = () => {
               <AccordionExamples />
             </div>,
 
+            <div key={"Sidebar"}>
+              <ProfileSidebar labels={sidebarItems} title={"MY ACCOUNT"} />
+            </div>,
+
             <div key={"Price"}>
               <Price oldPrice={2030} price={1930} type="order" />
               <Price oldPrice={2030} price={1930} type="cart" />
               <Price oldPrice={2030} price={1930} type="primary" />
               <Price oldPrice={2030} price={1930} type="sale" />
               <Price oldPrice={2030} price={1930} type="sale_black" />
+
               <Range
                 minQuantity={10000}
                 maxQuantity={1000000}
@@ -142,10 +148,13 @@ const Home: NextPage = () => {
             "Credit Card",
             "Card",
             "Toolbar"
+            "ProductItem",
           ]}
           values={[
             <div key="Notification">
-              <Notification header={"Notification"}>
+              <AlertBox text="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem" />
+
+              <Notification title={"Notification"}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
                 quam sequi vitae eius iusto perspiciatis facilis nesciunt
                 dignissimos provident ipsum? Nobis repellat atque ab nam magni
@@ -195,9 +204,44 @@ const Home: NextPage = () => {
                 />
               </div>
             </div>,
+
             <div key={"Toolbar"}>
               <ToolbarExample />
-            </div>
+            </div>,
+
+            <div key={"ProductItem"}>
+              <div className={s.grid}>
+                <ProductItem
+                  title="Yves Saint Laurent"
+                  subtitle="Black long sleeve men’s jacket"
+                  description="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
+                  id={1}
+                  price={{
+                    oldPrice: 2030,
+                    price: 2030,
+                    type: "sale",
+                  }}
+                  imageSrc="/../public/assets/img/T_shirt.png"
+                />
+              </div>
+              <div className={s.grid} style={{ width: 300 }}>
+                <ProductItem
+                  title="Yves Saint Laurent"
+                  subtitle="Black long sleeve men’s jacket"
+                  description="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
+                  id={1}
+                  price={{
+                    oldPrice: 2030,
+                    price: 2030,
+                    type: "sale",
+                  }}
+                  imageSrc="/../public/assets/img/T_shirt.png"
+                  isFavorite={false}
+                  onAddClick={() => console.log("onAddClick")}
+                  toggleFavorite={() => console.log("toggleFavorite")}
+                />
+              </div>
+            </div>,
           ]}
         />
       </main>
