@@ -103,6 +103,14 @@ const Index: NextPage = (props: any) => {
           </Link>{" "}
           page
         </p>
+
+        <p className={styles.description}>
+          Register Page page is on{" "}
+          <Link href="/register-page">
+            <a className={styles.title__link}>/register-page</a>
+          </Link>{" "}
+          page
+        </p>
       </main>
 
       <Footer links={footerNav} />

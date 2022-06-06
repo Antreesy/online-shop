@@ -1,0 +1,110 @@
+@import "/styles/style.scss";
+
+.registerPage {
+  .decorationHeader {
+    .line {
+      position: fixed;
+      width: 50vw;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, $color-purple 50%, $color-cyan 100%);
+      @include mobile-tablet {
+        top: 83px;
+      }
+    }
+
+    .circle {
+      position: fixed;
+      right: -100px;
+      top: -100px;
+      margin-top: 118px;
+      padding: 100px;
+      border-radius: 50%;
+      background: linear-gradient(90deg, $color-cyan 0%, $color-purple 50%);
+      @include mobile-tablet {
+        margin-top: 83px;
+      }
+    }
+  }
+
+  main {
+    background-color: $color-grey-ed;
+    margin-top: 118px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 118px);
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 0 30px $color-grey-de;
+      background-color: $color-white;
+      padding: 50px;
+      h1,
+      h4 {
+        color: $color-purple;
+        span {
+          color: $color-grey-ed;
+        }
+      }
+
+      .select {
+        width: 300px;
+        margin: 0;
+      }
+
+      input {
+        width: 270px;
+        box-shadow: 0 0 30px $color-grey-ed;
+      }
+    }
+  }
+
+  .decorationFooter {
+    overflow: hidden;
+    .line {
+      position: fixed;
+      width: 50vw;
+      background: linear-gradient(90deg, $color-cyan 0%, $color-purple 50%);
+      bottom: 0px;
+      height: 5px;
+    }
+
+    .circle {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 3px solid $color-purple;
+      position: fixed;
+      bottom: -120px;
+      left: -120px;
+    }
+  }
+}
+
+.modal {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  div {
+      margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 0 30px $color-grey-ed;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+    color: $color-purple;
+  }
+  h2 {
+    color: $color-purple;
+  }
+}
