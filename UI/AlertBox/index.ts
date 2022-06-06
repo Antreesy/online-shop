@@ -1,3 +1,3 @@
 import AlertBox from "./AlertBox"
 
-export {AlertBox}
+export { AlertBox }

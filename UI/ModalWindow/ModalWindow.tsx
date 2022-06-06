@@ -1,8 +1,7 @@
 import { FC, ReactNode, useEffect, useState } from "react"
 import { createPortal } from "react-dom"
 
-import { IconButton, Modal } from "@mui/material"
-import { Box } from "@mui/system"
+import { Box, IconButton, Modal } from "@mui/material"
 import { Icon } from "UI/Icon"
 import { IconType } from "UI/Icon/Icon"
 
