@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography"
 import s from "../Header/header.module.scss"
 import sn from "./dropDown.module.scss"
 
-type DropDownType = {
+export type DropDownType = {
   link: string
   text: string
 }

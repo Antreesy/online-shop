@@ -7,6 +7,7 @@ import { DrawerItems } from "shared/constants/menuItems"
 import s from "./header.module.scss"
 import { DropDown } from "../DropDownMenu"
 import * as React from "react"
+import {dropdownItems} from "../../shared/constants/dropdownItems";
 
 interface HeaderProps {
   withBreadcrumbs?: boolean
@@ -81,13 +82,7 @@ const Header: React.FC<HeaderProps> = ({ withBreadcrumbs }) => {
 
         <div className={s.bottom_right_group_mobile}>
           <DropDown
-            labels={[
-              { link: "/", text: "My Account" },
-              { link: "/", text: "Favorites" },
-              { link: "/", text: "Notifications" },
-              { link: "/", text: "My Coupons" },
-              { link: "/", text: "Sign Out" },
-            ]}
+            labels={dropdownItems}
           />
           <Button
             className={s.button_basket}
