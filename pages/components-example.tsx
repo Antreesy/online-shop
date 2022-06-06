@@ -136,7 +136,6 @@ const Home: NextPage = () => {
           ]}
         />
 
-        <AlertBox text="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem" />
         <SectionHeader className={s.title} title={"Components page"} />
 
         <Tabs
@@ -151,6 +150,8 @@ const Home: NextPage = () => {
           ]}
           values={[
             <div key="Notification">
+              <AlertBox text="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem" />
+
               <Notification title={"Notification"}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
                 quam sequi vitae eius iusto perspiciatis facilis nesciunt
