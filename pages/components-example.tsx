@@ -32,8 +32,9 @@ import {
   Header,
   Logo,
   Notification,
+  ProductItem,
   ProfileSidebar,
-  SectionHeader,
+  SectionHeader
 } from "Сomponents"
 
 //Project Helpers
@@ -138,6 +139,7 @@ const Home: NextPage = () => {
               <Price oldPrice={2030} price={1930} type="primary" />
               <Price oldPrice={2030} price={1930} type="sale" />
               <Price oldPrice={2030} price={1930} type="sale_black" />
+                
               <Range
                 minQuantity={10000}
                 maxQuantity={1000000}
@@ -161,6 +163,7 @@ const Home: NextPage = () => {
             "Add Button",
             "Credit Card",
             "Card",
+            "ProductItem"
           ]}
           values={[
             <div key="Notification">
@@ -214,6 +217,40 @@ const Home: NextPage = () => {
                 />
               </div>
             </div>,
+
+            <div key={"ProductItem"}>
+              <div className={s.grid}>
+                <ProductItem
+                  title="Yves Saint Laurent"
+                  subtitle = "Black long sleeve men’s jacket"
+                  description = "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
+                  id = {1}
+                  price = {{
+                    oldPrice: 2030,
+                    price: 2030,
+                    type: "sale"
+                  }}
+                  imageSrc="/../public/assets/img/T_shirt.png"
+                />
+              </div>
+              <div className={s.grid} style={{width: 300}}>
+                <ProductItem
+                  title="Yves Saint Laurent"
+                  subtitle = "Black long sleeve men’s jacket"
+                  description = "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
+                  id = {1}
+                  price = {{
+                    oldPrice: 2030,
+                    price: 2030,
+                    type: "sale"
+                  }}
+                  imageSrc="/../public/assets/img/T_shirt.png"
+                  isFavorite = {false}
+                  onAddClick = {() => console.log("onAddClick")}
+                  toggleFavorite = {() => console.log("toggleFavorite")}
+                />
+              </div>
+            </div>
           ]}
         />
       </main>
