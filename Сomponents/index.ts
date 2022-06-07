@@ -26,5 +26,5 @@ export {
   SectionHeader,
   SizePicker,
   SupportSection,
-  ProfileSidebar,
+  ProfileSidebar
 }

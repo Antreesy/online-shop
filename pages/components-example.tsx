@@ -1,5 +1,6 @@
 //Global Dependencies
 import type { NextPage } from "next"
+import enot from "../public/enot.jpg"
 
 //Project Components
 import Head from "next/head"
@@ -24,6 +25,8 @@ import {
   Price,
   Icon,
   SocialIcon,
+  FileUpload,
+  SelectProduct,
 } from "UI"
 
 import {
@@ -83,6 +86,7 @@ const Home: NextPage = () => {
             "Sidebar",
             "Price",
             "Counters",
+            "SelectProduct",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -111,6 +115,7 @@ const Home: NextPage = () => {
 
             <div key={"Accordion"}>
               <AccordionExamples />
+              <FileUpload />
             </div>,
 
             <div key={"Sidebar"}>
@@ -129,7 +134,8 @@ const Home: NextPage = () => {
                   { link: "/", text: "Help" },
                   { link: "/", text: "Sign Out" },
                 ]}
-               title={'Sidebar example1'}/>
+                title={"Sidebar example1"}
+              />
             </div>,
 
             <div key={"Price"}>
@@ -147,6 +153,14 @@ const Home: NextPage = () => {
             <div key={"Counters"} style={{ display: "flex" }}>
               <ItemCounter initValue={5} />
               <ItemCounter initValue={5} large />
+            </div>,
+            <div key={"SelectProduct"}>
+              <SelectProduct
+                imageSrc={enot}
+                imageTitle={"enot.png"}
+                imageSize={"690x680"}
+                date={new Date().toLocaleDateString()}
+              />
             </div>,
           ]}
         />
