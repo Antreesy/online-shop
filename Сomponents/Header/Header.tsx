@@ -14,8 +14,8 @@ const Header: React.FC<HeaderProps> = ({ withBreadcrumbs }) => {
   return (
     <header className={s.header}>
       <div className={s.top_group}>
-        <Link href="mailto:info@ilonsi.com" className={s.email}>
-          info@ilonsi.com
+        <Link href="mailto:info@ilonsi.com">
+          <a className={s.email}>info@ilonsi.com</a>
         </Link>
         <span className={s.caption}>
           lipsum as it is sometimes known, is dummy

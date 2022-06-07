@@ -4,6 +4,13 @@
   display: flex;
 }
 
+.input {
+  width: 100%;
+  & > div {
+    height: 100%;
+  }
+}
+
 .default {
   font-family: inherit;
   font-size: 15px;
@@ -142,8 +149,13 @@
 }
 
 .black_outline {
+  height: 100%;
   font-family: inherit;
   font-size: 15px;
+
+  .inputWrapper {
+    height: 100%;
+  }
 
   .label {
     color: $color-purple;

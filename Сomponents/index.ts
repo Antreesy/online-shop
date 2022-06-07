@@ -7,11 +7,13 @@ import { Footer } from "./Footer"
 import { Header, HeaderLight } from "./Header"
 import { Logo } from "./Logo"
 import { Notification } from "./Notification"
+import { ProductItem } from "./ProductItem"
 import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
 import { OrderSummary } from "./OrderSummary"
 import { SupportSection } from "./SupportSection"
 import { ProfileSidebar } from "./ProfileSidebar"
+import { Toolbar } from "./Toolbar"
 
 export {
   AddressCard,
@@ -24,9 +26,11 @@ export {
   HeaderLight,
   Logo,
   Notification,
+  ProductItem,
   SectionHeader,
   SizePicker,
   OrderSummary,
   SupportSection,
   ProfileSidebar,
+  Toolbar,
 }
