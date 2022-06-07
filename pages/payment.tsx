@@ -4,11 +4,10 @@ import Head from "next/head"
 import { Card } from "@mui/material"
 import { AddButton, CreditCard } from "UI"
 
-import { Footer, Header, SectionHeader } from "Сomponents"
+import { SectionHeader } from "Сomponents"
 
-import { footerNav } from "shared/constants/footernav"
 import useResize from "shared/hooks/useResize"
-import { creditcardsData } from "shared/consts/creditcardsData"
+import { creditcardsData } from "shared/constants/creditcardsData"
 
 import s from "styles/pages/payment.module.scss"
 
@@ -21,9 +20,7 @@ const Payment: NextPage = () => {
         <title>ILONSI SHOP | Payment Page</title>
       </Head>
 
-      <Header />
-
-      <main className={s.main}>
+      <div className={s.main}>
         <SectionHeader className={s.title} title={"My Registered Cards"} />
         <Card className={s.cards}>
           {creditcardsData.map((card) => (
@@ -55,9 +52,7 @@ const Payment: NextPage = () => {
             }}
           />
         </Card>
-      </main>
-
-      <Footer links={footerNav} />
+      </div>
     </>
   )
 }

@@ -2,11 +2,10 @@ import { NextPage } from "next"
 import Head from "next/head"
 
 import { Grid } from "@mui/material"
-import { Breadcrumbs, Footer, Header, Toolbar } from "Сomponents"
+import { Breadcrumbs, Toolbar } from "Сomponents"
 import { Card, Pagination } from "UI"
 
 import card_image from "public/assets/img/card.png"
-import { footerNav } from "shared/constants/footernav"
 
 import s from "styles/pages/influencers.module.scss"
 
@@ -16,8 +15,6 @@ const influencers: NextPage = () => {
       <Head>
         <title>ILONSI SHOP | Influencers</title>
       </Head>
-
-      <Header />
 
       <main className={s.main}>
         <div className={s.background} />
@@ -52,8 +49,6 @@ const influencers: NextPage = () => {
           <Pagination className={s.pagination} pagesCount={4} isShort />
         </div>
       </main>
-
-      <Footer links={footerNav} />
     </>
   )
 }

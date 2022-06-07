@@ -28,8 +28,6 @@ import {
 
 import {
   AddressCard,
-  Footer,
-  Header,
   Logo,
   Notification,
   ProductItem,
@@ -42,7 +40,6 @@ import {
 import { icons } from "shared/constants/icons"
 import { productItems } from "shared/constants/productItems"
 import { sidebarItems } from "shared/constants/sidebarItems"
-import { footerNav } from "shared/constants/footernav"
 import { Currency } from "shared/enums/currency"
 
 import s from "styles/pages/ComponentsExample.module.scss"
@@ -63,9 +60,6 @@ const Home: NextPage = () => {
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
-
-      <Header withBreadcrumbs />
-
       <main className={s.main}>
         <SectionHeader
           className={s.title}
@@ -256,14 +250,13 @@ const Home: NextPage = () => {
                 />
               </div>
             </div>,
+            
             <div key="ProductItemLIst" className={s.grid}>
               <ProductItemList productItemList={productItems} />
             </div>,
           ]}
         />
       </main>
-
-      <Footer links={footerNav} />
     </>
   )
 }
