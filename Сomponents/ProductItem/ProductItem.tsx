@@ -22,8 +22,6 @@ export interface ProductItemProps {
 }
 
 const ProductItem: React.FC<ProductItemProps> = (props) => {
-  const [isAddButton, toggleAddButton] = useState<boolean>(!!props.addButton)
-
   const {
     title,
     subtitle,
@@ -33,26 +31,29 @@ const ProductItem: React.FC<ProductItemProps> = (props) => {
     imageSrc,
     isFavorite = true,
     onAddClick,
+    addButton = false,
     toggleFavorite,
   } = props
+
+  const [isAddButton, toggleAddButton] = useState<boolean>(addButton)
 
   return (
     <div className={s.product_item_container}>
       <div className={s.product_item_top}>
-        {!!toggleFavorite ? (
+        {toggleFavorite && (
           <div
-            className={cn(s.product_favourites, { [s.isFavorite]: isFavorite })}
+            className={cn(s.product_favorites, { [s.isFavorite]: isFavorite })}
             onClick={() => toggleFavorite(id)}
           >
-            <Icon type={"heart"} />
+            <Icon type={"heart"} color={"inherit"} />
           </div>
-        ) : null}
+        )}
         <div className={s.product_item_image}>
           <Image src={imageSrc} className={s.img} alt={title} layout="fill" />
         </div>
       </div>
       <div className={s.product_item_bottom}>
-        {onAddClick ? (
+        {onAddClick && (
           <div
             onClick={() => {
               onAddClick(id)
@@ -62,7 +63,7 @@ const ProductItem: React.FC<ProductItemProps> = (props) => {
           >
             <Icon type={isAddButton ? "plus" : "minus"} />
           </div>
-        ) : null}
+        )}
 
         <div className={s.product_item_description}>
           <div className={s.product_title}> {title} </div>

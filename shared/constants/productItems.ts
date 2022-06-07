@@ -1,4 +1,6 @@
-export const productItems = [
+import { ProductItemProps } from "Сomponents/ProductItem/ProductItem"
+
+export const productItems: ProductItemProps[] = [
   {
     title: "Yves Saint Laurent",
     subtitle: "Black long sleeve men’s jacket",

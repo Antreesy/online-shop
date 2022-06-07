@@ -36,18 +36,16 @@ import {
   ProductItemList,
   ProfileSidebar,
   SectionHeader,
-  SizePicker,
   OrderSummary,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
+import { productItems } from "shared/constants/productItems"
 import { sidebarItems } from "shared/constants/sidebarItems"
 import { footerNav } from "shared/constants/footernav"
 import { Currency } from "shared/enums/currency"
 
 import s from "styles/pages/ComponentsExample.module.scss"
-import { icons } from "shared/constants/icons"
-import { productItems } from "shared/constants/productItems"
 
 const SampleCard = () => (
   <Card
@@ -85,7 +83,7 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
-            "OrderSummarry",
+            "OrderSummary",
             "Sidebar",
             "Price",
             "Counters",
@@ -120,7 +118,12 @@ const Home: NextPage = () => {
             </div>,
 
             <div key={"OrderSummary"}>
-              <OrderSummary subtotal={1144} shipping={123} discount={40} kdv={110} />
+              <OrderSummary
+                subtotal={1144}
+                shipping={123}
+                discount={40}
+                kdv={110}
+              />
             </div>,
 
             <div key={"Sidebar"}>
@@ -253,9 +256,7 @@ const Home: NextPage = () => {
                 />
               </div>
             </div>,
-            <div key="ProductItemLIst">
-              {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-              {/* @ts-ignore */}
+            <div key="ProductItemLIst" className={s.grid}>
               <ProductItemList productItemList={productItems} />
             </div>,
           ]}

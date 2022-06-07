@@ -1,3 +1,3 @@
-import OrderSummary from "./OrderSummary";
+import OrderSummary from "./OrderSummary"
 
-export { OrderSummary };
+export { OrderSummary }
