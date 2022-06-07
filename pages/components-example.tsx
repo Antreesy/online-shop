@@ -1,68 +1,103 @@
-//Global Dependencies
 import type { NextPage } from "next"
 
-//Project Components
 import Head from "next/head"
-import Image from "next/image"
-import Link from "next/link"
+
 import {
-  DatePicker,
-  Icon,
-  RadioGroup,
-  CheckboxGroup,
-  SocialIcon,
+  AccordionExamples,
+  ButtonExamples,
+  CheckboxExamples,
+  InputExamples,
+  CreditCardExamples,
+  PickerExamples,
+  TabsExamples,
+} from "Сomponents/Examples"
+
+import {
+  AddButton,
+  AlertBox,
+  Card,
+  Carousel,
+  ItemCounter,
+  Range,
   Tabs,
+  Price,
+  Icon,
+  SocialIcon,
   ProgressBar,
 } from "UI"
-import { AccordionExamples, ButtonExamples } from "Сomponents/Examples"
-import { Header } from "Сomponents"
 
-//Project Helpers
-import { icons } from "shared/consts/icons"
+import {
+  AddressCard,
+  Footer,
+  Header,
+  Logo,
+  Notification,
+  ProductItem,
+  ProfileSidebar,
+  SectionHeader,
+} from "Сomponents"
 
-//Project Styles
+import { icons } from "shared/constants/icons"
+import { sidebarItems } from "shared/constants/sidebarItems"
+import { footerNav } from "shared/constants/footernav"
+import { Currency } from "shared/enums/currency"
+
 import s from "styles/pages/ComponentsExample.module.scss"
 
+const SampleCard = () => (
+  <Card
+    className={s.card_small}
+    imageSrc="/../public/assets/img/picture_1.png"
+    title="Gizem Sancak"
+    buttonTitle="Go To Store"
+    topButtonTitle="Follow"
+  />
+)
+
 const Home: NextPage = () => {
-  const currentStep = 3;
+  const currentStep = 3
   const steps = [
-    "Select master blaster campaign settings",
-    "Create an ad group",
-    "Create an ad group",
-    "hi",
+    "1",
+    "2",
+    "3",
   ]
   return (
-    <div className={s.container}>
+    <>
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
 
-      <Header />
+      <Header withBreadcrumbs />
 
       <main className={s.main}>
-        <h1>UI Kit page</h1>
+        <SectionHeader
+          className={s.title}
+          title={"UI Kit page"}
+          actionText={"All Orders"}
+        />
 
-        <ProgressBar currentStep={currentStep} steps={steps}/>
+        <ProgressBar currentStep={currentStep} steps={steps} />
 
         <Tabs
           className={s.example_tabs}
           labels={[
             "Buttons",
-            "Inputs and Pickers",
+            "Inputs",
+            "Pickers",
             "Icons",
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
+            "Sidebar",
+            "Price",
+            "Counters",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
 
-            <div key={"Inputs and Pickers"} className={s.grid}>
-              <div>
-                <h2>DatePicker</h2>
-                <DatePicker initValue={new Date()} onChange={() => {}} />
-              </div>
-            </div>,
+            <InputExamples key={"Inputs"} />,
+
+            <PickerExamples key={"Pickers"} />,
 
             <div key={"Icons"} className={s.grid}>
               {icons.map((icon) => (
@@ -75,83 +110,147 @@ const Home: NextPage = () => {
                 <SocialIcon type="instagram" />
                 <SocialIcon type="youtube" />
               </div>
+              <Logo type="dark" />
             </div>,
 
-            <div key={"Tabs"} className={s.tabs}>
-              <p className={s.description}>default</p>
-              <Tabs
-                labels={["Sign In", "Sign Up"]}
-                values={["Sign In", "Sign Up"]}
-              />
-              <p className={s.description}>spaces</p>
-              <Tabs
-                labels={["Sign In", "Sign Up"]}
-                values={["Sign In", "Sign Up"]}
-                variant="spaces"
-              />
-              <p className={s.description}>no_border</p>
-              <Tabs
-                labels={["Sign In", "Sign Up"]}
-                values={["Sign In", "Sign Up"]}
-                variant="no_border"
-              />
+            <TabsExamples key={"Tabs"} />,
+
+            <CheckboxExamples key={"Checkboxes and Radio"} />,
+
+            <div key={"Accordion"}>
+              <AccordionExamples />
             </div>,
 
-            <div key={"Checkboxes and Radio"} className={s.grid}>
+            <div key={"Sidebar"}>
+              <ProfileSidebar labels={sidebarItems} title={"MY ACCOUNT"} />
+            </div>,
+
+            <div key={"Price"}>
+              <Price oldPrice={2030} price={1930} type="order" />
+              <Price oldPrice={2030} price={1930} type="cart" />
+              <Price oldPrice={2030} price={1930} type="primary" />
+              <Price oldPrice={2030} price={1930} type="sale" />
+              <Price oldPrice={2030} price={1930} type="sale_black" />
+
+              <Range
+                minQuantity={10000}
+                maxQuantity={1000000}
+                currency={Currency.RUB}
+              />
+            </div>,
+            <div key={"Counters"} style={{ display: "flex" }}>
+              <ItemCounter initValue={5} />
+              <ItemCounter initValue={5} large />
+            </div>,
+          ]}
+        />
+
+        <SectionHeader className={s.title} title={"Components page"} />
+
+        <Tabs
+          className={s.example_tabs}
+          labels={[
+            "Notification",
+            "Carousel",
+            "Add Button",
+            "Credit Card",
+            "Card",
+            "ProductItem",
+          ]}
+          values={[
+            <div key="Notification">
+              <AlertBox text="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem" />
+
+              <Notification title={"Notification"}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                quam sequi vitae eius iusto perspiciatis facilis nesciunt
+                dignissimos provident ipsum? Nobis repellat atque ab nam magni
+                voluptas expedita facere recusandae.
+              </Notification>
+            </div>,
+
+            <div key={"Carousel"} className={s.carousel}>
+              <Carousel items={new Array(10).fill(SampleCard)} />
+            </div>,
+
+            <div key={"AddButton"} className={s.addbuttonlist}>
               <div>
-                <p>Rounded Checkboxes</p>
-                <CheckboxGroup rounded labels={["Men", "Women", "Unisex"]} />
-                <p>Square Checkboxes</p>
-                <CheckboxGroup
-                  color="#000"
-                  labels={["Men", "Women", "Unisex"]}
-                />
-                <p>Colored Checkboxes</p>
-                <CheckboxGroup
-                  color="#ff4e4e"
-                  colorChecked="#25754a"
-                  labels={["Men", "Women", "Unisex"]}
-                />
-
-                <p>Gender</p>
-                <RadioGroup
-                  elements={[
-                    { value: "female", label: "Female" },
-                    { value: "male", label: "Male" },
-                  ]}
-                />
-                <p>Type</p>
-                <RadioGroup
-                  elements={[
-                    { value: "string", label: "String" },
-                    { value: "number", label: "Number" },
-                    { value: "boolean", label: "Boolean" },
-                    { value: "any", label: "Any" },
-                  ]}
+                <AddButton />
+              </div>
+              <div>
+                <AddButton title="Add New Card" color="primary" />
+              </div>
+              <div>
+                <AddButton title="Add New Address" color="secondary" />
+              </div>
+              <div>
+                <AddButton
+                  title="Add Product"
+                  color="secondary"
+                  bgColor="white"
+                  large
                 />
               </div>
             </div>,
 
-            <div key={"Accordion"}>
-              <AccordionExamples />
+            <CreditCardExamples key={"Credit Card"} />,
+
+            <div key={"Card"}>
+              <div className={s.grid}>
+                <SampleCard />
+                <Card
+                  className={s.card_small}
+                  imageSrc="/../public/assets/img/picture_2.png"
+                  title="Gizem Sancak"
+                  buttonTitle="Go To Store"
+                  isButtonHidden
+                />
+                <AddressCard
+                  title="title"
+                  text="nskjjknsjnkjdvmkjewnlkjwnljcnwjklen"
+                />
+              </div>
+            </div>,
+
+            <div key={"ProductItem"}>
+              <div className={s.grid}>
+                <ProductItem
+                  title="Yves Saint Laurent"
+                  subtitle="Black long sleeve men’s jacket"
+                  description="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
+                  id={1}
+                  price={{
+                    oldPrice: 2030,
+                    price: 2030,
+                    type: "sale",
+                  }}
+                  imageSrc="/../public/assets/img/T_shirt.png"
+                />
+              </div>
+              <div className={s.grid} style={{ width: 300 }}>
+                <ProductItem
+                  title="Yves Saint Laurent"
+                  subtitle="Black long sleeve men’s jacket"
+                  description="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
+                  id={1}
+                  price={{
+                    oldPrice: 2030,
+                    price: 2030,
+                    type: "sale",
+                  }}
+                  imageSrc="/../public/assets/img/T_shirt.png"
+                  isFavorite={false}
+                  onAddClick={() => console.log("onAddClick")}
+                  toggleFavorite={() => console.log("toggleFavorite")}
+                />
+              </div>
             </div>,
           ]}
         />
       </main>
 
-      <footer className={s.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={s.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+      <Footer links={footerNav} />
+    </>
   )
 }
 

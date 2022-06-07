@@ -1,63 +1,34 @@
 import Link from "next/link"
 import { Button, SocialIcon } from "UI"
-import { Logo } from "Сomponents"
+import { Breadcrumbs, BurgerMenu, Logo } from "Сomponents"
+
+import { DrawerItems } from "shared/constants/menuItems"
 
 import s from "./header.module.scss"
 
-interface HeaderProps {}
+interface HeaderProps {
+  withBreadcrumbs?: boolean
+}
 
-const Header: React.FC<HeaderProps> = (props) => {
+const Header: React.FC<HeaderProps> = ({ withBreadcrumbs }) => {
   return (
     <header className={s.header}>
-      <div className={s.header__top}>
-        <span className={s.email}>info@ilonsi.com</span>
+      <div className={s.top_group}>
+        <Link href="mailto:info@ilonsi.com">
+          <a className={s.email}>info@ilonsi.com</a>
+        </Link>
         <span className={s.caption}>
           lipsum as it is sometimes known, is dummy
         </span>
+
         <div className={s.socials}>
           <SocialIcon type="facebook" />
           <SocialIcon type="instagram" />
           <SocialIcon type="youtube" />
-        </div>
-      </div>
-      <div className={s.header__bottom}>
-        <div className={s.bottom_left_group}>
-          <Button
-            className={s.header__burger}
-            disableElevation
-            iconLeft="resize_textarea"
-          />
-          <Button
-            className={s.header__button}
-            icon
-            disableElevation
-            iconLeft="search"
-          />
-        </div>
 
-        <Link href={"/"}>
-          <a className={s.header__logo}>
-            <Logo type="light" />
-          </a>
-        </Link>
-
-        <div className={s.bottom_right_group}>
           <Button
-            className={s.header__button}
-            disableElevation
-            iconLeft="account"
-          >
-            Yalçın Topkaya
-          </Button>
-          <Button
-            className={s.header__button}
-            disableElevation
-            iconLeft="basket"
-          >
-            Basket
-          </Button>
-          <Button
-            className={s.header__lang}
+            className={s.button_lang_top}
+            variant="text"
             disableElevation
             iconRight="arrow_down"
           >
@@ -65,6 +36,63 @@ const Header: React.FC<HeaderProps> = (props) => {
           </Button>
         </div>
       </div>
+      <div className={s.bottom_group}>
+        <div className={s.bottom_left_group}>
+          <BurgerMenu items={DrawerItems} />
+          <Button
+            className={s.button_search}
+            icon
+            disableElevation
+            iconLeft="search"
+          />
+        </div>
+
+        <Link href={"/"}>
+          <a className={s.logo}>
+            <Logo type="light" />
+          </a>
+        </Link>
+
+        <div className={s.bottom_right_group}>
+          <Button
+            className={s.button_account}
+            disableElevation
+            iconLeft="account"
+          >
+            Yalçın Topkaya
+          </Button>
+          <Button
+            className={s.button_basket}
+            disableElevation
+            iconLeft="basket"
+          >
+            Basket
+          </Button>
+          <Button
+            className={s.button_lang_bottom}
+            disableElevation
+            iconRight="arrow_down"
+          >
+            En
+          </Button>
+        </div>
+
+        <div className={s.bottom_right_group_mobile}>
+          <Button
+            className={s.button_account}
+            disableElevation
+            iconLeft="account"
+          />
+          <Button
+            className={s.button_basket}
+            variant="outlined"
+            disableElevation
+            iconLeft="basket"
+          />
+        </div>
+      </div>
+
+      {withBreadcrumbs && <Breadcrumbs />}
     </header>
   )
 }

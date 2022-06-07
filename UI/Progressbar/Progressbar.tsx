@@ -12,8 +12,8 @@ import { StepIconProps } from "@mui/material/StepIcon"
 import s from "./progressbar.module.scss"
 
 interface ProgressBarProps {
-  steps: string[],
-  currentStep: number;
+  steps: string[]
+  currentStep: number
 }
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
@@ -64,28 +64,28 @@ const ColorlibStepIconRoot = styled("div")<{
   }),
 }))
 
-
 function ColorlibStepIcon(props: StepIconProps) {
-  const { active, completed, className } = props;
+  const { active, completed, className } = props
 
   const icons: { [index: string]: React.ReactElement } = {
     1: <span>01</span>,
     2: <span>02</span>,
     3: <span>03</span>,
     4: <span>04</span>,
-  };
+  }
 
   return (
-    <ColorlibStepIconRoot ownerState={{ completed, active }} className={className}>
+    <ColorlibStepIconRoot
+      ownerState={{ completed, active }}
+      className={className}
+    >
       {icons[String(props.icon)]}
     </ColorlibStepIconRoot>
-  );
+  )
 }
 
-
-
 const ProgressBar: React.FC<ProgressBarProps> = (props) => {
-const {currentStep, steps } = props
+  const { currentStep, steps } = props
 
   return (
     <Stack sx={{ width: "100%" }}>
@@ -96,7 +96,7 @@ const {currentStep, steps } = props
       >
         {steps.map((label) => (
           <Step key={label}>
-            <StepLabel StepIconComponent={ColorlibStepIcon} />
+            <StepLabel  StepIconComponent={ColorlibStepIcon} />
           </Step>
         ))}
       </Stepper>
