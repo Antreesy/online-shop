@@ -9,10 +9,12 @@ import s from "./toolbar.module.scss"
 interface ToolbarProps {
   values: SelectItem[]
   className?: string
+  onChangeSearch?: () => void
+  onChangeSelect?: () => void
 }
 
 const Toolbar: React.FC<ToolbarProps> = (props) => {
-  const { values, className } = props
+  const { values, className, onChangeSearch, onChangeSelect } = props
 
   const [inputValue, setInputValue] = useState<string>("")
 
@@ -25,6 +27,7 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
           value={inputValue}
           setValue={setInputValue}
           placeholder="Search"
+          onChange={onChangeSearch}
         />
       </div>
 
@@ -33,6 +36,7 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
         iconClassName={s.selectIcon}
         values={values}
         placeholder={"Filter"}
+        onChange={onChangeSelect}
       />
     </div>
   )

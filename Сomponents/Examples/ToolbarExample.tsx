@@ -7,5 +7,15 @@ export const ToolbarExample = () => {
     { title: "third", value: 3 },
   ]
 
-  return <Toolbar values={values} />
+  return (
+    <Toolbar
+      values={values}
+      onChangeSearch={() => {
+        console.log("change search")
+      }}
+      onChangeSelect={() => {
+        console.log("change select")
+      }}
+    />
+  )
 }

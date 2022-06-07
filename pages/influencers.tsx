@@ -1,11 +1,9 @@
-import { useState } from "react"
-
 import { NextPage } from "next"
 import Head from "next/head"
 
 import { Grid } from "@mui/material"
 import { Breadcrumbs, Footer, Header, Toolbar } from "Сomponents"
-import { Card, Input, Icon, Pagination } from "UI"
+import { Card, Pagination } from "UI"
 
 import card_image from "public/assets/img/card.png"
 import { footerNav } from "shared/constants/footernav"
@@ -13,8 +11,6 @@ import { footerNav } from "shared/constants/footernav"
 import s from "styles/pages/influencers.module.scss"
 
 const influencers: NextPage = () => {
-  const [value, setValue] = useState("")
-
   return (
     <>
       <Head>

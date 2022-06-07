@@ -1,7 +1,6 @@
 import { useState } from "react"
 import SimpleBar from "simplebar-react"
 import cn from "classnames"
-import "simplebar-react/dist/simplebar.min.css"
 
 import { InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material"
 import { Icon } from "UI"
@@ -48,7 +47,6 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
     onChange?.(value)
     setValue(value)
   }
-
 
   const labelClass = cn(s.select_label, className)
   const selectClass = cn(s.select, selectClassName)
