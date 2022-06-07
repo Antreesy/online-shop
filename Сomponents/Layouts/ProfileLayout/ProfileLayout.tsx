@@ -15,7 +15,7 @@ interface ProfileLayoutProps extends LayoutProps {
 const ProfileLayout: React.FC<ProfileLayoutProps> = ({ children, role }) => {
   return (
     <>
-      <Header withBreadcrumbs />
+      <Header withBreadcrumbs role={role} />
 
       <main className={s.main}>
         <div className={s.container}>

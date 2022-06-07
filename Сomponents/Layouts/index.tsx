@@ -2,7 +2,7 @@ import React from "react"
 import { useRouter } from "next/router"
 
 import { CommonLayout } from "./CommonLayout"
-import { ProfileLayout } from "./ProfileLayouut"
+import { ProfileLayout } from "./ProfileLayout"
 import { LightLayout } from "./LightLayout"
 
 import { profilePaths, lightPaths, basePaths } from "shared/constants/paths"
