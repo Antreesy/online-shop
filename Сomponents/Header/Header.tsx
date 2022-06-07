@@ -1,3 +1,5 @@
+import cn from "classnames"
+
 import Link from "next/link"
 import { Button, SocialIcon } from "UI"
 import { Breadcrumbs, BurgerMenu, Logo } from "Сomponents"
@@ -12,7 +14,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ withBreadcrumbs }) => {
   return (
-    <header className={s.header}>
+    <header className={cn(s.header, { [s.withBreadcrumbs]: withBreadcrumbs })}>
       <div className={s.top_group}>
         <Link href="mailto:info@ilonsi.com">
           <a className={s.email}>info@ilonsi.com</a>

@@ -16,14 +16,16 @@ const ProfileLayout: React.FC<ProfileLayoutProps> = ({ children, role }) => {
   return (
     <>
       <Header withBreadcrumbs />
+
       <main className={s.main}>
         <div className={s.container}>
-          <div className={s.aside}>
+          <aside className={s.aside}>
             <ProfileSidebar title={"My Account"} labels={sidebarTabs[role]} />
-          </div>
-          {children}
+          </aside>
+          <div className={s.content}>{children}</div>
         </div>
       </main>
+
       <Footer links={footerNav} />
     </>
   )

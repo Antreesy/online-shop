@@ -9,7 +9,7 @@ import s from "./commonlayout.module.scss"
 const CommonLayout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <Header withBreadcrumbs />
+      <Header />
       <main className={s.main}>{children}</main>
       <Footer links={footerNav} />
     </>
