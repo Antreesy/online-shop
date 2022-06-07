@@ -1,24 +1,11 @@
 import React from "react"
-import ProductItem from "Сomponents/ProductItem/ProductItem"
-import { PriceProps } from "UI/Price/Price"
-import { ImageProps } from "next/image"
+import ProductItem, {
+  ProductItemProps,
+} from "Сomponents/ProductItem/ProductItem"
 import { Grid } from "@mui/material"
 
-type productItem = {
-  title: string
-  subtitle: string
-  description: string
-  id: number
-  price: PriceProps
-  imageSrc: ImageProps["src"]
-  isFavorite?: boolean
-  addButton?: boolean
-  toggleFavorite?: (id: number) => void
-  onAddClick?: (id: number) => void
-}
-
 interface ProductItemListProps {
-  productItemList: productItem[]
+  productItemList: ProductItemProps[]
 }
 
 export const ProductItemList: React.FC<ProductItemListProps> = (props) => {

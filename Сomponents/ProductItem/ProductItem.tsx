@@ -8,7 +8,7 @@ import Image, { ImageProps } from "next/image"
 
 import { Price } from "UI/Price"
 
-interface ProductItemProps {
+export interface ProductItemProps {
   title: string
   subtitle: string
   description: string
