@@ -16,9 +16,10 @@ export const getStaticProps: GetStaticProps = async ({ locale = "en" }) => ({
 
 
 
+
 const PageNotFound: NextPage = () => {
   const router = useRouter()
-  const { t } = useTranslation("pnt")
+  const { t } = useTranslation("404")
 
   const handleClick = () => {
     router.push("/")

@@ -42,4 +42,5 @@ export const icons = [
   "heart",
   "plus",
   "minus",
+  "question",
 ] as const
