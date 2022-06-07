@@ -5,13 +5,13 @@
   min-height: 100vh;
 
   @include mobile {
-    padding-top: $header-with-breadcrumbs-desktop-height;
+    padding-top: $header-with-breadcrumbs-mobile-height;
     min-height: fit-content;
   }
 }
 
 .container {
-  max-width: 1640px;
+  max-width: 1720px;
   width: 100%;
   margin: 0 auto;
   display: flex;

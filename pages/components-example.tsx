@@ -39,7 +39,7 @@ import {
 
 import { icons } from "shared/constants/icons"
 import { productItems } from "shared/constants/productItems"
-import { sidebarItems } from "shared/constants/sidebarItems"
+import { sidebarTabs } from "shared/constants/sidebartabs"
 import { Currency } from "shared/enums/currency"
 
 import s from "styles/pages/ComponentsExample.module.scss"
@@ -121,7 +121,7 @@ const Home: NextPage = () => {
             </div>,
 
             <div key={"Sidebar"}>
-              <ProfileSidebar labels={sidebarItems} title={"MY ACCOUNT"} />
+              <ProfileSidebar labels={sidebarTabs[0]} title={"MY ACCOUNT"} />
             </div>,
 
             <div key={"Price"}>
@@ -250,7 +250,7 @@ const Home: NextPage = () => {
                 />
               </div>
             </div>,
-            
+
             <div key="ProductItemLIst" className={s.grid}>
               <ProductItemList productItemList={productItems} />
             </div>,

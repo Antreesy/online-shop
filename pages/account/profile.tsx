@@ -1,7 +1,7 @@
 import { NextPage } from "next"
 import Head from "next/head"
 
-import s from "styles/pages/faq.module.scss"
+import s from "styles/pages/account/profile.module.scss"
 
 const Profile: NextPage = () => {
   return (
