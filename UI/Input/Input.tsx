@@ -50,7 +50,7 @@ export const Input: React.FC<InputProps> = (props) => {
           variant="outlined"
           onChange={handleChange}
           value={value}
-          classes={{ root: s[className] }}
+          classes={{ root: className }}
           className={s.input}
           placeholder={placeholder}
           required={isRequired}

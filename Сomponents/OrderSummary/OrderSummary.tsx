@@ -1,22 +1,20 @@
 import { useState } from "react"
-import { Button } from "UI"
-import { Input } from "UI"
-import { Accordion } from "UI"
-import { CheckboxGroup } from "UI"
+
+import { Accordion, Button, CheckboxGroup, Input } from "UI"
+
 import s from "./OrderSummary.module.scss"
 
 interface OrderSummaryProps {
-  subtotal: Number
-  shipping: Number
-  discount: Number
-  kdv: Number
+  subtotal: number
+  shipping: number
+  discount: number
+  kdv: number
 }
 
 const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
   const { subtotal, shipping, discount, kdv } = props
   const [inputValue, setInputValue] = useState<string>("")
-  const sum =
-    Number(subtotal) + Number(shipping) + Number(discount) + Number(kdv)
+  const sum = subtotal + shipping + discount + kdv
   const getData = [
     { name: "Subtotal", value: subtotal },
     { name: "Shipping cost", value: shipping },
@@ -25,17 +23,23 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
   ]
 
   return (
-    <>
+    <div className={s.order_wrapper}>
       <h3 className={s.title}>Order Summary</h3>
       <div className={s.coupon}>
-        <Accordion header={"Use discount coupon"}>
+        <Accordion
+          header={"Use discount coupon"}
+          headerClassName={s.accordion_header}
+          headerActiveClassName={s.accordion_header_active}
+          arrowColor="#000"
+        >
           <div className={s.details}>
-            <div className={s.input}>
+            <div>
               <Input
                 label={null}
                 setValue={setInputValue}
                 value={inputValue}
                 placeholder={"HZDASK2410AS"}
+                className={s.input}
               />
             </div>
             <Button className={s.button}>Apply</Button>
@@ -46,13 +50,13 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
       <div className={s.reciept}>
         <ul className={s.prices}>
           {getData.map((data) => (
-             <li key={data.name} className={s.price}>
-             <p className={s.name}>{data.name}</p>
-             <p className={s.dots}>:</p>
-             <p className={s.priceValue}>
-               <>₺{data.value}</>
-             </p>
-           </li> 
+            <li key={data.name} className={s.price}>
+              <p className={s.name}>{data.name}</p>
+              <p className={s.dots}>:</p>
+              <p className={s.priceValue}>
+                <>₺{data.value}</>
+              </p>
+            </li>
           ))}
         </ul>
 
@@ -72,7 +76,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
           <Button className={s.submitBtn}>Complete Order</Button>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
