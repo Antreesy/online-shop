@@ -35,6 +35,8 @@ import {
   ProductItem,
   ProfileSidebar,
   SectionHeader,
+  SizePicker,
+  OrderSummary,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
@@ -80,6 +82,7 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
+            "OrderSummarry",
             "Sidebar",
             "Price",
             "Counters",
@@ -111,6 +114,10 @@ const Home: NextPage = () => {
 
             <div key={"Accordion"}>
               <AccordionExamples />
+            </div>,
+
+            <div key={"OrderSummary"}>
+              <OrderSummary subtotal={1144} shipping={123} discount={40} kdv={110} />
             </div>,
 
             <div key={"Sidebar"}>
