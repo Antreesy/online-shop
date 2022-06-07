@@ -1,7 +1,5 @@
-//Global Dependencies
 import type { NextPage } from "next"
 
-//Project Components
 import Head from "next/head"
 
 import {
@@ -16,6 +14,7 @@ import {
 
 import {
   AddButton,
+  AlertBox,
   Card,
   Carousel,
   ItemCounter,
@@ -38,11 +37,11 @@ import {
   SectionHeader,
 } from "Сomponents"
 
-//Project Helpers
+import { icons } from "shared/constants/icons"
+import { sidebarItems } from "shared/constants/sidebarItems"
 import { footerNav } from "shared/constants/footernav"
 import { Currency } from "shared/enums/currency"
 
-//Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
 import { icons } from "shared/constants/icons"
 import { productItems } from "shared/constants/productItems"
@@ -117,23 +116,7 @@ const Home: NextPage = () => {
             </div>,
 
             <div key={"Sidebar"}>
-              <ProfileSidebar
-                labels={[
-                  { link: "/", text: "Profile" },
-                  { link: "/", text: "Address" },
-                  { link: "/", text: "Order" },
-                  { link: "/", text: "Payment" },
-                  { link: "/", text: "Notification" },
-                  {
-                    link: "/",
-                    text: "Dashboard",
-                    content: [{ link: "/", text: "Favorite" }],
-                  },
-                  { link: "/", text: "Help" },
-                  { link: "/", text: "Sign Out" },
-                ]}
-                title={"Sidebar example1"}
-              />
+              <ProfileSidebar labels={sidebarItems} title={"MY ACCOUNT"} />
             </div>,
 
             <div key={"Price"}>
@@ -171,7 +154,9 @@ const Home: NextPage = () => {
           ]}
           values={[
             <div key="Notification">
-              <Notification header={"Notification"}>
+              <AlertBox text="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem" />
+
+              <Notification title={"Notification"}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
                 quam sequi vitae eius iusto perspiciatis facilis nesciunt
                 dignissimos provident ipsum? Nobis repellat atque ab nam magni
