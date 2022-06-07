@@ -20,7 +20,7 @@ const FaqPage: NextPage = () => {
         <title>ILONSI SHOP | Notification page</title>
       </Head>
 
-      <Header withBreadCrumbs />
+      <Header withBreadcrumbs />
 
       <main className={s.main}>
         <div className={s.container}>

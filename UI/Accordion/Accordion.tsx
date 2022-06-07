@@ -15,6 +15,7 @@ interface AccordionProps {
   className?: string
   summaryClassName?: string
   headerClassName?: string
+  headerActiveClassName?: string
   openTitleClassName?: string
   arrowColor?: string
 }
@@ -29,13 +30,16 @@ const CustomAccordion: React.FC<AccordionProps> = (props) => {
     className,
     summaryClassName,
     headerClassName,
+    headerActiveClassName,
     openTitleClassName,
     arrowColor = "#8100ef",
   } = props
 
   const accordionClass = cn(s.accordion, className)
   const summaryClass = cn(s.summary, summaryClassName)
-  const headerClass = cn(s.header, { [s.active]: active }, headerClassName)
+  const headerClass = cn(s.header, headerClassName, {
+    [headerActiveClassName || s.active]: active,
+  })
 
   return (
     <Accordion className={accordionClass}>

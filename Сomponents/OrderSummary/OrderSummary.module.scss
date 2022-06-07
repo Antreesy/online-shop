@@ -1,0 +1,185 @@
+@import "styles/style.scss";
+
+.order_wrapper {
+  max-width: 380px;
+  color: $color-black;
+}
+
+%frame {
+  border-radius: 5px;
+  background-color: $color-white;
+  box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.11);
+}
+
+.title {
+  margin: 20px 0 0;
+  font-size: 18px;
+  font-weight: $fw-semibold;
+  text-align: left;
+}
+
+.accordion_header {
+  font-size: 14px;
+  font-weight: $fw-bold;
+}
+
+.accordion_header_active {
+  font-weight: $fw-bold;
+}
+
+.coupon {
+  margin: 23px 0 28px;
+  padding: 0 6px 0;
+  @extend %frame;
+
+  @include mobile {
+      max-width: 310px;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 22px 0 26px;
+  border-top: solid 2px $color-grey-ed;
+}
+
+.button {
+  width: 102px;
+  height: 46px;
+  font-size: 16px;
+  font-weight: $fw-semibold;
+  line-height: 1.19;
+  letter-spacing: normal;
+
+  @include mobile {
+      width: 92px;
+      height: 41px;
+      font-size: 14px;
+      line-height: 1.21;
+  }
+}
+
+.input {
+  width: 216px;
+  height: 46px;
+
+  @include mobile {
+      width: 180px;
+      height: 42px;
+  }
+}
+
+.reciept {
+  @extend %frame;
+  padding: 31px 22px 29px;
+  
+  @include mobile {
+    max-width: 310px;
+}
+}
+
+.prices {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+
+.name {
+  font-size: 14px;
+  font-weight: $fw-bold;
+  line-height: 1.79;
+  text-align: left;
+  color: $color-purple;
+}
+
+.dots {
+  position: absolute;
+  left: 232px;
+  font-size: 14px;
+  font-weight: $fw-semibold;
+  line-height: 1.79;
+  letter-spacing: 0.14px;
+  text-align: left;
+
+  @include mobile {
+      left: 180px;
+  }
+}
+
+.priceValue {
+  font-size: 14px;
+  font-weight: $fw-semibold;
+  line-height: 1.79;
+  letter-spacing: 0.14px;
+  text-align: right;
+}
+
+.submitField {
+  border-top: solid 2px $color-grey-ed;
+  margin: 22px 0 0;
+  padding: 0;
+}
+
+.totalField {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 22px 0 0;
+  height: 28px;
+}
+
+.total {
+  font-size: 14px;
+  font-weight: $fw-semibold;
+  line-height: 1.93;
+  letter-spacing: 0.14px;
+  text-align: left;
+}
+
+.totalPrice {
+  font-size: 25px;
+  font-weight: $fw-extrabold;
+  line-height: 1.92;
+  letter-spacing: 0.25px;
+  text-align: right;
+  color: $color-purple;
+}
+
+.checkbox {
+  margin: 19px 0 0;
+  display: flex;
+  align-items: flex-start;
+  font-size: 13px;
+  font-weight: $fw-medium;
+  line-height: 1.38;
+  text-align: left;
+  color: $color-grey-82
+}
+
+.submitBtn {
+  margin: 22px 0 0;
+  width: 100%;
+  height: 63px;
+  font-size: 20px;
+  font-weight: $fw-semibold;
+  line-height: 1.15;
+  text-align: center;
+  color: $color-white;
+
+  @include mobile {
+    width: 300px;
+    height: 45px;
+    font-size: 15px;
+    line-height: 1.2;
+  }
+}

@@ -11,8 +11,10 @@ import { ProductItem } from "./ProductItem"
 import { ProductItemList } from "./ProductItemList"
 import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
+import { OrderSummary } from "./OrderSummary"
 import { SupportSection } from "./SupportSection"
 import { ProfileSidebar } from "./ProfileSidebar"
+import { Toolbar } from "./Toolbar"
 
 export {
   AddressCard,
@@ -29,6 +31,8 @@ export {
   ProductItemList,
   SectionHeader,
   SizePicker,
+  OrderSummary,
   SupportSection,
   ProfileSidebar,
+  Toolbar,
 }

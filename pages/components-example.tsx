@@ -10,6 +10,7 @@ import {
   CreditCardExamples,
   PickerExamples,
   TabsExamples,
+  ToolbarExample,
 } from "Сomponents/Examples"
 
 import {
@@ -35,6 +36,8 @@ import {
   ProductItemList,
   ProfileSidebar,
   SectionHeader,
+  SizePicker,
+  OrderSummary,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
@@ -82,6 +85,7 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
+            "OrderSummarry",
             "Sidebar",
             "Price",
             "Counters",
@@ -113,6 +117,10 @@ const Home: NextPage = () => {
 
             <div key={"Accordion"}>
               <AccordionExamples />
+            </div>,
+
+            <div key={"OrderSummary"}>
+              <OrderSummary subtotal={1144} shipping={123} discount={40} kdv={110} />
             </div>,
 
             <div key={"Sidebar"}>
@@ -149,6 +157,7 @@ const Home: NextPage = () => {
             "Add Button",
             "Credit Card",
             "Card",
+            "Toolbar",
             "ProductItem",
             "ProductItemList",
           ]}
@@ -205,6 +214,10 @@ const Home: NextPage = () => {
                   text="nskjjknsjnkjdvmkjewnlkjwnljcnwjklen"
                 />
               </div>
+            </div>,
+
+            <div key={"Toolbar"}>
+              <ToolbarExample />
             </div>,
 
             <div key={"ProductItem"}>

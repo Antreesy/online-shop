@@ -11,7 +11,7 @@ interface LoginType {
   password: string
 }
 
-export const SignUp = () => {
+const SignUp = () => {
   const { handleSubmit, control } = useForm<LoginType>({
     criteriaMode: "all",
     defaultValues: {
@@ -80,3 +80,5 @@ export const SignUp = () => {
     </div>
   )
 }
+
+export default SignUp
