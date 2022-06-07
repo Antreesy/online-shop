@@ -259,8 +259,6 @@ const Home: NextPage = () => {
           ]}
         />
       </main>
-
-      
     </>
   )
 }

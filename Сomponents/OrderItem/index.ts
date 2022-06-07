@@ -1,2 +1,2 @@
-import OrderItem from "./OrderItem";
-export {OrderItem}
+import OrderItem from "./OrderItem"
+export { OrderItem }

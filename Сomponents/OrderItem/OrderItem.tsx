@@ -5,29 +5,19 @@ import PaymentInfo from "./PaymentInfo"
 import s from "./OrderItem.module.scss"
 import img from "public/assets/img/T_shirt.png"
 
-interface PaymentInfo {
-
-}
+interface PaymentInfo {}
 
 interface OrderItemProps {
-  date: string,
-  quantity: number,
-  buyerName: string,
-  orderAmount: number,
-  deliveryInfo?: string,
+  date: string
+  quantity: number
+  buyerName: string
+  orderAmount: number
+  deliveryInfo?: string
   seller: string
 }
 
 const OrderItem: React.FC<OrderItemProps> = (props) => {
-
-  const {
-    date,
-    quantity,
-    buyerName,
-    orderAmount,
-    deliveryInfo,
-    seller
-  } = props
+  const { date, quantity, buyerName, orderAmount, deliveryInfo, seller } = props
 
   const [detailVisible, setdetailVisible] = useState(false)
   return (
@@ -75,18 +65,23 @@ const OrderItem: React.FC<OrderItemProps> = (props) => {
           <div className={s.ordersInformation}>
             <div className={s.deliveryInfo}>
               <h2>Delivery information</h2>
-              <p>
-                {deliveryInfo}
-              </p>
+              <p>{deliveryInfo}</p>
             </div>
 
             <div className={s.paymentInfo}>
               <h2>Payment information</h2>
-              <PaymentInfo type="Credit Card" cardNumber={45465} orderAmount={123} shipping={123} total={1232} />
+              <PaymentInfo
+                type="Credit Card"
+                cardNumber={45465}
+                orderAmount={123}
+                shipping={123}
+                total={1232}
+              />
             </div>
           </div>
           <p>
-            Seller: {seller}<span>vndskjnvkns</span>
+            Seller: {seller}
+            <span>vndskjnvkns</span>
           </p>
           <div className={s.cardsArea}>
             <p>Was delivered</p>
@@ -105,7 +100,6 @@ const OrderItem: React.FC<OrderItemProps> = (props) => {
                 id={1}
                 imageSrc={img}
                 price={{ price: 2000 }}
-
                 subtitle={"subtitle"}
                 title={"titile"}
               />
@@ -114,7 +108,6 @@ const OrderItem: React.FC<OrderItemProps> = (props) => {
                 id={1}
                 imageSrc={img}
                 price={{ price: 2000 }}
-
                 subtitle={"subtitle"}
                 title={"titile"}
               />
@@ -123,7 +116,6 @@ const OrderItem: React.FC<OrderItemProps> = (props) => {
                 id={1}
                 imageSrc={img}
                 price={{ price: 2000 }}
-
                 subtitle={"subtitle"}
                 title={"titile"}
               />
@@ -132,7 +124,6 @@ const OrderItem: React.FC<OrderItemProps> = (props) => {
                 id={1}
                 imageSrc={img}
                 price={{ price: 2000 }}
-
                 subtitle={"subtitle"}
                 title={"titile"}
               />
