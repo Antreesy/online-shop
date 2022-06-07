@@ -1,10 +1,10 @@
-import React, { useState } from "react"
-import { useRouter } from "next/router"
-
-import { Accordion } from "UI"
 import Link from "next/link"
-
+import { useRouter } from "next/router"
+import React from "react"
+import { Accordion, Icon } from "UI"
 import s from "./profileSidebar.module.scss"
+
+
 
 type LabelType = {
   link: string
@@ -27,6 +27,7 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = (props) => {
   const SidebarItem = ({ label }: { label: LabelType }) => {
     return (
       <li>
+        {pathname === label.link ? <Icon type="account"/> : null}
         <Link href={label.link}>
           <a className={pathname === label.link ? `${s.active}` : undefined}>
             {label.text}
