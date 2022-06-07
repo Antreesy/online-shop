@@ -1,31 +1,5 @@
 @import "styles/style.scss";
 
-.container {
-  min-height: 100vh;
-  max-width: 1640px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  padding: 70px 50px 40px;
-
-  @include mobile-tablet {
-    padding: 30px 15px 40px;
-  }
-}
-
-.aside {
-  margin-right: 24px;
-
-  @include mobile-tablet {
-    display: none;
-  }
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-}
-
 .faq_heading {
   margin-bottom: 25px;
   font-size: 25px;

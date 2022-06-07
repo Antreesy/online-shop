@@ -62,14 +62,6 @@ const Index: NextPage = (props: any) => {
         </p>
 
         <p className={s.description}>
-          FAQ Page -
-          <Link href="/faq">
-            <a className={s.title__link}>/faq</a>
-          </Link>{" "}
-          page
-        </p>
-
-        <p className={s.description}>
           UI Kit -{" "}
           <Link href="/components-example">
             <a className={s.title__link}>/components-example</a>
@@ -78,17 +70,25 @@ const Index: NextPage = (props: any) => {
         </p>
 
         <p className={s.description}>
-          Profile page -
-          <Link href="/account/profile">
-            <a className={s.title__link}>/account/profile</a>
+          Notifications page -
+          <Link href="/account/notifications">
+            <a className={s.title__link}>/account/notifications</a>
           </Link>{" "}
           page
         </p>
 
         <p className={s.description}>
           Payment page is on{" "}
-          <Link href="/payment">
-            <a className={s.title__link}>/payment</a>
+          <Link href="/account/payment">
+            <a className={s.title__link}>/account/payment</a>
+          </Link>{" "}
+          page
+        </p>
+
+        <p className={s.description}>
+          Help Page -
+          <Link href="/account/help">
+            <a className={s.title__link}>/account/help</a>
           </Link>{" "}
           page
         </p>
