@@ -9,6 +9,7 @@
 
   @include mobile {
     width: 100%;
+    padding-bottom: 0;
     border-radius: 0;
   }
 }
@@ -27,12 +28,34 @@
   }
 }
 
+.accordion_summary {
+  padding-right: 34px;
+}
+
+.accordion_summary_active {
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.05);
+}
+
 .sidebar_title {
   padding: 37px 110px 37px 50px;
   font-size: 25px;
   font-weight: $fw-semibold;
   color: $color-purple;
   white-space: nowrap;
+
+  @include mobile {
+    display: inline-flex;
+    font-size: 22px;
+    padding: 4px 0 4px 34px;
+    width: 100%;
+  }
+
+  & .active {
+    margin-left: 10px;
+    color: $color-purple;
+    font-weight: $fw-semibold;
+  }
 }
 
 .menuSidebar {
@@ -43,12 +66,22 @@
     color: $color-purple;
     font-weight: $fw-bold;
   }
+
+  @include mobile {
+    margin-top: 0;
+  }
 }
 
 .menu_list {
   margin-left: 13px;
   width: 217px;
   max-width: 100%;
+
+  @include mobile {
+    width: 100%;
+    margin: 0;
+    padding: 20px 34px 35px;
+  }
 }
 
 .menu_item {

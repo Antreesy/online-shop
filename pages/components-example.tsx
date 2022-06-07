@@ -10,6 +10,7 @@ import {
   CreditCardExamples,
   PickerExamples,
   TabsExamples,
+  ToolbarExample,
 } from "Сomponents/Examples"
 
 import {
@@ -27,17 +28,19 @@ import {
 
 import {
   AddressCard,
-  Footer,
-  Header,
   Logo,
   Notification,
   ProductItem,
+  ProductItemList,
   ProfileSidebar,
   SectionHeader,
+  OrderSummary,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
 import { footerNav } from "shared/constants/footernav"
+import { productItems } from "shared/constants/productItems"
+import { sidebarTabs } from "shared/constants/sidebartabs"
 import { Currency } from "shared/enums/currency"
 
 import s from "styles/pages/ComponentsExample.module.scss"
@@ -59,9 +62,6 @@ const Home: NextPage = () => {
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
-
-      <Header withBreadcrumbs />
-
       <main className={s.main}>
         <SectionHeader
           className={s.title}
@@ -79,6 +79,7 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
+            "OrderSummary",
             "Sidebar",
             "Price",
             "Counters",
@@ -112,25 +113,17 @@ const Home: NextPage = () => {
               <AccordionExamples />
             </div>,
 
-            <div key={"Sidebar"}>
-              <ProfileSidebar
-                labels={[
-                  { link: "/", text: "Profile" },
-                  { link: "/", text: "Address" },
-                  { link: "/", text: "Order" },
-                  { link: "/", text: "Payment" },
-                  { link: "/", text: "Notification" },
-                  {
-                    link: "/",
-                    text: "Dashboard",
-                    content: [{ link: "/", text: "Favorite" }],
-                  },
-                  { link: "/", text: "Help" },
-                  { link: "/", text: "Sign Out" },
-                ]}
-                title={"Sidebar example1"}
+            <div key={"OrderSummary"}>
+              <OrderSummary
+                subtotal={1144}
+                shipping={123}
+                discount={40}
+                kdv={110}
               />
-              <ProfileSidebar labels={[]} title={"MY ACCOUNT"} />
+            </div>,
+
+            <div key={"Sidebar"}>
+              <ProfileSidebar labels={sidebarTabs[0]} title={"MY ACCOUNT"} />
             </div>,
 
             <div key={"Price"}>
@@ -163,7 +156,9 @@ const Home: NextPage = () => {
             "Add Button",
             "Credit Card",
             "Card",
+            "Toolbar",
             "ProductItem",
+            "ProductItemList",
           ]}
           values={[
             <div key="Notification">
@@ -220,6 +215,10 @@ const Home: NextPage = () => {
               </div>
             </div>,
 
+            <div key={"Toolbar"}>
+              <ToolbarExample />
+            </div>,
+
             <div key={"ProductItem"}>
               <div className={s.grid}>
                 <ProductItem
@@ -253,13 +252,15 @@ const Home: NextPage = () => {
                 />
               </div>
             </div>,
+
+            <div key="ProductItemLIst" className={s.grid}>
+              <ProductItemList productItemList={productItems} />
+            </div>,
           ]}
         />
       </main>
 
-      <OrderItem />
-
-      <Footer links={footerNav} />
+      
     </>
   )
 }

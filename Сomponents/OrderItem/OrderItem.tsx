@@ -1,10 +1,34 @@
 import { useState } from "react"
 import { Button, Price } from "UI"
 import { ProductItem } from "Сomponents/ProductItem"
+import PaymentInfo from "./PaymentInfo"
 import s from "./OrderItem.module.scss"
 import img from "public/assets/img/T_shirt.png"
 
-const OrderItem: React.FC = () => {
+interface PaymentInfo {
+
+}
+
+interface OrderItemProps {
+  date: string,
+  quantity: number,
+  buyerName: string,
+  orderAmount: number,
+  deliveryInfo?: string,
+  seller: string
+}
+
+const OrderItem: React.FC<OrderItemProps> = (props) => {
+
+  const {
+    date,
+    quantity,
+    buyerName,
+    orderAmount,
+    deliveryInfo,
+    seller
+  } = props
+
   const [detailVisible, setdetailVisible] = useState(false)
   return (
     <div className={s.orderItem}>
@@ -13,21 +37,21 @@ const OrderItem: React.FC = () => {
           <div className={s.topLeft}>
             <div className={s.cashItem}>
               <p className={s.title}>Order date:</p>
-              <p>787879</p>
+              <p>{date}</p>
             </div>
             <div className={s.cashItem}>
               <p className={s.title}>Product quantuty:</p>
-              <p>787879</p>
+              <p>{quantity}</p>
             </div>
             <div className={s.cashItem}>
               <p className={s.title}>Buyer:</p>
-              <p>787879</p>
+              <p>{buyerName}</p>
             </div>
           </div>
 
           <div className={s.topRight}>
             <p className={s.title}>Order amount:</p>
-            <p>651655</p>
+            <p>{orderAmount}</p>
           </div>
         </div>
         <div className={s.orderBottom}>
@@ -52,40 +76,17 @@ const OrderItem: React.FC = () => {
             <div className={s.deliveryInfo}>
               <h2>Delivery information</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui
-                sequi voluptatum ducimus, recusandae magni impedit itaque.
-                Perspiciatis culpa eaque officia laborum, ullam optio beatae
-                omnis quo, impedit perferendis, repellat rem?
+                {deliveryInfo}
               </p>
-              <p>fjefe wfoiw oj;whf wihfoiwhfohweoifj</p>
             </div>
 
             <div className={s.paymentInfo}>
               <h2>Payment information</h2>
-              <p>
-                <span>Payment method :</span>
-                <span>Credit Card ******569</span>
-              </p>
-              <p>
-                <span>Payment method :</span>
-                <span>Credit Card ******569</span>
-              </p>
-              <p>
-                <span>Payment method :</span>
-                <span>Credit Card ******569</span>
-              </p>
-              <p>
-                <span>Payment method :</span>
-                <span>Credit Card ******569</span>
-              </p>
-              <p className={s.amountPaid}>
-                <span>Payment method :</span>
-                <span>Credit Card ******569</span>
-              </p>
+              <PaymentInfo type="Credit Card" cardNumber={45465} orderAmount={123} shipping={123} total={1232} />
             </div>
           </div>
           <p>
-            Seller: Lorem ipsum 12345 <span>vndskjnvkns</span>
+            Seller: {seller}<span>vndskjnvkns</span>
           </p>
           <div className={s.cardsArea}>
             <p>Was delivered</p>
@@ -95,7 +96,7 @@ const OrderItem: React.FC = () => {
                 description="Lorem ipsum dolor  Excepturi ipsam distinctio voluptatum eum, illo eos delectus neque "
                 id={1}
                 imageSrc={img}
-                price={1000}
+                price={{ price: 2000 }}
                 subtitle={"subtitle"}
                 title={"titile"}
               />
@@ -103,7 +104,8 @@ const OrderItem: React.FC = () => {
                 description="Lorem ipsum dolor  Excepturi ipsam distinctio voluptatum eum, illo eos delectus neque "
                 id={1}
                 imageSrc={img}
-                price={1000}
+                price={{ price: 2000 }}
+
                 subtitle={"subtitle"}
                 title={"titile"}
               />
@@ -111,7 +113,8 @@ const OrderItem: React.FC = () => {
                 description="Lorem ipsum dolor  Excepturi ipsam distinctio voluptatum eum, illo eos delectus neque "
                 id={1}
                 imageSrc={img}
-                price={1000}
+                price={{ price: 2000 }}
+
                 subtitle={"subtitle"}
                 title={"titile"}
               />
@@ -119,7 +122,8 @@ const OrderItem: React.FC = () => {
                 description="Lorem ipsum dolor  Excepturi ipsam distinctio voluptatum eum, illo eos delectus neque "
                 id={1}
                 imageSrc={img}
-                price={1000}
+                price={{ price: 2000 }}
+
                 subtitle={"subtitle"}
                 title={"titile"}
               />
@@ -127,7 +131,8 @@ const OrderItem: React.FC = () => {
                 description="Lorem ipsum dolor  Excepturi ipsam distinctio voluptatum eum, illo eos delectus neque "
                 id={1}
                 imageSrc={img}
-                price={1000}
+                price={{ price: 2000 }}
+
                 subtitle={"subtitle"}
                 title={"titile"}
               />
