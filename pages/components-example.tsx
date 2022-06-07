@@ -33,13 +33,14 @@ import {
   Logo,
   Notification,
   ProductItem,
+  ProductItemList,
   ProfileSidebar,
   SectionHeader,
-  SizePicker,
   OrderSummary,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
+import { productItems } from "shared/constants/productItems"
 import { sidebarItems } from "shared/constants/sidebarItems"
 import { footerNav } from "shared/constants/footernav"
 import { Currency } from "shared/enums/currency"
@@ -82,7 +83,7 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
-            "OrderSummarry",
+            "OrderSummary",
             "Sidebar",
             "Price",
             "Counters",
@@ -117,7 +118,12 @@ const Home: NextPage = () => {
             </div>,
 
             <div key={"OrderSummary"}>
-              <OrderSummary subtotal={1144} shipping={123} discount={40} kdv={110} />
+              <OrderSummary
+                subtotal={1144}
+                shipping={123}
+                discount={40}
+                kdv={110}
+              />
             </div>,
 
             <div key={"Sidebar"}>
@@ -156,6 +162,7 @@ const Home: NextPage = () => {
             "Card",
             "Toolbar",
             "ProductItem",
+            "ProductItemList",
           ]}
           values={[
             <div key="Notification">
@@ -248,6 +255,9 @@ const Home: NextPage = () => {
                   toggleFavorite={() => console.log("toggleFavorite")}
                 />
               </div>
+            </div>,
+            <div key="ProductItemLIst" className={s.grid}>
+              <ProductItemList productItemList={productItems} />
             </div>,
           ]}
         />
