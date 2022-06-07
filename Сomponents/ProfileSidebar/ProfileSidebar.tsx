@@ -1,20 +1,22 @@
-import React, { useState } from "react"
+import React from "react"
 import { useRouter } from "next/router"
 
 import { Accordion } from "UI"
 import Link from "next/link"
 
+import { Icon } from "UI"
 import s from "./profileSidebar.module.scss"
+import { IconType } from "UI/Icon/Icon"
 
 type LabelType = {
   link: string
   text: string
+  icon?: IconType
 }
 
-type LabelTypeWithContent = LabelType & {
+export type LabelTypeWithContent = LabelType & {
   content?: LabelType[]
 }
-
 interface ProfileSidebarProps {
   title: string
   labels: LabelTypeWithContent[]
@@ -26,9 +28,12 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = (props) => {
 
   const SidebarItem = ({ label }: { label: LabelType }) => {
     return (
-      <li>
+      <li className={s.menu_item}>
+        {label.icon && pathname === label.link ? (
+          <Icon type={label.icon} />
+        ) : null}
         <Link href={label.link}>
-          <a className={pathname === label.link ? `${s.active}` : undefined}>
+          <a className={pathname === label.link ? `${s.active}` : ""}>
             {label.text}
           </a>
         </Link>
@@ -52,7 +57,7 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = (props) => {
     return (
       <div className={s.menuSidebar}>
         {labels.length ? (
-          <ul>
+          <ul className={s.menu_list}>
             {labels.map((label, index) =>
               label.content && label.content.length ? (
                 <AccordionSidebarItem key={index} label={label} />
@@ -70,21 +75,19 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = (props) => {
 
   return (
     <>
-      <div className={s.desktop}>
-        <div className={s.profileSidebar}>
+      <div className={s.profileSidebar}>
+        <div className={s.desktop}>
           <div className={s.headerSidebar}>
-            <p>{title}</p>
+            <p className={s.sidebar_title}>{title}</p>
           </div>
           <MenuList labels={labels} />
         </div>
-      </div>
 
-      <div className={s.mobile}>
-        <div className={s.profileSidebar}>
+        <div className={s.mobile}>
           <Accordion
             header={title}
             className={s.mobileAccordion}
-            headerClassName={s.headerSidebar}
+            headerClassName={s.sidebar_title}
           >
             <MenuList labels={labels} />
           </Accordion>

@@ -1,0 +1,13 @@
+@import "/styles/style.scss";
+
+.alertBox {
+  max-width: 300px;
+  border-radius: 8px;
+  border-width: 2px;
+  text-align: center;
+}
+
+.standard {
+  border: solid $color-purple;
+  background-color: $color-purple-a20;
+}

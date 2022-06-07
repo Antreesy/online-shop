@@ -1,16 +1,12 @@
-//Global Dependencies
-import React from "react"
 import type { GetStaticProps, NextPage } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useTranslation } from "next-i18next"
 
-//Project Components
 import Head from "next/head"
 import Link from "next/link"
 import LangRoute from "Сomponents/LanguageRouting/LangRoute"
 
-//Project Styles
-import styles from "styles/pages/Index.module.scss"
+import s from "styles/pages/Index.module.scss"
 
 export const getStaticProps: GetStaticProps = async ({ locale = "en" }) => ({
   props: {
@@ -25,7 +21,7 @@ const Index: NextPage = (props: any) => {
       <Head>
         <title>ILONSI SHOP | Homepage</title>
       </Head>
-      <div className={styles.main}>
+      <div className={s.main}>
         <h2>
           {props.locale}
           {t("hello")}
@@ -33,66 +29,66 @@ const Index: NextPage = (props: any) => {
         <LangRoute lng="en" />
         <LangRoute lng="ru" />
 
-        <p className={styles.description}>
+        <p className={s.description}>
           Login -
           <Link href="/login">
-            <a className={styles.title__link}>/login</a>
+            <a className={s.title__link}>/login</a>
           </Link>{" "}
           page
         </p>
 
-        <p className={styles.description}>
+        <p className={s.description}>
           Register (for brands / influencers) -
           <Link href="/register">
-            <a className={styles.title__link}>/register</a>
+            <a className={s.title__link}>/register</a>
           </Link>{" "}
           page
         </p>
 
-        <p className={styles.description}>
+        <p className={s.description}>
           Influencers Page -
           <Link href="/influencers">
-            <a className={styles.title__link}>/influencers</a>
+            <a className={s.title__link}>/influencers</a>
           </Link>{" "}
           page
         </p>
 
-        <p className={styles.description}>
+        <p className={s.description}>
           Order success
           <Link href="/order-success">
-            <a className={styles.title__link}>/order-success</a>
+            <a className={s.title__link}>/order-success</a>
           </Link>{" "}
           page
         </p>
 
-        <p className={styles.description}>
+        <p className={s.description}>
           FAQ Page -
           <Link href="/faq">
-            <a className={styles.title__link}>/faq</a>
+            <a className={s.title__link}>/faq</a>
           </Link>{" "}
           page
         </p>
 
-        <p className={styles.description}>
+        <p className={s.description}>
           UI Kit -{" "}
           <Link href="/components-example">
-            <a className={styles.title__link}>/components-example</a>
+            <a className={s.title__link}>/components-example</a>
           </Link>{" "}
           page
         </p>
 
-        <p className={styles.description}>
+        <p className={s.description}>
           Profile page -
           <Link href="/account/profile">
-            <a className={styles.title__link}>/account/profile</a>
+            <a className={s.title__link}>/account/profile</a>
           </Link>{" "}
           page
         </p>
 
-        <p className={styles.description}>
+        <p className={s.description}>
           Payment page is on{" "}
           <Link href="/payment">
-            <a className={styles.title__link}>/payment</a>
+            <a className={s.title__link}>/payment</a>
           </Link>{" "}
           page
         </p>

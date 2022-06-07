@@ -15,7 +15,7 @@ interface LoginType {
   isPromo: boolean
 }
 
-export const SignIn = () => {
+const SignIn = () => {
   const { handleSubmit, control } = useForm<LoginType>({
     criteriaMode: "all",
     defaultValues: {
@@ -151,3 +151,5 @@ export const SignIn = () => {
     </div>
   )
 }
+
+export default SignIn

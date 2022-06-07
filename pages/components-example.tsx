@@ -1,7 +1,5 @@
-//Global Dependencies
 import type { NextPage } from "next"
 
-//Project Components
 import Head from "next/head"
 
 import {
@@ -12,10 +10,12 @@ import {
   CreditCardExamples,
   PickerExamples,
   TabsExamples,
+  ToolbarExample,
 } from "Сomponents/Examples"
 
 import {
   AddButton,
+  AlertBox,
   Card,
   Carousel,
   ItemCounter,
@@ -31,16 +31,18 @@ import {
   Logo,
   Notification,
   ProductItem,
+  ProductItemList,
   ProfileSidebar,
   SectionHeader,
+  OrderSummary,
 } from "Сomponents"
 
-//Project Helpers
+import { icons } from "shared/constants/icons"
+import { productItems } from "shared/constants/productItems"
+import { sidebarItems } from "shared/constants/sidebarItems"
 import { Currency } from "shared/enums/currency"
 
-//Project Styles
 import s from "styles/pages/ComponentsExample.module.scss"
-import { icons } from "shared/constants/icons"
 
 const SampleCard = () => (
   <Card
@@ -75,6 +77,7 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
+            "OrderSummary",
             "Sidebar",
             "Price",
             "Counters",
@@ -108,24 +111,17 @@ const Home: NextPage = () => {
               <AccordionExamples />
             </div>,
 
-            <div key={"Sidebar"}>
-              <ProfileSidebar
-                labels={[
-                  { link: "/", text: "Profile" },
-                  { link: "/", text: "Address" },
-                  { link: "/", text: "Order" },
-                  { link: "/", text: "Payment" },
-                  { link: "/", text: "Notification" },
-                  {
-                    link: "/",
-                    text: "Dashboard",
-                    content: [{ link: "/", text: "Favorite" }],
-                  },
-                  { link: "/", text: "Help" },
-                  { link: "/", text: "Sign Out" },
-                ]}
-                title={"Sidebar example1"}
+            <div key={"OrderSummary"}>
+              <OrderSummary
+                subtotal={1144}
+                shipping={123}
+                discount={40}
+                kdv={110}
               />
+            </div>,
+
+            <div key={"Sidebar"}>
+              <ProfileSidebar labels={sidebarItems} title={"MY ACCOUNT"} />
             </div>,
 
             <div key={"Price"}>
@@ -158,11 +154,15 @@ const Home: NextPage = () => {
             "Add Button",
             "Credit Card",
             "Card",
+            "Toolbar",
             "ProductItem",
+            "ProductItemList",
           ]}
           values={[
             <div key="Notification">
-              <Notification header={"Notification"}>
+              <AlertBox text="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem" />
+
+              <Notification title={"Notification"}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
                 quam sequi vitae eius iusto perspiciatis facilis nesciunt
                 dignissimos provident ipsum? Nobis repellat atque ab nam magni
@@ -213,6 +213,10 @@ const Home: NextPage = () => {
               </div>
             </div>,
 
+            <div key={"Toolbar"}>
+              <ToolbarExample />
+            </div>,
+
             <div key={"ProductItem"}>
               <div className={s.grid}>
                 <ProductItem
@@ -245,6 +249,10 @@ const Home: NextPage = () => {
                   toggleFavorite={() => console.log("toggleFavorite")}
                 />
               </div>
+            </div>,
+            
+            <div key="ProductItemLIst" className={s.grid}>
+              <ProductItemList productItemList={productItems} />
             </div>,
           ]}
         />
