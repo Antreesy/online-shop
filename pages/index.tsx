@@ -4,10 +4,8 @@ import { useTranslation } from "next-i18next"
 
 import Head from "next/head"
 import Link from "next/link"
-import LangRoute from "Сomponents/LanguageRouting/LangRoute"
 
 import s from "styles/pages/Index.module.scss"
-import { OrderList } from "Сomponents"
 
 export const getStaticProps: GetStaticProps = async ({ locale = "en" }) => ({
   props: {
@@ -91,8 +89,13 @@ const Index: NextPage = (props: any) => {
           </Link>{" "}
           page
         </p>
-
-        <OrderList />
+        <p className={s.description}>
+          Help Page -
+          <Link href="/account/orders">
+            <a className={s.title__link}>/account/orders</a>
+          </Link>{" "}
+          page
+        </p>
       </div>
     </>
   )

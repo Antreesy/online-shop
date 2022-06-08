@@ -1,41 +1,27 @@
 import { OrderItem } from "Сomponents"
+import { OrderItemProps } from "../OrderItem/OrderItem"
 
-export const OrderList: React.FC = (props) => {
+interface OrderListProps {
+  orderList: OrderItemProps[]
+}
+
+export const OrderList: React.FC<OrderListProps> = (props) => {
+  const { orderList } = props
   return (
     <>
-      <OrderItem
-        date={"011111"}
-        buyerName="Yalsin Toopkaya"
-        orderAmount={250}
-        deliveryInfo="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui
-                sequi voluptatum ducimus, recusandae magni impedit itaque.
-                Perspiciatis culpa eaque officia laborum, ullam optio beatae
-                omnis quo, impedit perferendis, repellat rem"
-        quantity={1313}
-        seller="samamsmams"
-      />
-      <OrderItem
-        date={"011111"}
-        buyerName="Yalsin Toopkaya"
-        orderAmount={250}
-        deliveryInfo="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui
-                sequi voluptatum ducimus, recusandae magni impedit itaque.
-                Perspiciatis culpa eaque officia laborum, ullam optio beatae
-                omnis quo, impedit perferendis, repellat rem"
-        quantity={1313}
-        seller="samamsmams"
-      />
-      <OrderItem
-        date={"011111"}
-        buyerName="Yalsin Toopkaya"
-        orderAmount={250}
-        deliveryInfo="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui
-                sequi voluptatum ducimus, recusandae magni impedit itaque.
-                Perspiciatis culpa eaque officia laborum, ullam optio beatae
-                omnis quo, impedit perferendis, repellat rem"
-        quantity={1313}
-        seller="samamsmams"
-      />
+      {orderList.map((item) => {
+        return (
+          <OrderItem
+            date={item.date}
+            buyerName={item.buyerName}
+            orderAmount={item.orderAmount}
+            quantity={item.quantity}
+            seller={item.seller}
+            deliveryInfo={item.deliveryInfo}
+            paymentInfo={item.paymentInfo}
+          />
+        )
+      })}
     </>
   )
 }

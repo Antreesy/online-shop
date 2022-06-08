@@ -1,23 +1,32 @@
 import { useState } from "react"
-import { Button, Price } from "UI"
-import { ProductItem } from "Сomponents/ProductItem"
-import PaymentInfo from "./PaymentInfo"
+import { productItems } from "shared/constants/productItems"
+
+import { Button } from "UI"
+import { ProductItem } from "Сomponents"
+import PaymentInfo, { PaymentInfoProps } from "./PaymentInfo"
+
 import s from "./OrderItem.module.scss"
-import img from "public/assets/img/T_shirt.png"
 
-interface PaymentInfo {}
-
-interface OrderItemProps {
+export interface OrderItemProps {
   date: string
   quantity: number
   buyerName: string
   orderAmount: number
   deliveryInfo?: string
   seller: string
+  paymentInfo: PaymentInfoProps
 }
 
 const OrderItem: React.FC<OrderItemProps> = (props) => {
-  const { date, quantity, buyerName, orderAmount, deliveryInfo, seller } = props
+  const {
+    date,
+    quantity,
+    buyerName,
+    orderAmount,
+    deliveryInfo,
+    seller,
+    paymentInfo,
+  } = props
 
   const [detailVisible, setdetailVisible] = useState(false)
   return (
@@ -70,13 +79,7 @@ const OrderItem: React.FC<OrderItemProps> = (props) => {
 
             <div className={s.paymentInfo}>
               <h2>Payment information</h2>
-              <PaymentInfo
-                type="Credit Card"
-                cardNumber={45465}
-                orderAmount={123}
-                shipping={123}
-                total={1232}
-              />
+              <PaymentInfo {...paymentInfo} />
             </div>
           </div>
           <p>
@@ -87,46 +90,18 @@ const OrderItem: React.FC<OrderItemProps> = (props) => {
             <p>Was delivered</p>
 
             <div className={s.cards}>
-              <ProductItem
-                description="Lorem ipsum dolor  Excepturi ipsam distinctio voluptatum eum, illo eos delectus neque "
-                id={1}
-                imageSrc={img}
-                price={{ price: 2000 }}
-                subtitle={"subtitle"}
-                title={"titile"}
-              />
-              <ProductItem
-                description="Lorem ipsum dolor  Excepturi ipsam distinctio voluptatum eum, illo eos delectus neque "
-                id={1}
-                imageSrc={img}
-                price={{ price: 2000 }}
-                subtitle={"subtitle"}
-                title={"titile"}
-              />
-              <ProductItem
-                description="Lorem ipsum dolor  Excepturi ipsam distinctio voluptatum eum, illo eos delectus neque "
-                id={1}
-                imageSrc={img}
-                price={{ price: 2000 }}
-                subtitle={"subtitle"}
-                title={"titile"}
-              />
-              <ProductItem
-                description="Lorem ipsum dolor  Excepturi ipsam distinctio voluptatum eum, illo eos delectus neque "
-                id={1}
-                imageSrc={img}
-                price={{ price: 2000 }}
-                subtitle={"subtitle"}
-                title={"titile"}
-              />
-              <ProductItem
-                description="Lorem ipsum dolor  Excepturi ipsam distinctio voluptatum eum, illo eos delectus neque "
-                id={1}
-                imageSrc={img}
-                price={{ price: 2000 }}
-                subtitle={"subtitle"}
-                title={"titile"}
-              />
+              {productItems.map((item) => {
+                return (
+                  <ProductItem
+                    description={item.description}
+                    id={item.id}
+                    imageSrc={item.imageSrc}
+                    price={item.price}
+                    subtitle={item.subtitle}
+                    title={item.title}
+                  />
+                )
+              })}
             </div>
           </div>
         </>

@@ -38,13 +38,11 @@ import {
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
-import { footerNav } from "shared/constants/footernav"
 import { productItems } from "shared/constants/productItems"
 import { sidebarTabs } from "shared/constants/sidebartabs"
 import { Currency } from "shared/enums/currency"
 
 import s from "styles/pages/ComponentsExample.module.scss"
-import OrderItem from "Сomponents/OrderItem/OrderItem"
 
 const SampleCard = () => (
   <Card
