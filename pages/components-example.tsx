@@ -37,6 +37,7 @@ import {
   SectionHeader,
   SizePicker,
   OrderSummary,
+  PhotoSlider,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
@@ -117,7 +118,12 @@ const Home: NextPage = () => {
             </div>,
 
             <div key={"OrderSummary"}>
-              <OrderSummary subtotal={1144} shipping={123} discount={40} kdv={110} />
+              <OrderSummary
+                subtotal={1144}
+                shipping={123}
+                discount={40}
+                kdv={110}
+              />
             </div>,
 
             <div key={"Sidebar"}>
@@ -252,6 +258,25 @@ const Home: NextPage = () => {
           ]}
         />
       </main>
+      <PhotoSlider
+        photos={[
+          "https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg",
+          "https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg",
+          "dsa",
+          "https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg",
+          "https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg",
+          "dsa",
+          "https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg",
+          "https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg",
+          "dsa",
+          "https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg",
+          "https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg",
+          "dsa",
+          "https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg",
+          "https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg",
+          "dsa",
+        ]}
+      />
 
       <Footer links={footerNav} />
     </>

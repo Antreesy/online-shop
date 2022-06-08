@@ -14,8 +14,10 @@ import { OrderSummary } from "./OrderSummary"
 import { SupportSection } from "./SupportSection"
 import { ProfileSidebar } from "./ProfileSidebar"
 import { Toolbar } from "./Toolbar"
+import { PhotoSlider } from "./PhotoSlider"
 
 export {
+  PhotoSlider,
   AddressCard,
   Breadcrumbs,
   BurgerMenu,
