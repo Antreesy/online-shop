@@ -3,14 +3,13 @@ import cn from "classnames"
 import Link from "next/link"
 import { Button, SocialIcon } from "UI"
 import { Breadcrumbs, BurgerMenu, Logo } from "Сomponents"
+import { DropDownMenu } from "./DropDownMenu"
 
+import { dropdownItems } from "../../shared/constants/dropdownItems"
 import { DrawerItems } from "shared/constants/menuItems"
 import { Roles } from "shared/enums/roles"
 
 import s from "./header.module.scss"
-import { DropDown } from "../DropDownMenu"
-import * as React from "react"
-import {dropdownItems} from "../../shared/constants/dropdownItems";
 
 interface HeaderProps {
   withBreadcrumbs?: boolean
@@ -85,9 +84,7 @@ const Header: React.FC<HeaderProps> = ({ role, withBreadcrumbs }) => {
         </div>
 
         <div className={s.bottom_right_group_mobile}>
-          <DropDown
-            labels={dropdownItems}
-          />
+          <DropDownMenu labels={dropdownItems} />
           <Button
             className={s.button_basket}
             variant="outlined"

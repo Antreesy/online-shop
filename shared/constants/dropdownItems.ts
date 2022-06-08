@@ -1,4 +1,4 @@
-import { DropDownType } from "Сomponents/DropDownMenu/DropDown";
+import { DropDownType } from "Сomponents/Header/DropDownMenu/DropDownMenu";
 
 export const dropdownItems: DropDownType[]  = [
     { link: "/", text: "My Account" },

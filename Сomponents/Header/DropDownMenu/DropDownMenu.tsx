@@ -1,11 +1,11 @@
 import React from "react"
 import { useRouter } from "next/router"
-import { Button } from "../../UI"
+
 import Link from "next/link"
-import Popover from "@mui/material/Popover"
-import Typography from "@mui/material/Typography"
+import { Popover, Typography } from "@mui/material"
+import { Button } from "UI"
+
 import s from "../Header/header.module.scss"
-import sn from "./dropDown.module.scss"
 
 export type DropDownType = {
   link: string
@@ -16,7 +16,7 @@ interface DropDownProps {
   labels: DropDownType[]
 }
 
-export const DropDown: React.FC<DropDownProps> = ({ labels }) => {
+const DropDownMenu: React.FC<DropDownProps> = ({ labels }) => {
   const { pathname } = useRouter()
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null)
 
@@ -56,13 +56,13 @@ export const DropDown: React.FC<DropDownProps> = ({ labels }) => {
             height: "262px",
           },
         }}
-        className={sn.popover}
+        className={s.dropdown_popover}
       >
         <Typography sx={{ p: 2 }}>
           {labels.map((label, index) => (
             <Link href={label.link} key={index}>
-              <a className={sn.MenuItem}>
-                <span className={pathname === label.text ? sn.active : ""}>
+              <a className={s.menu_item}>
+                <span className={pathname === label.text ? s.active : ""}>
                   {label.text}
                 </span>
               </a>
@@ -73,3 +73,5 @@ export const DropDown: React.FC<DropDownProps> = ({ labels }) => {
     </div>
   )
 }
+
+export default DropDownMenu
