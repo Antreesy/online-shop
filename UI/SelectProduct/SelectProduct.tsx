@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { ImageProps } from "next/image"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Icon } from "UI"
 import cn from "classnames"
 import s from "./selectProduct.module.scss"
@@ -10,12 +10,18 @@ interface SelectProduct {
   imageTitle: string
   imageSize: string
   date: string
+  id?: number
+  setID?: (id: number) => void
 }
 
 const SelectProduct: React.FC<SelectProduct> = (props) => {
-  const { imageSrc, imageTitle, imageSize, date } = props
+  const { imageSrc, imageTitle, imageSize, date, id, setID } = props
 
   const [select, setSelect] = useState(false)
+
+  // useEffect(() => {
+  //   select ? setID(id) : null
+  // }, [select])
 
   const SelectProductClass = cn(s.main, {
     [s.main_select]: select === true,
