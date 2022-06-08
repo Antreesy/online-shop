@@ -1,7 +1,6 @@
 import cn from "classnames"
 
 import { Accordion } from "UI"
-import Image from "next/image"
 
 import s from "./notification.module.scss"
 
@@ -27,18 +26,12 @@ const Notification: React.FC<NotificationProps> = (props) => {
   } = props
 
   const notificationClass = cn(s.notification, className)
-  const titleBlock = (
-    <>
-      <Image src="/dot.png" layout="fill" />
-      <span>{title}</span>
-    </>
-  )
 
   return (
     <div className={notificationClass} onClick={() => onClick && onClick(id)}>
       <Accordion
         className={s.accordion}
-        header={titleBlock}
+        header={<span className={s.title_span}>{title}</span>}
         headerClassName={s.title}
         openTitle="Detail"
         openTitleClassName={s.openTitle}

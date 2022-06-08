@@ -2,17 +2,21 @@ import { AddressCard } from "./AddressCard"
 import { Breadcrumbs } from "./Breadcrumbs"
 import { BurgerMenu } from "./BurgerMenu"
 import { ColorPicker } from "./ColorPicker"
+import { CommonLayout } from "./Layouts/CommonLayout"
 import { Counter } from "./Counter"
 import { Footer } from "./Footer"
 import { Header, HeaderLight } from "./Header"
+import Layout from "./Layouts"
 import { Logo } from "./Logo"
 import { Notification } from "./Notification"
+import { OrderSummary } from "./OrderSummary"
 import { ProductItem } from "./ProductItem"
+import { ProductItemList } from "./ProductItemList"
+import { ProfileLayout } from "./Layouts/ProfileLayout"
+import { ProfileSidebar } from "./ProfileSidebar"
 import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
-import { OrderSummary } from "./OrderSummary"
 import { SupportSection } from "./SupportSection"
-import { ProfileSidebar } from "./ProfileSidebar"
 import { Toolbar } from "./Toolbar"
 import { PhotoSlider } from "./PhotoSlider"
 
@@ -23,16 +27,20 @@ export {
   BurgerMenu,
   ColorPicker,
   Counter,
+  CommonLayout,
   Footer,
   Header,
   HeaderLight,
+  Layout,
   Logo,
   Notification,
+  OrderSummary,
   ProductItem,
+  ProductItemList,
+  ProfileLayout,
+  ProfileSidebar,
   SectionHeader,
   SizePicker,
-  OrderSummary,
   SupportSection,
-  ProfileSidebar,
   Toolbar,
 }

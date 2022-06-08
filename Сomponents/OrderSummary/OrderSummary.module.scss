@@ -33,7 +33,7 @@
   @extend %frame;
 
   @include mobile {
-      max-width: 310px;
+    max-width: 310px;
   }
 }
 
@@ -54,10 +54,10 @@
   letter-spacing: normal;
 
   @include mobile {
-      width: 92px;
-      height: 41px;
-      font-size: 14px;
-      line-height: 1.21;
+    width: 92px;
+    height: 41px;
+    font-size: 14px;
+    line-height: 1.21;
   }
 }
 
@@ -66,18 +66,18 @@
   height: 46px;
 
   @include mobile {
-      width: 180px;
-      height: 42px;
+    width: 180px;
+    height: 42px;
   }
 }
 
 .reciept {
   @extend %frame;
   padding: 31px 22px 29px;
-  
+
   @include mobile {
     max-width: 310px;
-}
+  }
 }
 
 .prices {
@@ -111,7 +111,7 @@
   text-align: left;
 
   @include mobile {
-      left: 180px;
+    left: 180px;
   }
 }
 
@@ -163,7 +163,7 @@
   font-weight: $fw-medium;
   line-height: 1.38;
   text-align: left;
-  color: $color-grey-82
+  color: $color-grey-82;
 }
 
 .submitBtn {

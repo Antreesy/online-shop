@@ -5,9 +5,6 @@ import { useTranslation } from "next-i18next"
 import Head from "next/head"
 import Link from "next/link"
 import LangRoute from "Сomponents/LanguageRouting/LangRoute"
-import { Header, Footer } from "Сomponents"
-
-import { footerNav } from "shared/constants/footernav"
 
 import s from "styles/pages/Index.module.scss"
 
@@ -24,10 +21,7 @@ const Index: NextPage = (props: any) => {
       <Head>
         <title>ILONSI SHOP | Homepage</title>
       </Head>
-
-      <Header />
-
-      <main className={s.main}>
+      <div className={s.main}>
         <h2>
           {props.locale}
           {t("hello")}
@@ -68,14 +62,6 @@ const Index: NextPage = (props: any) => {
         </p>
 
         <p className={s.description}>
-          FAQ Page -
-          <Link href="/faq">
-            <a className={s.title__link}>/faq</a>
-          </Link>{" "}
-          page
-        </p>
-
-        <p className={s.description}>
           UI Kit -{" "}
           <Link href="/components-example">
             <a className={s.title__link}>/components-example</a>
@@ -84,23 +70,29 @@ const Index: NextPage = (props: any) => {
         </p>
 
         <p className={s.description}>
-          Profile page -
-          <Link href="/account/profile">
-            <a className={s.title__link}>/account/profile</a>
+          Notifications page -
+          <Link href="/account/notifications">
+            <a className={s.title__link}>/account/notifications</a>
           </Link>{" "}
           page
         </p>
 
         <p className={s.description}>
           Payment page is on{" "}
-          <Link href="/payment">
-            <a className={s.title__link}>/payment</a>
+          <Link href="/account/payment">
+            <a className={s.title__link}>/account/payment</a>
           </Link>{" "}
           page
         </p>
-      </main>
 
-      <Footer links={footerNav} />
+        <p className={s.description}>
+          Help Page -
+          <Link href="/account/help">
+            <a className={s.title__link}>/account/help</a>
+          </Link>{" "}
+          page
+        </p>
+      </div>
     </>
   )
 }

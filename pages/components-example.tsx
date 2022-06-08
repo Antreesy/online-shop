@@ -28,21 +28,19 @@ import {
 
 import {
   AddressCard,
-  Footer,
-  Header,
   Logo,
   Notification,
   ProductItem,
+  ProductItemList,
   ProfileSidebar,
   SectionHeader,
-  SizePicker,
   OrderSummary,
   PhotoSlider,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
-import { sidebarItems } from "shared/constants/sidebarItems"
-import { footerNav } from "shared/constants/footernav"
+import { productItems } from "shared/constants/productItems"
+import { sidebarTabs } from "shared/constants/sidebartabs"
 import { Currency } from "shared/enums/currency"
 
 import s from "styles/pages/ComponentsExample.module.scss"
@@ -63,9 +61,6 @@ const Home: NextPage = () => {
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
-
-      <Header withBreadcrumbs />
-
       <main className={s.main}>
         <SectionHeader
           className={s.title}
@@ -83,7 +78,7 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
-            "OrderSummarry",
+            "OrderSummary",
             "Sidebar",
             "Price",
             "Counters",
@@ -127,7 +122,7 @@ const Home: NextPage = () => {
             </div>,
 
             <div key={"Sidebar"}>
-              <ProfileSidebar labels={sidebarItems} title={"MY ACCOUNT"} />
+              <ProfileSidebar labels={sidebarTabs[0]} title={"MY ACCOUNT"} />
             </div>,
 
             <div key={"Price"}>
@@ -162,6 +157,7 @@ const Home: NextPage = () => {
             "Card",
             "Toolbar",
             "ProductItem",
+            "ProductItemList",
           ]}
           values={[
             <div key="Notification">
@@ -255,6 +251,10 @@ const Home: NextPage = () => {
                 />
               </div>
             </div>,
+
+            <div key="ProductItemLIst" className={s.grid}>
+              <ProductItemList productItemList={productItems} />
+            </div>,
           ]}
         />
       </main>
@@ -277,8 +277,6 @@ const Home: NextPage = () => {
           "dsa",
         ]}
       />
-
-      <Footer links={footerNav} />
     </>
   )
 }

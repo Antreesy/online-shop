@@ -6,24 +6,6 @@
   font-size: 4rem;
 }
 
-.main {
-  min-height: 100vh;
-  max-width: 1278px;
-
-  padding: 4rem 0;
-  padding-top: $header-desktop-height;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 0 auto;
-
-  @include mobile {
-    padding-top: $header-mobile-height;
-  }
-}
-
 .cards {
   display: flex;
   justify-content: space-around;
