@@ -29,13 +29,13 @@ const PageNotFound: NextPage = () => {
     <>
       <div className={s.background}></div>
       <div className={s.content}>
-        <h1>{t("404page")}</h1>
+        <h1>{t("pageNotFound")}</h1>
         <p>
           {t("404text")}
         </p>
         <br />
         <Button onClick={handleClick} className={s.button_purple}>
-          {t("404button")}
+          {t("returnToHomePage")}
         </Button>
       </div>
     </>

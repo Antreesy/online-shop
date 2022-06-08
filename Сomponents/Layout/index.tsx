@@ -12,7 +12,7 @@ export interface LayoutProps {
   children: React.ReactElement
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const router = useRouter()
 
   const findPath = (element: string) =>
@@ -28,5 +28,3 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     return children
   }
 }
-
-export default Layout
