@@ -1,55 +1,71 @@
-import s from "./PhotoSlider.module.scss"
-import React, { useState } from "react"
-
+import { useState } from "react"
+import Image, { ImageProps } from "next/image"
 import { Swiper, SwiperSlide } from "swiper/react"
-import "swiper/css"
-import "swiper/css/free-mode"
-import "swiper/css/thumbs"
-import "swiper/css/pagination"
+import { FreeMode, Thumbs, Pagination } from "swiper"
+import cn from "classnames"
 
-// import required modules
-import { FreeMode, Navigation, Thumbs, Pagination } from "swiper"
+import s from "./PhotoSlider.module.scss"
 
 interface PhotoSliderProps {
-  photos: string[]
+  photos: ImageProps["src"][]
 }
 
 const PhotoSlider: React.FC<PhotoSliderProps> = (props) => {
   const { photos } = props
-  const [thumbsSwiper, setThumbsSwiper] = useState(null)
-  const Large = photos.map((el, i, photos) => (
-    <SwiperSlide className={s.swiper_slide_main}>
-      <img src={el} />
+  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null)
+
+  const mainSlides = photos.map((elem, index) => (
+    <SwiperSlide key={index} className={cn(s.slide, s.slide_main)}>
+      <div className={s.slide_wrapper}>
+        <Image src={elem} layout="fill" />
+      </div>
     </SwiperSlide>
   ))
-  const Small = photos.map((el, i, photos) => (
-    <SwiperSlide className={s.swiper_slide_other}>
-      <img src={el} />
+
+  const gallerySlides = photos.map((elem, index) => (
+    <SwiperSlide key={index} className={cn(s.slide, s.slide_gallery)}>
+      <div className={s.slide_wrapper}>
+        <Image src={elem} layout="fill" />
+      </div>
     </SwiperSlide>
   ))
+
   return (
-    <>
+    <div className={s.photoslider}>
       <Swiper
+        freeMode={true}
+        pagination={{
+          el: `.photoslider_pagination_container`,
+          clickable: true,
+          type: "bullets",
+          bulletClass: `${s.bullet}`,
+          bulletActiveClass: `${s.bullet_active}`,
+        }}
         thumbs={{ swiper: thumbsSwiper }}
-        modules={[FreeMode, Pagination, Navigation, Thumbs]}
-        className={s.swiper_slide_large}
+        modules={[FreeMode, Pagination, Thumbs]}
+        className={s.swiper_main}
       >
-        {Large}
+        {mainSlides}
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
         freeMode={true}
+        spaceBetween={15}
+        slidesPerView={3}
         watchSlidesProgress={true}
-        pagination={{
-          clickable: true,
-          type: "bullets",
-        }}
-        modules={[FreeMode, Pagination, Navigation, Thumbs]}
-        className={s.swiper_slide_small}
+        modules={[FreeMode, Pagination, Thumbs]}
+        className={s.swiper_gallery}
       >
-        {Small}
+        {gallerySlides}
       </Swiper>
-    </>
+
+      <div
+        className={cn(
+          s.pagination_container,
+          "photoslider_pagination_container",
+        )}
+      />
+    </div>
   )
 }
 

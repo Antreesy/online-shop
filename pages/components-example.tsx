@@ -43,6 +43,8 @@ import { productItems } from "shared/constants/productItems"
 import { sidebarTabs } from "shared/constants/sidebartabs"
 import { Currency } from "shared/enums/currency"
 
+import productImage from "public/assets/img/product-img.png"
+
 import s from "styles/pages/ComponentsExample.module.scss"
 
 const SampleCard = () => (
@@ -173,6 +175,16 @@ const Home: NextPage = () => {
 
             <div key={"Carousel"} className={s.carousel}>
               <Carousel items={new Array(10).fill(SampleCard)} />
+              <PhotoSlider
+                photos={[
+                  productImage,
+                  productImage,
+                  productImage,
+                  productImage,
+                  productImage,
+                  productImage,
+                ]}
+              />
             </div>,
 
             <div key={"AddButton"} className={s.addbuttonlist}>
@@ -258,25 +270,6 @@ const Home: NextPage = () => {
           ]}
         />
       </main>
-      <PhotoSlider
-        photos={[
-          "https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg",
-          "https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg",
-          "dsa",
-          "https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg",
-          "https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg",
-          "dsa",
-          "https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg",
-          "https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg",
-          "dsa",
-          "https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg",
-          "https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg",
-          "dsa",
-          "https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg",
-          "https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg",
-          "dsa",
-        ]}
-      />
     </>
   )
 }
