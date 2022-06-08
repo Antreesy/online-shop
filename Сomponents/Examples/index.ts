@@ -6,6 +6,7 @@ import CreditCardExamples from "./CreditCardExamples"
 import InputExamples from "./InputExamples"
 import PickerExamples from "./PickerExamples"
 import TabsExamples from "./TabsExamples"
+import { ToolbarExample } from "./ToolbarExample"
 
 export {
   AccordionExamples,
@@ -16,4 +17,5 @@ export {
   InputExamples,
   PickerExamples,
   TabsExamples,
+  ToolbarExample,
 }

@@ -1,43 +1,5 @@
 @import "styles/style.scss";
 
-.main {
-  min-height: 100vh;
-  padding-top: calc($header-desktop-height + $breadcrumbs-desktop-height);
-
-  @include mobile {
-    padding-top: calc($header-mobile-height + $breadcrumbs-mobile-height);
-  }
-}
-
-.container {
-  max-width: 1640px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  padding: 70px 50px 40px;
-
-  @include mobile-tablet {
-    padding: 30px 15px 40px;
-  }
-}
-
-.aside {
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
-  background-color: $color-white;
-  margin-right: 24px;
-  height: max-content;
-  padding: 0 0 30px 0;
-
-  @include mobile-tablet {
-    display: none;
-  }
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-}
-
 .faq_heading {
   margin-bottom: 25px;
   font-size: 25px;
