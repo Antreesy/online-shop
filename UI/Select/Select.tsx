@@ -22,7 +22,7 @@ interface SelectProps {
   label?: string
   placeholder?: string
   values: SelectItem[]
-  initValue?: string
+  initValue?: string | number
   onChange?: (selected: string | number) => void
 }
 
@@ -48,7 +48,6 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
     setValue(value)
   }
 
-  const labelClass = cn(s.select_label, className)
   const selectClass = cn(s.select, selectClassName)
   const itemClass = cn(s.item, itemClassName)
   const iconClass = cn(s.selectIcon, iconClassName)
@@ -56,9 +55,9 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
   const selectIcon = () => <Icon type="arrow_down" className={iconClass} />
 
   return (
-    <>
+    <div className={className}>
       {label && (
-        <InputLabel className={labelClass} id="select-label">
+        <InputLabel className={s.select_label} id="select-label">
           {label}
         </InputLabel>
       )}
@@ -130,7 +129,7 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
         )}
       </Select>
       {isError && <span className={s.error}>error</span>}
-    </>
+    </div>
   )
 }
 

@@ -10,13 +10,13 @@
   justify-content: space-between;
   background-color: $color-black;
   border-radius: 5px;
-  padding: 0 89px 0 25px;
+  padding: 0 25px;
 
-  &::after {
+  &_with_decor::after {
     content: "";
     position: absolute;
-    right: 0px;
-    bottom: 50%;
+    top: 0;
+    right: 0;
     width: 40px;
     height: 35px;
     background: $main-gradient;
@@ -31,6 +31,8 @@
 }
 
 .actionText {
+  display: block;
+  margin-right: 64px;
   font-weight: $fw-semibold;
   font-size: 18px;
   color: $color-white;
