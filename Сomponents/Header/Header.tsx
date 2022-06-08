@@ -1,21 +1,25 @@
+import cn from "classnames"
+
 import Link from "next/link"
 import { Button, SocialIcon } from "UI"
 import { Breadcrumbs, BurgerMenu, Logo } from "Сomponents"
 
 import { DrawerItems } from "shared/constants/menuItems"
+import { Roles } from "shared/enums/roles"
 
 import s from "./header.module.scss"
 
 interface HeaderProps {
   withBreadcrumbs?: boolean
+  role?: Roles
 }
 
-const Header: React.FC<HeaderProps> = ({ withBreadcrumbs }) => {
+const Header: React.FC<HeaderProps> = ({ role, withBreadcrumbs }) => {
   return (
-    <header className={s.header}>
+    <header className={cn(s.header, { [s.withBreadcrumbs]: withBreadcrumbs })}>
       <div className={s.top_group}>
-        <Link href="mailto:info@ilonsi.com" className={s.email}>
-          info@ilonsi.com
+        <Link href="mailto:info@ilonsi.com">
+          <a className={s.email}>info@ilonsi.com</a>
         </Link>
         <span className={s.caption}>
           lipsum as it is sometimes known, is dummy
@@ -93,6 +97,14 @@ const Header: React.FC<HeaderProps> = ({ withBreadcrumbs }) => {
       </div>
 
       {withBreadcrumbs && <Breadcrumbs />}
+      {/* TODO delete role after creating roles propagation */}
+      {role && (
+        <span
+          style={{ position: "absolute", right: 0, bottom: 0, color: "red" }}
+        >
+          role: {role}
+        </span>
+      )}
     </header>
   )
 }

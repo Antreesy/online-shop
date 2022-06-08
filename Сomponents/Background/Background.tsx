@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image, { ImageProps } from "next/image"
 
 import { Button } from "UI"
 import Input from "./Input"
@@ -6,7 +6,7 @@ import Input from "./Input"
 import s from "./Background.module.scss"
 
 interface BackgroundProps {
-  image: string
+  image: any
   title?: string
   description?: string
   link?: string
@@ -19,8 +19,10 @@ const Background: React.FC<BackgroundProps> = (props) => {
   const { image, title, description, link, isEditable = false } = props
 
   return (
-    <div className={s.fallbackItem}>
-      {isEditable ? (
+    <div className={s.fallbackItem}
+      style={{ backgroundImage: `url(${image})` }}
+    >
+      {isEditable &&
         <div className={s.addImageButton}>
           <Button
             variant="outlined"
@@ -29,7 +31,7 @@ const Background: React.FC<BackgroundProps> = (props) => {
           />
           <p>Cover image</p>
         </div>
-      ) : null}
+      }
 
       <div className={s.image}>
         <Image src={image} className={s.bg} />

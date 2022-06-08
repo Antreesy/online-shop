@@ -15,7 +15,7 @@ interface InputProps {
 
 const Input: React.FC<InputProps> = (props) => {
   const { value, className, editable, boxClassname, reverse } = props
-  const [state, setState] = useState(value)
+  const [currentValue, setCurrentValue] = useState(value)
   const [isEditing, setIsEditing] = useState(false)
 
   let icon = editable ? (
@@ -32,9 +32,9 @@ const Input: React.FC<InputProps> = (props) => {
       <input
         type="text"
         className={cn(className, s.inputEditer)}
-        value={state}
+        value={currentValue}
         onChange={(e) => {
-          setState(e.target.value)
+          setCurrentValue(e.target.value)
         }}
       />
       <button
@@ -50,7 +50,7 @@ const Input: React.FC<InputProps> = (props) => {
     <div className={cn(s.area, boxClassname)}>
       <div className={cn(className, { [s.reverse]: reverse })}>
         <span>{icon}</span>
-        <span>{state}</span>
+        <span>{currentValue}</span>
       </div>
     </div>
   )

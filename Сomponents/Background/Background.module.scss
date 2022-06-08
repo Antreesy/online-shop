@@ -23,13 +23,18 @@
 
 .image {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: -1;
-  // min-width: 100%;
+  min-width: 100%;
   min-height: 100%;
+
+  @include mobile {
+    top: 60%;
+    min-width: none;
+    height: 100% !important;
+  }
 
   span {
     span {
@@ -169,13 +174,23 @@
   width: 200px;
   height: 300px;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  @include tablet {
+    width: 150px;
+    height: 200px;
+  }
+
+  @include mobile {
+    width: 150px;
+    height: 200px;
+  }
 
   p {
     color: #000;
@@ -186,12 +201,13 @@
     width: 70px;
     height: 70px;
     margin-bottom: 20px;
-    // padding: 20px;
     border: none;
     border-radius: 100%;
     background-color: #fff;
     color: $color-purple;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+
+
   }
 
   &::before {
