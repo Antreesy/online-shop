@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Button, Input, Select } from "UI"
+import { Button, CheckboxGroup, Input, Select } from "UI"
 
 import s from "../../styles/pages/register-page.module.scss"
 
@@ -9,60 +9,67 @@ const items = [
   { title: "three", value: 3 },
 ]
 
-interface RegisterFormStepTwoProps {
+interface RegisterFormStepThreeProps {
   setStep: (step: number) => void
+  setShowModal: (showModal: boolean) => void
 }
 
-export const RegisterFormsStepTwo: React.FC<RegisterFormStepTwoProps> = (
+export const RegisterFormsStepThree: React.FC<RegisterFormStepThreeProps> = (
   props,
 ) => {
-  const { setStep } = props
+  const { setStep, setShowModal } = props
   const [value, setValue] = useState<string>("")
 
-  const handleClickNextStep = () => setStep(3)
+  const handleClickApply = () => {
+    setShowModal(true)
+    setStep(1)
+  }
 
   return (
-    <form className={s.step_two}>
+    <form className={s.step_three}>
       <h1>
-        Step <span>01</span>
+        Step <span>02</span>
       </h1>
-
       <Select
         className={s.select}
-        placeholder="Sale Category"
+        placeholder="Commercial Registry Number (Optional)"
         items={items}
         onChange={() => {
           return
         }}
       />
-
       <Select
         className={s.select}
-        placeholder="Company Type"
+        placeholder="Tax office Province"
         items={items}
         onChange={() => {
           return
         }}
       />
-
       <div className={s.blank}></div>
       <Input
         value={value}
         setValue={setValue}
         label=""
-        placeholder="Tax Number"
+        placeholder="Tax Office Directorate"
       />
-
       <div className={s.blank}></div>
       <Input
         value={value}
         setValue={setValue}
         label=""
-        placeholder="Mersis No (Optional)"
+        placeholder="Company Legal Name"
       />
-
       <div className={s.blank}></div>
-      <Button onClick={handleClickNextStep}>Next Step</Button>
+      <Button onClick={handleClickApply}>Apply</Button>
+
+      <CheckboxGroup
+      className={s.checkboxes}
+        labels={[
+          ` Lorem ipsum dolor sit amet consectetur adipisicing elit.`,
+          ` Lorem ipsum dolor sit amet consectetur adipisicing elit.`,
+        ]}
+      />
     </form>
   )
 }

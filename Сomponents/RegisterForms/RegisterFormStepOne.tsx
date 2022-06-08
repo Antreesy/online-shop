@@ -8,36 +8,45 @@ const items = [
   { title: "three", value: 3 },
 ]
 
-interface RegisterFormStepOneProps{
-    setStep: (step: number) => void
+interface RegisterFormStepOneProps {
+  setStep: (step: number) => void
 }
 
-export const RegisterFormStepOne: React.FC<RegisterFormStepOneProps> = (props) => {
-    const {setStep} = props
+export const RegisterFormStepOne: React.FC<RegisterFormStepOneProps> = (
+  props,
+) => {
+  const { setStep } = props
   const [value, setValue] = useState<string>("")
   const handleClickNextStep = () => setStep(2)
   return (
     <form className={s.step_one}>
-      <h1>
-        Step <span>01</span>
-      </h1>
+      <h4>Create your shop, and get eaaly access</h4>
+
+      <Input value={value} setValue={setValue} label="" placeholder="Name" />
+
+      <div className={s.blank}></div>
+      <Input
+        value={value}
+        setValue={setValue}
+        label=""
+        placeholder="Email"
+        isRequired={false}
+      />
 
       <Select
         className={s.select}
-        placeholder="Sale Category"
+        placeholder="Category"
         items={items}
         onChange={() => {
           return
         }}
       />
 
-      <Select
-        className={s.select}
-        placeholder="Company Type"
-        items={items}
-        onChange={() => {
-          return
-        }}
+      <Input
+        value={value}
+        setValue={setValue}
+        label=""
+        placeholder="@Instagram"
       />
 
       <div className={s.blank}></div>
@@ -45,19 +54,16 @@ export const RegisterFormStepOne: React.FC<RegisterFormStepOneProps> = (props) =
         value={value}
         setValue={setValue}
         label=""
-        placeholder="Tax Number"
+        placeholder="Password"
+        isRequired={false}
       />
 
       <div className={s.blank}></div>
-      <Input
-        value={value}
-        setValue={setValue}
-        label=""
-        placeholder="Mersis No (Optional)"
-      />
-
       <div className={s.blank}></div>
-      <Button onClick={handleClickNextStep}>Next Step</Button>
+      <div className={s.blank}></div>
+      <Button onClick={handleClickNextStep}>Create Account</Button>
+
+      <p className={s.one}></p>
     </form>
   )
 }

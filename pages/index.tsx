@@ -99,10 +99,10 @@ const Index: NextPage = (props: any) => {
           page
         </p>
 
-        <p className={styles.description}>
+        <p className={s.description}>
           Register Page page is on{" "}
           <Link href="/register-page">
-            <a className={styles.title__link}>/register-page</a>
+            <a className={s.title__link}>/register-page</a>
           </Link>{" "}
           page
         </p>

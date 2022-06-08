@@ -4,13 +4,12 @@ import { Icon, ModalWindow } from "UI"
 import { HeaderLight } from "Сomponents"
 import { RegisterFormsStepTwo } from "Сomponents"
 import { RegisterFormStepOne } from "Сomponents"
+import { RegisterFormsStepThree } from "Сomponents"
 import s from "../styles/pages/register-page.module.scss"
 
 const RegisterPage = () => {
   const [showModal, setShowModal] = useState<boolean>(false)
   const [step, setStep] = useState<number>(1)
-
-  const isFirstStep = step === 1
   const handleModalClose = () => setShowModal(false)
 
   return (
@@ -42,11 +41,11 @@ const RegisterPage = () => {
           </div>
         </ModalWindow>
 
-        {isFirstStep ? (
+        {step === 1 ? (
           <RegisterFormStepOne setStep={setStep} />
-        ) : (
-          <RegisterFormsStepTwo setShowModal={setShowModal} setStep={setStep} />
-        )}
+        ) :  step === 2 ? (
+          <RegisterFormsStepTwo setStep={setStep} />
+        ) : <RegisterFormsStepThree setShowModal={setShowModal} setStep={setStep} />}
       </main>
 
       <div className={s.decorationFooter}>
