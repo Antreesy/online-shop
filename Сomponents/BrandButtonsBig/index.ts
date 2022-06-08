@@ -1,2 +1,2 @@
-import BrandButton from './BrandButton';
-export {BrandButton}
+import BrandButton from "./BrandButton"
+export { BrandButton }

@@ -1,5 +1,6 @@
 import { Accordion } from "./Accordion"
 import { AddButton } from "./AddButton"
+import { AlertBox } from "./AlertBox"
 import { Button } from "./Button"
 import { Card } from "./Card"
 import { Carousel } from "./Carousel"
@@ -24,6 +25,7 @@ import { Tabs } from "./Tabs"
 export {
   Accordion,
   AddButton,
+  AlertBox,
   Button,
   Card,
   Carousel,
