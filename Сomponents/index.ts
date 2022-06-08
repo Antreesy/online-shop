@@ -18,8 +18,10 @@ import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
 import { SupportSection } from "./SupportSection"
 import { Toolbar } from "./Toolbar"
+import { PhotoSlider } from "./PhotoSlider"
 
 export {
+  PhotoSlider,
   AddressCard,
   Breadcrumbs,
   BurgerMenu,
