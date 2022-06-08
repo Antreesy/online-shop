@@ -60,13 +60,7 @@ const Header: React.FC<HeaderProps> = ({ role, withBreadcrumbs }) => {
         </Link>
 
         <div className={s.bottom_right_group}>
-          <Button
-            className={s.button_account}
-            disableElevation
-            iconLeft="account"
-          >
-            Yalçın Topkaya
-          </Button>
+          <DropDownMenu labels={dropdownItems} buttonText="Yalçın Topkaya" />
           <Button
             className={s.button_basket}
             disableElevation
@@ -84,7 +78,7 @@ const Header: React.FC<HeaderProps> = ({ role, withBreadcrumbs }) => {
         </div>
 
         <div className={s.bottom_right_group_mobile}>
-          <DropDownMenu labels={dropdownItems} />
+          <DropDownMenu labels={dropdownItems} buttonHiddenText="Yalçın Topkaya" />
           <Button
             className={s.button_basket}
             variant="outlined"

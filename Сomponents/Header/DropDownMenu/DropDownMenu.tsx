@@ -1,11 +1,12 @@
 import React from "react"
 import { useRouter } from "next/router"
+import cn from "classnames"
 
 import Link from "next/link"
-import { Popover, Typography } from "@mui/material"
-import { Button } from "UI"
+import { Popover } from "@mui/material"
+import { Button, Icon } from "UI"
 
-import s from "../Header/header.module.scss"
+import s from "../header.module.scss"
 
 export type DropDownType = {
   link: string
@@ -13,12 +14,15 @@ export type DropDownType = {
 }
 
 interface DropDownProps {
+  buttonText?: string
+  buttonHiddenText?: string
   labels: DropDownType[]
 }
 
-const DropDownMenu: React.FC<DropDownProps> = ({ labels }) => {
-  const { pathname } = useRouter()
+const DropDownMenu: React.FC<DropDownProps> = (props) => {
+  const { buttonText, buttonHiddenText, labels } = props
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null)
+  const { pathname } = useRouter()
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget)
@@ -28,47 +32,57 @@ const DropDownMenu: React.FC<DropDownProps> = ({ labels }) => {
     setAnchorEl(null)
   }
 
-  const IsOpen = Boolean(anchorEl)
-  const id = IsOpen ? "simple-popover" : undefined
+  console.log(pathname)
 
   return (
-    <div>
+    <div className={s.dropdown_wrapper}>
       <Button
         className={s.button_account}
         disableElevation
         iconLeft="account"
         onClick={handleClick}
-        aria-describedby={id}
-      />
+        aria-describedby="header_account_dropdown"
+      >
+        {buttonText}
+      </Button>
+      {Boolean(anchorEl) && (
+        <>
+          <span className={s.account_dropdown_text}>{buttonHiddenText}</span>
+          <Icon type="arrow_down" className={s.account_dropdown_arrow} />
+        </>
+      )}
+
       <Popover
-        id={id}
-        open={IsOpen}
+        id="header_account_dropdown"
+        open={Boolean(anchorEl)}
         anchorEl={anchorEl}
         onClose={handleClose}
         anchorOrigin={{
           vertical: "bottom",
           horizontal: "left",
         }}
-        sx={{
-          "& .MuiPopover-paper": {
-            borderRadius: "0 0 30px 0",
-            width: "188px",
-            height: "262px",
-          },
+        elevation={1}
+        classes={{
+          paper: s.popover_paper,
         }}
         className={s.dropdown_popover}
       >
-        <Typography sx={{ p: 2 }}>
+        <ul className={s.menu}>
           {labels.map((label, index) => (
-            <Link href={label.link} key={index}>
-              <a className={s.menu_item}>
-                <span className={pathname === label.text ? s.active : ""}>
+            <li key={index} className={s.menu_item}>
+              <Link href={label.link}>
+                <a
+                  className={cn(s.link, {
+                    [s.link_active]: pathname === label.link,
+                  })}
+                  onClick={handleClose}
+                >
                   {label.text}
-                </span>
-              </a>
-            </Link>
+                </a>
+              </Link>
+            </li>
           ))}
-        </Typography>
+        </ul>
       </Popover>
     </div>
   )
