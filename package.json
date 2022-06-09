@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint --dir Components --dir UI",
     "format": "prettier --write **/*.ts --write **/*.tsx --write **/*.scss"
   },
   "dependencies": {
