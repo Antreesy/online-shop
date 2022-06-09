@@ -22,6 +22,7 @@ interface AccordionProps {
   headerActiveClassName?: string
   openTitleClassName?: string
   arrowColor?: string
+  onClick?: () => void
 }
 
 const CustomAccordion: React.FC<AccordionProps> = (props) => {
@@ -41,6 +42,7 @@ const CustomAccordion: React.FC<AccordionProps> = (props) => {
     headerActiveClassName,
     openTitleClassName,
     arrowColor = "#8100ef",
+    onClick,
   } = props
 
   const accordionClass = cn(s.accordion, className)
@@ -51,10 +53,16 @@ const CustomAccordion: React.FC<AccordionProps> = (props) => {
     [headerActiveClassName || s.active]: active,
   })
 
+  const handleClick = () => {
+    setActive(!active)
+    onClick?.()
+  }
+
   return (
     <Accordion className={accordionClass}>
       <AccordionSummary
         className={summaryClass}
+        onClick={handleClick}
         expandIcon={
           <Icon
             type={active ? iconOpenType : iconType}
@@ -62,9 +70,6 @@ const CustomAccordion: React.FC<AccordionProps> = (props) => {
             color={arrowColor}
           />
         }
-        onClick={() => {
-          setActive(!active)
-        }}
       >
         <span className={headerClass}>{active ? header : headerCollapsed}</span>
         <span className={openTitleClassName}>{openTitle}</span>

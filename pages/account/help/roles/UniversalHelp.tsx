@@ -1,4 +1,3 @@
-import { NextPage } from "next"
 import cn from "classnames"
 
 import Image from "next/image"
@@ -9,7 +8,7 @@ import { questions } from "shared/constants/questions"
 
 import s from "styles/pages/account/help.module.scss"
 
-const Profile: NextPage = () => {
+const UniversalHelp: React.FC = () => {
   return (
     <>
       <div className={s.support_section}>
@@ -58,4 +57,4 @@ const Profile: NextPage = () => {
   )
 }
 
-export default Profile
+export default UniversalHelp
