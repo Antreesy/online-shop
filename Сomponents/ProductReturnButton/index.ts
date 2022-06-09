@@ -1,2 +1,2 @@
-import ProductReturn from "./ProductReturn";
+import ProductReturn from "./ProductReturn"
 export { ProductReturn }
