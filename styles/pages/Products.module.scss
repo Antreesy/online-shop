@@ -6,11 +6,11 @@
   padding-top: 50px;
   padding-bottom: 100px;
 
-  > h3 {
+  >h3 {
     margin-bottom: 30px;
   }
 
-  > p {
+  >p {
     margin-bottom: 40px;
   }
 }
@@ -39,6 +39,7 @@
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
   width: 70px;
 }
+
 .productsSection {
   display: flex;
   margin-bottom: 70px;
@@ -56,9 +57,11 @@
   width: 100%;
   padding-left: 40px;
   position: relative;
+
   @include tablet {
     padding-left: 0;
   }
+
   @include mobile {
     padding-left: 0;
   }
@@ -126,19 +129,13 @@
     top: 0;
     right: 10px;
   }
-
-  @include mobile {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    font-size: 10px;
-  }
 }
 
 .photoslider {
   @include laptop {
     width: 700px;
   }
+
   @include tablet {
     width: 100% !important;
   }

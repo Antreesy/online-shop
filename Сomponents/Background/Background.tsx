@@ -42,7 +42,7 @@ const Background: React.FC<BackgroundProps> = (props) => {
       )}
 
       <div className={s.image}>
-        <Image src={image} className={s.bg} />
+        <Image src={image} className={s.bg} height={1000} width={2200} />
       </div>
       <div className={s.btn}>
         <Button className={s.bgButton} variant="outlined">
