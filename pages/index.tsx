@@ -109,6 +109,14 @@ const Index: NextPage = () => {
           </Link>{" "}
           page
         </p>
+
+        <p className={s.description}>
+          Product Info -
+          <Link href="/Product-info">
+            <a className={s.title__link}>/product-info</a>
+          </Link>{" "}
+          page
+        </p>
       </div>
     </>
   )

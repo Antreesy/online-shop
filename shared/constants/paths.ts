@@ -6,4 +6,5 @@ export const basePaths = [
   "components-example",
   "payment",
   "Order-info",
+  "Product-info",
 ]
