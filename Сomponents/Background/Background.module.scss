@@ -27,8 +27,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
-  min-width: 110%;
+  min-width: 100vw;
   min-height: 100%;
+
+  & > span {
+    width: 100% !important;
+    & img {
+      object-fit: cover;
+    }
+  }
 
   @include mobile {
     top: 60%;

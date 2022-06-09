@@ -1,8 +1,5 @@
 import { NextPage } from "next"
-import { colors } from "shared/constants/colors"
 
-import bg from "public/assets/img/fallback-pic.png"
-import imgItem from "public/assets/img/product-img.png"
 import {
   Background,
   ColorPicker,
@@ -12,12 +9,18 @@ import {
 } from "Сomponents"
 import { Button, Icon, Price } from "UI"
 
+import { colors } from "shared/constants/colors"
+
+import bg from "public/assets/img/fallback-pic.png"
+import img from "public/assets/img/product-img.png"
+
 import s from "styles/pages/Products.module.scss"
 
 const Products: NextPage = () => {
   return (
     <>
       <Background
+        className={s.fallback}
         image={bg}
         description={
           "cbjsbckjdslcjnslacnlscnlsncjcc hfib fuhj uifibsdkflj dfjkf jfgsdlk hfkjsd kjh"
@@ -29,10 +32,7 @@ const Products: NextPage = () => {
       <div className={s.container}>
         <ProductReturn />
         <div className={s.productsSection}>
-          <PhotoSlider
-            photos={[imgItem, imgItem, imgItem]}
-            className={s.photoslider}
-          />
+          <PhotoSlider photos={[img, img, img]} className={s.photoslider} />
           <div className={s.productInfo}>
             <p className={s.title}>Prada</p>
             <p className={s.subtitle}>Black long sleeve men’s jacket</p>
