@@ -1,9 +1,9 @@
 import { NextPage } from "next"
 import Head from "next/head"
 
-import { orderList } from "shared/constants/orderList"
-
 import { OrderList, SectionHeader } from "Сomponents"
+
+import { orderList } from "shared/constants/orderList"
 
 import s from "styles/pages/account/orders.module.scss"
 

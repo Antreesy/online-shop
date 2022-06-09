@@ -90,7 +90,7 @@ const Index: NextPage = (props: any) => {
           page
         </p>
         <p className={s.description}>
-          Help Page -
+          Orders Page -
           <Link href="/account/orders">
             <a className={s.title__link}>/account/orders</a>
           </Link>{" "}

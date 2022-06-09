@@ -31,46 +31,48 @@ const OrderItem: React.FC<OrderItemProps> = (props) => {
 
   const [detailVisible, setdetailVisible] = useState(false)
   return (
-    <div className={s.orderItem}>
-      <div className={s.top_group}>
-        <div className={s.top_left_group}>
-          <div className={s.text_block}>
-            <p className={s.title}>Order date:</p>
-            <p>{new Date(date).toLocaleDateString()}</p>
+    <div>
+      <div className={s.orderItem}>
+        <div className={s.top_group}>
+          <div className={s.top_left_group}>
+            <div className={s.text_block}>
+              <p className={s.title}>Order date:</p>
+              <p>{new Date(date).toLocaleDateString()}</p>
+            </div>
+            <div className={s.text_block}>
+              <p className={s.title}>Product quantuty:</p>
+              <p>{quantity}</p>
+            </div>
+            <div className={s.text_block}>
+              <p className={s.title}>Buyer:</p>
+              <p>{buyerName}</p>
+            </div>
           </div>
-          <div className={s.text_block}>
-            <p className={s.title}>Product quantuty:</p>
-            <p>{quantity}</p>
-          </div>
-          <div className={s.text_block}>
-            <p className={s.title}>Buyer:</p>
-            <p>{buyerName}</p>
+
+          <div className={s.top_right_group}>
+            <p className={s.title}>Order amount:</p>
+            <Price price={orderAmount.price} currency={orderAmount.currency} />
           </div>
         </div>
 
-        <div className={s.top_right_group}>
-          <p className={s.title}>Order amount:</p>
-          <Price price={orderAmount.price} currency={orderAmount.currency} />
+        <div className={s.bottom_group}>
+          <div className={s.user_block}>
+            <Icon type="account" wrapped className={s.user_block_icon} />
+            <span>Was delivered</span>
+          </div>
+          <Button
+            className={s.detailBtn}
+            onClick={() => setdetailVisible(!detailVisible)}
+          >
+            Order Detail
+          </Button>
         </div>
-      </div>
-
-      <div className={s.bottom_group}>
-        <div className={s.user_block}>
-          <Icon type="account" wrapped className={s.user_block_icon} />
-          <span>Was delivered</span>
-        </div>
-        <Button
-          className={s.detailBtn}
-          onClick={() => setdetailVisible(!detailVisible)}
-        >
-          Order Detail
-        </Button>
       </div>
 
       {detailVisible && (
-        <>
-          <p>
-            My Orders Detail <span>cssdvdsvds</span>
+        <div className={s.orderDetails}>
+          <p className={s.order_subheader}>
+            My Orders Detail <span>Order Date: 17.12.2021 - 12:39</span>
           </p>
           <div className={s.ordersInformation}>
             <div className={s.deliveryInfo}>
@@ -83,9 +85,9 @@ const OrderItem: React.FC<OrderItemProps> = (props) => {
               <PaymentInfo {...paymentInfo} />
             </div>
           </div>
-          <p>
+          <p className={s.order_subheader}>
             Seller: {seller}
-            <span>vndskjnvkns</span>
+            <span>Invoice Expense</span>
           </p>
           <div className={s.cardsArea}>
             <p>Was delivered</p>
@@ -105,7 +107,7 @@ const OrderItem: React.FC<OrderItemProps> = (props) => {
               })}
             </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   )

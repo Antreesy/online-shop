@@ -151,6 +151,38 @@
   white-space: nowrap;
 }
 
+.orderDetails {
+  padding: 0;
+  background: $color-white;
+  box-shadow: 0 3px 25px 0 rgba(0, 0, 0, 0.06);
+  width: 100%;
+
+  > p {
+    font-size: 18px;
+    background-color: $color-grey-ed;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+
+    > span {
+      color: $color-purple;
+    }
+  }
+
+  @include mobile-tablet {
+    padding: 17px;
+  }
+}
+
+.order_subheader {
+  font-size: 18px;
+  font-weight: $fw-semibold;
+
+  & > span {
+    font-weight: $fw-medium;
+  }
+}
+
 .ordersInformation {
   display: flex;
   padding: 35px 100px;
@@ -232,6 +264,7 @@
   padding: 30px;
 
   > p {
+    font-weight: $fw-semibold;
     color: $color-purple;
     text-decoration: underline;
     margin-bottom: 30px;
