@@ -1,24 +1,24 @@
-import { SetStateAction, useState } from "react"
-
-import { Button, Icon } from "UI"
-
+import { useState } from "react"
 import cn from "classnames"
 
+import { Button } from "UI"
+
 import s from "./Background.module.scss"
+
 interface InputProps {
   value?: string
   className?: string
-  editable?: boolean
+  isEditable?: boolean
   boxClassname?: string
   reverse?: boolean
 }
 
-const Input: React.FC<InputProps> = (props) => {
-  const { value, className, editable, boxClassname, reverse } = props
+const BgInput: React.FC<InputProps> = (props) => {
+  const { value, className, isEditable, boxClassname, reverse } = props
   const [currentValue, setCurrentValue] = useState(value)
   const [isEditing, setIsEditing] = useState(false)
 
-  let icon = editable ? (
+  const inputIcon = isEditable ? (
     <Button
       className={s.editButton}
       iconLeft="edit"
@@ -49,10 +49,10 @@ const Input: React.FC<InputProps> = (props) => {
   ) : (
     <div className={cn(s.area, boxClassname)}>
       <div className={cn(className, { [s.reverse]: reverse })}>
-        <span>{icon}</span>
+        <span>{inputIcon}</span>
         <span>{currentValue}</span>
       </div>
     </div>
   )
 }
-export default Input
+export default BgInput
