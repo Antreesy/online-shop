@@ -4,7 +4,6 @@ import { useTranslation } from "next-i18next"
 
 import Head from "next/head"
 import Link from "next/link"
-import LangRoute from "Сomponents/LanguageRouting/LangRoute"
 
 import s from "styles/pages/Index.module.scss"
 
@@ -26,8 +25,6 @@ const Index: NextPage = (props: any) => {
           {props.locale}
           {t("hello")}
         </h2>
-        <LangRoute lng="en" />
-        <LangRoute lng="ru" />
 
         <p className={s.description}>
           Login -
@@ -89,6 +86,13 @@ const Index: NextPage = (props: any) => {
           Help Page -
           <Link href="/account/help">
             <a className={s.title__link}>/account/help</a>
+          </Link>{" "}
+          page
+        </p>
+        <p className={s.description}>
+          Orders Page -
+          <Link href="/account/orders">
+            <a className={s.title__link}>/account/orders</a>
           </Link>{" "}
           page
         </p>
