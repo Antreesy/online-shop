@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 
 import { Button } from "UI"
 
-import s from "../styles/pages/page-not-found.module.scss"
+import s from "styles/pages/page-not-found.module.scss"
 
 const PageNotFound: NextPage = () => {
   const router = useRouter()

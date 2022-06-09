@@ -1,12 +1,10 @@
-import React from "react"
 import { useRouter } from "next/router"
 
-import { Accordion } from "UI"
 import Link from "next/link"
+import { Accordion, Icon } from "UI"
+import { IconType } from "shared/interfaces/iconTypes"
 
-import { Icon } from "UI"
 import s from "./profileSidebar.module.scss"
-import { IconType } from "UI/Icon/Icon"
 
 export type LabelType = {
   link: string

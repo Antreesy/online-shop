@@ -5,7 +5,7 @@ import { Button, SocialIcon } from "UI"
 import { Breadcrumbs, BurgerMenu, Logo } from "Сomponents"
 import { DropDownMenu } from "./DropDownMenu"
 
-import { dropdownItems } from "../../shared/constants/dropdownItems"
+import { dropdownItems } from "shared/constants/dropdownItems"
 import { DrawerItems } from "shared/constants/menuItems"
 import { Roles } from "shared/enums/roles"
 
@@ -92,14 +92,6 @@ const Header: React.FC<HeaderProps> = ({ role, withBreadcrumbs }) => {
       </div>
 
       {withBreadcrumbs && <Breadcrumbs />}
-      {/* TODO delete role after creating roles propagation */}
-      {role && (
-        <span
-          style={{ position: "absolute", right: 0, bottom: 0, color: "red" }}
-        >
-          role: {role}
-        </span>
-      )}
     </header>
   )
 }

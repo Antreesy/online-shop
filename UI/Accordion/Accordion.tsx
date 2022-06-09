@@ -3,7 +3,7 @@ import cn from "classnames"
 
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material"
 import { Icon } from "UI"
-import { IconType } from "UI/Icon/Icon"
+import { IconType } from "shared/interfaces/iconTypes"
 
 import s from "./accordion.module.scss"
 
