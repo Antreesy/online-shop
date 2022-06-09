@@ -1,0 +1,65 @@
+@import "/styles/style.scss";
+
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+}
+
+.search {
+  position: relative;
+  max-width: 386px;
+  width: 100%;
+  height: 55px;
+
+  input {
+    padding-left: 35px;
+
+    &::placeholder {
+      opacity: 1;
+      font-weight: $fw-medium;
+    }
+  }
+
+  @include mobile {
+    max-width: 100%;
+  }
+}
+
+.searchIcon {
+  position: absolute;
+  top: calc(50% - 0.5em);
+  left: 15px;
+}
+
+.select_wrapper {
+  width: 122px;
+  @include mobile {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.select {
+  height: 55px;
+  border: 2px solid $color-black !important;
+  border-radius: 0;
+  box-sizing: border-box;
+  box-shadow: none;
+
+  @include mobile {
+    max-width: 100%;
+    width: 100%;
+
+    & > div {
+      max-width: 100%;
+    }
+  }
+}
+
+.selectIcon {
+  color: $color-black;
+  font-size: 10px;
+  right: 10px;
+}

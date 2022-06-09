@@ -23,7 +23,7 @@ const AddressCard: React.FC<AddressCardProps> = (props) => {
           </Button>
         </div>
       </div>
-      <p>{text}</p>
+      <p className={s.text}>{text}</p>
     </div>
   )
 }
