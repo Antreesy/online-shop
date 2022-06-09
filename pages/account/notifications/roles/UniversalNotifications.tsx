@@ -53,10 +53,7 @@ const UniversalNotifications: React.FC = () => {
           list={notificationsRead}
         />,
 
-        <NotificationsList
-          key={"All Notifications"}
-          list={notificationsAll}
-        />,
+        <NotificationsList key={"All Notifications"} list={notificationsAll} />,
       ]}
     />
   )

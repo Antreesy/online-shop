@@ -5,7 +5,7 @@ import { SectionHeader } from "Сomponents"
 
 import s from "styles/pages/account/profile.module.scss"
 
-export interface BrandProfileType {
+export interface BrandProfileProps {
   brand_name: string
   brandDisplayName: string
   email: string
@@ -14,12 +14,12 @@ export interface BrandProfileType {
   password: string
 }
 
-export const BrandProfile = (props: BrandProfileType) => {
+export const BrandProfile: React.FC<BrandProfileProps> = (props) => {
   const {
     handleSubmit,
     control,
     formState: { errors, isDirty },
-  } = useForm<BrandProfileType>({
+  } = useForm<BrandProfileProps>({
     criteriaMode: "all",
     defaultValues: {
       brand_name: props.brand_name,

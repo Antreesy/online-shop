@@ -14,10 +14,26 @@ export const RoleSwitcher = () => {
 
   return (
     <div style={{ position: "fixed", top: 0, left: 0, zIndex: 100 }}>
-      <Button disabled={role === Roles.NONE} iconLeft="question" onClick={handleNone} />
-      <Button disabled={role === Roles.BRAND} iconLeft="basket" onClick={handleBrand} />
-      <Button disabled={role === Roles.CUSTOMER} iconLeft="search" onClick={handleCustomer} />
-      <Button disabled={role === Roles.INFLUENCER} iconLeft="price_tag" onClick={handleInfluencer} />
+      <Button
+        disabled={role === Roles.NONE}
+        iconLeft="question"
+        onClick={handleNone}
+      />
+      <Button
+        disabled={role === Roles.BRAND}
+        iconLeft="basket"
+        onClick={handleBrand}
+      />
+      <Button
+        disabled={role === Roles.CUSTOMER}
+        iconLeft="search"
+        onClick={handleCustomer}
+      />
+      <Button
+        disabled={role === Roles.INFLUENCER}
+        iconLeft="price_tag"
+        onClick={handleInfluencer}
+      />
     </div>
   )
 }

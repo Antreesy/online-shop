@@ -1,6 +1,6 @@
-import { BrandProfileType } from "pages/account/profile/roles/BrandProfile"
+import { BrandProfileProps } from "pages/account/profile/roles/BrandProfile"
 
-export const accountProps: BrandProfileType = {
+export const accountProps: BrandProfileProps = {
   brand_name: "Prada",
   brandDisplayName: "",
   email: "prada@mail.ru",
