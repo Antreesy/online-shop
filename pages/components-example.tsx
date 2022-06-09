@@ -28,9 +28,6 @@ import {
 
 import {
   AddressCard,
-  Background,
-  Footer,
-  Header,
   Logo,
   Notification,
   ProductItem,
@@ -70,7 +67,7 @@ const Home: NextPage = () => {
         <SectionHeader
           className={s.title}
           title={"UI Kit page"}
-          actionText={"All Orders"}
+          actionItem={"All Orders"}
         />
 
         <Tabs
@@ -127,23 +124,7 @@ const Home: NextPage = () => {
             </div>,
 
             <div key={"Sidebar"}>
-              <ProfileSidebar
-                labels={[
-                  { link: "/", text: "Profile" },
-                  { link: "/", text: "Address" },
-                  { link: "/", text: "Order" },
-                  { link: "/", text: "Payment" },
-                  { link: "/", text: "Notification" },
-                  {
-                    link: "/",
-                    text: "Dashboard",
-                    content: [{ link: "/", text: "Favorite" }],
-                  },
-                  { link: "/", text: "Help" },
-                  { link: "/", text: "Sign Out" },
-                ]}
-                title={"Sidebar example1"}
-              />
+              <ProfileSidebar labels={sidebarTabs[0]} title={"MY ACCOUNT"} />
             </div>,
 
             <div key={"Price"}>
