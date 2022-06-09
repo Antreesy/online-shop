@@ -1,6 +1,8 @@
 import { LabelType } from "Сomponents/ProfileSidebar/ProfileSidebar"
 
 export const sidebarTabs: LabelType[][] = [
+  // FOR ANONYM USER
+  [],
   [
     { link: "/account/add-product", text: "Add Product", icon: "price_tag" },
     { link: "/account/profile", text: "Profile", icon: "account" },

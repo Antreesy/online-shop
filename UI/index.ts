@@ -14,7 +14,7 @@ import { Input } from "./Input"
 import { ItemCounter } from "./ItemCounter"
 import { ModalWindow } from "./ModalWindow"
 import { Pagination } from "./Pagination"
-import { Price } from "./Price"
+import { Price, PriceProps } from "./Price"
 import { RadioGroup } from "./RadioGroup"
 import { Range } from "./Range"
 import { Select } from "./Select"
@@ -47,3 +47,5 @@ export {
   SocialIcon,
   Tabs,
 }
+
+export type { PriceProps }
