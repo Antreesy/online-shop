@@ -21,6 +21,7 @@ import { SizePicker } from "./SizePicker"
 import { SupportSection } from "./SupportSection"
 import { Toolbar } from "./Toolbar"
 import { PhotoSlider } from "./PhotoSlider"
+import {Chart} from "./Chart"
 
 export {
   PhotoSlider,
@@ -47,4 +48,5 @@ export {
   SizePicker,
   SupportSection,
   Toolbar,
+  Chart,
 }
