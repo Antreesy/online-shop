@@ -19,7 +19,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     router.pathname.startsWith(`/${element}`)
 
   if (profilePaths.find(findPath)) {
-    return <ProfileLayout role={Roles.BRAND}>{children}</ProfileLayout>
+    return <ProfileLayout role={Roles.CUSTOMER}>{children}</ProfileLayout>
   } else if (lightPaths.find(findPath)) {
     return <LightLayout>{children}</LightLayout>
   } else if (basePaths.find(findPath)) {
