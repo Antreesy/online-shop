@@ -1,4 +1,4 @@
-import Price, { PriceProps } from "UI/Price/Price"
+import { Price, PriceProps } from "UI"
 
 import s from "./OrderItem.module.scss"
 

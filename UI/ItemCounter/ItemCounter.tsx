@@ -1,7 +1,7 @@
 import { useState } from "react"
 import cn from "classnames"
 
-import { Button } from "../Button"
+import { Button } from "UI"
 
 import s from "./ItemCounter.module.scss"
 

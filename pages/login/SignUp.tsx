@@ -2,7 +2,7 @@ import { Controller, useForm } from "react-hook-form"
 import cn from "classnames"
 
 import Link from "next/link"
-import { Button, Input } from "../../UI"
+import { Button, Input } from "UI"
 
 import s from "./login.module.scss"
 
