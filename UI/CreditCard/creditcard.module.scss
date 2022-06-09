@@ -1,10 +1,12 @@
 @import "styles/style.scss";
 
 .cardColored {
+  max-width: 100%;
   background: $main-gradient;
 }
 
 .cardDefault {
+  max-width: 100%;
   background: $color-grey-c;
 }
 

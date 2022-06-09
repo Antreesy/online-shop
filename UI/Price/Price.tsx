@@ -1,14 +1,9 @@
 import cn from "classnames"
-import s from "./price.module.scss"
+
+import { PriceProps } from "shared/interfaces/orderProps"
 import { Currency } from "shared/enums/currency"
 
-export interface PriceProps {
-  price: number
-  oldPrice?: number
-  currency?: Currency
-  currencyFirst?: boolean
-  type?: "order" | "cart" | "sale" | "sale_black" | "primary"
-}
+import s from "./price.module.scss"
 
 const Price: React.FC<PriceProps> = (props) => {
   const {

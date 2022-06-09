@@ -21,6 +21,7 @@ interface InputProps {
   isRequired?: boolean
   type?: string
   errorText?: React.ReactNode
+  validation?: object
   onChange?: () => void
 }
 
@@ -36,6 +37,7 @@ export const Input: React.FC<InputProps> = (props) => {
     isRequired = false,
     type = "text",
     errorText = "",
+    validation,
     onChange,
   } = props
 
@@ -57,6 +59,7 @@ export const Input: React.FC<InputProps> = (props) => {
           placeholder={placeholder}
           required={isRequired}
           type={type}
+          {...validation}
         />
         {variant === "footer" || variant === "black_button" ? (
           <Button>{buttonLabel}</Button>

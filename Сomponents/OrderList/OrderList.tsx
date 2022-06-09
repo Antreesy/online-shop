@@ -1,5 +1,6 @@
 import { OrderItem } from "Сomponents"
-import { OrderItemProps } from "../OrderItem/OrderItem"
+
+import { OrderItemProps } from "shared/interfaces/orderProps"
 
 interface OrderListProps {
   orderList: OrderItemProps[]

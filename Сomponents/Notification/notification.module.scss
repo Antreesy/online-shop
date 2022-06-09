@@ -23,6 +23,10 @@
     border-radius: 10px;
     background-color: $color-purple;
   }
+
+  &.read::before {
+    content: none;
+  }
 }
 
 .openTitle {

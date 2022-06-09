@@ -1,5 +1,5 @@
 import { Currency } from "shared/enums/currency"
-import { OrderItemProps } from "Сomponents/OrderItem/OrderItem"
+import { OrderItemProps } from "shared/interfaces/orderProps"
 
 export const orderList: OrderItemProps[] = [
   {
