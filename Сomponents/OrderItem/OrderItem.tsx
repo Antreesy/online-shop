@@ -1,17 +1,18 @@
 import { useState } from "react"
 import { productItems } from "shared/constants/productItems"
 
-import { Button } from "UI"
+import { Button, Icon } from "UI"
+import Price, { PriceProps } from "UI/Price/Price"
 import { ProductItem } from "Сomponents"
 import PaymentInfo, { PaymentInfoProps } from "./PaymentInfo"
 
 import s from "./OrderItem.module.scss"
 
 export interface OrderItemProps {
-  date: string
+  date: Date | string
   quantity: number
   buyerName: string
-  orderAmount: number
+  orderAmount: PriceProps
   deliveryInfo?: string
   seller: string
   paymentInfo: PaymentInfoProps
@@ -31,41 +32,41 @@ const OrderItem: React.FC<OrderItemProps> = (props) => {
   const [detailVisible, setdetailVisible] = useState(false)
   return (
     <div className={s.orderItem}>
-      <div className={s.mainInfo}>
-        <div className={s.orderTop}>
-          <div className={s.topLeft}>
-            <div className={s.cashItem}>
-              <p className={s.title}>Order date:</p>
-              <p>{date}</p>
-            </div>
-            <div className={s.cashItem}>
-              <p className={s.title}>Product quantuty:</p>
-              <p>{quantity}</p>
-            </div>
-            <div className={s.cashItem}>
-              <p className={s.title}>Buyer:</p>
-              <p>{buyerName}</p>
-            </div>
+      <div className={s.top_group}>
+        <div className={s.top_left_group}>
+          <div className={s.text_block}>
+            <p className={s.title}>Order date:</p>
+            <p>{new Date(date).toLocaleDateString()}</p>
           </div>
-
-          <div className={s.topRight}>
-            <p className={s.title}>Order amount:</p>
-            <p>{orderAmount}</p>
+          <div className={s.text_block}>
+            <p className={s.title}>Product quantuty:</p>
+            <p>{quantity}</p>
+          </div>
+          <div className={s.text_block}>
+            <p className={s.title}>Buyer:</p>
+            <p>{buyerName}</p>
           </div>
         </div>
-        <div className={s.orderBottom}>
-          <div className={s.userBox}>
-            <Button iconLeft="account" className={s.userBtn} variant={"text"} />
-            <span>Was delivered</span>
-          </div>
-          <Button
-            className={s.detailBtn}
-            onClick={() => setdetailVisible(!detailVisible)}
-          >
-            Order Detail
-          </Button>
+
+        <div className={s.top_right_group}>
+          <p className={s.title}>Order amount:</p>
+          <Price price={orderAmount.price} currency={orderAmount.currency} />
         </div>
       </div>
+
+      <div className={s.bottom_group}>
+        <div className={s.user_block}>
+          <Icon type="account" wrapped className={s.user_block_icon} />
+          <span>Was delivered</span>
+        </div>
+        <Button
+          className={s.detailBtn}
+          onClick={() => setdetailVisible(!detailVisible)}
+        >
+          Order Detail
+        </Button>
+      </div>
+
       {detailVisible && (
         <>
           <p>

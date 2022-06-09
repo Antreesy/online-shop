@@ -3,12 +3,13 @@ import { OrderItemProps } from "../OrderItem/OrderItem"
 
 interface OrderListProps {
   orderList: OrderItemProps[]
+  className?: string
 }
 
 export const OrderList: React.FC<OrderListProps> = (props) => {
-  const { orderList } = props
+  const { orderList, className } = props
   return (
-    <>
+    <div className={className}>
       {orderList.map((item) => {
         return (
           <OrderItem
@@ -22,6 +23,6 @@ export const OrderList: React.FC<OrderListProps> = (props) => {
           />
         )
       })}
-    </>
+    </div>
   )
 }

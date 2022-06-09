@@ -3,7 +3,7 @@ import Head from "next/head"
 
 import { orderList } from "shared/constants/orderList"
 
-import { OrderList } from "Сomponents"
+import { OrderList, SectionHeader } from "Сomponents"
 
 import s from "styles/pages/account/orders.module.scss"
 
@@ -14,9 +14,12 @@ const Profile: NextPage = () => {
         <title>ILONSI SHOP | Account</title>
       </Head>
 
-      <div className={s.content}>
-        <OrderList orderList={orderList} />
-      </div>
+      <SectionHeader
+        title="My Orders"
+        actionItem="All Orders"
+        className={s.header}
+      />
+      <OrderList orderList={orderList} className={s.order_list} />
     </>
   )
 }

@@ -1,11 +1,11 @@
-import { Price } from "UI"
+import Price, { PriceProps } from "UI/Price/Price"
 
 import s from "./OrderItem.module.scss"
 
 export interface PaymentInfoProps {
   type?: string
   cardNumber: number
-  orderAmount: number
+  orderAmount: PriceProps
   shipping: number
   total: number
 }
@@ -23,7 +23,7 @@ const PaymentInfo: React.FC<PaymentInfoProps> = (props) => {
       <p>
         <span>Order Amount :</span>
         <span>
-          <Price price={orderAmount} />
+          <Price price={orderAmount.price} currency={orderAmount.currency} />
         </span>
       </p>
       <p>

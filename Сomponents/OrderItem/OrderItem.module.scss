@@ -1,15 +1,14 @@
 @import "styles/style.scss";
 
 .orderItem {
-  padding-top: 35px;
-  background: rgb(255, 255, 255);
+  padding: 35px;
+  background: $color-white;
   box-shadow: 0 3px 25px 0 rgba(0, 0, 0, 0.06);
   width: 100%;
-  margin-bottom: 30px;
 
   > p {
     font-size: 18px;
-    background-color: #ededed;
+    background-color: $color-grey-ed;
     padding: 20px 30px;
     display: flex;
     justify-content: space-between;
@@ -18,25 +17,22 @@
       color: $color-purple;
     }
   }
-}
 
-.mainInfo {
-  margin: 0px 35px 35px 35px;
-
-  @include mobile {
-    margin: 0px 20px 20px 20px;
+  @include mobile-tablet {
+    padding: 17px;
   }
 }
 
-.orderTop {
+.top_group {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   padding-bottom: 35px;
+  font-size: 18px;
 
-  @include mobile {
+  @include mobile-tablet {
     flex-direction: column;
     align-items: flex-start;
     padding-bottom: 0px;
@@ -44,65 +40,42 @@
   }
 }
 
-.orderBottom {
-  padding-top: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 20px;
-
-  @include mobile {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-top: 10px;
-  }
-}
-
-.topLeft {
+.top_left_group {
   display: flex;
   width: 100%;
 
-  @include mobile {
+  @include mobile-tablet {
     flex-direction: column;
     align-items: flex-start;
   }
 }
 
-.topRight {
-  font-size: 18px;
-
-  p {
-    &:first-child {
-      font-weight: bold;
-    }
-  }
-
-  @include mobile {
+.top_right_group {
+  @include mobile-tablet {
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
+    font-weight: $fw-bold;
   }
 }
 
-.cashItem {
+.text_block {
   height: 100%;
   border-right: 1px solid rgba(0, 0, 0, 0.06);
-  padding-right: 50px;
+  padding: 0 30px;
   font-size: 18px;
 
-  > p {
-    &:first-child {
-      font-weight: bold;
-    }
+  &:first-child {
+    padding-left: 0;
   }
 
-  @include tablet {
-    padding-right: 20px;
+  @include laptop {
+    padding: 0 20px;
   }
 
-  @include mobile {
-    padding-right: 0;
+  @include mobile-tablet {
+    padding: 0;
     border: none;
     width: 100%;
     display: flex;
@@ -115,19 +88,24 @@
   }
 }
 
-.cashItem:not(:first-child) {
-  padding-left: 30px;
+.bottom_group {
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-  @include mobile {
-    padding-left: 0;
+  @include mobile-tablet {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 10px;
   }
 }
 
-.userBox {
+.user_block {
   display: flex;
   align-items: center;
 
-  @include mobile {
+  @include mobile-tablet {
     margin-bottom: 18px;
     width: 100%;
     justify-content: space-between;
@@ -136,31 +114,41 @@
   span {
     text-decoration: underline;
     font-size: 18px;
+    font-weight: $fw-semibold;
   }
+}
 
-  .userBtn {
-    width: 70px;
-    height: 70px;
-    border-radius: 100%;
-    margin-right: 25px;
-    background-color: #fff;
-    color: $color-purple;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+.user_block_icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  margin-right: 25px;
+  background-color: #fff;
+  color: $color-purple;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+
+  @include mobile-tablet {
+    width: 48px;
+    height: 48px;
   }
 }
 
 .detailBtn {
+  height: 55px;
   font-size: 18px;
   padding-left: 60px;
   padding-right: 60px;
 
-  @include mobile {
+  @include mobile-tablet {
+    height: 45px;
     width: 100%;
   }
 }
 
 .title {
   color: $color-purple;
+  font-weight: $fw-bold;
+  white-space: nowrap;
 }
 
 .ordersInformation {
