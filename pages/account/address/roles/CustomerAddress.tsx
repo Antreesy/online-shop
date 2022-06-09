@@ -4,10 +4,9 @@ import { AddButton } from "UI"
 import { AddressCard, AddressForm, SectionHeader } from "Сomponents"
 
 import { addresses } from "shared/constants/addresses"
+import { AddressProps } from "shared/interfaces/addressProps"
 
 import s from "styles/pages/account/address.module.scss"
-
-import { AddressProps } from "shared/interfaces/addressProps"
 
 export const CustomerAddress: React.FC<AddressProps> = (props) => {
   const { role } = props
@@ -45,7 +44,7 @@ export const CustomerAddress: React.FC<AddressProps> = (props) => {
         )}
       </div>
 
-      {open && <AddressForm onClose={handleClose} />}
+      {open && <AddressForm onClose={handleClose} role={role} />}
     </>
   )
 }
