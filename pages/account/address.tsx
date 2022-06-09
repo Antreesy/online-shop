@@ -1,12 +1,12 @@
 import { NextPage } from "next"
 import Head from "next/head"
 
-import { Footer, Header, ProfileSidebar } from "Сomponents"
+import { AddButton } from "UI"
+import { AddressCard, AddressForm, SectionHeader } from "Сomponents"
 
-import { footerNav } from "shared/constants/footernav"
-import { sidebarItems } from "shared/constants/sidebarItems"
+import { addresses } from "shared/constants/addresses"
 
-import s from "styles/pages/faq.module.scss"
+import s from "styles/pages/account/address.module.scss"
 
 const Profile: NextPage = () => {
   return (
@@ -15,20 +15,19 @@ const Profile: NextPage = () => {
         <title>ILONSI SHOP | Account</title>
       </Head>
 
-      <Header withBreadcrumbs />
+      <SectionHeader className={s.header_info} title="My Address Information" />
 
-      <main className={s.main}>
-        <div className={s.container}>
-          <div className={s.aside}>
-            <ProfileSidebar title={"My Account"} labels={sidebarItems} />
-          </div>
+      <div className={s.address_wrapper}>
+        {addresses.map((address, index) => (
+          <AddressCard key={index} title={address.title} text={address.text} />
+        ))}
+      </div>
 
-          <div className={s.content}>
-            <h1>Address</h1>
-          </div>
-        </div>
-      </main>
-      <Footer links={footerNav} />
+      <div className={s.addBtn}>
+        <AddButton title={"Add New Address"} />
+      </div>
+
+      <AddressForm />
     </>
   )
 }

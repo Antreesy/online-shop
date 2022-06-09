@@ -1,34 +1,88 @@
 import { NextPage } from "next"
 import Head from "next/head"
 
-import { Footer, Header, ProfileSidebar } from "Сomponents"
+import { Notification } from "Сomponents"
+import { Tabs } from "UI"
 
-import { footerNav } from "shared/constants/footernav"
-import { sidebarItems } from "shared/constants/sidebarItems"
+import {
+  notificationsAll,
+  notificationsNew,
+  notificationsRead,
+} from "shared/constants/notifications"
 
-import s from "styles/pages/faq.module.scss"
+import s from "styles/pages/account/notifications.module.scss"
 
 const Profile: NextPage = () => {
   return (
     <>
       <Head>
-        <title>ILONSI SHOP | Account</title>
+        <title>ILONSI SHOP | Notifications</title>
       </Head>
 
-      <Header withBreadcrumbs />
+      <Tabs
+        className={s.notification_tabs}
+        variant="spaces"
+        labels={[
+          "Unread Notifications",
+          "Read Notifications",
+          "All Notifications",
+        ]}
+        values={[
+          <div key={"Unread Notifications"} className={s.notfItem}>
+            {notificationsNew
+              ? notificationsNew.map((element) => {
+                  return (
+                    <Notification
+                      key={element.id}
+                      id={element.id}
+                      isRead={element.isRead}
+                      title={element.title}
+                      subtitle={element.subtitle}
+                    >
+                      {element.children}
+                    </Notification>
+                  )
+                })
+              : "There are no notifications yet"}
+          </div>,
 
-      <main className={s.main}>
-        <div className={s.container}>
-          <div className={s.aside}>
-            <ProfileSidebar title={"My Account"} labels={sidebarItems} />
-          </div>
+          <div key={"Read Notifications"} className={s.notfItem}>
+            {notificationsRead
+              ? notificationsRead.map((element) => {
+                  return (
+                    <Notification
+                      key={element.id}
+                      id={element.id}
+                      isRead={element.isRead}
+                      title={element.title}
+                      subtitle={element.subtitle}
+                    >
+                      {element.children}
+                    </Notification>
+                  )
+                })
+              : "There are no notifications yet"}
+          </div>,
 
-          <div className={s.content}>
-            <h1>Notifications</h1>
-          </div>
-        </div>
-      </main>
-      <Footer links={footerNav} />
+          <div key={"All Notifications"} className={s.notfItem}>
+            {notificationsAll
+              ? notificationsAll.map((element) => {
+                  return (
+                    <Notification
+                      key={element.id}
+                      id={element.id}
+                      isRead={element.isRead}
+                      title={element.title}
+                      subtitle={element.subtitle}
+                    >
+                      {element.children}
+                    </Notification>
+                  )
+                })
+              : "There are no notifications yet"}
+          </div>,
+        ]}
+      />
     </>
   )
 }

@@ -1,12 +1,11 @@
 import { NextPage } from "next"
 import Head from "next/head"
 
-import { Footer, Header, ProfileSidebar } from "Сomponents"
+import { OrderList, SectionHeader } from "Сomponents"
 
-import { footerNav } from "shared/constants/footernav"
-import { sidebarItems } from "shared/constants/sidebarItems"
+import { orderList } from "shared/constants/orderList"
 
-import s from "styles/pages/faq.module.scss"
+import s from "styles/pages/account/orders.module.scss"
 
 const Profile: NextPage = () => {
   return (
@@ -15,20 +14,12 @@ const Profile: NextPage = () => {
         <title>ILONSI SHOP | Account</title>
       </Head>
 
-      <Header withBreadcrumbs />
-
-      <main className={s.main}>
-        <div className={s.container}>
-          <div className={s.aside}>
-            <ProfileSidebar title={"My Account"} labels={sidebarItems} />
-          </div>
-
-          <div className={s.content}>
-            <h1>Orders</h1>
-          </div>
-        </div>
-      </main>
-      <Footer links={footerNav} />
+      <SectionHeader
+        title="My Orders"
+        actionItem="All Orders"
+        className={s.header}
+      />
+      <OrderList orderList={orderList} className={s.order_list} />
     </>
   )
 }

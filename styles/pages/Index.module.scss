@@ -6,17 +6,11 @@
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
-  padding-top: $header-desktop-height;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
-  @include mobile {
-    padding-top: $header-mobile-height;
-  }
 }
 
 .footer {
@@ -58,7 +52,7 @@
 }
 
 .description {
-  margin: 0.5rem 0;
+  margin: 0.25rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
 }

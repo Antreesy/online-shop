@@ -1,13 +1,10 @@
 import type { GetStaticProps, NextPage } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import { useTranslation } from "next-i18next"
 
 import Head from "next/head"
 import Link from "next/link"
-import LangRoute from "Сomponents/LanguageRouting/LangRoute"
-import { Header, Footer } from "Сomponents"
-
-import { footerNav } from "shared/constants/footernav"
+import { Background } from "Сomponents"
+import picture from "public/assets/img/fallback-pic.png"
 
 import s from "styles/pages/Index.module.scss"
 
@@ -17,23 +14,21 @@ export const getStaticProps: GetStaticProps = async ({ locale = "en" }) => ({
   },
 })
 
-const Index: NextPage = (props: any) => {
-  const { t } = useTranslation("common")
+const Index: NextPage = () => {
   return (
     <>
       <Head>
         <title>ILONSI SHOP | Homepage</title>
       </Head>
-
-      <Header />
-
-      <main className={s.main}>
-        <h2>
-          {props.locale}
-          {t("hello")}
-        </h2>
-        <LangRoute lng="en" />
-        <LangRoute lng="ru" />
+      <div className={s.main}>
+        <Background
+          image={picture}
+          title="TITLE"
+          actionText="Follow"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos expedita saepe at ea quam dolorem mollitia soluta atque blanditiis quas in praesentium exercitationem delectus, quasi tempora porro ipsum ex voluptatum.
+        "
+          link="tuanaycl"
+        />
 
         <p className={s.description}>
           Login -
@@ -68,14 +63,6 @@ const Index: NextPage = (props: any) => {
         </p>
 
         <p className={s.description}>
-          FAQ Page -
-          <Link href="/faq">
-            <a className={s.title__link}>/faq</a>
-          </Link>{" "}
-          page
-        </p>
-
-        <p className={s.description}>
           UI Kit -{" "}
           <Link href="/components-example">
             <a className={s.title__link}>/components-example</a>
@@ -84,23 +71,37 @@ const Index: NextPage = (props: any) => {
         </p>
 
         <p className={s.description}>
-          Profile page -
-          <Link href="/account/profile">
-            <a className={s.title__link}>/account/profile</a>
+          Notifications page -
+          <Link href="/account/notifications">
+            <a className={s.title__link}>/account/notifications</a>
           </Link>{" "}
           page
         </p>
 
         <p className={s.description}>
           Payment page is on{" "}
-          <Link href="/payment">
-            <a className={s.title__link}>/payment</a>
+          <Link href="/account/payment">
+            <a className={s.title__link}>/account/payment</a>
           </Link>{" "}
           page
         </p>
-      </main>
 
-      <Footer links={footerNav} />
+        <p className={s.description}>
+          Help Page -
+          <Link href="/account/help">
+            <a className={s.title__link}>/account/help</a>
+          </Link>{" "}
+          page
+        </p>
+
+        <p className={s.description}>
+          Orders Page -
+          <Link href="/account/orders">
+            <a className={s.title__link}>/account/orders</a>
+          </Link>{" "}
+          page
+        </p>
+      </div>
     </>
   )
 }
