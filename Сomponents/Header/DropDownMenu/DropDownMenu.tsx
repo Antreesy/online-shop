@@ -32,8 +32,6 @@ const DropDownMenu: React.FC<DropDownProps> = (props) => {
     setAnchorEl(null)
   }
 
-  console.log(pathname)
-
   return (
     <div className={s.dropdown_wrapper}>
       <Button

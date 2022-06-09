@@ -78,7 +78,10 @@ const Header: React.FC<HeaderProps> = ({ role, withBreadcrumbs }) => {
         </div>
 
         <div className={s.bottom_right_group_mobile}>
-          <DropDownMenu labels={dropdownItems} buttonHiddenText="Yalçın Topkaya" />
+          <DropDownMenu
+            labels={dropdownItems}
+            buttonHiddenText="Yalçın Topkaya"
+          />
           <Button
             className={s.button_basket}
             variant="outlined"
