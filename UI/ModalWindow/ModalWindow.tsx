@@ -2,7 +2,8 @@ import { FC, ReactNode, useEffect, useState } from "react"
 import { createPortal } from "react-dom"
 
 import { Box, IconButton, Modal } from "@mui/material"
-import { Icon, IconType } from "UI"
+import { Icon } from "UI"
+import { IconType } from "shared/interfaces/iconTypes"
 
 import s from "./modalWindow.module.scss"
 

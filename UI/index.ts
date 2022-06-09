@@ -9,7 +9,7 @@ import { CreditCard } from "./CreditCard"
 import { DatePicker } from "./DatePicker"
 import { FileSelect } from "./FileSelect"
 import { FileUpload } from "./FileUpload"
-import { Icon, IconType } from "./Icon"
+import { Icon } from "./Icon"
 import { Input } from "./Input"
 import { ItemCounter } from "./ItemCounter"
 import { ModalWindow } from "./ModalWindow"
@@ -48,4 +48,4 @@ export {
   Tabs,
 }
 
-export type { IconType, PriceProps }
+export type { PriceProps }

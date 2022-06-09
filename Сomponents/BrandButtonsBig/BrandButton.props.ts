@@ -1,5 +1,5 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react"
-import { IconType } from "UI"
+import { IconType } from "shared/interfaces/iconTypes"
 
 export interface BrandButtonProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
