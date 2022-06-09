@@ -1,16 +1,9 @@
-import { Price, PriceProps } from "UI"
+import { Price } from "UI"
+import { PaymentInfoProps } from "shared/interfaces/orderProps"
 
 import s from "./OrderItem.module.scss"
 
-export interface PaymentInfoProps {
-  type?: string
-  cardNumber: number
-  orderAmount: PriceProps
-  shipping: number
-  total: number
-}
-
-const PaymentInfo: React.FC<PaymentInfoProps> = (props) => {
+export const PaymentInfo: React.FC<PaymentInfoProps> = (props) => {
   const { type, cardNumber, orderAmount, shipping, total } = props
   return (
     <>
@@ -47,4 +40,3 @@ const PaymentInfo: React.FC<PaymentInfoProps> = (props) => {
     </>
   )
 }
-export default PaymentInfo
