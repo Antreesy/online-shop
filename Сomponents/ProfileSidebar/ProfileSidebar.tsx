@@ -1,7 +1,8 @@
 import { useRouter } from "next/router"
 
 import Link from "next/link"
-import { Accordion, Icon, IconType } from "UI"
+import { Accordion, Icon } from "UI"
+import { IconType } from "shared/interfaces/iconTypes"
 
 import s from "./profileSidebar.module.scss"
 

@@ -2,7 +2,8 @@ import { useState } from "react"
 import cn from "classnames"
 
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material"
-import { Icon, IconType } from "UI"
+import { Icon } from "UI"
+import { IconType } from "shared/interfaces/iconTypes"
 
 import s from "./accordion.module.scss"
 

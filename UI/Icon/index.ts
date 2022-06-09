@@ -1,4 +1,3 @@
-import { Icon, IconType } from "./Icon"
+import { Icon } from "./Icon"
 
 export { Icon }
-export type { IconType }

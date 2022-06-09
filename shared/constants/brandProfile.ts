@@ -1,4 +1,4 @@
-import { BrandProfileType } from "Сomponents/BrandProfile/BrandProfile"
+import { BrandProfileType } from "pages/account/profile/roles/BrandProfile"
 
 export const accountProps: BrandProfileType = {
   brand_name: "Prada",

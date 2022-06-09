@@ -1,15 +1,18 @@
 import { NextPage } from "next"
 import Head from "next/head"
 
-import { BrandProfile } from "../../../Сomponents/BrandProfile/BrandProfile"
-import { accountProps } from "shared/constants/brandProfile"
+import { BrandProfile } from "./roles/BrandProfile"
+import { CustomerProfile } from "./roles/CustomerProfile"
+import { InfluencerProfile } from "./roles/InfluencerProfile"
+
 import { Roles } from "shared/enums/roles"
+import { useAppSelector } from "store/hooks"
+import { authRole } from "store/slices/authSlice"
+
+import { accountProps } from "shared/constants/brandProfile"
 
 const Profile: NextPage = () => {
-  // useEffect(() => {
-  //   dispatch get options for role
-  //   dispatch push this options to store
-  // }, []);
+  const role = useAppSelector(authRole)
 
   return (
     <>
@@ -17,17 +20,11 @@ const Profile: NextPage = () => {
         <title>ILONSI SHOP | Account</title>
       </Head>
 
-      {Roles.BRAND === 0 ? <BrandProfile {...accountProps} /> : null}
+      {role === Roles.BRAND && <BrandProfile {...accountProps} />}
+      {role === Roles.CUSTOMER && <CustomerProfile {...accountProps} />}
+      {role === Roles.INFLUENCER && <InfluencerProfile {...accountProps} />}
     </>
   )
 }
-
-// export const getServerSideProps = wrapper.getServerSideProps(
-//   (store) => async ({ req, res, ...etc }) => {
-//     const role = getRoleFromServer
-//     return { props: { role } };
-//   },
-// );
-// export default connect((state) => state)(Profile);
 
 export default Profile
