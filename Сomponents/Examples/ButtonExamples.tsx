@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Button } from "UI"
+import { Button, Pagination } from "UI"
 
 import { ModalWindow } from "UI/ModalWindow"
 
@@ -58,6 +58,9 @@ const ButtonExamples: React.FC = () => {
       <ModalWindow isOpen={open} onClose={() => setOpen(false)} iconType="okay">
         Whatever you want
       </ModalWindow>
+
+      <Pagination className={s.pagination} pagesCount={10} />
+      <Pagination className={s.pagination} pagesCount={10} isShort />
     </>
   )
 }

@@ -1,10 +1,10 @@
-import { Input } from "../../../../UI/Input/index"
-import { Button } from "../../../../UI/Button/index"
-import s from "styles/pages/profile-brand.module.scss"
+import { Input } from "../../UI/Input/index"
+import { Button } from "../../UI/Button/index"
+import s from "./profileBrand.module.scss"
 import { Controller, useForm } from "react-hook-form"
 import { SectionHeader } from "Сomponents"
 
-interface BrandProfileType {
+export interface BrandProfileType {
   brand_name: string
   brand_display_name: string
   email: string

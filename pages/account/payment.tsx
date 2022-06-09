@@ -1,45 +1,55 @@
 import { NextPage } from "next"
 import Head from "next/head"
 
-import { Footer, Header, ProfileSidebar } from "Сomponents"
+import { Card } from "@mui/material"
+import { SectionHeader } from "Сomponents"
+import { AddButton, CreditCard } from "UI"
 
-import { footerNav } from "shared/constants/footernav"
+import useResize from "shared/hooks/useResize"
+import { creditcardsData } from "shared/constants/creditcardsData"
 
-import s from "styles/pages/faq.module.scss"
+import s from "styles/pages/account/payment.module.scss"
 
 const Profile: NextPage = () => {
+  const width = useResize()
+
   return (
     <>
       <Head>
         <title>ILONSI SHOP | Account</title>
       </Head>
 
-      <Header withBreadcrumbs />
-
-      <main className={s.main}>
-        <div className={s.container}>
-          <div className={s.aside}>
-            <ProfileSidebar
-              title={"My Account"}
-              labels={[
-                { link: "/account/profile", text: "Profile" },
-                { link: "/account/address", text: "Address" },
-                { link: "/account/orders", text: "Orders" },
-                { link: "/account/payment", text: "Payment" },
-                { link: "/account/notifications", text: "Notifications" },
-                { link: "/account/favorites", text: "Favorites" },
-                { link: "/account/help", text: "Help" },
-                { link: "/account/signout", text: "Sign Out" },
-              ]}
-            />
-          </div>
-
-          <div className={s.content}>
-            <h1>Payment</h1>
-          </div>
-        </div>
-      </main>
-      <Footer links={footerNav} />
+      <SectionHeader className={s.title} title={"My Registered Cards"} />
+      <Card className={s.cards}>
+        {creditcardsData.map((card) => (
+          <CreditCard
+            size={card.size}
+            key={card.id}
+            isHidden={card.isHidden}
+            isColored={card.isColored}
+            id={card.id}
+            cardNumber={card.cardNumber}
+            cardHolder={card.cardHolder}
+            expireDate={card.expireDate}
+            onDelete={card.onDelete}
+          />
+        ))}
+      </Card>
+      <AddButton title="Add New Card" />
+      <Card className={s.detailsContainer}>
+        <CreditCard
+          size={width <= 768 ? 210 : 300}
+          isColored
+          key={4}
+          id={8375}
+          cardNumber="1234 8547 7294 3959"
+          cardHolder="Test Test"
+          expireDate="01/2023"
+          onDelete={() => {
+            console.log("test")
+          }}
+        />
+      </Card>
     </>
   )
 }

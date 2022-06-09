@@ -1,16 +1,14 @@
 import { NextPage } from "next"
 
-import { HeaderLight } from "Сomponents"
 import { Tabs } from "UI"
-import { SignUp } from "./SignUp"
-import { SignIn } from "./SignIn"
+import SignUp from "./SignUp"
+import SignIn from "./SignIn"
 
 import s from "./login.module.scss"
 
 const Login: NextPage = () => {
   return (
     <>
-      <HeaderLight />
       <main className={s.main}>
         <div className={s.wrapper}>
           <div className={s.tabs}>
