@@ -92,10 +92,6 @@ const Header: React.FC<HeaderProps> = ({ role, withBreadcrumbs }) => {
       </div>
 
       {withBreadcrumbs && <Breadcrumbs />}
-      {/* TODO delete role after creating roles propagation */}
-      <span style={{ position: "absolute", right: 0, bottom: 0, color: "red" }}>
-        role: {role}
-      </span>
     </header>
   )
 }

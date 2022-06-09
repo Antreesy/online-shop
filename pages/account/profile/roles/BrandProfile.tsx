@@ -3,7 +3,7 @@ import { Controller, useForm } from "react-hook-form"
 import { Button, Input } from "UI"
 import { SectionHeader } from "Сomponents"
 
-import s from "./brandProfile.module.scss"
+import s from "styles/pages/account/profile.module.scss"
 
 export interface BrandProfileType {
   brand_name: string
