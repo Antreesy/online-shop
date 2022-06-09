@@ -8,6 +8,12 @@ import { SelectItem } from "UI/Select/Select"
 import { countriesForSelect } from "shared/constants/countries"
 
 import s from "./addressForm.module.scss"
+import { Roles } from "shared/enums/roles"
+
+interface AddressFormProps {
+  onClose?: () => void
+  role?: Roles
+}
 
 interface AddressType {
   address: string
@@ -19,9 +25,14 @@ interface AddressType {
   something: string
   street: string
   description: string
+  companyName?: string
+  taxNumber?: string
+  taxAdministration?: string
 }
 
-const AddressForm = () => {
+const AddressForm: React.FC<AddressFormProps> = (props) => {
+  const { onClose, role } = props
+
   const { handleSubmit, control } = useForm<AddressType>({
     criteriaMode: "all",
     defaultValues: {
@@ -34,6 +45,9 @@ const AddressForm = () => {
       something: "",
       street: "",
       description: "",
+      companyName: "",
+      taxNumber: "",
+      taxAdministration: "",
     },
   })
 
@@ -49,6 +63,7 @@ const AddressForm = () => {
           title="Add Address"
           actionItem={<Icon type="close_cross" color="#fff" />}
           noDecor
+          onActionClick={onClose}
         />
 
         <div className={s.row}>
@@ -58,10 +73,10 @@ const AddressForm = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label={"Add Address"}
+                  label={"Address Title"}
                   setValue={onChange}
                   value={value}
-                  placeholder={"Add Address"}
+                  placeholder={"Address Title"}
                 />
               )}
             />
@@ -196,6 +211,63 @@ const AddressForm = () => {
             />
           </div>
         </div>
+
+        {role === Roles.BRAND && (
+          <>
+            <SectionHeader className={s.header} title="Invoice Address" />
+
+            <div className={s.row}>
+              <div className={cn(s.cell, s.cell_100)}>
+                <Controller
+                  name={"companyName"}
+                  control={control}
+                  render={({ field: { onChange, value } }) => (
+                    <Input
+                      label={"Company Name"}
+                      setValue={onChange}
+                      value={value || ""}
+                      placeholder={"Company Name"}
+                    />
+                  )}
+                />
+              </div>
+            </div>
+
+            <div className={s.row}>
+              <div className={cn(s.cell, s.cell_100)}>
+                <Controller
+                  name={"taxNumber"}
+                  control={control}
+                  render={({ field: { onChange, value } }) => (
+                    <Input
+                      label={"Tax Number"}
+                      setValue={onChange}
+                      value={value || ""}
+                      placeholder={"Tax Number"}
+                    />
+                  )}
+                />
+              </div>
+            </div>
+
+            <div className={s.row}>
+              <div className={cn(s.cell, s.cell_100)}>
+                <Controller
+                  name={"taxAdministration"}
+                  control={control}
+                  render={({ field: { onChange, value } }) => (
+                    <Input
+                      label={"Tax Administration"}
+                      setValue={onChange}
+                      value={value || ""}
+                      placeholder={"Tax Administration"}
+                    />
+                  )}
+                />
+              </div>
+            </div>
+          </>
+        )}
 
         <Button onClick={onSubmit} className={s.save_btn}>
           Save
