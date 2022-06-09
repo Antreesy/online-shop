@@ -82,7 +82,9 @@ const OrderInfo: NextPage = () => {
                 </div>
               </div>
               <div className="Invoice">
-                <span className={s.Invoice_information}>Order Information</span>
+                <span className={s.Invoice_information}>
+                  Invoice Information
+                </span>
 
                 <div className={s.Invoice_Information_detail}>
                   <div className={s.Invoice_detail_text}>
@@ -113,85 +115,85 @@ const OrderInfo: NextPage = () => {
             <div className={s.line} />
 
             <div>
-              <div className={s.Card}>
-                <div style={{ display: "flex" }}>
-                  <div className={s.img}>
-                    <Image src={cardImage} layout="fill" />
-                  </div>
-                  <div className={s.cardItem}>
-                    <div style={{ width: "365px" }}>
-                      <p className={s.cardItem_text}>Prada</p>
-                      <p>Green zero sleeve women’s dress</p>
+              {!IsActive ? (
+                <div className={s.Card}>
+                  <div style={{ display: "flex" }}>
+                    <div className={s.img}>
+                      <Image src={cardImage} layout="fill" />
+                    </div>
+                    <div className={s.cardItem}>
+                      <div style={{ width: "365px" }}>
+                        <p className={s.cardItem_text}>Prada</p>
+                        <p>Green zero sleeve women’s dress</p>
 
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <div>
-                          <div className={s.cardItem_text_detail}>
-                            <div>
-                              <p>Number</p>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                          }}
+                        >
+                          <div>
+                            <div className={s.cardItem_text_detail}>
+                              <div>
+                                <p>Number</p>
+                              </div>
+                              <div className={s.cardItem_text_colon}>
+                                <p>:</p>
+                              </div>
+                              <div className={s.spans}>
+                                <span>1</span>
+                              </div>
                             </div>
-                            <div className={s.cardItem_text_colon}>
-                              <p>:</p>
-                            </div>
-                            <div className={s.spans}>
-                              <span>1</span>
-                            </div>
-                          </div>
-                          <div className={s.cardItem_text_details}>
-                            <div>
-                              <p>Net Price</p>
-                            </div>
-                            <div className={s.cardItem_text_colon}>
-                              <p>:</p>
-                            </div>
-                            <div className={s.spans}>
-                              <span>₺100.00</span>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div>
-                          <div className={s.cardItem_text_detail}>
-                            <div>
-                              <p>VAT %18</p>
-                            </div>
-                            <div className={s.cardItem_text_colon}>
-                              <p>:</p>
-                            </div>
-                            <div className={s.spans}>
-                              <span>1</span>
+                            <div className={s.cardItem_text_details}>
+                              <div>
+                                <p>Net Price</p>
+                              </div>
+                              <div className={s.cardItem_text_colon}>
+                                <p>:</p>
+                              </div>
+                              <div className={s.spans}>
+                                <span>₺100.00</span>
+                              </div>
                             </div>
                           </div>
 
-                          <div className={s.cardItem_text_details}>
-                            <div>
-                              <p className={s.purple}>TOTAL</p>
+                          <div>
+                            <div className={s.cardItem_text_detail}>
+                              <div>
+                                <p>VAT %18</p>
+                              </div>
+                              <div className={s.cardItem_text_colon}>
+                                <p>:</p>
+                              </div>
+                              <div className={s.spans}>
+                                <span>1</span>
+                              </div>
                             </div>
-                            <div className={s.cardItem_text_colon}>
-                              <p>:</p>
-                            </div>
-                            <div className={s.spans}>
-                              <span className={s.purple}>₺100.00</span>
+
+                            <div className={s.cardItem_text_details}>
+                              <div>
+                                <p className={s.purple}>TOTAL</p>
+                              </div>
+                              <div className={s.cardItem_text_colon}>
+                                <p>:</p>
+                              </div>
+                              <div className={s.spans}>
+                                <span className={s.purple}>₺100.00</span>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div className={s.button_cancel}>
-                      <button onClick={() => setIsActive(!IsActive)}>
-                        {" "}
-                        <span>X</span> cancel
-                      </button>
+                      <div className={s.button_cancel}>
+                        <button onClick={() => setIsActive(!IsActive)}>
+                          {" "}
+                          <span>X</span> cancel
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-
-              {IsActive ? (
+              ) : (
                 <div className={s.approve}>
                   <p>
                     Are you confirming that your orders are being cancelled?
@@ -199,10 +201,15 @@ const OrderInfo: NextPage = () => {
 
                   <div className={s.button}>
                     <Button className={s.button_purple}>Approve</Button>
-                    <Button className={s.button_black}>Reject</Button>
+                    <Button
+                      className={s.button_black}
+                      onClick={() => setIsActive(!IsActive)}
+                    >
+                      Reject
+                    </Button>
                   </div>
                 </div>
-              ) : null}
+              )}
             </div>
           </div>
         </div>
