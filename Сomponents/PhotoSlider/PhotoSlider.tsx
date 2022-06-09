@@ -32,7 +32,7 @@ const PhotoSlider: React.FC<PhotoSliderProps> = (props) => {
   ))
 
   return (
-    <div className={s.photoslider}>
+    <div className={cn(s.photoslider, className)}>
       <Swiper
         freeMode={true}
         pagination={{
@@ -44,7 +44,7 @@ const PhotoSlider: React.FC<PhotoSliderProps> = (props) => {
         }}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Pagination, Thumbs]}
-        className={cn(s.swiper_main, className)}
+        className={s.swiper_main}
       >
         {mainSlides}
       </Swiper>
@@ -55,7 +55,7 @@ const PhotoSlider: React.FC<PhotoSliderProps> = (props) => {
         slidesPerView={3}
         watchSlidesProgress={true}
         modules={[FreeMode, Pagination, Thumbs]}
-        className={cn(s.swiper_gallery, className)}
+        className={s.swiper_gallery}
       >
         {gallerySlides}
       </Swiper>

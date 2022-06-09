@@ -1,5 +1,6 @@
-import Image, { ImageProps } from "next/image"
+import cn from "classnames"
 
+import Image, { ImageProps } from "next/image"
 import { Button } from "UI"
 import BgInput from "./BgInput"
 
@@ -13,6 +14,7 @@ interface BackgroundProps {
   actionText?: string
   isEditable?: boolean
   onActionClick?: (value: string | number | boolean) => void
+  className?: string
 }
 
 const Background: React.FC<BackgroundProps> = (props) => {
@@ -23,11 +25,12 @@ const Background: React.FC<BackgroundProps> = (props) => {
     link,
     actionText,
     isEditable = false,
+    className,
   } = props
 
   return (
     <div
-      className={s.fallbackItem}
+      className={cn(s.fallbackItem, className)}
       style={{ backgroundImage: `url(${image})` }}
     >
       {isEditable && (

@@ -3,23 +3,16 @@ import { Controller, useForm } from "react-hook-form"
 import { Button, Input } from "UI"
 import { SectionHeader } from "Сomponents"
 
+import { BrandProfileProps } from "shared/interfaces/profileProps"
+
 import s from "styles/pages/account/profile.module.scss"
 
-export interface BrandProfileType {
-  brand_name: string
-  brandDisplayName: string
-  email: string
-  phone: string
-  address: string
-  password: string
-}
-
-export const BrandProfile = (props: BrandProfileType) => {
+export const BrandProfile: React.FC<BrandProfileProps> = (props) => {
   const {
     handleSubmit,
     control,
     formState: { errors, isDirty },
-  } = useForm<BrandProfileType>({
+  } = useForm<BrandProfileProps>({
     criteriaMode: "all",
     defaultValues: {
       brand_name: props.brand_name,
