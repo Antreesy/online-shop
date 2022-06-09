@@ -1,3 +1,5 @@
+import cn from "classnames"
+
 import { InputLabel, TextField } from "@mui/material"
 import { Button, Icon } from "UI"
 
@@ -43,7 +45,7 @@ export const Input: React.FC<InputProps> = (props) => {
   }
 
   return (
-    <div className={s[variant]}>
+    <div className={cn(s[variant], className)}>
       {label && <InputLabel className={s.label}>{label}</InputLabel>}
       <div className={s.inputWrapper}>
         <TextField

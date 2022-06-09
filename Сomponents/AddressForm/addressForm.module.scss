@@ -1,0 +1,70 @@
+@import "/styles/style.scss";
+
+// .header {}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 50px;
+
+  @include mobile-tablet {
+    gap: 25px;
+  }
+}
+
+.row {
+  display: flex;
+  flex: 1 1 100%;
+  width: 100%;
+  gap: 50px;
+
+  @include mobile-tablet {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
+
+.cell {
+  display: flex;
+  flex: 1 1 100%;
+  width: 100%;
+  gap: 50px;
+
+  &_100 {
+    & > div {
+      width: 100%;
+    }
+  }
+
+  &_50 {
+    & > div {
+      width: 100%;
+    }
+
+    & > .input {
+      &_20 {
+        width: 40%;
+      }
+
+      &_30 {
+        width: 60%;
+      }
+    }
+  }
+
+  @include mobile-tablet {
+    gap: 25px;
+  }
+}
+
+.save_btn {
+  align-self: flex-end;
+  font-size: 18px;
+  min-width: 249px;
+
+  @include mobile {
+    width: 100%;
+    font-size: 15px;
+  }
+}

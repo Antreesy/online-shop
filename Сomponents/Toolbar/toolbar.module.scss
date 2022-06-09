@@ -33,8 +33,15 @@
   left: 15px;
 }
 
-.select {
+.select_wrapper {
   width: 122px;
+  @include mobile {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.select {
   height: 55px;
   border: 2px solid $color-black !important;
   border-radius: 0;
