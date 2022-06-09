@@ -85,7 +85,7 @@ const Index: NextPage = () => {
           </Link>{" "}
           page
         </p>
-        
+
         <p className={s.description}>
           Profile page is on{" "}
           <Link href="/account/profile">

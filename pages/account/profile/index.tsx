@@ -8,9 +8,7 @@ import { Roles } from "shared/enums/roles"
 const Profile: NextPage = () => {
   // useEffect(() => {
   //   dispatch get options for role
-
   //   dispatch push this options to store
-
   // }, []);
 
   return (
@@ -26,12 +24,10 @@ const Profile: NextPage = () => {
 
 // export const getServerSideProps = wrapper.getServerSideProps(
 //   (store) => async ({ req, res, ...etc }) => {
-
 //     const role = getRoleFromServer
 //     return { props: { role } };
 //   },
 // );
-
 // export default connect((state) => state)(Profile);
 
 export default Profile
