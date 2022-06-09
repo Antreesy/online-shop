@@ -1,7 +1,7 @@
 import { NextPage } from "next"
 import Head from "next/head"
 
-import UniversalNotifications from "./roles/UniversalNotifications"
+import { UniversalNotifications } from "views/account/notifications"
 
 import { Roles } from "shared/enums/roles"
 import { useAppSelector } from "store/hooks"

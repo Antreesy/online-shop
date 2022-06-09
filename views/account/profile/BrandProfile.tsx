@@ -3,16 +3,9 @@ import { Controller, useForm } from "react-hook-form"
 import { Button, Input } from "UI"
 import { SectionHeader } from "Сomponents"
 
-import s from "styles/pages/account/profile.module.scss"
+import { BrandProfileProps } from "shared/interfaces/profileProps"
 
-export interface BrandProfileProps {
-  brand_name: string
-  brandDisplayName: string
-  email: string
-  phone: string
-  address: string
-  password: string
-}
+import s from "styles/pages/account/profile.module.scss"
 
 export const BrandProfile: React.FC<BrandProfileProps> = (props) => {
   const {

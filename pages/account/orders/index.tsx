@@ -1,7 +1,7 @@
 import { NextPage } from "next"
 import Head from "next/head"
 
-import UniversalOrders from "./roles/UniversalOrders"
+import { UniversalOrders } from "views/account/orders"
 
 import { Roles } from "shared/enums/roles"
 import { useAppSelector } from "store/hooks"

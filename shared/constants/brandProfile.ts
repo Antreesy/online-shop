@@ -1,4 +1,4 @@
-import { BrandProfileProps } from "pages/account/profile/roles/BrandProfile"
+import { BrandProfileProps } from "shared/interfaces/profileProps"
 
 export const accountProps: BrandProfileProps = {
   brand_name: "Prada",

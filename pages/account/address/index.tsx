@@ -1,9 +1,11 @@
 import { NextPage } from "next"
 import Head from "next/head"
 
-import { BrandAddress } from "./roles/BrandAddress"
-import { CustomerAddress } from "./roles/CustomerAddress"
-import { InfluencerAddress } from "./roles/InfluencerAddress"
+import {
+  BrandAddress,
+  CustomerAddress,
+  InfluencerAddress,
+} from "views/account/address"
 
 import { Roles } from "shared/enums/roles"
 import { useAppSelector } from "store/hooks"
