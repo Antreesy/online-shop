@@ -6,7 +6,7 @@ import { SectionHeader } from "Сomponents"
 
 export interface BrandProfileType {
   brand_name: string
-  brand_display_name: string
+  brandDisplayName: string
   email: string
   phone: string
   address: string
@@ -22,7 +22,7 @@ export const BrandProfile = (props: BrandProfileType) => {
     criteriaMode: "all",
     defaultValues: {
       brand_name: props.brand_name,
-      brand_display_name: props.brand_display_name,
+      brandDisplayName: props.brandDisplayName,
       email: props.email,
       phone: props.phone,
       address: props.address,
@@ -57,7 +57,7 @@ export const BrandProfile = (props: BrandProfileType) => {
         />
 
         <Controller
-          name={"brand_display_name"}
+          name={"brandDisplayName"}
           control={control}
           rules={{ required: false }}
           render={({ field: { onChange, value } }) => (
