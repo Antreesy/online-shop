@@ -2,14 +2,13 @@ import { NextPage } from "next"
 import Head from "next/head"
 
 import { Card } from "@mui/material"
-import { SectionHeader } from "Сomponents"
+import { CardForm, SectionHeader } from "Сomponents"
 import { AddButton, CreditCard } from "UI"
 
 import useResize from "shared/hooks/useResize"
 import { creditcardsData } from "shared/constants/creditcardsData"
 
 import s from "styles/pages/account/payment.module.scss"
-import { CardForm } from "UI/CardForm"
 
 const Profile: NextPage = () => {
   const width = useResize()

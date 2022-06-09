@@ -3,6 +3,7 @@ import { AddressForm } from "./AddressForm"
 import { Background } from "./Background"
 import { Breadcrumbs } from "./Breadcrumbs"
 import { BurgerMenu } from "./BurgerMenu"
+import { CardForm } from "./CardForm"
 import { ColorPicker } from "./ColorPicker"
 import { Counter } from "./Counter"
 import { Footer } from "./Footer"
@@ -28,6 +29,7 @@ export {
   Background,
   Breadcrumbs,
   BurgerMenu,
+  CardForm,
   ColorPicker,
   Counter,
   Footer,

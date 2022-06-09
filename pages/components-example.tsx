@@ -124,23 +124,6 @@ const Home: NextPage = () => {
             </div>,
 
             <div key={"Sidebar"}>
-              <ProfileSidebar
-                labels={[
-                  { link: "/", text: "Profile" },
-                  { link: "/", text: "Address" },
-                  { link: "/", text: "Order" },
-                  { link: "/", text: "Payment" },
-                  { link: "/", text: "Notification" },
-                  {
-                    link: "/",
-                    text: "Dashboard",
-                    content: [{ link: "/", text: "Favorite" }],
-                  },
-                  { link: "/", text: "Help" },
-                  { link: "/", text: "Sign Out" },
-                ]}
-                title={"Sidebar example1"}
-              />
               <ProfileSidebar labels={sidebarTabs[0]} title={"MY ACCOUNT"} />
             </div>,
 
