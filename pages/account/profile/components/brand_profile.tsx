@@ -1,8 +1,9 @@
-import { Input } from "../../../../UI/Input/index"
-import { Button } from "../../../../UI/Button/index"
-import s from "styles/pages/profile-brand.module.scss"
 import { Controller, useForm } from "react-hook-form"
+
+import { Button, Input } from "UI"
 import { SectionHeader } from "Сomponents"
+
+import s from "styles/pages/profile-brand.module.scss"
 
 interface BrandProfileType {
   brand_name: string

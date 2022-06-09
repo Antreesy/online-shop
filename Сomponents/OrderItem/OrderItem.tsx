@@ -1,8 +1,7 @@
 import { useState } from "react"
 import { productItems } from "shared/constants/productItems"
 
-import { Button, Icon } from "UI"
-import Price, { PriceProps } from "UI/Price/Price"
+import { Button, Icon, Price, PriceProps } from "UI"
 import { ProductItem } from "Сomponents"
 import PaymentInfo, { PaymentInfoProps } from "./PaymentInfo"
 

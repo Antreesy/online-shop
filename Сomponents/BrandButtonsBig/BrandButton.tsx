@@ -1,12 +1,13 @@
-import React, { FC } from "react"
-import styles from "./BrandButton.module.scss"
+import { useRouter } from "next/router"
 import cn from "classnames"
+
+import { Icon } from "UI"
+
 import { BrandButtonProps } from "./BrandButton.props"
 
-import { Icon } from "../../UI"
-import { useRouter } from "next/router"
+import s from "./BrandButton.module.scss"
 
-const BrandButton: FC<BrandButtonProps> = (props): JSX.Element => {
+const BrandButton: React.FC<BrandButtonProps> = (props): JSX.Element => {
   const router = useRouter()
   const {
     icon,
@@ -23,27 +24,27 @@ const BrandButton: FC<BrandButtonProps> = (props): JSX.Element => {
     <div
       onClick={() => router.push("/")}
       className={cn(
-        styles.main,
+        s.main,
         {
-          [styles.purple]: appearance == "purple",
-          [styles.white]: appearance == "white",
+          [s.purple]: appearance == "purple",
+          [s.white]: appearance == "white",
         },
         {
-          [styles.bigBtn]: size == "big",
-          [styles.smallBtn]: size == "small",
+          [s.bigBtn]: size == "big",
+          [s.smallBtn]: size == "small",
         },
       )}
     >
       {size == "big" ? (
-        <div className={styles.insideBig}>
-          <div className={styles.squareBig}>
-            <Icon type={icon} className={styles.squareIconBig} />
+        <div className={s.insideBig}>
+          <div className={s.squareBig}>
+            <Icon type={icon} className={s.squareIconBig} />
           </div>
-          <div className={styles.rectangleBig}>
+          <div className={s.rectangleBig}>
             <h3>
               {h3_title}: {h3_value}
             </h3>
-            <div className={styles.smallText}>
+            <div className={s.smallText}>
               <p>
                 Last Day: <b>{last_day}</b>
               </p>
@@ -54,14 +55,14 @@ const BrandButton: FC<BrandButtonProps> = (props): JSX.Element => {
           </div>
         </div>
       ) : (
-        <div className={styles.insideSmall}>
-          <div className={styles.squareSmall}>
-            <Icon type={icon} className={styles.squareIcon} />
+        <div className={s.insideSmall}>
+          <div className={s.squareSmall}>
+            <Icon type={icon} className={s.squareIcon} />
           </div>
-          <div className={styles.totalNumber}>{smallBtnNumber}</div>
-          <div className={styles.totalText}>{smallBtnText}</div>
-          <div className={styles.rightImage}>
-            <Icon type={icon} className={styles.rightIcon} />
+          <div className={s.totalNumber}>{smallBtnNumber}</div>
+          <div className={s.totalText}>{smallBtnText}</div>
+          <div className={s.rightImage}>
+            <Icon type={icon} className={s.rightIcon} />
           </div>
         </div>
       )}

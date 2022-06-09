@@ -5,7 +5,7 @@ import { Button, SocialIcon } from "UI"
 import { Breadcrumbs, BurgerMenu, Logo } from "Сomponents"
 import { DropDownMenu } from "./DropDownMenu"
 
-import { dropdownItems } from "../../shared/constants/dropdownItems"
+import { dropdownItems } from "shared/constants/dropdownItems"
 import { DrawerItems } from "shared/constants/menuItems"
 import { Roles } from "shared/enums/roles"
 
