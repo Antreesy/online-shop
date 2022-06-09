@@ -167,6 +167,10 @@
   content: "\e930";
 }
 
+.question:before {
+  content: "\e931";
+}
+
 @media all and (max-width: 1200px) {
   .wrapper {
     width: 120px;

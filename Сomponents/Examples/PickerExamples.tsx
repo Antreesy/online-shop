@@ -25,7 +25,7 @@ const PickerExamples: React.FC = () => {
       <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
       <h2>Select</h2>
       <Select
-        items={[
+        values={[
           { title: "one", value: 1 },
           { title: "two", value: 2 },
           { title: "three", value: 3 },
@@ -37,7 +37,7 @@ const PickerExamples: React.FC = () => {
       <Select
         label="Select"
         placeholder="Country*"
-        items={countriesForSelect()}
+        values={countriesForSelect()}
         onChange={() => {
           return
         }}

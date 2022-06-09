@@ -1,10 +1,8 @@
 import cn from "classnames"
-
 import s from "./price.module.scss"
-
 import { Currency } from "shared/enums/currency"
 
-interface PriceProps {
+export interface PriceProps {
   price: number
   oldPrice?: number
   currency?: Currency

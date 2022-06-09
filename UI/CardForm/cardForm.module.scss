@@ -2,6 +2,7 @@
 
 .cardForm {
   max-width: 1280px;
+  margin-bottom: 80px;
   padding-left: 20px;
   padding-right: 20px;
   margin-top: 50px;
@@ -24,15 +25,13 @@
 
   @include mobile-tablet {
     margin-bottom: 50px;
-  }
-
-  @include mobile {
     width: 100%;
   }
 }
 
 .longInput {
-  width: 40vw;
+  max-width: 100%;
+  width: 30vw;
 
   @include mobile-tablet {
     width: 100%;
@@ -40,14 +39,16 @@
 }
 
 .shortInput {
-  width: 18vw;
+  max-width: 100%;
+  width: 13vw;
+
   @include mobile-tablet {
     width: 100%;
   }
 }
 
 .flex {
-  width: 100%;
+  max-width: 100%;
   display: flex;
   gap: 4vw;
 
@@ -55,29 +56,33 @@
     gap: 25px;
     flex-direction: column;
   }
+  @media screen and (min-width: 2000px) {
+    gap: 25px;
+    flex-direction: column;
+  }
 }
 
 .desktopButton {
-    margin-top: 25px;
-    width: 250px;
+  margin-top: 25px;
+  width: 250px;
 
-    @include mobile-tablet {
-        display: none;
-    }
+  @include mobile-tablet {
+    display: none;
+  }
 }
 
 .mobileButton {
-    display: none;
+  display: none;
 
-    @include mobile-tablet {
-        width: 50%;
-        height: 45px;
-        margin-top: 50px;
-        display: block;
-        font-size: 20px;
-    }
+  @include mobile-tablet {
+    width: 50%;
+    height: 45px;
+    margin-top: 50px;
+    display: block;
+    font-size: 20px;
+  }
 
-    @include mobile {
-        width: 100%;
-    }
+  @include mobile {
+    width: 100%;
+  }
 }
