@@ -32,6 +32,7 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
       </div>
 
       <Select
+        className={s.select_wrapper}
         selectClassName={s.select}
         iconClassName={s.selectIcon}
         values={values}

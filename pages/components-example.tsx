@@ -35,12 +35,15 @@ import {
   ProfileSidebar,
   SectionHeader,
   OrderSummary,
+  PhotoSlider,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
 import { productItems } from "shared/constants/productItems"
 import { sidebarTabs } from "shared/constants/sidebartabs"
 import { Currency } from "shared/enums/currency"
+
+import productImage from "public/assets/img/product-img.png"
 
 import s from "styles/pages/ComponentsExample.module.scss"
 
@@ -172,6 +175,16 @@ const Home: NextPage = () => {
 
             <div key={"Carousel"} className={s.carousel}>
               <Carousel items={new Array(10).fill(SampleCard)} />
+              <PhotoSlider
+                photos={[
+                  productImage,
+                  productImage,
+                  productImage,
+                  productImage,
+                  productImage,
+                  productImage,
+                ]}
+              />
             </div>,
 
             <div key={"AddButton"} className={s.addbuttonlist}>

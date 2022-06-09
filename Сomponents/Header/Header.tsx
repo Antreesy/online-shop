@@ -3,7 +3,9 @@ import cn from "classnames"
 import Link from "next/link"
 import { Button, SocialIcon } from "UI"
 import { Breadcrumbs, BurgerMenu, Logo } from "Сomponents"
+import { DropDownMenu } from "./DropDownMenu"
 
+import { dropdownItems } from "../../shared/constants/dropdownItems"
 import { DrawerItems } from "shared/constants/menuItems"
 import { Roles } from "shared/enums/roles"
 
@@ -58,13 +60,7 @@ const Header: React.FC<HeaderProps> = ({ role, withBreadcrumbs }) => {
         </Link>
 
         <div className={s.bottom_right_group}>
-          <Button
-            className={s.button_account}
-            disableElevation
-            iconLeft="account"
-          >
-            Yalçın Topkaya
-          </Button>
+          <DropDownMenu labels={dropdownItems} buttonText="Yalçın Topkaya" />
           <Button
             className={s.button_basket}
             disableElevation
@@ -82,11 +78,7 @@ const Header: React.FC<HeaderProps> = ({ role, withBreadcrumbs }) => {
         </div>
 
         <div className={s.bottom_right_group_mobile}>
-          <Button
-            className={s.button_account}
-            disableElevation
-            iconLeft="account"
-          />
+          <DropDownMenu labels={dropdownItems} buttonHiddenText="Yalçın Topkaya" />
           <Button
             className={s.button_basket}
             variant="outlined"
