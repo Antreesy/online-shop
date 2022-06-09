@@ -1,4 +1,5 @@
 import cn from "classnames"
+import { useState } from "react"
 
 import { Accordion } from "UI"
 
@@ -15,26 +16,22 @@ interface NotificationProps {
 }
 
 const Notification: React.FC<NotificationProps> = (props) => {
-  const {
-    isRead,
-    children,
-    className,
-    onClick,
-    id = 0,
-    title,
-    subtitle,
-  } = props
+  const [isRead, setIsRead] = useState<boolean>(props.isRead || false)
+  const { children, className, onClick, id = 0, title, subtitle } = props
 
   const notificationClass = cn(s.notification, className)
-
+  const titleClass = cn(s.title_span, { [s.read]: isRead })
   return (
     <div className={notificationClass} onClick={() => onClick && onClick(id)}>
       <Accordion
         className={s.accordion}
-        header={<span className={s.title_span}>{title}</span>}
+        header={<span className={titleClass}>{title}</span>}
         headerClassName={s.title}
         openTitle="Detail"
         openTitleClassName={s.openTitle}
+        onClick={() => {
+          setIsRead(true)
+        }}
       >
         {children}
       </Accordion>

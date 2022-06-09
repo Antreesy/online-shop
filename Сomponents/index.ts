@@ -1,5 +1,6 @@
 import { AddressCard } from "./AddressCard"
 import { AddressForm } from "./AddressForm"
+import { Background } from "./Background"
 import { Breadcrumbs } from "./Breadcrumbs"
 import { BurgerMenu } from "./BurgerMenu"
 import { ColorPicker } from "./ColorPicker"
@@ -17,7 +18,6 @@ import { ProductItemList } from "./ProductItemList"
 import { ProfileSidebar } from "./ProfileSidebar"
 import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
-import { SupportSection } from "./SupportSection"
 import { Toolbar } from "./Toolbar"
 import { PhotoSlider } from "./PhotoSlider"
 
@@ -25,6 +25,7 @@ export {
   PhotoSlider,
   AddressCard,
   AddressForm,
+  Background,
   Breadcrumbs,
   BurgerMenu,
   ColorPicker,
@@ -43,6 +44,5 @@ export {
   ProfileSidebar,
   SectionHeader,
   SizePicker,
-  SupportSection,
   Toolbar,
 }
