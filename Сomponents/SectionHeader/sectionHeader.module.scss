@@ -22,12 +22,20 @@
     background: $main-gradient;
     border-radius: 0 5px 0 100%;
   }
+
+  @include mobile {
+    height: 45px;
+  }
 }
 
 .title {
   font-weight: $fw-semibold;
   font-size: 18px;
   color: $color-white;
+
+  @include mobile {
+    font-size: 12px;
+  }
 }
 
 .actionText {
@@ -38,4 +46,8 @@
   color: $color-white;
   text-decoration: underline;
   cursor: pointer;
+
+  @include mobile {
+    font-size: 12px;
+  }
 }
