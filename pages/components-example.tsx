@@ -55,7 +55,7 @@ const SampleCard = () => (
 )
 
 const Home: NextPage = () => {
-  const currentStep = 3
+  const currentStep = 1
   const steps = [
     "1",
     "2",

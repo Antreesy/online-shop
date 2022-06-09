@@ -45,7 +45,7 @@ const ColorlibStepIconRoot = styled("div")<{
   backgroundColor:
     theme.palette.mode === "dark" ? theme.palette.grey[700] : "#f5f5f5",
   zIndex: 1,
-  color: "#8100ef",
+  color: "#8122ef",
   fontSize: 17,
   fontWeight: 700,
   width: 50,
@@ -96,7 +96,7 @@ const ProgressBar: React.FC<ProgressBarProps> = (props) => {
       >
         {steps.map((label) => (
           <Step key={label}>
-            <StepLabel  StepIconComponent={ColorlibStepIcon} />
+            <StepLabel StepIconComponent={ColorlibStepIcon} />
           </Step>
         ))}
       </Stepper>
