@@ -14,6 +14,7 @@ import { OrderItem } from "./OrderItem"
 import { OrderList } from "./OrderList"
 import { OrderSummary } from "./OrderSummary"
 import { ProductItem } from "./ProductItem"
+import { ProductReturn } from "./ProductReturnButton"
 import { ProductItemList } from "./ProductItemList"
 import { ProfileSidebar } from "./ProfileSidebar"
 import { SectionHeader } from "./SectionHeader"
@@ -41,6 +42,7 @@ export {
   OrderList,
   OrderSummary,
   ProductItem,
+  ProductReturn,
   ProductItemList,
   ProfileSidebar,
   SectionHeader,
