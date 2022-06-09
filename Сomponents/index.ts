@@ -1,5 +1,6 @@
 import { AddressCard } from "./AddressCard"
 import { AddressForm } from "./AddressForm"
+import { Background } from "./Background"
 import { Breadcrumbs } from "./Breadcrumbs"
 import { BurgerMenu } from "./BurgerMenu"
 import { ColorPicker } from "./ColorPicker"
@@ -25,6 +26,7 @@ export {
   PhotoSlider,
   AddressCard,
   AddressForm,
+  Background,
   Breadcrumbs,
   BurgerMenu,
   ColorPicker,

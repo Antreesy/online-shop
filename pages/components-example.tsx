@@ -67,7 +67,7 @@ const Home: NextPage = () => {
         <SectionHeader
           className={s.title}
           title={"UI Kit page"}
-          actionText={"All Orders"}
+          actionItem={"All Orders"}
         />
 
         <Tabs
