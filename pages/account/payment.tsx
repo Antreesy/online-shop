@@ -5,14 +5,11 @@ import { Card } from "@mui/material"
 import { CardForm, SectionHeader } from "Сomponents"
 import { AddButton, CreditCard } from "UI"
 
-import useResize from "shared/hooks/useResize"
 import { creditcardsData } from "shared/constants/creditcardsData"
 
 import s from "styles/pages/account/payment.module.scss"
 
 const Profile: NextPage = () => {
-  const width = useResize()
-
   return (
     <>
       <Head>
@@ -36,7 +33,6 @@ const Profile: NextPage = () => {
         ))}
       </Card>
       <AddButton title="Add New Card" />
-
       <CardForm />
     </>
   )
