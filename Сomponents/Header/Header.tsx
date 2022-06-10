@@ -5,7 +5,7 @@ import { Button, SocialIcon } from "UI"
 import { Breadcrumbs, BurgerMenu, Logo, LanguageSelect } from "Сomponents"
 import { DropDownMenu } from "./DropDownMenu"
 
-import { dropdownItems } from "../../shared/constants/dropdownItems"
+import { dropdownItems } from "shared/constants/dropdownItems"
 import { DrawerItems } from "shared/constants/menuItems"
 import { Roles } from "shared/enums/roles"
 
@@ -39,7 +39,6 @@ const Header: React.FC<HeaderProps> = ({ role, withBreadcrumbs }) => {
             iconRight="arrow_down"
           >
             En
-
           </Button>
         </div>
       </div>
@@ -71,12 +70,13 @@ const Header: React.FC<HeaderProps> = ({ role, withBreadcrumbs }) => {
           </Button>
           {/*  */}
           <LanguageSelect />
-
-
         </div>
 
         <div className={s.bottom_right_group_mobile}>
-          <DropDownMenu labels={dropdownItems} buttonHiddenText="Yalçın Topkaya" />
+          <DropDownMenu
+            labels={dropdownItems}
+            buttonHiddenText="Yalçın Topkaya"
+          />
           <Button
             className={s.button_basket}
             variant="outlined"
@@ -87,15 +87,6 @@ const Header: React.FC<HeaderProps> = ({ role, withBreadcrumbs }) => {
       </div>
 
       {withBreadcrumbs && <Breadcrumbs />}
-      <header >
-        {role && (
-          <span
-            style={{ position: "absolute", right: 0, bottom: 0, color: "red" }}
-          >
-            role: {role}
-          </span>
-        )}
-      </header>
     </header>
   )
 }

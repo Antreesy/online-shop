@@ -5,7 +5,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
 import { Button } from "UI"
 
-import s from "../styles/pages/page-not-found.module.scss"
+import s from "styles/pages/page-not-found.module.scss"
 
 
 export const getStaticProps: GetStaticProps = async ({ locale = "en" }) => ({

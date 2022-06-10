@@ -1,10 +1,11 @@
 import type { GetStaticProps, NextPage } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import { useTranslation } from "next-i18next"
 
 import Head from "next/head"
 import Link from "next/link"
-import { Header, Footer } from "Сomponents"
+import { Background, Header, Footer } from "Сomponents"
+
+import picture from "public/assets/img/fallback-pic.png"
 
 import s from "styles/pages/Index.module.scss"
 
@@ -14,86 +15,55 @@ export const getStaticProps: GetStaticProps = async ({ locale = "en" }) => ({
   },
 })
 
-const Index: NextPage = (props: any) => {
-  const { t } = useTranslation("common")
+const Index: NextPage = () => {
   return (
     <>
       <Head>
         <title>ILONSI SHOP | Homepage</title>
       </Head>
       <div className={s.main}>
-        <h2>
-          {props.locale}
-          {t("hello")}
-        </h2>
-        <p className={s.description}>
-
-
-          <p className={s.description}>
-            Login -
-            <Link href="/login">
-              <a className={s.title__link}>/login</a>
-            </Link>{" "}
-            page
-          </p>
-
-          <p className={s.description}>
-            Register (for brands / influencers) -
-            <Link href="/register">
-              <a className={s.title__link}>/register</a>
-            </Link>{" "}
-            page
-          </p>
-
-          <p className={s.description}>
-            Influencers Page -
-            <Link href="/influencers">
-              <a className={s.title__link}>/influencers</a>
-            </Link>{" "}
-            page
-          </p>
-
-          <p className={s.description}>
-            Order success
-            <Link href="/order-success">
-              <a className={s.title__link}>/order-success</a>
-            </Link>{" "}
-            page
-          </p>
-
-          <p className={s.description}>
-            UI Kit -{" "}
-            <Link href="/components-example">
-              <a className={s.title__link}>/components-example</a>
-            </Link>{" "}
-            page
-          </p>
-
-          <p className={s.description}>
-            Notifications page -
-            <Link href="/account/notifications">
-              <a className={s.title__link}>/account/notifications</a>
-            </Link>{" "}
-            page
-          </p>
-
-          <p className={s.description}>
-            Payment page is on{" "}
-            <Link href="/account/payment">
-              <a className={s.title__link}>/account/payment</a>
-            </Link>{" "}
-            page
-          </p>
-
-          <p className={s.description}>
-            Help Page -
-            <Link href="/account/help">
-              <a className={s.title__link}>/account/help</a>
-            </Link>{" "}
-            page
-          </p>
-        </p>
-
+        <Background
+          image={picture}
+          title="TITLE"
+          actionText="Follow"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos expedita saepe at ea quam dolorem mollitia soluta atque blanditiis quas in praesentium exercitationem delectus, quasi tempora porro ipsum ex voluptatum.
+        "
+          link="tuanaycl"
+        />
+        <p className={s.description}>Common:</p>
+        <Link href="/login">
+          <a className={s.title__link}>Login page</a>
+        </Link>{" "}
+        <Link href="/register">
+          <a className={s.title__link}>
+            Register page (for brands / influencers)
+          </a>
+        </Link>{" "}
+        <Link href="/influencers">
+          <a className={s.title__link}>Influencers Page</a>
+        </Link>{" "}
+        <Link href="/order-success">
+          <a className={s.title__link}>Order success page</a>
+        </Link>{" "}
+        <Link href="/components-example">
+          <a className={s.title__link}>Сomponents examples</a>
+        </Link>{" "}
+        <p className={s.description}>Account:</p>
+        <Link href="/account/profile">
+          <a className={s.title__link}>Profile</a>
+        </Link>{" "}
+        <Link href="/account/notifications">
+          <a className={s.title__link}>Notifications</a>
+        </Link>{" "}
+        <Link href="/account/payment">
+          <a className={s.title__link}>Payment</a>
+        </Link>{" "}
+        <Link href="/account/help">
+          <a className={s.title__link}>Help</a>
+        </Link>{" "}
+        <Link href="/account/orders">
+          <a className={s.title__link}>Orders</a>
+        </Link>{" "}
       </div>
     </>
   )
