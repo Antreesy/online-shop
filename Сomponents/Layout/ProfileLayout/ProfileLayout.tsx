@@ -1,3 +1,5 @@
+import { useTranslation } from "next-i18next"
+
 import { Footer, Header, ProfileSidebar } from "Сomponents"
 import { RoleSwitcher } from "Сomponents/Examples/RoleSwitcher"
 
@@ -13,16 +15,20 @@ interface ProfileLayoutProps extends LayoutProps {
 }
 
 const ProfileLayout: React.FC<ProfileLayoutProps> = ({ children, role }) => {
+  const { t } = useTranslation("sidebar")
   return (
     <>
       <Header withBreadcrumbs role={role} />
       {/* // TODO delete after auth fix */}
       <RoleSwitcher />
-      
+
       <main className={s.main}>
         <div className={s.container}>
           <aside className={s.aside}>
-            <ProfileSidebar title={"My Account"} labels={sidebarTabs[role]} />
+            <ProfileSidebar
+              title={t("my-account")}
+              labels={sidebarTabs[role]}
+            />
           </aside>
           <div className={s.content}>{children}</div>
         </div>

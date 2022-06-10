@@ -1,19 +1,12 @@
-import { NextPage } from "next"
-import Head from "next/head"
-
 import { OrderList, SectionHeader } from "Сomponents"
 
 import { orderList } from "shared/constants/orderList"
 
 import s from "styles/pages/account/orders.module.scss"
 
-const Profile: NextPage = () => {
+const UniversalOrders: React.FC = () => {
   return (
     <>
-      <Head>
-        <title>ILONSI SHOP | Account</title>
-      </Head>
-
       <SectionHeader
         title="My Orders"
         actionItem="All Orders"
@@ -24,4 +17,4 @@ const Profile: NextPage = () => {
   )
 }
 
-export default Profile
+export default UniversalOrders

@@ -1,5 +1,3 @@
-import Price, { PriceProps } from "./Price"
+import Price from "./Price"
 
 export { Price }
-
-export type { PriceProps }

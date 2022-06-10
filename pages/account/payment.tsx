@@ -1,14 +1,29 @@
 import { NextPage } from "next"
 import Head from "next/head"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
 import { Card } from "@mui/material"
-import { SectionHeader } from "Сomponents"
+import { CardForm, SectionHeader } from "Сomponents"
 import { AddButton, CreditCard } from "UI"
 
 import useResize from "shared/hooks/useResize"
 import { creditcardsData } from "shared/constants/creditcardsData"
 
 import s from "styles/pages/account/payment.module.scss"
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "app",
+        "profile",
+        "header",
+        "footer",
+        "sidebar",
+      ])),
+    },
+  }
+}
 
 const Profile: NextPage = () => {
   const width = useResize()
@@ -36,20 +51,8 @@ const Profile: NextPage = () => {
         ))}
       </Card>
       <AddButton title="Add New Card" />
-      <Card className={s.detailsContainer}>
-        <CreditCard
-          size={width <= 768 ? 210 : 300}
-          isColored
-          key={4}
-          id={8375}
-          cardNumber="1234 8547 7294 3959"
-          cardHolder="Test Test"
-          expireDate="01/2023"
-          onDelete={() => {
-            console.log("test")
-          }}
-        />
-      </Card>
+
+      <CardForm />
     </>
   )
 }

@@ -3,6 +3,7 @@ import { AddressForm } from "./AddressForm"
 import { Background } from "./Background"
 import { Breadcrumbs } from "./Breadcrumbs"
 import { BurgerMenu } from "./BurgerMenu"
+import { CardForm } from "./CardForm"
 import { ColorPicker } from "./ColorPicker"
 import { Counter } from "./Counter"
 import { Footer } from "./Footer"
@@ -18,7 +19,6 @@ import { ProductItemList } from "./ProductItemList"
 import { ProfileSidebar } from "./ProfileSidebar"
 import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
-import { SupportSection } from "./SupportSection"
 import { Toolbar } from "./Toolbar"
 import { PhotoSlider } from "./PhotoSlider"
 
@@ -29,6 +29,7 @@ export {
   Background,
   Breadcrumbs,
   BurgerMenu,
+  CardForm,
   ColorPicker,
   Counter,
   Footer,
@@ -45,6 +46,5 @@ export {
   ProfileSidebar,
   SectionHeader,
   SizePicker,
-  SupportSection,
   Toolbar,
 }

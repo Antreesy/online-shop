@@ -1,10 +1,10 @@
 import { NextPage } from "next"
 
+import SignUp from "views/login/SignUp"
+import SignIn from "views/login/SignIn"
 import { Tabs } from "UI"
-import SignUp from "./SignUp"
-import SignIn from "./SignIn"
 
-import s from "./login.module.scss"
+import s from "styles/pages/Login.module.scss"
 
 const Login: NextPage = () => {
   return (

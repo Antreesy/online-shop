@@ -1,4 +1,6 @@
-export const notificationsAll = [
+import { NotificationProps } from "shared/interfaces/notificationProps"
+
+export const notificationsAll: NotificationProps[] = [
   {
     id: 0,
     isRead: false,
@@ -25,7 +27,7 @@ export const notificationsAll = [
   },
 ]
 
-export const notificationsNew = [
+export const notificationsNew: NotificationProps[] = [
   {
     id: 0,
     isRead: false,
@@ -44,7 +46,7 @@ export const notificationsNew = [
   },
 ]
 
-export const notificationsRead = [
+export const notificationsRead: NotificationProps[] = [
   {
     id: 0,
     isRead: true,

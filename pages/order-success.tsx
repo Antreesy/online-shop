@@ -84,7 +84,7 @@ const OrderSuccess: NextPage = () => {
                 <Card
                   key={id}
                   className={s.card}
-                  imageSrc="/../public/assets/img/picture_2.png"
+                  imageSrc="/assets/img/picture_2.png"
                   title={title}
                   buttonTitle="Go To Store"
                   isButtonHidden
