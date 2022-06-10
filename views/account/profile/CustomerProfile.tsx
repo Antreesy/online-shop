@@ -1,3 +1,5 @@
+import { useTranslation } from "next-i18next"
+
 import { SectionHeader } from "Сomponents"
 
 import s from "styles/pages/account/profile.module.scss"
@@ -12,9 +14,11 @@ export interface CustomerProfileProps {
 }
 
 export const CustomerProfile: React.FC<CustomerProfileProps> = (props) => {
+  const { t } = useTranslation("profile")
+
   return (
     <>
-      <SectionHeader className={s.title} title={"Customer Profile"} />
+      <SectionHeader className={s.title} title={t("profile")} />
     </>
   )
 }

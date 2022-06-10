@@ -1,5 +1,6 @@
-import type { GetStaticProps, NextPage } from "next"
+import type { NextPage } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { useTranslation } from "next-i18next"
 
 import Head from "next/head"
 import Link from "next/link"
@@ -9,13 +10,17 @@ import picture from "public/assets/img/fallback-pic.png"
 
 import s from "styles/pages/Index.module.scss"
 
-export const getStaticProps: GetStaticProps = async ({ locale = "en" }) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ["common"])),
-  },
-})
+export async function getStaticProps(props: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(props.locale, ["app", "common"])),
+    },
+  }
+}
 
-const Index: NextPage = () => {
+const Index: NextPage = (props) => {
+  const { t } = useTranslation()
+
   return (
     <>
       <Head>
@@ -30,6 +35,8 @@ const Index: NextPage = () => {
         "
           link="tuanaycl"
         />
+        {/* TEST */}
+        <p>{t("hello")}</p>
         <p className={s.description}>Common:</p>
         <Link href="/login">
           <a className={s.title__link}>Login page</a>

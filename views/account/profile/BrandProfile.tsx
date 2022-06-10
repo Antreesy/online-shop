@@ -1,4 +1,5 @@
 import { Controller, useForm } from "react-hook-form"
+import { useTranslation } from "next-i18next"
 
 import { Button, Input } from "UI"
 import { SectionHeader } from "Сomponents"
@@ -8,6 +9,7 @@ import { BrandProfileProps } from "shared/interfaces/profileProps"
 import s from "styles/pages/account/profile.module.scss"
 
 export const BrandProfile: React.FC<BrandProfileProps> = (props) => {
+  const { t } = useTranslation("profile")
   const {
     handleSubmit,
     control,
@@ -30,7 +32,7 @@ export const BrandProfile: React.FC<BrandProfileProps> = (props) => {
 
   return (
     <div className={s.content}>
-      <SectionHeader className={s.title} title={"Profile"} />
+      <SectionHeader className={s.title} title={t("profile")} />
       <form className={s.form}>
         <Controller
           name={"brand_name"}

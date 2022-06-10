@@ -1,9 +1,11 @@
 import cn from "classnames"
+import { useTranslation } from "next-i18next"
 
 import Link from "next/link"
 import { Button, SocialIcon } from "UI"
-import { Breadcrumbs, BurgerMenu, Logo, LanguageSelect } from "Сomponents"
+import { Breadcrumbs, BurgerMenu, Logo } from "Сomponents"
 import { DropDownMenu } from "./DropDownMenu"
+import { LanguageSelect } from "./LanguageSelect"
 
 import { dropdownItems } from "shared/constants/dropdownItems"
 import { DrawerItems } from "shared/constants/menuItems"
@@ -17,29 +19,21 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ role, withBreadcrumbs }) => {
+  const { t } = useTranslation("header")
   return (
     <header className={cn(s.header, { [s.withBreadcrumbs]: withBreadcrumbs })}>
       <div className={s.top_group}>
         <Link href="mailto:info@ilonsi.com">
           <a className={s.email}>info@ilonsi.com</a>
         </Link>
-        <span className={s.caption}>
-          lipsum as it is sometimes known, is dummy
-        </span>
+        <span className={s.caption}>{t("caption")}</span>
 
         <div className={s.socials}>
           <SocialIcon type="facebook" />
           <SocialIcon type="instagram" />
           <SocialIcon type="youtube" />
 
-          <Button
-            className={s.button_lang_top}
-            variant="text"
-            disableElevation
-            iconRight="arrow_down"
-          >
-            En
-          </Button>
+          <LanguageSelect top />
         </div>
       </div>
       <div className={s.bottom_group}>
@@ -66,9 +60,9 @@ const Header: React.FC<HeaderProps> = ({ role, withBreadcrumbs }) => {
             disableElevation
             iconLeft="basket"
           >
-            Basket
+            {t("basket")}
           </Button>
-          {/*  */}
+
           <LanguageSelect />
         </div>
 

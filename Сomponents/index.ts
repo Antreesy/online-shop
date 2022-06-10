@@ -8,8 +8,7 @@ import { ColorPicker } from "./ColorPicker"
 import { Counter } from "./Counter"
 import { Footer } from "./Footer"
 import { Header, HeaderLight } from "./Header"
-import { LanguageSelect } from "./LanguageRouting"
-import {Layout} from "./Layout"
+import { Layout } from "./Layout"
 import { Logo } from "./Logo"
 import { Notification } from "./Notification"
 import { OrderItem } from "./OrderItem"
@@ -36,7 +35,6 @@ export {
   Footer,
   Header,
   HeaderLight,
-  LanguageSelect,
   Layout,
   Logo,
   Notification,
