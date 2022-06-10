@@ -3,7 +3,7 @@ import Head from "next/head"
 
 import s from "../styles/pages/orderInfo.module.scss"
 import { Breadcrumbs } from "../Сomponents"
-import {Button, Price} from "../UI"
+import { Button, Price } from "../UI"
 import React, { useState } from "react"
 import Image from "next/image"
 import cardImage from "../public/assets/img/order_card_img.png"
@@ -97,7 +97,7 @@ const OrderInfo: NextPage = () => {
           }),
         )}
       </div>
-      <div className={s.order_detail_text}>
+      <div className={s.order_detail_text_colon}>
         <ColonForOrder />
       </div>
       <div className={s.order_detail_span}>
@@ -189,16 +189,13 @@ const OrderInfo: NextPage = () => {
                     <Image src={cardImage} layout="fill" />
                   </div>
                   <div className={s.cardItem}>
-                    <div style={{ width: "365px" }}>
-                      <p className={s.cardItem_text}>Prada</p>
-                      <p>Green zero sleeve women’s dress</p>
+                    <div className={s.cardItemW}>
+                      <div>
+                        <p className={s.cardItem_text}>Prada</p>
+                        <p>Green zero sleeve women’s dress</p>
+                      </div>
 
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                        }}
-                      >
+                      <div className={s.cardItemPrice}>
                         <div>
                           <div className={s.cardItem_text_detail}>
                             <div>
@@ -219,7 +216,11 @@ const OrderInfo: NextPage = () => {
                               <p>:</p>
                             </div>
                             <div className={s.spans}>
-                                <Price oldPrice={2030} price={1930} type="order" />
+                              <Price
+                                oldPrice={2030}
+                                price={1930}
+                                type="order"
+                              />
                             </div>
                           </div>
                         </div>
@@ -245,7 +246,7 @@ const OrderInfo: NextPage = () => {
                               <p>:</p>
                             </div>
                             <div className={s.spans}>
-                                <Price oldPrice={2030} price={1930} type="cart" />
+                              <Price oldPrice={2030} price={1930} type="cart" />
                             </div>
                           </div>
                         </div>

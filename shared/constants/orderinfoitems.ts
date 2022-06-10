@@ -23,7 +23,7 @@ export const OrderInfoItems: OrderType = [
         name: "123456789",
         date: "03.08.2021",
         method: "Standart Teslim",
-      }
+      },
     ],
   },
 ]

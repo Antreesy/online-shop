@@ -8,7 +8,6 @@
   .breadcrumbs_mobile {
     @include mobile-tablet {
       display: block;
-      margin-bottom: 30px;
     }
   }
 
@@ -28,6 +27,7 @@
     margin-top: 70px;
     position: relative;
     display: flex;
+    max-width: 100%;
 
     & .customer_information,
     .order_information,
@@ -44,6 +44,7 @@
       letter-spacing: normal;
       text-align: left;
       color: #8100ef;
+      max-width: 100%;
     }
     .customer_information_detail,
     .order_information_detail,
@@ -51,6 +52,7 @@
       width: 842px;
       margin-top: 56px;
       display: flex;
+      max-width: 100%;
       & > div > p,
       & > .information_detail_text > div > p,
       & .order_detail_text > div > p,
@@ -68,11 +70,13 @@
         letter-spacing: normal;
         text-align: left;
         color: #000;
+        max-width: 100%;
       }
       .information_detail_text,
       .order_detail_text,
       .invoice_detail_text {
         width: 150px;
+        max-width: 100%;
       }
       .information_detail_span span,
       .order_detail_span span,
@@ -101,12 +105,22 @@
       transition-property: all;
       transition-duration: 0.5s;
       transition-timing-function: cubic-bezier(0, 0, 1, 1);
+      max-width: 100%;
 
       .cardItem {
         display: flex;
         justify-content: space-between;
         width: 100%;
+        max-width: 100%;
         margin: 37px 15px 0 35px;
+        & .cardItemW {
+          width: 365px;
+        }
+        & .cardItemPrice {
+          width: 370px;
+          display: flex;
+          justify-content: space-between;
+        }
         & .cardItem_text {
           color: $color-purple;
           font-size: 20px;
@@ -194,6 +208,91 @@
       }
       & p {
         text-align: center;
+      }
+    }
+  }
+  @media screen and (max-width: 400px) {
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    & .button__back {
+      margin: 10px 0 0 20px;
+    }
+    .content {
+      flex-wrap: wrap;
+      > div {
+        width: 376px;
+      }
+      & .information_detail_span > div > span,
+      .order_detail_span > div > span,
+      .invoice_detail_span > div > span {
+        margin: 0 0 20px 0 !important;
+        font-size: 12px;
+      }
+      & .customer_information,
+      .order_information,
+      .invoice_information {
+        margin: 0px -101px 30px 21px;
+        font-size: 15px;
+      }
+      & .customer_information_detail,
+      .order_information_detail,
+      .invoice_information_detail {
+        margin: 20px 0 0 0;
+        & .information_detail_text,
+        .order_detail_text,
+        .invoice_detail_text {
+          width: 125px;
+          > div > p {
+            font-size: 12px;
+          }
+          & > div > p {
+            margin: 0px -101px 16px 21px;
+          }
+          & > p {
+            width: 125px;
+            font-size: 12px;
+            margin: 0 0 16px 34px;
+          }
+        }
+        & .order_detail_text_colon {
+          margin: 0px -77px 30px 0px;
+          > p {
+            margin: 0px -70px 16px 0px;
+            font-size: 12px;
+          }
+        }
+      }
+      & .line {
+        display: none;
+      }
+      & .Card {
+        width: 3242px;
+        height: 170px;
+        margin-top: 20px;
+        & .cardItem {
+          margin: 30px 0 0 8px;
+        }
+        & .cardItemW {
+          width: 142px !important;
+          border-radius: 0 0 10px 0;
+          > div > p {
+            font-size: 12px;
+          }
+          & .cardItem_text {
+            font-size: 17px;
+          }
+          & .cardItemPrice {
+            width: 242px;
+            display: flex;
+            justify-content: space-between;
+          }
+          & .cardItem_text_details > div > p,
+          .cardItem_text_detail > div > p {
+            width: 50px;
+            font-size: 12px;
+          }
+        }
       }
     }
   }
