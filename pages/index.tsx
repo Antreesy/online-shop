@@ -112,7 +112,7 @@ const Index: NextPage = () => {
 
         <p className={s.description}>
           Order Info -
-          <Link href="/Order-info">
+          <Link href="/order-info">
             <a className={s.title__link}>/order-info</a>
           </Link>{" "}
           page
@@ -120,7 +120,7 @@ const Index: NextPage = () => {
 
         <p className={s.description}>
           Product Info -
-          <Link href="/Product-info">
+          <Link href="/product-info">
             <a className={s.title__link}>/product-info</a>
           </Link>{" "}
           page

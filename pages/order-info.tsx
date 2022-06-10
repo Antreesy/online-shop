@@ -8,8 +8,149 @@ import React, { useState } from "react"
 import Image from "next/image"
 import cardImage from "../public/assets/img/order_card_img.png"
 import Link from "next/link"
+import { OrderInfoItems } from "shared/constants/orderinfoitems"
+
+export type OrderType = {
+  CustomerInfo: {
+    Surname: string
+    Address: string
+    Phone: string
+    Email: string
+    name: string
+    address: string
+    phone: string
+    email: string
+  }[]
+  OrderInfo: {
+    OrderSurname: string
+    OrderDate: string
+    OrderDeliveryMethod: string
+    name: string
+    date: string
+    method: string
+  }[]
+}[]
 
 const OrderInfo: NextPage = () => {
+  const Colon = () => (
+    <>
+      <p className={s.colon}>:</p>
+      <p className={s.colon}>:</p>
+      <p className={s.colon}>:</p>
+      <p className={s.colon}>:</p>
+    </>
+  )
+  const ColonForOrder = () => (
+    <>
+      <p className={s.colon}>:</p>
+      <p className={s.colon}>:</p>
+      <p className={s.colon}>:</p>
+    </>
+  )
+  const CustomerInfo = ({ labels }: { labels: OrderType }) => (
+    <div className={s.customer_information_detail}>
+      <div className={s.information_detail_text}>
+        {labels.map((label) =>
+          label.CustomerInfo.map((item) => {
+            return (
+              <div>
+                <p>{item.Surname}</p>
+                <p>{item.Address}</p>
+                <p>{item.Phone}</p>
+                <p>{item.Email}</p>
+              </div>
+            )
+          }),
+        )}
+      </div>
+      <div className={s.information_detail_text}>
+        <Colon />
+      </div>
+      <div className={s.information_detail_span}>
+        {labels.map((info) =>
+          info.CustomerInfo.map((arr) => {
+            return (
+              <div>
+                <span>{arr.name}</span>
+                <span>{arr.address}</span>
+                <span>{arr.phone}</span>
+                <span>{arr.email}</span>
+              </div>
+            )
+          }),
+        )}
+      </div>
+    </div>
+  )
+  const OrderInfo = ({ labels }: { labels: OrderType }) => (
+    <div className={s.order_information_detail}>
+      <div className={s.order_detail_text}>
+        {labels.map((label) =>
+          label.OrderInfo.map((item) => {
+            return (
+              <div>
+                <p>{item.OrderSurname}</p>
+                <p>{item.OrderDate}</p>
+                <p>{item.OrderDeliveryMethod}</p>
+              </div>
+            )
+          }),
+        )}
+      </div>
+      <div className={s.order_detail_text}>
+        <ColonForOrder />
+      </div>
+      <div className={s.order_detail_span}>
+        {labels.map((label) =>
+          label.OrderInfo.map((item) => {
+            return (
+              <div>
+                <span>{item.name}</span>
+                <span>{item.date}</span>
+                <span>{item.method}</span>
+              </div>
+            )
+          }),
+        )}
+      </div>
+    </div>
+  )
+  const InvoiceInfo = ({ labels }: { labels: OrderType }) => (
+    <div className={s.invoice_information_detail}>
+      <div className={s.invoice_detail_text}>
+        {labels.map((label) =>
+          label.CustomerInfo.map((item) => {
+            return (
+              <div>
+                <p>{item.Surname}</p>
+                <p>{item.Address}</p>
+                <p>{item.Phone}</p>
+                <p>{item.Email}</p>
+              </div>
+            )
+          }),
+        )}
+      </div>
+      <div className={s.invoice_detail_text}>
+        <Colon />
+      </div>
+      <div className={s.invoice_detail_span}>
+        {labels.map((info) =>
+          info.CustomerInfo.map((arr) => {
+            return (
+              <div>
+                <span>{arr.name}</span>
+                <span>{arr.address}</span>
+                <span>{arr.phone}</span>
+                <span>{arr.email}</span>
+              </div>
+            )
+          }),
+        )}
+      </div>
+    </div>
+  )
+
   const [IsActive, setIsActive] = useState<boolean>(false)
   return (
     <>
@@ -32,85 +173,14 @@ const OrderInfo: NextPage = () => {
 
         <div className={s.content}>
           <div>
-            <div className="Customer">
-              <span className={s.Customer_Information}>
-                Customer Information
-              </span>
-              <div className={s.Customer_Information_detail}>
-                <div className={s.information_detail_text}>
-                  <p>Name Surname</p>
-                  <p>Address</p>
-                  <p>Phone</p>
-                  <p>E-Mail</p>
-                </div>
-                <div className={s.information_detail_text}>
-                  <p className={s.colon}>:</p>
-                  <p className={s.colon}>:</p>
-                  <p className={s.colon}>:</p>
-                  <p className={s.colon}>:</p>
-                </div>
-                <div className={s.information_detail_span}>
-                  <span>Yalçın Topkaya</span>
-                  <span>
-                    ILONSI AB, Aschebergsgatan 21, 41127, Göteborg
-                    info@ilonsi.com
-                  </span>
-                  <span>0530 555 55 55</span>
-                  <span>yalcin.topkaya@gmail.com</span>
-                </div>
-              </div>
-            </div>
-            <div className="Order">
-              <span className={s.Order_information}>Order Information</span>
-              <div className={s.Order_Information_detail}>
-                <div className={s.Order_detail_text}>
-                  <p>Order Number</p>
-                  <p>Order Date</p>
-                  <p>Delivery Method</p>
-                </div>
-                <div className={s.Order_detail_text}>
-                  <p className={s.colon}>:</p>
-                  <p className={s.colon}>:</p>
-                  <p className={s.colon}>:</p>
-                </div>
-                <div className={s.Order_detail_span}>
-                  <span>123456789</span>
-                  <span>03.08.2021</span>
-                  <span>Standart Teslim</span>
-                </div>
-              </div>
-            </div>
-            <div className="Invoice">
-              <span className={s.Invoice_information}>Invoice Information</span>
-
-              <div className={s.Invoice_Information_detail}>
-                <div className={s.Invoice_detail_text}>
-                  <p>Name Surname</p>
-                  <p>Address</p>
-                  <p>Phone</p>
-                  <p>E-Mail</p>
-                </div>
-                <div className={s.Invoice_detail_text}>
-                  <p className={s.colon}>:</p>
-                  <p className={s.colon}>:</p>
-                  <p className={s.colon}>:</p>
-                  <p className={s.colon}>:</p>
-                </div>
-                <div className={s.Invoice_detail_span}>
-                  <span>Yalçın Topkaya</span>
-                  <span>
-                    ILONSI AB, Aschebergsgatan 21, 41127,
-                    Göteborginfo@ilonsi.com
-                  </span>
-                  <span>0530 555 55 55</span>
-                  <span>yalcin.topkaya@gmail.com</span>
-                </div>
-              </div>
-            </div>
+            <span className={s.customer_information}>Customer Information</span>
+            <CustomerInfo labels={OrderInfoItems} />
+            <span className={s.order_information}>Order Information</span>
+            <OrderInfo labels={OrderInfoItems} />
+            <span className={s.invoice_information}>Invoice Information</span>
+            <InvoiceInfo labels={OrderInfoItems} />
           </div>
-
           <div className={s.line} />
-
           <div>
             {!IsActive ? (
               <div className={s.Card}>

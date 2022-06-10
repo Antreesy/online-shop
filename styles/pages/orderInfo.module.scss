@@ -29,9 +29,9 @@
     position: relative;
     display: flex;
 
-    & .Customer_Information,
-    .Order_information,
-    .Invoice_information {
+    & .customer_information,
+    .order_information,
+    .invoice_information {
       width: 445px;
       height: 43px;
       margin: 70px 539px 56px 140px;
@@ -45,13 +45,17 @@
       text-align: left;
       color: #8100ef;
     }
-    .Customer_Information_detail,
-    .Order_Information_detail,
-    .Invoice_Information_detail {
+    .customer_information_detail,
+    .order_information_detail,
+    .invoice_information_detail {
       width: 842px;
       margin-top: 56px;
       display: flex;
-      & > div > p {
+      & > div > p,
+      & > .information_detail_text > div > p,
+      & .order_detail_text > div > p,
+      & .order_detail_text > p,
+      & .invoice_detail_text > div > p {
         width: 169px;
         height: 22px;
         margin: 0 -115px 30px 140px;
@@ -66,13 +70,13 @@
         color: #000;
       }
       .information_detail_text,
-      .Order_detail_text,
-      .Invoice_detail_text {
+      .order_detail_text,
+      .invoice_detail_text {
         width: 150px;
       }
       .information_detail_span span,
-      .Order_detail_span span,
-      .Invoice_detail_span span {
+      .order_detail_span span,
+      .invoice_detail_span span {
         display: block;
         margin: 0 0 28px 10px;
       }
