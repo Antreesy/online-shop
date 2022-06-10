@@ -3,7 +3,7 @@ import Head from "next/head"
 
 import s from "../styles/pages/orderInfo.module.scss"
 import { Breadcrumbs } from "../Сomponents"
-import { Button } from "../UI"
+import {Button, Price} from "../UI"
 import React, { useState } from "react"
 import Image from "next/image"
 import cardImage from "../public/assets/img/order_card_img.png"
@@ -219,7 +219,7 @@ const OrderInfo: NextPage = () => {
                               <p>:</p>
                             </div>
                             <div className={s.spans}>
-                              <span>₺100.00</span>
+                                <Price oldPrice={2030} price={1930} type="order" />
                             </div>
                           </div>
                         </div>
@@ -245,7 +245,7 @@ const OrderInfo: NextPage = () => {
                               <p>:</p>
                             </div>
                             <div className={s.spans}>
-                              <span className={s.purple}>₺100.00</span>
+                                <Price oldPrice={2030} price={1930} type="cart" />
                             </div>
                           </div>
                         </div>
