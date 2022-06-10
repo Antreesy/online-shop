@@ -4,7 +4,7 @@ import { useTranslation } from "next-i18next"
 
 import Head from "next/head"
 import Link from "next/link"
-import { Background, Header, Footer } from "Сomponents"
+import { Background } from "Сomponents"
 
 import picture from "public/assets/img/fallback-pic.png"
 

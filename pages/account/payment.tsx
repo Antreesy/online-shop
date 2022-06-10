@@ -1,5 +1,6 @@
 import { NextPage } from "next"
 import Head from "next/head"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
 import { Card } from "@mui/material"
 import { CardForm, SectionHeader } from "Сomponents"
@@ -9,6 +10,20 @@ import useResize from "shared/hooks/useResize"
 import { creditcardsData } from "shared/constants/creditcardsData"
 
 import s from "styles/pages/account/payment.module.scss"
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "app",
+        "profile",
+        "header",
+        "footer",
+        "sidebar",
+      ])),
+    },
+  }
+}
 
 const Profile: NextPage = () => {
   const width = useResize()
