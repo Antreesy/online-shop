@@ -1,9 +1,6 @@
 @import "/styles/style.scss";
 
 .main {
-  @include mobile {
-    padding-top: $header-mobile-height;
-  }
 
   .breadcrumbs_mobile {
     @include mobile-tablet {
@@ -27,21 +24,18 @@
     margin-top: 70px;
     position: relative;
     display: flex;
-    max-width: 100%;
 
     & .customer_information,
     .order_information,
     .invoice_information {
       width: 445px;
       height: 43px;
-      margin: 70px 539px 56px 140px;
-      object-fit: contain;
+      margin: 0  0  0 140px;
       font-size: 38px;
       font-weight: 500;
       font-stretch: normal;
       font-style: normal;
       line-height: 1.18;
-      letter-spacing: normal;
       text-align: left;
       color: #8100ef;
       max-width: 100%;
@@ -52,7 +46,6 @@
       width: 842px;
       margin-top: 56px;
       display: flex;
-      max-width: 100%;
       & > div > p,
       & > .information_detail_text > div > p,
       & .order_detail_text > div > p,
@@ -211,7 +204,7 @@
       }
     }
   }
-  @media screen and (max-width: 400px) {
+  @media screen  and (max-width: 400px){
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
@@ -238,6 +231,7 @@
       & .customer_information_detail,
       .order_information_detail,
       .invoice_information_detail {
+        width: 376px;
         margin: 20px 0 0 0;
         & .information_detail_text,
         .order_detail_text,
