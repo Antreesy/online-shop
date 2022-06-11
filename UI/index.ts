@@ -22,6 +22,7 @@ import { Slider } from "./Slider"
 import { SocialIcon } from "./SocialIcon"
 import { Tabs } from "./Tabs"
 import { ProgressBar } from "./Progressbar"
+import { CustomTooltip } from "./Tooltip"
 
 export {
   Accordion,
@@ -48,4 +49,5 @@ export {
   SocialIcon,
   Tabs,
   ProgressBar,
+  CustomTooltip,
 }

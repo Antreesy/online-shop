@@ -25,6 +25,7 @@ import {
   Icon,
   SocialIcon,
   ProgressBar,
+  CustomTooltip,
 } from "UI"
 
 import {
@@ -48,6 +49,12 @@ import productImage from "public/assets/img/product-img.png"
 
 import s from "styles/pages/ComponentsExample.module.scss"
 
+
+const longText = `
+Switch an order to preparing status
+Do you approve your request?
+`
+
 const SampleCard = () => (
   <Card
     className={s.card_small}
@@ -60,11 +67,7 @@ const SampleCard = () => (
 
 const Home: NextPage = () => {
   const currentStep = 1
-  const steps = [
-    "1",
-    "2",
-    "3",
-  ]
+  const steps = ["1", "2", "3"]
   return (
     <>
       <Head>
@@ -157,7 +160,10 @@ const Home: NextPage = () => {
         />
 
         <SectionHeader className={s.title} title={"Components page"} />
-
+        <h2>Tooltip</h2>
+        <CustomTooltip text={longText}>
+          <div>Lorem ipsum dolor sit.</div>
+        </CustomTooltip>
         <Tabs
           className={s.example_tabs}
           labels={[
