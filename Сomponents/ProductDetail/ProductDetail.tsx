@@ -1,12 +1,10 @@
 import { ColorPicker, PhotoSlider, SizePicker } from "Сomponents"
+import { Button, Icon, Price, PriceProps } from "UI"
+import { productInfo } from "shared/constants/productInfo"
 import { colors } from "shared/constants/colors"
-
 import productImage from "public/assets/img/product-img.png"
-import { Price, PriceProps } from "UI/Price"
 
 import s from "./productDetail.module.scss"
-import { Icon } from "UI/Icon"
-import { Button } from "UI/Button"
 
 interface ProductDetailProps {
   title: string
@@ -25,34 +23,36 @@ const ProductDetail: React.FC<ProductDetailProps> = (props) => {
           <PhotoSlider photos={[productImage, productImage, productImage]} />
         </div>
         <div className={s.productInfoText}>
-          <div className={s.title}>{title}</div>
-          <div className={s.subtitle}>{subtitle}</div>
-          <div className={s.description}>{description}</div>
+          <span className={s.title}>{title}</span>
+          <span className={s.subtitle}>{subtitle}</span>
+          <span className={s.description}>{description}</span>
           <div className={s.price}>
             <Price {...price} />
           </div>
           <div className={s.colorPickers}>
-            <div className={s.colorPickerTitle}>Color:</div>
+            <span className={s.colorPickerTitle}>
+              {productInfo.colorPickerTitle}
+            </span>
             <ColorPicker colors={colors} />
           </div>
           <div className={s.sizePicker}>
             <div className={s.sizePickerTitles}>
-              <span>Size:</span>
+              <span>{productInfo.sizePickerTitle}</span>
               <div className={s.sizeChart}>
                 <Icon type="size" />
-                <span>Size Chart</span>
+                <span>{productInfo.sizeChartTitle}</span>
               </div>
             </div>
             <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
           </div>
           <Button className={s.addToMyCard}>
             <Icon type="basket" />
-            Add to My card
+            {productInfo.buttonText}
           </Button>
         </div>
       </div>
       <div className={s.productDetails}>
-        <h3>Product Detail:</h3>
+        <h3>{productInfo.cargoDetailTitle}</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
           pretium enim. Cras faucibus velit risus, nec pharetra ex scelerisque
@@ -72,7 +72,7 @@ const ProductDetail: React.FC<ProductDetailProps> = (props) => {
           laoreet risus. Donec volutpat, ligula sed bibendum laoreet, dui tellus
           iaculis est, sit amet rhoncus risus felis
         </p>
-        <h3>Cargo Detail:</h3>
+        <h3>{productInfo.cargoDetailTitle}</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
     </div>
