@@ -1,14 +1,9 @@
 import { useState } from "react"
 
 import Link from "next/link"
-import { Drawer } from "@mui/material"
-
+import { Box, Drawer, List, ListItem } from "@mui/material"
 import { Button } from "UI"
-import { Logo } from "../Logo"
-
-import Box from "@mui/material/Box"
-import List from "@mui/material/List"
-import ListItem from "@mui/material/ListItem"
+import { Logo } from "Сomponents"
 
 import s from "./burgerMenu.module.scss"
 

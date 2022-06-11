@@ -1,12 +1,22 @@
 import { NextPage } from "next"
 import Head from "next/head"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
-import { Footer, Header, ProfileSidebar } from "Сomponents"
+import s from "styles/pages/account/favorites.module.scss"
 
-import { footerNav } from "shared/constants/footernav"
-import { sidebarItems } from "shared/constants/sidebarItems"
-
-import s from "styles/pages/faq.module.scss"
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "app",
+        "profile",
+        "header",
+        "footer",
+        "sidebar",
+      ])),
+    },
+  }
+}
 
 const Profile: NextPage = () => {
   return (
@@ -15,20 +25,9 @@ const Profile: NextPage = () => {
         <title>ILONSI SHOP | Account</title>
       </Head>
 
-      <Header withBreadcrumbs />
-
-      <main className={s.main}>
-        <div className={s.container}>
-          <div className={s.aside}>
-            <ProfileSidebar title={"My Account"} labels={sidebarItems} />
-          </div>
-
-          <div className={s.content}>
-            <h1>Favorites</h1>
-          </div>
-        </div>
-      </main>
-      <Footer links={footerNav} />
+      <div className={s.content}>
+        <h1>Favorites</h1>
+      </div>
     </>
   )
 }

@@ -10,6 +10,7 @@ import {
   CreditCardExamples,
   PickerExamples,
   TabsExamples,
+  ToolbarExample,
 } from "Сomponents/Examples"
 
 import {
@@ -27,26 +28,29 @@ import {
 
 import {
   AddressCard,
-  Footer,
-  Header,
   Logo,
   Notification,
   ProductItem,
+  ProductItemList,
   ProfileSidebar,
   SectionHeader,
+  OrderSummary,
+  PhotoSlider,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
-import { sidebarItems } from "shared/constants/sidebarItems"
-import { footerNav } from "shared/constants/footernav"
+import { productItems } from "shared/constants/productItems"
+import { sidebarTabs } from "shared/constants/sidebartabs"
 import { Currency } from "shared/enums/currency"
+
+import productImage from "public/assets/img/product-img.png"
 
 import s from "styles/pages/ComponentsExample.module.scss"
 
 const SampleCard = () => (
   <Card
     className={s.card_small}
-    imageSrc="/../public/assets/img/picture_1.png"
+    imageSrc="/assets/img/picture_1.png"
     title="Gizem Sancak"
     buttonTitle="Go To Store"
     topButtonTitle="Follow"
@@ -59,14 +63,11 @@ const Home: NextPage = () => {
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
-
-      <Header withBreadcrumbs />
-
       <main className={s.main}>
         <SectionHeader
           className={s.title}
           title={"UI Kit page"}
-          actionText={"All Orders"}
+          actionItem={"All Orders"}
         />
 
         <Tabs
@@ -79,6 +80,7 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
+            "OrderSummary",
             "Sidebar",
             "Price",
             "Counters",
@@ -112,8 +114,17 @@ const Home: NextPage = () => {
               <AccordionExamples />
             </div>,
 
+            <div key={"OrderSummary"}>
+              <OrderSummary
+                subtotal={1144}
+                shipping={123}
+                discount={40}
+                kdv={110}
+              />
+            </div>,
+
             <div key={"Sidebar"}>
-              <ProfileSidebar labels={sidebarItems} title={"MY ACCOUNT"} />
+              <ProfileSidebar labels={sidebarTabs[0]} title={"MY ACCOUNT"} />
             </div>,
 
             <div key={"Price"}>
@@ -146,7 +157,9 @@ const Home: NextPage = () => {
             "Add Button",
             "Credit Card",
             "Card",
+            "Toolbar",
             "ProductItem",
+            "ProductItemList",
           ]}
           values={[
             <div key="Notification">
@@ -162,6 +175,16 @@ const Home: NextPage = () => {
 
             <div key={"Carousel"} className={s.carousel}>
               <Carousel items={new Array(10).fill(SampleCard)} />
+              <PhotoSlider
+                photos={[
+                  productImage,
+                  productImage,
+                  productImage,
+                  productImage,
+                  productImage,
+                  productImage,
+                ]}
+              />
             </div>,
 
             <div key={"AddButton"} className={s.addbuttonlist}>
@@ -191,7 +214,7 @@ const Home: NextPage = () => {
                 <SampleCard />
                 <Card
                   className={s.card_small}
-                  imageSrc="/../public/assets/img/picture_2.png"
+                  imageSrc="/assets/img/picture_2.png"
                   title="Gizem Sancak"
                   buttonTitle="Go To Store"
                   isButtonHidden
@@ -201,6 +224,10 @@ const Home: NextPage = () => {
                   text="nskjjknsjnkjdvmkjewnlkjwnljcnwjklen"
                 />
               </div>
+            </div>,
+
+            <div key={"Toolbar"}>
+              <ToolbarExample />
             </div>,
 
             <div key={"ProductItem"}>
@@ -215,7 +242,7 @@ const Home: NextPage = () => {
                     price: 2030,
                     type: "sale",
                   }}
-                  imageSrc="/../public/assets/img/T_shirt.png"
+                  imageSrc="/assets/img/T_shirt.png"
                 />
               </div>
               <div className={s.grid} style={{ width: 300 }}>
@@ -229,18 +256,20 @@ const Home: NextPage = () => {
                     price: 2030,
                     type: "sale",
                   }}
-                  imageSrc="/../public/assets/img/T_shirt.png"
+                  imageSrc="/assets/img/T_shirt.png"
                   isFavorite={false}
                   onAddClick={() => console.log("onAddClick")}
                   toggleFavorite={() => console.log("toggleFavorite")}
                 />
               </div>
             </div>,
+
+            <div key="ProductItemLIst" className={s.grid}>
+              <ProductItemList productItemList={productItems} />
+            </div>,
           ]}
         />
       </main>
-
-      <Footer links={footerNav} />
     </>
   )
 }

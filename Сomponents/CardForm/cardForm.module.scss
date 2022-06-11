@@ -1,0 +1,88 @@
+@import "/styles/style.scss";
+
+.cardForm {
+  max-width: 1280px;
+  margin-bottom: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include mobile-tablet {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.cardInputs {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  @include mobile-tablet {
+    margin-bottom: 50px;
+    width: 100%;
+  }
+}
+
+.longInput {
+  max-width: 100%;
+  width: 30vw;
+
+  @include mobile-tablet {
+    width: 100%;
+  }
+}
+
+.shortInput {
+  max-width: 100%;
+  width: 13vw;
+
+  @include mobile-tablet {
+    width: 100%;
+  }
+}
+
+.flex {
+  max-width: 100%;
+  display: flex;
+  gap: 4vw;
+
+  @include mobile-tablet {
+    gap: 25px;
+    flex-direction: column;
+  }
+  @media screen and (min-width: 2000px) {
+    gap: 25px;
+    flex-direction: column;
+  }
+}
+
+.desktopButton {
+  margin-top: 25px;
+  width: 250px;
+
+  @include mobile-tablet {
+    display: none;
+  }
+}
+
+.mobileButton {
+  display: none;
+
+  @include mobile-tablet {
+    width: 50%;
+    height: 45px;
+    margin-top: 50px;
+    display: block;
+    font-size: 20px;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+}

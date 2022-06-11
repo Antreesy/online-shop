@@ -1,34 +1,58 @@
 import { NextPage } from "next"
 import Head from "next/head"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
-import { Footer, Header, ProfileSidebar } from "Сomponents"
+import { Card } from "@mui/material"
+import { CardForm, SectionHeader } from "Сomponents"
+import { AddButton, CreditCard } from "UI"
 
-import { footerNav } from "shared/constants/footernav"
-import { sidebarItems } from "shared/constants/sidebarItems"
+import useResize from "shared/hooks/useResize"
+import { creditcardsData } from "shared/constants/creditcardsData"
 
-import s from "styles/pages/faq.module.scss"
+import s from "styles/pages/account/payment.module.scss"
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "app",
+        "profile",
+        "header",
+        "footer",
+        "sidebar",
+      ])),
+    },
+  }
+}
 
 const Profile: NextPage = () => {
+  const width = useResize()
+
   return (
     <>
       <Head>
         <title>ILONSI SHOP | Account</title>
       </Head>
 
-      <Header withBreadcrumbs />
+      <SectionHeader className={s.title} title={"My Registered Cards"} />
+      <Card className={s.cards}>
+        {creditcardsData.map((card) => (
+          <CreditCard
+            size={card.size}
+            key={card.id}
+            isHidden={card.isHidden}
+            isColored={card.isColored}
+            id={card.id}
+            cardNumber={card.cardNumber}
+            cardHolder={card.cardHolder}
+            expireDate={card.expireDate}
+            onDelete={card.onDelete}
+          />
+        ))}
+      </Card>
+      <AddButton title="Add New Card" />
 
-      <main className={s.main}>
-        <div className={s.container}>
-          <div className={s.aside}>
-            <ProfileSidebar title={"My Account"} labels={sidebarItems} />
-          </div>
-
-          <div className={s.content}>
-            <h1>Payment</h1>
-          </div>
-        </div>
-      </main>
-      <Footer links={footerNav} />
+      <CardForm />
     </>
   )
 }

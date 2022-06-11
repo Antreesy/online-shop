@@ -1,0 +1,76 @@
+@import "styles/style.scss";
+
+.notification_tabs {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
+  margin-bottom: 60px;
+
+  @include mobile {
+    box-shadow: none;
+    margin-bottom: 15px;
+  }
+
+  div {
+    overflow-x: auto;
+
+    div {
+      display: flex;
+      justify-content: space-evenly;
+      font-size: 10px;
+
+      button {
+        @include mobile {
+          font-size: 13px !important;
+        }
+      }
+    }
+  }
+}
+
+.notfLabel {
+  width: 100%;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  display: none;
+  border-radius: 0 0 10px 10px;
+
+  @include mobile {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 45px 18px 16px;
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    color: $color-purple;
+
+    span {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    div {
+      font-size: 22px;
+      color: $color-purple;
+    }
+  }
+}
+
+.notfItem {
+  margin: 0px 15px;
+}
+
+.notfIcon {
+  font-size: 10px;
+}
+
+.notfBtn {
+  width: 35px;
+  height: 35px;
+  background-color: #fff;
+  color: $color-purple;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.05);
+}
