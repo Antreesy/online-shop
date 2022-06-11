@@ -71,6 +71,9 @@ const Index: NextPage = (props) => {
         <Link href="/account/orders">
           <a className={s.title__link}>Orders</a>
         </Link>{" "}
+        <Link href="/account/favorites">
+          <a className={s.title__link}>Favorites</a>
+        </Link>{" "}
       </div>
     </>
   )
