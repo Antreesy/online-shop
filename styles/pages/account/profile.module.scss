@@ -1,131 +1,204 @@
 @import "/styles/style.scss";
 
-.title {
-  margin-bottom: 10px;
-  line-height: 1.15;
-  font-size: 4rem;
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 117px;
+  padding: 51px 0 42px;
+
+  @include mobile {
+    gap: 36px;
+    padding-top: 20px;
+  }
+
+  @include tablet {
+    gap: 40px;
+  }
+
+  @include laptop {
+    gap: 75px;
+  }
 }
 
-.content {
+.inputs {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
-  margin-left: 10px;
+  align-items: flex-start;
+  flex-wrap: wrap-reverse;
+  gap: 48px;
+  width: 100%;
 
-  @include mobile-tablet {
-    justify-content: center;
-    margin-left: 0px;
-  }
-
-  & > div {
-    margin-bottom: 30px;
-    @include mobile {
-      display: none;
-    }
-  }
-
-  & > form {
+  &__container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 78px;
+  }
+
+  &__row {
+    display: flex;
     flex-wrap: wrap;
+    gap: 51px;
+
+    div {
+      width: 410px;
+    }
+  }
+
+  @include mobile {
+    justify-content: center;
+    gap: 23px;
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 42px;
+      width: 100%;
+    }
+
+    &__row {
+      display: flex;
+      gap: 42px;
+
+      label {
+        font-size: 12px;
+        font-weight: $fw-bold;
+        line-height: 1.17;
+      }
+
+      div {
+        width: 100%;
+        height: 40px;
+      }
+    }
+  }
+
+  @include tablet {
+    justify-content: center;
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      width: 100%;
+    }
+
+    &__row {
+      display: flex;
+      gap: 32px;
+
+      div {
+        width: 100%;
+      }
+    }
+  }
+
+  @include laptop {
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    &__row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+  }
+}
+
+.radio {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+
+  span {
+    font-size: 16px;
+    font-weight: $fw-bold;
+    line-height: 1.19;
+    text-align: left;
+    color: $color-purple;
+  }
+
+  div {
+    height: 51px;
+  }
+
+  @include mobile {
+    gap: 0;
+
+    span {
+      font-size: 12px;
+      font-weight: $fw-bold;
+      line-height: 1.17;
+    }
+  }
+}
+
+.file_upload {
+  width: 359px;
+  height: 379px;
+  padding: 6px 15px 25px 15px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px 0 $color-grey-e8;
+  background-color: $color-white;
+
+  div {
     width: 100%;
-    position: relative;
-    justify-content: space-between;
-    margin-bottom: 70px;
+    height: 100%;
+  }
 
-    & > div {
-      margin: 10px 25px 20px 0px;
-      width: calc(100% / 2 - 29px);
-      min-width: 180px;
+  @include mobile {
+    width: 100%;
+    height: 180px;
+  }
+}
 
-      @include mobile-tablet {
-        width: 100%;
-      }
+.btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 59px;
 
-      & > div {
-        display: flex;
-        flex-direction: column;
-        position: relative;
+  a {
+    font-size: 18px;
+    font-weight: $fw-medium;
+    line-height: 1.17;
+    text-align: left;
+    color: $color-purple;
+  }
 
-        & div {
-          width: 100%;
-          height: 86px;
+  button {
+    width: 359px;
+    height: 100%;
+  }
 
-          @include mobile {
-            height: 39px;
-          }
+  @include tablet {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 
-          input {
-            height: 3.1em;
+    button {
+      width: 100%;
+      height: 100%;
+    }
+  }
 
-            @include mobile {
-              height: 0.5em;
-            }
-          }
-        }
+  @include mobile {
+    height: 45px;
+    flex-wrap: wrap;
+    gap: 20px;
 
-        & > div:nth-child(2) {
-          position: absolute;
-          top: 60px;
-
-          @include mobile {
-            position: relative;
-            top: 0px;
-          }
-        }
-      }
+    a {
+      font-size: 13px;
+      line-height: 1.15;
+      text-align: left;
+      color: $color-purple;
     }
 
-    & > div:nth-child(odd) {
-      margin: 20px 25px 30px 0px;
-
-      @include mobile-tablet {
-        margin: 20px 0px 30px 0px;
-      }
-    }
-
-    & > div:nth-child(even) {
-      margin: 20px 0px 30px 25px;
-
-      @include mobile-tablet {
-        margin: 20px 0px 30px 0px;
-      }
-    }
-
-    & > div:nth-child(n) {
-      @include mobile {
-        margin: 10px 0px 10px 0px;
-      }
-    }
-
-    & > div.button {
-      margin: 0;
-      padding: 0;
-      position: absolute;
-      bottom: -70px;
-      right: 0px;
-      width: auto;
-      @include mobile-tablet {
-        width: 100%;
-      }
-
-      .save_button {
-        width: 249px;
-        height: 55px;
-        background: $color-black;
-
-        @include mobile-tablet {
-          width: 100%;
-        }
-
-        @include mobile {
-          height: 45px;
-          font-size: 15px;
-          line-height: 1.2;
-        }
-      }
+    button {
+      width: 100%;
+      height: 100%;
     }
   }
 }
