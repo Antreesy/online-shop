@@ -21,6 +21,7 @@ import { Select } from "./Select"
 import { Slider } from "./Slider"
 import { SocialIcon } from "./SocialIcon"
 import { Tabs } from "./Tabs"
+import { SelectProduct } from "./SelectProduct"
 
 export {
   Accordion,
@@ -46,4 +47,5 @@ export {
   Slider,
   SocialIcon,
   Tabs,
+  SelectProduct,
 }

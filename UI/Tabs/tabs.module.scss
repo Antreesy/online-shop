@@ -1,14 +1,16 @@
 @import "styles/style.scss";
 
+
+.tabs_container{
+  width: 100%;
+}
 .tabs {
   border-radius: 10px;
-
   .tab {
     font-weight: $fw-semibold;
     font-size: 20px;
     color: $color-black;
     text-transform: none;
-
     transition-property: border, color, font-weight;
     transition: ease 0.5s;
   }
