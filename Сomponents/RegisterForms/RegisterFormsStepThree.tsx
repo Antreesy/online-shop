@@ -33,7 +33,7 @@ export const RegisterFormsStepThree: React.FC<RegisterFormStepThreeProps> = (
       <Select
         className={s.select}
         placeholder="Commercial Registry Number (Optional)"
-        items={items}
+        values={items}
         onChange={() => {
           return
         }}
@@ -41,10 +41,10 @@ export const RegisterFormsStepThree: React.FC<RegisterFormStepThreeProps> = (
       <Select
         className={s.select}
         placeholder="Tax office Province"
-        items={items}
         onChange={() => {
           return
         }}
+        values={items}
       />
       <div className={s.blank}></div>
       <Input
@@ -64,7 +64,7 @@ export const RegisterFormsStepThree: React.FC<RegisterFormStepThreeProps> = (
       <Button onClick={handleClickApply}>Apply</Button>
 
       <CheckboxGroup
-      className={s.checkboxes}
+        className={s.checkboxes}
         labels={[
           ` Lorem ipsum dolor sit amet consectetur adipisicing elit.`,
           ` Lorem ipsum dolor sit amet consectetur adipisicing elit.`,

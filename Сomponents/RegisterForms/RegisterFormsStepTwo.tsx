@@ -30,19 +30,19 @@ export const RegisterFormsStepTwo: React.FC<RegisterFormStepTwoProps> = (
       <Select
         className={s.select}
         placeholder="Sale Category"
-        items={items}
         onChange={() => {
           return
         }}
+        values={items}
       />
 
       <Select
         className={s.select}
         placeholder="Company Type"
-        items={items}
         onChange={() => {
           return
         }}
+        values={items}
       />
 
       <div className={s.blank}></div>

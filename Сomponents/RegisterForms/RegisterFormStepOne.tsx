@@ -36,10 +36,10 @@ export const RegisterFormStepOne: React.FC<RegisterFormStepOneProps> = (
       <Select
         className={s.select}
         placeholder="Category"
-        items={items}
         onChange={() => {
           return
         }}
+        values={items}
       />
 
       <Input
