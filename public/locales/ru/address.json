@@ -1,0 +1,19 @@
+{
+  "title": "Моя адресная информация",
+  "Add New Address": "Добавить новый адрес",
+  "Add Address": "Добавить адрес",
+  "Address Title": "Название адреса",
+  "Name*": "Имя*",
+  "Surname*": "Фамилия*",
+  "Country Code*": "Код страны*",
+  "Phone Number": "Номер телефона",
+  "City*": "Город*",
+  "Something": "Что-то",
+  "Street*": "Улица*",
+  "Home": "Дом",
+  "Address": "Адрес",
+  "Company Name": "Имя компании",
+  "Tax Number": "Налоговой номер",
+  "Tax Administration": "Налоговая администрация",
+  "Save": "Сохранить"
+}

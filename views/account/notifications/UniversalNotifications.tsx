@@ -1,3 +1,5 @@
+import { useTranslation } from "next-i18next"
+
 import { Notification } from "Сomponents"
 import { Tabs } from "UI"
 
@@ -33,14 +35,15 @@ const NotificationsList: React.FC<NotificationListProps> = ({ list }) => (
 )
 
 const UniversalNotifications: React.FC = () => {
+  const { t } = useTranslation("notifications")
   return (
     <Tabs
       className={s.notification_tabs}
       variant="spaces"
       labels={[
-        "Unread Notifications",
-        "Read Notifications",
-        "All Notifications",
+        t("unread"),
+        t("read"),
+        t("all"),
       ]}
       values={[
         <NotificationsList
