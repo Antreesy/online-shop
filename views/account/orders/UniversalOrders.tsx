@@ -1,9 +1,10 @@
+import { useTranslation } from "next-i18next"
+
 import { OrderList, SectionHeader } from "Сomponents"
 
 import { orderList } from "shared/constants/orderList"
 
 import s from "styles/pages/account/orders.module.scss"
-import { useTranslation } from "next-i18next"
 
 const UniversalOrders: React.FC = () => {
   const { t } = useTranslation("orders")

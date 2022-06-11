@@ -1,3 +1,5 @@
+import { useTranslation } from "next-i18next"
+
 import { Notification } from "Сomponents"
 import { Tabs } from "UI"
 
@@ -9,7 +11,6 @@ import {
 } from "shared/constants/notifications"
 
 import s from "styles/pages/account/notifications.module.scss"
-import { useTranslation } from "next-i18next"
 
 interface NotificationListProps {
   list: NotificationProps[]

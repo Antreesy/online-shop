@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useTranslation } from "next-i18next"
 
 import { AddButton } from "UI"
 import { AddressCard, AddressForm, SectionHeader } from "Сomponents"
@@ -7,7 +8,6 @@ import { addresses } from "shared/constants/addresses"
 import { AddressProps } from "shared/interfaces/addressProps"
 
 import s from "styles/pages/account/address.module.scss"
-import { useTranslation } from "next-i18next"
 
 export const BrandAddress: React.FC<AddressProps> = (props) => {
   const { t } = useTranslation("address")
