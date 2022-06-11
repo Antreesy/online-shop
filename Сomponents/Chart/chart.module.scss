@@ -1,22 +1,24 @@
+@import "styles/style.scss";
+
 .container {
   display: flex;
  
 }
 .wrapper {
-  background-color: #ccc;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
+  background-color: $color-white;
+  box-shadow: 0 0 20px 0 $color-black-a70;
   border-radius: 10px;
   margin-right: 10px;
   width: 300px;
   height: 400px;
 }
-.pieItem {
+.pie_item {
   padding: 0 30px;
   display: block;
   h2 {
     padding-top: 30px;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: $fw-semibold;
   }
 }
 .content {
@@ -45,11 +47,11 @@
 }
 .title {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: $fw-medium;
 }
 .num {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: $fw-bold;
   margin-left: 110px;
 }
 
