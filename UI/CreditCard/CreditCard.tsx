@@ -39,11 +39,10 @@ const CreditCard: React.FC<CreditCardProps> = ({
   const getRatio = (baseIndex: number): number => {
     return (size / baseIndex) * creditcardConsts.ASPECT_RATIO
   }
-
   return (
     <Card
       className={cardClasses}
-      sx={{
+      style={{
         width: sizeNumber * creditcardConsts.ASPECT_RATIO,
         height: sizeNumber,
       }}
@@ -62,7 +61,7 @@ const CreditCard: React.FC<CreditCardProps> = ({
           {onDelete && id && (
             <IconButton
               className={s.deleteBtn}
-              sx={{
+              style={{
                 width: getRatio(creditcardConsts.BASE_DELETE_BTN_INDEX),
                 height: getRatio(creditcardConsts.BASE_DELETE_BTN_INDEX),
               }}
@@ -73,7 +72,7 @@ const CreditCard: React.FC<CreditCardProps> = ({
           )}
           <div>
             <Card
-              sx={{
+              style={{
                 width:
                   (sizeNumber * creditcardConsts.ASPECT_RATIO) /
                   creditcardConsts.WIDTH_DIVISOR,
