@@ -14,13 +14,14 @@ import { Input } from "./Input"
 import { ItemCounter } from "./ItemCounter"
 import { ModalWindow } from "./ModalWindow"
 import { Pagination } from "./Pagination"
-import { Price, PriceProps } from "./Price"
+import { Price } from "./Price"
 import { RadioGroup } from "./RadioGroup"
 import { Range } from "./Range"
 import { Select } from "./Select"
 import { Slider } from "./Slider"
 import { SocialIcon } from "./SocialIcon"
 import { Tabs } from "./Tabs"
+import { ProgressBar } from "./Progressbar"
 
 export {
   Accordion,
@@ -46,6 +47,5 @@ export {
   Slider,
   SocialIcon,
   Tabs,
+  ProgressBar,
 }
-
-export type { PriceProps }

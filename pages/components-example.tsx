@@ -24,6 +24,7 @@ import {
   Price,
   Icon,
   SocialIcon,
+  ProgressBar,
 } from "UI"
 
 import {
@@ -50,7 +51,7 @@ import s from "styles/pages/ComponentsExample.module.scss"
 const SampleCard = () => (
   <Card
     className={s.card_small}
-    imageSrc="/../public/assets/img/picture_1.png"
+    imageSrc="/assets/img/picture_1.png"
     title="Gizem Sancak"
     buttonTitle="Go To Store"
     topButtonTitle="Follow"
@@ -58,6 +59,12 @@ const SampleCard = () => (
 )
 
 const Home: NextPage = () => {
+  const currentStep = 1
+  const steps = [
+    "1",
+    "2",
+    "3",
+  ]
   return (
     <>
       <Head>
@@ -69,6 +76,8 @@ const Home: NextPage = () => {
           title={"UI Kit page"}
           actionItem={"All Orders"}
         />
+
+        <ProgressBar currentStep={currentStep} steps={steps} />
 
         <Tabs
           className={s.example_tabs}
@@ -214,7 +223,7 @@ const Home: NextPage = () => {
                 <SampleCard />
                 <Card
                   className={s.card_small}
-                  imageSrc="/../public/assets/img/picture_2.png"
+                  imageSrc="/assets/img/picture_2.png"
                   title="Gizem Sancak"
                   buttonTitle="Go To Store"
                   isButtonHidden
@@ -242,7 +251,7 @@ const Home: NextPage = () => {
                     price: 2030,
                     type: "sale",
                   }}
-                  imageSrc="/../public/assets/img/T_shirt.png"
+                  imageSrc="/assets/img/T_shirt.png"
                 />
               </div>
               <div className={s.grid} style={{ width: 300 }}>
@@ -256,7 +265,7 @@ const Home: NextPage = () => {
                     price: 2030,
                     type: "sale",
                   }}
-                  imageSrc="/../public/assets/img/T_shirt.png"
+                  imageSrc="/assets/img/T_shirt.png"
                   isFavorite={false}
                   onAddClick={() => console.log("onAddClick")}
                   toggleFavorite={() => console.log("toggleFavorite")}

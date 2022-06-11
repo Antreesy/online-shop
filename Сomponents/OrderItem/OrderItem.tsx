@@ -1,21 +1,13 @@
 import { useState } from "react"
 import { productItems } from "shared/constants/productItems"
 
-import { Button, Icon, Price, PriceProps } from "UI"
+import { Button, Icon, Price } from "UI"
 import { ProductItem } from "Сomponents"
-import PaymentInfo, { PaymentInfoProps } from "./PaymentInfo"
+import { PaymentInfo } from "./PaymentInfo"
+
+import { OrderItemProps } from "shared/interfaces/orderProps"
 
 import s from "./OrderItem.module.scss"
-
-export interface OrderItemProps {
-  date: Date | string
-  quantity: number
-  buyerName: string
-  orderAmount: PriceProps
-  deliveryInfo?: string
-  seller: string
-  paymentInfo: PaymentInfoProps
-}
 
 const OrderItem: React.FC<OrderItemProps> = (props) => {
   const {
