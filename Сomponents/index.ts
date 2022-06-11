@@ -19,6 +19,7 @@ import { ProductItemList } from "./ProductItemList"
 import { ProfileSidebar } from "./ProfileSidebar"
 import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
+import { RegisterFormsStepTwo, RegisterFormStepOne, RegisterFormsStepThree } from "./RegisterForms"
 import { Toolbar } from "./Toolbar"
 import { PhotoSlider } from "./PhotoSlider"
 import {Chart} from "./Chart"
@@ -47,6 +48,9 @@ export {
   ProfileSidebar,
   SectionHeader,
   SizePicker,
+  RegisterFormsStepTwo,
+  RegisterFormStepOne,
+  RegisterFormsStepThree,
   Toolbar,
   Chart,
 }
