@@ -159,123 +159,133 @@ const OrderInfo: NextPage = () => {
       </Head>
 
       <main className={s.main}>
-        <div className={s.breadcrumbs_mobile}>
-          <Breadcrumbs />
-        </div>
-
-        <div className={s.button__back}>
-          <Button className={s.button_back} iconLeft="arrow_left">
-            <Link href="/">
-              <a href="# ">back</a>
-            </Link>
-          </Button>
-        </div>
-
-        <div className={s.content}>
-          <div>
-            <span className={s.customer_information}>Customer Information</span>
-            <CustomerInfo labels={OrderInfoItems} />
-            <span className={s.order_information}>Order Information</span>
-            <OrderInfo labels={OrderInfoItems} />
-            <span className={s.invoice_information}>Invoice Information</span>
-            <InvoiceInfo labels={OrderInfoItems} />
+        <div className={s.container}>
+          <div className={s.breadcrumbs_mobile}>
+            <Breadcrumbs />
           </div>
-          <div className={s.line} />
-          <div>
-            {!IsActive ? (
-              <div className={s.Card}>
-                <div style={{ display: "flex" }}>
-                  <div className={s.img}>
-                    <Image src={cardImage} layout="fill" />
-                  </div>
-                  <div className={s.cardItem}>
-                    <div className={s.cardItemW}>
-                      <div>
-                        <p className={s.cardItem_text}>Prada</p>
-                        <p>Green zero sleeve women’s dress</p>
-                      </div>
 
-                      <div className={s.cardItemPrice}>
+          <div className={s.button__back}>
+            <Button className={s.button_back} iconLeft="arrow_left">
+              <Link href="/">
+                <a href="# ">back</a>
+              </Link>
+            </Button>
+          </div>
+
+          <div className={s.content}>
+            <div className={s.content_wrapper}>
+              <span className={s.customer_information}>
+                Customer Information
+              </span>
+              <CustomerInfo labels={OrderInfoItems} />
+              <span className={s.order_information}>Order Information</span>
+              <OrderInfo labels={OrderInfoItems} />
+              <span className={s.invoice_information}>Invoice Information</span>
+              <InvoiceInfo labels={OrderInfoItems} />
+            </div>
+            <div className={s.line} />
+            <div>
+              {!IsActive ? (
+                <div className={s.Card}>
+                  <div className={s.card_flex}>
+                    <div className={s.img}>
+                      <Image src={cardImage} layout="fill" />
+                    </div>
+                    <div className={s.cardItem}>
+                      <div className={s.cardItemW}>
                         <div>
-                          <div className={s.cardItem_text_detail}>
-                            <div>
-                              <p>Number</p>
+                          <p className={s.cardItem_text}>Prada</p>
+                          <p>Green zero sleeve women’s dress</p>
+                        </div>
+
+                        <div className={s.cardItemPrice}>
+                          <div className={s.price }>
+                            <div className={s.cardItem_text_detail}>
+                              <div>
+                                <p>Number</p>
+                              </div>
+                              <div className={s.cardItem_text_colon}>
+                                <p>:</p>
+                              </div>
+                              <div className={s.spans}>
+                                <span>1</span>
+                              </div>
                             </div>
-                            <div className={s.cardItem_text_colon}>
-                              <p>:</p>
-                            </div>
-                            <div className={s.spans}>
-                              <span>1</span>
+                            <div className={s.cardItem_text_details}>
+                              <div>
+                                <p>Net Price</p>
+                              </div>
+                              <div className={s.cardItem_text_colon}>
+                                <p>:</p>
+                              </div>
+                              <div className={s.spans}>
+                                <Price
+                                  oldPrice={2030}
+                                  price={1930}
+                                  type="order"
+                                />
+                              </div>
                             </div>
                           </div>
-                          <div className={s.cardItem_text_details}>
-                            <div>
-                              <p>Net Price</p>
+
+                          <div className={s.price_2}>
+                            <div className={s.cardItem_text_detail}>
+                              <div>
+                                <p>VAT %18</p>
+                              </div>
+                              <div className={s.cardItem_text_colon}>
+                                <p>:</p>
+                              </div>
+                              <div className={s.spans}>
+                                <span>1</span>
+                              </div>
                             </div>
-                            <div className={s.cardItem_text_colon}>
-                              <p>:</p>
-                            </div>
-                            <div className={s.spans}>
-                              <Price
-                                oldPrice={2030}
-                                price={1930}
-                                type="order"
-                              />
+
+                            <div className={s.cardItem_text_details}>
+                              <div>
+                                <p className={s.purple}>TOTAL</p>
+                              </div>
+                              <div className={s.cardItem_text_colon}>
+                                <p>:</p>
+                              </div>
+                              <div className={s.spans}>
+                                <Price
+                                  oldPrice={2030}
+                                  price={1930}
+                                  type="cart"
+                                />
+                              </div>
                             </div>
                           </div>
                         </div>
-
-                        <div>
-                          <div className={s.cardItem_text_detail}>
-                            <div>
-                              <p>VAT %18</p>
-                            </div>
-                            <div className={s.cardItem_text_colon}>
-                              <p>:</p>
-                            </div>
-                            <div className={s.spans}>
-                              <span>1</span>
-                            </div>
-                          </div>
-
-                          <div className={s.cardItem_text_details}>
-                            <div>
-                              <p className={s.purple}>TOTAL</p>
-                            </div>
-                            <div className={s.cardItem_text_colon}>
-                              <p>:</p>
-                            </div>
-                            <div className={s.spans}>
-                              <Price oldPrice={2030} price={1930} type="cart" />
-                            </div>
-                          </div>
-                        </div>
                       </div>
-                    </div>
-                    <div className={s.button_cancel}>
-                      <button onClick={() => setIsActive(!IsActive)}>
-                        {" "}
-                        <span>X</span> cancel
-                      </button>
+                      <div className={s.button_cancel} onClick={() => setIsActive(!IsActive)}>
+                          <div>
+                              <Button className={s.button_clear} icon iconLeft="close_cross" onClick={() => setIsActive(!IsActive)}/>
+                          </div>
+                          <p>cancel</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ) : (
-              <div className={s.approve}>
-                <p>Are you confirming that your orders are being cancelled?</p>
+              ) : (
+                <div className={s.approve}>
+                  <p>
+                    Are you confirming that your orders are being cancelled?
+                  </p>
 
-                <div className={s.button}>
-                  <Button className={s.button_purple}>Approve</Button>
-                  <Button
-                    className={s.button_black}
-                    onClick={() => setIsActive(!IsActive)}
-                  >
-                    Reject
-                  </Button>
+                  <div className={s.button}>
+                    <Button className={s.button_purple}>Approve</Button>
+                    <Button
+                      className={s.button_black}
+                      onClick={() => setIsActive(!IsActive)}
+                    >
+                      Reject
+                    </Button>
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </main>

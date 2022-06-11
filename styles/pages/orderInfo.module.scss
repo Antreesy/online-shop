@@ -1,293 +1,332 @@
 @import "/styles/style.scss";
 
 .main {
-
   .breadcrumbs_mobile {
     @include mobile-tablet {
       display: block;
     }
   }
+  .container {
+    max-width: 1920px;
+    width: 100%;
+    margin: auto;
 
-  .button__back {
-    width: 102px;
-    height: 46px;
-    margin: 50px 108px 70px 140px;
-    object-fit: contain;
-    & .button_back {
-      background: #ffffff none;
-      color: $color-purple;
-      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
-    }
-  }
-
-  .content {
-    margin-top: 70px;
-    position: relative;
-    display: flex;
-
-    & .customer_information,
-    .order_information,
-    .invoice_information {
-      width: 445px;
-      height: 43px;
-      margin: 0  0  0 140px;
-      font-size: 38px;
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.18;
-      text-align: left;
-      color: #8100ef;
-      max-width: 100%;
-    }
-    .customer_information_detail,
-    .order_information_detail,
-    .invoice_information_detail {
-      width: 842px;
-      margin-top: 56px;
-      display: flex;
-      & > div > p,
-      & > .information_detail_text > div > p,
-      & .order_detail_text > div > p,
-      & .order_detail_text > p,
-      & .invoice_detail_text > div > p {
-        width: 169px;
-        height: 22px;
-        margin: 0 -115px 30px 140px;
-        object-fit: contain;
-        font-size: 20px;
-        font-weight: 600;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 23px;
-        letter-spacing: normal;
-        text-align: left;
-        color: #000;
-        max-width: 100%;
-      }
-      .information_detail_text,
-      .order_detail_text,
-      .invoice_detail_text {
-        width: 150px;
-        max-width: 100%;
-      }
-      .information_detail_span span,
-      .order_detail_span span,
-      .invoice_detail_span span {
-        display: block;
-        margin: 0 0 28px 10px;
-      }
-    }
-    & .line {
-      width: 2px;
-      height: 770px;
-      margin: 59px 46px 161px;
+    .button__back {
+      width: 102px;
+      height: 46px;
+      margin: 50px 108px 70px 140px;
       object-fit: contain;
-      background-color: #f5f5f5;
-
-      position: absolute;
-      top: 25px;
-      left: 712px;
-    }
-
-    .Card {
-      width: 610px;
-      height: 204px;
-      margin-top: 190px;
-      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
-      transition-property: all;
-      transition-duration: 0.5s;
-      transition-timing-function: cubic-bezier(0, 0, 1, 1);
-      max-width: 100%;
-
-      .cardItem {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        max-width: 100%;
-        margin: 37px 15px 0 35px;
-        & .cardItemW {
-          width: 365px;
-        }
-        & .cardItemPrice {
-          width: 370px;
-          display: flex;
-          justify-content: space-between;
-        }
-        & .cardItem_text {
-          color: $color-purple;
-          font-size: 20px;
-        }
-      }
-      & .img {
-        width: 90px;
-        height: 159px;
-        max-width: none;
-        max-height: none;
-        margin: 18px 0 0 20px;
-        padding: 20px;
-      }
-      & .img {
-        position: relative;
-      }
-      & .cardItem_text_detail,
-      .cardItem_text_details {
-        display: flex;
-        margin: 18px 0 0 0;
-        & p {
-          width: 70px;
-          height: 22px;
-          font-size: 15px;
-          font-weight: 600;
-        }
-        & .purple {
-          color: $color-purple;
-        }
-        & .spans {
-          width: 70px;
-          & span {
-            margin: 0 0 0 -42px;
-          }
-        }
-      }
-      .cardItem_text_details {
-        margin: 0;
-      }
-      .button_cancel {
-        width: 100px;
-
-        & button {
-          background: #f5f5f5 none;
-          color: black;
-          padding: 4px 16px 4px 16px;
-          border: none;
-          cursor: pointer;
-          border-radius: 14px;
-        }
-        & span {
-          border: solid 0.4px #888;
-          background-color: #fff;
-          border-radius: 50%;
-          padding: 2px;
-          cursor: pointer;
-          font-size: 12px;
-          color: black;
-        }
+      & .button_back {
+        background: $color-white none;
+        color: $color-purple;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
       }
     }
-    .approve {
-      width: 608px;
-      height: 204px;
-      margin: 190px 0 0 0;
-      padding: 63px 0 0 0;
-      object-fit: contain;
-      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
-      background-color: #fff;
-      transition-property: all;
-      transition-duration: 0.5s;
-      transition-timing-function: cubic-bezier(0, 0, 1, 1);
 
-      & .button_purple {
-        background: $color-purple none;
-      }
-      & .button_black {
-        background: $color-black none;
-      }
-      & .button {
-        display: flex;
-        margin: 20px auto 0;
-        width: 200px;
-        justify-content: space-between;
-      }
-      & p {
-        text-align: center;
-      }
-    }
-  }
-  @media screen  and (max-width: 400px){
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-    & .button__back {
-      margin: 10px 0 0 20px;
-    }
     .content {
-      flex-wrap: wrap;
-      > div {
-        width: 376px;
+      margin-top: 70px;
+      position: relative;
+      display: flex;
+
+      .content_wrapper {
+        max-width: 755px;
+        width: 100%;
+        margin-right: 35px;
       }
-      & .information_detail_span > div > span,
-      .order_detail_span > div > span,
-      .invoice_detail_span > div > span {
-        margin: 0 0 20px 0 !important;
-        font-size: 12px;
-      }
+
       & .customer_information,
       .order_information,
       .invoice_information {
-        margin: 0px -101px 30px 21px;
-        font-size: 15px;
+        width: 445px;
+        height: 43px;
+        margin: 0  0  0 140px;
+        font-size: 38px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.18;
+        text-align: left;
+        color: $color-purple;
+        max-width: 100%;
       }
-      & .customer_information_detail,
+      .customer_information_detail,
       .order_information_detail,
       .invoice_information_detail {
-        width: 376px;
-        margin: 20px 0 0 0;
-        & .information_detail_text,
+        width: 842px;
+        margin-top: 56px;
+        display: flex;
+        & > div > p,
+        & > .information_detail_text > div > p,
+        & .order_detail_text > div > p,
+        & .order_detail_text > p,
+        & .invoice_detail_text > div > p {
+          width: 169px;
+          height: 22px;
+          margin: 0 -160px 30px 140px;
+          object-fit: contain;
+          font-size: 20px;
+          font-weight: 600;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 23px;
+          letter-spacing: normal;
+          text-align: left;
+          color: $color-black;
+          max-width: 100%;
+        }
+        .information_detail_text,
         .order_detail_text,
         .invoice_detail_text {
-          width: 125px;
-          > div > p {
-            font-size: 12px;
-          }
-          & > div > p {
-            margin: 0px -101px 16px 21px;
-          }
-          & > p {
-            width: 125px;
-            font-size: 12px;
-            margin: 0 0 16px 34px;
-          }
+          width: 150px;
+          max-width: 100%;
         }
-        & .order_detail_text_colon {
-          margin: 0px -77px 30px 0px;
-          > p {
-            margin: 0px -70px 16px 0px;
-            font-size: 12px;
-          }
+        .information_detail_span span,
+        .order_detail_span span,
+        .invoice_detail_span span {
+          display: block;
+          margin: 0 0 28px 10px;
         }
       }
       & .line {
-        display: none;
+        width: 2px;
+        height: 770px;
+        margin: 59px 46px 161px;
+        object-fit: contain;
+        background-color: #f5f5f5;
+
+        position: absolute;
+        top: 25px;
+        left: 712px;
       }
-      & .Card {
-        width: 3242px;
-        height: 170px;
-        margin-top: 20px;
-        & .cardItem {
-          margin: 30px 0 0 8px;
+
+      .Card {
+        width: 610px;
+        height: 204px;
+        margin-top: 190px;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
+        transition: all 0.5s  cubic-bezier(0, 0, 1, 1);
+        .card_flex {
+          display: flex;
+          width: inherit;
         }
-        & .cardItemW {
-          width: 142px !important;
-          border-radius: 0 0 10px 0;
-          > div > p {
-            font-size: 12px;
-          }
-          & .cardItem_text {
-            font-size: 17px;
+
+        .cardItem {
+          display: flex;
+          justify-content: space-between;
+          width: 400px;
+          margin: 37px 22px 0 16px;
+          & .cardItemW {
+            width: 365px;
           }
           & .cardItemPrice {
-            width: 242px;
+            width: 370px;
             display: flex;
             justify-content: space-between;
           }
-          & .cardItem_text_details > div > p,
-          .cardItem_text_detail > div > p {
-            width: 50px;
-            font-size: 12px;
+          & .cardItem_text {
+            color: $color-purple;
+            font-size: 20px;
+          }
+        }
+        & .img {
+          width: 90px;
+          height: 159px;
+          max-width: none;
+          max-height: none;
+          margin: 18px 0 0 20px;
+          padding: 20px;
+        }
+        & .img {
+          position: relative;
+        }
+        & .cardItem_text_detail,
+        .cardItem_text_details {
+          display: flex;
+          margin: 18px 0 0 0;
+          & p {
+            width: 70px;
+            height: 22px;
+            font-size: 15px;
+            font-weight: 600;
+          }
+          & .purple {
+            color: $color-purple;
+          }
+          & .spans {
+            width: 70px;
+            & span {
+              margin: 0 0 0 -42px;
+            }
+          }
+        }
+        .cardItem_text_details {
+          margin: 0;
+        }
+        .button_cancel {
+          display: flex;
+          background: #f5f5f5;
+          width: 100px;
+          height: 25px;
+          padding: 15px 15px 15px 15px;
+          border-radius: 50px;
+          align-items: center;
+          cursor: pointer;
+          > div {
+            border: 1px solid #d0d0d0;
+            width: 22px;
+            height: 22px;
+            margin-right: 10px;
+            border-radius: 50px;
+          }
+          & .button_clear {
+            width: 20px;
+            height: 20px;
+            font-size: 9px;
+            font-weight: 600;
+            background: $color-white;
+            color: $color-black;
+            padding: 6px 5px 7px 1px;
+            border-radius: 50px;
+            & > span {
+              width: 5px;
+              height: 5px;
+            }
+          }
+        }
+      }
+      .approve {
+        width: 608px;
+        height: 204px;
+        margin: 190px 0 0 0;
+        padding: 63px 0 0 0;
+        object-fit: contain;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
+        background-color: $color-white;
+        transition: all 0.5s cubic-bezier(0, 0, 1, 1);
+
+        & .button_purple {
+          background: $color-purple none;
+        }
+        & .button_black {
+          background: $color-black none;
+        }
+        & .button {
+          display: flex;
+          margin: 20px auto 0;
+          width: 200px;
+          justify-content: space-between;
+        }
+        & p {
+          text-align: center;
+        }
+      }
+    }
+
+    @media screen  and (max-width: 400px){
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      & .button__back {
+        margin: 10px 0 0 20px;
+      }
+      .content {
+        flex-wrap: wrap;
+        > div {
+          width: 376px;
+        }
+        & .information_detail_span > div > span,
+        .order_detail_span > div > span,
+        .invoice_detail_span > div > span {
+          margin: 0 0 20px 0 !important;
+          font-size: 12px;
+        }
+        & .customer_information,
+        .order_information,
+        .invoice_information {
+          margin: 0px -101px 30px 21px;
+          font-size: 15px;
+        }
+        & .customer_information_detail,
+        .order_information_detail,
+        .invoice_information_detail {
+          width: 376px;
+          margin: 20px 0 0 0;
+          & .information_detail_text,
+          .order_detail_text,
+          .invoice_detail_text {
+            width: 125px;
+            > div > p {
+              font-size: 12px;
+            }
+            & > div > p {
+              margin: 0px -101px 16px 21px;
+            }
+            & > p {
+              width: 125px;
+              font-size: 12px;
+              margin: 0 0 16px 34px;
+            }
+          }
+          & .order_detail_text_colon {
+            margin: 0px -77px 30px 0px;
+            > p {
+              margin: 0px -70px 16px 0px;
+              font-size: 12px;
+            }
+          }
+        }
+        & .line {
+          display: none;
+        }
+        & .Card {
+          width: 372px;
+          height: 170px;
+          margin-top: 20px;
+          & .cardItem {
+            margin: 30px 0 0 8px;
+          }
+          .price {
+            width: 100px;
+          }
+          .price_2 {
+            width: 100px;
+          }
+          & .cardItemW {
+            width: 142px !important;
+            border-radius: 0 0 10px 0;
+            > div > p {
+              font-size: 12px;
+            }
+            & .cardItem_text {
+              font-size: 17px;
+            }
+            & .cardItemPrice {
+              width: 242px;
+              display: flex;
+              justify-content: space-between;
+            }
+            & .cardItem_text_details > div > p,
+            .cardItem_text_detail > div > p {
+              width: 50px;
+              font-size: 12px;
+            }
           }
         }
       }
     }
   }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
