@@ -7,9 +7,13 @@
 .swiper_main {
   text-align: center;
   font-size: 18px;
-  width: 820px;
-  height: 760px;
+  max-width: 620px;
+  height: 560px;
   margin-bottom: 15px;
+
+  @include mobile {
+    height: 320px;
+  }
 
   & > div {
     box-sizing: border-box;
@@ -19,11 +23,15 @@
 .swiper_gallery {
   text-align: center;
   font-size: 18px;
-  width: 820px;
-  height: 260px;
+  max-width: 620px;
+  height: 210px;
   gap: 15px;
   display: flex;
   margin-bottom: 30px;
+
+  @include mobile {
+    height: 110px;
+  }
 
   & > div {
     box-sizing: border-box;
