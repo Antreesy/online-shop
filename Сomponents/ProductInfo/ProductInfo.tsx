@@ -4,16 +4,16 @@ import { productInfo } from "shared/constants/productInfo"
 import { colors } from "shared/constants/colors"
 import productImage from "public/assets/img/product-img.png"
 
-import s from "./productDetail.module.scss"
+import s from "./productInfo.module.scss"
 
-interface ProductDetailProps {
+interface ProductInfoProps {
   title: string
   subtitle: string
   description: string
   price: PriceProps
 }
 
-const ProductDetail: React.FC<ProductDetailProps> = (props) => {
+const ProductInfo: React.FC<ProductInfoProps> = (props) => {
   const { title, subtitle, description, price } = props
 
   return (
@@ -79,4 +79,4 @@ const ProductDetail: React.FC<ProductDetailProps> = (props) => {
   )
 }
 
-export default ProductDetail
+export default ProductInfo
