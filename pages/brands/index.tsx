@@ -7,7 +7,7 @@ import { Card, Pagination, Button, Icon } from "UI"
 
 import card_image from "public/assets/img/zara.png"
 
-import s from "styles/pages/brands.module.scss"
+import s from "styles/pages/brands/brands.module.scss"
 import { useState } from "react"
 import picture from "public/assets/img/fallback-pic.png"
 import { useRouter } from "next/router"
@@ -54,7 +54,7 @@ const brands: NextPage = () => {
           </div>
           <div className={s.wrapper_toolbar}>
             <Button
-              disabled={path === "products" ? false : false}
+              disabled={path === "products"}
               variant="outlined"
               className={path === "products" ? s.button_active : ""}
               onClick={() => {
@@ -64,7 +64,7 @@ const brands: NextPage = () => {
               Products (24187)
             </Button>
             <Button
-              disabled={path === "brands" ? true : false}
+              disabled={path === "brands"}
               variant="outlined"
               className={path === "brands" ? s.button_active : ""}
               onClick={() => {
