@@ -46,6 +46,9 @@ const Index: NextPage = (props) => {
             Register page (for brands / influencers)
           </a>
         </Link>{" "}
+        <Link href="/register-page">
+          <a className={s.title__link}>Register page</a>
+        </Link>{" "}
         <Link href="/influencers">
           <a className={s.title__link}>Influencers Page</a>
         </Link>{" "}
