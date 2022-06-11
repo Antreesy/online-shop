@@ -1,8 +1,7 @@
 @import "styles/style.scss";
 
 .cartItemsHeader {
-  width: 95vw;
-  margin: auto;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   color: $color-white;
@@ -30,14 +29,20 @@
 }
 
 .cartItemlist {
-  // margin: auto;
-  // margin-right: 50px;
+  width: 100%;
   padding-right: 20px;
-  > p {
+
+  >p {
     margin-bottom: 20px;
     margin-top: 20px;
     font-size: 18px;
     font-weight: 600;
+
+  }
+
+  @include mobile {
+    padding-right: 0;
+
   }
 }
 
@@ -58,13 +63,12 @@
 
 .total {
   flex: 1;
-  margin-right: 20px;
+  // margin-right: 20px;
 }
 
 .cart {
   display: flex;
   margin: 10px 20px;
-  width: 90%;
   margin-bottom: 30px;
 
   @include mobile-tablet {
@@ -75,11 +79,5 @@
   @include laptop {
     flex-direction: column;
     justify-content: center;
-  }
-}
-
-.orderSummary {
-  > div {
-    margin-right: 40px !important;
   }
 }

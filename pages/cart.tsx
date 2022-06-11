@@ -6,16 +6,16 @@ import { OrderSummary } from "Сomponents"
 const Cart: NextPage = () => {
   return (
     <div className={s.cart}>
-      <table className={s.cartItemlist}>
+      <div className={s.cartItemlist}>
         <p>My cart - 3 items</p>
-        <tr className={s.cartItemsHeader}>
-          <td className={s.names}>Name Of The Product</td>
-          <td className={s.price}>Price</td>
-          <td className={s.piece}>piece</td>
-          <td className={s.total}>Total</td>
-        </tr>
+        <div className={s.cartItemsHeader}>
+          <p className={s.names}>Name Of The Product</p>
+          <p className={s.price}>Price</p>
+          <p className={s.piece}>piece</p>
+          <p className={s.total}>Total</p>
+        </div>
         <CartItemList />
-      </table>
+      </div>
       <div className={s.orderSummary}>
         <OrderSummary discount={123} kdv={132} shipping={100} subtotal={150} />
       </div>
