@@ -5,4 +5,5 @@ export const basePaths = [
   "influencers",
   "components-example",
   "payment",
+  "cart"
 ]
