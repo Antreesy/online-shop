@@ -18,7 +18,7 @@ const Price: React.FC<PriceProps> = (props) => {
     currencyFirst = false,
     type = "order",
     oldPrice = null,
-    className
+    className,
   } = props
 
   const renderPrice = (price: number) =>

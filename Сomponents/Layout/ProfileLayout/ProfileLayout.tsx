@@ -18,7 +18,7 @@ const ProfileLayout: React.FC<ProfileLayoutProps> = ({ children, role }) => {
       <Header withBreadcrumbs role={role} />
       {/* // TODO delete after auth fix */}
       <RoleSwitcher />
-      
+
       <main className={s.main}>
         <div className={s.container}>
           <aside className={s.aside}>
