@@ -31,9 +31,9 @@ const Favorites: NextPage = () => {
           <title>ILONSI SHOP | Account</title>
         </Head>
   
-        {role === Roles.BRAND && <UniversalFavorites />}
+        
         {role === Roles.CUSTOMER && <UniversalFavorites />}
-        {role === Roles.INFLUENCER && <UniversalFavorites />}
+    
       </>
     )
   }
