@@ -4,18 +4,19 @@
   display: flex;
   flex-direction: column;
   gap: 117px;
-  padding-top: 51px;
+  padding: 51px 0 42px;
 
   @include mobile {
-    gap: 75px;
+    gap: 36px;
+    padding-top: 20px;
   }
 
   @include tablet {
-    gap: 75px;
+    gap: 40px;
   }
 
   @include laptop {
-    gap: 50px;
+    gap: 75px;
   }
 }
 
@@ -44,20 +45,28 @@
 
   @include mobile {
     justify-content: center;
+    gap: 23px;
 
     &__container {
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 42px;
       width: 100%;
     }
 
     &__row {
       display: flex;
-      gap: 32px;
+      gap: 42px;
+
+      label {
+        font-size: 12px;
+        font-weight: $fw-bold;
+        line-height: 1.17;
+      }
 
       div {
         width: 100%;
+        height: 40px;
       }
     }
   }
@@ -100,24 +109,49 @@
 .radio {
   display: flex;
   flex-direction: column;
+  gap: 10px;
   height: 100%;
 
   span {
     font-size: 16px;
-    font-weight: bold;
+    font-weight: $fw-bold;
     line-height: 1.19;
     text-align: left;
-    color: #8100ef;
+    color: $color-purple;
   }
 
   div {
     height: 51px;
+  }
+
+  @include mobile {
+    gap: 0;
+
+    span {
+      font-size: 12px;
+      font-weight: $fw-bold;
+      line-height: 1.17;
+    }
   }
 }
 
 .file_upload {
   width: 359px;
   height: 379px;
+  padding: 6px 15px 25px 15px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px 0 $color-grey-e8;
+  background-color: $color-white;
+
+  div {
+    width: 100%;
+    height: 100%;
+  }
+
+  @include mobile {
+    width: 100%;
+    height: 180px;
+  }
 }
 
 .btns {
@@ -128,10 +162,10 @@
 
   a {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: $fw-medium;
     line-height: 1.17;
     text-align: left;
-    color: #8100ef;
+    color: $color-purple;
   }
 
   button {
@@ -140,7 +174,7 @@
   }
 
   @include tablet {
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
 
@@ -151,9 +185,16 @@
   }
 
   @include mobile {
-    flex-wrap: wrap-reverse;
-    justify-content: center;
+    height: 45px;
+    flex-wrap: wrap;
     gap: 20px;
+
+    a {
+      font-size: 13px;
+      line-height: 1.15;
+      text-align: left;
+      color: $color-purple;
+    }
 
     button {
       width: 100%;
