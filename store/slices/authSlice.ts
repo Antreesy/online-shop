@@ -7,7 +7,7 @@ export type AuthState = {
 }
 
 const initialState: AuthState = {
-  role: Roles.CUSTOMER,
+  role: Roles.INFLUENCER,
 }
 
 export const authSlice = createSlice({
