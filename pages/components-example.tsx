@@ -37,6 +37,7 @@ import {
   SectionHeader,
   OrderSummary,
   PhotoSlider,
+  Chart,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
@@ -155,7 +156,7 @@ const Home: NextPage = () => {
             </div>,
           ]}
         />
-
+        <Chart />
         <SectionHeader className={s.title} title={"Components page"} />
 
         <Tabs

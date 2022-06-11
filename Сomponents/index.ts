@@ -21,6 +21,7 @@ import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
 import { Toolbar } from "./Toolbar"
 import { PhotoSlider } from "./PhotoSlider"
+import {Chart} from "./Chart"
 
 export {
   PhotoSlider,
@@ -47,4 +48,5 @@ export {
   SectionHeader,
   SizePicker,
   Toolbar,
+  Chart,
 }
