@@ -7,7 +7,7 @@ import { Card, Pagination, Button, Icon } from "UI"
 
 import card_image from "public/assets/img/zara.png"
 
-import s from "styles/pages/brands.module.scss"
+import s from "styles/pages/brands/brands.module.scss"
 import { useState } from "react"
 import picture from "public/assets/img/fallback-pic.png"
 import { useRouter } from "next/router"
@@ -19,6 +19,10 @@ const brands: NextPage = () => {
   const toggleButton = (path: string) => {
     router.push(`/${path}`)
     setActivePath(path)
+  }
+
+  const goToBrand = (brand: string) => {
+    router.push(`brands/${brand}`)
   }
   return (
     <>
@@ -89,6 +93,7 @@ const brands: NextPage = () => {
                 justifyContent="space-evenly"
               >
                 <Card
+                  onClick={() => goToBrand("zara")}
                   className={s.card}
                   imageSrc={card_image}
                   buttonTitle={"Go to Brand"}
