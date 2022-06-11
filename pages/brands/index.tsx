@@ -58,7 +58,7 @@ const brands: NextPage = () => {
           </div>
           <div className={s.wrapper_toolbar}>
             <Button
-              disabled={path === "products" ? false : false}
+              disabled={path === "products"}
               variant="outlined"
               className={path === "products" ? s.button_active : ""}
               onClick={() => {
@@ -68,7 +68,7 @@ const brands: NextPage = () => {
               Products (24187)
             </Button>
             <Button
-              disabled={path === "brands" ? true : false}
+              disabled={path === "brands"}
               variant="outlined"
               className={path === "brands" ? s.button_active : ""}
               onClick={() => {
