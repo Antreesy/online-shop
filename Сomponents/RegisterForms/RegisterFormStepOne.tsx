@@ -16,18 +16,21 @@ export const RegisterFormStepOne: React.FC<RegisterFormStepOneProps> = (
   props,
 ) => {
   const { setStep } = props
-  const [value, setValue] = useState<string>("")
+  const [email, setEmail] = useState<string>("")
+  const [name, setName] = useState<string>("")
+  const [instagram, setInstagram] = useState<string>("")
+  const [password, setPassword] = useState<string>("")
   const handleClickNextStep = () => setStep(2)
   return (
     <form className={s.step_one}>
       <h4>Create your shop, and get eaaly access</h4>
 
-      <Input value={value} setValue={setValue} label="" placeholder="Name" />
+      <Input value={name} setValue={setName} label="" placeholder="Name" />
 
       <div className={s.blank}></div>
       <Input
-        value={value}
-        setValue={setValue}
+        value={email}
+        setValue={setEmail}
         label=""
         placeholder="Email"
         isRequired={false}
@@ -43,16 +46,16 @@ export const RegisterFormStepOne: React.FC<RegisterFormStepOneProps> = (
       />
 
       <Input
-        value={value}
-        setValue={setValue}
+        value={instagram}
+        setValue={setInstagram}
         label=""
         placeholder="@Instagram"
       />
 
       <div className={s.blank}></div>
       <Input
-        value={value}
-        setValue={setValue}
+        value={password}
+        setValue={setPassword}
         label=""
         placeholder="Password"
         isRequired={false}

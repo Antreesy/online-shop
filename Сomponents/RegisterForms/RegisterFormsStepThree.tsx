@@ -18,7 +18,8 @@ export const RegisterFormsStepThree: React.FC<RegisterFormStepThreeProps> = (
   props,
 ) => {
   const { setStep, setShowModal } = props
-  const [value, setValue] = useState<string>("")
+  const [taxOfficeDirectorate, setTaxOfficeDirectorate] = useState<string>("")
+  const [companyLegalName, setCompanyLegalName] = useState<string>("")
 
   const handleClickApply = () => {
     setShowModal(true)
@@ -48,15 +49,15 @@ export const RegisterFormsStepThree: React.FC<RegisterFormStepThreeProps> = (
       />
       <div className={s.blank}></div>
       <Input
-        value={value}
-        setValue={setValue}
+        value={taxOfficeDirectorate}
+        setValue={setTaxOfficeDirectorate}
         label=""
         placeholder="Tax Office Directorate"
       />
       <div className={s.blank}></div>
       <Input
-        value={value}
-        setValue={setValue}
+        value={companyLegalName}
+        setValue={setCompanyLegalName}
         label=""
         placeholder="Company Legal Name"
       />

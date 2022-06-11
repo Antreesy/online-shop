@@ -17,7 +17,8 @@ export const RegisterFormsStepTwo: React.FC<RegisterFormStepTwoProps> = (
   props,
 ) => {
   const { setStep } = props
-  const [value, setValue] = useState<string>("")
+  const [taxNumber, setTaxNumber] = useState<string>("")
+  const [mersisNo, setMersisNo] = useState<string>("")
 
   const handleClickNextStep = () => setStep(3)
 
@@ -47,16 +48,16 @@ export const RegisterFormsStepTwo: React.FC<RegisterFormStepTwoProps> = (
 
       <div className={s.blank}></div>
       <Input
-        value={value}
-        setValue={setValue}
+        value={taxNumber}
+        setValue={setTaxNumber}
         label=""
         placeholder="Tax Number"
       />
 
       <div className={s.blank}></div>
       <Input
-        value={value}
-        setValue={setValue}
+        value={mersisNo}
+        setValue={setMersisNo}
         label=""
         placeholder="Mersis No (Optional)"
       />
