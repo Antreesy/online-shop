@@ -37,6 +37,7 @@ import {
   SectionHeader,
   OrderSummary,
   PhotoSlider,
+  AddProductInfluencer,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
@@ -60,11 +61,7 @@ const SampleCard = () => (
 
 const Home: NextPage = () => {
   const currentStep = 1
-  const steps = [
-    "1",
-    "2",
-    "3",
-  ]
+  const steps = ["1", "2", "3"]
   return (
     <>
       <Head>
@@ -279,6 +276,7 @@ const Home: NextPage = () => {
           ]}
         />
       </main>
+      <AddProductInfluencer products={productItems} />
     </>
   )
 }

@@ -21,8 +21,10 @@ import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
 import { Toolbar } from "./Toolbar"
 import { PhotoSlider } from "./PhotoSlider"
+import { AddProductInfluencer } from "./AddProduct"
 
 export {
+  AddProductInfluencer,
   PhotoSlider,
   AddressCard,
   AddressForm,
