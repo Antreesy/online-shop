@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useTranslation } from "next-i18next"
 
 import { AddButton } from "UI"
 import { AddressCard, AddressForm, SectionHeader } from "Сomponents"
@@ -9,6 +10,7 @@ import { AddressProps } from "shared/interfaces/addressProps"
 import s from "styles/pages/account/address.module.scss"
 
 export const InfluencerAddress: React.FC<AddressProps> = (props) => {
+  const { t } = useTranslation("address")
   const { role } = props
   const [open, setOpen] = useState<boolean>(false)
 
@@ -17,7 +19,7 @@ export const InfluencerAddress: React.FC<AddressProps> = (props) => {
 
   return (
     <>
-      <SectionHeader className={s.header_info} title="My Address Information" />
+      <SectionHeader className={s.header_info} title={t("title")} />
 
       <div className={s.address_wrapper}>
         {Boolean(addresses.length) &&
@@ -32,7 +34,7 @@ export const InfluencerAddress: React.FC<AddressProps> = (props) => {
 
       <div className={s.button_wrapper}>
         {addresses.length ? (
-          <AddButton title={"Add New Address"} onClick={handleOpen} />
+          <AddButton title={t("Add New Address")} onClick={handleOpen} />
         ) : (
           <AddButton
             title="Add New Address"
