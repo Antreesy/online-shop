@@ -1,0 +1,92 @@
+@import "styles/style.scss";
+
+.purple {
+  background: linear-gradient(90deg, $color-purple-light, $color-purple-f1);
+  color: $color-white;
+
+
+  .squareSmall {
+    background-color: $color-white;
+  }
+
+  .textBox p {
+    color: $color-white !important;
+  }
+  .rightImage {
+    .rightIcon {
+      color: $color-purple-f;
+    }
+  }
+}
+
+.white {
+  color: $color-black;
+  background-color: $color-white;
+
+  .squareSmall {
+    background-color: $color-light-pink;
+  }
+
+  .rightImage {
+    .rightIcon {
+      color: $color-grey-f5;
+    }
+  }
+
+}
+
+.main {
+  border-radius: 10px;
+  box-shadow: 0 3px 20px 0 rgb(0 0 0 / 10%);
+  border: 3px solid $color-white;
+  display: flex;
+  cursor: pointer;
+  width: 313px;
+  height: 157px;
+  .insideSmall {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    .squareSmall {
+      width: 70px;
+      height: 70px;
+      margin: 19px 19px auto 20px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .squareIcon {
+        font-size: 46.12px;
+        color: $color-purple-f
+      }
+    }
+
+    .totalNumber {
+      margin-top: 28px;
+      font-size: 45px;
+      font-weight: bold;
+      z-index: 1
+    }
+
+    .totalText {
+      font-weight: bold;
+      font-size: 23px;
+      margin-left: 19px;
+      z-index: 1
+    }
+
+    .rightImage {
+      position: absolute;
+      right: 16.2px;
+      top: 29px;
+      .rightIcon {
+        font-size: 111.36px;
+      }
+    }
+  }
+
+}
+
+
