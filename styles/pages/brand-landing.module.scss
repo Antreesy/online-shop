@@ -1,0 +1,76 @@
+@import "styles/style.scss";
+
+.main {
+  min-height: 100vh;
+
+  @include mobile {
+  }
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 140px 40px;
+
+  @include mobile-tablet {
+    padding: 30px 15px 40px;
+  }
+}
+.infoText {
+  display: flex;
+  flex-direction: row;
+  gap: 138px;
+  padding-top: 58px;
+  padding-bottom: 61px;
+  font-size: 18px;
+  font-weight: normal;
+}
+.orderStatus {
+  display: flex;
+  gap: 16px;
+}
+.titleBetween {
+  font-size: 30px;
+  font-weight: normal;
+  padding-top: 54px;
+  padding-bottom: 50px;
+}
+.inventoryStatus {
+  display: flex;
+  gap: 18px;
+}
+.cancellation {
+  display: flex;
+  gap: 16px;
+}
+.cancellationButton {
+  box-shadow: 0 3px 20px 0 rgb(0 0 0 / 10%);
+  width: 812px;
+  height: 100px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 19px;
+  align-items: center;
+}
+.iconSquare {
+  width: 61px;
+  height: 61px;
+  background: $color-light-pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.squareIcon {
+  font-size: 46.12px;
+  color: $color-purple-f
+}
+.staticText {
+  font-size: 30px;
+  padding-left: 19px;
+}
+.staticText span {
+  font-weight: bold;
+  color: $color-purple;
+}

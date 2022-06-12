@@ -23,6 +23,8 @@ import { RegisterFormsStepTwo, RegisterFormStepOne, RegisterFormsStepThree } fro
 import { Toolbar } from "./Toolbar"
 import { PhotoSlider } from "./PhotoSlider"
 import {Chart} from "./Chart"
+import { OrderStatusButton } from "./OrderStatusButton"
+import { InventoryButton } from "./InventoryButton"
 
 export {
   PhotoSlider,
@@ -37,11 +39,13 @@ export {
   Footer,
   Header,
   HeaderLight,
+  InventoryButton,
   Layout,
   Logo,
   Notification,
   OrderItem,
   OrderList,
+  OrderStatusButton,
   OrderSummary,
   ProductItem,
   ProductItemList,
