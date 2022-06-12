@@ -76,7 +76,7 @@ export const CustomTable: React.FC<TableProps> = ({
     console.log("Chaned")
   }, [rowsPerPage])
 
-  console.log(rowsPerPage)
+  console.log("page", page)
   return (
     <div>
       <div className={s.table__control}>

@@ -20,6 +20,11 @@ const CustomPagination: React.FC<PaginationProps> = (props) => {
 
   const [page, setPage] = useState<number>(value)
 
+  useEffect(() => {
+    setPage(value)
+    router.push(`${router.pathname}/?page=${value}`)
+  }, [value])
+
   const paginationClass = cn(s.pagination_wrapper, className)
 
   const firstElement = () => <>&lt;&lt;</>
@@ -34,7 +39,6 @@ const CustomPagination: React.FC<PaginationProps> = (props) => {
 
   useEffect(() => {
     router.push(`${router.pathname}/?page=${page}`)
-    console.log("pag")
   }, [page])
 
   return (
