@@ -1,3 +1,3 @@
-import UniversalFavorites from "./UniversalFavorites";
+import UniversalFavorites from "./UniversalFavorites"
 
 export { UniversalFavorites }

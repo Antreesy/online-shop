@@ -26,7 +26,7 @@ const FileUpload: FC<FileUploadProps> = (props) => {
     minHeight = 1080,
     className,
     setValue,
-    img
+    img,
   } = props
 
   const [drag, setDrag] = useState(false)

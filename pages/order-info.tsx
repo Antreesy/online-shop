@@ -10,9 +10,9 @@ import cardImage from "../public/assets/img/order_card_img.png"
 import Link from "next/link"
 import { OrderInfoItems } from "shared/constants/orderinfoitems"
 
-export type OrderType = {
-  CustomerInfo: {
-    Surname: string
+export interface customInfo {
+  customerInfo: {
+    surname: string
     Address: string
     Phone: string
     Email: string
@@ -21,7 +21,9 @@ export type OrderType = {
     phone: string
     email: string
   }[]
-  OrderInfo: {
+}
+export interface orderInfo {
+  orderInfo: {
     OrderSurname: string
     OrderDate: string
     OrderDeliveryMethod: string
@@ -29,128 +31,125 @@ export type OrderType = {
     date: string
     method: string
   }[]
-}[]
+}
 
-const OrderInfo: NextPage = () => {
-  const Colon = () => (
-    <>
-      <p className={s.colon}>:</p>
-      <p className={s.colon}>:</p>
-      <p className={s.colon}>:</p>
-      <p className={s.colon}>:</p>
-    </>
-  )
-  const ColonForOrder = () => (
-    <>
-      <p className={s.colon}>:</p>
-      <p className={s.colon}>:</p>
-      <p className={s.colon}>:</p>
-    </>
-  )
-  const CustomerInfo = ({ labels }: { labels: OrderType }) => (
+interface orderInfoProps {
+  customer: customInfo[]
+  order: orderInfo[]
+}
+
+const OrderInfo: NextPage<orderInfoProps> = () => {
+  const CustomerInfo = ({ labels }: { labels: customInfo[] }) => (
     <div className={s.customer_information_detail}>
       <div className={s.information_detail_text}>
         {labels.map((label) =>
-          label.CustomerInfo.map((item) => {
+          label.customerInfo.map((item) => {
             return (
-              <div>
-                <p>{item.Surname}</p>
+              <>
+                <p>{item.surname}</p>
                 <p>{item.Address}</p>
                 <p>{item.Phone}</p>
                 <p>{item.Email}</p>
-              </div>
+              </>
             )
           }),
         )}
       </div>
-      <div className={s.information_detail_text}>
-        <Colon />
+      <div className={s.information_detail_text_colon}>
+        <p className={s.colon}>:</p>
+        <p className={s.colon}>:</p>
+        <p className={s.colon}>:</p>
+        <p className={s.colon}>:</p>
       </div>
       <div className={s.information_detail_span}>
         {labels.map((info) =>
-          info.CustomerInfo.map((arr) => {
+          info.customerInfo.map((arr) => {
             return (
-              <div>
-                <span>{arr.name}</span>
-                <span>{arr.address}</span>
-                <span>{arr.phone}</span>
-                <span>{arr.email}</span>
-              </div>
+              <>
+                <p>{arr.name}</p>
+                <p>{arr.address}</p>
+                <p>{arr.phone}</p>
+                <p>{arr.email}</p>
+              </>
             )
           }),
         )}
       </div>
     </div>
   )
-  const OrderInfo = ({ labels }: { labels: OrderType }) => (
+  const OrderInfo = ({ labels }: { labels: orderInfo[] }) => (
     <div className={s.order_information_detail}>
       <div className={s.order_detail_text}>
         {labels.map((label) =>
-          label.OrderInfo.map((item) => {
+          label.orderInfo.map((item) => {
             return (
-              <div>
+              <>
                 <p>{item.OrderSurname}</p>
                 <p>{item.OrderDate}</p>
                 <p>{item.OrderDeliveryMethod}</p>
-              </div>
+              </>
             )
           }),
         )}
       </div>
       <div className={s.order_detail_text_colon}>
-        <ColonForOrder />
+        <p className={s.colon}>:</p>
+        <p className={s.colon}>:</p>
+        <p className={s.colon}>:</p>
       </div>
       <div className={s.order_detail_span}>
         {labels.map((label) =>
-          label.OrderInfo.map((item) => {
+          label.orderInfo.map((item) => {
             return (
-              <div>
+              <>
                 <span>{item.name}</span>
                 <span>{item.date}</span>
                 <span>{item.method}</span>
-              </div>
+              </>
             )
           }),
         )}
       </div>
     </div>
   )
-  const InvoiceInfo = ({ labels }: { labels: OrderType }) => (
+  const InvoiceInfo = ({ labels }: { labels: customInfo[] }) => (
     <div className={s.invoice_information_detail}>
       <div className={s.invoice_detail_text}>
         {labels.map((label) =>
-          label.CustomerInfo.map((item) => {
+          label.customerInfo.map((item) => {
             return (
-              <div>
-                <p>{item.Surname}</p>
+              <>
+                <p>{item.surname}</p>
                 <p>{item.Address}</p>
                 <p>{item.Phone}</p>
                 <p>{item.Email}</p>
-              </div>
+              </>
             )
           }),
         )}
       </div>
-      <div className={s.invoice_detail_text}>
-        <Colon />
+      <div className={s.invoice_detail_text_colon}>
+        <p className={s.colon}>:</p>
+        <p className={s.colon}>:</p>
+        <p className={s.colon}>:</p>
+        <p className={s.colon}>:</p>
       </div>
       <div className={s.invoice_detail_span}>
         {labels.map((info) =>
-          info.CustomerInfo.map((arr) => {
+          info.customerInfo.map((arr) => {
             return (
-              <div>
-                <span>{arr.name}</span>
-                <span>{arr.address}</span>
-                <span>{arr.phone}</span>
-                <span>{arr.email}</span>
-              </div>
+              <>
+                <p>{arr.name}</p>
+                <p>{arr.address}</p>
+                <p>{arr.phone}</p>
+                <p>{arr.email}</p>
+              </>
             )
           }),
         )}
       </div>
     </div>
   )
-
   const [IsActive, setIsActive] = useState<boolean>(false)
   return (
     <>
@@ -166,9 +165,7 @@ const OrderInfo: NextPage = () => {
 
           <div className={s.button__back}>
             <Button className={s.button_back} iconLeft="arrow_left">
-              <Link href="/">
-                <a href="# ">back</a>
-              </Link>
+              <Link href="/">back</Link>
             </Button>
           </div>
 
@@ -177,16 +174,18 @@ const OrderInfo: NextPage = () => {
               <span className={s.customer_information}>
                 Customer Information
               </span>
-              <CustomerInfo labels={OrderInfoItems} />
+              <CustomerInfo labels={[OrderInfoItems]} />
               <span className={s.order_information}>Order Information</span>
-              <OrderInfo labels={OrderInfoItems} />
+              <OrderInfo labels={[OrderInfoItems]} />
               <span className={s.invoice_information}>Invoice Information</span>
-              <InvoiceInfo labels={OrderInfoItems} />
+              <InvoiceInfo labels={[OrderInfoItems]} />
             </div>
+
             <div className={s.line} />
+
             <div>
               {!IsActive ? (
-                <div className={s.Card}>
+                <div className={s.card}>
                   <div className={s.card_flex}>
                     <div className={s.img}>
                       <Image src={cardImage} layout="fill" />
@@ -199,7 +198,7 @@ const OrderInfo: NextPage = () => {
                         </div>
 
                         <div className={s.cardItemPrice}>
-                          <div className={s.price }>
+                          <div>
                             <div className={s.cardItem_text_detail}>
                               <div>
                                 <p>Number</p>
@@ -259,11 +258,19 @@ const OrderInfo: NextPage = () => {
                           </div>
                         </div>
                       </div>
-                      <div className={s.button_cancel} onClick={() => setIsActive(!IsActive)}>
-                          <div>
-                              <Button className={s.button_clear} icon iconLeft="close_cross" onClick={() => setIsActive(!IsActive)}/>
-                          </div>
-                          <p>cancel</p>
+                      <div
+                        className={s.button_cancel}
+                        onClick={() => setIsActive(!IsActive)}
+                      >
+                        <div>
+                          <Button
+                            className={s.button_clear}
+                            icon
+                            iconLeft="close_cross"
+                            onClick={() => setIsActive(!IsActive)}
+                          />
+                        </div>
+                        <p>cancel</p>
                       </div>
                     </div>
                   </div>

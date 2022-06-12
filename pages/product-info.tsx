@@ -22,9 +22,7 @@ const ProductInfo: NextPage = () => {
 
         <div className={s.button__back}>
           <Button className={s.button_back} iconLeft="arrow_left">
-            <Link href="/">
-              <a href="# ">back</a>
-            </Link>
+            <Link href="/">back</Link>
           </Button>
         </div>
 
