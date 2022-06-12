@@ -24,6 +24,7 @@ import {
   Price,
   Icon,
   SocialIcon,
+  ProgressBar,
 } from "UI"
 
 import {
@@ -36,6 +37,7 @@ import {
   SectionHeader,
   OrderSummary,
   PhotoSlider,
+  Chart,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
@@ -58,6 +60,12 @@ const SampleCard = () => (
 )
 
 const Home: NextPage = () => {
+  const currentStep = 1
+  const steps = [
+    "1",
+    "2",
+    "3",
+  ]
   return (
     <>
       <Head>
@@ -69,6 +77,8 @@ const Home: NextPage = () => {
           title={"UI Kit page"}
           actionItem={"All Orders"}
         />
+
+        <ProgressBar currentStep={currentStep} steps={steps} />
 
         <Tabs
           className={s.example_tabs}
@@ -146,7 +156,7 @@ const Home: NextPage = () => {
             </div>,
           ]}
         />
-
+        <Chart />
         <SectionHeader className={s.title} title={"Components page"} />
 
         <Tabs
