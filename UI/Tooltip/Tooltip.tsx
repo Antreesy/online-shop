@@ -1,8 +1,9 @@
 import React from "react"
-import { styled } from "@mui/material/styles"
+import { styled, withStyles } from "@mui/material/styles"
 import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip"
 import s from "./tooltip.module.scss"
 import CustomButton from "UI/Button/Button"
+import classNames from "classnames"
 
 interface CustomTooltipProps {
   text: string
@@ -20,7 +21,6 @@ interface CustomTooltipProps {
     | "right-start"
     | "top-end"
     | "top-start"
-    | undefined
 }
 
 const InnerContent = (text: string) => {
