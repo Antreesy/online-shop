@@ -42,7 +42,8 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
   const CustomerInfo = ({ labels }: { labels: customInfo[] }) => (
     <div className={s.customer_information_detail}>
       <div className={s.information_detail_text}>
-        {labels.map((label) =>
+        {labels.length ?
+            labels.map((label) =>
           label.customerInfo.map((item) => {
             return (
               <>
@@ -53,7 +54,7 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
               </>
             )
           }),
-        )}
+        ) : null}
       </div>
       <div className={s.information_detail_text_colon}>
         <p className={s.colon}>:</p>
@@ -62,7 +63,8 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
         <p className={s.colon}>:</p>
       </div>
       <div className={s.information_detail_span}>
-        {labels.map((info) =>
+        {labels.length ?
+            labels.map((info) =>
           info.customerInfo.map((arr) => {
             return (
               <>
@@ -73,14 +75,15 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
               </>
             )
           }),
-        )}
+        ): null}
       </div>
     </div>
   )
   const OrderInfo = ({ labels }: { labels: orderInfo[] }) => (
     <div className={s.order_information_detail}>
       <div className={s.order_detail_text}>
-        {labels.map((label) =>
+        {labels.length ?
+            labels.map((label) =>
           label.orderInfo.map((item) => {
             return (
               <>
@@ -90,7 +93,7 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
               </>
             )
           }),
-        )}
+        ): null}
       </div>
       <div className={s.order_detail_text_colon}>
         <p className={s.colon}>:</p>
@@ -98,7 +101,8 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
         <p className={s.colon}>:</p>
       </div>
       <div className={s.order_detail_span}>
-        {labels.map((label) =>
+        {labels.length ?
+            labels.map((label) =>
           label.orderInfo.map((item) => {
             return (
               <>
@@ -108,14 +112,15 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
               </>
             )
           }),
-        )}
+        ): null}
       </div>
     </div>
   )
   const InvoiceInfo = ({ labels }: { labels: customInfo[] }) => (
     <div className={s.invoice_information_detail}>
       <div className={s.invoice_detail_text}>
-        {labels.map((label) =>
+        {labels.length ?
+            labels.map((label) =>
           label.customerInfo.map((item) => {
             return (
               <>
@@ -126,7 +131,7 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
               </>
             )
           }),
-        )}
+        ): null}
       </div>
       <div className={s.invoice_detail_text_colon}>
         <p className={s.colon}>:</p>
@@ -135,7 +140,8 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
         <p className={s.colon}>:</p>
       </div>
       <div className={s.invoice_detail_span}>
-        {labels.map((info) =>
+        {labels.length ?
+            labels.map((info) =>
           info.customerInfo.map((arr) => {
             return (
               <>
@@ -146,7 +152,7 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
               </>
             )
           }),
-        )}
+        ): null}
       </div>
     </div>
   )
