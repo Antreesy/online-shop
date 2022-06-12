@@ -17,6 +17,7 @@ interface InputProps {
     | "black_button"
     | "blue_outline"
     | "black_outline"
+    | "gray_outline"
   buttonLabel?: string
   isRequired?: boolean
   type?: string
