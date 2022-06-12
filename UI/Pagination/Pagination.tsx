@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import cn from "classnames"
 
@@ -11,13 +11,14 @@ interface PaginationProps {
   pagesCount: number
   isShort?: boolean
   onChange?: () => void
+  value: number
 }
 
 const CustomPagination: React.FC<PaginationProps> = (props) => {
-  const { className, pagesCount, isShort, onChange } = props
+  const { className, pagesCount, isShort, onChange, value } = props
   const router = useRouter()
 
-  const [page, setPage] = useState<number>(1)
+  const [page, setPage] = useState<number>(value)
 
   const paginationClass = cn(s.pagination_wrapper, className)
 
@@ -27,10 +28,14 @@ const CustomPagination: React.FC<PaginationProps> = (props) => {
   const lastElement = () => <>&gt;&gt;</>
 
   const handleChange = (event: React.ChangeEvent<unknown>, page: number) => {
-    router.push(`${router.pathname}/?page=${page}`)
     setPage(page)
-    onChange?.()
+    onChange?.(page)
   }
+
+  useEffect(() => {
+    router.push(`${router.pathname}/?page=${page}`)
+    console.log("pag")
+  }, [page])
 
   return (
     <div className={paginationClass}>

@@ -2,6 +2,7 @@ import { CustomTable } from "../Сomponents/Table/Table"
 import Image from "next/image"
 import dress from "../public/assets/img/Knitted_dress.png"
 import { Icon } from "../UI"
+import * as React from "react"
 
 const Tables = () => {
   const headers1 = [
@@ -27,7 +28,9 @@ const Tables = () => {
     { name: "Day", isSort: false },
   ]
 
-  const innerRows2 = []
+  const innerRows2 = [] as Array<
+    Array<{ value: string | number | React.ReactNode; align?: "center" }>
+  >
 
   const headers3 = [
     { name: "Product Image", isSort: false, align: "center" },
@@ -58,21 +61,33 @@ const Tables = () => {
       { value: "$213" },
       { value: 32132 },
       { value: "Not available" },
-      { value: <Icon type={"exclamation"} />, align: "center" },
+      {
+        value: <Icon type={"exclamation"} />,
+        align: "center",
+      },
     ],
+  ]
+
+  const headers4 = [
+    { name: "Order No", isSort: false, align: "center" },
+    { name: "Order Date", isSort: false },
+    { name: "Name", isSort: false },
   ]
 
   return (
     <div style={{ padding: "50px" }}>
-      <div style={{ width: "1279px", marginBottom: "50px" }}>
+      <div style={{ marginBottom: "50px" }}>
         <CustomTable headers={headers1} innerRows={innerRows1} />
       </div>
-      <div style={{ width: "1279px", marginBottom: "50px" }}>
-        <CustomTable headers={headers2} innerRows={innerRows2} />
-      </div>
-      <div style={{ width: "1279px", marginBottom: "50px" }}>
-        <CustomTable headers={headers3} innerRows={innerRows3} />
-      </div>
+      {/*<div style={{ width: "1279px", marginBottom: "50px" }}>*/}
+      {/*  <CustomTable headers={headers2} innerRows={innerRows2} />*/}
+      {/*</div>*/}
+      {/*<div style={{ width: "1279px", marginBottom: "50px" }}>*/}
+      {/*  <CustomTable headers={headers3} innerRows={innerRows3} />*/}
+      {/*</div>*/}
+      {/*<div style={{ marginBottom: "50px" }}>*/}
+      {/*  <CustomTable headers={headers4} />*/}
+      {/*</div>*/}
     </div>
   )
 }

@@ -1,11 +1,24 @@
+@import "/styles/style.scss";
+
+
 .table {
-  font-size: 17px;
-  font-weight: normal;
-  line-height: 1.18;
-  color: #000;
 
   &__header {
     font-weight: 500;
+  }
+
+  &__control{
+
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.18;
+    color: #000;
+
+
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    justify-content: flex-end;
   }
 }
 
@@ -16,6 +29,7 @@
 .arrows {
   display: flex;
   flex-direction: column;
+  margin-left: 10px;
   gap: 3.5px;
   cursor: pointer;
 }
@@ -28,9 +42,29 @@
   border-right: 1px solid #dddfe1 !important;
   vertical-align: center;
 
+  font-size: 17px !important;
+  font-weight: normal;
+  line-height: 1.18;
+  color: #000;
+
   &:last-child {
     border-right: 0 !important;
   }
+
+  &_header{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+  }
+
+  .center{
+    justify-content: center;
+  }
+
+  @include mobile{
+    font-size: 12px !important;
+  }
+
 }
 
 .empty {
