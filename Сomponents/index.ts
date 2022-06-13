@@ -24,6 +24,7 @@ import {
   RegisterFormStepOne,
   RegisterFormsStepThree,
 } from "./RegisterForms"
+import { Step1, Step2, Step3 } from "./AddProductSteps"
 import { Toolbar } from "./Toolbar"
 import { PhotoSlider } from "./PhotoSlider"
 import { Chart } from "./Chart"
@@ -59,6 +60,9 @@ export {
   RegisterFormsStepTwo,
   RegisterFormStepOne,
   RegisterFormsStepThree,
+  Step1,
+  Step2,
+  Step3,
   Toolbar,
   Chart,
 }
