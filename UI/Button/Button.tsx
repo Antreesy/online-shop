@@ -4,8 +4,8 @@ import cn from "classnames"
 
 //Project Components
 import { Button } from "@mui/material"
-import { Icon, IconType } from "UI/Icon/Icon"
-
+import { Icon } from "UI"
+import { IconType } from "shared/interfaces/iconTypes"
 //Project Styles
 import s from "./Button.module.scss"
 
@@ -20,7 +20,7 @@ interface ButtonProps {
   children?: React.ReactNode
   iconLeft?: IconType
   iconRight?: IconType
-  onClick?: () => void
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const CustomButton: React.FC<ButtonProps> = (props) => {

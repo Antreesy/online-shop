@@ -1,8 +1,11 @@
+import React from "react"
 import { Provider } from "react-redux"
 import type { AppProps } from "next/app"
 import Head from "next/head"
 import { appWithTranslation } from "next-i18next"
 import { store } from "store/store"
+
+import { Layout } from "Сomponents"
 
 import { CacheProvider, EmotionCache } from "@emotion/react"
 import createEmotionCache from "utils/createEmotionCache"
@@ -40,7 +43,9 @@ const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
           <ThemeProvider theme={lightTheme}>
             <StyledEngineProvider injectFirst>
               <CssBaseline />
-              <Component {...pageProps} />
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
             </StyledEngineProvider>
           </ThemeProvider>
         </CacheProvider>

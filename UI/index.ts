@@ -1,5 +1,6 @@
 import { Accordion } from "./Accordion"
 import { AddButton } from "./AddButton"
+import { AlertBox } from "./AlertBox"
 import { Button } from "./Button"
 import { Card } from "./Card"
 import { Carousel } from "./Carousel"
@@ -12,7 +13,9 @@ import { Icon } from "./Icon"
 import { Input } from "./Input"
 import { ItemCounter } from "./ItemCounter"
 import { ModalWindow } from "./ModalWindow"
+import { Pagination } from "./Pagination"
 import { Price } from "./Price"
+import { ProgressBar } from "./ProgressBar"
 import { RadioGroup } from "./RadioGroup"
 import { Range } from "./Range"
 import { Select } from "./Select"
@@ -23,6 +26,7 @@ import { Tabs } from "./Tabs"
 export {
   Accordion,
   AddButton,
+  AlertBox,
   Button,
   Card,
   Carousel,
@@ -35,7 +39,9 @@ export {
   Input,
   ItemCounter,
   ModalWindow,
+  Pagination,
   Price,
+  ProgressBar,
   RadioGroup,
   Range,
   Select,

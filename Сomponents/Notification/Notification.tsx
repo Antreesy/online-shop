@@ -1,7 +1,7 @@
 import cn from "classnames"
+import { useState } from "react"
 
 import { Accordion } from "UI"
-import Image from "next/image"
 
 import s from "./notification.module.scss"
 
@@ -10,30 +10,28 @@ interface NotificationProps {
   className?: string
   children: React.ReactNode
   onClick?: (id: number) => void
-  id: number
+  id?: number
   title: string
   subtitle?: string
 }
 
 const Notification: React.FC<NotificationProps> = (props) => {
-  const { isRead, children, className, onClick, id, title, subtitle } = props
+  const [isRead, setIsRead] = useState<boolean>(props.isRead || false)
+  const { children, className, onClick, id = 0, title, subtitle } = props
 
   const notificationClass = cn(s.notification, className)
-  const titleBlock = (
-    <>
-      <Image src="/dot.png" layout="fill" />
-      <span>{title}</span>
-    </>
-  )
-
+  const titleClass = cn(s.title_span, { [s.read]: isRead })
   return (
     <div className={notificationClass} onClick={() => onClick && onClick(id)}>
       <Accordion
         className={s.accordion}
-        header={titleBlock}
+        header={<span className={titleClass}>{title}</span>}
         headerClassName={s.title}
         openTitle="Detail"
         openTitleClassName={s.openTitle}
+        onClick={() => {
+          setIsRead(true)
+        }}
       >
         {children}
       </Accordion>

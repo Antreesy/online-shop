@@ -1,119 +1,93 @@
-//Global Dependencies
-import React from "react"
-import type { GetStaticProps, NextPage } from "next"
+import type { NextPage } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useTranslation } from "next-i18next"
 
-//Project Components
 import Head from "next/head"
 import Link from "next/link"
-import LangRoute from "Сomponents/LanguageRouting/LangRoute"
-import { Header, Footer } from "Сomponents"
+import { Background } from "Сomponents"
 
-import { footerNav } from "shared/constants/footernav"
+import picture from "public/assets/img/fallback-pic.png"
 
-//Project Styles
-import styles from "styles/pages/Index.module.scss"
+import s from "styles/pages/Index.module.scss"
 
-export const getStaticProps: GetStaticProps = async ({ locale = "en" }) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ["common", "footer"])),
-  },
-})
+export async function getStaticProps(props: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(props.locale, ["app", "common"])),
+    },
+  }
+}
 
-const Index: NextPage = (props: any) => {
-  const { t } = useTranslation("common")
+const Index: NextPage = (props) => {
+  const { t } = useTranslation()
+
   return (
     <>
       <Head>
         <title>ILONSI SHOP | Homepage</title>
       </Head>
-
-      <Header />
-
-      <main className={styles.main}>
-        <h2>
-          {props.locale}
-          {t("hello")}
-        </h2>
-        <LangRoute lng="en" />
-        <LangRoute lng="ru" />
-
-        <p className={styles.description}>
-          Login -
-          <Link href="/login">
-            <a className={styles.title__link}>/login</a>
-          </Link>{" "}
-          page
-        </p>
-
-        <p className={styles.description}>
-          Register (for brands / influencers) -
-          <Link href="/register">
-            <a className={styles.title__link}>/register</a>
-          </Link>{" "}
-          page
-        </p>
-
-        <p className={styles.description}>
-          Influencers Page -
-          <Link href="/influencers">
-            <a className={styles.title__link}>/influencers</a>
-          </Link>{" "}
-          page
-        </p>
-
-        <p className={styles.description}>
-
-          Order success
-          <Link href="/order-success">
-            <a className={styles.title__link}>/order-success</a>
-          </Link>{" "}
-          page
-        </p>
-
-        <p className={styles.description}>
-          FAQ Page -
-          <Link href="/faq">
-            <a className={styles.title__link}>/faq</a>
-          </Link>{" "}
-          page
-        </p>
-
-        <p className={styles.description}>
-          UI Kit -{" "}
-          <Link href="/components-example">
-            <a className={styles.title__link}>/components-example</a>
-          </Link>{" "}
-          page
-        </p>
-
-        <p className={styles.description}>
-          Profile page -
-          <Link href="/account/profile">
-            <a className={styles.title__link}>/account/profile</a>
-          </Link>{" "}
-          page
-        </p>
-
-        <p className={styles.description}>
-          Payment page is on{" "}
-          <Link href="/payment">
-            <a className={styles.title__link}>/payment</a>
-          </Link>{" "}
-          page
-        </p>
-
-        <p className={styles.description}>
-          Landing page page is on{" "}
-          <Link href="/landing-page">
-            <a className={styles.title__link}>/landing-page</a>
-          </Link>{" "}
-          page
-        </p>
-      </main>
-
-      <Footer links={footerNav} />
+      <div className={s.main}>
+        <Background
+          image={picture}
+          title="TITLE"
+          actionText="Follow"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos expedita saepe at ea quam dolorem mollitia soluta atque blanditiis quas in praesentium exercitationem delectus, quasi tempora porro ipsum ex voluptatum.
+        "
+          link="tuanaycl"
+        />
+        <div style={{ display: "flex" }}>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <p className={s.description}>Common:</p>
+            <Link href="/login">
+              <a className={s.title__link}>Login page</a>
+            </Link>{" "}
+            <Link href="/register">
+              <a className={s.title__link}>
+                Register page (for brands / influencers)
+              </a>
+            </Link>{" "}
+            <Link href="/register-page">
+              <a className={s.title__link}>Register page</a>
+            </Link>{" "}
+            <Link href="/influencers">
+              <a className={s.title__link}>Influencers Page</a>
+            </Link>{" "}
+            <Link href="/brands">
+              <a className={s.title__link}>Brands Page</a>
+            </Link>{" "}
+            <Link href="/order-success">
+              <a className={s.title__link}>Order success page</a>
+            </Link>{" "}
+            <Link href="/components-example">
+              <a className={s.title__link}>Сomponents examples</a>
+            </Link>{" "}
+            <Link href="/landing-page">
+              <a className={s.title__link}>Landing page</a>
+            </Link>{" "}
+          </div>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <p className={s.description}>Account:</p>
+            <Link href="/account/profile">
+              <a className={s.title__link}>Profile</a>
+            </Link>{" "}
+            <Link href="/account/notifications">
+              <a className={s.title__link}>Notifications</a>
+            </Link>{" "}
+            <Link href="/account/payment">
+              <a className={s.title__link}>Payment</a>
+            </Link>{" "}
+            <Link href="/account/help">
+              <a className={s.title__link}>Help</a>
+            </Link>{" "}
+            <Link href="/account/orders">
+              <a className={s.title__link}>Orders</a>
+            </Link>{" "}
+            <Link href="/account/favorites">
+              <a className={s.title__link}>Favorites</a>
+            </Link>{" "}
+          </div>
+        </div>
+      </div>
     </>
   )
 }

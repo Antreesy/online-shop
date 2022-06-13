@@ -5,8 +5,7 @@
   object-fit: contain;
   border-radius: 5px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
-  background-color: #fff;
-  margin: 0 10px;
+  background-color: $color-white;
 }
 
 .titleBox {
@@ -14,11 +13,6 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 23px;
-
-  @include mobile {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
   .title {
     color: $color-purple;
@@ -28,6 +22,7 @@
 
     @include mobile {
       margin-bottom: 7px;
+      font-size: 12px;
     }
   }
 }
@@ -40,5 +35,15 @@
   color: $color-purple;
   .span {
     color: $color-black;
+  }
+}
+
+.text {
+  font-size: 18px;
+  line-height: 1.94;
+
+  @include mobile {
+    font-size: 13px;
+    line-height: 1.69;
   }
 }

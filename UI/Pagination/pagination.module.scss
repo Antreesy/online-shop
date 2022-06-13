@@ -1,0 +1,45 @@
+@import "styles/style.scss";
+
+.pagination_wrapper {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.nav_block li:last-child > a {
+  margin-right: 0;
+}
+
+.item {
+  min-width: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
+  padding: 0;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: $fw-medium;
+  color: $color-black;
+
+  &.active {
+    width: 26px;
+    color: $color-white;
+    background-color: $color-purple;
+  }
+}
+
+.item_short {
+  min-width: 14px;
+  margin-left: 0;
+  margin-right: 30px;
+  padding: 0;
+  font-size: 17px;
+  font-weight: $fw-medium;
+  color: $color-black;
+
+  &.active {
+    font-weight: $fw-bold;
+    color: $color-purple;
+    background-color: transparent;
+  }
+}

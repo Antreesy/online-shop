@@ -1,7 +1,5 @@
-//Global Dependencies
 import type { NextPage } from "next"
 
-//Project Components
 import Head from "next/head"
 
 import {
@@ -12,10 +10,12 @@ import {
   CreditCardExamples,
   PickerExamples,
   TabsExamples,
+  ToolbarExample,
 } from "Сomponents/Examples"
 
 import {
   AddButton,
+  AlertBox,
   Card,
   Carousel,
   ItemCounter,
@@ -24,30 +24,35 @@ import {
   Price,
   Icon,
   SocialIcon,
+  ProgressBar,
 } from "UI"
 
 import {
   AddressCard,
-  Footer,
-  Header,
   Logo,
   Notification,
+  ProductItem,
+  ProductItemList,
   ProfileSidebar,
   SectionHeader,
+  OrderSummary,
+  PhotoSlider,
+  Chart,
 } from "Сomponents"
 
-//Project Helpers
-import { footerNav } from "shared/constants/footernav"
+import { icons } from "shared/constants/icons"
+import { productItems } from "shared/constants/productItems"
+import { sidebarTabs } from "shared/constants/sidebartabs"
 import { Currency } from "shared/enums/currency"
 
-//Project Styles
+import productImage from "public/assets/img/product-img.png"
+
 import s from "styles/pages/ComponentsExample.module.scss"
-import { icons } from "shared/constants/icons"
 
 const SampleCard = () => (
   <Card
     className={s.card_small}
-    imageSrc="/../public/assets/img/picture_1.png"
+    imageSrc="/assets/img/picture_1.png"
     title="Gizem Sancak"
     buttonTitle="Go To Store"
     topButtonTitle="Follow"
@@ -55,20 +60,21 @@ const SampleCard = () => (
 )
 
 const Home: NextPage = () => {
+  const currentStep = 1
+  const steps = ["1", "2", "3"]
   return (
     <>
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
-
-      <Header withBreadcrumbs />
-
       <main className={s.main}>
         <SectionHeader
           className={s.title}
           title={"UI Kit page"}
-          actionText={"All Orders"}
+          actionItem={"All Orders"}
         />
+
+        <ProgressBar currentStep={currentStep} steps={steps} />
 
         <Tabs
           className={s.example_tabs}
@@ -80,6 +86,7 @@ const Home: NextPage = () => {
             "Tabs",
             "Checkboxes and Radio",
             "Accordion",
+            "OrderSummary",
             "Sidebar",
             "Price",
             "Counters",
@@ -113,23 +120,17 @@ const Home: NextPage = () => {
               <AccordionExamples />
             </div>,
 
+            <div key={"OrderSummary"}>
+              <OrderSummary
+                subtotal={1144}
+                shipping={123}
+                discount={40}
+                kdv={110}
+              />
+            </div>,
+
             <div key={"Sidebar"}>
-              <ProfileSidebar
-                labels={[
-                  { link: "/", text: "Profile" },
-                  { link: "/", text: "Address" },
-                  { link: "/", text: "Order" },
-                  { link: "/", text: "Payment" },
-                  { link: "/", text: "Notification" },
-                  {
-                    link: "/",
-                    text: "Dashboard",
-                    content: [{ link: "/", text: "Favorite" }],
-                  },
-                  { link: "/", text: "Help" },
-                  { link: "/", text: "Sign Out" },
-                ]}
-               title={'Sidebar example1'}/>
+              <ProfileSidebar labels={sidebarTabs[0]} title={"MY ACCOUNT"} />
             </div>,
 
             <div key={"Price"}>
@@ -138,6 +139,7 @@ const Home: NextPage = () => {
               <Price oldPrice={2030} price={1930} type="primary" />
               <Price oldPrice={2030} price={1930} type="sale" />
               <Price oldPrice={2030} price={1930} type="sale_black" />
+
               <Range
                 minQuantity={10000}
                 maxQuantity={1000000}
@@ -150,7 +152,7 @@ const Home: NextPage = () => {
             </div>,
           ]}
         />
-
+        <Chart />
         <SectionHeader className={s.title} title={"Components page"} />
 
         <Tabs
@@ -161,10 +163,15 @@ const Home: NextPage = () => {
             "Add Button",
             "Credit Card",
             "Card",
+            "Toolbar",
+            "ProductItem",
+            "ProductItemList",
           ]}
           values={[
             <div key="Notification">
-              <Notification header={"Notification"}>
+              <AlertBox text="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem" />
+
+              <Notification title={"Notification"}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
                 quam sequi vitae eius iusto perspiciatis facilis nesciunt
                 dignissimos provident ipsum? Nobis repellat atque ab nam magni
@@ -174,6 +181,16 @@ const Home: NextPage = () => {
 
             <div key={"Carousel"} className={s.carousel}>
               <Carousel items={new Array(10).fill(SampleCard)} />
+              <PhotoSlider
+                photos={[
+                  productImage,
+                  productImage,
+                  productImage,
+                  productImage,
+                  productImage,
+                  productImage,
+                ]}
+              />
             </div>,
 
             <div key={"AddButton"} className={s.addbuttonlist}>
@@ -203,7 +220,7 @@ const Home: NextPage = () => {
                 <SampleCard />
                 <Card
                   className={s.card_small}
-                  imageSrc="/../public/assets/img/picture_2.png"
+                  imageSrc="/assets/img/picture_2.png"
                   title="Gizem Sancak"
                   buttonTitle="Go To Store"
                   isButtonHidden
@@ -214,11 +231,51 @@ const Home: NextPage = () => {
                 />
               </div>
             </div>,
+
+            <div key={"Toolbar"}>
+              <ToolbarExample />
+            </div>,
+
+            <div key={"ProductItem"}>
+              <div className={s.grid}>
+                <ProductItem
+                  title="Yves Saint Laurent"
+                  subtitle="Black long sleeve men’s jacket"
+                  description="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
+                  id={1}
+                  price={{
+                    oldPrice: 2030,
+                    price: 2030,
+                    type: "sale",
+                  }}
+                  imageSrc="/assets/img/T_shirt.png"
+                />
+              </div>
+              <div className={s.grid} style={{ width: 300 }}>
+                <ProductItem
+                  title="Yves Saint Laurent"
+                  subtitle="Black long sleeve men’s jacket"
+                  description="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
+                  id={1}
+                  price={{
+                    oldPrice: 2030,
+                    price: 2030,
+                    type: "sale",
+                  }}
+                  imageSrc="/assets/img/T_shirt.png"
+                  isFavorite={false}
+                  onAddClick={() => console.log("onAddClick")}
+                  toggleFavorite={() => console.log("toggleFavorite")}
+                />
+              </div>
+            </div>,
+
+            <div key="ProductItemLIst" className={s.grid}>
+              <ProductItemList productItemList={productItems} />
+            </div>,
           ]}
         />
       </main>
-
-      <Footer links={footerNav} />
     </>
   )
 }

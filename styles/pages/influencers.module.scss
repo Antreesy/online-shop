@@ -1,7 +1,7 @@
 @import "/styles/style.scss";
 
 .main {
-  padding-top: $header-desktop-height;
+  //padding-top: $header-desktop-height;
 
   @include mobile {
     padding-top: $header-mobile-height;
@@ -117,6 +117,7 @@
 
 .card_wrapper {
   flex-grow: 1;
+  margin-bottom: 70px;
 }
 
 .card {
