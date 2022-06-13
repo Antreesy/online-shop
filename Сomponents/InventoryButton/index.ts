@@ -1,2 +1,2 @@
-import InventoryButton from './InventoryButton';
-export { InventoryButton };
+import InventoryButton from "./InventoryButton"
+export { InventoryButton }

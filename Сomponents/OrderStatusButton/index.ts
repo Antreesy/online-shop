@@ -1,2 +1,2 @@
-import OrderStatusButton from './OrderStatusButton';
+import OrderStatusButton from "./OrderStatusButton"
 export { OrderStatusButton }

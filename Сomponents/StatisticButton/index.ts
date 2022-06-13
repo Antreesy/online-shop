@@ -1,3 +1,3 @@
-import StatisticButton from "./StatisticButton";
+import StatisticButton from "./StatisticButton"
 
-export {StatisticButton}
+export { StatisticButton }

@@ -4,7 +4,6 @@
   background: linear-gradient(90deg, $color-purple-light, $color-purple-f1);
   color: $color-white;
 
-
   .squareSmall {
     background-color: $color-white;
   }
@@ -32,7 +31,6 @@
       color: $color-grey-f5;
     }
   }
-
 }
 
 .main {
@@ -59,7 +57,7 @@
 
       .squareIcon {
         font-size: 46.12px;
-        color: $color-purple-f
+        color: $color-purple-f;
       }
     }
 
@@ -67,14 +65,14 @@
       margin-top: 28px;
       font-size: 45px;
       font-weight: bold;
-      z-index: 1
+      z-index: 1;
     }
 
     .totalText {
       font-weight: bold;
       font-size: 23px;
       margin-left: 19px;
-      z-index: 1
+      z-index: 1;
     }
 
     .rightImage {
@@ -86,7 +84,4 @@
       }
     }
   }
-
 }
-
-
