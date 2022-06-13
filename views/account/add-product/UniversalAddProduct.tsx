@@ -1,10 +1,12 @@
 import { useState } from "react"
-import s from "styles/pages/account/add-product.module.scss"
+
 import { Button, ProgressBar } from "UI"
 import { Step1, Step2, Step3 } from "Сomponents"
 
+import s from "styles/pages/account/add-product.module.scss"
+
 const UniversalAddProduct = () => {
-  const steps = ["1", "2", "3"]
+  const steps = [1, 2, 3]
   const [currentStep, setCurrentStep] = useState<number>(0)
   return (
     <>
@@ -30,7 +32,10 @@ const UniversalAddProduct = () => {
             </div>
 
             <div className={s.steps}>
-              <Step1 setCurrentStep={setCurrentStep} />
+              <Step1
+                currentStep={currentStep}
+                setCurrentStep={setCurrentStep}
+              />
               <Step2
                 currentStep={currentStep}
                 setCurrentStep={setCurrentStep}

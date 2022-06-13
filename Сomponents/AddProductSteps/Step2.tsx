@@ -1,18 +1,14 @@
-import React from "react"
+import cn from "classnames"
+
 import { Button, Icon } from "UI"
+import { StepProps } from "shared/interfaces/stepProps"
+
 import s from "styles/pages/account/add-product.module.scss"
 
-interface Step2Props {
-  currentStep: number
-  setCurrentStep: (currentStep: number) => void
-}
-
-export const Step2: React.FC<Step2Props> = (props) => {
+export const Step2: React.FC<StepProps> = (props) => {
   const { currentStep, setCurrentStep } = props
   return (
-    <div
-      className={currentStep === 0 ? s.step_two + " " + s.disabled : s.step_two}
-    >
+    <div className={cn(s.step_two, { [s.disabled]: currentStep !== 1 })}>
       <div className={s.content}>
         <h2>To Prepare Excel Download Template</h2>
         <div className={s.download}>
@@ -42,7 +38,7 @@ export const Step2: React.FC<Step2Props> = (props) => {
           variant={"contained"}
           className={s.button}
           onClick={() => setCurrentStep(2)}
-          disabled={currentStep === 0 ? true : false}
+          disabled={currentStep !== 1}
         >
           Continue
         </Button>

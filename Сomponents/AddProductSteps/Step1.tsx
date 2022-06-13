@@ -1,16 +1,16 @@
-import React, { useState } from "react"
+import { useState } from "react"
+import cn from "classnames"
+
 import { Button, Icon, Input } from "UI"
+import { StepProps } from "shared/interfaces/stepProps"
+
 import s from "styles/pages/account/add-product.module.scss"
 
-interface Step1Props {
-  setCurrentStep: (currentStep: number) => void
-}
-
-export const Step1: React.FC<Step1Props> = (props) => {
+export const Step1: React.FC<StepProps> = (props) => {
   const [value, setValue] = useState<string>("")
-  const { setCurrentStep } = props
+  const { currentStep, setCurrentStep } = props
   return (
-    <div className={s.step_one}>
+    <div className={cn(s.step_one, { [s.disabled]: currentStep !== 0 })}>
       <div className={s.content}>
         <h2>Define Your Brand</h2>
         <div className={s.quote}>
@@ -23,6 +23,7 @@ export const Step1: React.FC<Step1Props> = (props) => {
             setValue={setValue}
             variant="gray_outline"
             placeholder="Search for your brand"
+            disabled={currentStep !== 0}
           ></Input>
         </div>
 
@@ -39,6 +40,7 @@ export const Step1: React.FC<Step1Props> = (props) => {
           variant={"contained"}
           className={s.button}
           onClick={() => setCurrentStep(1)}
+          disabled={currentStep !== 0}
         >
           Continue
         </Button>

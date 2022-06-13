@@ -1,23 +1,16 @@
-import React, { useState } from "react"
+import { useState } from "react"
+import cn from "classnames"
+
 import { Button, FileUpload, Icon, Select } from "UI"
+import { StepProps } from "shared/interfaces/stepProps"
+
 import s from "styles/pages/account/add-product.module.scss"
 
-interface Step3Props {
-  currentStep: number
-  setCurrentStep: (currentStep: number) => void
-}
-
-export const Step3: React.FC<Step3Props> = (props) => {
+export const Step3: React.FC<StepProps> = (props) => {
   const [file, setFile] = useState<File>()
   const { currentStep, setCurrentStep } = props
   return (
-    <div
-      className={
-        currentStep === 0 || currentStep === 1
-          ? s.step_three + " " + s.disabled
-          : s.step_three
-      }
-    >
+    <div className={cn(s.step_three, { [s.disabled]: currentStep !== 2 })}>
       <div className={s.content}>
         <h2>
           Your Excel <br /> Upload to System
@@ -32,12 +25,13 @@ export const Step3: React.FC<Step3Props> = (props) => {
           onChange={() => {
             return
           }}
-          className={
-            currentStep === 0 || currentStep === 1 ? s.select_disabled : ""
-          }
-          isDisabled={currentStep === 0 || currentStep === 1}
+          isDisabled={currentStep !== 2}
         />
-        <FileUpload title={"Select Folder"} setValue={setFile} />
+        <FileUpload
+          title={"Select Folder"}
+          setValue={setFile}
+          disabled={currentStep !== 2}
+        />
 
         <div className={s.exclamation}>
           <div className={s.icon}>
@@ -51,7 +45,7 @@ export const Step3: React.FC<Step3Props> = (props) => {
           variant={"contained"}
           className={s.button}
           onClick={() => setCurrentStep(0)}
-          disabled={currentStep !== 2 ? true : false}
+          disabled={currentStep !== 2}
         >
           Load
         </Button>

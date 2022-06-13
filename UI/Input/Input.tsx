@@ -9,6 +9,7 @@ interface InputProps {
   label?: React.ReactNode
   setValue: (newValue: string) => void
   value: string
+  disabled?: boolean
   placeholder?: string
   className?: string
   variant?:
@@ -31,6 +32,7 @@ export const Input: React.FC<InputProps> = (props) => {
     label,
     setValue,
     value,
+    disabled,
     placeholder = "",
     className = "",
     variant = "default",
@@ -59,6 +61,7 @@ export const Input: React.FC<InputProps> = (props) => {
           className={s.input}
           placeholder={placeholder}
           required={isRequired}
+          disabled={disabled}
           type={type}
           {...validation}
         />
