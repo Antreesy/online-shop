@@ -16,6 +16,7 @@ const SampleCard = () => (
     topButtonTitle="Follow"
   />
 )
+
 const LandingPage: NextPage = () => {
   return (
     <div className={s.landingPage}>
@@ -30,20 +31,20 @@ const LandingPage: NextPage = () => {
           <div>
             <Button>Go to Store</Button>
           </div>
-          <p>
+          <div>
             <h3> Lorem ipsum dolor sit amet</h3>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
             lacinia, lacus mattis semper lacinia, metus urna dapibus quam, eu
             maximus sapien ipsum at justo. In varius accumsan magna, vel
             eleifend nisi maximus et.
-          </p>
+          </div>
         </div>
 
         <Breadcrumbs />
         <div>
           Influencers shops
           <div className={s.carousel}>
-            <Carousel items={new Array(10).fill(SampleCard)} />
+            {/* <Carousel items={new Array(10).fill(SampleCard)} /> */}
           </div>
           <Button>Show all</Button>
         </div>
@@ -51,7 +52,7 @@ const LandingPage: NextPage = () => {
         <div>
           Testimonials
           <div className={s.carousel}>
-            <Carousel items={new Array(10).fill(SampleCard)} />
+            {/* <Carousel items={new Array(10).fill(SampleCard)} /> */}
           </div>
           <Button>Show all</Button>
         </div>
