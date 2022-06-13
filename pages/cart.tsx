@@ -1,4 +1,5 @@
 import { NextPage } from "next"
+import { cartlist } from "shared/constants/cart-list"
 import { CartItemList } from "Сomponents/CartItemList/CartItemList"
 import s from "styles/pages/cart.module.scss"
 import { OrderSummary } from "Сomponents"
@@ -7,7 +8,7 @@ const Cart: NextPage = () => {
   return (
     <div className={s.cart}>
       <div className={s.cartItemlist}>
-        <p>My cart - 3 items</p>
+        <p>My cart - {cartlist.length} items</p>
         <div className={s.cartItemsHeader}>
           <p className={s.names}>Name Of The Product</p>
           <p className={s.price}>Price</p>

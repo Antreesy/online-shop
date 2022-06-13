@@ -1,0 +1,51 @@
+@import "styles/style.scss";
+
+.main {
+  padding: 0;
+}
+
+.container {
+  max-width: 1278px;
+}
+
+.sectionHeader {
+  width: 100%;
+  margin: 0 0 45px;
+}
+
+.products {
+  width: 100%;
+  margin: 0 0 55px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1278px;
+  width: 100%;
+}
+
+.pagination {
+  margin: 0 0 50px;
+}
+
+.card {
+  width: 380px;
+  height: 465px;
+
+  @include laptop {
+    width: 330px;
+    height: 415px;
+  }
+
+  @include mobile-tablet {
+    width: 280px;
+    height: 365px;
+  }
+}
+
+.collections {
+  margin: 0 0 55px;
+}

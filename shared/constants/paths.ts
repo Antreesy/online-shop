@@ -6,4 +6,6 @@ export const basePaths = [
   "components-example",
   "payment",
   "cart",
+  "brands",
+  "brand-landing",
 ]

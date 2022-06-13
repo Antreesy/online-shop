@@ -3,9 +3,17 @@ import { Button, ItemCounter, Price } from "UI"
 import img from "public/assets/img/product-img.png"
 
 import s from "./CartItem.module.scss"
-import { Counter } from "Сomponents/Counter"
 
-const CartItem: React.FC = () => {
+export interface CartItemProps {
+  title: string
+  subtitle: string
+  description: string
+  price: number
+  oldPrice?: number
+}
+
+const CartItem: React.FC<CartItemProps> = (props) => {
+  const { title, subtitle, description, price, oldPrice } = props
   return (
     <div className={s.cartItem}>
       <div className={s.productItem}>
@@ -19,15 +27,16 @@ const CartItem: React.FC = () => {
           <Image src={img} className={s.productImage} />
         </span>
         <span className={s.productInfo}>
-          <span className={s.title}>Beymen</span>
-          <span className={s.subtitle}>Knitted dress with metallic thread</span>
+          <span className={s.title}>{title}</span>
+          <span className={s.subtitle}>{subtitle}</span>
           <span className={s.description}>
+            {description}
             Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer
             lacinia, lacu
           </span>
           <Price
-            price={2000}
-            oldPrice={1999}
+            price={price}
+            oldPrice={oldPrice}
             type="sale"
             className={s.mobilePrice}
           />
@@ -35,8 +44,8 @@ const CartItem: React.FC = () => {
       </div>
       <div className={s.price}>
         <Price
-          price={2000}
-          oldPrice={1999}
+          price={price}
+          oldPrice={oldPrice}
           type="sale"
           className={s.priceBlock}
         />
@@ -46,7 +55,7 @@ const CartItem: React.FC = () => {
       </div>
       <div className={s.amountPrice}>
         <h3>Order amount</h3>
-        <Price price={2000} />
+        <Price price={price} />
       </div>
     </div>
   )

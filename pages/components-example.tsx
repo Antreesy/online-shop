@@ -37,6 +37,7 @@ import {
   SectionHeader,
   OrderSummary,
   PhotoSlider,
+  Chart,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
@@ -60,11 +61,7 @@ const SampleCard = () => (
 
 const Home: NextPage = () => {
   const currentStep = 1
-  const steps = [
-    "1",
-    "2",
-    "3",
-  ]
+  const steps = ["1", "2", "3"]
   return (
     <>
       <Head>
@@ -77,7 +74,7 @@ const Home: NextPage = () => {
           actionItem={"All Orders"}
         />
 
-        <ProgressBar currentStep={currentStep} steps={steps} />
+        <ProgressBar currentStep={currentStep} steps={[1, 2, 3]} />
 
         <Tabs
           className={s.example_tabs}
@@ -155,7 +152,7 @@ const Home: NextPage = () => {
             </div>,
           ]}
         />
-
+        <Chart />
         <SectionHeader className={s.title} title={"Components page"} />
 
         <Tabs

@@ -1,6 +1,7 @@
 import { Controller, useForm } from "react-hook-form"
 
 import { Button, CreditCard, Input } from "UI"
+import useResize from "shared/hooks/useResize"
 
 import s from "./cardForm.module.scss"
 
@@ -12,6 +13,8 @@ interface CardInfoProps {
 }
 
 const CardForm: React.FC = () => {
+  const width = useResize(768)
+
   const {
     handleSubmit,
     register,
@@ -71,7 +74,6 @@ const CardForm: React.FC = () => {
   })
 
   const onSubmit = (data: any) => {
-    console.log(data)
     reset()
   }
 
@@ -161,12 +163,13 @@ const CardForm: React.FC = () => {
         </Button>
       </div>
       <CreditCard
+        size={width < 768 ? 210 : 300}
         isColored
         key={4}
         id={8375}
-        cardNumber={watch("cardNumber")}
-        cardHolder={watch("cardholderName")}
-        expireDate={watch("cardExpiration")}
+        cardNumber={watch("cardNumber") || "0000 0000 0000 0000"}
+        cardHolder={watch("cardholderName") || "Yalçın Topkaya"}
+        expireDate={watch("cardExpiration") || "06/26"}
         onDelete={() => {
           reset()
         }}

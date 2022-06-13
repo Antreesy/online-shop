@@ -1,0 +1,104 @@
+@import "styles/style.scss";
+
+.product {
+  margin: 0 auto;
+  max-width: 1240px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.productInfo {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.swiper {
+  max-width: 100%;
+}
+
+.productInfoText {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
+
+.title {
+  font-weight: $fw-bold;
+  color: $color-purple;
+  font-size: 30px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: $fw-medium;
+}
+
+.description {
+  margin-bottom: 20px;
+  line-height: 20px;
+  font-weight: $fw-light;
+  color: $color-grey-8;
+}
+
+.price {
+  margin-bottom: 20px;
+}
+
+.colorPickerTitle {
+  font-size: 20px;
+  font-weight: $fw-semibold;
+}
+
+.colorPickers > div > div > span > span {
+  width: 30px;
+  height: 30px;
+}
+
+.sizePickerTitles {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: $fw-semibold;
+}
+
+.colorPickers > div > div > label > span > span {
+  width: 40px;
+  height: 40px;
+}
+
+.colorPickers > div > div {
+  display: contents;
+}
+
+.sizePicker {
+  margin-bottom: 40px;
+  width: fit-content;
+}
+
+.sizeChart {
+  margin-right: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.addToMyCard {
+  width: 100%;
+  height: 40px;
+  max-width: 300px;
+  font-size: 16px;
+}
+
+.productDetails p {
+  margin-bottom: 20px;
+}

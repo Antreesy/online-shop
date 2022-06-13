@@ -32,17 +32,15 @@
   width: 100%;
   padding-right: 20px;
 
-  >p {
+  > p {
     margin-bottom: 20px;
     margin-top: 20px;
     font-size: 18px;
     font-weight: 600;
-
   }
 
   @include mobile {
     padding-right: 0;
-
   }
 }
 

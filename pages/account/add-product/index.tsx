@@ -2,34 +2,37 @@ import { NextPage } from "next"
 import Head from "next/head"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
-import s from "styles/pages/account/favorites.module.scss"
+import { Roles } from "shared/enums/roles"
+import { useAppSelector } from "store/hooks"
+import { authRole } from "store/slices/authSlice"
+import { UniversalAddProduct } from "views/account/add-product"
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
       ...(await serverSideTranslations(locale, [
         "app",
-        "profile",
         "header",
         "footer",
         "sidebar",
+        "add-product",
       ])),
     },
   }
 }
 
-const Profile: NextPage = () => {
+const AddProduct: NextPage = () => {
+  const role = useAppSelector(authRole)
+
   return (
     <>
       <Head>
         <title>ILONSI SHOP | Account</title>
       </Head>
 
-      <div className={s.content}>
-        <h1>Favorites</h1>
-      </div>
+      {role === Roles.BRAND && <UniversalAddProduct />}
     </>
   )
 }
 
-export default Profile
+export default AddProduct
