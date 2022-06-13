@@ -7,8 +7,8 @@ interface Step1Props {
 }
 
 export const Step1: React.FC<Step1Props> = (props) => {
-    const [value, setValue] = useState<string>("")
-    const { setCurrentStep } = props
+  const [value, setValue] = useState<string>("")
+  const { setCurrentStep } = props
   return (
     <div className={s.step_one}>
       <div className={s.content}>

@@ -8,7 +8,7 @@ interface Step2Props {
 }
 
 export const Step2: React.FC<Step2Props> = (props) => {
-  const {currentStep, setCurrentStep} = props
+  const { currentStep, setCurrentStep } = props
   return (
     <div
       className={currentStep === 0 ? s.step_two + " " + s.disabled : s.step_two}

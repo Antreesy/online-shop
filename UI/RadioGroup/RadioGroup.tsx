@@ -6,8 +6,8 @@ import { FormControlLabel, Radio, RadioGroup } from "@mui/material"
 import s from "./radioGroup.module.scss"
 
 interface RadioGroupProps {
-  initialValue: string
-  setValue: (newValue: string) => void
+  initialValue?: string
+  setValue?: (newValue: string) => void
   className?: string
   elements: {
     value: string
@@ -41,7 +41,7 @@ const CustomRadioGroup: React.FC<RadioGroupProps> = (props) => {
   const { initialValue, elements, className, setValue } = props
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value)
+    setValue?.(event.target.value)
   }
 
   const radioGroupClass = cn(s.radio_group, className)

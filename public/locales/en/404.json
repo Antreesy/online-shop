@@ -1,5 +1,5 @@
 {
-    "pageNotFound": "Page not found",
-    "404text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla varius porta pharetra. Curabitur dolor sit amet venenatis purus ante.",
-    "returnToHomePage":"Return to homepage"
+  "pageNotFound": "Page not found",
+  "404text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla varius porta pharetra. Curabitur dolor sit amet venenatis purus ante.",
+  "returnToHomePage": "Return to homepage"
 }
