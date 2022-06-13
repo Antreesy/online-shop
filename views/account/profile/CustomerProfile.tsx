@@ -1,9 +1,9 @@
-import {useTranslation} from "next-i18next"
+import { useTranslation } from "next-i18next"
 
-import {SectionHeader} from "Сomponents"
+import { SectionHeader } from "Сomponents"
 
 import s from "styles/pages/account/profile.module.scss"
-import {ProfilePageForm} from "./ProfilePageForm";
+import { ProfilePageForm } from "./ProfilePageForm"
 
 export interface CustomerProfileProps {
   brand_name: string
@@ -20,7 +20,7 @@ export const CustomerProfile: React.FC<CustomerProfileProps> = (props) => {
   return (
     <>
       <SectionHeader className={s.title} title={t("profile")} />
-      <ProfilePageForm/>
+      <ProfilePageForm />
     </>
   )
 }

@@ -43,9 +43,14 @@ const RegisterPage = () => {
 
         {step === 1 ? (
           <RegisterFormStepOne setStep={setStep} />
-        ) :  step === 2 ? (
+        ) : step === 2 ? (
           <RegisterFormsStepTwo setStep={setStep} />
-        ) : <RegisterFormsStepThree setShowModal={setShowModal} setStep={setStep} />}
+        ) : (
+          <RegisterFormsStepThree
+            setShowModal={setShowModal}
+            setStep={setStep}
+          />
+        )}
       </main>
 
       <div className={s.decorationFooter}>

@@ -12,7 +12,7 @@ export const brandProductItems: ProductItemProps[] = [
       price: 2030,
       type: "sale",
     },
-    imageSrc: "/assets/img/T_shirt.png"
+    imageSrc: "/assets/img/T_shirt.png",
   },
   {
     title: "Prada",
@@ -25,7 +25,7 @@ export const brandProductItems: ProductItemProps[] = [
       price: 730,
       type: "sale",
     },
-    imageSrc: "/assets/img/Knitted_dress.png"
+    imageSrc: "/assets/img/Knitted_dress.png",
   },
   {
     title: "Prada",
@@ -38,7 +38,7 @@ export const brandProductItems: ProductItemProps[] = [
       price: 2030,
       type: "sale",
     },
-    imageSrc: "/assets/img/T_shirt.png"
+    imageSrc: "/assets/img/T_shirt.png",
   },
   {
     title: "Prada",
@@ -51,7 +51,7 @@ export const brandProductItems: ProductItemProps[] = [
       price: 730,
       type: "sale",
     },
-    imageSrc: "/assets/img/Knitted_dress.png"
+    imageSrc: "/assets/img/Knitted_dress.png",
   },
   {
     title: "Prada",
@@ -64,7 +64,7 @@ export const brandProductItems: ProductItemProps[] = [
       price: 2030,
       type: "sale",
     },
-    imageSrc: "/assets/img/T_shirt.png"
+    imageSrc: "/assets/img/T_shirt.png",
   },
   {
     title: "Prada",
@@ -77,7 +77,7 @@ export const brandProductItems: ProductItemProps[] = [
       price: 730,
       type: "sale",
     },
-    imageSrc: "/assets/img/Knitted_dress.png"
+    imageSrc: "/assets/img/Knitted_dress.png",
   },
   {
     title: "Prada",
@@ -90,7 +90,7 @@ export const brandProductItems: ProductItemProps[] = [
       price: 2030,
       type: "sale",
     },
-    imageSrc: "/assets/img/T_shirt.png"
+    imageSrc: "/assets/img/T_shirt.png",
   },
   {
     title: "Prada",
@@ -103,7 +103,7 @@ export const brandProductItems: ProductItemProps[] = [
       price: 730,
       type: "sale",
     },
-    imageSrc: "/assets/img/Knitted_dress.png"
+    imageSrc: "/assets/img/Knitted_dress.png",
   },
   {
     title: "Prada",
@@ -116,7 +116,7 @@ export const brandProductItems: ProductItemProps[] = [
       price: 2030,
       type: "sale",
     },
-    imageSrc: "/assets/img/T_shirt.png"
+    imageSrc: "/assets/img/T_shirt.png",
   },
   {
     title: "Prada",
@@ -129,7 +129,7 @@ export const brandProductItems: ProductItemProps[] = [
       price: 730,
       type: "sale",
     },
-    imageSrc: "/assets/img/Knitted_dress.png"
+    imageSrc: "/assets/img/Knitted_dress.png",
   },
   {
     title: "Prada",
@@ -142,7 +142,7 @@ export const brandProductItems: ProductItemProps[] = [
       price: 2030,
       type: "sale",
     },
-    imageSrc: "/assets/img/T_shirt.png"
+    imageSrc: "/assets/img/T_shirt.png",
   },
   {
     title: "Prada",
@@ -155,7 +155,7 @@ export const brandProductItems: ProductItemProps[] = [
       price: 730,
       type: "sale",
     },
-    imageSrc: "/assets/img/Knitted_dress.png"
+    imageSrc: "/assets/img/Knitted_dress.png",
   },
   {
     title: "Prada",
@@ -168,7 +168,7 @@ export const brandProductItems: ProductItemProps[] = [
       price: 2030,
       type: "sale",
     },
-    imageSrc: "/assets/img/T_shirt.png"
+    imageSrc: "/assets/img/T_shirt.png",
   },
   {
     title: "Prada",
@@ -181,7 +181,7 @@ export const brandProductItems: ProductItemProps[] = [
       price: 730,
       type: "sale",
     },
-    imageSrc: "/assets/img/Knitted_dress.png"
+    imageSrc: "/assets/img/Knitted_dress.png",
   },
   {
     title: "Prada",
@@ -194,7 +194,7 @@ export const brandProductItems: ProductItemProps[] = [
       price: 2030,
       type: "sale",
     },
-    imageSrc: "/assets/img/T_shirt.png"
+    imageSrc: "/assets/img/T_shirt.png",
   },
   {
     title: "Prada",
@@ -207,7 +207,7 @@ export const brandProductItems: ProductItemProps[] = [
       price: 730,
       type: "sale",
     },
-    imageSrc: "/assets/img/Knitted_dress.png"
+    imageSrc: "/assets/img/Knitted_dress.png",
   },
   {
     title: "Prada",
@@ -220,7 +220,7 @@ export const brandProductItems: ProductItemProps[] = [
       price: 2030,
       type: "sale",
     },
-    imageSrc: "/assets/img/T_shirt.png"
+    imageSrc: "/assets/img/T_shirt.png",
   },
   {
     title: "Prada",
@@ -233,7 +233,6 @@ export const brandProductItems: ProductItemProps[] = [
       price: 730,
       type: "sale",
     },
-    imageSrc: "/assets/img/Knitted_dress.png"
+    imageSrc: "/assets/img/Knitted_dress.png",
   },
-  
 ]
