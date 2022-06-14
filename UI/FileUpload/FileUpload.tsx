@@ -28,10 +28,7 @@ const FileUpload: FC<FileUploadProps> = (props) => {
     className,
     setValue,
     img,
-<<<<<<< HEAD
-=======
     disabled,
->>>>>>> 148528841d7ccbce9c27383030e56744f1c67f5d
   } = props
 
   const [drag, setDrag] = useState(false)

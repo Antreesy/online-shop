@@ -24,18 +24,12 @@ import {
   RegisterFormStepOne,
   RegisterFormsStepThree,
 } from "./RegisterForms"
-<<<<<<< HEAD
-import { Toolbar } from "./Toolbar"
-import { PhotoSlider } from "./PhotoSlider"
-import { Chart } from "./Chart"
-=======
 import { Step1, Step2, Step3 } from "./AddProductSteps"
 import { Toolbar } from "./Toolbar"
 import { PhotoSlider } from "./PhotoSlider"
 import { Chart } from "./Chart"
 import { OrderStatusButton } from "./OrderStatusButton"
 import { InventoryButton } from "./InventoryButton"
->>>>>>> 148528841d7ccbce9c27383030e56744f1c67f5d
 
 export {
   PhotoSlider,

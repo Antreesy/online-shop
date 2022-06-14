@@ -122,16 +122,12 @@
       }
 
       .card {
-        width: 610px;
+        width: 550px;
         height: 204px;
         margin-top: 190px;
         box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
         transition: all 0.5s cubic-bezier(0, 0, 1, 1);
-
-        .card_flex {
-          display: flex;
-          width: inherit;
-        }
+        display: flex;
 
         .cardItem {
           display: flex;
@@ -140,7 +136,11 @@
           margin: 37px 22px 0 16px;
 
           & .cardItemW {
-            width: 365px;
+            width: 412px;
+            > div {
+              display: flex;
+              justify-content: space-between;
+            }
           }
 
           & .cardItemPrice {
@@ -234,7 +234,7 @@
       }
 
       .approve {
-        width: 608px;
+        width: 550px;
         height: 204px;
         margin: 190px 0 0 0;
         padding: 63px 0 0 0;

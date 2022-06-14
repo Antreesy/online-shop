@@ -196,16 +196,31 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
 
               {!IsActive ? (
                 <div className={s.card}>
-                  <div className={s.card_flex}>
                     <div className={s.img}>
                       <Image src={cardImage} layout="fill" />
                     </div>
                     <div className={s.cardItem}>
                       <div className={s.cardItemW}>
                         <div>
-                          <p className={s.cardItem_text}>Prada</p>
-                          <p>Green zero sleeve women’s dress</p>
+                          <div>
+                            <p className={s.cardItem_text}>Prada</p>
+                          </div>
+                          <div
+                              className={s.button_cancel}
+                              onClick={() => setIsActive(!IsActive)}
+                          >
+                            <div>
+                              <Button
+                                  className={s.button_clear}
+                                  icon
+                                  iconLeft="close_cross"
+                                  onClick={() => setIsActive(!IsActive)}
+                              />
+                            </div>
+                            <p>cancel</p>
+                          </div>
                         </div>
+                        <p>Green zero sleeve women’s dress</p>
 
                         <div className={s.cardItemPrice}>
                           <div>
@@ -268,22 +283,7 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
                           </div>
                         </div>
                       </div>
-                      <div
-                        className={s.button_cancel}
-                        onClick={() => setIsActive(!IsActive)}
-                      >
-                        <div>
-                          <Button
-                            className={s.button_clear}
-                            icon
-                            iconLeft="close_cross"
-                            onClick={() => setIsActive(!IsActive)}
-                          />
-                        </div>
-                        <p>cancel</p>
-                      </div>
                     </div>
-                  </div>
                 </div>
               ) : (
                 <div className={s.approve}>
