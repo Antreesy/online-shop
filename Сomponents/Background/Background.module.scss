@@ -5,7 +5,7 @@
   height: 500px;
   padding: 50px 72px 25px;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
-  color: #fff;
+  color: $color-white;
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
@@ -52,8 +52,8 @@
 
 .bgButton {
   display: inline-block;
-  color: #fff;
-  border-color: #fff;
+  color: $color-white;
+  border-color: $color-white;
 }
 
 .btn {
@@ -130,7 +130,7 @@
   border: none;
   outline: none;
   background-color: transparent;
-  color: #fff;
+  color: $color-white;
 }
 
 .icon {
@@ -148,7 +148,7 @@
 .editButton {
   border: none;
   display: inline-block;
-  color: #fff;
+  color: $color-white;
   background: none;
   box-shadow: none;
 
@@ -167,7 +167,7 @@
   border: 1px solid gray;
   background: transparent;
   border-radius: 5px;
-  color: #fff;
+  color: $color-white;
 }
 
 .addImageButton {
@@ -203,7 +203,7 @@
     margin-bottom: 20px;
     border: none;
     border-radius: 100%;
-    background-color: #fff;
+    background-color: $color-white;
     color: $color-purple;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
   }
