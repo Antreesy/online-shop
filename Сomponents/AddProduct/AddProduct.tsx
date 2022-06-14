@@ -15,9 +15,10 @@ interface AddProductInfluencerProps {
 
 const AddProductInfluencer: React.FC<AddProductInfluencerProps> = (props) => {
   const { products } = props
-  return products ? (
+  console.log(productItems)
+  return (
     <>
-      <div className={s.AddProduct_main}>
+      <div className={s.addProduct_main}>
         <Background
           image={pic}
           title={"Hello"}
@@ -28,39 +29,32 @@ const AddProductInfluencer: React.FC<AddProductInfluencerProps> = (props) => {
           isEditable={true}
         />
       </div>
-      <div className={s.AddProduct_addbutton}>
+      `
+      {!products ? (
+        <div className={s.addProduct_noProducts}>
+          <div className={s.addProduct_noProducts_title}>
+            <h1>You do not have a product</h1>
+          </div>
+          <div className={s.addProduct_noProducts_subtitle}>
+            <p>
+              <a href="#">Please click </a>to add products belonging to brands
+            </p>
+          </div>
+        </div>
+      ) : null}
+      `
+      <div className={s.addProduct_addbutton}>
         <AddButton title="Add Product" bgColor="grey" color="secondary" />
       </div>
-      <div className={s.AddProduct_productList}>
-        <ProductItemList productItemList={productItems} />
-      </div>
-    </>
-  ) : (
-    <>
-      <div className={s.AddProduct_main}>
-        <Background
-          image={pic}
-          title={"Hello"}
-          description={
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed pretium enim. Cras faucibus velit risus, nec pharetra ex scelerisque non. Aenean quis "
-          }
-          link={"@tuanaycl"}
-          isEditable={true}
-        />
-      </div>
-      <div className={s.AddProduct_NoProducts}>
-        <div className={s.AddProduct_NoProducts_title}>
-          <h1>You do not have a product</h1>
-        </div>
-        <div className={s.AddProduct_NoProducts_subtitle}>
-          <p>
-            <a href="#">Please click </a>to add products belonging to brands
-          </p>
-        </div>
-      </div>
-      <div className={s.AddProduct_addbutton}>
-        <AddButton title="Add Product" bgColor="white" color="secondary" />
-      </div>
+      `
+      {products ? (
+        <>
+          <div className={s.addProduct_productList}>
+            <ProductItemList productItemList={productItems} />
+          </div>
+        </>
+      ) : null}
+      `
     </>
   )
 }

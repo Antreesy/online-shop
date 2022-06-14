@@ -1,14 +1,14 @@
-.AddProduct_main {
+.addProduct_main {
     width: 100%;
 }
 
-.AddProduct_addbutton {
+.addProduct_addButton {
     padding: 50px 72px;
 }
-.AddProduct_productList{
+.addProduct_productList{
     padding: 50px;
 }
-.AddProduct_NoProducts {
+.addProduct_noProducts {
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -16,7 +16,7 @@
     padding: 50px 0px;
     &_title {
         display: flex;
-        align-items: end;
+        align-items: flex-end;
         justify-content: center;
         width: 536px;
         height: 61px;
