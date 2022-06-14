@@ -1,6 +1,5 @@
 @import "/styles/style.scss";
 
-.main {
   .breadcrumbs_mobile {
     @include mobile-tablet {
       display: block;
@@ -26,16 +25,16 @@
 
     .content {
       margin-top: 70px;
-      position: relative;
       display: flex;
+      justify-content: space-between;
+      width: 1500px;
 
       .content_wrapper {
-        max-width: 755px;
-        width: 100%;
-        margin-right: 35px;
+        width: 770px;
       }
 
-      & .customer_information,
+
+      & .customer_information span,
       .order_information,
       .invoice_information {
         width: 445px;
@@ -54,17 +53,16 @@
       .customer_information_detail,
       .order_information_detail,
       .invoice_information_detail {
-        width: 842px;
-        margin-top: 56px;
         display: flex;
+        justify-content: space-between;
 
         .information_detail_text > p,
         .order_detail_text > p,
         .invoice_detail_text > p,
-        .order_detail_text_colon > p {
+         {
           width: 169px;
           height: 22px;
-          margin: 0 -160px 30px 140px;
+          margin: 24px -160px 30px 140px;
           object-fit: contain;
           font-size: 20px;
           font-weight: 600;
@@ -86,21 +84,28 @@
             font-weight: bold;
           }
         }
+        .order_detail_text_colon {
+          > p {
+            margin: 0 0 26.5px 0;
+            font-weight: bold;
+          }
+        }
 
         .information_detail_span p,
         .invoice_detail_span p {
           margin: 0 0 27px 0;
+        }
+        .order_detail_span {
+          width: 306px;
+          p {
+            margin: 0 0 27px -118px;
+          }
         }
 
         .information_detail_text,
         .order_detail_text,
         .invoice_detail_text {
           width: 150px;
-        }
-
-        .order_detail_span span {
-          display: block;
-          margin: 0 0 28px 10px;
         }
       }
 
@@ -112,8 +117,8 @@
         background-color: #f5f5f5;
 
         position: absolute;
-        top: 25px;
-        left: 712px;
+        top: 250px;
+        left: 752px;
       }
 
       .card {
@@ -269,6 +274,7 @@
         }
         .content {
           flex-wrap: wrap;
+          width: 376px;
 
           .content_wrapper {
             width: 376px;
@@ -280,12 +286,15 @@
             font-size: 12px;
           }
 
-          .order_detail_span span {
+          .order_detail_span p {
             font-size: 12px;
-            margin: 0 0 17px 13px !important;
+            margin: 0 0 17px -110px !important;
+          }
+          .order_detail_span {
+            width: 112px !important;
           }
 
-          .customer_information,
+          .customer_information span,
           .order_information,
           .invoice_information {
             margin: 0px -101px 30px 21px;
@@ -325,8 +334,10 @@
               margin: 0px -77px 30px 0px;
 
               > p {
+                width: 287px;
                 margin: 0px -70px 12px 0px;
                 font-size: 12px;
+                padding-top: 5px;
               }
             }
           }
@@ -404,4 +415,3 @@
       }
     }
   }
-}

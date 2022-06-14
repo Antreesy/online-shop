@@ -39,7 +39,7 @@ interface orderInfoProps {
 }
 
 const OrderInfo: NextPage<orderInfoProps> = () => {
-  const CustomerInfo = ({ labels }: { labels: customInfo[] }) => (
+    const CustomerInfo = ({ labels }: { labels: customInfo[] }) => (
     <div className={s.customer_information_detail}>
       <div className={s.information_detail_text}>
         {labels.length ?
@@ -79,7 +79,7 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
       </div>
     </div>
   )
-  const OrderInfo = ({ labels }: { labels: orderInfo[] }) => (
+    const OrderInfo = ({ labels }: { labels: orderInfo[] }) => (
     <div className={s.order_information_detail}>
       <div className={s.order_detail_text}>
         {labels.length ?
@@ -106,9 +106,9 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
           label.orderInfo.map((item) => {
             return (
               <>
-                <span>{item.name}</span>
-                <span>{item.date}</span>
-                <span>{item.method}</span>
+                <p>{item.name}</p>
+                <p>{item.date}</p>
+                <p>{item.method}</p>
               </>
             )
           }),
@@ -116,7 +116,7 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
       </div>
     </div>
   )
-  const InvoiceInfo = ({ labels }: { labels: customInfo[] }) => (
+    const InvoiceInfo = ({ labels }: { labels: customInfo[] }) => (
     <div className={s.invoice_information_detail}>
       <div className={s.invoice_detail_text}>
         {labels.length ?
@@ -156,14 +156,13 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
       </div>
     </div>
   )
-  const [IsActive, setIsActive] = useState<boolean>(false)
+    const [IsActive, setIsActive] = useState<boolean>(false)
   return (
     <>
       <Head>
         <title>ILONSI SHOP | Order Detail</title>
       </Head>
 
-      <main className={s.main}>
         <div className={s.container}>
           <div className={s.breadcrumbs_mobile}>
             <Breadcrumbs />
@@ -177,19 +176,24 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
 
           <div className={s.content}>
             <div className={s.content_wrapper}>
-              <span className={s.customer_information}>
+             <div className={s.customer_information}>
+                <span>
                 Customer Information
               </span>
+             </div>
               <CustomerInfo labels={[OrderInfoItems]} />
-              <span className={s.order_information}>Order Information</span>
+             <div className={s.order_information}>
+               <span>Order Information</span>
+             </div>
               <OrderInfo labels={[OrderInfoItems]} />
-              <span className={s.invoice_information}>Invoice Information</span>
+             <div className={s.invoice_information}>
+               <span>Invoice Information</span>
+             </div>
               <InvoiceInfo labels={[OrderInfoItems]} />
             </div>
 
             <div className={s.line} />
 
-            <div>
               {!IsActive ? (
                 <div className={s.card}>
                   <div className={s.card_flex}>
@@ -298,10 +302,8 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
                   </div>
                 </div>
               )}
-            </div>
           </div>
         </div>
-      </main>
     </>
   )
 }
