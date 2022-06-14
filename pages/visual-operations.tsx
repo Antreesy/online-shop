@@ -41,7 +41,7 @@ const VisualOperations: NextPage = () => {
               `Active Images (${images.length})`,
               `Rejected Images (${images.length})`,
             ]}
-            variant={"spaces"}
+            variant={"no_border"}
             values={[
               <>
                 <div className={s.main_menu}>
