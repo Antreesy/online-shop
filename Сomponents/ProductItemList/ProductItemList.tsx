@@ -12,15 +12,15 @@ export const ProductItemList: React.FC<ProductItemListProps> = (props) => {
   const { productItemList } = props
   return (
     <Grid container spacing={2}>
-      {productItemList.map((item) => (
+      {productItemList.map((item, index) => (
         <Grid
+          key={index}
           item
           xs={12}
           sm={6}
           md={4}
           lg={3}
           xl={3}
-          key={item.id}
           justifyContent="space-around"
         >
           <ProductItem {...item} />
