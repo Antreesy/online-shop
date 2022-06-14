@@ -1,30 +1,47 @@
 import { NextPage } from "next"
 import Head from "next/head"
 import { Breadcrumbs } from "Сomponents"
-import enot from "../public/test.png"
+import { images } from "../shared/constants/ImageSelectProduct"
 import { Button, Tabs, Input, Icon, SelectProduct, FileUpload } from "UI"
 
 import s from "styles/pages/visual-operations.module.scss"
 import { useState } from "react"
 
+interface deletObject {
+  id: number
+}
+
 const VisualOperations: NextPage = () => {
   const [inputValue, setInputValue] = useState<string>("")
+  const [select, setSelect] = useState(false)
+  const [delet, setDelet]: [Array<deletObject>, Function] = useState([])
+
+  console.log(delet)
+
+  const secTest = (item: number) => {
+    setDelet([...delet, item])
+  }
   return (
     <>
       <Head>
         <title>ILONSI SHOP | VisualOperations</title>
       </Head>
       <Breadcrumbs />
-      <Button className={s.button_back} iconLeft="arrow_left">
-        Back
-      </Button>
 
       <div className={s.main}>
+        <div className={s.main_button_back}>
+          <Button className={s.button_back} iconLeft="arrow_left">
+            Back
+          </Button>
+        </div>
         <div className={s.main_content}>
           <Tabs
             className={s.tabs}
-            labels={["Active Images (34543)", "Rejected Images (23563)"]}
-            variant={"no_border"}
+            labels={[
+              `Active Images (${images.length})`,
+              `Rejected Images (${images.length})`,
+            ]}
+            variant={"spaces"}
             values={[
               <>
                 <div className={s.main_menu}>
@@ -39,16 +56,26 @@ const VisualOperations: NextPage = () => {
                       />
                     </div>
                   </div>
-                  <div className={s.main_buttons}>
-                    <Button className={s.button_smalltext} variant="text">
-                      Select All and Downloand
-                    </Button>
-                    <Button className={s.button_smalltext} variant="text">
-                      Select All and Delete
-                    </Button>
-                    <Button className={s.button_smalltext} variant="text">
-                      Delet Selected(0)
-                    </Button>
+                  <div className={s.button_container}>
+                    <div className={s.main_buttons}>
+                      <Button
+                        onClick={() => setSelect(!select)}
+                        className={s.button_smalltext}
+                        variant="text"
+                      >
+                        Select All and Downloand
+                      </Button>
+                      <Button
+                        onClick={() => setSelect(!select)}
+                        className={s.button_smalltext}
+                        variant="text"
+                      >
+                        Select All and Delete
+                      </Button>
+                      <Button className={s.button_smalltext} variant="text">
+                        Delet Selected ({delet.length})
+                      </Button>
+                    </div>
                     <Button className={s.button_excel} iconLeft="download">
                       Excel Download
                     </Button>
@@ -56,30 +83,17 @@ const VisualOperations: NextPage = () => {
                 </div>
                 <div className={s.content}>
                   <div className={s.content_item}>
-                    <SelectProduct
-                      imageSrc={enot}
-                      imageTitle={"test.png"}
-                      imageSize={"690x680"}
-                      date={new Date().toLocaleDateString()}
-                    />
-                    <SelectProduct
-                      imageSrc={enot}
-                      imageTitle={"test.png"}
-                      imageSize={"690x680"}
-                      date={new Date().toLocaleDateString()}
-                    />
-                    <SelectProduct
-                      imageSrc={enot}
-                      imageTitle={"test.png"}
-                      imageSize={"690x680"}
-                      date={new Date().toLocaleDateString()}
-                    />
-                    <SelectProduct
-                      imageSrc={enot}
-                      imageTitle={"test.png"}
-                      imageSize={"690x680"}
-                      date={new Date().toLocaleDateString()}
-                    />
+                    {images.map((im) => (
+                      <SelectProduct
+                        key={im.id}
+                        imageSrc={im.src.src}
+                        imageTitle={im.title}
+                        imageSize={im.size}
+                        selected={select}
+                        setDelet={() => secTest(im.id)}
+                        date={im.date}
+                      />
+                    ))}
                   </div>
                   <div className={s.content_select_input}>
                     <h1>
@@ -96,7 +110,9 @@ const VisualOperations: NextPage = () => {
                       The image you upload must have a minimum 600x800 standart
                       and a maximum size of 5MB.
                     </p>
-                    <p><span>Click</span> to visual rules</p>
+                    <p>
+                      <span>Click</span> to visual rules
+                    </p>
                     <Button className={s.button_black}>Confirm</Button>
                   </div>
                 </div>
@@ -119,24 +135,23 @@ const VisualOperations: NextPage = () => {
                       Select All and Restore
                     </Button>
                     <Button className={s.button_smalltext} variant="text">
-                      Restore the selected (0)
+                      Restore the selected ()
                     </Button>
                   </div>
                 </div>
                 <div className={s.content}>
                   <div className={s.content_item_rejected}>
-                    <SelectProduct
-                      imageSrc={enot}
-                      imageTitle={"enot.png"}
-                      imageSize={"690x680"}
-                      date={new Date().toLocaleDateString()}
-                    />
-                    <SelectProduct
-                      imageSrc={enot}
-                      imageTitle={"enot.png"}
-                      imageSize={"690x680"}
-                      date={new Date().toLocaleDateString()}
-                    />
+                    {images.map((im) => (
+                      <SelectProduct
+                        key={im.id}
+                        imageSrc={im.src.src}
+                        imageTitle={im.title}
+                        imageSize={im.size}
+                        selected={select}
+                        setDelet={() => secTest(im.id)}
+                        date={im.date}
+                      />
+                    ))}
                   </div>
                 </div>
               </>,

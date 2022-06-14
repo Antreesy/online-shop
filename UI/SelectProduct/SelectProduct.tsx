@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { ImageProps } from "next/image"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { Icon } from "UI"
 import cn from "classnames"
 import s from "./selectProduct.module.scss"
@@ -10,29 +10,34 @@ interface SelectProduct {
   imageTitle: string
   imageSize: string
   date: string
-  id?: number
-  setID?: (id: number) => void
+  selected?: boolean
+  setDelet: () => void
 }
 
 const SelectProduct: React.FC<SelectProduct> = (props) => {
-  const { imageSrc, imageTitle, imageSize, date, id, setID } = props
+  const { imageSrc, selected, imageTitle, imageSize, date, setDelet } =
+    props
 
-  const [select, setSelect] = useState(false)
+  const [select, setSelect] = useState<boolean>(false)
 
-  // useEffect(() => {
-  //   select ? setID(id) : null
-  // }, [select])
+  const selectProduct = () => {
+    setSelect(!select)
+    setTimeout(setDelet, 100)
+  }
+  const unselectProduct = () => {
+    setSelect(!select)
+  }
 
   const SelectProductClass = cn(s.main, {
-    [s.main_select]: select === true,
+    [s.main_select]: selected || select,
   })
   const SelectProductIcon = cn(s.icon, {
-    [s.icon_select]: select === true,
+    [s.icon_select]: select || selected,
   })
   return (
     <div
       className={SelectProductClass}
-      onClick={() => setSelect(select ? false : true)}
+      onClick={select ? unselectProduct : selectProduct}
     >
       <div className={s.image_container}>
         <Image src={imageSrc} width="289" height="290" />

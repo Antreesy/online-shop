@@ -1,7 +1,6 @@
 @import "styles/style.scss";
 
-
-.tabs_container{
+.tabs_container {
   width: 100%;
 }
 .tabs {
@@ -43,6 +42,17 @@
 .tabs_spaces {
   box-shadow: 0 0px 5px $color-grey-e2;
 
+  div{
+    justify-content: space-between;
+  }
+
+  @include mobile {
+    box-shadow: none;
+    button{
+      padding: 0;
+    }
+  }
+
   .tab {
     font-weight: $fw-regular;
     border-radius: 10px;
@@ -64,8 +74,14 @@
   border-bottom-right-radius: 0;
   box-shadow: 3px -3px 5px $color-grey-e2;
 
+  button {
+    width: 100%;
+  }
+
   .tab {
     font-weight: $fw-semibold;
+    max-width: 50%;
+    height: 81px;
 
     &:focus,
     &.active {
