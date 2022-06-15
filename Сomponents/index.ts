@@ -4,6 +4,7 @@ import { Background } from "./Background"
 import { Breadcrumbs } from "./Breadcrumbs"
 import { BurgerMenu } from "./BurgerMenu"
 import { CardForm } from "./CardForm"
+import { CartItemList } from "./CartItemList"
 import { Chart } from "./Chart"
 import { ColorPicker } from "./ColorPicker"
 import { Counter } from "./Counter"
@@ -39,6 +40,7 @@ export {
   Breadcrumbs,
   BurgerMenu,
   CardForm,
+  CartItemList,
   Chart,
   ColorPicker,
   Counter,

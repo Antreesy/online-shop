@@ -1,0 +1,194 @@
+@import "styles/style.scss";
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 10px 30px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
+
+  @include mobile-tablet {
+    flex-direction: column;
+    padding: 10px 10px;
+  }
+}
+
+.table {
+  justify-content: center;
+  width: 100%;
+}
+
+.productItem {
+  display: flex;
+  align-items: center;
+  flex: 3;
+  margin-right: 20px;
+  padding-right: 30px;
+
+  @include mobile-tablet {
+    margin-bottom: 20px;
+    padding-right: 0;
+    margin-right: 0;
+  }
+}
+
+.buttonNimage {
+  display: flex;
+}
+
+.imageWrapper {
+  min-width: 120px;
+  width: 120px;
+  padding: 10px 25px;
+  background: #f4f4f4;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+
+  @include mobile {
+    background: none;
+    height: 100% !important;
+    min-width: 100px;
+    max-width: 100px;
+    padding: 10px;
+  }
+}
+
+.trashBtn {
+  margin-right: 10px;
+  color: $color-purple;
+  font-size: 20px;
+
+  @include mobile {
+    margin-right: 0;
+  }
+}
+
+.title {
+  color: $color-purple;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 13px;
+  padding-bottom: 10px;
+  font-weight: 500;
+
+  @include mobile-tablet {
+    padding-bottom: 0;
+  }
+}
+
+.description {
+  font-size: 12px;
+  width: 100%;
+  line-height: 1.67;
+  color: #888;
+  text-align: justify;
+
+  @include mobile-tablet {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.price {
+  position: relative;
+  padding-left: 30px;
+  margin-right: 60px;
+  flex: 1;
+
+  .priceBlock {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  @include mobile-tablet {
+    display: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    height: 60px;
+    width: 2px;
+    background-color: #d0d0d0;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.counter {
+  position: relative;
+  padding-left: 30px;
+  margin-right: 60px;
+  flex: 1;
+
+  @include mobile-tablet {
+    min-width: 150px;
+    max-width: 90%;
+    padding-left: 0;
+    margin: auto;
+
+    > div {
+      width: 100%;
+
+      > div {
+        width: 100%;
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    height: 60px;
+    width: 2px;
+    background-color: #d0d0d0;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.mobilePrice {
+  display: none;
+  flex-direction: column-reverse;
+
+  @include mobile-tablet {
+    display: inline-block;
+  }
+}
+
+.amountPrice {
+  flex: 1;
+
+  @include mobile-tablet {
+    display: none;
+  }
+}
+.productInfo {
+  display: flex;
+  flex-direction: column;
+}

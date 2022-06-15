@@ -1,0 +1,33 @@
+@import "styles/style.scss";
+
+.noItemBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  margin-bottom: 30px;
+  p {
+    line-height: 1.2;
+  }
+
+  .title {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    color: $color-grey-c;
+  }
+}
+
+.cartNoItemsBtn {
+  font-size: 40px;
+  padding: 25px;
+  border-radius: 100%;
+  background: $color-white;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  padding-top: 20px;
+  text-align: center;
+  color: $color-purple;
+  margin-bottom: 20px;
+}

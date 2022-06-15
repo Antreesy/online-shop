@@ -1,0 +1,80 @@
+@import "styles/style.scss";
+
+.cartItemsHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: $color-white;
+  background-color: $color-black;
+  padding: 25px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    border-radius: 100%;
+
+    background-image: linear-gradient(257deg, $color-purple 92%, $color-cyan 5%);
+  }
+
+  @include mobile-tablet {
+    display: none;
+  }
+}
+
+.cartItemlist {
+  width: 100%;
+  padding-right: 20px;
+
+  > p {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  @include mobile {
+    padding-right: 0;
+  }
+}
+
+.names {
+  flex: 3;
+  text-align: left;
+}
+
+.price {
+  flex: 1;
+  margin-right: 60px;
+}
+
+.piece {
+  flex: 1;
+  margin-right: 60px;
+}
+
+.total {
+  flex: 1;
+}
+
+.cart {
+  display: flex;
+  margin: 10px 20px;
+  margin-bottom: 30px;
+
+  @include mobile-tablet {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @include laptop {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
