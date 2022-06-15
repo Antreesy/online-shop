@@ -9,7 +9,6 @@ import s from "styles/pages/brands/brands.module.scss"
 import picture from "public/assets/img/Prada.png"
 import { brandProductItems } from "shared/constants/brandProductItem"
 
-
 const brand: NextPage = () => {
   return (
     <>

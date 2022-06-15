@@ -1,0 +1,124 @@
+@import "/styles/style.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: center;
+}
+
+.step_one,
+.step_two,
+.step_three {
+  box-shadow: 0 0 10px $color-grey-de;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  height: 530px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: 450px;
+    h2 {
+      text-align: center;
+    }
+    .input {
+      width: 260px;
+    }
+  }
+}
+
+.disabled {
+  color: $color-black-a20;
+  .exclamation {
+    .icon {
+      color: $color-red-a40;
+    }
+  }
+
+  .download {
+    .icon {
+      color: $color-purple-a40;
+    }
+  }
+
+  .select_disabled {
+    div {
+      color: $color-black-a40;
+    }
+  }
+}
+
+.quote {
+  text-align: center;
+  border: 2px solid $color-purple;
+  background-color: $color-purple-a20;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.exclamation {
+  margin: 10px 0;
+  display: flex;
+  gap: 5px;
+  .icon {
+    color: $color-red;
+    padding-top: 5px;
+  }
+}
+
+.input {
+  height: 40px;
+}
+
+.button {
+  width: 260px;
+  background: $color-black;
+  border-radius: 5px;
+  &:hover {
+    background: $color-black-a20;
+    color: $color-black-a60;
+  }
+}
+.download {
+  display: flex;
+  gap: 5px;
+  .icon {
+    color: $color-purple;
+  }
+  p {
+    color: $color-black-a40;
+    font-size: 12px;
+  }
+}
+
+.button_back {
+  box-shadow: 0 0 10px $color-grey-de;
+  color: $color-purple;
+}
+
+.add_product_header {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 40px 0;
+  span {
+    color: $color-purple;
+    font-weight: $fw-bold;
+  }
+}

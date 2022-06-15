@@ -53,6 +53,7 @@
   margin-right: 15px;
 
   .product_item_image {
+    position: relative;
     background-color: $color-grey-f4;
     min-height: 300px;
     margin: 0 auto;
@@ -78,7 +79,7 @@
     position: absolute;
     top: 3px;
     right: 0px;
-    background-color: #fff;
+    background-color: $color-white;
     cursor: pointer;
   }
 

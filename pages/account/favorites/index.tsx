@@ -23,20 +23,17 @@ export async function getStaticProps({ locale }: { locale: string }) {
 }
 
 const Favorites: NextPage = () => {
-    const role = useAppSelector(authRole)
-  
-    return (
-      <>
-        <Head>
-          <title>ILONSI SHOP | Account</title>
-        </Head>
-  
-        
-        {role === Roles.CUSTOMER && <UniversalFavorites />}
-    
-      </>
-    )
-  }
-  
-  export default Favorites
-  
+  const role = useAppSelector(authRole)
+
+  return (
+    <>
+      <Head>
+        <title>ILONSI SHOP | Account</title>
+      </Head>
+
+      {role === Roles.CUSTOMER && <UniversalFavorites />}
+    </>
+  )
+}
+
+export default Favorites
