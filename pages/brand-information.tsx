@@ -1,10 +1,39 @@
 import { NextPage } from "next"
+import { Controller, useForm } from "react-hook-form"
 import Head from "next/head"
-import s from "styles/pages/brand-information.module.scss"
+
 import { Button, FileUpload, Icon, Input } from "UI"
+
 import cn from "classnames"
+import s from "styles/pages/brand-information.module.scss"
+
+interface BrandsType {
+  brandname: string
+  name: string
+  sellerId: string
+  number: string
+  taxAdmin: string
+  kepAddress: string
+  taxnumber: string
+}
 
 const brandInformation: NextPage = () => {
+  const { handleSubmit, control } = useForm<BrandsType>({
+    criteriaMode: "all",
+    defaultValues: {
+      brandname: "",
+      name: "",
+      sellerId: "",
+      number: "",
+      taxAdmin: "",
+      kepAddress: "",
+      taxnumber: "",
+    },
+  })
+  const onSubmit = handleSubmit((data) => {
+    console.log(data)
+  })
+
   return (
     <>
       <Head>
@@ -44,7 +73,7 @@ const brandInformation: NextPage = () => {
             </div>
             <div className={s.textBlock}>
               <p className={s.brandName}>Brand Display Name:</p>
-              <p className={s.description}> Saint Laurent</p>
+              <p className={s.description}> Saint Lauren</p>
             </div>
           </div>
         </div>
@@ -80,59 +109,110 @@ const brandInformation: NextPage = () => {
         <h1>Company Informations</h1>
       </div>
       <div className={s.formSection}>
-        <div className={s.container}>
+        <form className={s.container}>
           <div className={s.firstLineInputs}>
-            <Input
-              value=""
-              setValue={() => {}}
-              className={s.input}
-              label="Brand Name"
-              isRequired
+            <Controller
+              name={"brandname"}
+              control={control}
+              render={({ field: { onChange, value } }) => (
+                <Input
+                  label={"Brand Name"}
+                  setValue={onChange}
+                  value={value}
+                  placeholder={"Name Surname"}
+                  className={s.input}
+                />
+              )}
             />
-            <Input
-              value=""
-              setValue={() => {}}
-              className={s.input}
-              label="Cari Ünvan"
+            <Controller
+              name={"name"}
+              control={control}
+              render={({ field: { onChange, value } }) => (
+                <Input
+                  label={"Cari Ünvan  "}
+                  setValue={onChange}
+                  value={value}
+                  placeholder={"Name Surname"}
+                  className={s.input}
+                />
+              )}
             />
-            <Input
-              value=""
-              setValue={() => {}}
-              className={s.input}
-              label="Brand Name"
+            <Controller
+              name={"sellerId"}
+              control={control}
+              render={({ field: { onChange, value } }) => (
+                <Input
+                  label={"Seller ID"}
+                  setValue={onChange}
+                  value={value}
+                  placeholder={"Name Surname"}
+                  className={s.input}
+                />
+              )}
             />
           </div>
           <div className={s.secondLineInputs}>
-            <Input
-              value=""
-              setValue={() => {}}
-              className={s.input}
-              label="Brand Name"
-              isRequired
+            <Controller
+              name={"number"}
+              control={control}
+              render={({ field: { onChange, value } }) => (
+                <Input
+                  label={"Mersis No"}
+                  setValue={onChange}
+                  value={value}
+                  placeholder={"Name Surname"}
+                  className={s.input}
+                />
+              )}
             />
-            <Input
-              value=""
-              setValue={() => {}}
-              className={s.input}
-              label="Tax Administration"
+            <Controller
+              name={"taxAdmin"}
+              control={control}
+              render={({ field: { onChange, value } }) => (
+                <Input
+                  label={"Tax Administration"}
+                  setValue={onChange}
+                  value={value}
+                  placeholder={"Name Surname"}
+                  className={s.input}
+                />
+              )}
             />
-            <Input
-              value=""
-              setValue={() => {}}
-              className={s.input}
-              label="KEP Address"
+            <Controller
+              name={"kepAddress"}
+              control={control}
+              render={({ field: { onChange, value } }) => (
+                <Input
+                  label={"KEP Address"}
+                  setValue={onChange}
+                  value={value}
+                  placeholder={"Name Surname"}
+                  className={s.input}
+                />
+              )}
             />
           </div>
-          <Input
-            value=""
-            setValue={() => {}}
-            className={s.inputTextArea}
-            label="Tax number"
+          <Controller
+            name={"name"}
+            control={control}
+            render={({ field: { onChange, value } }) => (
+              <Input
+                label={"Tax number"}
+                setValue={onChange}
+                value={value}
+                placeholder={"Name Surname"}
+                className={s.inputTextArea}
+              />
+            )}
           />
-          <Button variant="text" className={cn(s.brandBlackBtn, s.saveBtn)}>
+          <Button
+            variant="text"
+            className={cn(s.brandBlackBtn, s.saveBtn)}
+            onClick={onSubmit}
+          >
             Save
           </Button>
-        </div>
+        </form>
       </div>
     </>
   )

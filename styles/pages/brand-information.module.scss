@@ -30,6 +30,7 @@
 .nav {
   width: 100%;
   overflow-x: auto;
+  margin-bottom: 20px;
 }
 
 .navigation {
@@ -41,7 +42,6 @@
   list-style: none;
   padding: 60px 0;
   overflow-x: auto;
-  margin-bottom: 20px;
 
   @include mobile-tablet {
     padding: 20px 0;
