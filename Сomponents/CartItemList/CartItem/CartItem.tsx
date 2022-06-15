@@ -1,6 +1,7 @@
-import Image from "next/image"
+import { useState } from "react"
+
+import Image, { ImageProps } from "next/image"
 import { Button, ItemCounter, Price } from "UI"
-import img from "public/assets/img/product-img.png"
 
 import s from "./CartItem.module.scss"
 
@@ -8,12 +9,17 @@ export interface CartItemProps {
   title: string
   subtitle: string
   description: string
+  imageSrc: ImageProps["src"]
   price: number
   oldPrice?: number
+  amount: number
 }
 
-const CartItem: React.FC<CartItemProps> = (props) => {
-  const { title, subtitle, description, price, oldPrice } = props
+export const CartItem: React.FC<CartItemProps> = (props) => {
+  const { title, subtitle, imageSrc, description, price, oldPrice, amount } = props
+  const [currentAmount, setCurrentAmount] =  useState<number>(amount)
+  const total = price * currentAmount
+
   return (
     <div className={s.cartItem}>
       <div className={s.productItem}>
@@ -24,7 +30,7 @@ const CartItem: React.FC<CartItemProps> = (props) => {
           className={s.trashBtn}
         />
         <span className={s.imageWrapper}>
-          <Image src={img} className={s.productImage} />
+          <Image src={imageSrc} className={s.productImage} />
         </span>
         <span className={s.productInfo}>
           <span className={s.title}>{title}</span>
@@ -51,14 +57,12 @@ const CartItem: React.FC<CartItemProps> = (props) => {
         />
       </div>
       <div className={s.counter}>
-        <ItemCounter />
+        <ItemCounter initValue={amount} onChange={setCurrentAmount} />
       </div>
       <div className={s.amountPrice}>
         <h3>Order amount</h3>
-        <Price price={price} />
+        <Price price={total} />
       </div>
     </div>
   )
 }
-
-export default CartItem

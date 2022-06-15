@@ -60,8 +60,7 @@ const SampleCard = () => (
 )
 
 const Home: NextPage = () => {
-  const currentStep = 1
-  const steps = [1, 2, 3]
+
   return (
     <>
       <Head>
@@ -74,7 +73,7 @@ const Home: NextPage = () => {
           actionItem={"All Orders"}
         />
 
-        <ProgressBar currentStep={currentStep} steps={[1, 2, 3]} />
+        <ProgressBar currentStep={1} steps={[1, 2, 3]} />
 
         <Tabs
           className={s.example_tabs}

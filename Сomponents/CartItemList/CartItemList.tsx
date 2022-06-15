@@ -1,13 +1,17 @@
-import { cartlist } from "shared/constants/cart-list"
 import { Button } from "UI"
-import CartItem from "Сomponents/CartItem/CartItem"
+import { CartItem, CartItemProps } from "./CartItem/CartItem"
+
 import s from "./CartItemList.module.scss"
 
-export const CartItemList: React.FC = () => {
+interface CartListProps {
+  list: CartItemProps[]
+}
+
+export const CartItemList: React.FC<CartListProps> = ({ list }) => {
   return (
     <>
-      {cartlist.length ? (
-        cartlist.map((item) => {
+      {list.length ? (
+        list.map((item) => {
           return <CartItem {...item} />
         })
       ) : (
