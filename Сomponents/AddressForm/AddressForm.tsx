@@ -11,7 +11,6 @@ import { countriesForSelect } from "shared/constants/countries"
 import s from "./addressForm.module.scss"
 import { Roles } from "shared/enums/roles"
 
-
 interface AddressFormProps {
   onClose?: () => void
   role?: Roles

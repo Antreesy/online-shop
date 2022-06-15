@@ -1,13 +1,12 @@
-import { useRef, useState, useEffect } from "react"
-
-import { Swiper as SwiperObj, Navigation, Autoplay } from "swiper"
-import { Swiper, SwiperSlide } from "swiper/react"
-import "swiper/css"
-import "swiper/css/navigation"
-
 import cn from "classnames"
 
+import { Navigation, Autoplay } from "swiper"
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react"
+
 import { Icon } from "UI"
+
+import "swiper/css"
+import "swiper/css/navigation"
 
 import s from "./carousel.module.scss"
 
@@ -16,23 +15,33 @@ interface CarouselProps {
   autoplayDelay?: number
 }
 
+const SlidePrevButton = () => {
+  const swiper = useSwiper()
+
+  return (
+    <button
+      className={cn(s.swiperBtn, s.prev)}
+      onClick={() => swiper.slidePrev()}
+    >
+      <Icon type="arrow_left" />
+    </button>
+  )
+}
+
+const SlideNextButton = () => {
+  const swiper = useSwiper()
+
+  return (
+    <button
+      className={cn(s.swiperBtn, s.next)}
+      onClick={() => swiper.slideNext()}
+    >
+      <Icon type="arrow_right" />
+    </button>
+  )
+}
+
 const Carousel: React.FC<CarouselProps> = ({ items, autoplayDelay }) => {
-  const [swiper, setSwiper] = useState<SwiperObj>()
-  const prevRef = useRef() as React.MutableRefObject<HTMLButtonElement>
-  const nextRef = useRef() as React.MutableRefObject<HTMLButtonElement>
-
-  useEffect(() => {
-    if (swiper) {
-      swiper.navigation.prevEl = prevRef.current
-      swiper.navigation.nextEl = nextRef.current
-      swiper.navigation.init()
-      swiper.navigation.update()
-    }
-  }, [swiper])
-
-  const leftButtonStyles = cn(s.swiperBtn, s.prev)
-  const rightButtonStyles = cn(s.swiperBtn, s.next)
-
   return (
     <>
       {items.length !== 0 ? (
@@ -52,22 +61,13 @@ const Carousel: React.FC<CarouselProps> = ({ items, autoplayDelay }) => {
               : false
           }
           loop={true}
-          navigation={{
-            nextEl: nextRef.current,
-            prevEl: prevRef.current,
-          }}
-          onSwiper={setSwiper}
           className={s.flex}
         >
-          <button className={leftButtonStyles} ref={prevRef}>
-            <Icon type="arrow_left" />
-          </button>
-          <button className={rightButtonStyles} ref={nextRef}>
-            <Icon type="arrow_right" />
-          </button>
+          <SlidePrevButton />
           {items.map((item) => (
             <SwiperSlide key={Math.random()}>{item}</SwiperSlide>
           ))}
+          <SlideNextButton />
         </Swiper>
       ) : (
         <div className={s.flex}>

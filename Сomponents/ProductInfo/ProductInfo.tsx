@@ -1,5 +1,7 @@
 import { ColorPicker, PhotoSlider, SizePicker } from "Сomponents"
-import { Button, Icon, Price, PriceProps } from "UI"
+import { Button, Icon, Price } from "UI"
+
+import { PriceProps } from "shared/interfaces/orderProps"
 import { productInfo } from "shared/constants/productInfo"
 import { colors } from "shared/constants/colors"
 import productImage from "public/assets/img/product-img.png"

@@ -27,8 +27,6 @@ interface MyAppProps extends AppProps {
 const clientSideEmotionCache = createEmotionCache()
 const lightTheme = createTheme(lightThemeOptions)
 
-
-
 const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
 

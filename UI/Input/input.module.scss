@@ -173,6 +173,31 @@
   }
 }
 
+.gray_outline {
+  height: 100%;
+  font-family: inherit;
+  font-size: 15px;
+
+  .inputWrapper {
+    height: 100%;
+  }
+
+  .label {
+    color: $color-purple;
+    font-weight: $fw-bold;
+    margin-bottom: 5px;
+  }
+
+  .input {
+    border: 2px solid $color-grey-de;
+    border-radius: 5px;
+    fieldset {
+      border: none;
+      outline: none;
+    }
+  }
+}
+
 .error {
   border: 2px solid $color-red;
 }

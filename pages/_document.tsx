@@ -65,8 +65,8 @@ MyDocument.getInitialProps = async (ctx) => {
   ctx.renderPage = () =>
     originalRenderPage({
       enhanceApp: (App: any) => (props) =>
-      <App emotionCache={cache} {...props} />,
-    });
+        <App emotionCache={cache} {...props} />,
+    })
 
   const initialProps = await Document.getInitialProps(ctx)
   // This is important. It prevents emotion to render invalid HTML.

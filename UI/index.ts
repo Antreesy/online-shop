@@ -42,12 +42,12 @@ export {
   ModalWindow,
   Pagination,
   Price,
+  ProgressBar,
   RadioGroup,
   Range,
   Select,
   Slider,
   SocialIcon,
   Tabs,
-  ProgressBar,
   CustomTooltip,
 }
