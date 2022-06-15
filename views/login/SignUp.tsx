@@ -65,7 +65,7 @@ const SignUp = () => {
           Sign In
         </Button>
       </form>
-      
+
       <div className={s.form_footer}>
         <Link href="#">
           <a>Not Registered Yet ? Sign Up</a>
