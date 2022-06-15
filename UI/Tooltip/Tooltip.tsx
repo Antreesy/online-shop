@@ -1,9 +1,7 @@
 import React from "react"
-import { styled, withStyles } from "@mui/material/styles"
-import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip"
+import Tooltip from "@mui/material/Tooltip"
 import s from "./tooltip.module.scss"
 import CustomButton from "UI/Button/Button"
-import classNames from "classnames"
 
 interface CustomTooltipProps {
   text: string
@@ -45,25 +43,23 @@ const InnerContent = (text: string) => {
   )
 }
 
-const CustomWidthTooltip = styled(({ className, ...props }: TooltipProps) => (
-  <Tooltip {...props} classes={{ popper: className }} arrow />
-))({
-  [`& .${tooltipClasses.tooltip}`]: {
-    color: "#000",
-    maxWidth: 500,
-    borderRadius: 7,
-    border: "solid 2px #8100ef",
-    background: "#fff",
-  },
-})
+const cusctomClassTooltip = {
+  tooltip: s.tooltip,
+  arrow: s.arrow,
+}
 
 const CustomTooltip: React.FC<CustomTooltipProps> = (props) => {
   const { text, children, position } = props
 
   return (
-    <CustomWidthTooltip title={InnerContent(text)} placement={position}>
+    <Tooltip
+      arrow
+      classes={cusctomClassTooltip}
+      title={InnerContent(text)}
+      placement={position}
+    >
       <div>{children}</div>
-    </CustomWidthTooltip>
+    </Tooltip>
   )
 }
 

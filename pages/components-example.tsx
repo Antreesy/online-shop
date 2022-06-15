@@ -25,7 +25,7 @@ import {
   Icon,
   SocialIcon,
   ProgressBar,
-  CustomTooltip,
+  Tooltip,
 } from "UI"
 
 import {
@@ -162,9 +162,9 @@ const Home: NextPage = () => {
         <Chart />
         <SectionHeader className={s.title} title={"Components page"} />
         <h2>Tooltip</h2>
-        <CustomTooltip text={longText}>
+        <Tooltip text={longText}>
           <div>Lorem ipsum dolor sit.</div>
-        </CustomTooltip>
+        </Tooltip>
         <Tabs
           className={s.example_tabs}
           labels={[

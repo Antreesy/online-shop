@@ -34,4 +34,14 @@
     width: 82px;
   }
 }
+.tooltip {
+  color: $color-black;
+  max-width: 500;
+  border-radius: 7px;
+  border: 2px solid $color-purple;
+  background-color: $color-white;
+}
 
+.arrow {
+  color: $color-purple;
+}

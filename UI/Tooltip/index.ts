@@ -1,3 +1,3 @@
-import CustomTooltip from "./Tooltip";
+import Tooltip from "./Tooltip"
 
-export {CustomTooltip}
+export {Tooltip}
