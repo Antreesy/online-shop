@@ -4,13 +4,22 @@
   width: 100%;
   height: 500px;
   padding: 50px 72px 25px;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
-  color: #fff;
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
   overflow: hidden;
+
+  &.noneGradientBg {
+    background-image: linear-gradient(none);
+    color: black;
+    background-color: #F4F4F4;
+  }
+  &.blackGradientBg{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+    color: #fff;
+  }
+
 
   @include tablet {
     padding: 50px 30px 25px;
@@ -130,7 +139,9 @@
   border: none;
   outline: none;
   background-color: transparent;
-  color: #fff;
+  
+  &.noneGradientBg{color: #000;}
+  &.blackGradientBg{color: #fff;}
 }
 
 .icon {
@@ -148,7 +159,7 @@
 .editButton {
   border: none;
   display: inline-block;
-  color: #fff;
+  color: $color-purple;
   background: none;
   box-shadow: none;
 
@@ -156,6 +167,7 @@
     background: transparent;
   }
 }
+
 
 .area {
   display: flex;
@@ -167,7 +179,7 @@
   border: 1px solid gray;
   background: transparent;
   border-radius: 5px;
-  color: #fff;
+  color: $color-purple;
 }
 
 .addImageButton {

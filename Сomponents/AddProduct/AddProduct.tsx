@@ -15,7 +15,6 @@ interface AddProductInfluencerProps {
 
 const AddProductInfluencer: React.FC<AddProductInfluencerProps> = (props) => {
   const { products } = props
-  console.log(productItems)
   return (
     <>
       <div className={s.addProduct_main}>
@@ -27,9 +26,10 @@ const AddProductInfluencer: React.FC<AddProductInfluencerProps> = (props) => {
           }
           link={"@tuanaycl"}
           isEditable={true}
+          gradientBg="none"
         />
       </div>
-      `
+
       {!products ? (
         <div className={s.addProduct_noProducts}>
           <div className={s.addProduct_noProducts_title}>
@@ -42,11 +42,16 @@ const AddProductInfluencer: React.FC<AddProductInfluencerProps> = (props) => {
           </div>
         </div>
       ) : null}
-      `
+
       <div className={s.addProduct_addbutton}>
-        <AddButton title="Add Product" bgColor="grey" color="secondary" />
+        <AddButton
+          title="Add Product"
+          bgColor="white"
+          color="secondary"
+          large="true"
+        />
       </div>
-      `
+
       {products ? (
         <>
           <div className={s.addProduct_productList}>
@@ -54,7 +59,6 @@ const AddProductInfluencer: React.FC<AddProductInfluencerProps> = (props) => {
           </div>
         </>
       ) : null}
-      `
     </>
   )
 }
