@@ -1,90 +1,167 @@
 @import "/styles/style.scss";
 
-.landingPage {
-  main {
-    .blank {
-      height: 30px;
-      width: 100vw;
-    }
-    .background {
-      background-image: url("../../public/assets/img/background-landing-page.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      width: 100vw;
-      height: 110vh;
+.hero {
+  width: 100vw;
+  min-height: 100vh;
+  margin-top: calc(-1 * $header-desktop-height);
+  padding-top: $header-desktop-height;
 
-      .image {
-        > div {
-          width: 80vw;
-        }
+  background-image: url("../../public/assets/img/background-landing-page.png");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
 
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 350px;
-        > div {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          button {
-            padding: 10px 60px;
-          }
-        }
-      }
-      p {
-        text-align: right;
-        color: $color-white;
-        position: relative;
-        width: 400px;
-        float: right;
-        top: -80px;
-        h3 {
-          color: $color-purple;
-        }
-      }
-    }
+.content {
+  position: relative;
+  padding: 330px 270px 100px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35vw;
+    height: 5px;
+    background: $main-gradient-revert;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35vw;
+    height: 5px;
+    background: $main-gradient;
   }
 }
 
-@media all and (max-width: 1000px) {
-  .landingPage {
-    main {
-      .blank {
-        height: 20px;
-      }
-      .background {
-        .image {
-          position: absolute;
-          top: 450px;
-        }
-      }
-    }
+.content_image {
+  width: 80vw;
+}
+
+.content_wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 10vw;
+
+  & > :first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 20vw;
+  }
+
+  & > :last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 20vw;
   }
 }
 
-@media all and (max-width: 600px) {
-  .landingPage {
-    main {
-      .background {
-        background-image: url("../../public/assets/img/background-landing-page.png");
-        .image {
-          position: absolute;
-          top: 500px;
-          p {
-            text-align: center;
-            color: $color-white;
-            padding-top: 100px;
-            width: 400px;
+.info_title {
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-weight: $fw-regular;
+  line-height: 1;
+  color: $color-white;
+}
 
-            h3 {
-              color: $color-purple;
-            }
-          }
-        }
-      }
-    }
+.info_number {
+  font-size: 91px;
+  line-height: 1;
+  font-weight: $fw-bold;
+  color: $color-grey-4b;
+}
+
+.content_button {
+  align-self: flex-end;
+}
+
+.descr_caption {
+  font-size: 20px;
+  font-weight: $fw-bold;
+  line-height: 1.2;
+  color: $color-purple;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.descr_text {
+  font-size: 13px;
+  font-weight: $fw-regular;
+  line-height: 1.5;
+  color: $color-grey-82;
+  text-align: right;
+}
+
+.container {
+  position: relative;
+  padding-top: 160px;
+  background-color: $color-grey-ed;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 238px;
+    height: 235px;
+    border-bottom-left-radius: 240px;
+    background: $main-gradient-revert;
   }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -260px;
+    right: -260px;
+    width: 520px;
+    height: 520px;
+    border-radius: 260px;
+    border: 3px solid $color-purple;
+  }
+}
+
+.text_content {
+  padding-left: 135px;
+  margin-bottom: 110px;
+
+  & > .heading {
+    margin-bottom: 30px;
+    font-size: 38px;
+    font-weight: $fw-medium;
+  }
+
+  & > .description {
+    max-width: 1150px;
+    font-size: 15px;
+    line-height: 1.47;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
+}
+
+.influencers_carousel {
+  margin-bottom: 70px;
+
+  & > :first-child {
+    margin-bottom: 65px;
+  }
+}
+
+.influencers_card {
+  width: 380px;
+  height: 465px;
+}
+
+.button_more {
+  width: 249px;
+  height: 55px;
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: $fw-regular;
 }

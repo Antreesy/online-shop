@@ -7,4 +7,5 @@ export const basePaths = [
   "payment",
   "brands",
   "brand-landing",
+  "landing-page"
 ]
