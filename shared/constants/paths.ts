@@ -1,4 +1,4 @@
-export const profilePaths = ["faq", "account"]
+export const profilePaths = ["account", "tables"]
 export const lightPaths = ["login", "register"]
 export const basePaths = [
   "order-success",
@@ -7,6 +7,7 @@ export const basePaths = [
   "payment",
   "order-info",
   "product-info",
+  "cart",
   "brands",
   "brand-landing",
 ]
