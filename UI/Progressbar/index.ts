@@ -1,3 +1,3 @@
-import ProgressBar from "./Progressbar"
+import ProgressBar from "./ProgressBar"
 
 export { ProgressBar }

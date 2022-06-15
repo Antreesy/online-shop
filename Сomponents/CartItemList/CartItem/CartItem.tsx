@@ -16,8 +16,9 @@ export interface CartItemProps {
 }
 
 export const CartItem: React.FC<CartItemProps> = (props) => {
-  const { title, subtitle, imageSrc, description, price, oldPrice, amount } = props
-  const [currentAmount, setCurrentAmount] =  useState<number>(amount)
+  const { title, subtitle, imageSrc, description, price, oldPrice, amount } =
+    props
+  const [currentAmount, setCurrentAmount] = useState<number>(amount)
   const total = price * currentAmount
 
   return (

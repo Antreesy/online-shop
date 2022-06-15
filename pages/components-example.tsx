@@ -50,7 +50,6 @@ import productImage from "public/assets/img/product-img.png"
 
 import s from "styles/pages/ComponentsExample.module.scss"
 
-
 const longText = `
 Switch an order to preparing status
 Do you approve your request?
@@ -67,7 +66,6 @@ const SampleCard = () => (
 )
 
 const Home: NextPage = () => {
-
   return (
     <>
       <Head>
@@ -161,7 +159,7 @@ const Home: NextPage = () => {
         <Chart />
         <SectionHeader className={s.title} title={"Components page"} />
         <h2>Tooltip</h2>
-        <Tooltip text={longText}>
+        <Tooltip content={longText}>
           <div>Lorem ipsum dolor sit.</div>
         </Tooltip>
         <Tabs
