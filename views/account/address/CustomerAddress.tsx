@@ -9,7 +9,6 @@ import { AddressProps } from "shared/interfaces/addressProps"
 
 import s from "styles/pages/account/address.module.scss"
 
-
 export const CustomerAddress: React.FC<AddressProps> = (props) => {
   const { t } = useTranslation("address")
   const { role } = props
