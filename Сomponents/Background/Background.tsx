@@ -7,7 +7,7 @@ import s from "./Background.module.scss"
 import { style } from "@mui/system"
 
 interface BackgroundProps {
-  image: ImageProps["src"]
+  image?: ImageProps["src"]
   title?: string
   description?: string
   link?: string
@@ -36,7 +36,9 @@ const Background: React.FC<BackgroundProps> = (props) => {
   return (
     <div
       className={addButtonClass}
-      style={{ backgroundImage: `url(${image})` }}
+      style={{
+        backgroundImage: `url(${image} linear-gradient(to bottom, rgba(0, 0, 0, 0), #000))`,
+      }}
     >
       {isEditable && (
         <div className={s.addImageButton}>
@@ -50,7 +52,7 @@ const Background: React.FC<BackgroundProps> = (props) => {
       )}
 
       <div className={s.image}>
-        <Image src={image} className={s.bg} />
+        {image && <Image src={image} className={s.bg} />}
       </div>
       <div className={s.btn}>
         <Button className={s.bgButton} variant="outlined">

@@ -11,7 +11,7 @@
   overflow: hidden;
 
   &.noneGradientBg {
-    background-image: linear-gradient(none);
+    background-image: none;
     color: black;
     background-color: #F4F4F4;
   }
@@ -61,8 +61,10 @@
 
 .bgButton {
   display: inline-block;
+  opacity: 0;
   color: #fff;
   border-color: #fff;
+  cursor: default;
 }
 
 .btn {

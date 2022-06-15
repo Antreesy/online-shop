@@ -1,6 +1,5 @@
 import React from "react"
 import s from "./AddProduct.module.scss"
-import pic from "public/assets/img/Add-product-bg.jpg"
 import { Background } from "Сomponents/Background"
 import { AddButton } from "UI"
 import { ProductItemList } from "../ProductItemList"
@@ -19,7 +18,6 @@ const AddProductInfluencer: React.FC<AddProductInfluencerProps> = (props) => {
     <>
       <div className={s.addProduct_main}>
         <Background
-          image={pic}
           title={"Hello"}
           description={
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed pretium enim. Cras faucibus velit risus, nec pharetra ex scelerisque non. Aenean quis "
@@ -48,7 +46,7 @@ const AddProductInfluencer: React.FC<AddProductInfluencerProps> = (props) => {
           title="Add Product"
           bgColor="white"
           color="secondary"
-          large="true"
+          large={true}
         />
       </div>
 
