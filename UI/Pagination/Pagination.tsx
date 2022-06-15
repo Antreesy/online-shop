@@ -10,20 +10,19 @@ interface PaginationProps {
   className?: string
   pagesCount: number
   isShort?: boolean
-  onChange?: () => void
-  value: number
+  onChange?: (page: number) => void
+  value?: number
 }
 
 const CustomPagination: React.FC<PaginationProps> = (props) => {
-  const { className, pagesCount, isShort, onChange, value } = props
+  const { className, pagesCount, isShort, onChange, value = 1 } = props
   const router = useRouter()
 
   const [page, setPage] = useState<number>(value)
 
   useEffect(() => {
-    setPage(value)
-    router.push(`${router.pathname}/?page=${value}`)
-  }, [value])
+    router.push(`${router.pathname}/?page=${page}`)
+  }, [page])
 
   const paginationClass = cn(s.pagination_wrapper, className)
 
@@ -36,10 +35,6 @@ const CustomPagination: React.FC<PaginationProps> = (props) => {
     setPage(page)
     onChange?.(page)
   }
-
-  useEffect(() => {
-    router.push(`${router.pathname}/?page=${page}`)
-  }, [page])
 
   return (
     <div className={paginationClass}>

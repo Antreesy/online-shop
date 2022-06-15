@@ -1,29 +1,34 @@
 @import "/styles/style.scss";
 
-
 .table {
-
   &__header {
     font-weight: 500;
   }
 
-  &__control{
-
+  &__control {
     font-size: 17px;
     font-weight: 500;
     line-height: 1.18;
     color: #000;
 
-
     display: flex;
     margin-left: auto;
     align-items: center;
     justify-content: flex-end;
+    gap: 50px;
+
+    @include mobile-tablet {
+      justify-content: flex-start;
+      gap: 15px;
+      font-size: 12px;
+    }
   }
 }
 
 .arrows__container {
   display: inline-block;
+  flex-shrink: 0;
+  margin-right: 10px;
 }
 
 .arrows {
@@ -51,20 +56,20 @@
     border-right: 0 !important;
   }
 
-  &_header{
+  &_header {
     display: flex;
     align-items: center;
     font-weight: 500;
+    white-space: nowrap;
   }
 
-  .center{
+  .center {
     justify-content: center;
   }
 
-  @include mobile{
+  @include mobile-tablet {
     font-size: 12px !important;
   }
-
 }
 
 .empty {
@@ -96,4 +101,77 @@
   border-radius: 50%;
   background-color: #8100ef;
   font-size: 52px;
+}
+
+.page_select {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  &_caption {
+    font-size: 17px;
+    font-weight: $fw-medium;
+    line-height: 20px;
+
+    @include mobile-tablet {
+      display: none;
+    }
+  }
+
+  &_control {
+    height: 53px;
+
+    & > div > div {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      @include mobile-tablet {
+        padding: 6px;
+      }
+    }
+  }
+
+  @include mobile-tablet {
+    order: -1;
+  }
+}
+
+.date_select,
+.sort_select {
+  height: 53px;
+
+  & > div > div {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    box-shadow: none;
+
+    @include mobile-tablet {
+      padding: 6px;
+    }
+  }
+}
+
+.scrollbar {
+  & > :global(.simplebar-horizontal) {
+    background-color: $color-grey-f4;
+    border-radius: 5px;
+
+    & > div::before {
+      opacity: 1;
+      background: $color-purple;
+    }
+  }
+}
+
+.pagination_desktop {
+  @include mobile-tablet {
+    display: none;
+  }
+}
+
+.pagination_mobile {
+  margin-left: auto;
+  padding-top: 10px;
+  @include laptop-desktop {
+    display: none;
+  }
 }

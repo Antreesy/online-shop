@@ -68,26 +68,17 @@ const Tables = () => {
     ],
   ]
 
-  const headers4 = [
-    { name: "Order No", isSort: false, align: "center" },
-    { name: "Order Date", isSort: false },
-    { name: "Name", isSort: false },
-  ]
-
   return (
-    <div style={{ padding: "50px" }}>
+    <div style={{ padding: "15px" }}>
       <div style={{ marginBottom: "50px" }}>
         <CustomTable headers={headers1} innerRows={innerRows1} />
       </div>
-      {/*<div style={{ width: "1279px", marginBottom: "50px" }}>*/}
-      {/*  <CustomTable headers={headers2} innerRows={innerRows2} />*/}
-      {/*</div>*/}
-      {/*<div style={{ width: "1279px", marginBottom: "50px" }}>*/}
-      {/*  <CustomTable headers={headers3} innerRows={innerRows3} />*/}
-      {/*</div>*/}
-      {/*<div style={{ marginBottom: "50px" }}>*/}
-      {/*  <CustomTable headers={headers4} />*/}
-      {/*</div>*/}
+      <div style={{ maxWidth: "1279px", marginBottom: "50px" }}>
+        <CustomTable headers={headers2} innerRows={innerRows2} />
+      </div>
+      <div style={{ maxWidth: "1279px", marginBottom: "50px" }}>
+        <CustomTable headers={headers3} innerRows={innerRows3} />
+      </div>
     </div>
   )
 }

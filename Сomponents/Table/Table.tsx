@@ -1,95 +1,87 @@
-import * as React from "react"
-import Table from "@mui/material/Table"
-import TableBody from "@mui/material/TableBody"
-import TableCell from "@mui/material/TableCell"
-import TableContainer from "@mui/material/TableContainer"
-import TableHead from "@mui/material/TableHead"
-import TableRow from "@mui/material/TableRow"
-import Paper from "@mui/material/Paper"
-import s from "./Table.module.scss"
-import { Icon, Pagination, Select } from "../../UI"
-import arrow from "../../public/assets/icons/arrow_table.svg"
-import Image from "next/image"
+import React, { useState, useEffect } from "react"
 import cn from "classnames"
+
+import SimpleBar from "simplebar-react"
+import Image from "next/image"
+import { Table, TableBody, TableCell, TableHead, TableRow } from "@mui/material"
+import { Icon, Pagination, Select } from "../../UI"
+
+import arrow from "../../public/assets/icons/arrow_table.svg"
+
+import s from "./Table.module.scss"
 
 interface HeaderItem {
   name: string
   isSort: boolean
-  align?: "center"
+  alignCenter?: boolean
 }
 
-interface innerRow {
-  value: string | number | React.ReactNode
-  align?: "center"
+type InnerCell = {
+  value: React.ReactNode
+  alignCenter?: boolean
 }
+
+type InnerRow = InnerCell[]
 
 interface TableProps {
   headers: HeaderItem[]
-  innerRows: Array<Array<innerRow>>
+  innerRows: InnerRow[]
 }
 
 export const CustomTable: React.FC<TableProps> = ({
   headers,
   innerRows = [],
 }) => {
-  const [rows, setRows] = React.useState(innerRows)
-  const [rowsPerPage, setRowsPerPage] = React.useState(3)
-  const [page, setPage] = React.useState(1)
-  const pages = Math.ceil(rows.length / rowsPerPage)
+  const [rows, setRows] = useState(innerRows)
+  const [rowsPerPage, setRowsPerPage] = useState<string | number>(3)
+  const [page, setPage] = useState(1)
+  const pages = Math.ceil(rows.length / Number(rowsPerPage))
 
   function sortCourses(position: number, ascendingSortOrder = true) {
     const sortedData = [...rows]
 
-    const compareNum = (
-      firstValue: Array<Array<innerRow>>,
-      secondValue: Array<Array<innerRow>>,
-    ) => {
-      if (
-        ascendingSortOrder
-          ? firstValue[position].value > secondValue[position].value
-          : firstValue[position].value < secondValue[position].value
-      ) {
-        return 1
-      } else if (
-        ascendingSortOrder
-          ? secondValue[position].value > firstValue[position].value
-          : secondValue[position].value < firstValue[position].value
-      ) {
-        return -1
-      } else {
-        return 0
-      }
+    const compareNum = (firstValue: InnerRow, secondValue: InnerRow) => {
+      return ascendingSortOrder
+        ? Number(firstValue[position].value) -
+            Number(secondValue[position].value)
+        : Number(firstValue[position].value) -
+            Number(secondValue[position].value)
     }
-
     sortedData.sort(compareNum)
     setPage(1)
-    setRows(sortedData)
+    setRows(
+      rows[0][position] === sortedData[0][position]
+        ? sortedData.reverse()
+        : sortedData,
+    )
   }
 
   const splitRows = rows.slice(
-    (page - 1) * rowsPerPage,
-    (page - 1) * rowsPerPage + rowsPerPage,
+    (page - 1) * Number(rowsPerPage),
+    (page - 1) * Number(rowsPerPage) + Number(rowsPerPage),
   )
 
-  React.useEffect(() => {
+  useEffect(() => {
     setPage(1)
-    console.log("Chaned")
   }, [rowsPerPage])
 
-  console.log("page", page)
   return (
     <div>
       <div className={s.table__control}>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "20px",
-            marginRight: "50px",
-          }}
-        >
-          <span>On Every Page</span>
+        <Select
+          className={s.date_select}
+          values={[]}
+          placeholder="Order Date"
+        />
+        <Select
+          className={s.sort_select}
+          values={[]}
+          placeholder="Old to New"
+        />
+        <div className={s.page_select}>
+          <span className={s.page_select_caption}>On Every Page</span>
           <Select
+            className={s.page_select_control}
             initValue={rowsPerPage}
             onChange={setRowsPerPage}
             values={[
@@ -100,15 +92,24 @@ export const CustomTable: React.FC<TableProps> = ({
             ]}
           />
         </div>
-        <Pagination pagesCount={pages} value={page} onChange={setPage} />
+        <Pagination
+          className={s.pagination_desktop}
+          pagesCount={pages}
+          value={page}
+          onChange={setPage}
+        />
       </div>
-      <TableContainer component={Paper}>
+      <SimpleBar className={s.scrollbar} autoHide={false}>
         <Table className={s.table} aria-label="simple table">
           <TableHead className={s.table__header}>
             <TableRow>
               {headers.map((el, index) => (
                 <TableCell className={s.cell}>
-                  <div className={cn(s.cell_header, el.align ? s.center : "")}>
+                  <div
+                    className={cn(s.cell_header, {
+                      [s.center]: el.alignCenter,
+                    })}
+                  >
                     {el.name}{" "}
                     {el.isSort && (
                       <div className={s.arrows__container}>
@@ -134,6 +135,7 @@ export const CustomTable: React.FC<TableProps> = ({
               ))}
             </TableRow>
           </TableHead>
+
           {!!rows.length && (
             <TableBody>
               {splitRows.map((row) => (
@@ -142,7 +144,7 @@ export const CustomTable: React.FC<TableProps> = ({
                 >
                   {row.map((el) => (
                     <TableCell
-                      align={el.align ? "center" : ""}
+                      align={el.alignCenter ? "center" : undefined}
                       className={s.cell}
                     >
                       {el.value}
@@ -163,7 +165,13 @@ export const CustomTable: React.FC<TableProps> = ({
             </div>
           </div>
         )}
-      </TableContainer>
+      </SimpleBar>
+      <Pagination
+        className={s.pagination_mobile}
+        pagesCount={pages}
+        value={page}
+        onChange={setPage}
+      />
     </div>
   )
 }
