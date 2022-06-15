@@ -12,10 +12,10 @@ import { OrderInfoItems } from "shared/constants/orderinfoitems"
 
 export interface customInfo {
   customerInfo: {
-    surname: string
-    Address: string
-    Phone: string
-    Email: string
+    customerSurname: string
+    customerAddress: string
+    customerPhone: string
+    customerEmail: string
     name: string
     address: string
     phone: string
@@ -24,9 +24,9 @@ export interface customInfo {
 }
 export interface orderInfo {
   orderInfo: {
-    OrderSurname: string
-    OrderDate: string
-    OrderDeliveryMethod: string
+    orderSurname: string
+    orderDate: string
+    orderDeliveryMethod: string
     name: string
     date: string
     method: string
@@ -47,10 +47,10 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
           label.customerInfo.map((item) => {
             return (
               <>
-                <p>{item.surname}</p>
-                <p>{item.Address}</p>
-                <p>{item.Phone}</p>
-                <p>{item.Email}</p>
+                <p>{item.customerSurname}</p>
+                <p>{item.customerAddress}</p>
+                <p>{item.customerPhone}</p>
+                <p>{item.customerEmail}</p>
               </>
             )
           }),
@@ -87,9 +87,9 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
           label.orderInfo.map((item) => {
             return (
               <>
-                <p>{item.OrderSurname}</p>
-                <p>{item.OrderDate}</p>
-                <p>{item.OrderDeliveryMethod}</p>
+                <p>{item.orderSurname}</p>
+                <p>{item.orderDate}</p>
+                <p>{item.orderDeliveryMethod}</p>
               </>
             )
           }),
@@ -124,10 +124,10 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
           label.customerInfo.map((item) => {
             return (
               <>
-                <p>{item.surname}</p>
-                <p>{item.Address}</p>
-                <p>{item.Phone}</p>
-                <p>{item.Email}</p>
+                <p>{item.customerSurname}</p>
+                <p>{item.customerAddress}</p>
+                <p>{item.customerPhone}</p>
+                <p>{item.customerEmail}</p>
               </>
             )
           }),
@@ -231,7 +231,7 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
                               <div className={s.cardItem_text_colon}>
                                 <p>:</p>
                               </div>
-                              <div className={s.spans}>
+                              <div className={s.emptiness}>
                                 <span>1</span>
                               </div>
                             </div>
@@ -242,7 +242,7 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
                               <div className={s.cardItem_text_colon}>
                                 <p>:</p>
                               </div>
-                              <div className={s.spans}>
+                              <div className={s.emptiness}>
                                 <Price
                                   oldPrice={2030}
                                   price={1930}
@@ -252,7 +252,7 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
                             </div>
                           </div>
 
-                          <div className={s.price_2}>
+                          <div>
                             <div className={s.cardItem_text_detail}>
                               <div>
                                 <p>VAT %18</p>
@@ -260,7 +260,7 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
                               <div className={s.cardItem_text_colon}>
                                 <p>:</p>
                               </div>
-                              <div className={s.spans}>
+                              <div className={s.emptiness}>
                                 <span>1</span>
                               </div>
                             </div>
@@ -272,7 +272,7 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
                               <div className={s.cardItem_text_colon}>
                                 <p>:</p>
                               </div>
-                              <div className={s.spans}>
+                              <div className={s.emptiness}>
                                 <Price
                                   oldPrice={2030}
                                   price={1930}

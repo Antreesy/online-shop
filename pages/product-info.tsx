@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { NextPage } from "next"
 import { Breadcrumbs } from "../Сomponents"
 import Head from "next/head"
-import s from "../styles/pages/ProductInfo.module.scss"
+import s from "../styles/pages/orderInfo.module.scss";
 import { Button, Input, Select } from "../UI"
 import Link from "next/link"
 import { countriesForSelect } from "../shared/constants/countries"
@@ -15,7 +15,7 @@ const ProductInfo: NextPage = () => {
         <title>ILONSI SHOP | Order Detail</title>
       </Head>
 
-      <main className={s.mains}>
+      <main className={s.main}>
         <div className={s.breadcrumbs_mobile}>
           <Breadcrumbs />
         </div>
