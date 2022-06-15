@@ -28,10 +28,7 @@ interface TableProps {
   innerRows: InnerRow[]
 }
 
-export const CustomTable: React.FC<TableProps> = ({
-  headers,
-  innerRows = [],
-}) => {
+const CustomTable: React.FC<TableProps> = ({ headers, innerRows = [] }) => {
   const [rows, setRows] = useState(innerRows)
   const [rowsPerPage, setRowsPerPage] = useState<string | number>(3)
   const [page, setPage] = useState(1)
@@ -104,7 +101,7 @@ export const CustomTable: React.FC<TableProps> = ({
           <TableHead className={s.table__header}>
             <TableRow>
               {headers.map((el, index) => (
-                <TableCell className={s.cell}>
+                <TableCell key={index} className={s.cell}>
                   <div
                     className={cn(s.cell_header, {
                       [s.center]: el.alignCenter,
@@ -138,12 +135,14 @@ export const CustomTable: React.FC<TableProps> = ({
 
           {!!rows.length && (
             <TableBody>
-              {splitRows.map((row) => (
+              {splitRows.map((row, index) => (
                 <TableRow
+                  key={index}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  {row.map((el) => (
+                  {row.map((el, index) => (
                     <TableCell
+                      key={index}
                       align={el.alignCenter ? "center" : undefined}
                       className={s.cell}
                     >
@@ -175,3 +174,5 @@ export const CustomTable: React.FC<TableProps> = ({
     </div>
   )
 }
+
+export default CustomTable

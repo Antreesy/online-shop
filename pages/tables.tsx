@@ -1,10 +1,12 @@
-import { CustomTable } from "../Сomponents/Table/Table"
-import Image from "next/image"
-import dress from "../public/assets/img/Knitted_dress.png"
-import { Icon } from "../UI"
-import * as React from "react"
+import { NextPage } from "next"
 
-const Tables = () => {
+import Image from "next/image"
+import { Table } from "Сomponents"
+import { Icon } from "UI"
+
+import dress from "public/assets/img/Knitted_dress.png"
+
+const Tables: NextPage = () => {
   const headers1 = [
     { name: "Category", isSort: false },
     { name: "Net Sales", isSort: true },
@@ -71,13 +73,13 @@ const Tables = () => {
   return (
     <div style={{ padding: "15px" }}>
       <div style={{ marginBottom: "50px" }}>
-        <CustomTable headers={headers1} innerRows={innerRows1} />
+        <Table headers={headers1} innerRows={innerRows1} />
       </div>
       <div style={{ maxWidth: "1279px", marginBottom: "50px" }}>
-        <CustomTable headers={headers2} innerRows={innerRows2} />
+        <Table headers={headers2} innerRows={innerRows2} />
       </div>
       <div style={{ maxWidth: "1279px", marginBottom: "50px" }}>
-        <CustomTable headers={headers3} innerRows={innerRows3} />
+        <Table headers={headers3} innerRows={innerRows3} />
       </div>
     </div>
   )

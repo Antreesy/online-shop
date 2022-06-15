@@ -1,16 +1,14 @@
 @import "/styles/style.scss";
 
 .table {
-  &__header {
-    font-weight: 500;
-  }
+  font-size: 17px;
+  font-weight: $fw-medium;
+  line-height: 1.18;
+
+  // &__header {}
 
   &__control {
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 1.18;
-    color: #000;
-
+    color: $color-black;
     display: flex;
     margin-left: auto;
     align-items: center;
@@ -48,9 +46,9 @@
   vertical-align: center;
 
   font-size: 17px !important;
-  font-weight: normal;
+  font-weight: $fw-regular;
   line-height: 1.18;
-  color: #000;
+  color: $color-black;
 
   &:last-child {
     border-right: 0 !important;
@@ -59,7 +57,7 @@
   &_header {
     display: flex;
     align-items: center;
-    font-weight: 500;
+    font-weight: $fw-medium;
     white-space: nowrap;
   }
 
@@ -79,9 +77,9 @@
   padding: 77px 0 65px;
 
   font-size: 26px;
-  font-weight: 500;
+  font-weight: $fw-medium;
   line-height: 1.19;
-  color: #1e1e1e;
+  color: $color-grey-1e;
 }
 
 .empty__body {
@@ -99,7 +97,7 @@
   height: 146px;
   margin-bottom: 24px;
   border-radius: 50%;
-  background-color: #8100ef;
+  background-color: $color-purple;
   font-size: 52px;
 }
 
