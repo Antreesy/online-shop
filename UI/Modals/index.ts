@@ -1,3 +1,3 @@
-import { MemberAynPopupDesktop } from "./MemberAynıPopupDesktop";
+import { MemberAynPopupDesktop } from "./MemberAynıPopupDesktop/MemberAynıPopupDesktop";
 
 export { MemberAynPopupDesktop };
