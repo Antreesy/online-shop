@@ -1,8 +1,8 @@
-import { NextPage } from "next"
 import { useState } from "react"
-import Head from "next/head"
+import { NextPage } from "next"
 import { useRouter } from "next/router"
 
+import Head from "next/head"
 import { Grid } from "@mui/material"
 import { Background, Breadcrumbs, Toolbar } from "Сomponents"
 import { Card, Pagination, Button } from "UI"
@@ -50,6 +50,7 @@ const brands: NextPage = () => {
 
           <div className={s.mobile_image}>
             <Background
+            className={s.background}
               image={picture_mobile}
               title="Tuana Yücel"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed pretium enim. Cras faucibus velit rise.
@@ -72,7 +73,6 @@ const brands: NextPage = () => {
             <div>Return Your Shop</div>
           </div>
           <div className={s.wrapper_toolbar}>
-
             <Button
               disabled={path === "products"}
               variant="outlined"

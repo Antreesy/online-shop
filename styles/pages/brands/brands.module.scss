@@ -18,7 +18,9 @@
 .mobile_image {
   display: none;
 
-  & > div:nth-child(1) {
+  & .background {
+    display: flex;
+
     & > div:nth-child(3) {
       visibility: hidden;
     }
@@ -35,17 +37,16 @@
         font-size: 12px;
       }
     }
-  }
 
-  & > div > div:nth-child(2) {
-    & > span {
-      width: 100vw !important;
+    & > div:nth-child(2) {
+      & > span {
+        width: 100vw !important;
+      }
     }
-  }
-
-  & img {
-    width: 100vw;
-    object-fit: cover;
+    & img {
+      width: 100vw;
+      object-fit: cover;
+    }
   }
 
   @include mobile {
