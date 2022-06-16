@@ -42,6 +42,8 @@ const Index: NextPage = (props) => {
             <Link href="/some-wrong-link">
               <a className={s.title__link}>404 page</a>
             </Link>
+            <span className={s.title__miss}>Landing page</span>
+            <span className={s.title__miss}>Modals</span>
           </div>
 
           <div className={s.flex_column}>
@@ -50,20 +52,17 @@ const Index: NextPage = (props) => {
             <Link href="/influencers">
               <a className={s.title__link}>Influencers</a>
             </Link>
-            <Link href="/brands">
-              <a className={s.title__link}>Brands List</a>
-            </Link>
-            <Link href="/brands/1">
-              <a className={s.title__link}>Specific Brand</a>
-            </Link>
+            <span className={s.title__miss}>Products List</span>
             <Link href="/products">
               <a className={s.title__link}>Specific Products</a>
             </Link>
             <Link href="/cart">
-              <a className={s.title__link}>Cart</a>
+              <a className={s.title__link}>Order - cart</a>
             </Link>
+            <span className={s.title__miss}>Order - payment</span>
+            <span className={s.title__miss}>Order - address</span>
             <Link href="/order-success">
-              <a className={s.title__link}>Order success page</a>
+              <a className={s.title__link}>Order - success page</a>
             </Link>
           </div>
 
@@ -78,6 +77,15 @@ const Index: NextPage = (props) => {
             <Link href="/influencer-profile">
               <a className={s.title__link}>Influencer profile</a>
             </Link>
+            <Link href="/brands">
+              <a className={s.title__link}>Brands List</a>
+            </Link>
+            <Link href="/brands/1">
+              <a className={s.title__link}>Specific Brand</a>
+            </Link>
+            <span className={s.title__miss}>Specific Brand Product</span>
+            <span className={s.title__miss}>Dashboard (3 screens)</span>
+            <span className={s.title__miss}>Products</span>
           </div>
 
           <div className={s.flex_column}>
@@ -96,6 +104,10 @@ const Index: NextPage = (props) => {
             <Link href="/visual-operations">
               <a className={s.title__link}>Visual operations</a>
             </Link>
+            <span className={s.title__miss}>products - 4 step</span>
+            <span className={s.title__miss}>brand info</span>
+            <span className={s.title__miss}>product detail</span>
+            <span className={s.title__miss}>product list</span>
           </div>
 
           <div className={s.flex_column}>
@@ -124,6 +136,8 @@ const Index: NextPage = (props) => {
             <Link href="/account/payment">
               <a className={s.title__link}>Payment</a>
             </Link>
+            <span className={s.title__miss}>Dashboard (influencer)</span>
+            <span className={s.title__miss}>Profile (brand)</span>
           </div>
         </div>
       </div>
