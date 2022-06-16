@@ -40,11 +40,7 @@ const UniversalNotifications: React.FC = () => {
     <Tabs
       className={s.notification_tabs}
       variant="spaces"
-      labels={[
-        t("unread"),
-        t("read"),
-        t("all"),
-      ]}
+      labels={[t("unread"), t("read"), t("all")]}
       values={[
         <NotificationsList
           key={"Unread Notifications"}

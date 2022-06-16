@@ -4,13 +4,21 @@
   width: 100%;
   height: 500px;
   padding: 50px 72px 25px;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
-  color: #fff;
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
   overflow: hidden;
+
+  &.noneGradientBg {
+    background-image: none;
+    color: black;
+    background-color: #f4f4f4;
+  }
+  &.blackGradientBg {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+    color: #fff;
+  }
 
   @include tablet {
     padding: 50px 30px 25px;
@@ -27,33 +35,20 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
-  min-width: 100%;
+  min-width: 100vw;
   min-height: 100%;
 
-  @include mobile {
-    top: 60%;
-    min-width: none;
-    height: 100% !important;
+  & img {
+    object-fit: cover;
   }
-
-  span {
-    span {
-      img {
-        min-height: 100% !important;
-      }
-    }
-  }
-}
-
-.bg {
-  min-width: 100%;
-  min-height: 100%;
 }
 
 .bgButton {
   display: inline-block;
+  opacity: 0;
   color: #fff;
   border-color: #fff;
+  cursor: default;
 }
 
 .btn {
@@ -130,7 +125,13 @@
   border: none;
   outline: none;
   background-color: transparent;
-  color: #fff;
+
+  &.noneGradientBg {
+    color: #000;
+  }
+  &.blackGradientBg {
+    color: #fff;
+  }
 }
 
 .icon {
@@ -148,7 +149,7 @@
 .editButton {
   border: none;
   display: inline-block;
-  color: #fff;
+  color: $color-purple;
   background: none;
   box-shadow: none;
 
@@ -167,7 +168,7 @@
   border: 1px solid gray;
   background: transparent;
   border-radius: 5px;
-  color: #fff;
+  color: $color-purple;
 }
 
 .addImageButton {
@@ -203,7 +204,7 @@
     margin-bottom: 20px;
     border: none;
     border-radius: 100%;
-    background-color: #fff;
+    background-color: $color-white;
     color: $color-purple;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
   }

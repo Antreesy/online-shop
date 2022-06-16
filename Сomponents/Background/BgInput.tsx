@@ -11,10 +11,12 @@ interface InputProps {
   isEditable?: boolean
   boxClassname?: string
   reverse?: boolean
+  gradientBg?: "none" | "black"
 }
 
 const BgInput: React.FC<InputProps> = (props) => {
-  const { value, className, isEditable, boxClassname, reverse } = props
+  const { value, className, isEditable, boxClassname, reverse, gradientBg } =
+    props
   const [currentValue, setCurrentValue] = useState(value)
   const [isEditing, setIsEditing] = useState(false)
 
@@ -27,11 +29,17 @@ const BgInput: React.FC<InputProps> = (props) => {
       }}
     />
   ) : null
+
+  const colorButtonClass = cn(
+    s.inputEditer,
+    gradientBg === "none" ? s.noneGradientBg : s.blackGradientBg,
+  )
+
   return isEditing ? (
     <div className={cn(s.area, boxClassname)}>
       <input
         type="text"
-        className={cn(className, s.inputEditer)}
+        className={colorButtonClass}
         value={currentValue}
         onChange={(e) => {
           setCurrentValue(e.target.value)

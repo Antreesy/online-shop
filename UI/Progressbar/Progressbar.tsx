@@ -9,10 +9,10 @@ import StepConnector, {
 } from "@mui/material/StepConnector"
 import { StepIconProps } from "@mui/material/StepIcon"
 
-import s from "./progressbar.module.scss"
+import s from "./progressBar.module.scss"
 
 interface ProgressBarProps {
-  steps: string[]
+  steps: number[]
   currentStep: number
 }
 

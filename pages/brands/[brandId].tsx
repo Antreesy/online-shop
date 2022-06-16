@@ -1,6 +1,7 @@
 import { NextPage } from "next"
-import Head from "next/head"
+import { useRouter } from "next/router"
 
+import Head from "next/head"
 import { Grid } from "@mui/material"
 import { Background, Breadcrumbs, ProductItem } from "Сomponents"
 import { Pagination } from "UI"
@@ -9,12 +10,14 @@ import s from "styles/pages/brands/brands.module.scss"
 import picture from "public/assets/img/Prada.png"
 import { brandProductItems } from "shared/constants/brandProductItem"
 
-
 const brand: NextPage = () => {
+  const router = useRouter()
+  const { brandId } = router.query
+
   return (
     <>
       <Head>
-        <title>ILONSI SHOP | Influencers</title>
+        <title>ILONSI SHOP | Brand {brandId}</title>
       </Head>
 
       <main className={s.main}>

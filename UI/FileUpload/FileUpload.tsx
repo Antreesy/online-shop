@@ -12,8 +12,9 @@ interface FileUploadProps {
   minWidth?: number
   minHeight?: number
   filesNumber?: number
-  setValue: (newValue: File) => void
+  setValue?: (newValue: File) => void
   img?: string
+  disabled?: boolean
 }
 
 const FileUpload: FC<FileUploadProps> = (props) => {
@@ -26,7 +27,8 @@ const FileUpload: FC<FileUploadProps> = (props) => {
     minHeight = 1080,
     className,
     setValue,
-    img
+    img,
+    disabled,
   } = props
 
   const [drag, setDrag] = useState(false)
@@ -108,7 +110,7 @@ const FileUpload: FC<FileUploadProps> = (props) => {
     }
     Promise.all(promises).then((res) => {
       if (res.every((res) => res)) {
-        setValue(files[0]) // files correct
+        setValue?.(files[0]) // files correct
       }
     })
   }
@@ -127,6 +129,7 @@ const FileUpload: FC<FileUploadProps> = (props) => {
         type="file"
         hidden
         multiple
+        disabled={disabled}
       />
       <Icon type="upload" />
       {title}
