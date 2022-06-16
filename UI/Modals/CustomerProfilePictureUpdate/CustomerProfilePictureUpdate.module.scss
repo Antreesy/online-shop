@@ -1,0 +1,42 @@
+.flex_box {
+  display: flex;
+  width: 600px;
+
+.container {
+  width: 100%;
+}
+
+  .pictures {
+    width: 175px;
+    height: 215px;
+    background-color: #cccccc;
+    margin-right: 25px;
+  }
+  .tittle {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .content {
+    width: 288px;
+  }
+  .select {
+  > div > input{
+    width: 290px;
+  }
+  .take_photo {
+    margin-top: 15px;
+    u {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+  }
+  .button {
+    float: right;
+    width: 110px;
+    button {
+      width: 85px;
+    }
+  }
+
+}

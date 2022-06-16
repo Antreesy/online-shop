@@ -39,22 +39,23 @@ interface orderInfoProps {
 }
 
 const OrderInfo: NextPage<orderInfoProps> = () => {
-    const CustomerInfo = ({ labels }: { labels: customInfo[] }) => (
+  const CustomerInfo = ({ labels }: { labels: customInfo[] }) => (
     <div className={s.customer_information_detail}>
       <div className={s.information_detail_text}>
-        {labels.length ?
-            labels.map((label) =>
-          label.customerInfo.map((item) => {
-            return (
-              <>
-                <p>{item.surname}</p>
-                <p>{item.Address}</p>
-                <p>{item.Phone}</p>
-                <p>{item.Email}</p>
-              </>
+        {labels.length
+          ? labels.map((label) =>
+              label.customerInfo.map((item) => {
+                return (
+                  <>
+                    <p>{item.surname}</p>
+                    <p>{item.Address}</p>
+                    <p>{item.Phone}</p>
+                    <p>{item.Email}</p>
+                  </>
+                )
+              }),
             )
-          }),
-        ) : null}
+          : null}
       </div>
       <div className={s.information_detail_text_colon}>
         <p className={s.colon}>:</p>
@@ -63,37 +64,39 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
         <p className={s.colon}>:</p>
       </div>
       <div className={s.information_detail_span}>
-        {labels.length ?
-            labels.map((info) =>
-          info.customerInfo.map((arr) => {
-            return (
-              <>
-                <p>{arr.name}</p>
-                <p>{arr.address}</p>
-                <p>{arr.phone}</p>
-                <p>{arr.email}</p>
-              </>
+        {labels.length
+          ? labels.map((info) =>
+              info.customerInfo.map((arr) => {
+                return (
+                  <>
+                    <p>{arr.name}</p>
+                    <p>{arr.address}</p>
+                    <p>{arr.phone}</p>
+                    <p>{arr.email}</p>
+                  </>
+                )
+              }),
             )
-          }),
-        ): null}
+          : null}
       </div>
     </div>
   )
-    const OrderInfo = ({ labels }: { labels: orderInfo[] }) => (
+  const OrderInfo = ({ labels }: { labels: orderInfo[] }) => (
     <div className={s.order_information_detail}>
       <div className={s.order_detail_text}>
-        {labels.length ?
-            labels.map((label) =>
-          label.orderInfo.map((item) => {
-            return (
-              <>
-                <p>{item.OrderSurname}</p>
-                <p>{item.OrderDate}</p>
-                <p>{item.OrderDeliveryMethod}</p>
-              </>
+        {labels.length
+          ? labels.map((label) =>
+              label.orderInfo.map((item) => {
+                return (
+                  <>
+                    <p>{item.OrderSurname}</p>
+                    <p>{item.OrderDate}</p>
+                    <p>{item.OrderDeliveryMethod}</p>
+                  </>
+                )
+              }),
             )
-          }),
-        ): null}
+          : null}
       </div>
       <div className={s.order_detail_text_colon}>
         <p className={s.colon}>:</p>
@@ -101,37 +104,39 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
         <p className={s.colon}>:</p>
       </div>
       <div className={s.order_detail_span}>
-        {labels.length ?
-            labels.map((label) =>
-          label.orderInfo.map((item) => {
-            return (
-              <>
-                <p>{item.name}</p>
-                <p>{item.date}</p>
-                <p>{item.method}</p>
-              </>
+        {labels.length
+          ? labels.map((label) =>
+              label.orderInfo.map((item) => {
+                return (
+                  <>
+                    <p>{item.name}</p>
+                    <p>{item.date}</p>
+                    <p>{item.method}</p>
+                  </>
+                )
+              }),
             )
-          }),
-        ): null}
+          : null}
       </div>
     </div>
   )
-    const InvoiceInfo = ({ labels }: { labels: customInfo[] }) => (
+  const InvoiceInfo = ({ labels }: { labels: customInfo[] }) => (
     <div className={s.invoice_information_detail}>
       <div className={s.invoice_detail_text}>
-        {labels.length ?
-            labels.map((label) =>
-          label.customerInfo.map((item) => {
-            return (
-              <>
-                <p>{item.surname}</p>
-                <p>{item.Address}</p>
-                <p>{item.Phone}</p>
-                <p>{item.Email}</p>
-              </>
+        {labels.length
+          ? labels.map((label) =>
+              label.customerInfo.map((item) => {
+                return (
+                  <>
+                    <p>{item.surname}</p>
+                    <p>{item.Address}</p>
+                    <p>{item.Phone}</p>
+                    <p>{item.Email}</p>
+                  </>
+                )
+              }),
             )
-          }),
-        ): null}
+          : null}
       </div>
       <div className={s.invoice_detail_text_colon}>
         <p className={s.colon}>:</p>
@@ -140,170 +145,159 @@ const OrderInfo: NextPage<orderInfoProps> = () => {
         <p className={s.colon}>:</p>
       </div>
       <div className={s.invoice_detail_span}>
-        {labels.length ?
-            labels.map((info) =>
-          info.customerInfo.map((arr) => {
-            return (
-              <>
-                <p>{arr.name}</p>
-                <p>{arr.address}</p>
-                <p>{arr.phone}</p>
-                <p>{arr.email}</p>
-              </>
+        {labels.length
+          ? labels.map((info) =>
+              info.customerInfo.map((arr) => {
+                return (
+                  <>
+                    <p>{arr.name}</p>
+                    <p>{arr.address}</p>
+                    <p>{arr.phone}</p>
+                    <p>{arr.email}</p>
+                  </>
+                )
+              }),
             )
-          }),
-        ): null}
+          : null}
       </div>
     </div>
   )
-    const [IsActive, setIsActive] = useState<boolean>(false)
+  const [IsActive, setIsActive] = useState<boolean>(false)
   return (
     <>
       <Head>
         <title>ILONSI SHOP | Order Detail</title>
       </Head>
 
-        <div className={s.container}>
-          <div className={s.breadcrumbs_mobile}>
-            <Breadcrumbs />
-          </div>
+      <div className={s.container}>
+        <div className={s.breadcrumbs_mobile}>
+          <Breadcrumbs />
+        </div>
 
-          <div className={s.button__back}>
-            <Button className={s.button_back} iconLeft="arrow_left">
-              <Link href="/">back</Link>
-            </Button>
-          </div>
+        <div className={s.button__back}>
+          <Button className={s.button_back} iconLeft="arrow_left">
+            <Link href="/">back</Link>
+          </Button>
+        </div>
 
-          <div className={s.content}>
-            <div className={s.content_wrapper}>
-             <div className={s.customer_information}>
-                <span>
-                Customer Information
-              </span>
-             </div>
-              <CustomerInfo labels={[OrderInfoItems]} />
-             <div className={s.order_information}>
-               <span>Order Information</span>
-             </div>
-              <OrderInfo labels={[OrderInfoItems]} />
-             <div className={s.invoice_information}>
-               <span>Invoice Information</span>
-             </div>
-              <InvoiceInfo labels={[OrderInfoItems]} />
+        <div className={s.content}>
+          <div className={s.content_wrapper}>
+            <div className={s.customer_information}>
+              <span>Customer Information</span>
             </div>
+            <CustomerInfo labels={[OrderInfoItems]} />
+            <div className={s.order_information}>
+              <span>Order Information</span>
+            </div>
+            <OrderInfo labels={[OrderInfoItems]} />
+            <div className={s.invoice_information}>
+              <span>Invoice Information</span>
+            </div>
+            <InvoiceInfo labels={[OrderInfoItems]} />
+          </div>
 
-            <div className={s.line} />
+          <div className={s.line} />
 
-              {!IsActive ? (
-                <div className={s.card}>
-                    <div className={s.img}>
-                      <Image src={cardImage} layout="fill" />
+          {!IsActive ? (
+            <div className={s.card}>
+              <div className={s.img}>
+                <Image src={cardImage} layout="fill" />
+              </div>
+              <div className={s.cardItem}>
+                <div className={s.cardItemW}>
+                  <div>
+                    <div>
+                      <p className={s.cardItem_text}>Prada</p>
                     </div>
-                    <div className={s.cardItem}>
-                      <div className={s.cardItemW}>
+                    <div
+                      className={s.button_cancel}
+                      onClick={() => setIsActive(!IsActive)}
+                    >
+                      <div>
+                        <Button
+                          className={s.button_clear}
+                          icon
+                          iconLeft="close_cross"
+                          onClick={() => setIsActive(!IsActive)}
+                        />
+                      </div>
+                      <p>cancel</p>
+                    </div>
+                  </div>
+                  <p>Green zero sleeve women’s dress</p>
+
+                  <div className={s.cardItemPrice}>
+                    <div>
+                      <div className={s.cardItem_text_detail}>
                         <div>
-                          <div>
-                            <p className={s.cardItem_text}>Prada</p>
-                          </div>
-                          <div
-                              className={s.button_cancel}
-                              onClick={() => setIsActive(!IsActive)}
-                          >
-                            <div>
-                              <Button
-                                  className={s.button_clear}
-                                  icon
-                                  iconLeft="close_cross"
-                                  onClick={() => setIsActive(!IsActive)}
-                              />
-                            </div>
-                            <p>cancel</p>
-                          </div>
+                          <p>Number</p>
                         </div>
-                        <p>Green zero sleeve women’s dress</p>
-
-                        <div className={s.cardItemPrice}>
-                          <div>
-                            <div className={s.cardItem_text_detail}>
-                              <div>
-                                <p>Number</p>
-                              </div>
-                              <div className={s.cardItem_text_colon}>
-                                <p>:</p>
-                              </div>
-                              <div className={s.spans}>
-                                <span>1</span>
-                              </div>
-                            </div>
-                            <div className={s.cardItem_text_details}>
-                              <div>
-                                <p>Net Price</p>
-                              </div>
-                              <div className={s.cardItem_text_colon}>
-                                <p>:</p>
-                              </div>
-                              <div className={s.spans}>
-                                <Price
-                                  oldPrice={2030}
-                                  price={1930}
-                                  type="order"
-                                />
-                              </div>
-                            </div>
-                          </div>
-
-                          <div className={s.price_2}>
-                            <div className={s.cardItem_text_detail}>
-                              <div>
-                                <p>VAT %18</p>
-                              </div>
-                              <div className={s.cardItem_text_colon}>
-                                <p>:</p>
-                              </div>
-                              <div className={s.spans}>
-                                <span>1</span>
-                              </div>
-                            </div>
-
-                            <div className={s.cardItem_text_details}>
-                              <div>
-                                <p className={s.purple}>TOTAL</p>
-                              </div>
-                              <div className={s.cardItem_text_colon}>
-                                <p>:</p>
-                              </div>
-                              <div className={s.spans}>
-                                <Price
-                                  oldPrice={2030}
-                                  price={1930}
-                                  type="cart"
-                                />
-                              </div>
-                            </div>
-                          </div>
+                        <div className={s.cardItem_text_colon}>
+                          <p>:</p>
+                        </div>
+                        <div className={s.spans}>
+                          <span>1</span>
+                        </div>
+                      </div>
+                      <div className={s.cardItem_text_details}>
+                        <div>
+                          <p>Net Price</p>
+                        </div>
+                        <div className={s.cardItem_text_colon}>
+                          <p>:</p>
+                        </div>
+                        <div className={s.spans}>
+                          <Price oldPrice={2030} price={1930} type="order" />
                         </div>
                       </div>
                     </div>
-                </div>
-              ) : (
-                <div className={s.approve}>
-                  <p>
-                    Are you confirming that your orders are being cancelled?
-                  </p>
 
-                  <div className={s.button}>
-                    <Button className={s.button_purple}>Approve</Button>
-                    <Button
-                      className={s.button_black}
-                      onClick={() => setIsActive(!IsActive)}
-                    >
-                      Reject
-                    </Button>
+                    <div className={s.price_2}>
+                      <div className={s.cardItem_text_detail}>
+                        <div>
+                          <p>VAT %18</p>
+                        </div>
+                        <div className={s.cardItem_text_colon}>
+                          <p>:</p>
+                        </div>
+                        <div className={s.spans}>
+                          <span>1</span>
+                        </div>
+                      </div>
+
+                      <div className={s.cardItem_text_details}>
+                        <div>
+                          <p className={s.purple}>TOTAL</p>
+                        </div>
+                        <div className={s.cardItem_text_colon}>
+                          <p>:</p>
+                        </div>
+                        <div className={s.spans}>
+                          <Price oldPrice={2030} price={1930} type="cart" />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              )}
-          </div>
+              </div>
+            </div>
+          ) : (
+            <div className={s.approve}>
+              <p>Are you confirming that your orders are being cancelled?</p>
+
+              <div className={s.button}>
+                <Button className={s.button_purple}>Approve</Button>
+                <Button
+                  className={s.button_black}
+                  onClick={() => setIsActive(!IsActive)}
+                >
+                  Reject
+                </Button>
+              </div>
+            </div>
+          )}
         </div>
+      </div>
     </>
   )
 }

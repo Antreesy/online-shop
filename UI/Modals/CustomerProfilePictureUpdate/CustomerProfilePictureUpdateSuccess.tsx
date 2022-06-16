@@ -1,17 +1,17 @@
 import React from "react"
-import s from "./memberAynIPopup.module.scss"
+import s from "./CustomerProfilePictureUpdate.module.scss"
 import { Button } from "../../Button"
 
-interface MemberAynPopupDesktopProps {
+interface CustomerProfilePictureUpdateSuccess {
   labels: {
     tittle: string
     content: string
   }
 }
 
-export const MemberAynPopupDesktop: React.FC<MemberAynPopupDesktopProps> = ({
-  labels,
-}) => {
+export const CustomerProfilePictureUpdateSuccess: React.FC<
+  CustomerProfilePictureUpdateSuccess
+> = ({ labels }) => {
   return (
     <>
       <div className={s.tittle}>
