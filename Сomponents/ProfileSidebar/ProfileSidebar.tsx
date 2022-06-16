@@ -1,4 +1,5 @@
 import { useRouter } from "next/router"
+import { useTranslation } from "next-i18next"
 
 import Link from "next/link"
 import { Accordion, Icon } from "UI"
@@ -24,6 +25,7 @@ interface ProfileSidebarProps {
 export const ProfileSidebar: React.FC<ProfileSidebarProps> = (props) => {
   const { title, labels } = props
   const { pathname } = useRouter()
+  const { t } = useTranslation("sidebar")
 
   const SidebarItem = ({ label }: { label: LabelType }) => {
     return (
@@ -33,7 +35,7 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = (props) => {
         ) : null}
         <Link href={label.link}>
           <a className={pathname === label.link ? `${s.active}` : ""}>
-            {label.text}
+            {t(label.text)}
           </a>
         </Link>
       </li>
@@ -46,14 +48,14 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = (props) => {
     return (
       <>
         <Icon className={s.active_icon} type={headerLabel?.icon || "account"} />
-        <span className={s.active}>{headerLabel?.text || title}</span>
+        <span className={s.active}>{t(headerLabel?.text || title)}</span>
       </>
     )
   }
 
   const AccordionSidebarItem = ({ label }: { label: LabelTypeWithContent }) => {
     return (
-      <Accordion className={s.accordion} header={label.text}>
+      <Accordion className={s.accordion} header={t(label.text)}>
         <ul>
           {label.content?.map((item, index) => (
             <SidebarItem key={index} label={item} />

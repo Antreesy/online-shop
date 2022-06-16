@@ -1,4 +1,5 @@
 import { Controller, useForm } from "react-hook-form"
+import { useTranslation } from "next-i18next"
 import cn from "classnames"
 
 import { SectionHeader } from "Сomponents"
@@ -31,6 +32,7 @@ interface AddressType {
 }
 
 const AddressForm: React.FC<AddressFormProps> = (props) => {
+  const { t } = useTranslation("address")
   const { onClose, role } = props
 
   const { handleSubmit, control } = useForm<AddressType>({
@@ -60,7 +62,7 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
       <form className={s.form} onSubmit={onSubmit}>
         <SectionHeader
           className={s.header}
-          title="Add Address"
+          title={t("Add Address")}
           actionItem={<Icon type="close_cross" color="#fff" />}
           noDecor
           onActionClick={onClose}
@@ -73,10 +75,10 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label={"Address Title"}
+                  label={t("Address Title")}
                   setValue={onChange}
                   value={value}
-                  placeholder={"Address Title"}
+                  placeholder={t("Address Title")}
                 />
               )}
             />
@@ -90,10 +92,10 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label={"Name*"}
+                  label={t("Name*")}
                   setValue={onChange}
                   value={value}
-                  placeholder={"Name*"}
+                  placeholder={t("Name*")}
                 />
               )}
             />
@@ -104,10 +106,10 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label={"Surname*"}
+                  label={t("Surname*")}
                   setValue={onChange}
                   value={value}
-                  placeholder={"Surname*"}
+                  placeholder={t("Surname*")}
                 />
               )}
             />
@@ -122,8 +124,8 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
               render={({ field: { onChange, value } }) => (
                 <Select
                   className={s.input_20}
-                  label="Country Code"
-                  placeholder="Country Code*"
+                  label={t("Country Code")}
+                  placeholder={t("Country Code")}
                   initValue={value.value}
                   values={countriesForSelect()}
                   onChange={onChange}
@@ -137,10 +139,10 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
               render={({ field: { onChange, value } }) => (
                 <Input
                   className={s.input_30}
-                  label={"Phone Number"}
+                  label={t("Phone Number")}
                   setValue={onChange}
                   value={value}
-                  placeholder={"Phone Number"}
+                  placeholder={t("Phone Number")}
                 />
               )}
             />
@@ -152,8 +154,8 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Select
-                  label="City"
-                  placeholder="City*"
+                  label={t("City*")}
+                  placeholder={t("City*")}
                   initValue={value.value}
                   values={[]}
                   onChange={onChange}
@@ -170,10 +172,10 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label={"Something"}
+                  label={t("Something")}
                   setValue={onChange}
                   value={value}
-                  placeholder={"Something"}
+                  placeholder={t("Something")}
                 />
               )}
             />
@@ -184,17 +186,17 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label={"Street*"}
+                  label={t("Street*")}
                   setValue={onChange}
                   value={value}
-                  placeholder={"Street*"}
+                  placeholder={t("Street*")}
                 />
               )}
             />
           </div>
         </div>
 
-        <SectionHeader className={s.header} title="Home" />
+        <SectionHeader className={s.header} title={t("Home")} />
 
         <div className={s.row}>
           <div className={cn(s.cell, s.cell_100)}>
@@ -205,7 +207,7 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
                 <Input
                   setValue={onChange}
                   value={value}
-                  placeholder={"Address"}
+                  placeholder={t("Address")}
                 />
               )}
             />
@@ -214,7 +216,7 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
 
         {role === Roles.BRAND && (
           <>
-            <SectionHeader className={s.header} title="Invoice Address" />
+            <SectionHeader className={s.header} title={t("Invoice Address")} />
 
             <div className={s.row}>
               <div className={cn(s.cell, s.cell_100)}>
@@ -223,10 +225,10 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <Input
-                      label={"Company Name"}
+                      label={t("Company Name")}
                       setValue={onChange}
                       value={value || ""}
-                      placeholder={"Company Name"}
+                      placeholder={t("Company Name")}
                     />
                   )}
                 />
@@ -240,10 +242,10 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <Input
-                      label={"Tax Number"}
+                      label={t("Tax Number")}
                       setValue={onChange}
                       value={value || ""}
-                      placeholder={"Tax Number"}
+                      placeholder={t("Tax Number")}
                     />
                   )}
                 />
@@ -257,10 +259,10 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <Input
-                      label={"Tax Administration"}
+                      label={t("Tax Administration")}
                       setValue={onChange}
                       value={value || ""}
-                      placeholder={"Tax Administration"}
+                      placeholder={t("Tax Administration")}
                     />
                   )}
                 />
@@ -270,7 +272,7 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
         )}
 
         <Button onClick={onSubmit} className={s.save_btn}>
-          Save
+          {t("Save")}
         </Button>
       </form>
     </>

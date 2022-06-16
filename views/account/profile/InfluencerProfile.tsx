@@ -1,6 +1,9 @@
+import { useTranslation } from "next-i18next"
+
 import { SectionHeader } from "Сomponents"
 
 import s from "styles/pages/account/profile.module.scss"
+import { ProfilePageForm } from "./ProfilePageForm"
 
 export interface InfluencerProfileProps {
   brand_name: string
@@ -12,9 +15,12 @@ export interface InfluencerProfileProps {
 }
 
 export const InfluencerProfile: React.FC<InfluencerProfileProps> = (props) => {
+  const { t } = useTranslation("profile")
+
   return (
     <>
-      <SectionHeader className={s.title} title={"Influencer Profile"} />
+      <SectionHeader className={s.title} title={t("profile")} />
+      <ProfilePageForm />
     </>
   )
 }

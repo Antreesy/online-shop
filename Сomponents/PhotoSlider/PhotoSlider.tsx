@@ -42,7 +42,9 @@ const PhotoSlider: React.FC<PhotoSliderProps> = (props) => {
           bulletClass: `${s.bullet}`,
           bulletActiveClass: `${s.bullet_active}`,
         }}
-        thumbs={{ swiper: thumbsSwiper }}
+        thumbs={{
+          swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+        }}
         modules={[FreeMode, Pagination, Thumbs]}
         className={s.swiper_main}
       >
