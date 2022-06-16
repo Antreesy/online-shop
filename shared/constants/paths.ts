@@ -6,9 +6,8 @@ export const commonPaths = [
   "cart",
   "components-example",
   "influencers",
-  "order-info",
   "order-success",
   "payment",
   "products",
-  "product-info",
 ]
+export const commonWithBcPaths = ["order-info", "product-info"]
