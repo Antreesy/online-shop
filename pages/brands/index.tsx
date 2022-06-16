@@ -50,7 +50,7 @@ const brands: NextPage = () => {
 
           <div className={s.mobile_image}>
             <Background
-            className={s.background}
+              className={s.background}
               image={picture_mobile}
               title="Tuana Yücel"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed pretium enim. Cras faucibus velit rise.
