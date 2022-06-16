@@ -61,6 +61,9 @@ const Index: NextPage = (props) => {
         <Link href="/components-example">
           <a className={s.title__link}>Сomponents examples</a>
         </Link>{" "}
+        <Link href="/visual-operations">
+          <a className={s.title__link}>Visual-operations</a>
+        </Link>{" "}
         <p className={s.description}>Account:</p>
         <Link href="/account/profile">
           <a className={s.title__link}>Profile</a>

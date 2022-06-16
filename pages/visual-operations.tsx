@@ -5,6 +5,8 @@ import Head from "next/head"
 import { Breadcrumbs } from "Сomponents"
 import { Button, Tabs, Input, Icon, SelectProduct, FileUpload } from "UI"
 
+import useResize from "shared/hooks/useResize"
+
 import { images } from "shared/constants/ImageSelectProduct"
 
 import s from "styles/pages/visual-operations.module.scss"
@@ -13,6 +15,9 @@ const VisualOperations: NextPage = () => {
   const [inputValue, setInputValue] = useState<string>("")
   const [select, setSelect] = useState(false)
   const [delet, setDelet] = useState<number[]>([])
+
+  const width = useResize(1025)
+
 
   console.log(delet)
 
@@ -39,7 +44,7 @@ const VisualOperations: NextPage = () => {
               `Active Images (${images.length})`,
               `Rejected Images (${images.length})`,
             ]}
-            variant={"no_border"}
+            variant={width > 1024 ? "no_border" : "spaces"}
             values={[
               <>
                 <div className={s.main_menu}>
