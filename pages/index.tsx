@@ -65,6 +65,16 @@ const Index: NextPage = (props) => {
             <Link href="/order-success">
               <a className={s.title__link}>Order success page</a>
             </Link>
+
+            <Link href="/order-info">
+              <a className={s.title__link}>order-info</a>
+            </Link>{" "}
+            <Link href="/product-info">
+              <a className={s.title__link}>product-info</a>
+            </Link>{" "}
+            <Link href="/modals-example">
+              <a className={s.title__link}>modals-example</a>
+            </Link>{" "}
           </div>
 
           <div className={s.flex_column}>
@@ -78,15 +88,6 @@ const Index: NextPage = (props) => {
             <Link href="/influencer-profile">
               <a className={s.title__link}>Influencer profile</a>
             </Link>
-            <Link href="/order-info">
-              <a className={s.title__link}>order-info</a>
-            </Link>{" "}
-            <Link href="/product-info">
-              <a className={s.title__link}>product-info</a>
-            </Link>{" "}
-            <Link href="/modals-example">
-              <a className={s.title__link}>modals-example</a>
-            </Link>{" "}
           </div>
 
           <div className={s.flex_column}>
