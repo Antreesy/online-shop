@@ -225,7 +225,7 @@
 .nav_title {
   padding-bottom: 15px;
   font-size: 16px;
-  font-weight: normal;
+  font-weight: $fw-regular;
   color: #8100ef;
 }
 
@@ -265,7 +265,7 @@
 }
 
 .link {
-  font-weight: normal;
+  font-weight: $fw-regular;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.79;

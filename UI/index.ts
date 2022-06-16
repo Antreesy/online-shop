@@ -19,9 +19,11 @@ import { ProgressBar } from "./ProgressBar"
 import { RadioGroup } from "./RadioGroup"
 import { Range } from "./Range"
 import { Select } from "./Select"
+import { SelectProduct } from "./SelectProduct"
 import { Slider } from "./Slider"
 import { SocialIcon } from "./SocialIcon"
 import { Tabs } from "./Tabs"
+import { Tooltip } from "./Tooltip"
 
 export {
   Accordion,
@@ -45,7 +47,9 @@ export {
   RadioGroup,
   Range,
   Select,
+  SelectProduct,
   Slider,
   SocialIcon,
   Tabs,
+  Tooltip,
 }

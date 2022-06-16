@@ -44,3 +44,15 @@ $desktop-width: 1440px;
     @content;
   }
 }
+
+@mixin tablet-desktop {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin laptop-desktop {
+  @media (min-width: #{$laptop-width}) {
+    @content;
+  }
+}

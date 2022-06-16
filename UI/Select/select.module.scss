@@ -9,9 +9,10 @@
 .select {
   position: relative;
   width: 100%;
+  height: 100%;
   border: 1px solid transparent;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: inherit;
   font-weight: $fw-medium;
 
   & > div {
@@ -49,7 +50,7 @@
 }
 
 .scrollbar {
-  & > div:last-child {
+  & > :global(.simplebar-vertical) {
     right: 15px;
     width: 8px;
     background-color: $color-grey-f4;
