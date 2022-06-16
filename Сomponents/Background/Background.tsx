@@ -7,12 +7,13 @@ import BgInput from "./BgInput"
 import s from "./Background.module.scss"
 
 interface BackgroundProps {
-  image: ImageProps["src"]
+  image?: ImageProps["src"]
   title?: string
   description?: string
   link?: string
   actionText?: string
   isEditable?: boolean
+  gradientBg?: "none" | "black"
   onActionClick?: (value: string | number | boolean) => void
   className?: string
 }
@@ -22,16 +23,25 @@ const Background: React.FC<BackgroundProps> = (props) => {
     image,
     title,
     description,
+    gradientBg,
     link,
     actionText,
     isEditable = false,
     className,
   } = props
 
+  const addButtonClass = cn(
+    s.fallbackItem,
+    gradientBg === "none" ? s.noneGradientBg : s.blackGradientBg,
+    className,
+  )
+
   return (
     <div
-      className={cn(s.fallbackItem, className)}
-      style={{ backgroundImage: `url(${image})` }}
+      className={addButtonClass}
+      style={{
+        backgroundImage: `url(${image} linear-gradient(to bottom, rgba(0, 0, 0, 0), #000))`,
+      }}
     >
       {isEditable && (
         <div className={s.addImageButton}>
@@ -45,7 +55,7 @@ const Background: React.FC<BackgroundProps> = (props) => {
       )}
 
       <div className={s.image}>
-        <Image src={image} className={s.bg} height={1000} width={2200} />
+        {image && <Image src={image} layout="fill" />}
       </div>
       <div className={s.btn}>
         <Button className={s.bgButton} variant="outlined">
@@ -54,7 +64,12 @@ const Background: React.FC<BackgroundProps> = (props) => {
       </div>
       <div className={s.content}>
         <div className={s.titleBox}>
-          <BgInput value={title} className={s.title} isEditable={isEditable} />
+          <BgInput
+            value={title}
+            className={s.title}
+            isEditable={isEditable}
+            gradientBg={gradientBg}
+          />
           <BgInput
             className={s.linkMobile}
             value={"@" + link}

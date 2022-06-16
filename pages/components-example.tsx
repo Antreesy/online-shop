@@ -30,6 +30,7 @@ import {
 
 import {
   AddressCard,
+  Chart,
   Logo,
   Notification,
   ProductItem,
@@ -38,7 +39,6 @@ import {
   SectionHeader,
   OrderSummary,
   PhotoSlider,
-  Chart,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
@@ -71,6 +71,7 @@ const Home: NextPage = () => {
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
+
       <main className={s.main}>
         <SectionHeader
           className={s.title}
@@ -156,7 +157,6 @@ const Home: NextPage = () => {
             </div>,
           ]}
         />
-        <Chart />
         <SectionHeader className={s.title} title={"Components page"} />
         <h2>Tooltip</h2>
         <Tooltip content={longText}>
@@ -173,6 +173,7 @@ const Home: NextPage = () => {
             "Toolbar",
             "ProductItem",
             "ProductItemList",
+            "Chart",
           ]}
           values={[
             <div key="Notification">
@@ -279,6 +280,10 @@ const Home: NextPage = () => {
 
             <div key="ProductItemLIst" className={s.grid}>
               <ProductItemList productItemList={productItems} />
+            </div>,
+
+            <div key="Chart" className={s.grid}>
+              <Chart />
             </div>,
           ]}
         />
