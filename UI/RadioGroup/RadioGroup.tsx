@@ -7,6 +7,7 @@ import s from "./radioGroup.module.scss"
 
 interface RadioGroupProps {
   initialValue?: string
+  setValue?: (newValue: string) => void
   className?: string
   elements: {
     value: string
@@ -37,19 +38,17 @@ const IconRadio = ({ checked }: { checked?: boolean }) => (
 )
 
 const CustomRadioGroup: React.FC<RadioGroupProps> = (props) => {
-  const { initialValue, elements, className } = props
-
-  const [value, setValue] = useState<string>(initialValue ?? elements[0]?.value)
+  const { initialValue, elements, className, setValue } = props
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value)
+    setValue?.(event.target.value)
   }
 
   const radioGroupClass = cn(s.radio_group, className)
 
   return (
     <RadioGroup
-      value={value}
+      value={initialValue}
       onChange={handleChange}
       className={radioGroupClass}
     >

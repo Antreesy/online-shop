@@ -171,6 +171,18 @@
   content: "\e931";
 }
 
+.lira_discount:before {
+  content: "\e933";
+}
+
+.coupon:before {
+  content: "\e932";
+}
+
+.bookmark:before {
+  content: "\e934";
+}
+
 @media all and (max-width: 1200px) {
   .wrapper {
     width: 120px;

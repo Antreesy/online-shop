@@ -91,15 +91,16 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
         >
           {placeholder}
         </MenuItem>
-        {values.map((item) => (
-          <MenuItem
-            sx={{ display: "none" }}
-            key={item.title}
-            value={item.value}
-          >
-            {item.title}
-          </MenuItem>
-        ))}
+        {values &&
+          values.map((item) => (
+            <MenuItem
+              sx={{ display: "none" }}
+              key={item.title}
+              value={item.value}
+            >
+              {item.title}
+            </MenuItem>
+          ))}
 
         {/* Visible values */}
         <SimpleBar
@@ -107,20 +108,21 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
           className={s.scrollbar}
           autoHide={false}
         >
-          {values.map((item) => {
-            return (
-              <MenuItem
-                className={itemClass}
-                key={item.title}
-                value={item.value}
-                onClick={() => {
-                  handleSelect(item.value)
-                }}
-              >
-                {item.title}
-              </MenuItem>
-            )
-          })}
+          {values &&
+            values.map((item) => {
+              return (
+                <MenuItem
+                  className={itemClass}
+                  key={item.title}
+                  value={item.value}
+                  onClick={() => {
+                    handleSelect(item.value)
+                  }}
+                >
+                  {item.title}
+                </MenuItem>
+              )
+            })}
         </SimpleBar>
         {!values.length && (
           <MenuItem sx={{ pointerEvents: "none" }} key={"no-values"} value={""}>

@@ -21,7 +21,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
         "header",
         "footer",
         "sidebar",
-        "address"
+        "address",
       ])),
     },
   }

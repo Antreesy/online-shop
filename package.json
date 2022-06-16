@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --dir Components --dir UI --dir pages --dir views",
-    "format": "prettier --write **/*.ts --write **/*.tsx --write **/*.scss"
+    "format": "prettier --write **/*.ts --write **/*.tsx --write **/*.json --write **/*.scss"
   },
   "dependencies": {
     "@emotion/cache": "^11.7.1",
@@ -28,6 +28,7 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-hook-form": "^7.31.3",
+    "react-minimal-pie-chart": "^8.3.0",
     "react-redux": "^8.0.2",
     "simplebar-react": "^2.4.1",
     "swiper": "^8.2.1"

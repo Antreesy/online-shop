@@ -1,10 +1,10 @@
-import Image, { ImageProps } from "next/image"
 import cn from "classnames"
+
+import Image, { ImageProps } from "next/image"
 import { Button } from "UI"
 import BgInput from "./BgInput"
 
 import s from "./Background.module.scss"
-import { style } from "@mui/system"
 
 interface BackgroundProps {
   image?: ImageProps["src"]
@@ -15,6 +15,7 @@ interface BackgroundProps {
   isEditable?: boolean
   gradientBg?: "none" | "black"
   onActionClick?: (value: string | number | boolean) => void
+  className?: string
 }
 
 const Background: React.FC<BackgroundProps> = (props) => {
@@ -26,6 +27,7 @@ const Background: React.FC<BackgroundProps> = (props) => {
     link,
     actionText,
     isEditable = false,
+    className,
   } = props
 
   const addButtonClass = cn(

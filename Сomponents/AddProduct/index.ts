@@ -1,3 +1,3 @@
-import AddProductInfluencer from "./AddProduct";
+import AddProductInfluencer from "./AddProduct"
 
-export {AddProductInfluencer}
+export { AddProductInfluencer }

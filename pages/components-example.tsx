@@ -25,10 +25,13 @@ import {
   Icon,
   SocialIcon,
   ProgressBar,
+  Tooltip,
 } from "UI"
 
 import {
   AddressCard,
+  AddProductInfluencer,
+  Chart,
   Logo,
   Notification,
   ProductItem,
@@ -37,7 +40,6 @@ import {
   SectionHeader,
   OrderSummary,
   PhotoSlider,
-  AddProductInfluencer,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
@@ -48,6 +50,11 @@ import { Currency } from "shared/enums/currency"
 import productImage from "public/assets/img/product-img.png"
 
 import s from "styles/pages/ComponentsExample.module.scss"
+
+const longText = `
+Switch an order to preparing status
+Do you approve your request?
+`
 
 const SampleCard = () => (
   <Card
@@ -60,8 +67,6 @@ const SampleCard = () => (
 )
 
 const Home: NextPage = () => {
-  const currentStep = 1
-  const steps = ["1", "2", "3"]
   return (
     <>
       <Head>
@@ -74,7 +79,7 @@ const Home: NextPage = () => {
           actionItem={"All Orders"}
         />
 
-        <ProgressBar currentStep={currentStep} steps={steps} />
+        <ProgressBar currentStep={1} steps={[1, 2, 3]} />
 
         <Tabs
           className={s.example_tabs}
@@ -152,9 +157,12 @@ const Home: NextPage = () => {
             </div>,
           ]}
         />
-
+        <Chart />
         <SectionHeader className={s.title} title={"Components page"} />
-
+        <h2>Tooltip</h2>
+        <Tooltip content={longText}>
+          <div>Lorem ipsum dolor sit.</div>
+        </Tooltip>
         <Tabs
           className={s.example_tabs}
           labels={[

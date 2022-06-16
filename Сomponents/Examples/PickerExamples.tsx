@@ -45,7 +45,11 @@ const PickerExamples: React.FC = () => {
       <h2>Slider</h2>
       <Slider min={0} max={50} value={[0, 30]} />
       <h2>File Upload</h2>
-      <FileUpload />
+      <FileUpload
+        setValue={() => {
+          console.log("upload")
+        }}
+      />
       <h2>File Select</h2>
       <FileSelect value={value} setValue={setValue} />
     </div>

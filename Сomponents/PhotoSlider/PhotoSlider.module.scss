@@ -2,14 +2,20 @@
 
 .photoslider {
   position: relative;
+  max-width: 820px;
+  width: 100%;
 }
 
 .swiper_main {
   text-align: center;
   font-size: 18px;
-  width: 820px;
-  height: 760px;
+  width: 100%;
+  aspect-ratio: 1;
   margin-bottom: 15px;
+
+  @include mobile {
+    height: 320px;
+  }
 
   & > div {
     box-sizing: border-box;
@@ -19,11 +25,15 @@
 .swiper_gallery {
   text-align: center;
   font-size: 18px;
-  width: 820px;
-  height: 260px;
+  width: 100%;
+  aspect-ratio: 3 / 1;
   gap: 15px;
   display: flex;
   margin-bottom: 30px;
+
+  @include mobile {
+    height: 110px;
+  }
 
   & > div {
     box-sizing: border-box;
