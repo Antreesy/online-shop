@@ -1,6 +1,5 @@
 import { AddressCard } from "./AddressCard"
 import { AddressForm } from "./AddressForm"
-import { AddProductInfluencer } from "./AddProduct"
 import { Background } from "./Background"
 import { Breadcrumbs } from "./Breadcrumbs"
 import { BurgerMenu } from "./BurgerMenu"
@@ -38,7 +37,6 @@ import { Toolbar } from "./Toolbar"
 export {
   AddressCard,
   AddressForm,
-  AddProductInfluencer,
   Background,
   Breadcrumbs,
   BurgerMenu,

@@ -33,6 +33,7 @@ const Background: React.FC<BackgroundProps> = (props) => {
   const addButtonClass = cn(
     s.fallbackItem,
     gradientBg === "none" ? s.noneGradientBg : s.blackGradientBg,
+    className,
   )
 
   return (
@@ -54,7 +55,7 @@ const Background: React.FC<BackgroundProps> = (props) => {
       )}
 
       <div className={s.image}>
-        {image && <Image src={image} className={s.bg} />}
+        {image && <Image src={image} layout="fill" />}
       </div>
       <div className={s.btn}>
         <Button className={s.bgButton} variant="outlined">

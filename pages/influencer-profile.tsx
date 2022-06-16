@@ -1,19 +1,15 @@
-import React from "react"
-import s from "./AddProduct.module.scss"
-import { Background } from "Сomponents/Background"
+import { NextPage } from "next"
+
+import { Background, ProductItemList } from "Сomponents"
 import { AddButton } from "UI"
-import { ProductItemList } from "../ProductItemList"
+
 import { productItems } from "shared/constants/productItems"
-import ProductItem, {
-  ProductItemProps,
-} from "Сomponents/ProductItem/ProductItem"
 
-interface AddProductInfluencerProps {
-  products?: ProductItemProps[]
-}
+import s from "styles/pages/influencer-profile.module.scss"
 
-const AddProductInfluencer: React.FC<AddProductInfluencerProps> = (props) => {
-  const { products } = props
+const AddProduct: NextPage = () => {
+  const products = productItems
+
   return (
     <>
       <div className={s.addProduct_main}>
@@ -61,4 +57,4 @@ const AddProductInfluencer: React.FC<AddProductInfluencerProps> = (props) => {
   )
 }
 
-export default AddProductInfluencer
+export default AddProduct
