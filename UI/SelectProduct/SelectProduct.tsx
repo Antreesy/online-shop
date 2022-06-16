@@ -1,8 +1,9 @@
-import Image from "next/image"
-import { ImageProps } from "next/image"
 import { useState } from "react"
-import { Icon } from "UI"
 import cn from "classnames"
+
+import Image, { ImageProps } from "next/image"
+import { Icon } from "UI"
+
 import s from "./selectProduct.module.scss"
 
 interface SelectProduct {

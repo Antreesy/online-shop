@@ -6,6 +6,7 @@
 .tabs {
   border-radius: 10px;
   .tab {
+    flex-grow: 2;
     font-weight: $fw-semibold;
     font-size: 20px;
     color: $color-black;

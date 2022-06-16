@@ -1,20 +1,18 @@
+import { useState } from "react"
 import { NextPage } from "next"
+
 import Head from "next/head"
 import { Breadcrumbs } from "Сomponents"
-import { images } from "../shared/constants/ImageSelectProduct"
 import { Button, Tabs, Input, Icon, SelectProduct, FileUpload } from "UI"
 
-import s from "styles/pages/visual-operations.module.scss"
-import { useState } from "react"
+import { images } from "shared/constants/ImageSelectProduct"
 
-interface deletObject {
-  id: number
-}
+import s from "styles/pages/visual-operations.module.scss"
 
 const VisualOperations: NextPage = () => {
   const [inputValue, setInputValue] = useState<string>("")
   const [select, setSelect] = useState(false)
-  const [delet, setDelet]: [Array<deletObject>, Function] = useState([])
+  const [delet, setDelet] = useState<number[]>([])
 
   console.log(delet)
 
@@ -90,7 +88,7 @@ const VisualOperations: NextPage = () => {
                         imageTitle={im.title}
                         imageSize={im.size}
                         selected={select}
-                        setDelet={() => secTest(im.id)}
+                        setDelete={() => secTest(im.id)}
                         date={im.date}
                       />
                     ))}
@@ -148,7 +146,7 @@ const VisualOperations: NextPage = () => {
                         imageTitle={im.title}
                         imageSize={im.size}
                         selected={select}
-                        setDelet={() => secTest(im.id)}
+                        setDelete={() => secTest(im.id)}
                         date={im.date}
                       />
                     ))}
