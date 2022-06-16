@@ -1,5 +1,7 @@
 import { Button } from "UI"
+
 import s from "styles/pages/Products.module.scss"
+
 const ProductReturn: React.FC = () => {
   return (
     <div className={s.productsReturn}>
@@ -9,8 +11,9 @@ const ProductReturn: React.FC = () => {
         variant="text"
         className={s.productsReturnBtn}
       />
-      <span>Return Your Shop</span>
+      <span>Return to Your Shop</span>
     </div>
   )
 }
+
 export default ProductReturn

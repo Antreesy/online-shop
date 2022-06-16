@@ -20,7 +20,7 @@ import { OrderStatusButton } from "./OrderStatusButton"
 import { OrderSummary } from "./OrderSummary"
 import { PhotoSlider } from "./PhotoSlider"
 import { ProductItem } from "./ProductItem"
-import { ProductReturn } from "./ProductReturnButton"
+import { ProductReturn } from "./ProductReturn"
 import { ProductItemList } from "./ProductItemList"
 import { ProfileSidebar } from "./ProfileSidebar"
 import {

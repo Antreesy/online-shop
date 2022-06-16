@@ -50,28 +50,30 @@
 
 .productsSection {
   display: flex;
+  gap: 40px;
   margin-bottom: 70px;
 
-  @include tablet {
+  @include mobile-tablet {
     flex-direction: column;
+    align-items: center;
   }
+}
 
-  @include mobile {
-    flex-direction: column;
+.photoslider {
+  width: 50%;
+
+  @include mobile-tablet {
+    width: 100% !important;
+    max-width: 700px;
   }
 }
 
 .productInfo {
-  width: 100%;
-  padding-left: 40px;
+  width: 50%;
   position: relative;
 
-  @include tablet {
-    padding-left: 0;
-  }
-
-  @include mobile {
-    padding-left: 0;
+  @include mobile-tablet {
+    width: 100%;
   }
 
   h2 {
@@ -108,12 +110,14 @@
 }
 
 .button {
-  width: 510px;
+  max-width: 510px;
+  width: 100%;
   padding: 20px 110px;
   margin-top: 50px;
 
-  @include mobile {
+  @include mobile-laptop {
     width: 100%;
+    margin: 50 auto 0;
   }
 }
 
@@ -136,20 +140,5 @@
     position: absolute;
     top: 0;
     right: 10px;
-  }
-}
-
-.photoslider {
-  @include laptop {
-    width: 700px;
-  }
-
-  @include tablet {
-    width: 100% !important;
-    max-width: 600px;
-  }
-
-  @include mobile-tablet {
-    width: 100% !important;
   }
 }

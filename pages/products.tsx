@@ -32,7 +32,9 @@ const Products: NextPage = () => {
       <div className={s.container}>
         <ProductReturn />
         <div className={s.productsSection}>
-          <PhotoSlider photos={[img, img, img]} className={s.photoslider} />
+          <div className={s.photoslider}>
+            <PhotoSlider photos={[img, img, img]} />
+          </div>
           <div className={s.productInfo}>
             <p className={s.title}>Prada</p>
             <p className={s.subtitle}>Black long sleeve men’s jacket</p>
