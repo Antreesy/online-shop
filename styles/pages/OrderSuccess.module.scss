@@ -106,7 +106,7 @@
 .table td {
   text-align: end;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: $fw-medium;
   white-space: nowrap;
 
   @include mobile {

@@ -6,6 +6,7 @@ export interface PriceProps {
   currency?: Currency
   currencyFirst?: boolean
   type?: "order" | "cart" | "sale" | "sale_black" | "primary"
+  className?: string
 }
 
 export interface PaymentInfoProps {

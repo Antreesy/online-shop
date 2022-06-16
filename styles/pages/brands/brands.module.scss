@@ -128,7 +128,7 @@
   min-height: 100px;
   font-size: 20px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
-  font-weight: bold;
+  font-weight: $fw-bold;
   margin-bottom: 35px;
   padding-top: 10px;
 
@@ -180,7 +180,7 @@
       top: 15px;
       content: "\e91d";
       font-family: "icons" !important;
-      font-weight: bold;
+      font-weight: $fw-bold;
       font-size: 30px;
       color: $color-purple;
 
@@ -212,7 +212,7 @@
     border-radius: 0;
     margin-right: 25px;
     width: max-content;
-    font-weight: 400;
+    font-weight: $fw-regular;
     min-width: 209px;
     padding: 0px;
     line-height: 1.17;
@@ -422,7 +422,7 @@
 
   h1 {
     font-size: 30px;
-    font-weight: 400;
+    font-weight: $fw-regular;
     margin: 20px 0;
 
     @include mobile-tablet {
@@ -456,7 +456,7 @@
 
   div {
     font-size: 28px;
-    font-weight: 400;
+    font-weight: $fw-regular;
     margin-bottom: 30px;
     @include mobile-tablet {
       margin: 0 0 15px 0;

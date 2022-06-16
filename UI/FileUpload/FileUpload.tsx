@@ -12,7 +12,7 @@ interface FileUploadProps {
   minWidth?: number
   minHeight?: number
   filesNumber?: number
-  setValue: (newValue: File) => void
+  setValue?: (newValue: File) => void
   img?: string
   disabled?: boolean
 }
@@ -110,7 +110,7 @@ const FileUpload: FC<FileUploadProps> = (props) => {
     }
     Promise.all(promises).then((res) => {
       if (res.every((res) => res)) {
-        setValue(files[0]) // files correct
+        setValue?.(files[0]) // files correct
       }
     })
   }
