@@ -1,3 +1,5 @@
+@import "/styles/style.scss";
+
 .addProduct_main {
   width: 100%;
 }
@@ -28,7 +30,7 @@
       right: 35px;
       height: 51px;
       position: relative;
-      font-weight: normal;
+      font-weight: $fw-regular;
     }
     &::after {
       content: "";

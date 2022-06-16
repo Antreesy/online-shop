@@ -6,6 +6,7 @@ export const basePaths = [
   "influencers",
   "components-example",
   "payment",
+  "visual-operations",
   "products",
   "cart",
   "brands",

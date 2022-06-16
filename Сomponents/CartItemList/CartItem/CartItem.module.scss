@@ -70,13 +70,13 @@
 .title {
   color: $color-purple;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: $fw-bold;
 }
 
 .subtitle {
   font-size: 13px;
   padding-bottom: 10px;
-  font-weight: 500;
+  font-weight: $fw-medium;
 
   @include mobile-tablet {
     padding-bottom: 0;
