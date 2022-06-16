@@ -179,13 +179,22 @@
   }
 }
 
+.dropdown_wrapper {
+  position: relative;
+}
+
 .button_account {
+  position: relative;
   padding: 6px;
   background: transparent;
   color: $color-white;
   font-weight: $fw-regular;
   font-size: 14px;
   white-space: nowrap;
+
+  & > span {
+    width: 33px;
+  }
 
   &:hover {
     background: $color-purple;
@@ -199,6 +208,28 @@
     &:hover {
       background: $color-purple-d;
     }
+  }
+}
+
+.account_dropdown_text {
+  position: absolute;
+  color: $color-white;
+  top: 35px;
+  left: 50%;
+  font-size: 9px;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+.account_dropdown_arrow {
+  position: absolute;
+  color: $color-white;
+  top: 35px;
+  left: 50%;
+  font-size: 9px;
+  transform: translateX(-50%);
+
+  @include mobile {
+    top: 48px;
   }
 }
 
@@ -223,6 +254,59 @@
       border-color: $color-purple;
       background: $color-purple;
     }
+  }
+}
+
+.popover_paper {
+  top: $header-desktop-height !important;
+  width: 188px;
+  border-radius: 0 0 30px 0;
+  background-color: $color-grey-f4;
+
+  @include mobile {
+    top: $header-mobile-height !important;
+    left: auto !important;
+    right: 0;
+  }
+}
+
+.dropdown_popover {
+  & .menu {
+    margin: 0;
+    padding: 30px 25px;
+    list-style-type: none;
+  }
+
+  & .menu_item {
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-grey-ba;
+    }
+  }
+
+  & .link {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+
+    font-size: 14px;
+    font-weight: $fw-medium;
+    line-height: 15px;
+    color: $color-black;
+
+    &:hover {
+      color: $color-purple;
+    }
+
+    &_active {
+      font-weight: $fw-semibold;
+      color: $color-purple;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    display: block;
+    position: absolute;
+    top: 30px;
   }
 }
 

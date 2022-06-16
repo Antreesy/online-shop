@@ -1,7 +1,31 @@
-@import "styles/style.scss";
+@import "/styles/style.scss";
 
-.title {
-  margin: 1rem 0;
-  line-height: 1.15;
-  font-size: 4rem;
+.header_info {
+  margin-bottom: 50px;
+
+  @include mobile {
+    margin-bottom: 25px;
+  }
+}
+
+.address_wrapper {
+  & > :not(:last-child) {
+    margin-bottom: 25px;
+  }
+}
+
+.button_wrapper {
+  width: 100%;
+  margin-bottom: 50px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
+
+  @include mobile {
+    margin-bottom: 25px;
+  }
+}
+
+.add_address_form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }

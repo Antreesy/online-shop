@@ -1,3 +1,5 @@
+import cn from "classnames"
+
 import { InputLabel, TextField } from "@mui/material"
 import { Button, Icon } from "UI"
 
@@ -7,6 +9,7 @@ interface InputProps {
   label?: React.ReactNode
   setValue: (newValue: string) => void
   value: string
+  disabled?: boolean
   placeholder?: string
   className?: string
   variant?:
@@ -15,10 +18,12 @@ interface InputProps {
     | "black_button"
     | "blue_outline"
     | "black_outline"
+    | "gray_outline"
   buttonLabel?: string
   isRequired?: boolean
   type?: string
   errorText?: React.ReactNode
+  validation?: object
   onChange?: () => void
 }
 
@@ -27,6 +32,7 @@ export const Input: React.FC<InputProps> = (props) => {
     label,
     setValue,
     value,
+    disabled,
     placeholder = "",
     className = "",
     variant = "default",
@@ -34,6 +40,7 @@ export const Input: React.FC<InputProps> = (props) => {
     isRequired = false,
     type = "text",
     errorText = "",
+    validation,
     onChange,
   } = props
 
@@ -43,7 +50,7 @@ export const Input: React.FC<InputProps> = (props) => {
   }
 
   return (
-    <div className={s[variant]}>
+    <div className={cn(s[variant], className)}>
       {label && <InputLabel className={s.label}>{label}</InputLabel>}
       <div className={s.inputWrapper}>
         <TextField
@@ -54,7 +61,9 @@ export const Input: React.FC<InputProps> = (props) => {
           className={s.input}
           placeholder={placeholder}
           required={isRequired}
+          disabled={disabled}
           type={type}
+          {...validation}
         />
         {variant === "footer" || variant === "black_button" ? (
           <Button>{buttonLabel}</Button>

@@ -43,4 +43,7 @@ export const icons = [
   "plus",
   "minus",
   "question",
+  "coupon",
+  "lira_discount",
+  "bookmark",
 ] as const

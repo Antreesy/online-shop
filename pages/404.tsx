@@ -1,12 +1,22 @@
-import { NextPage } from "next"
+import type { NextPage } from "next"
 import { useRouter } from "next/router"
+import { useTranslation } from "next-i18next"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
 import { Button } from "UI"
 
-import s from "../styles/pages/page-not-found.module.scss"
+import s from "styles/pages/page-not-found.module.scss"
 
+export async function getStaticProps(props: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(props.locale, ["app", "404"])),
+    },
+  }
+}
 const PageNotFound: NextPage = () => {
   const router = useRouter()
+  const { t } = useTranslation("404")
 
   const handleClick = () => {
     router.push("/")
@@ -16,14 +26,11 @@ const PageNotFound: NextPage = () => {
     <>
       <div className={s.background}></div>
       <div className={s.content}>
-        <h1>Page Not Found</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla varius
-          porta pharetra. Curabitur dolor sit amet venenatis purus ante.
-        </p>
+        <h1>{t("pageNotFound")}</h1>
+        <p>{t("404text")}</p>
         <br />
         <Button onClick={handleClick} className={s.button_purple}>
-          Return to homepage
+          {t("returnToHomePage")}
         </Button>
       </div>
     </>

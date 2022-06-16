@@ -1,9 +1,0 @@
-@import "styles/style.scss";
-
-.main {
-  padding-top: $header-desktop-height;
-
-  @include mobile {
-    padding-top: $header-mobile-height;
-  }
-}

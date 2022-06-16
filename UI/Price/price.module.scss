@@ -3,7 +3,6 @@
 .price_wrapper {
   display: flex;
   align-items: center;
-  width: 100%;
 }
 
 .tablePrice {
@@ -41,6 +40,7 @@
 .old {
   display: block;
   position: relative;
+  width: fit-content;
   color: $color-grey-8;
   font-weight: $fw-regular;
 

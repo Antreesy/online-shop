@@ -1,7 +1,204 @@
-@import "styles/style.scss";
+@import "/styles/style.scss";
 
-.title {
-  margin: 1rem 0;
-  line-height: 1.15;
-  font-size: 4rem;
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 117px;
+  padding: 51px 0 42px;
+
+  @include mobile {
+    gap: 36px;
+    padding-top: 20px;
+  }
+
+  @include tablet {
+    gap: 40px;
+  }
+
+  @include laptop {
+    gap: 75px;
+  }
+}
+
+.inputs {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap-reverse;
+  gap: 48px;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 78px;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 51px;
+
+    div {
+      width: 410px;
+    }
+  }
+
+  @include mobile {
+    justify-content: center;
+    gap: 23px;
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 42px;
+      width: 100%;
+    }
+
+    &__row {
+      display: flex;
+      gap: 42px;
+
+      label {
+        font-size: 12px;
+        font-weight: $fw-bold;
+        line-height: 1.17;
+      }
+
+      div {
+        width: 100%;
+        height: 40px;
+      }
+    }
+  }
+
+  @include tablet {
+    justify-content: center;
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      width: 100%;
+    }
+
+    &__row {
+      display: flex;
+      gap: 32px;
+
+      div {
+        width: 100%;
+      }
+    }
+  }
+
+  @include laptop {
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    &__row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+  }
+}
+
+.radio {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+
+  span {
+    font-size: 16px;
+    font-weight: $fw-bold;
+    line-height: 1.19;
+    text-align: left;
+    color: $color-purple;
+  }
+
+  div {
+    height: 51px;
+  }
+
+  @include mobile {
+    gap: 0;
+
+    span {
+      font-size: 12px;
+      font-weight: $fw-bold;
+      line-height: 1.17;
+    }
+  }
+}
+
+.file_upload {
+  width: 359px;
+  height: 379px;
+  padding: 6px 15px 25px 15px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px 0 $color-grey-e8;
+  background-color: $color-white;
+
+  div {
+    width: 100%;
+    height: 100%;
+  }
+
+  @include mobile {
+    width: 100%;
+    height: 180px;
+  }
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 59px;
+
+  a {
+    font-size: 18px;
+    font-weight: $fw-medium;
+    line-height: 1.17;
+    text-align: left;
+    color: $color-purple;
+  }
+
+  button {
+    width: 359px;
+    height: 100%;
+  }
+
+  @include tablet {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+    button {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @include mobile {
+    height: 45px;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    a {
+      font-size: 13px;
+      line-height: 1.15;
+      text-align: left;
+      color: $color-purple;
+    }
+
+    button {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }

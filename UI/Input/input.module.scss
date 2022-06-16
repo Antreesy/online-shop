@@ -22,7 +22,7 @@
   }
 
   .input {
-    box-shadow: 0 0 10px rgb(218, 218, 218);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
     border-radius: 4px;
     input {
       &:focus {
@@ -91,7 +91,7 @@
   }
 
   .input {
-    box-shadow: 0 0 10px rgb(218, 218, 218);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
     width: 430px;
     fieldset {
       border-radius: 0;
@@ -133,7 +133,7 @@
   }
 
   .input {
-    box-shadow: 0 0 10px rgb(218, 218, 218);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
     border-radius: 4px;
     input {
       &:focus {
@@ -166,6 +166,31 @@
   .input {
     border: 2px solid $color-black;
     border-radius: 0;
+    fieldset {
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+.gray_outline {
+  height: 100%;
+  font-family: inherit;
+  font-size: 15px;
+
+  .inputWrapper {
+    height: 100%;
+  }
+
+  .label {
+    color: $color-purple;
+    font-weight: $fw-bold;
+    margin-bottom: 5px;
+  }
+
+  .input {
+    border: 2px solid $color-grey-de;
+    border-radius: 5px;
     fieldset {
       border: none;
       outline: none;

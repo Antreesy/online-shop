@@ -1,0 +1,233 @@
+@import "styles/style.scss";
+
+.fallbackItem {
+  width: 100%;
+  height: 500px;
+  padding: 50px 72px 25px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+
+  &.noneGradientBg {
+    background-image: none;
+    color: black;
+    background-color: #f4f4f4;
+  }
+  &.blackGradientBg {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+    color: #fff;
+  }
+
+  @include tablet {
+    padding: 50px 30px 25px;
+  }
+
+  @include mobile {
+    padding: 50px 30px 25px;
+  }
+}
+
+.image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  min-width: 100vw;
+  min-height: 100%;
+
+  & img {
+    object-fit: cover;
+  }
+}
+
+.bgButton {
+  display: inline-block;
+  opacity: 0;
+  color: #fff;
+  border-color: #fff;
+  cursor: default;
+}
+
+.btn {
+  display: inline-block;
+  align-self: flex-end;
+}
+
+.titleBox {
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include mobile {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .title {
+    font-size: 25px;
+    // margin-bottom: 20px;
+    width: max-content;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+
+    @include mobile {
+      margin-bottom: 0;
+    }
+  }
+
+  .linkMobile {
+    font-size: 18px;
+  }
+}
+
+.boxLinkMobile {
+  position: absolute;
+  bottom: 30px;
+  right: 70px;
+
+  @include tablet {
+    position: static;
+  }
+
+  @include mobile {
+    position: static;
+  }
+}
+
+.reverse {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.description {
+  width: 60%;
+  font-size: 16px;
+  line-height: 1.2;
+  padding-right: 10px;
+
+  @include tablet {
+    width: 100%;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.inputEditer {
+  border: none;
+  outline: none;
+  background-color: transparent;
+
+  &.noneGradientBg {
+    color: #000;
+  }
+  &.blackGradientBg {
+    color: #fff;
+  }
+}
+
+.icon {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+
+  @include mobile {
+    display: block;
+  }
+}
+
+.editButton {
+  border: none;
+  display: inline-block;
+  color: $color-purple;
+  background: none;
+  box-shadow: none;
+
+  &:hover {
+    background: transparent;
+  }
+}
+
+.area {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.editBtn {
+  display: block;
+  border: 1px solid gray;
+  background: transparent;
+  border-radius: 5px;
+  color: $color-purple;
+}
+
+.addImageButton {
+  width: 200px;
+  height: 300px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @include tablet {
+    width: 150px;
+    height: 200px;
+  }
+
+  @include mobile {
+    width: 150px;
+    height: 200px;
+  }
+
+  p {
+    color: #000;
+    font-size: 20px;
+  }
+
+  .coverImgBtn {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 100%;
+    background-color: $color-white;
+    color: $color-purple;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border: 1px solid $color-purple;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(20deg);
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(69, 158, 218);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-20deg);
+  }
+}

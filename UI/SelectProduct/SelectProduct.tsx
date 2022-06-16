@@ -11,18 +11,17 @@ interface SelectProduct {
   imageSize: string
   date: string
   selected?: boolean
-  setDelet: () => void
+  setDelete?: () => void
 }
 
 const SelectProduct: React.FC<SelectProduct> = (props) => {
-  const { imageSrc, selected, imageTitle, imageSize, date, setDelet } =
-    props
+  const { imageSrc, selected, imageTitle, imageSize, date, setDelete } = props
 
   const [select, setSelect] = useState<boolean>(false)
 
   const selectProduct = () => {
     setSelect(!select)
-    setTimeout(setDelet, 100)
+    setDelete && setTimeout(setDelete, 100)
   }
   const unselectProduct = () => {
     setSelect(!select)

@@ -42,13 +42,13 @@
 .tabs_spaces {
   box-shadow: 0 0px 5px $color-grey-e2;
 
-  div{
+  div {
     justify-content: space-between;
   }
 
   @include mobile {
     box-shadow: none;
-    button{
+    button {
       padding: 0;
     }
   }

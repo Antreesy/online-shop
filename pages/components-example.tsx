@@ -19,18 +19,21 @@ import {
   AlertBox,
   Card,
   Carousel,
+  FileUpload,
+  Icon,
   ItemCounter,
   Range,
-  Tabs,
   Price,
-  Icon,
+  ProgressBar,
   SocialIcon,
-  FileUpload,
   SelectProduct,
+  Tabs,
+  Tooltip,
 } from "UI"
 
 import {
   AddressCard,
+  Chart,
   Logo,
   Notification,
   ProductItem,
@@ -38,6 +41,7 @@ import {
   ProfileSidebar,
   SectionHeader,
   OrderSummary,
+  PhotoSlider,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
@@ -45,12 +49,19 @@ import { productItems } from "shared/constants/productItems"
 import { sidebarTabs } from "shared/constants/sidebartabs"
 import { Currency } from "shared/enums/currency"
 
+import productImage from "public/assets/img/product-img.png"
+
 import s from "styles/pages/ComponentsExample.module.scss"
+
+const longText = `
+Switch an order to preparing status
+Do you approve your request?
+`
 
 const SampleCard = () => (
   <Card
     className={s.card_small}
-    imageSrc="/../public/assets/img/picture_1.png"
+    imageSrc="/assets/img/picture_1.png"
     title="Gizem Sancak"
     buttonTitle="Go To Store"
     topButtonTitle="Follow"
@@ -63,12 +74,15 @@ const Home: NextPage = () => {
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
+
       <main className={s.main}>
         <SectionHeader
           className={s.title}
           title={"UI Kit page"}
-          actionText={"All Orders"}
+          actionItem={"All Orders"}
         />
+
+        <ProgressBar currentStep={1} steps={[1, 2, 3]} />
 
         <Tabs
           className={s.example_tabs}
@@ -113,7 +127,6 @@ const Home: NextPage = () => {
 
             <div key={"Accordion"}>
               <AccordionExamples />
-              <FileUpload />
             </div>,
 
             <div key={"OrderSummary"}>
@@ -156,9 +169,11 @@ const Home: NextPage = () => {
             </div>,
           ]}
         />
-
         <SectionHeader className={s.title} title={"Components page"} />
-
+        <h2>Tooltip</h2>
+        <Tooltip content={longText}>
+          <div>Lorem ipsum dolor sit.</div>
+        </Tooltip>
         <Tabs
           className={s.example_tabs}
           labels={[
@@ -170,6 +185,7 @@ const Home: NextPage = () => {
             "Toolbar",
             "ProductItem",
             "ProductItemList",
+            "Chart",
           ]}
           values={[
             <div key="Notification">
@@ -185,6 +201,16 @@ const Home: NextPage = () => {
 
             <div key={"Carousel"} className={s.carousel}>
               <Carousel items={new Array(10).fill(SampleCard)} />
+              <PhotoSlider
+                photos={[
+                  productImage,
+                  productImage,
+                  productImage,
+                  productImage,
+                  productImage,
+                  productImage,
+                ]}
+              />
             </div>,
 
             <div key={"AddButton"} className={s.addbuttonlist}>
@@ -214,7 +240,7 @@ const Home: NextPage = () => {
                 <SampleCard />
                 <Card
                   className={s.card_small}
-                  imageSrc="/../public/assets/img/picture_2.png"
+                  imageSrc="/assets/img/picture_2.png"
                   title="Gizem Sancak"
                   buttonTitle="Go To Store"
                   isButtonHidden
@@ -242,7 +268,7 @@ const Home: NextPage = () => {
                     price: 2030,
                     type: "sale",
                   }}
-                  imageSrc="/../public/assets/img/T_shirt.png"
+                  imageSrc="/assets/img/T_shirt.png"
                 />
               </div>
               <div className={s.grid} style={{ width: 300 }}>
@@ -256,7 +282,7 @@ const Home: NextPage = () => {
                     price: 2030,
                     type: "sale",
                   }}
-                  imageSrc="/../public/assets/img/T_shirt.png"
+                  imageSrc="/assets/img/T_shirt.png"
                   isFavorite={false}
                   onAddClick={() => console.log("onAddClick")}
                   toggleFavorite={() => console.log("toggleFavorite")}
@@ -266,6 +292,10 @@ const Home: NextPage = () => {
 
             <div key="ProductItemLIst" className={s.grid}>
               <ProductItemList productItemList={productItems} />
+            </div>,
+
+            <div key="Chart" className={s.grid}>
+              <Chart />
             </div>,
           ]}
         />
