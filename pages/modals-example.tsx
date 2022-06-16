@@ -13,19 +13,24 @@ import {
   CustomerProfilePictureUpdate,
   MemberAynPopupDesktop,
   CustomerProfileChangePassword,
-  CustomerProfileChangePasswordSuccess
-} from "../UI/Modals";
+  CustomerProfileChangePasswordSuccess,
+} from "../UI/Modals"
 
 const ModalsExample: NextPage = () => {
   const [MemberAynIPopupDesktop, setMemberAynIPopupDesktop] =
     useState<boolean>(false)
   const [CustomerProfileDeleted, setCustomerProfileDeleted] =
     useState<boolean>(false)
-  const [CustomerProductDetail, setCustomerProductDetail] = useState<boolean>(false)
-  const [CustomerShoppingIsCompleted, setCustomerShoppingIsCompleted] = useState<boolean>(false)
-  const [CustomerProfileUpdated, setCustomerProfileUpdated] = useState<boolean>(false)
-  const [CustomerProfilePictureUpdated, setCustomerProfilePictureUpdated] = useState<boolean>(false)
-  const [CustomerProfileChangePasswords, setCustomerProfileChangePasswords] = useState<boolean>(false)
+  const [CustomerProductDetail, setCustomerProductDetail] =
+    useState<boolean>(false)
+  const [CustomerShoppingIsCompleted, setCustomerShoppingIsCompleted] =
+    useState<boolean>(false)
+  const [CustomerProfileUpdated, setCustomerProfileUpdated] =
+    useState<boolean>(false)
+  const [CustomerProfilePictureUpdated, setCustomerProfilePictureUpdated] =
+    useState<boolean>(false)
+  const [CustomerProfileChangePasswords, setCustomerProfileChangePasswords] =
+    useState<boolean>(false)
 
   //
   const [nextModalPage, setNextModalPage] = useState<boolean>(false)
@@ -79,137 +84,157 @@ const ModalsExample: NextPage = () => {
           </ModalWindow>
         </div>
 
-
         <div style={{ marginTop: "20px" }}>
           <Button
-              onClick={() => setCustomerProductDetail(!CustomerProductDetail)}
-              className={s.button_purple}
+            onClick={() => setCustomerProductDetail(!CustomerProductDetail)}
+            className={s.button_purple}
           >
             CustomerProductDetail
           </Button>
           <ModalWindow
-              isOpen={CustomerProductDetail}
-              onClose={() => setCustomerProductDetail(!CustomerProductDetail)}
-              iconType="okay"
+            isOpen={CustomerProductDetail}
+            onClose={() => setCustomerProductDetail(!CustomerProductDetail)}
+            iconType="okay"
           >
             <CustomerProductDetailPopUp
-                labels={{ tittle: "The product has been added to your store",
-                  content:"Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem"}}
+              labels={{
+                tittle: "The product has been added to your store",
+                content:
+                  "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem",
+              }}
             />
           </ModalWindow>
         </div>
 
         <div style={{ marginTop: "20px" }}>
           <Button
-              onClick={() => setCustomerShoppingIsCompleted(!CustomerShoppingIsCompleted)}
-              className={s.button_purple}
+            onClick={() =>
+              setCustomerShoppingIsCompleted(!CustomerShoppingIsCompleted)
+            }
+            className={s.button_purple}
           >
             CustomerShoppingIsComplete
           </Button>
           <ModalWindow
-              isOpen={CustomerShoppingIsCompleted}
-              onClose={() => setCustomerShoppingIsCompleted(!CustomerShoppingIsCompleted)}
-              iconType="okay"
+            isOpen={CustomerShoppingIsCompleted}
+            onClose={() =>
+              setCustomerShoppingIsCompleted(!CustomerShoppingIsCompleted)
+            }
+            iconType="okay"
           >
             <CustomerShoppingIsComplete
-                labels={{ tittle: "Your shopping is complete",
-                  content:"Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem"}}
+              labels={{
+                tittle: "Your shopping is complete",
+                content:
+                  "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem",
+              }}
             />
           </ModalWindow>
         </div>
 
-
         <div style={{ marginTop: "20px" }}>
           <Button
-              onClick={() => setCustomerProfilePictureUpdated(!CustomerProfilePictureUpdated)}
-              className={s.button_purple}
+            onClick={() =>
+              setCustomerProfilePictureUpdated(!CustomerProfilePictureUpdated)
+            }
+            className={s.button_purple}
           >
             CustomerProfileUpdate
           </Button>
           <ModalWindow
-              isOpen={CustomerProfilePictureUpdated}
-              onClose={() => setCustomerProfilePictureUpdated(!CustomerProfilePictureUpdated)}
-              iconType="okay"
+            isOpen={CustomerProfilePictureUpdated}
+            onClose={() =>
+              setCustomerProfilePictureUpdated(!CustomerProfilePictureUpdated)
+            }
+            iconType="okay"
           >
             <CustomerProfileUpdate
-                labels={{ tittle: "Set A Profile Picture",
-                  content:"Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem"}}
+              labels={{
+                tittle: "Changes Successfully Updated",
+                content:
+                  "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem",
+              }}
             />
           </ModalWindow>
         </div>
 
-
-
-
         <div style={{ marginTop: "20px" }}>
           <Button
-              onClick={() => setCustomerProfileUpdated(!CustomerProfileUpdated)}
-              className={s.button_purple}
+            onClick={() => setCustomerProfileUpdated(!CustomerProfileUpdated)}
+            className={s.button_purple}
           >
             CustomerProfilePictureUpdate
           </Button>
           <ModalWindow
-              isOpen={nextModalPage ? false : CustomerProfileUpdated }
-              onClose={() => setCustomerProfileUpdated(!CustomerProfileUpdated)}
+            isOpen={nextModalPage ? false : CustomerProfileUpdated}
+            onClose={() => setCustomerProfileUpdated(!CustomerProfileUpdated)}
           >
             <CustomerProfilePictureUpdate
-                labels={{ tittle: "Set A Profile Picture",
-                  content:"Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem",
-                  nextModalPage:nextModalPage, setNextModalPage:setNextModalPage}}
+              labels={{
+                tittle: "Set A Profile Picture",
+                content:
+                  "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem",
+                nextModalPage: nextModalPage,
+                setNextModalPage: setNextModalPage,
+              }}
             />
           </ModalWindow>
 
           <ModalWindow
-              isOpen={nextModalPage}
-              onClose={() => setNextModalPage(!nextModalPage)}
-              iconType="okay"
+            isOpen={nextModalPage}
+            onClose={() => setNextModalPage(!nextModalPage)}
+            iconType="okay"
           >
             <CustomerProfilePictureUpdateSuccess
-                labels={{ tittle: "Changes Successfully Updated",
-                  content:"Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem"}}
+              labels={{
+                tittle: "Changes Successfully Updated",
+                content:
+                  "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem",
+              }}
             />
           </ModalWindow>
         </div>
 
-
-
         <div style={{ marginTop: "20px" }}>
           <Button
-              onClick={() => setCustomerProfileChangePasswords(!CustomerProfileChangePasswords)}
-              className={s.button_purple}
+            onClick={() =>
+              setCustomerProfileChangePasswords(!CustomerProfileChangePasswords)
+            }
+            className={s.button_purple}
           >
             CustomerProfileChangePassword
           </Button>
           <ModalWindow
-              isOpen={nextPasswordModal ? false : CustomerProfileChangePasswords}
-              onClose={() => setCustomerProfileChangePasswords(!CustomerProfileChangePasswords)}
-              iconType="exclamation"
+            isOpen={nextPasswordModal ? false : CustomerProfileChangePasswords}
+            onClose={() =>
+              setCustomerProfileChangePasswords(!CustomerProfileChangePasswords)
+            }
+            iconType="exclamation"
           >
             <CustomerProfileChangePassword
-                labels={{
-                  content:"Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem",
-                  nextPasswordModal:nextPasswordModal, setNextPasswordModal:setNextPasswordModal
-            }}
+              labels={{
+                content:
+                  "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem",
+                nextPasswordModal: nextPasswordModal,
+                setNextPasswordModal: setNextPasswordModal,
+              }}
             />
           </ModalWindow>
 
-
           <ModalWindow
-              isOpen={nextPasswordModal}
-              onClose={() => setNextPasswordModal(!nextPasswordModal)}
-              iconType="okay"
+            isOpen={nextPasswordModal}
+            onClose={() => setNextPasswordModal(!nextPasswordModal)}
+            iconType="okay"
           >
             <CustomerProfileChangePasswordSuccess
-                labels={{ tittle: "Changes Successfully Updated",
-                  content:"Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem",
-            }}
+              labels={{
+                tittle: "Changes Successfully Updated",
+                content:
+                  "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem",
+              }}
             />
           </ModalWindow>
         </div>
-
-
-
-
       </div>
 
       {/*Roman Modals*/}

@@ -1,3 +1,4 @@
+@import "styles/style.scss";
 .tittle {
   font-size: 18px;
   font-weight: 600;
@@ -11,5 +12,13 @@
 .button {
   button {
     width: 200px;
+  }
+}
+
+@media screen {
+  @include mobile {
+    .content {
+      width: 215px;
+    }
   }
 }

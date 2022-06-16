@@ -1,10 +1,11 @@
+@import "styles/style.scss";
 .flex_box {
   display: flex;
   width: 600px;
 
-.container {
-  width: 100%;
-}
+  .container {
+    width: 100%;
+  }
 
   .pictures {
     width: 175px;
@@ -20,16 +21,16 @@
     width: 288px;
   }
   .select {
-  > div > input{
-    width: 290px;
-  }
-  .take_photo {
-    margin-top: 15px;
-    u {
-      font-size: 18px;
-      font-weight: 600;
+    > div > input {
+      width: 290px;
     }
-  }
+    .take_photo {
+      margin-top: 15px;
+      u {
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
   }
   .button {
     float: right;
@@ -38,5 +39,47 @@
       width: 85px;
     }
   }
+}
 
+@media screen {
+  @include mobile {
+    .flex_box {
+      width: 300px;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .content {
+        width: 215px;
+        margin: auto;
+        text-align: center;
+      }
+      .select > div > input {
+        width: 210px;
+      }
+      .take_photo {
+        margin-top: 15px;
+        text-align: center;
+        u {
+          font-size: 18px;
+          font-weight: 600;
+        }
+      }
+    }
+    .pictures {
+      margin-right: 0 !important;
+    }
+    .tittle {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .button {
+      float: none !important;
+      width: 100% !important;
+      button {
+        width: 100% !important;
+        margin-top: 10px;
+      }
+    }
+  }
 }

@@ -24,3 +24,19 @@
     border: 2px solid $color-black;
   }
 }
+
+@media screen {
+  @include mobile {
+    .content {
+      width: 215px;
+    }
+    .button {
+      width: 300px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .close {
+      margin-top: 10px;
+    }
+  }
+}

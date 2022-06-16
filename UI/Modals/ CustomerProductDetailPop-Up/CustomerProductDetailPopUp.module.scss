@@ -17,7 +17,7 @@
   display: flex;
   justify-content: space-between;
   .back {
-    background: $color-white none ;
+    background: $color-white none;
     color: $color-black;
     border: 1px solid $color-black;
     padding: 10px;
@@ -26,5 +26,26 @@
   .go {
     padding: 10px;
     width: 200px;
+  }
+}
+
+@media screen {
+  @include mobile {
+    .tittle {
+      font-size: 16px;
+      font-weight: 600;
+      width: 235px;
+    }
+    .content {
+      width: 215px;
+    }
+    .button {
+      width: 300px;
+      justify-content: center;
+      flex-wrap: wrap;
+      .go {
+        margin-top: 10px;
+      }
+    }
   }
 }
