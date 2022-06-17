@@ -8,4 +8,5 @@ export const basePaths = [
   "cart",
   "brands",
   "brand-landing",
+  "order-page"
 ]

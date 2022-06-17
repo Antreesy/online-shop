@@ -1,10 +1,11 @@
+import { ReactJSXElement } from "@emotion/react/types/jsx-namespace"
 import { Button } from "UI"
 
 import s from "./addressCard.module.scss"
 
 interface AddressCardProps {
   title: string
-  text: string
+  text: string | ReactJSXElement
 }
 
 const AddressCard: React.FC<AddressCardProps> = (props) => {

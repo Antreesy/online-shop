@@ -58,6 +58,9 @@ const Index: NextPage = (props) => {
         <Link href="/order-success">
           <a className={s.title__link}>Order success page</a>
         </Link>{" "}
+        <Link href="/order-page">
+          <a className={s.title__link}>Order-page</a>
+        </Link>{" "}
         <Link href="/components-example">
           <a className={s.title__link}>Сomponents examples</a>
         </Link>{" "}
