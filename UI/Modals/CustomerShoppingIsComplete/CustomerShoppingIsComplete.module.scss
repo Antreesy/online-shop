@@ -5,7 +5,7 @@
 }
 .content {
   font-size: 15px;
-  width: 380px;
+  width: 100%;
   text-align: center;
 }
 .button {
@@ -14,9 +14,6 @@
   margin-top: 10px;
   justify-content: space-between;
 
-  .continue {
-    width: 180px;
-  }
   .close {
     width: 180px;
     background: $color-white none;
@@ -28,15 +25,18 @@
 @media screen {
   @include mobile {
     .content {
-      width: 215px;
+      width: 100%;
     }
     .button {
-      width: 300px;
+      width: 100%;
       flex-wrap: wrap;
       justify-content: center;
     }
     .close {
       margin-top: 10px;
+    }
+    .continue {
+      width: 70%;
     }
   }
 }

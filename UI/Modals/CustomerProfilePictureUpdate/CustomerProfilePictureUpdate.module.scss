@@ -1,7 +1,7 @@
 @import "styles/style.scss";
 .flex_box {
   display: flex;
-  width: 600px;
+  width: 100%;
 
   .container {
     width: 100%;
@@ -18,10 +18,10 @@
     font-weight: 600;
   }
   .content {
-    width: 288px;
+    width: 100%;
   }
   .select {
-    > div > input {
+    > div > input{
       width: 290px;
     }
     .take_photo {
