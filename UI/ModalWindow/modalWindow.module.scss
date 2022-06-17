@@ -1,4 +1,4 @@
-@import "/styles/theme/colors.scss";
+@import "/styles/style.scss";
 
 .modal {
   display: flex;
@@ -50,7 +50,7 @@
 
 .title {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: $fw-semibold;
   color: $color-purple;
 }
 

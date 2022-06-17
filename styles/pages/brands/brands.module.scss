@@ -15,71 +15,88 @@
   }
 }
 
+.mobile_image {
+  display: none;
+
+  & .background {
+    display: flex;
+
+    & > div:nth-child(3) {
+      visibility: hidden;
+    }
+
+    & > div:nth-child(4) {
+      & > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
+        font-size: 16px;
+      }
+
+      & > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) {
+        font-size: 16px;
+      }
+      & > div:nth-child(2) {
+        font-size: 12px;
+      }
+    }
+
+    & > div:nth-child(2) {
+      & > span {
+        width: 100vw !important;
+      }
+    }
+    & img {
+      width: 100vw;
+      object-fit: cover;
+    }
+  }
+
+  @include mobile {
+    display: block;
+    z-index: -1;
+    margin: -50px 0 20px 0;
+    width: 100vw;
+  }
+}
+
 .wrapper_bcg {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  & > div {
-    height: 400px;
-    margin-bottom: 30px;
+  & > .desktop_image {
+    @include mobile {
+      display: none;
+    }
+
+    & > div:nth-child(1) {
+      height: 500px;
+      margin-bottom: 30px;
+
+      & > div:nth-child(2) > span {
+        height: 500px !important;
+        color: #8100ef;
+
+        & img {
+          object-fit: cover;
+        }
+      }
+
+      & > div:nth-child(3) {
+        visibility: hidden;
+      }
+    }
   }
 
-  .add_button {
+  &::before {
+    content: "";
     position: absolute;
-    display: inline-block;
-    width: 74px;
-    height: 74px;
-    background-color: $color-white;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    cursor: pointer;
-
-    &::before,
-    &::after {
-      content: "";
-      height: 100%;
-      aspect-ratio: 3/4;
-      position: absolute;
-      transition: all 0.3s ease-in;
-      border: 0.5px solid #8100ef;
-      z-index: 100;
-      transform: scale(0.5) rotate(160deg);
-      top: 0%;
-      left: 0;
-      right: 0;
-      margin: auto;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-    }
-
-    &::after {
-      transform: scale(0.5) rotate(-160deg);
-    }
-
-    &:hover {
-      &::before,
-      &::after {
-        opacity: 1;
-        visibility: visible;
-        transform: scale(3) rotate(-20deg);
-      }
-
-      &::after {
-        transform: scale(3) rotate(20deg);
-        border: 0.5px solid cyan;
-      }
-    }
-
-    & > span {
-      position: absolute;
-      margin-left: 50%;
-      margin-top: 50%;
-      font-size: 25px;
-      transform: translate(-50%, -50%);
-    }
+    right: 0;
+    top: 0;
+    width: 65%;
+    height: 5px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    background-image: linear-gradient(90deg, #00f5ff 0%, #8100ef 100%);
   }
 }
 
@@ -112,7 +129,7 @@
   min-height: 100px;
   font-size: 20px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
-  font-weight: bold;
+  font-weight: $fw-bold;
   margin-bottom: 35px;
   padding-top: 10px;
 
@@ -122,7 +139,10 @@
 
   @include mobile-tablet {
     min-height: 52px;
-    padding-top: 0px;
+    padding-top: 5px;
+    font-size: 13px;
+    height: 52px;
+    margin-bottom: 25px;
   }
 
   & div:first-child {
@@ -130,10 +150,14 @@
   }
 
   & div {
-    margin: 0 10px;
+    margin: 0 20px;
 
     @include mobile-tablet {
       line-height: 22px;
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 5px;
     }
   }
 
@@ -157,7 +181,7 @@
       top: 15px;
       content: "\e91d";
       font-family: "icons" !important;
-      font-weight: bold;
+      font-weight: $fw-bold;
       font-size: 30px;
       color: $color-purple;
 
@@ -171,12 +195,17 @@
 }
 
 .wrapper_toolbar {
+  position: relative;
   display: flex;
   flex-direction: row;
   width: 100%;
 
   @include mobile {
     flex-wrap: wrap;
+    font-size: 13px;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 60px;
   }
 
   & > button {
@@ -184,23 +213,58 @@
     border-radius: 0;
     margin-right: 25px;
     width: max-content;
-    font-weight: 400;
+    font-weight: $fw-regular;
     min-width: 209px;
     padding: 0px;
     line-height: 1.17;
 
     @include mobile {
-      font-size: 16px;
+      min-width: 100px;
+      width: 33%;
+      margin-right: 0px;
+      height: 36px;
+      font-size: 13px;
       padding: 5px 10px;
-      min-width: max-content;
       margin-bottom: 20px;
     }
+
     color: $color-black;
   }
 
   .button_active {
     background-color: $color-purple;
     color: $color-white;
+  }
+
+  & > div:nth-child(3) {
+    margin-right: 0;
+  }
+
+  & > div:nth-child(3) {
+    & > div:nth-child(1) {
+      @include mobile {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 36px;
+        font-size: 13px;
+        width: 100vw;
+      }
+    }
+
+    & > div:nth-child(2) {
+      @include mobile {
+        width: max-content;
+
+        & > div {
+          height: 36px;
+        }
+      }
+    }
+
+    @include mobile {
+      width: auto;
+    }
   }
 }
 
@@ -359,7 +423,7 @@
 
   h1 {
     font-size: 30px;
-    font-weight: 400;
+    font-weight: $fw-regular;
     margin: 20px 0;
 
     @include mobile-tablet {
@@ -393,7 +457,7 @@
 
   div {
     font-size: 28px;
-    font-weight: 400;
+    font-weight: $fw-regular;
     margin-bottom: 30px;
     @include mobile-tablet {
       margin: 0 0 15px 0;

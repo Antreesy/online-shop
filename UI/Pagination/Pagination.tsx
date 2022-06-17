@@ -16,13 +16,17 @@ interface PaginationProps {
 
 const CustomPagination: React.FC<PaginationProps> = (props) => {
   const { className, pagesCount, isShort, onChange, value = 1 } = props
-  const router = useRouter()
-
   const [page, setPage] = useState<number>(value)
 
-  useEffect(() => {
-    router.push(`${router.pathname}/?page=${page}`)
-  }, [page])
+  // TODO fix Next.js routing problem with query
+  // const router = useRouter()
+  // useEffect(() => {
+  //   if (page === 1) return
+  //   router.replace({
+  //     pathname: router.pathname,
+  //     query: { page: page },
+  //   })
+  // }, [page])
 
   const paginationClass = cn(s.pagination_wrapper, className)
 

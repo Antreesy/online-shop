@@ -20,6 +20,7 @@ import { OrderStatusButton } from "./OrderStatusButton"
 import { OrderSummary } from "./OrderSummary"
 import { PhotoSlider } from "./PhotoSlider"
 import { ProductItem } from "./ProductItem"
+import { ProductReturn } from "./ProductReturn"
 import { ProductItemList } from "./ProductItemList"
 import { ProfileSidebar } from "./ProfileSidebar"
 import {
@@ -57,6 +58,7 @@ export {
   OrderSummary,
   PhotoSlider,
   ProductItem,
+  ProductReturn,
   ProductItemList,
   ProfileSidebar,
   RegisterFormsStepTwo,

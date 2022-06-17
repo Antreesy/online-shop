@@ -33,7 +33,7 @@ const CustomTabs: React.FC<TabsProps> = (props) => {
   )
 
   return (
-    <div>
+    <div className={s.tabs_container}>
       <Tabs value={value} onChange={handleChange} className={tabsClass}>
         {labels &&
           labels.map((label, index) => {
