@@ -19,7 +19,7 @@
 .sale {
   color: $color-purple;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: $fw-bold;
 }
 
 .sale {
@@ -40,6 +40,7 @@
 .old {
   display: block;
   position: relative;
+  width: fit-content;
   color: $color-grey-8;
   font-weight: $fw-regular;
 

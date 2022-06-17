@@ -64,12 +64,12 @@
     .totalNumber {
       margin-top: 28px;
       font-size: 45px;
-      font-weight: bold;
+      font-weight: $fw-bold;
       z-index: 1;
     }
 
     .totalText {
-      font-weight: bold;
+      font-weight: $fw-bold;
       font-size: 23px;
       margin-left: 19px;
       z-index: 1;

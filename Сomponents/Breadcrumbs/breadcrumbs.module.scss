@@ -17,7 +17,7 @@
   }
   .breadcrumb {
     font-size: 14px;
-    font-weight: normal;
+    font-weight: $fw-regular;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.21;
@@ -41,7 +41,7 @@
     }
   }
   .active {
-    font-weight: bold;
+    font-weight: $fw-bold;
     pointer-events: none;
     text-decoration: none;
   }

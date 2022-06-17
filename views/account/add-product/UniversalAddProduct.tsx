@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import { Button, ProgressBar } from "UI"
+import { Button, Progressbar } from "UI"
 import { Step1, Step2, Step3 } from "Сomponents"
 
 import s from "styles/pages/account/add-product.module.scss"
@@ -21,7 +21,7 @@ const UniversalAddProduct = () => {
               Back
             </Button>
             <div className={s.add_product_header}>
-              <ProgressBar steps={steps} currentStep={currentStep} />
+              <Progressbar steps={steps} currentStep={currentStep} />
               <div>
                 <h1>Add product</h1>
                 <p>
