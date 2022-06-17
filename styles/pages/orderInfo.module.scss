@@ -1,498 +1,186 @@
 @import "/styles/style.scss";
 
-  .breadcrumbs_mobile {
-    @include mobile-tablet {
-      display: block;
-    }
-  }
-  .container {
-    max-width: 1920px;
-    width: 100%;
-    margin: auto;
-
-    .button__back {
-      width: 102px;
-      height: 46px;
-      margin: 50px 108px 70px 140px;
-      object-fit: contain;
-
-      & .button_back {
-        background: $color-white none;
-        color: $color-purple;
-        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
-      }
-    }
-
-    .content {
-      margin-top: 70px;
-      display: flex;
-      justify-content: space-between;
-      width: 1500px;
-
-      .content_wrapper {
-        width: 770px;
-      }
-
-
-      & .customer_information span,
-      .order_information,
-      .invoice_information {
-        width: 445px;
-        height: 43px;
-        margin: 0 0 0 140px;
-        font-size: 38px;
-        font-weight: 500;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.18;
-        text-align: left;
-        color: $color-purple;
-        max-width: 100%;
-      }
-
-      .customer_information_detail,
-      .order_information_detail,
-      .invoice_information_detail {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-
-        .information_detail_text > p,
-        .order_detail_text > p,
-        .invoice_detail_text > p,
-         {
-          width: 169px;
-          height: 22px;
-          margin: 24px -160px 30px 140px;
-          object-fit: contain;
-          font-size: 20px;
-          font-weight: 600;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: 23px;
-          letter-spacing: normal;
-          text-align: left;
-          color: $color-black;
-          max-width: 100%;
-        }
-
-        .information_detail_text_colon,
-        .invoice_detail_text_colon {
-          margin: 0 17px 0 136px;
-
-          > p {
-            margin: 0 0 26.5px 0;
-            font-weight: bold;
-          }
-        }
-        .order_detail_text_colon {
-          > p {
-            margin: 0 0 26.5px 0;
-            font-weight: bold;
-          }
-        }
-
-        .information_detail_span p,
-        .invoice_detail_span p {
-          margin: 0 0 27px 0;
-        }
-        .order_detail_span {
-          width: 306px;
-          p {
-            margin: 0 0 27px -118px;
-          }
-        }
-
-        .information_detail_text,
-        .order_detail_text,
-        .invoice_detail_text {
-          width: 150px;
-        }
-      }
-
-      & .line {
-        width: 2px;
-        height: 770px;
-        margin: 59px 46px 161px;
-        object-fit: contain;
-        background-color: #f5f5f5;
-
-        position: absolute;
-        top: 250px;
-        left: 752px;
-      }
-
-      .card {
-        width: 550px;
-        height: 204px;
-        margin-top: 190px;
-        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
-        transition: all 0.5s cubic-bezier(0, 0, 1, 1);
-        display: flex;
-
-        .cardItem {
-          display: flex;
-          justify-content: space-between;
-          width: 400px;
-          margin: 37px 22px 0 16px;
-
-          & .cardItemW {
-            width: 412px;
-            > div {
-              display: flex;
-              justify-content: space-between;
-            }
-          }
-
-          & .cardItemPrice {
-            width: 370px;
-            display: flex;
-            justify-content: space-between;
-          }
-
-          & .cardItem_text {
-            color: $color-purple;
-            font-size: 20px;
-          }
-        }
-
-        & .img {
-          width: 90px;
-          height: 159px;
-          max-width: none;
-          max-height: none;
-          margin: 18px 0 0 20px;
-          padding: 20px;
-        }
-
-        & .img {
-          position: relative;
-        }
-
-        & .cardItem_text_detail,
-        .cardItem_text_details {
-          display: flex;
-          margin: 18px 0 0 0;
-
-          & p {
-            width: 70px;
-            height: 22px;
-            font-size: 15px;
-            font-weight: 600;
-          }
-
-          & .purple {
-            color: $color-purple;
-          }
-
-          & .emptiness {
-            width: 70px;
-
-            & span {
-              font-size: 13px;
-              margin: 0 0 0 -36px;
-            }
-          }
-        }
-
-        .cardItem_text_details {
-          margin: 0;
-        }
-
-        .button_cancel {
-          display: flex;
-          background: #f5f5f5;
-          width: 100px;
-          height: 25px;
-          padding: 15px 15px 15px 15px;
-          border-radius: 50px;
-          align-items: center;
-          cursor: pointer;
-
-          > div {
-            border: 1px solid #d0d0d0;
-            width: 22px;
-            height: 22px;
-            margin-right: 10px;
-            border-radius: 50px;
-          }
-
-          & .button_clear {
-            width: 20px;
-            height: 20px;
-            font-size: 9px;
-            font-weight: 600;
-            background: $color-white;
-            color: $color-black;
-            padding: 6px 5px 7px 1px;
-            border-radius: 50px;
-
-            & > span {
-              width: 5px;
-              height: 5px;
-            }
-          }
-        }
-      }
-
-      .approve {
-        width: 550px;
-        height: 204px;
-        margin: 190px 0 0 0;
-        padding: 63px 0 0 0;
-        object-fit: contain;
-        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
-        background-color: $color-white;
-        transition: all 0.5s cubic-bezier(0, 0, 1, 1);
-
-        & .button_purple {
-          background: $color-purple none;
-        }
-
-        & .button_black {
-          background: $color-black none;
-        }
-
-        & .button {
-          display: flex;
-          margin: 20px auto 0;
-          width: 200px;
-          justify-content: space-between;
-        }
-
-        & p {
-          text-align: center;
-        }
-      }
-    }
-    @media screen {
-      @include mobile {
-        flex-wrap: wrap;
-        margin: 0;
-        padding: 0;
-        & .button__back {
-          margin: 10px 0 0 20px;
-        }
-        .content {
-          flex-wrap: wrap;
-          width: 376px;
-
-          .content_wrapper {
-            width: 376px;
-          }
-
-          .information_detail_span p,
-          .invoice_detail_span p {
-            margin: 0 0 13px 0 !important;
-            font-size: 12px;
-          }
-
-          .order_detail_span p {
-            font-size: 12px;
-            margin: 0 0 17px -110px !important;
-          }
-          .order_detail_span {
-            width: 112px !important;
-          }
-
-          .customer_information span,
-          .order_information,
-          .invoice_information {
-            margin: 0px -101px 30px 21px;
-            font-size: 15px;
-          }
-
-          .customer_information_detail,
-          .order_information_detail,
-          .invoice_information_detail {
-            width: 376px;
-            margin: 20px 0 0 0;
-
-            .information_detail_text,
-            .order_detail_text,
-            .invoice_detail_text {
-              width: 120px;
-
-              p {
-                width: 125px;
-                margin: 0px -55px 13px 21px;
-                font-size: 12px;
-              }
-            }
-
-            .information_detail_text_colon,
-            .invoice_detail_text_colon {
-              margin: 0 30px 0 30px;
-
-              > p {
-                margin: 0 0 17.5px 0;
-                font-weight: bold;
-                font-size: 12px;
-              }
-            }
-
-            & .order_detail_text_colon {
-              margin: 0px -77px 30px 0px;
-
-              > p {
-                width: 287px;
-                margin: 0px -70px 12px 0px;
-                font-size: 12px;
-                padding-top: 5px;
-              }
-            }
-          }
-
-          & .line {
-            display: none;
-          }
-
-          & .card {
-            width: 365px;
-            height: 170px;
-            margin: 20px 0 50px 20px;
-            border-radius: 0 0 30px 0;
-
-            & .cardItem {
-              margin: 30px 0 0 8px;
-            }
-
-
-            & .img {
-              width: 70px;
-              height: 120px;
-            }
-
-            & .cardItemW {
-              width: 142px !important;
-              border-radius: 0 0 10px 0;
-
-              > div > p {
-                font-size: 12px;
-              }
-
-              & .cardItem_text {
-                font-size: 17px;
-              }
-
-              & .cardItemPrice {
-                width: 242px;
-                display: flex;
-                justify-content: space-between;
-
-                .spans {
-                  width: 50px;
-
-                  span {
-                    font-size: 12px;
-                  }
-                }
-              }
-
-              & .cardItem_text_details > div > p,
-              .cardItem_text_detail > div > p {
-                width: 50px;
-                font-size: 12px;
-              }
-            }
-
-            .button_cancel {
-              padding: 10px 10px 10px 10px;
-              margin-right: 10px;
-            }
-          }
-          & .approve {
-            width: 365px;
-            margin: 20px 0 0 20px;
-          }
-        }
-      }
-    }
-  }
-
-  //Product Info
-@import "/styles/style.scss";
-
-.main {
+.container {
   width: 100%;
+  padding-top: 50px;
+}
 
-  .breadcrumbs_mobile {
-    @include mobile-tablet {
-      display: block;
-      margin-bottom: 30px;
-    }
-  }
+.button_wrapper {
+  margin-bottom: 70px;
 
-  .button__back {
+  & > .button {
     width: 102px;
     height: 46px;
-    margin: $indent-content 108px 70px 140px;
-    object-fit: contain;
-    & .button_back {
-      background: #ffffff none;
-      color: $color-purple;
-      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
-    }
+    background: $color-white none;
+    color: $color-purple;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap: 45px;
+
+  @include mobile-laptop {
+    flex-direction: column;
+  }
+}
+
+.content_info {
+  max-width: 940px;
+  width: 100%;
+
+  .heading {
+    font-size: 38px;
+    font-weight: $fw-medium;
+    color: $color-purple;
   }
 
-  & .container {
-    width: 85%;
-    margin: auto;
+  .label_wrapper {
+    display: flex;
 
-    & .product_name,
-    .product_info,
-    .product_Exclamation > div,
-    .Product_Features_info_select > div {
-      & p {
-        color: $color-purple;
+    & > p {
+      font-size: 20px;
+      font-weight: $fw-semibold;
+      color: $color-black;
+
+      &:nth-child(1) {
+        min-width: 200px;
+      }
+
+      &:nth-child(2) {
+        min-width: 50px;
+      }
+
+      &:nth-child(3) {
       }
     }
+  }
+}
 
-    & .product_info {
+.divider {
+  width: 2px;
+  height: 100%;
+  min-height: 770px;
+  margin-top: 100px;
+  background-color: #f5f5f5;
+
+  @include mobile-laptop {
+    display: none;
+  }
+}
+
+.card {
+  width: 550px;
+  height: 204px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
+  display: flex;
+
+  & .image {
+    position: relative;
+    flex-shrink: 0;
+    width: 20%;
+    height: 160px;
+    margin: 20px;
+  }
+}
+
+.card_content {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: flex-start;
+  padding: 30px 10px;
+
+  .title_wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    & .title {
+      color: $color-purple;
+    }
+
+    & .button {
       display: flex;
-      justify-content: space-between;
-      margin-top: $indent-content;
+      background: #f5f5f5;
+      width: 100px;
+      height: 25px;
+      border-radius: 50px;
+      align-items: center;
+      cursor: pointer;
     }
 
-    & .product_Exclamation {
-      margin-top: $indent-content;
-      > div {
-        display: flex;
-        > p {
-          margin-right: 15px;
-        }
-      }
+    & .icon {
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      font-size: 9px;
+      color: $color-black;
     }
-    & .product_card {
-      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
-      padding: 25px 23px 105px 25px;
-      & p {
-        color: black !important;
-      }
-    }
-    & .Product_Features {
-      margin-top: $indent-content;
-      & span {
-        font-size: 2em;
-        font-weight: bold;
-      }
-    }
-    & .Product_Features_info {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
+  }
+}
 
-      & .Product_Features_info_select {
-        & > div {
-          margin: 0 10px 0 10px;
-        }
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        & .select {
-          width: 510px;
-        }
+.card_description {
+  margin-bottom: 15px;
+}
+
+.price_wrapper {
+  display: flex;
+  gap: 15px;
+
+  & .group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .row {
+    display: flex;
+
+    & > p {
+      font-size: 16px;
+      color: $color-black;
+
+      &:nth-child(1) {
+        min-width: 50px;
       }
+
+      &:nth-child(2) {
+        min-width: 20px;
+      }
+
+      &:nth-child(3) {
+      }
+    }
+  }
+}
+
+
+.approve {
+  width: 550px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
+  background-color: $color-white;
+
+  & .approve_text {
+    margin-bottom: 20px;
+  }
+
+  & .button_wrapper {
+    display: flex;
+    gap: 20px;
+
+    & .button_purple {
+      background: $color-purple;
+    }
+
+    & .button_black {
+      background: $color-black;
     }
   }
 }

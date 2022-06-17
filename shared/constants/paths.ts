@@ -1,10 +1,12 @@
 export const profilePaths = ["account", "tables"]
 export const lightPaths = ["login", "register"]
-export const basePaths = [
-  "order-success",
-  "influencer-profile",
-  "influencers",
+export const commonPaths = [
+  "brands",
+  "brand-landing",
+  "cart",
   "components-example",
+  "influencers",
+  "order-success",
   "payment",
   "order-info",
   "product-info",
@@ -14,3 +16,4 @@ export const basePaths = [
   "brands",
   "brand-landing",
 ]
+export const commonWithBcPaths = ["order-info", "product-info"]
