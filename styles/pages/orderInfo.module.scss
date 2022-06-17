@@ -35,11 +35,33 @@
     font-size: 38px;
     font-weight: $fw-medium;
     color: $color-purple;
+
+    @include mobile {
+      font-size: 15px;
+      margin: 10px 0 10px 0;
+    }
   }
 
   .label_wrapper {
     display: flex;
 
+    @include mobile {
+       p {
+        font-size: 13px !important;
+
+         &:nth-child(1) {
+           min-width: 90px !important;
+         }
+
+         &:nth-child(2) {
+           min-width: 12px !important;
+         }
+
+         &:nth-child(3) {
+           font-size: 11px !important;
+         }
+      }
+    }
     & > p {
       font-size: 20px;
       font-weight: $fw-semibold;
@@ -54,6 +76,7 @@
       }
 
       &:nth-child(3) {
+        font-weight: $fw-light;
       }
     }
   }
@@ -78,6 +101,11 @@
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
   display: flex;
 
+  @include mobile {
+    width: 100%;
+    border-radius: 0 0 30px 0;
+  }
+
   & .image {
     position: relative;
     flex-shrink: 0;
@@ -100,6 +128,10 @@
 
     & .title {
       color: $color-purple;
+
+      @include mobile {
+        font-size: 17px;
+      }
     }
 
     & .button {
@@ -110,6 +142,13 @@
       border-radius: 50px;
       align-items: center;
       cursor: pointer;
+      & > div {
+        margin-left: 5px;
+      }
+
+      @include mobile {
+        width: 80px;
+      }
     }
 
     & .icon {
@@ -124,6 +163,9 @@
 
 .card_description {
   margin-bottom: 15px;
+  @include mobile {
+    font-size: 12px;
+  }
 }
 
 .price_wrapper {
@@ -138,9 +180,19 @@
   & .row {
     display: flex;
 
+    @include  mobile {
+      & > div > div > span {
+        font-size: 12px;
+      }
+    }
+
     & > p {
       font-size: 16px;
       color: $color-black;
+
+      @include  mobile {
+        font-size: 12px;
+      }
 
       &:nth-child(1) {
         min-width: 50px;
@@ -184,3 +236,4 @@
     }
   }
 }
+

@@ -11,7 +11,7 @@ import {
   customerInfo,
   orderInfo,
   invoiceInfo,
-} from "shared/constants/orderInfoItems"
+} from "../shared/constants/orderinfoitems";
 
 export interface LabelInfo {
   label: string
@@ -130,7 +130,7 @@ const OrderInfoPage: NextPage<OrderInfoProps> = () => {
               </div>
             </div>
 
-            {!IsActive && (
+            {IsActive && (
               <div className={s.approve}>
                 <p className={s.approve_text}>
                   Are you confirming that your orders are being cancelled?
