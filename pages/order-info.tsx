@@ -1,17 +1,19 @@
+import { useState } from "react"
 import { NextPage } from "next"
-import Head from "next/head"
 
-import s from "../styles/pages/orderInfo.module.scss"
-import { Button, Icon, Price } from "../UI"
-import React, { useState } from "react"
+import Head from "next/head"
 import Image from "next/image"
-import cardImage from "../public/assets/img/order_card_img.png"
 import Link from "next/link"
+import { Button, Icon, Price } from "../UI"
+
+import cardImage from "../public/assets/img/order_card_img.png"
 import {
   customerInfo,
   orderInfo,
   invoiceInfo,
 } from "../shared/constants/orderinfoitems"
+
+import s from "../styles/pages/orderInfo.module.scss"
 
 export interface LabelInfo {
   label: string
@@ -35,44 +37,50 @@ const OrderInfoPage: NextPage<OrderInfoProps> = () => {
       <div className={s.container}>
         <div className={s.button_wrapper}>
           <Button className={s.button} iconLeft="arrow_left">
-            <Link href="/">back</Link>
+            <Link href="/">Back</Link>
           </Button>
         </div>
 
         <div className={s.content}>
           <div className={s.content_info}>
             <h3 className={s.heading}>Customer Information</h3>
-            {customerInfo.length
-              ? customerInfo.map((item) => (
-                  <div className={s.label_wrapper}>
-                    <p>{item.label}</p>
-                    <p>:</p>
-                    <p>{item.content}</p>
-                  </div>
-                ))
-              : null}
+            <div className={s.labels}>
+              {customerInfo.length
+                ? customerInfo.map((item, index) => (
+                    <div key={index} className={s.label_wrapper}>
+                      <p>{item.label}</p>
+                      <p>:</p>
+                      <p>{item.content}</p>
+                    </div>
+                  ))
+                : null}
+            </div>
 
             <h3 className={s.heading}>Order Information</h3>
-            {orderInfo.length
-              ? orderInfo.map((item) => (
-                  <div className={s.label_wrapper}>
-                    <p>{item.label}</p>
-                    <p>:</p>
-                    <p>{item.content}</p>
-                  </div>
-                ))
-              : null}
+            <div className={s.labels}>
+              {orderInfo.length
+                ? orderInfo.map((item, index) => (
+                    <div key={index} className={s.label_wrapper}>
+                      <p>{item.label}</p>
+                      <p>:</p>
+                      <p>{item.content}</p>
+                    </div>
+                  ))
+                : null}
+            </div>
 
             <h3 className={s.heading}>Invoice Information</h3>
-            {invoiceInfo.length
-              ? invoiceInfo.map((item) => (
-                  <div className={s.label_wrapper}>
-                    <p>{item.label}</p>
-                    <p>:</p>
-                    <p>{item.content}</p>
-                  </div>
-                ))
-              : null}
+            <div className={s.labels}>
+              {invoiceInfo.length
+                ? invoiceInfo.map((item, index) => (
+                    <div key={index} className={s.label_wrapper}>
+                      <p>{item.label}</p>
+                      <p>:</p>
+                      <p>{item.content}</p>
+                    </div>
+                  ))
+                : null}
+            </div>
           </div>
 
           <div className={s.divider} />
@@ -91,7 +99,7 @@ const OrderInfoPage: NextPage<OrderInfoProps> = () => {
                     onClick={() => setIsActive(!IsActive)}
                   >
                     <Icon className={s.icon} type="close_cross" wrapped />
-                    cancel
+                    Cancel
                   </div>
                 </div>
                 <p className={s.card_description}>
@@ -121,8 +129,8 @@ const OrderInfoPage: NextPage<OrderInfoProps> = () => {
                     </div>
 
                     <div className={s.row}>
-                      <p>TOTAL</p>
-                      <p>:</p>
+                      <p className={s.total}>TOTAL</p>
+                      <p className={s.total}>:</p>
                       <Price oldPrice={2030} price={1930} type="cart" />
                     </div>
                   </div>

@@ -15,13 +15,5 @@
   max-width: 1780px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 40px 70px;
-
-  @include tablet-laptop {
-    padding: 0 20px 40px;
-  }
-
-  @include mobile {
-    padding: 0;
-  }
+  @include container-padding;
 }
