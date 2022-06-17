@@ -24,7 +24,7 @@ import {
   ItemCounter,
   Range,
   Price,
-  ProgressBar,
+  Progressbar,
   SocialIcon,
   SelectProduct,
   Tabs,
@@ -82,7 +82,7 @@ const Home: NextPage = () => {
           actionItem={"All Orders"}
         />
 
-        <ProgressBar currentStep={1} steps={[1, 2, 3]} />
+        <Progressbar currentStep={1} steps={[1, 2, 3]} />
 
         <Tabs
           className={s.example_tabs}

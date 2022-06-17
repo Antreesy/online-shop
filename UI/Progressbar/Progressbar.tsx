@@ -11,7 +11,7 @@ import { StepIconProps } from "@mui/material/StepIcon"
 
 import s from "./progressBar.module.scss"
 
-interface ProgressBarProps {
+interface ProgressbarProps {
   steps: number[]
   currentStep: number
 }
@@ -84,7 +84,7 @@ function ColorlibStepIcon(props: StepIconProps) {
   )
 }
 
-const ProgressBar: React.FC<ProgressBarProps> = (props) => {
+const Progressbar: React.FC<ProgressbarProps> = (props) => {
   const { currentStep, steps } = props
 
   return (
@@ -104,4 +104,4 @@ const ProgressBar: React.FC<ProgressBarProps> = (props) => {
   )
 }
 
-export default ProgressBar
+export default Progressbar
