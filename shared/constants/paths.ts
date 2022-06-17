@@ -11,4 +11,5 @@ export const basePaths = [
   "cart",
   "brands",
   "brand-landing",
+  "brand-information",
 ]
