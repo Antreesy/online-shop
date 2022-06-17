@@ -1,5 +1,6 @@
 import { AddressCard } from "./AddressCard"
 import { AddressForm } from "./AddressForm"
+import { BackButton } from "./BackButton"
 import { Background } from "./Background"
 import { Breadcrumbs } from "./Breadcrumbs"
 import { BurgerMenu } from "./BurgerMenu"
@@ -37,6 +38,7 @@ import { Toolbar } from "./Toolbar"
 export {
   AddressCard,
   AddressForm,
+  BackButton,
   Background,
   Breadcrumbs,
   BurgerMenu,
