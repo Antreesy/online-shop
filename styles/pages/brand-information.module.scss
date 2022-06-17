@@ -1,29 +1,15 @@
 @import "styles/style.scss";
 
-.container {
-  max-width: 1640px;
-  margin: 0 auto;
-  padding: 0 40px;
+.heading {
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: normal;
+  margin-bottom: 50px;
 
   @include mobile-tablet {
-    padding: 0 15px;
-  }
-
-  * {
-    margin: 0;
-  }
-
-  h1 {
-    font-size: 38px;
-    font-weight: 500;
-    line-height: 1.18;
-    letter-spacing: normal;
-    margin-bottom: 50px;
-
-    @include mobile-tablet {
-      font-size: 15px;
-      margin-bottom: 30px;
-    }
+    font-size: 15px;
+    margin-bottom: 30px;
   }
 }
 
@@ -31,6 +17,18 @@
   width: 100%;
   overflow-x: auto;
   margin-bottom: 20px;
+}
+
+.scrollbar {
+  & > :global(.simplebar-horizontal) {
+    background-color: $color-grey-f4;
+    border-radius: 5px;
+
+    & > div::before {
+      opacity: 1;
+      background: $color-purple;
+    }
+  }
 }
 
 .navigation {
@@ -54,9 +52,6 @@
 }
 
 .backBtn {
-  display: flex;
-  align-items: center;
-  background: $color-white;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
   color: $color-purple;
   padding: 13px 16px;
@@ -198,11 +193,12 @@
 }
 
 .formSection {
-  width: 100vw;
   background: #fafafa;
   padding-top: 60px;
   padding-bottom: 60px;
   margin-bottom: 145px;
+  @include fullwidth-in-container;
+  @include container-padding;
 }
 
 .firstLineInputs,
