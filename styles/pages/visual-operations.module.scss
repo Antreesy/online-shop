@@ -54,6 +54,10 @@
       .menu_input {
         width: 40%;
 
+        @include mobile-tablet{
+          width: 100%;
+        }
+
         .search {
           position: relative;
           width: 100%;
@@ -80,8 +84,12 @@
             }
           }
 
+          @include mobile-tablet {
+            width: 100%;
+          }
+
           @include mobile {
-            max-width: 100%;
+            width: 100%;
           }
         }
         .searchIcon {
@@ -97,6 +105,17 @@
 
       .button_container {
         display: flex;
+
+        @include mobile-tablet{
+          width: 100%;
+          justify-content: end;
+        }
+
+
+        @include mobile{
+          width: 100%;
+          justify-content: end;
+        }
         .main_buttons {
           display: flex;
           justify-content: space-between;
@@ -147,6 +166,7 @@
           justify-content: center;
           height: 33px;
           width: 164px;
+          margin-left: 0;
         }
       }
     }
