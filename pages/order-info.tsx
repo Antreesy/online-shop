@@ -3,7 +3,7 @@ import { NextPage } from "next"
 
 import Head from "next/head"
 import Image from "next/image"
-import Link from "next/link"
+import { BackButton } from "Сomponents"
 import { Button, Icon, Price } from "../UI"
 
 import cardImage from "../public/assets/img/order_card_img.png"
@@ -36,9 +36,7 @@ const OrderInfoPage: NextPage<OrderInfoProps> = () => {
 
       <div className={s.container}>
         <div className={s.button_wrapper}>
-          <Button className={s.button} iconLeft="arrow_left">
-            <Link href="/">Back</Link>
-          </Button>
+          <BackButton />
         </div>
 
         <div className={s.content}>

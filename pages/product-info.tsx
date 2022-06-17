@@ -2,8 +2,8 @@ import { useState } from "react"
 import { NextPage } from "next"
 
 import Head from "next/head"
-import Link from "next/link"
-import { Button, Input, Select } from "UI"
+import { BackButton } from "Сomponents"
+import { Input, Select } from "UI"
 
 import s from "styles/pages/productInfo.module.scss"
 
@@ -18,9 +18,7 @@ const ProductInfo: NextPage = () => {
 
       <div className={s.container}>
         <div className={s.button_wrapper}>
-          <Button className={s.button} iconLeft="arrow_left">
-            <Link href="/">back</Link>
-          </Button>
+          <BackButton />
         </div>
 
         <h3 className={s.heading}>Product Information</h3>

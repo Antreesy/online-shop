@@ -4,9 +4,6 @@ import { useTranslation } from "next-i18next"
 
 import Head from "next/head"
 import Link from "next/link"
-import { Background } from "Сomponents"
-
-import picture from "public/assets/img/fallback-pic.png"
 
 import s from "styles/pages/Index.module.scss"
 

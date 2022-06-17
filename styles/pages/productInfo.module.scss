@@ -3,14 +3,6 @@
 .button_wrapper {
   margin-bottom: 70px;
 
-  & > .button {
-    width: 102px;
-    height: 46px;
-    background: $color-white;
-    color: $color-purple;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
-  }
-
   @include mobile {
     display: none;
   }
