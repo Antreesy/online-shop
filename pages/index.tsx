@@ -1,70 +1,146 @@
-//Global Dependencies
-import React from "react"
-import type { GetStaticProps, NextPage } from "next"
+import type { NextPage } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useTranslation } from "next-i18next"
 
-//Project Components
 import Head from "next/head"
 import Link from "next/link"
-import LangRoute from "Сomponents/LanguageRouting/LangRoute"
-import { Header, Footer } from "Сomponents"
+import { Background } from "Сomponents"
 
-import { footerNav } from "shared/constants/footernav"
+import picture from "public/assets/img/fallback-pic.png"
 
-//Project Styles
-import styles from "styles/pages/Index.module.scss"
+import s from "styles/pages/Index.module.scss"
 
-export const getStaticProps: GetStaticProps = async ({ locale = "en" }) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ["common", "footer"])),
-  },
-})
+export async function getStaticProps(props: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(props.locale, ["app", "common"])),
+    },
+  }
+}
 
-const Index: NextPage = (props: any) => {
-  const { t } = useTranslation("common")
+const Index: NextPage = (props) => {
+  const { t } = useTranslation()
+
   return (
     <>
       <Head>
         <title>ILONSI SHOP | Homepage</title>
       </Head>
+      <div className={s.main}>
+        {/* TEST */}
+        <p>{t("hello")}</p>
 
-      <Header />
+        <div className={s.flex_row}>
+          <div className={s.flex_column}>
+            <h3 className={s.description}>Common:</h3>
+            <Link href="/login">
+              <a className={s.title__link}>Login page</a>
+            </Link>
+            <Link href="/components-example">
+              <a className={s.title__link}>Сomponents examples</a>
+            </Link>
+            <Link href="/some-wrong-link">
+              <a className={s.title__link}>404 page</a>
+            </Link>
+            <span className={s.title__miss}>Landing page</span>
+            <span className={s.title__miss}>Modals</span>
+          </div>
 
-      <main className={styles.main}>
-        <h2>
-          {props.locale}
-          {t("hello")}
-        </h2>
-        <LangRoute lng="en" />
-        <LangRoute lng="ru" />
+          <div className={s.flex_column}>
+            <h3 className={s.description}>Customer:</h3>
 
-        <p className={styles.description}>
-          UI Kit is on{" "}
-          <Link href="/components-example">
-            <a className={styles.title__link}>/components-example</a>
-          </Link>{" "}
-          page
-        </p>
+            <Link href="/influencers">
+              <a className={s.title__link}>Influencers</a>
+            </Link>
+            <span className={s.title__miss}>Products List</span>
+            <Link href="/products">
+              <a className={s.title__link}>Specific Products</a>
+            </Link>
+            <Link href="/cart">
+              <a className={s.title__link}>Order - cart</a>
+            </Link>
+            <span className={s.title__miss}>Order - payment</span>
+            <span className={s.title__miss}>Order - address</span>
+            <Link href="/order-success">
+              <a className={s.title__link}>Order - success page</a>
+            </Link>
+          </div>
 
-        <p className={styles.description}>
-          Register is on{" "}
-          <Link href="/register">
-            <a className={styles.title__link}>/register</a>
-          </Link>{" "}
-          page
-        </p>
+          <div className={s.flex_column}>
+            <h3 className={s.description}>Influencer:</h3>
 
-        <p className={styles.description}>
-          Redux example is on{" "}
-          <Link href="/redux-example">
-            <a className={styles.title__link}>/redux-example</a>
-          </Link>{" "}
-          page
-        </p>
-      </main>
+            <Link href="/register">
+              <a className={s.title__link}>
+                Register page (for brands / influencers)
+              </a>
+            </Link>
+            <Link href="/influencer-profile">
+              <a className={s.title__link}>Influencer profile</a>
+            </Link>
+            <Link href="/brands">
+              <a className={s.title__link}>Brands List</a>
+            </Link>
+            <Link href="/brands/1">
+              <a className={s.title__link}>Specific Brand</a>
+            </Link>
+            <span className={s.title__miss}>Specific Brand Product</span>
+            <span className={s.title__miss}>Dashboard (3 screens)</span>
+            <span className={s.title__miss}>Products</span>
+          </div>
 
-      <Footer links={footerNav} />
+          <div className={s.flex_column}>
+            <h3 className={s.description}>Brand:</h3>
+            <Link href="/brand-landing">
+              <a className={s.title__link}>Brand homepage</a>
+            </Link>
+            <Link href="/register">
+              <a className={s.title__link}>
+                Register page (for brands / influencers)
+              </a>
+            </Link>
+            <Link href="/register-page">
+              <a className={s.title__link}>Register page</a>
+            </Link>
+            <Link href="/visual-operations">
+              <a className={s.title__link}>Visual operations</a>
+            </Link>
+            <span className={s.title__miss}>products - 4 step</span>
+            <span className={s.title__miss}>brand info</span>
+            <span className={s.title__miss}>product detail</span>
+            <span className={s.title__miss}>product list</span>
+          </div>
+
+          <div className={s.flex_column}>
+            <h3 className={s.description}>Account:</h3>
+            <Link href="/account/add-product">
+              <a className={s.title__link}>Add product (brands)</a>
+            </Link>
+            <Link href="/account/address">
+              <a className={s.title__link}>Address</a>
+            </Link>
+            <Link href="/account/favorites">
+              <a className={s.title__link}>Favorites</a>
+            </Link>
+            <Link href="/account/help">
+              <a className={s.title__link}>Help</a>
+            </Link>
+            <Link href="/account/notifications">
+              <a className={s.title__link}>Notifications</a>
+            </Link>
+            <Link href="/account/orders">
+              <a className={s.title__link}>Orders</a>
+            </Link>
+            <Link href="/account/profile">
+              <a className={s.title__link}>Profile</a>
+            </Link>
+            <Link href="/account/payment">
+              <a className={s.title__link}>Payment</a>
+            </Link>
+            <span className={s.title__miss}>Dashboard (influencer)</span>
+            <span className={s.title__miss}>Profile (brand)</span>
+          </div>
+        </div>
+      </div>
     </>
   )
 }

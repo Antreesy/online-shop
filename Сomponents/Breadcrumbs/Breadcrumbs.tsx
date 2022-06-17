@@ -4,7 +4,7 @@ import cn from "classnames"
 
 import s from "./breadcrumbs.module.scss"
 
-const BreadCrumbs = () => {
+const CustomBreadcrumbs = () => {
   const router = useRouter()
   const path = router.pathname.split("/")
   const newPath = path.slice(1)
@@ -44,4 +44,4 @@ const BreadCrumbs = () => {
   )
 }
 
-export default BreadCrumbs
+export default CustomBreadcrumbs

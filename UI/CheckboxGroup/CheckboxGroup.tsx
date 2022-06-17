@@ -11,6 +11,8 @@ interface CheckboxProps {
   checkboxClassName?: string
   color?: string
   colorChecked?: string
+  value?: boolean
+  setValue?: (newValue: boolean) => void
 }
 
 interface IconProps {
@@ -82,6 +84,8 @@ const CheckboxGroup: React.FC<CheckboxProps> = (props) => {
     checkboxClassName,
     color,
     colorChecked,
+    value,
+    setValue,
   } = props
 
   const labelsArray = typeof labels === "string" ? [labels] : labels
@@ -96,6 +100,11 @@ const CheckboxGroup: React.FC<CheckboxProps> = (props) => {
           key={label}
           control={
             <Checkbox
+              className={checkboxClass}
+              checked={value}
+              onChange={(e) => {
+                setValue?.(e.target.checked)
+              }}
               icon={<IconCheckbox rounded={rounded} color={color} />}
               checkedIcon={
                 <IconCheckbox

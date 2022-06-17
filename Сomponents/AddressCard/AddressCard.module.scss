@@ -1,0 +1,49 @@
+@import "styles/style.scss";
+
+.addressCard {
+  padding: 28px 31.9px 23px 25px;
+  object-fit: contain;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
+  background-color: $color-white;
+}
+
+.titleBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 23px;
+
+  .title {
+    color: $color-purple;
+    font-size: 18px;
+    font-weight: $fw-bold;
+    line-height: 1.17;
+
+    @include mobile {
+      margin-bottom: 7px;
+      font-size: 12px;
+    }
+  }
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  margin-left: -11px;
+}
+.addressBtn {
+  color: $color-purple;
+  .span {
+    color: $color-black;
+  }
+}
+
+.text {
+  font-size: 18px;
+  line-height: 1.94;
+
+  @include mobile {
+    font-size: 13px;
+    line-height: 1.69;
+  }
+}
