@@ -43,8 +43,7 @@ const Background: React.FC<BackgroundProps> = (props) => {
         backgroundImage: `url(${image} linear-gradient(to bottom, rgba(0, 0, 0, 0), #000))`,
       }}
     >
-      {isEditable && (
-        <div className={s.addImageButton}>
+        <div className={s.addImageButton} style={{display: `${!isEditable ? "none" : ""}`}}>
           <Button
             variant="outlined"
             iconLeft="plus"
@@ -52,7 +51,6 @@ const Background: React.FC<BackgroundProps> = (props) => {
           />
           <p>Cover image</p>
         </div>
-      )}
 
       <div className={s.image}>
         {image && <Image src={image} layout="fill" />}
