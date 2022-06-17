@@ -6,7 +6,12 @@ import { CommonWithBcLayout } from "./CommonWithBcLayout"
 import { ProfileLayout } from "./ProfileLayout"
 import { LightLayout } from "./LightLayout"
 
-import { profilePaths, lightPaths, commonPaths, commonWithBcPaths } from "shared/constants/paths"
+import {
+  profilePaths,
+  lightPaths,
+  commonPaths,
+  commonWithBcPaths,
+} from "shared/constants/paths"
 
 import { useAppSelector } from "store/hooks"
 import { authRole } from "store/slices/authSlice"

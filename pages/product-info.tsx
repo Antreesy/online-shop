@@ -7,7 +7,7 @@ import { Button, Input, Select } from "../UI"
 
 import { countriesForSelect } from "../shared/constants/countries"
 
-import s from "../styles/pages/productInfo.module.scss";
+import s from "../styles/pages/productInfo.module.scss"
 
 const ProductInfo: NextPage = () => {
   const [inputValue, setInputValue] = useState<string>("")

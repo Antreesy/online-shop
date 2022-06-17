@@ -11,7 +11,7 @@ import {
   customerInfo,
   orderInfo,
   invoiceInfo,
-} from "../shared/constants/orderinfoitems";
+} from "../shared/constants/orderinfoitems"
 
 export interface LabelInfo {
   label: string

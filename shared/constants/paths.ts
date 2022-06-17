@@ -8,12 +8,11 @@ export const commonPaths = [
   "influencers",
   "order-success",
   "payment",
-  "order-info",
-  "product-info",
   "visual-operations",
   "products",
   "cart",
   "brands",
   "brand-landing",
+  "brand-information",
 ]
 export const commonWithBcPaths = ["order-info", "product-info"]

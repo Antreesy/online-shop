@@ -3,11 +3,11 @@
 .button__back {
   width: 102px;
   height: 46px;
-  margin: $indent-content 108px 70px 120px;
+  margin: 50px 108px 70px 120px;
   object-fit: contain;
 
   @include mobile {
-    margin: $indent-content 108px 0 20px;
+    margin: 50px 108px 0 20px;
   }
   button {
     background: #ffffff none;
@@ -16,82 +16,81 @@
   }
 }
 
-  .container {
-    width: 85%;
-    margin: auto;
+.container {
+  width: 85%;
+  margin: auto;
 
+  & .product_name,
+  .product_info,
+  .product_Exclamation > div,
+  .Product_Features_info_select > div {
+    & p {
+      color: $color-purple;
+    }
+  }
 
-    & .product_name,
-    .product_info,
-    .product_Exclamation > div,
-    .Product_Features_info_select > div {
-      & p {
-        color: $color-purple;
+  & .product_info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  & .product_Exclamation {
+    margin-top: 50px;
+    > div {
+      display: flex;
+      > p {
+        margin-right: 15px;
       }
     }
+  }
+  & .product_card {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
+    padding: 25px 23px 105px 25px;
+    & p {
+      color: black !important;
+    }
+  }
+  & .Product_Features {
+    margin-top: 50px;
+    & span {
+      font-size: 2em;
+      font-weight: bold;
+    }
+  }
+  & .Product_Features_info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
-    & .product_info {
-      display: flex;
-      justify-content: space-between;
-      margin-top: $indent-content;
-
+    & .Product_Features_info_select {
       @include mobile {
-       flex-direction: column;
+        flex-direction: column;
       }
-    }
-
-    & .product_Exclamation {
-      margin-top: $indent-content;
-      > div {
-        display: flex;
-        > p {
-          margin-right: 15px;
-        }
+      & > div {
+        margin: 0 10px 0 10px;
+        width: 100%;
       }
-    }
-    & .product_card {
-      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
-      padding: 25px 23px 105px 25px;
-      & p {
-        color: black !important;
-      }
-    }
-    & .Product_Features {
-      margin-top: $indent-content;
-      & span {
-        font-size: 2em;
-        font-weight: bold;
-      }
-    }
-    & .Product_Features_info {
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
+      width: 100%;
+      & .select {
+        width: 510px;
 
-      & .Product_Features_info_select {
         @include mobile {
-          flex-direction: column;
-        }
-        & > div {
-          margin: 0 10px 0 10px;
           width: 100%;
         }
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        & .select {
-          width: 510px;
-
-          @include mobile {
-            width: 100%;
-          }
-          @include mobile-tablet {
-            width: 100%;
-          }
-          @include mobile-laptop {
-            width: 100%;
-          }
+        @include mobile-tablet {
+          width: 100%;
+        }
+        @include mobile-laptop {
+          width: 100%;
         }
       }
     }
   }
+}

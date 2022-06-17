@@ -46,20 +46,20 @@
     display: flex;
 
     @include mobile {
-       p {
+      p {
         font-size: 13px !important;
 
-         &:nth-child(1) {
-           min-width: 90px !important;
-         }
+        &:nth-child(1) {
+          min-width: 90px !important;
+        }
 
-         &:nth-child(2) {
-           min-width: 12px !important;
-         }
+        &:nth-child(2) {
+          min-width: 12px !important;
+        }
 
-         &:nth-child(3) {
-           font-size: 12px !important;
-         }
+        &:nth-child(3) {
+          font-size: 12px !important;
+        }
       }
     }
     & > p {
@@ -180,7 +180,7 @@
   & .row {
     display: flex;
 
-    @include  mobile {
+    @include mobile {
       & > div > div > span {
         font-size: 12px;
       }
@@ -190,7 +190,7 @@
       font-size: 16px;
       color: $color-black;
 
-      @include  mobile {
+      @include mobile {
         font-size: 12px;
       }
 
@@ -207,7 +207,6 @@
     }
   }
 }
-
 
 .approve {
   width: 550px;
@@ -240,4 +239,3 @@
     }
   }
 }
-
