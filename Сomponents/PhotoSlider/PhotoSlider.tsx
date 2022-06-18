@@ -8,10 +8,11 @@ import s from "./PhotoSlider.module.scss"
 
 interface PhotoSliderProps {
   photos: ImageProps["src"][]
+  className?: string
 }
 
 const PhotoSlider: React.FC<PhotoSliderProps> = (props) => {
-  const { photos } = props
+  const { photos, className } = props
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null)
 
   const mainSlides = photos.map((elem, index) => (
@@ -31,7 +32,7 @@ const PhotoSlider: React.FC<PhotoSliderProps> = (props) => {
   ))
 
   return (
-    <div className={s.photoslider}>
+    <div className={cn(s.photoslider, className)}>
       <Swiper
         freeMode={true}
         pagination={{

@@ -23,7 +23,7 @@
   padding-top: 58px;
   padding-bottom: 61px;
   font-size: 18px;
-  font-weight: normal;
+  font-weight: $fw-regular;
 }
 .orderStatus {
   display: flex;
@@ -31,7 +31,7 @@
 }
 .titleBetween {
   font-size: 30px;
-  font-weight: normal;
+  font-weight: $fw-regular;
   padding-top: 54px;
   padding-bottom: 50px;
 }
@@ -71,6 +71,6 @@
   padding-left: 19px;
 }
 .staticText span {
-  font-weight: bold;
+  font-weight: $fw-bold;
   color: $color-purple;
 }

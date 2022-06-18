@@ -1,4 +1,5 @@
 import type { NextPage } from "next"
+import enot from "../public/enot.jpg"
 
 import Head from "next/head"
 
@@ -18,18 +19,21 @@ import {
   AlertBox,
   Card,
   Carousel,
+  FileUpload,
+  Icon,
   ItemCounter,
   Range,
-  Tabs,
   Price,
-  Icon,
+  Progressbar,
   SocialIcon,
-  ProgressBar,
+  SelectProduct,
+  Tabs,
   Tooltip,
 } from "UI"
 
 import {
   AddressCard,
+  Chart,
   Logo,
   Notification,
   ProductItem,
@@ -38,7 +42,6 @@ import {
   SectionHeader,
   OrderSummary,
   PhotoSlider,
-  Chart,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
@@ -71,6 +74,7 @@ const Home: NextPage = () => {
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
+
       <main className={s.main}>
         <SectionHeader
           className={s.title}
@@ -78,7 +82,7 @@ const Home: NextPage = () => {
           actionItem={"All Orders"}
         />
 
-        <ProgressBar currentStep={1} steps={[1, 2, 3]} />
+        <Progressbar currentStep={1} steps={[1, 2, 3]} />
 
         <Tabs
           className={s.example_tabs}
@@ -94,6 +98,7 @@ const Home: NextPage = () => {
             "Sidebar",
             "Price",
             "Counters",
+            "SelectProduct",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -154,9 +159,16 @@ const Home: NextPage = () => {
               <ItemCounter initValue={5} />
               <ItemCounter initValue={5} large />
             </div>,
+            <div key={"SelectProduct"}>
+              <SelectProduct
+                imageSrc={enot}
+                imageTitle={"enot.png"}
+                imageSize={"690x680"}
+                date={new Date().toLocaleDateString()}
+              />
+            </div>,
           ]}
         />
-        <Chart />
         <SectionHeader className={s.title} title={"Components page"} />
         <h2>Tooltip</h2>
         <Tooltip content={longText}>
@@ -173,6 +185,7 @@ const Home: NextPage = () => {
             "Toolbar",
             "ProductItem",
             "ProductItemList",
+            "Chart",
           ]}
           values={[
             <div key="Notification">
@@ -279,6 +292,10 @@ const Home: NextPage = () => {
 
             <div key="ProductItemLIst" className={s.grid}>
               <ProductItemList productItemList={productItems} />
+            </div>,
+
+            <div key="Chart" className={s.grid}>
+              <Chart />
             </div>,
           ]}
         />

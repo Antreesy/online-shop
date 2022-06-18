@@ -67,7 +67,7 @@
   align-items: center;
 
   font-size: 12px;
-  font-weight: normal;
+  font-weight: $fw-regular;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.5;
@@ -111,7 +111,7 @@
 .text {
   span {
     font-size: 12px;
-    font-weight: normal;
+    font-weight: $fw-regular;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.5;
