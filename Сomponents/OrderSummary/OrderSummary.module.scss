@@ -12,7 +12,6 @@
 }
 
 .title {
-  margin: 20px 0 0;
   font-size: 18px;
   font-weight: $fw-semibold;
   text-align: left;
@@ -177,7 +176,6 @@
   color: $color-white;
 
   @include mobile {
-    width: 300px;
     height: 45px;
     font-size: 15px;
     line-height: 1.2;

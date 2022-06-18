@@ -35,16 +35,16 @@
 
       .totalTitle {
         font-size: 17px;
-        font-weight: normal;
+        font-weight: $fw-regular;
       }
       .totalNumber {
         font-size: 20px;
-        font-weight: bold;
+        font-weight: $fw-bold;
         color: $color-purple;
       }
       .lastUpdate {
         font-size: 12px;
-        font-weight: normal;
+        font-weight: $fw-regular;
       }
     }
     .rightImage {

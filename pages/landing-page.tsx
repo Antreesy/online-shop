@@ -100,8 +100,7 @@ const LandingPage: NextPage = () => {
       <Carousel items={new Array(10).fill(InfluencersCard)} />
 
       <div className={s.influencers_carousel}>
-
-      <h2 className={s.heading}>Lorem Ipsum Dolor Sit Amet</h2>
+        <h2 className={s.heading}>Lorem Ipsum Dolor Sit Amet</h2>
         <p className={s.description}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
           lacinia, lacus mattis semper lacinia, metus urna dapibus quam, eu
@@ -111,11 +110,10 @@ const LandingPage: NextPage = () => {
           quis porttitor feugiat.
         </p>
 
-          <Carousel items={new Array(10).fill(InfluencersCard)} />
+        <Carousel items={new Array(10).fill(InfluencersCard)} />
 
-          <Button className={s.button_more}>Show All</Button>
-        </div>
-
+        <Button className={s.button_more}>Show All</Button>
+      </div>
     </>
   )
 }

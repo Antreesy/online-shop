@@ -15,13 +15,15 @@ import { ItemCounter } from "./ItemCounter"
 import { ModalWindow } from "./ModalWindow"
 import { Pagination } from "./Pagination"
 import { Price } from "./Price"
-import { ProgressBar } from "./ProgressBar"
+import { Progressbar } from "./Progressbar"
 import { RadioGroup } from "./RadioGroup"
 import { Range } from "./Range"
 import { Select } from "./Select"
+import { SelectProduct } from "./SelectProduct"
 import { Slider } from "./Slider"
 import { SocialIcon } from "./SocialIcon"
 import { Tabs } from "./Tabs"
+import { Tooltip } from "./Tooltip"
 
 export {
   Accordion,
@@ -41,11 +43,13 @@ export {
   ModalWindow,
   Pagination,
   Price,
-  ProgressBar,
+  Progressbar,
   RadioGroup,
   Range,
   Select,
+  SelectProduct,
   Slider,
   SocialIcon,
   Tabs,
+  Tooltip,
 }

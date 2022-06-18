@@ -1,9 +1,19 @@
 @import "styles/style.scss";
 
 .main {
+  position: relative;
   padding-top: $header-desktop-height;
+  min-height: 100vh;
 
   @include mobile {
     padding-top: $header-mobile-height;
+    min-height: fit-content;
   }
+}
+
+.container {
+  max-width: 1780px;
+  width: 100%;
+  margin: 0 auto;
+  @include container-padding;
 }
