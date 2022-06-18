@@ -45,7 +45,6 @@ const Index: NextPage = (props) => {
 
           <div className={s.flex_column}>
             <h3 className={s.description}>Customer:</h3>
-
             <Link href="/influencers">
               <a className={s.title__link}>Influencers</a>
             </Link>
@@ -56,8 +55,9 @@ const Index: NextPage = (props) => {
             <Link href="/cart">
               <a className={s.title__link}>Order - cart</a>
             </Link>
-            <span className={s.title__miss}>Order - payment</span>
-            <span className={s.title__miss}>Order - address</span>
+            <Link href="/order-page">
+              <a className={s.title__link}>Order - payment</a>
+            </Link>{" "}
             <Link href="/order-success">
               <a className={s.title__link}>Order - success page</a>
             </Link>

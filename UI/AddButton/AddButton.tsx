@@ -12,6 +12,7 @@ interface AddButtonProps {
   bgColor?: "grey" | "white"
   large?: boolean
   onClick?: () => void
+  className?: string
 }
 
 const AddButton: React.FC<AddButtonProps> = ({
@@ -20,12 +21,14 @@ const AddButton: React.FC<AddButtonProps> = ({
   title,
   large,
   onClick,
+  className,
 }) => {
   const addButtonClass = cn(
     s.addButton,
     color === "primary" ? s.primaryColor : s.secondaryColor,
     bgColor === "grey" ? s.greyBgColor : s.whiteBgColor,
     { [s.large]: large },
+    className,
   )
 
   const iconClass = cn(s.iconContainer, large ? s.iconLarge : s.iconDefault)

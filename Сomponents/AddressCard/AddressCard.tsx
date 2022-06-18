@@ -4,7 +4,7 @@ import s from "./addressCard.module.scss"
 
 interface AddressCardProps {
   title: string
-  text: string
+  text: React.ReactNode
 }
 
 const AddressCard: React.FC<AddressCardProps> = (props) => {

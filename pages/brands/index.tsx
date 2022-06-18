@@ -35,7 +35,7 @@ const brands: NextPage = () => {
         <title>ILONSI SHOP | Influencers</title>
       </Head>
 
-      <main className={s.main}>
+      <div className={s.main}>
         <div className={s.wrapper_bcg}>
           <div className={s.desktop_image}>
             <Background
@@ -121,7 +121,7 @@ const brands: NextPage = () => {
           </Grid>
           <Pagination className={s.pagination} pagesCount={4} isShort />
         </div>
-      </main>
+      </div>
     </>
   )
 }
