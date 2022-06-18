@@ -59,6 +59,7 @@ const ProductsPage: NextPage = () => {
                 header={"Gender"}
                 className={s.sidebar__accordion}
                 summaryClassName={s.sidebar__accordion__summary}
+                iconClassName={s.sidebar__accordion__icon}
               >
                 <CheckboxGroup rounded labels={["Men", "Women", "Unisex"]} />
               </CustomAccordion>
@@ -66,6 +67,7 @@ const ProductsPage: NextPage = () => {
                 header={"Category"}
                 className={s.sidebar__accordion}
                 summaryClassName={s.sidebar__accordion__summary}
+                iconClassName={s.sidebar__accordion__icon}
               >
                 <CheckboxGroup
                   rounded
@@ -83,6 +85,7 @@ const ProductsPage: NextPage = () => {
                 header={"Brand"}
                 className={s.sidebar__accordion}
                 summaryClassName={s.sidebar__accordion__summary}
+                iconClassName={s.sidebar__accordion__icon}
               >
                 <CheckboxGroup
                   rounded
@@ -100,6 +103,7 @@ const ProductsPage: NextPage = () => {
                 header={"Size"}
                 className={s.sidebar__accordion}
                 summaryClassName={s.sidebar__accordion__summary}
+                iconClassName={s.sidebar__accordion__icon}
               >
                 <CheckboxGroup rounded labels={["S", "M", "L", "XL", "XXL"]} />
               </CustomAccordion>
@@ -107,6 +111,7 @@ const ProductsPage: NextPage = () => {
                 header={"Color"}
                 className={s.sidebar__accordion}
                 summaryClassName={s.sidebar__accordion__summary}
+                iconClassName={s.sidebar__accordion__icon}
               >
                 <ColorPicker
                   className={s.sidebar__color_picker}

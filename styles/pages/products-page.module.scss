@@ -162,7 +162,7 @@
   }
 
   span {
-    font-size: 20px !important;
+    font-size: 20px;
   }
 
   div:nth-child(4) {
@@ -200,6 +200,10 @@
 
     &__summary {
       padding: 16px 0;
+    }
+
+    &__icon {
+      font-size: 10px !important;
     }
   }
 
