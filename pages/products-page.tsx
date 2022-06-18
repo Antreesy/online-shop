@@ -1,6 +1,8 @@
 import { NextPage } from "next"
 import Head from "next/head"
 
+import s from "styles/pages/products-page.module.scss"
+
 import { Grid } from "@mui/material"
 import {
   Background,
@@ -10,11 +12,9 @@ import {
   Toolbar,
 } from "Сomponents"
 import { Button, CheckboxGroup, Pagination, Slider } from "UI"
-
-import s from "styles/pages/products-page.module.scss"
 import CustomAccordion from "../UI/Accordion/Accordion"
 import { colors } from "../shared/constants/colors"
-import React from "react"
+
 import picture from "../public/assets/img/products-background.png"
 import picture_mobile from "../public/assets/img/products-page-mob.png"
 
@@ -52,25 +52,20 @@ const ProductsPage: NextPage = () => {
           <Breadcrumbs />
         </div>
         <div className={s.container}>
-          <div style={{ paddingBottom: "10px" }}>
-            <Toolbar className={s.toolbar} values={[]} />
-          </div>
-          <div style={{ display: "flex" }}>
-            <div
-              style={{ width: "210px", marginRight: "91px" }}
-              className={s.sidebar}
-            >
+          <Toolbar className={s.toolbar} values={[]} />
+          <div className={s.container__content}>
+            <div className={s.sidebar}>
               <CustomAccordion
                 header={"Gender"}
-                className={s.accordion}
-                summaryClassName={s.accordion__summary}
+                className={s.sidebar__accordion}
+                summaryClassName={s.sidebar__accordion__summary}
               >
                 <CheckboxGroup rounded labels={["Men", "Women", "Unisex"]} />
               </CustomAccordion>
               <CustomAccordion
                 header={"Category"}
-                className={s.accordion}
-                summaryClassName={s.accordion__summary}
+                className={s.sidebar__accordion}
+                summaryClassName={s.sidebar__accordion__summary}
               >
                 <CheckboxGroup
                   rounded
@@ -86,8 +81,8 @@ const ProductsPage: NextPage = () => {
               </CustomAccordion>
               <CustomAccordion
                 header={"Brand"}
-                className={s.accordion}
-                summaryClassName={s.accordion__summary}
+                className={s.sidebar__accordion}
+                summaryClassName={s.sidebar__accordion__summary}
               >
                 <CheckboxGroup
                   rounded
@@ -103,25 +98,28 @@ const ProductsPage: NextPage = () => {
               </CustomAccordion>
               <CustomAccordion
                 header={"Size"}
-                className={s.accordion}
-                summaryClassName={s.accordion__summary}
+                className={s.sidebar__accordion}
+                summaryClassName={s.sidebar__accordion__summary}
               >
                 <CheckboxGroup rounded labels={["S", "M", "L", "XL", "XXL"]} />
               </CustomAccordion>
               <CustomAccordion
                 header={"Color"}
-                className={s.accordion}
-                summaryClassName={s.accordion__summary}
+                className={s.sidebar__accordion}
+                summaryClassName={s.sidebar__accordion__summary}
               >
-                <ColorPicker className={s.colorPicker} colors={colors} />
+                <ColorPicker
+                  className={s.sidebar__color_picker}
+                  colors={colors}
+                />
               </CustomAccordion>
-              <div className={s.sidebar__priceSlider}>
+              <div className={s.sidebar__price_slider}>
                 <span>Price</span>
                 <Slider
                   min={0}
                   max={50}
-                  value={[0, 30]}
-                  className={s.sidebar__priceSliderWrapper}
+                  value={[0, 50]}
+                  className={s.sidebar__price_slider_wrapper}
                 />
               </div>
               <Button className={s.sidebar__btn}>Apply</Button>
@@ -145,7 +143,7 @@ const ProductsPage: NextPage = () => {
               ))}
             </div>
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
+          <div className={s.pagination__container}>
             <Pagination className={s.pagination} pagesCount={4} isShort />
           </div>
         </div>
