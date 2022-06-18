@@ -55,6 +55,7 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
 
   const onSubmit = handleSubmit((data) => {
     console.log(data)
+    onClose?.()
   })
 
   return (

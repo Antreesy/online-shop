@@ -1,8 +1,9 @@
-import { NextPage } from "next"
-import Head from "next/head"
-import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useState } from "react"
+import { NextPage } from "next"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { useTranslation } from "next-i18next"
 
+import Head from "next/head"
 import { Card } from "@mui/material"
 import { AddressCard, AddressForm, CardForm, OrderSummary } from "Сomponents"
 import { AddButton, CreditCard, CheckboxGroup, Button } from "UI"
@@ -11,7 +12,6 @@ import { creditcardsData } from "shared/constants/creditcardsData"
 import { addresses, billingAddress } from "shared/constants/orderPage"
 
 import s from "styles/pages/orderPage.module.scss"
-import { useTranslation } from "next-i18next"
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
@@ -28,30 +28,26 @@ export async function getStaticProps({ locale }: { locale: string }) {
 }
 
 const OrderPage: NextPage = () => {
-  const [value, setValue] = useState<boolean>(false)
-  const [adrValue, setAddAddress] = useState<boolean>(false)
-  const [cardValue, setAddCard] = useState<boolean>(false)
+  const [showBilling, setShowBilling] = useState<boolean>(false)
+  const [showAddressForm, setShowAddressForm] = useState<boolean>(false)
+  const [showCardForm, setShowCardForm] = useState<boolean>(false)
+  const [showSavedCards, setShowSavedCards] = useState<boolean>(true)
   const { t } = useTranslation("address")
 
-  const handleBillingChecked = (id: number) => {
-    setValue(!value)
-    // push id to the store billing for user
+  const toggleBilling = () => {
+    setShowBilling((prev) => !prev)
   }
 
-  const addNewAddress = () => {
-    setAddAddress(!adrValue)
+  const toggleAddressForm = () => {
+    setShowAddressForm((prev) => !prev)
   }
 
-  const addNewCard = () => {
-    setAddCard(!cardValue)
+  const toggleCardForm = () => {
+    setShowCardForm((prev) => !prev)
   }
 
-  const closeAddCardOption = () => {
-    setAddCard(!cardValue)
-  }
-
-  const cancelForm = () => {
-    setAddAddress(false)
+  const toggleSavedCards = () => {
+    setShowSavedCards((prev) => !prev)
   }
 
   return (
@@ -59,44 +55,48 @@ const OrderPage: NextPage = () => {
       <Head>
         <title>ILONSI SHOP | Account</title>
       </Head>
+
       <div className={s.content}>
         <div className={s.main}>
-          <div className={s.order}>
-            <section className={s.order_delivery}>
-              <h3>Delivery Information</h3>
-              <AddButton
-                title="Add New Address"
-                large={false}
-                onClick={addNewAddress}
-              />
+          <section className={s.section_delivery}>
+            <h3 className={s.heading}>Delivery Information</h3>
+            <AddButton
+              color="secondary"
+              className={s.add_button}
+              title="Add New Address"
+              large={false}
+              onClick={toggleAddressForm}
+            />
 
-              {adrValue ? (
-                <div className={s.form_wrapper}>
-                  <h3>Delivery address</h3>
-                  <AddressForm onClose={() => setAddAddress(false)} />
+            {showAddressForm ? (
+              <div className={s.form_wrapper}>
+                <div className={s.address_header}>
+                  <h3 className={s.heading}>Delivery address</h3>
 
-                  <Button
-                    onClick={cancelForm}
-                    className={s.save_btn}
-                    variant="outlined"
-                  >
-                    {t("Cancel")}
-                  </Button>
-
-                  <div className={s.address_card_checkbox}>
-                    <CheckboxGroup
-                      rounded
-                      labels={["My billing address is the same"]}
-                    />
-                  </div>
+                  <CheckboxGroup
+                    rounded
+                    labels={["My billing address is the same"]}
+                    value={showBilling}
+                    setValue={toggleBilling}
+                  />
                 </div>
-              ) : null}
 
+                <AddressForm onClose={() => setShowAddressForm(false)} />
+
+                <Button
+                  onClick={toggleAddressForm}
+                  className={s.save_btn}
+                  variant="outlined"
+                >
+                  {t("Cancel")}
+                </Button>
+              </div>
+            ) : (
               <div className={s.address_cards_wrapper}>
                 <div>
-                  <h3>Delivery address</h3>
+                  <h3 className={s.heading}>Delivery address</h3>
 
-                  {!adrValue &&
+                  {!showAddressForm &&
                     addresses.map((el, i) => (
                       <div className={s.address_card} key={i}>
                         <AddressCard
@@ -113,87 +113,87 @@ const OrderPage: NextPage = () => {
                           <CheckboxGroup
                             rounded
                             labels={["My billing address is the same"]}
-                            value={value}
-                            setValue={() => handleBillingChecked(el.id)}
+                            value={showBilling}
+                            setValue={toggleBilling}
                           />
                         </div>
                       </div>
                     ))}
                 </div>
 
-                <div>
-                  <h3>Billing address</h3>
-                  {value ? (
-                    <>
-                      {billingAddress.map((el, i) => (
-                        <div className={s.address_card} key={i + 100}>
-                          <AddressCard
-                            title={el.title}
-                            text={
-                              <span className={s.address_card_text}>
-                                {el.text.street} <br /> {el.text.number} <br />{" "}
-                                {el.text.contacts}{" "}
-                              </span>
-                            }
-                          />
-                        </div>
-                      ))}
-                    </>
-                  ) : (
-                    ""
-                  )}
-                </div>
+                {showBilling ? (
+                  <div>
+                    <h3 className={s.heading}>Billing address</h3>
+                    {billingAddress.map((el, i) => (
+                      <div className={s.address_card} key={i + 100}>
+                        <AddressCard
+                          title={el.title}
+                          text={
+                            <span className={s.address_card_text}>
+                              {el.text.street} <br /> {el.text.number} <br />{" "}
+                              {el.text.contacts}{" "}
+                            </span>
+                          }
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
               </div>
-            </section>
-          </div>
+            )}
+          </section>
 
-          <section className={s.order_payment}>
-            <h3>Payment methods</h3>
-            {!cardValue ? (
-              <AddButton
-                title="Add New Address"
-                large={false}
-                onClick={addNewCard}
-              />
-            ) : null}
-
-            {cardValue ? (
-              <div>
-                <CardForm />
-              </div>
-            ) : null}
-
-            <div className={s.payment_cards_wrapper}>
-              <Card className={s.cards}>
-                {creditcardsData.map((card) => (
-                  <CreditCard
-                    size={card.size}
-                    key={card.id}
-                    isHidden={card.isHidden}
-                    isColored={card.isColored}
-                    id={card.id}
-                    cardNumber={card.cardNumber}
-                    cardHolder={card.cardHolder}
-                    expireDate={card.expireDate}
-                    onDelete={card.onDelete}
-                  />
-                ))}
-              </Card>
-            </div>
-
-            <div className={s.payment_card_checkbox}>
+          <section className={s.section_payment}>
+            <div className={s.payment_header}>
+              <h3 className={s.heading}>Payment methods</h3>
               <CheckboxGroup
                 rounded
                 labels={["Pay with my saved cards"]}
-                value={!cardValue}
-                setValue={closeAddCardOption}
+                value={showSavedCards}
+                setValue={toggleSavedCards}
               />
-              <CheckboxGroup rounded labels={["Pay with New Card"]} />
+              <CheckboxGroup
+                rounded
+                labels={["Pay with New Card"]}
+                value={showCardForm}
+                setValue={toggleCardForm}
+              />
             </div>
+
+            {showSavedCards ? (
+              <div className={s.payment_cards_wrapper}>
+                <Card className={s.cards}>
+                  {creditcardsData.map((card) => (
+                    <CreditCard
+                      size={card.size}
+                      key={card.id}
+                      isHidden={card.isHidden}
+                      isColored={card.isColored}
+                      id={card.id}
+                      cardNumber={card.cardNumber}
+                      cardHolder={card.cardHolder}
+                      expireDate={card.expireDate}
+                      onDelete={card.onDelete}
+                    />
+                  ))}
+                </Card>
+              </div>
+            ) : (
+              <>
+                <AddButton
+                  color="secondary"
+                  className={s.add_button}
+                  title="Add Card"
+                  large={false}
+                  onClick={toggleCardForm}
+                />
+                {showCardForm && <CardForm />}
+              </>
+            )}
           </section>
         </div>
 
-        <div className={s.order_summary}>
+        <div className={s.aside}>
           <OrderSummary subtotal={123} discount={12} shipping={10} kdv={10} />
         </div>
       </div>

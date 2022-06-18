@@ -1,42 +1,50 @@
 @import "styles/style.scss";
+
 .content {
   display: flex;
   justify-content: space-between;
+  gap: 40px;
+  padding: 50px 0;
+
+  @include mobile-laptop {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+  }
+}
+
+.heading {
+  margin-bottom: 23px;
+  font-size: 18px;
+  font-weight: $fw-semibold;
+  line-height: 21px;
 
   @include mobile {
-    flex-direction: column;
+    font-size: 15px;
+    line-height: 18px;
   }
+}
+
+.add_button {
+  margin-bottom: 40px;
+  box-shadow: none;
+  background: $color-grey-f5 !important;
 }
 
 .main {
-  position: relative;
-  width: 100%;
-  padding-left: 75px;
+  width: 80%;
 
   @include mobile {
-    padding: 0 15px;
+    width: 100%;
   }
 }
 
-.order {
-  margin: 53px 0px 0 0px;
+.aside {
+  min-width: 20%;
 }
 
-section.order_delivery {
-  & > h3 {
-    font-weight: 600;
-    line-height: 21px;
-    font-size: 18px;
-  }
-
-  & > button {
-    background: $color-grey-f5 !important;
-    margin-top: 23px;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-    box-shadow: none;
-    margin-bottom: 39px;
-  }
+.section_delivery {
+  margin-bottom: 60px;
 
   & form {
     margin-top: 30px;
@@ -116,6 +124,23 @@ section.order_delivery {
   }
 }
 
+.address_header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 23px;
+
+  .heading {
+    margin-bottom: 0;
+    margin-right: auto;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 .address_card_checkbox {
   position: absolute;
   top: -55px;
@@ -131,39 +156,8 @@ section.order_delivery {
   }
 }
 
-.order_summary {
-  margin-top: 27px;
-  margin-left: 41px;
-  min-width: 20%;
-
-  @include mobile-tablet {
-    min-width: 240px;
-    margin-left: 15px;
-  }
-
-  @include mobile {
-    margin: 0 auto;
-  }
-}
-
-.order_payment {
-  margin: 60px 0;
+.section_payment {
   position: relative;
-
-  & > button {
-    background: $color-grey-f5 !important;
-    margin-top: 23px;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-    box-shadow: none;
-    margin-bottom: 39px;
-    width: 100%;
-
-    @include mobile-tablet {
-      margin-top: 50px;
-      height: 20px;
-    }
-  }
 
   @include mobile {
     margin-top: 10px;
@@ -191,18 +185,20 @@ section.order_delivery {
   }
 }
 
-.payment_card_checkbox {
-  position: absolute;
-  right: 0;
-  top: 0;
+.payment_header {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 23px;
 
-  @include mobile-tablet {
-    right: 50%;
-    transform: translateX(50%);
-    width: 100vw;
-    top: 30px;
+  .heading {
+    margin-bottom: 0;
+    margin-right: auto;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
