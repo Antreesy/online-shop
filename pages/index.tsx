@@ -4,9 +4,6 @@ import { useTranslation } from "next-i18next"
 
 import Head from "next/head"
 import Link from "next/link"
-import { Background } from "Сomponents"
-
-import picture from "public/assets/img/fallback-pic.png"
 
 import s from "styles/pages/Index.module.scss"
 
@@ -106,7 +103,12 @@ const Index: NextPage = (props) => {
             </Link>
             <span className={s.title__miss}>products - 4 step</span>
             <span className={s.title__miss}>brand info</span>
-            <span className={s.title__miss}>product detail</span>
+            <Link href="/order-info">
+              <a className={s.title__link}>Order Detail</a>
+            </Link>{" "}
+            <Link href="/product-info">
+              <a className={s.title__link}>Product Detail</a>
+            </Link>{" "}
             <span className={s.title__miss}>product list</span>
           </div>
 
