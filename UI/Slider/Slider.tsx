@@ -1,4 +1,5 @@
 import React from "react"
+import cn from "classnames"
 
 import { Box, Slider } from "@mui/material"
 
@@ -8,10 +9,11 @@ interface SliderProps {
   min?: number
   max?: number
   value: [number, number]
+  className?: string
 }
 
 const CustomSlider: React.FC<SliderProps> = (props) => {
-  const { min = 0, max = 10, value } = props
+  const { min = 0, max = 10, value, className } = props
 
   const [values, setValue] = React.useState<number[]>(value)
   const marks = [
@@ -28,8 +30,10 @@ const CustomSlider: React.FC<SliderProps> = (props) => {
     setValue(newValue as number[])
   }
 
+  const sliderWrapperClassname = cn(s.sliderWrapper, className)
+
   return (
-    <Box className={s.sliderWrapper}>
+    <Box className={sliderWrapperClassname}>
       <Slider
         color="secondary"
         getAriaLabel={() => "range"}
