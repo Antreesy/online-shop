@@ -7,7 +7,6 @@ export const commonPaths = [
   "cart",
   "components-example",
   "influencers",
-  "landing-page",
   "order-page",
   "order-success",
   "payment",
