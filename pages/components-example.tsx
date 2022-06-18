@@ -36,12 +36,14 @@ import {
   Chart,
   Logo,
   Notification,
+  Breadcrumbs,
   ProductItem,
   ProductItemList,
   ProfileSidebar,
   SectionHeader,
   OrderSummary,
   PhotoSlider,
+  Header,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
@@ -75,12 +77,9 @@ const Home: NextPage = () => {
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
 
-<<<<<<< HEAD
       <Header />
-      <BreadCrumbs />
+      <Breadcrumbs />
 
-=======
->>>>>>> 436d9fabf5de98e0136f1d3d4fb3d92c5e5ca16d
       <main className={s.main}>
         <SectionHeader
           className={s.title}
