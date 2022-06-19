@@ -20,13 +20,15 @@ const BrandLanding: React.FC = () => {
 
       <main className={s.main}>
         <div className={s.container}>
-          <div className={s.infoText}>
-            <h4>{t("Add Product")}</h4>
-            <h4>{t("Brand Information")}</h4>
-            <h4>{t("All Products")}</h4>
-            <h4>{t("All Cancellations")}</h4>
-            <h4>{t("On Sale")}</h4>
-            <h4>{t("Brand Visual Operations")}</h4>
+          <div className={s.navigation}>
+            <div className={s.infoText}>
+              <h4>{t("Add Product")}</h4>
+              <h4>{t("Brand Information")}</h4>
+              <h4>{t("All Products")}</h4>
+              <h4>{t("All Cancellations")}</h4>
+              <h4>{t("On Sale")}</h4>
+              <h4>{t("Brand Visual Operations")}</h4>
+            </div>
           </div>
           <div className={s.orderStatus}>
             <OrderStatusButton

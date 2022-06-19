@@ -6,15 +6,21 @@
   border: 3px solid $color-white;
   display: flex;
   cursor: pointer;
-  width: 536px;
   height: 159px;
   align-items: center;
+  padding-right: 10px;
+  width: 100%;
 }
 
 .wrapper {
   height: 95px;
   margin-left: 32px;
   display: flex;
+  padding-right: 20px;
+  width: 100%;
+  @include mobile-tablet{
+    margin-right: 15px;
+  }
 
   .icon_wrapper {
     width: 95px;
@@ -38,6 +44,9 @@
     h3 {
       font-size: 30px;
       font-weight: $fw-bold;
+      @include mobile-tablet{
+        font-size: 16px;
+      }
     }
 
     .description {
@@ -46,7 +55,7 @@
       align-items: flex-end;
 
       p {
-        padding-right: 60px;
+        // padding-right: 60px;
         font-size: 18px;
       }
     }

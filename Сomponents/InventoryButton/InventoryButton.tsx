@@ -35,12 +35,12 @@ const InventoryButton: React.FC<InventoryButtonProps> = (props) => {
           <Icon type={icon} className={s.icon} />
         </div>
         <div className={s.total_num}>{number}</div>
-        <div className={s.total_text}>{text}</div>
+        <div className={s.total_text}><span>{text}</span> <span className={cn(s.total_mobile)}>{number}</span> </div>
         <div className={s.bg_icon_wrapper}>
           <Icon type={icon} className={s.bg_icon} />
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 

@@ -3,46 +3,101 @@
 .main {
   min-height: 100vh;
 
-  @include mobile {
-  }
+  @include mobile {}
 }
 
 .container {
   width: 100%;
   margin: 0 auto;
-  padding: 0 140px 40px;
+  padding: 0 20px;
 
   @include mobile-tablet {
-    padding: 30px 15px 40px;
+    padding: 30px 0 20px 0;
   }
 }
-.infoText {
-  display: flex;
-  flex-direction: row;
-  gap: 138px;
+
+.navigation {
+  width: 100%;
+  overflow-x: auto;
   padding-top: 58px;
   padding-bottom: 61px;
+
+  @include mobile-tablet {
+    padding: 20px 0;
+  }
+}
+
+.infoText {
+  display: flex;
+  justify-content: space-between;
   font-size: 18px;
   font-weight: $fw-regular;
+  padding: 5px 0;
+
+  @include mobile-tablet {
+    width: 1000px;
+  }
 }
+
 .orderStatus {
   display: flex;
   gap: 16px;
+
+
+  @include laptop {
+    overflow-x: auto;
+    padding: 15px 0;
+    padding-right: 10px;
+
+  }
+
+  @include mobile-tablet {
+    overflow-x: auto;
+    padding: 15px 0;
+    padding-right: 10px;
+
+
+  }
 }
+
 .titleBetween {
   font-size: 30px;
   font-weight: $fw-regular;
   padding-top: 54px;
   padding-bottom: 50px;
+
+  @include mobile-tablet {
+    font-size: 15px;
+    padding: 20px 0;
+  }
 }
+
 .inventoryStatus {
   display: flex;
   gap: 18px;
+
+  @include laptop {
+    overflow-x: auto;
+    padding: 15px 0;
+    padding-right: 10px;
+  }
+
+  @include mobile-tablet {
+    padding: 15px 0;
+    padding-right: 10px;
+    overflow-x: auto;
+  }
 }
+
 .cancellation {
   display: flex;
   gap: 16px;
+
+  @include mobile-tablet {
+    flex-direction: column;
+  }
 }
+
 .cancellationButton {
   box-shadow: 0 3px 20px 0 rgb(0 0 0 / 10%);
   width: 812px;
@@ -52,7 +107,16 @@
   flex-wrap: wrap;
   padding-left: 19px;
   align-items: center;
+
+  @include mobile-tablet {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: max-content;
+
+  }
 }
+
 .iconSquare {
   width: 61px;
   height: 61px;
@@ -61,15 +125,31 @@
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+
+  @include mobile-tablet {
+    width: 32px;
+    height: 32px;
+  }
 }
+
 .squareIcon {
   font-size: 46.12px;
   color: $color-purple-f;
+
+  @include mobile-tablet {
+    font-size: 14px;
+  }
 }
+
 .staticText {
   font-size: 30px;
   padding-left: 19px;
+
+  @include mobile-tablet {
+    font-size: 14px;
+  }
 }
+
 .staticText span {
   font-weight: $fw-bold;
   color: $color-purple;
