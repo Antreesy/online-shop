@@ -87,7 +87,7 @@ const Carousel: React.FC<CarouselProps> = (props) => {
               : false
           }
           loop={true}
-          className={cn(s.flex, {[s.flex_outside]: outsideArrows})}
+          className={cn(s.flex, { [s.flex_outside]: outsideArrows })}
         >
           {items.map((item, index) => (
             <SwiperSlide key={index} className={s.slide}>

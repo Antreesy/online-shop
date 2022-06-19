@@ -5,8 +5,6 @@ import { Navigation, NavigationProps } from "./Navigation"
 
 import s from "./footer.module.scss"
 
-// interface FooterProps extends NavigationProps {}
-
 const Footer: React.FC<NavigationProps> = ({ links }) => {
   return (
     <>
