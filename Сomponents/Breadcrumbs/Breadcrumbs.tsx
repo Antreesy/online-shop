@@ -12,30 +12,26 @@ const CustomBreadcrumbs = () => {
   const routePath = path.slice()
 
   return (
-    <Stack className={s.main} spacing={2}>
+    <Stack className={s.wrapper} spacing={2}>
       <Breadcrumbs className={s.nav} separator={"/"} aria-label="breadcrumb">
         <Link
-          className={
-            newPath[0] === ""
-              ? cn(s.active, s.breadcrumb)
-              : cn(s.route, s.breadcrumb)
-          }
+          className={cn(s.breadcrumb, newPath[0] === "" ? s.active : s.route)}
           key="1"
           href="/"
         >
           Home
         </Link>
-        {newPath.slice(0, newPath.length - 1).map((route) => (
+        {newPath.slice(0, newPath.length - 1).map((route, index) => (
           <Link
             className={cn(s.route, s.breadcrumb)}
-            key="1"
+            key={index + 2}
             href={`/${newPath.slice(0, routePath.indexOf(route)).join("/")}`}
           >
             {route}
           </Link>
         ))}
         {activeRoute[0] !== "" && (
-          <Typography className={cn(s.active, s.breadcrumb)} key="3">
+          <Typography className={cn(s.active, s.breadcrumb)} key={"active"}>
             {activeRoute}
           </Typography>
         )}

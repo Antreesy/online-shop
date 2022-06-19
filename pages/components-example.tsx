@@ -40,7 +40,6 @@ import {
   SectionHeader,
   OrderSummary,
   PhotoSlider,
-  Header,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
@@ -73,9 +72,6 @@ const Home: NextPage = () => {
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
-
-      <Header />
-      <Breadcrumbs />
 
       <main className={s.main}>
         <SectionHeader

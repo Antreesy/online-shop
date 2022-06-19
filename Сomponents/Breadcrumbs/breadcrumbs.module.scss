@@ -1,6 +1,6 @@
 @import "styles/style.scss";
 
-.main {
+.wrapper {
   background: $color-grey-de;
   width: 100%;
   padding: 0 75px;
@@ -12,6 +12,11 @@
   & > nav > ol > li {
     display: flex;
     align-items: center;
+
+    @include mobile {
+      margin: 0;
+      font-size: 10px;
+    }
   }
 
   @include mobile-tablet {
@@ -25,16 +30,8 @@
     top: 130px;
     height: 31px;
     background: $color-white;
-
-    & > nav > ol > li {
-      margin: 0;
-      font-size: 10px;
-    }
-
-    & > nav > ol > li > .MuiBreadcrumbs-li{
-      text-decoration: underline;
-    }
   }
+
   .breadcrumb {
     font-size: 14px;
     font-weight: $fw-regular;
@@ -47,11 +44,13 @@
     &:first-letter {
       text-transform: uppercase;
     }
+
     @include mobile {
       font-size: 9px;
       line-height: 1.22;
       letter-spacing: 0.36px;
-      &:link{
+
+      &:link {
         text-decoration: underline;
       }
     }
@@ -63,19 +62,21 @@
       text-decoration: underline;
     }
 
-    @include mobile{
+    @include mobile {
       color: $color-grey-ba;
     }
   }
+
   .active {
     font-weight: $fw-bold;
     pointer-events: none;
     text-decoration: none;
-    
-    @include mobile{
-      font-weight: normal;
+
+    @include mobile {
+      font-weight: $fw-regular;
     }
   }
+
   p::first-letter {
     text-transform: uppercase;
   }
