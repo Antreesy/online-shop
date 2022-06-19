@@ -1,6 +1,5 @@
 import { Breadcrumbs, Typography, Link, Stack } from "@mui/material"
 import { useRouter } from "next/router"
-import useResize from "shared/hooks/useResize"
 import cn from "classnames"
 
 import s from "./breadcrumbs.module.scss"
@@ -11,11 +10,10 @@ const CustomBreadcrumbs = () => {
   const newPath = path.slice(1)
   const activeRoute = path.slice(-1)
   const routePath = path.slice()
-  const width = useResize()
 
   return (
     <Stack className={s.main} spacing={2}>
-      <Breadcrumbs className={s.nav} separator={width > 768 ? "-" : "/"} aria-label="breadcrumb">
+      <Breadcrumbs className={s.nav} separator={"/"} aria-label="breadcrumb">
         <Link
           className={
             newPath[0] === ""
