@@ -28,7 +28,48 @@
   justify-content: center;
 }
 
+.flex_outside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 130px !important;
+
+  @include mobile {
+    padding-bottom: 65px !important;
+  }
+}
+
+.slide {
+  padding: 0 10px;
+}
+
 .isEmptyText {
   font-size: 2rem;
   width: fit-content;
+}
+
+.button_group {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 105px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  @include mobile {
+    left: 0;
+    margin: 0 auto;
+    height: 40px;
+  }
+
+  .swiperBtn {
+    background-color: $color-purple;
+    color: $color-white;
+    border: none;
+    width: 40%;
+    height: 100%;
+  }
 }

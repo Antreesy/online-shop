@@ -4,7 +4,6 @@ import { AlertBox } from "./AlertBox"
 import { Button } from "./Button"
 import { Card } from "./Card"
 import { Carousel } from "./Carousel"
-import { CarouselOutside } from "./CarouselOutside"
 import { CheckboxGroup } from "./CheckboxGroup"
 import { CreditCard } from "./CreditCard"
 import { DatePicker } from "./DatePicker"
@@ -33,7 +32,6 @@ export {
   Button,
   Card,
   Carousel,
-  CarouselOutside,
   CheckboxGroup,
   CreditCard,
   DatePicker,

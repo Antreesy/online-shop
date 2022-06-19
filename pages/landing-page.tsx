@@ -5,7 +5,7 @@ import cn from "classnames"
 
 import Head from "next/head"
 import Image from "next/image"
-import { Button, Card, Carousel, CarouselOutside, Pagination } from "UI"
+import { Button, Card, Carousel, Pagination } from "UI"
 import { Breadcrumbs, Footer, Header } from "Сomponents"
 
 import { footerNav } from "shared/constants/footernav"
@@ -43,7 +43,7 @@ const InfluencersCard = () => (
 const TestimonialsCard = () => (
   <div className={s.testimonials_card}>
     <div className={s.image_wrapper}>
-      <Image src={testim} />
+      <Image src={testim} layout="fill" />
       <p>Burberry</p>
     </div>
     <p className={s.card_caption}>
@@ -121,13 +121,18 @@ const LandingPage: NextPage = (props) => {
           </div>
 
           <div className={s.influencers_carousel}>
-            <Carousel items={new Array(10).fill(InfluencersCard)} />
+            <Carousel
+              items={new Array(6).fill(InfluencersCard)}
+              slidesMobile={2}
+              slidesTablet={3}
+              slidesLaptop={3}
+              slidesDesktop={4}
+            />
 
             <Button className={s.button_more}>Show All</Button>
           </div>
 
           <div className={s.brands_wrapper}>
-            <div className={s.brands_bg} />
             <div className={s.brand_content}>
               <h2 className={s.heading}>Featured Brands</h2>
               <p className={s.description}>
@@ -137,7 +142,15 @@ const LandingPage: NextPage = (props) => {
                 eleifend nisi maximus et. Aliquam faucibus facilisis viverra.
                 Fusce urna ipsum, tempor in erat
               </p>
-              <CarouselOutside items={new Array(10).fill(BrandCard)} />
+              <div className={s.brands_bg} />
+              <Carousel
+                items={new Array(8).fill(BrandCard)}
+                outsideArrows
+                slidesMobile={3}
+                slidesTablet={4}
+                slidesLaptop={5}
+                slidesDesktop={6}
+              />
             </div>
           </div>
 
@@ -181,7 +194,10 @@ const LandingPage: NextPage = (props) => {
             </p>
 
             <div className={s.testim_desktop}>
-              <Carousel items={new Array(10).fill(TestimonialsCard)} />
+              <Carousel
+                items={new Array(6).fill(TestimonialsCard)}
+                slidesTablet={3}
+              />
             </div>
 
             <div className={s.testim_mobile}>

@@ -15,11 +15,16 @@
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
+  margin-top: calc(-1 * $header-desktop-height);
+
+  @include mobile {
+    margin-top: calc(-1 * $header-mobile-height);
+  }
 
   &::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: $header-desktop-height;
     right: 0;
     width: 35vw;
     height: 5px;
@@ -49,7 +54,7 @@
 
   @include mobile {
     padding: 260px 0 50px;
-    height: 520px;
+    height: 560px;
   }
 }
 
@@ -57,7 +62,7 @@
   width: 80vw;
 
   @include mobile {
-    height: 85px;
+    max-height: 85px;
   }
 }
 
@@ -164,6 +169,11 @@
     border-bottom-left-radius: 240px;
     background: $main-gradient-revert;
 
+    @include tablet-laptop {
+      width: 155px;
+      height: 140px;
+    }
+
     @include mobile {
       width: 95px;
       height: 85px;
@@ -180,6 +190,13 @@
     border-radius: 260px;
     border: 3px solid $color-purple;
 
+    @include tablet-laptop {
+      width: 350px;
+      height: 350px;
+      top: -180px;
+      right: -160px;
+    }
+
     @include mobile {
       width: 210px;
       height: 210px;
@@ -190,7 +207,7 @@
 }
 
 .text_content {
-  padding-left: 135px;
+  padding: 0 135px;
   margin-bottom: 110px;
 
   & > .heading {
@@ -216,6 +233,11 @@
     }
   }
 
+  @include tablet-laptop {
+    padding: 0 85px;
+    margin-bottom: 70px;
+  }
+
   @include mobile {
     padding: 0 15px;
     margin-bottom: 25px;
@@ -239,12 +261,12 @@
 }
 
 .influencers_card {
-  width: 380px;
-  height: 465px;
+  max-width: 380px;
+  width: 100%;
+  aspect-ratio: 4 / 5;
 
   @include mobile {
-    width: 180px;
-    height: 205px;
+    max-width: 180px;
   }
 }
 
@@ -282,6 +304,7 @@
     position: absolute;
     width: 360px;
     height: 100%;
+    top: 0;
     left: 0;
     background-image: url("../../public/assets/img/picture_1.png");
     background-repeat: no-repeat;
@@ -289,10 +312,16 @@
     background-size: cover;
     border-bottom-left-radius: 30px;
 
+    @include tablet-laptop {
+      width: 260px;
+    }
+
     @include mobile {
-      width: 100%;
+      position: relative;
+      left: 15px;
+      margin-bottom: 25px;
+      width: 100vw;
       height: 170px;
-      top: 190px;
     }
   }
 
@@ -302,6 +331,10 @@
     align-items: flex-end;
     padding: 75px 130px 70px 440px;
     margin-left: auto;
+
+    @include tablet-laptop {
+      padding: 60px 70px 60px 300px;
+    }
 
     @include mobile {
       padding: 35px 15px;
@@ -329,7 +362,6 @@
       color: $color-black;
 
       @include mobile {
-        margin-bottom: 210px;
         font-size: 13px;
       }
     }
@@ -369,7 +401,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 180px;
+  max-width: 180px;
+  width: 100%;
   height: 90px;
   background-color: $color-white;
 }
@@ -393,8 +426,10 @@
     background: $main-gradient;
 
     @include mobile {
-      margin-bottom: 210px;
-      font-size: 13px;
+      left: auto;
+      right: 0;
+      width: 19px;
+      height: 19px;
     }
   }
 }
@@ -481,6 +516,10 @@
     text-align: center;
     color: $color-white;
 
+    @include tablet-laptop {
+      max-width: 600px;
+    }
+
     @include mobile {
       max-width: 300px;
       font-size: 11px;
@@ -540,7 +579,8 @@
   }
 
   .testimonials_card {
-    width: 380px;
+    max-width: 380px;
+    width: 100%;
     margin-bottom: 50px;
 
     @include mobile {
@@ -552,6 +592,10 @@
       position: relative;
       height: 280px;
       margin-bottom: 20px;
+
+      & img {
+        object-fit: cover;
+      }
 
       & > p {
         position: absolute;

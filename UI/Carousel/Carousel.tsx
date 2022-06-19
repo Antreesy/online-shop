@@ -13,6 +13,11 @@ import s from "./carousel.module.scss"
 interface CarouselProps {
   items: React.ReactElement[]
   autoplayDelay?: number
+  slidesMobile?: number
+  slidesTablet?: number
+  slidesLaptop?: number
+  slidesDesktop?: number
+  outsideArrows?: boolean
 }
 
 const SlidePrevButton = () => {
@@ -41,15 +46,36 @@ const SlideNextButton = () => {
   )
 }
 
-const Carousel: React.FC<CarouselProps> = ({ items, autoplayDelay }) => {
+const Carousel: React.FC<CarouselProps> = (props) => {
+  const {
+    items,
+    autoplayDelay,
+    slidesMobile = 4,
+    slidesTablet = 4,
+    slidesLaptop = 4,
+    slidesDesktop = 4,
+    outsideArrows,
+  } = props
+
   return (
     <>
       {items.length !== 0 ? (
         <Swiper
           modules={[Navigation, Autoplay]}
-          slidesPerView={4}
-          spaceBetween={20}
+          slidesPerView={slidesMobile}
+          breakpoints={{
+            600: {
+              slidesPerView: slidesTablet,
+            },
+            1024: {
+              slidesPerView: slidesLaptop,
+            },
+            1440: {
+              slidesPerView: slidesDesktop,
+            },
+          }}
           slidesPerGroup={1}
+          spaceBetween={20}
           centeredSlides={true}
           initialSlide={1}
           autoplay={
@@ -61,13 +87,24 @@ const Carousel: React.FC<CarouselProps> = ({ items, autoplayDelay }) => {
               : false
           }
           loop={true}
-          className={s.flex}
+          className={cn(s.flex, {[s.flex_outside]: outsideArrows})}
         >
-          <SlidePrevButton />
-          {items.map((item) => (
-            <SwiperSlide key={Math.random()}>{item}</SwiperSlide>
+          {items.map((item, index) => (
+            <SwiperSlide key={index} className={s.slide}>
+              {item}
+            </SwiperSlide>
           ))}
-          <SlideNextButton />
+          {outsideArrows ? (
+            <div className={s.button_group}>
+              <SlidePrevButton />
+              <SlideNextButton />
+            </div>
+          ) : (
+            <>
+              <SlidePrevButton />
+              <SlideNextButton />
+            </>
+          )}
         </Swiper>
       ) : (
         <div className={s.flex}>
