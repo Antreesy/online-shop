@@ -1,6 +1,6 @@
 @import "styles/style.scss";
 
-.sliderWrapper {
+.slider_wrapper {
   max-width: 200px;
   width: 100%;
 }
@@ -9,7 +9,7 @@
   color: $color-purple;
 }
 
-.markLabel {
+.mark_label {
   font-size: 20px;
   font-weight: $fw-regular;
   color: $color-black;

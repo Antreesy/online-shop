@@ -1,12 +1,12 @@
 @import "styles/style.scss";
 
-.fileSelect {
+.file_select {
   input {
     font-family: inherit;
   }
 }
 
-.fileInput {
+.file_input {
   opacity: 0;
   position: absolute;
   z-index: 10;

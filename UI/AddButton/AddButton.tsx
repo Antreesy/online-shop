@@ -24,14 +24,16 @@ const AddButton: React.FC<AddButtonProps> = ({
   className,
 }) => {
   const addButtonClass = cn(
-    s.addButton,
-    color === "primary" ? s.primaryColor : s.secondaryColor,
-    bgColor === "grey" ? s.greyBgColor : s.whiteBgColor,
-    { [s.large]: large },
+    s.add_button,
+    {
+      [s.color_primary]: color === "primary",
+      [s.back_color_grey]: bgColor === "grey",
+      [s.large]: large,
+    },
     className,
   )
 
-  const iconClass = cn(s.iconContainer, large ? s.iconLarge : s.iconDefault)
+  const iconClass = cn(s.icon_wrapper, { [s.large]: large })
 
   return (
     <Button

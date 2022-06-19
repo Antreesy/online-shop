@@ -35,15 +35,17 @@ const Card: React.FC<CardProps> = (props) => {
     <div className={cardClass}>
       <Image src={imageSrc} alt={title} layout="fill" />
 
-      <div className={s.hiddenContainer}>
+      <div className={s.hidden_wrapper}>
         <div className={contentClass}>
           <p className={s.title}>{title}</p>
-          <Button className={s.button}>{buttonTitle}</Button>
+          <Button className={s.button} onClick={onClick}>
+            {buttonTitle}
+          </Button>
         </div>
       </div>
 
       {!!topButtonTitle && (
-        <span className={s.topButton}>{topButtonTitle}</span>
+        <span className={s.top_button}>{topButtonTitle}</span>
       )}
     </div>
   )

@@ -1,16 +1,16 @@
 @import "styles/style.scss";
 
-.cardColored {
+.card_colored {
   max-width: 100%;
   background: $main-gradient;
 }
 
-.cardDefault {
+.card_default {
   max-width: 100%;
   background: $color-grey-c;
 }
 
-.cardContent {
+.content {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -23,40 +23,34 @@
   }
 }
 
-.cardLeftSideClasses {
+.left_group {
   display: flex;
   flex-direction: column;
   color: $color-white;
   margin-bottom: 15px;
 }
 
-.withButton {
-  display: flex;
-  flex-direction: column;
-  align-self: flex-start;
-  height: 100%;
-  justify-content: space-between;
-}
-
-.withoutButton {
+.right_group {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   height: 100%;
-}
-
-.cardRightSide {
   color: $color-white;
+
+  &.with_button {
+    align-self: flex-start;
+    justify-content: space-between;
+  }
 }
 
-.expireDate {
+.expire_date {
   color: $color-white;
   font-weight: $fw-regular;
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-.deleteBtn {
+.delete_btn {
   align-self: flex-end;
   color: $color-white;
 }
