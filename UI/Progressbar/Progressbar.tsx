@@ -1,15 +1,13 @@
-import React from "react"
-import { styled } from "@mui/material/styles"
-import Stack from "@mui/material/Stack"
-import Stepper from "@mui/material/Stepper"
-import Step from "@mui/material/Step"
-import StepLabel from "@mui/material/StepLabel"
-import StepConnector, {
+import {
+  Stack,
+  Stepper,
+  Step,
+  StepConnector,
   stepConnectorClasses,
-} from "@mui/material/StepConnector"
-import { StepIconProps } from "@mui/material/StepIcon"
-
-import s from "./progressBar.module.scss"
+  StepLabel,
+  styled,
+  StepIconProps,
+} from "@mui/material"
 
 interface ProgressbarProps {
   steps: number[]

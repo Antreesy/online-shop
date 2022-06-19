@@ -3,7 +3,7 @@ import cn from "classnames"
 
 import { Button } from "UI"
 
-import s from "./ItemCounter.module.scss"
+import s from "./itemCounter.module.scss"
 
 interface ItemCounterProps {
   initValue?: number

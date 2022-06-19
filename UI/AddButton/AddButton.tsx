@@ -4,7 +4,7 @@ import cn from "classnames"
 import { Button } from "UI"
 import { Icon } from "UI"
 
-import s from "./addbutton.module.scss"
+import s from "./addButton.module.scss"
 
 interface AddButtonProps {
   title?: string

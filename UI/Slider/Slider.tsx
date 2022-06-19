@@ -2,7 +2,7 @@ import React from "react"
 
 import { Box, Slider } from "@mui/material"
 
-import s from "./Slider.module.scss"
+import s from "./slider.module.scss"
 
 interface SliderProps {
   min?: number

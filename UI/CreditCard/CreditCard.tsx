@@ -6,7 +6,7 @@ import { Icon } from "UI"
 
 import { creditcardConsts } from "shared/constants/creditcard"
 
-import s from "./creditcard.module.scss"
+import s from "./creditCard.module.scss"
 
 export interface CreditCardProps {
   size?: number
