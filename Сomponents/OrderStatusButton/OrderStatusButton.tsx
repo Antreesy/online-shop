@@ -36,21 +36,25 @@ const OrderStatusButton: React.FC<OrderStatusButtonProps> = (props) => {
       })}
     >
       <div className={s.wrapper}>
-        <div className={s.icon_wrapper}>
+        <div className={cn(s.icon_wrapper, s.desktop)}>
           <Icon type={icon} className={s.icon} />
         </div>
         <div className={s.info_wrapper}>
-          <h3>
-            {" "}
-            {title} : {orderNumbers}{" "}
-          </h3>
-          <div className={s.description}>
+          <div className={s.title_row}>
+            <div className={cn(s.icon_wrapper, s.mobile)}>
+              <Icon type={icon} className={s.icon} />
+            </div>
+            <h3>
+              {title} : {orderNumbers}
+            </h3>
+          </div>
+          <div className={s.description_row}>
+            <Icon type="exclamation" className={s.icon} />
             <p>
-              {" "}
               Last Day: <b> {lastDay} </b>
             </p>
+            <Icon type="exclamation" className={s.icon} />
             <p>
-              {" "}
               Delays: <b> {delays} </b>
             </p>
           </div>

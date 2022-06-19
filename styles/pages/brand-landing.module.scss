@@ -1,104 +1,83 @@
 @import "styles/style.scss";
 
-.main {
-  min-height: 100vh;
-
-  @include mobile {}
-}
-
 .container {
+  max-width: 1640px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding-top: 60px;
 
   @include mobile-tablet {
-    padding: 30px 0 20px 0;
+    padding-top: 25px;
   }
 }
 
 .navigation {
   width: 100%;
-  overflow-x: auto;
-  padding-top: 58px;
-  padding-bottom: 61px;
+  margin-bottom: 60px;
+
+  & ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    font-size: 18px;
+    font-weight: $fw-regular;
+
+    @include mobile-tablet {
+      width: 1000px;
+    }
+  }
 
   @include mobile-tablet {
-    padding: 20px 0;
+    margin-bottom: 30px;
   }
 }
 
-.infoText {
+.order_wrapper {
   display: flex;
-  justify-content: space-between;
-  font-size: 18px;
-  font-weight: $fw-regular;
-  padding: 5px 0;
+  flex-shrink: 0;
+  padding: 5px;
+  padding-bottom: 20px;
+  gap: 20px;
 
   @include mobile-tablet {
-    width: 1000px;
+    padding: 5px 20px;
   }
 }
 
-.orderStatus {
+.inventory_wrapper {
   display: flex;
-  gap: 16px;
-
-
-  @include laptop {
-    overflow-x: auto;
-    padding: 15px 0;
-    padding-right: 10px;
-
-  }
+  flex-shrink: 0;
+  padding: 5px;
+  padding-bottom: 20px;
+  gap: 20px;
 
   @include mobile-tablet {
-    overflow-x: auto;
-    padding: 15px 0;
-    padding-right: 10px;
-
-
+    padding: 5px 20px;
   }
 }
 
-.titleBetween {
+.caption {
   font-size: 30px;
   font-weight: $fw-regular;
-  padding-top: 54px;
-  padding-bottom: 50px;
+  margin-bottom: 45px;
 
   @include mobile-tablet {
+    margin-bottom: 20px;
     font-size: 15px;
-    padding: 20px 0;
   }
 }
 
-.inventoryStatus {
-  display: flex;
-  gap: 18px;
-
-  @include laptop {
-    overflow-x: auto;
-    padding: 15px 0;
-    padding-right: 10px;
-  }
-
-  @include mobile-tablet {
-    padding: 15px 0;
-    padding-right: 10px;
-    overflow-x: auto;
-  }
-}
-
-.cancellation {
+.demands_wrapper {
   display: flex;
   gap: 16px;
+  margin-bottom: 25px;
 
   @include mobile-tablet {
     flex-direction: column;
   }
 }
 
-.cancellationButton {
+.demands_button {
   box-shadow: 0 3px 20px 0 rgb(0 0 0 / 10%);
   width: 812px;
   height: 100px;
@@ -113,11 +92,10 @@
     padding-top: 10px;
     padding-bottom: 10px;
     height: max-content;
-
   }
 }
 
-.iconSquare {
+.icon_wrapper {
   width: 61px;
   height: 61px;
   background: $color-light-pink;
@@ -130,27 +108,45 @@
     width: 32px;
     height: 32px;
   }
-}
 
-.squareIcon {
-  font-size: 46.12px;
-  color: $color-purple-f;
+  .icon {
+    font-size: 46.12px;
+    color: $color-purple-f;
 
-  @include mobile-tablet {
-    font-size: 14px;
+    @include mobile-tablet {
+      font-size: 14px;
+    }
   }
 }
 
-.staticText {
+.text {
   font-size: 30px;
   padding-left: 19px;
 
+  span {
+    font-weight: $fw-bold;
+    color: $color-purple;
+  }
+
   @include mobile-tablet {
     font-size: 14px;
   }
 }
 
-.staticText span {
-  font-weight: $fw-bold;
-  color: $color-purple;
+.scrollbar {
+  margin-bottom: 45px;
+
+  & > :global(.simplebar-horizontal) {
+    background-color: $color-grey-f4;
+    border-radius: 5px;
+
+    & > div::before {
+      opacity: 1;
+      background: $color-purple;
+    }
+  }
+
+  @include mobile-tablet {
+    margin-bottom: 20px;
+  }
 }
