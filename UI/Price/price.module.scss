@@ -5,25 +5,21 @@
   align-items: center;
 }
 
-.tablePrice {
-  color: $color-black;
-  font-size: 17px;
-}
-
 .order {
   color: $color-brown;
   font-size: 16px;
 }
 
-.cart,
-.sale {
+.cart {
   color: $color-purple;
   font-size: 15px;
   font-weight: $fw-bold;
 }
 
 .sale {
+  color: $color-purple;
   font-size: 17px;
+  font-weight: $fw-bold;
 }
 
 .primary {

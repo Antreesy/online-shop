@@ -8,10 +8,10 @@ interface FileSelectProps {
 const FileSelect: React.FC<FileSelectProps> = (props) => {
   const { value, setValue } = props
   return (
-    <div className={s.fileSelect}>
+    <div className={s.file_select}>
       <input value={value?.name} className={s.input} />
       <input
-        className={s.fileInput}
+        className={s.file_input}
         type={"file"}
         onChange={(e) => e.target.files?.[0] && setValue(e.target.files?.[0])}
       />

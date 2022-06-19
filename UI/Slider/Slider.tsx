@@ -2,7 +2,7 @@ import React from "react"
 
 import { Box, Slider } from "@mui/material"
 
-import s from "./Slider.module.scss"
+import s from "./slider.module.scss"
 
 interface SliderProps {
   min?: number
@@ -29,7 +29,7 @@ const CustomSlider: React.FC<SliderProps> = (props) => {
   }
 
   return (
-    <Box className={s.sliderWrapper}>
+    <Box className={s.slider_wrapper}>
       <Slider
         color="secondary"
         getAriaLabel={() => "range"}
@@ -44,7 +44,7 @@ const CustomSlider: React.FC<SliderProps> = (props) => {
         classes={{
           rail: s.rail,
           mark: s.mark,
-          markLabel: s.markLabel,
+          markLabel: s.mark_label,
         }}
       />
     </Box>
