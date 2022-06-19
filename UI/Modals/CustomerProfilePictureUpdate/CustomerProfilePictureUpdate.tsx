@@ -17,7 +17,7 @@ export const CustomerProfilePictureUpdate: React.FC<
   const [value, setValue] = useState<File | null>(null)
     const { t } = useTranslation("modal")
   return (
-    <div className={s.flex_box}>
+    <div className={s.box}>
       <div>
         <div className={s.pictures} />
       </div>
