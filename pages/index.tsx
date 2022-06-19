@@ -39,7 +39,9 @@ const Index: NextPage = (props) => {
             <Link href="/some-wrong-link">
               <a className={s.title__link}>404 page</a>
             </Link>
-            <span className={s.title__miss}>Landing page</span>
+            <Link href="/landing-page">
+              <a className={s.title__link}>Landing page</a>
+            </Link>
             <span className={s.title__miss}>Modals</span>
           </div>
 
