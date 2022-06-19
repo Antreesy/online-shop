@@ -1,7 +1,7 @@
 import { Price } from "UI"
 import { PaymentInfoProps } from "shared/interfaces/orderProps"
 
-import s from "./OrderItem.module.scss"
+import s from "./orderItem.module.scss"
 
 export const PaymentInfo: React.FC<PaymentInfoProps> = (props) => {
   const { type, cardNumber, orderAmount, shipping, total } = props

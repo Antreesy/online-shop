@@ -3,6 +3,7 @@
 .main {
   padding-top: $header-desktop-height;
   background-color: $color-grey-ed;
+  overflow-x: hidden;
 
   @include mobile {
     padding-top: $header-mobile-height;
