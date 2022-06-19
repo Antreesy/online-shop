@@ -2,19 +2,19 @@ import React, { useState } from "react"
 import s from "./CustomerProfileChangePassword.module.scss"
 import { Button } from "../../Button"
 import { Input } from "../../Input"
-import {useTranslation} from "next-i18next";
+import { useTranslation } from "next-i18next"
 
 interface CustomerProfileChangePassword {
-    content: string
-    nextPasswordModal: boolean
-    setNextPasswordModal: React.Dispatch<React.SetStateAction<boolean>>
+  content: string
+  nextPasswordModal: boolean
+  setNextPasswordModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const CustomerProfileChangePassword: React.FC<
   CustomerProfileChangePassword
 > = ({ content, nextPasswordModal, setNextPasswordModal }) => {
   const [inputValue, setInputValue] = useState<string>("")
-    const { t } = useTranslation("modal")
+  const { t } = useTranslation("modal")
   return (
     <div className={s.container}>
       <div className={s.content}>
@@ -40,10 +40,8 @@ export const CustomerProfileChangePassword: React.FC<
       </div>
 
       <div className={s.button}>
-        <Button
-          onClick={() => setNextPasswordModal(!nextPasswordModal)}
-        >
-            {t("CustomerProfileChangePassword")}
+        <Button onClick={() => setNextPasswordModal(!nextPasswordModal)}>
+          {t("CustomerProfileChangePassword")}
         </Button>
       </div>
     </div>

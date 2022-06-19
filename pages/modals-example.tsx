@@ -69,7 +69,7 @@ const ModalsExample: NextPage = () => {
             {...{
               title: "You are now ready",
               content:
-                "We received the request to create a membership. We will get back to you via  e-mail within 24 hours."
+                "We received the request to create a membership. We will get back to you via  e-mail within 24 hours.",
             }}
           />
         </ModalWindow>

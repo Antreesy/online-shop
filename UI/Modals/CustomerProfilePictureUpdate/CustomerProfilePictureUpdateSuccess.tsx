@@ -3,8 +3,8 @@ import s from "./CustomerProfilePictureUpdate.module.scss"
 import { Button } from "../../Button"
 
 interface CustomerProfilePictureUpdateSuccess {
-    title: string
-    content: string
+  title: string
+  content: string
 }
 
 export const CustomerProfilePictureUpdateSuccess: React.FC<

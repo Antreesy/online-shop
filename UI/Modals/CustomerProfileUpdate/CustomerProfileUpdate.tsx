@@ -1,17 +1,18 @@
 import React from "react"
 import s from "./CustomerProfileUpdate.module.scss"
 import { Button } from "../../Button"
-import {useTranslation} from "next-i18next";
+import { useTranslation } from "next-i18next"
 
 interface CustomerProfileUpdate {
-    title: string
-    content: string
+  title: string
+  content: string
 }
 
 export const CustomerProfileUpdate: React.FC<CustomerProfileUpdate> = ({
-  title, content,
+  title,
+  content,
 }) => {
-    const { t } = useTranslation("modal")
+  const { t } = useTranslation("modal")
   return (
     <>
       <div className={s.tittle}>

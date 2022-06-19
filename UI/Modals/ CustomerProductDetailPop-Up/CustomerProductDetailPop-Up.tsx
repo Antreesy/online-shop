@@ -1,18 +1,18 @@
 import React from "react"
 import s from "./CustomerProductDetailPopUp.module.scss"
 import { Button } from "../../Button"
-import {useTranslation} from "next-i18next";
+import { useTranslation } from "next-i18next"
 
 interface CustomerProductDetailPopUp {
-    title: string
-    content: string
+  title: string
+  content: string
 }
 
 export const CustomerProductDetailPopUp: React.FC<
   CustomerProductDetailPopUp
 > = ({ title, content }) => {
-    const { t } = useTranslation("modal")
-    return (
+  const { t } = useTranslation("modal")
+  return (
     <>
       <div className={s.tittle}>
         <p>{t("productDetailTitle")}</p>

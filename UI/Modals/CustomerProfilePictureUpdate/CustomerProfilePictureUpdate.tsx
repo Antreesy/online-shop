@@ -2,20 +2,20 @@ import React, { useState } from "react"
 import s from "./CustomerProfilePictureUpdate.module.scss"
 import { Button } from "../../Button"
 import { FileSelect } from "../../FileSelect"
-import {useTranslation} from "next-i18next";
+import { useTranslation } from "next-i18next"
 
 interface CustomerProfilePictureUpdate {
-    title: string
-    content: string
-    nextModalPage: boolean
-    setNextModalPage: React.Dispatch<React.SetStateAction<boolean>>
+  title: string
+  content: string
+  nextModalPage: boolean
+  setNextModalPage: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const CustomerProfilePictureUpdate: React.FC<
   CustomerProfilePictureUpdate
-> = ({ title, content, setNextModalPage, nextModalPage }) => {
+> = ({ setNextModalPage, nextModalPage }) => {
   const [value, setValue] = useState<File | null>(null)
-    const { t } = useTranslation("modal")
+  const { t } = useTranslation("modal")
   return (
     <div className={s.box}>
       <div>
@@ -37,10 +37,8 @@ export const CustomerProfilePictureUpdate: React.FC<
           </div>
         </div>
         <div className={s.button}>
-          <Button
-            onClick={() => setNextModalPage(!nextModalPage)}
-          >
-              {t("CustomerProfilePictureUpdateButton")}
+          <Button onClick={() => setNextModalPage(!nextModalPage)}>
+            {t("CustomerProfilePictureUpdateButton")}
           </Button>
         </div>
       </div>

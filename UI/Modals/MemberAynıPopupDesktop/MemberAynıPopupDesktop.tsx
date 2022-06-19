@@ -3,8 +3,6 @@ import s from "./memberAynIPopup.module.scss"
 import { Button } from "../../Button"
 import { useTranslation } from "next-i18next"
 
-
-
 interface MemberAynPopupDesktopProps {
   title: string
   content: string
