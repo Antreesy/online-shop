@@ -33,7 +33,7 @@
   bottom: -5px;
   width: 36%;
   height: 5px;
-  background-image: linear-gradient(to right, #8100ef 53%, #00f5ff 100%);
+  background-image: linear-gradient(to right, $color-purple 53%, $color-cyan 100%);
 
   @include mobile-tablet {
     width: 50%;
