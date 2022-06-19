@@ -14,8 +14,7 @@ const VisualOperations: NextPage = () => {
   const [inputValue, setInputValue] = useState<string>("")
   const [select, setSelect] = useState(false)
   const [delet, setDelet] = useState<number[]>([])
-
-  const width = useResize(1025)
+  const width = useResize()
 
   const secTest = (item: number) => {
     setDelet([...delet, item])

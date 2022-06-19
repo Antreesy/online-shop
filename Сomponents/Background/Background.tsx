@@ -37,12 +37,7 @@ const Background: React.FC<BackgroundProps> = (props) => {
   )
 
   return (
-    <div
-      className={addButtonClass}
-      style={{
-        backgroundImage: `url(${image} linear-gradient(to bottom, rgba(0, 0, 0, 0), #000))`,
-      }}
-    >
+    <div className={addButtonClass}>
       {isEditable && (
         <div className={s.add_button_wrapper}>
           <Button variant="outlined" iconLeft="plus" className={s.add_button} />
