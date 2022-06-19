@@ -33,7 +33,7 @@ const ModalWindow: FC<ModalWindowProps> = (props) => {
             </IconButton>
 
             {iconType ? (
-              <div className={s.iconWrapper}>
+              <div className={s.icon_wrapper}>
                 <Icon type={iconType} />
               </div>
             ) : null}

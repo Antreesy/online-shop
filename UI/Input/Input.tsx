@@ -52,7 +52,7 @@ export const Input: React.FC<InputProps> = (props) => {
   return (
     <div className={cn(s[variant], className)}>
       {label && <InputLabel className={s.label}>{label}</InputLabel>}
-      <div className={s.inputWrapper}>
+      <div className={s.input_wrapper}>
         <TextField
           variant="outlined"
           onChange={handleChange}
@@ -69,7 +69,7 @@ export const Input: React.FC<InputProps> = (props) => {
           <Button>{buttonLabel}</Button>
         ) : null}
         {className === "error" && (
-          <div className={s.errorText}>
+          <div className={s.error_text}>
             <Icon type="exclamation" />
             <span>{errorText}</span>
           </div>

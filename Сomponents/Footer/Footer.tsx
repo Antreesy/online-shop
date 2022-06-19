@@ -1,15 +1,11 @@
 import Link from "next/link"
 import { Logo } from "Сomponents"
-
 import { Button, SocialIcon } from "UI"
-
 import { Navigation, NavigationProps } from "./Navigation"
 
 import s from "./footer.module.scss"
 
-interface FooterProps extends NavigationProps {}
-
-const Footer: React.FC<FooterProps> = ({ links }) => {
+const Footer: React.FC<NavigationProps> = ({ links }) => {
   return (
     <>
       <footer className={s.footer}>

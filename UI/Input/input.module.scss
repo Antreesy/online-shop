@@ -1,6 +1,6 @@
 @import "/styles/style.scss";
 
-.inputWrapper {
+.input_wrapper {
   display: flex;
 }
 
@@ -17,6 +17,7 @@
 
   .label {
     color: $color-purple;
+    font-size: 1em;
     font-weight: $fw-bold;
     margin-bottom: 5px;
   }
@@ -153,7 +154,7 @@
   font-family: inherit;
   font-size: 15px;
 
-  .inputWrapper {
+  .input_wrapper {
     height: 100%;
   }
 
@@ -178,7 +179,7 @@
   font-family: inherit;
   font-size: 15px;
 
-  .inputWrapper {
+  .input_wrapper {
     height: 100%;
   }
 
@@ -202,7 +203,7 @@
   border: 2px solid $color-red;
 }
 
-.errorText {
+.error_text {
   display: flex;
   align-items: center;
   gap: 4px;

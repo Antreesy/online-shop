@@ -4,7 +4,7 @@ import cn from "classnames"
 import { Button } from "UI"
 import { Icon } from "UI"
 
-import s from "./addbutton.module.scss"
+import s from "./addButton.module.scss"
 
 interface AddButtonProps {
   title?: string
@@ -12,6 +12,7 @@ interface AddButtonProps {
   bgColor?: "grey" | "white"
   large?: boolean
   onClick?: () => void
+  className?: string
 }
 
 const AddButton: React.FC<AddButtonProps> = ({
@@ -20,15 +21,19 @@ const AddButton: React.FC<AddButtonProps> = ({
   title,
   large,
   onClick,
+  className,
 }) => {
   const addButtonClass = cn(
-    s.addButton,
-    color === "primary" ? s.primaryColor : s.secondaryColor,
-    bgColor === "grey" ? s.greyBgColor : s.whiteBgColor,
-    { [s.large]: large },
+    s.add_button,
+    {
+      [s.color_primary]: color === "primary",
+      [s.back_color_grey]: bgColor === "grey",
+      [s.large]: large,
+    },
+    className,
   )
 
-  const iconClass = cn(s.iconContainer, large ? s.iconLarge : s.iconDefault)
+  const iconClass = cn(s.icon_wrapper, { [s.large]: large })
 
   return (
     <Button

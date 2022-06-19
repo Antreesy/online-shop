@@ -3,7 +3,7 @@ import cn from "classnames"
 import { i18n } from "next-i18next"
 
 import Link from "next/link"
-import { Popover, Typography } from "@mui/material"
+import { Popover } from "@mui/material"
 import { Button } from "UI"
 
 import { languages } from "shared/constants/languages"

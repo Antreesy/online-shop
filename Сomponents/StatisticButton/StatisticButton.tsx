@@ -1,9 +1,11 @@
 import React from "react"
+import dayjs from "dayjs"
 import cn from "classnames"
-import s from "./StatisticButton.module.scss"
+
 import { Icon } from "UI"
 import { IconType } from "shared/interfaces/iconTypes"
-import dayjs from "dayjs"
+
+import s from "./statisticButton.module.scss"
 
 export interface StatisticButtonProps {
   onClick: () => void
@@ -34,20 +36,20 @@ const StatisticButton: React.FC<StatisticButtonProps> = (props) => {
         [s.white]: appearance === "white",
       })}
     >
-      <div className={s.insideMedium}>
-        <div className={s.squareMedium}>
-          <Icon type={icon} className={s.squareIconMedium} />
+      <div className={s.wrapper}>
+        <div className={s.icon_wrapper}>
+          <Icon type={icon} className={s.icon} />
         </div>
-        <div className={s.textBox}>
-          <p className={s.totalTitle}>{title}</p>
-          <p className={s.totalNumber}>{totalNumber}</p>
-          <p className={s.lastUpdate}>
+        <div className={s.text_wrapper}>
+          <p className={s.title}>{title}</p>
+          <p className={s.value}>{totalNumber}</p>
+          <p className={s.update}>
             Last Updated: <span>{dayjs(lastUpdate).format("llll")}</span>
           </p>
         </div>
         {rightIcon && (
-          <div className={s.rightImage}>
-            <Icon type={icon} className={s.rightIcon} />
+          <div className={s.right_icon_wrapper}>
+            <Icon type={icon} className={s.icon} />
           </div>
         )}
       </div>

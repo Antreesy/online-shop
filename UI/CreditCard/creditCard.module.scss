@@ -1,0 +1,56 @@
+@import "styles/style.scss";
+
+.card_colored {
+  max-width: 100%;
+  background: $main-gradient;
+}
+
+.card_default {
+  max-width: 100%;
+  background: $color-grey-c;
+}
+
+.content {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 26px;
+  height: 100%;
+  font-weight: $fw-bold;
+
+  @include mobile {
+    padding: 20px;
+  }
+}
+
+.left_group {
+  display: flex;
+  flex-direction: column;
+  color: $color-white;
+  margin-bottom: 15px;
+}
+
+.right_group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  color: $color-white;
+
+  &.with_button {
+    align-self: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.expire_date {
+  color: $color-white;
+  font-weight: $fw-regular;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.delete_btn {
+  align-self: flex-end;
+  color: $color-white;
+}

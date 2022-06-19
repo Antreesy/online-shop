@@ -3,105 +3,94 @@
 .form {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 117px;
   padding: 51px 0 42px;
 
-  @include mobile {
-    gap: 36px;
-    padding-top: 20px;
+  @include laptop {
+    gap: 75px;
   }
 
   @include tablet {
     gap: 40px;
   }
 
-  @include laptop {
-    gap: 75px;
+  @include mobile {
+    gap: 36px;
+    padding-top: 20px;
   }
 }
 
 .inputs {
   display: flex;
   align-items: flex-start;
-  flex-wrap: wrap-reverse;
   gap: 48px;
   width: 100%;
 
+  @include mobile-laptop {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 23px;
+  }
+
   &__container {
+    width: 70%;
     display: flex;
     flex-direction: column;
     gap: 78px;
+
+    @include laptop {
+      gap: 30px;
+    }
+
+    @include mobile-tablet {
+      gap: 30px;
+      width: 100%;
+    }
+  }
+
+  &__container_brand {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @include mobile-tablet {
+      width: 100%;
+    }
+
+    & > div > div {
+      max-width: 610px;
+    }
   }
 
   &__row {
     display: flex;
-    flex-wrap: wrap;
-    gap: 51px;
+    gap: 30px;
 
-    div {
-      width: 410px;
-    }
-  }
-
-  @include mobile {
-    justify-content: center;
-    gap: 23px;
-
-    &__container {
-      display: flex;
-      flex-direction: column;
-      gap: 42px;
+    & > div {
+      max-width: 410px;
       width: 100%;
     }
 
-    &__row {
-      display: flex;
-      gap: 42px;
+    @include mobile-tablet {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 60px;
+    }
 
-      label {
+    @include mobile {
+      & > label {
         font-size: 12px;
         font-weight: $fw-bold;
         line-height: 1.17;
       }
 
-      div {
+      & > div {
         width: 100%;
         height: 40px;
       }
-    }
-  }
-
-  @include tablet {
-    justify-content: center;
-
-    &__container {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-      width: 100%;
-    }
-
-    &__row {
-      display: flex;
-      gap: 32px;
-
-      div {
-        width: 100%;
-      }
-    }
-  }
-
-  @include laptop {
-    &__container {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
-
-    &__row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
     }
   }
 }
@@ -112,38 +101,36 @@
   gap: 10px;
   height: 100%;
 
-  span {
+  & > span {
     font-size: 16px;
     font-weight: $fw-bold;
-    line-height: 1.19;
     text-align: left;
     color: $color-purple;
   }
 
-  div {
+  & > div {
     height: 51px;
   }
 
   @include mobile {
     gap: 0;
 
-    span {
+    & > span {
       font-size: 12px;
-      font-weight: $fw-bold;
-      line-height: 1.17;
     }
   }
 }
 
 .file_upload {
-  width: 359px;
-  height: 379px;
-  padding: 6px 15px 25px 15px;
+  max-width: 360px;
+  height: 380px;
+  width: 100%;
+  padding: 15px;
   border-radius: 4px;
   box-shadow: 0 0 10px 0 $color-grey-e8;
   background-color: $color-white;
 
-  div {
+  & > div {
     width: 100%;
     height: 100%;
   }
@@ -154,51 +141,34 @@
   }
 }
 
-.btns {
+.buttons_wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 59px;
+  gap: 20px;
+  width: 90%;
 
-  a {
+  @include mobile-tablet {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  & > button {
+    height: 60px;
     font-size: 18px;
     font-weight: $fw-medium;
-    line-height: 1.17;
-    text-align: left;
+
+    @include mobile-tablet {
+      height: 45px;
+      font-size: 15px;
+    }
+  }
+
+  & > :first-child {
     color: $color-purple;
   }
 
-  button {
-    width: 359px;
-    height: 100%;
-  }
-
-  @include tablet {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-
-    button {
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  @include mobile {
-    height: 45px;
-    flex-wrap: wrap;
-    gap: 20px;
-
-    a {
-      font-size: 13px;
-      line-height: 1.15;
-      text-align: left;
-      color: $color-purple;
-    }
-
-    button {
-      width: 100%;
-      height: 100%;
-    }
+  & > :last-child {
+    width: 360px;
   }
 }

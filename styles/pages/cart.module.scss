@@ -1,5 +1,16 @@
 @import "styles/style.scss";
 
+.cart {
+  display: flex;
+  margin: 0 auto 50px;
+  padding-top: 30px;
+
+  @include mobile-laptop {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .cartItemsHeader {
   width: 100%;
   display: flex;
@@ -38,7 +49,7 @@
 
   > p {
     margin-bottom: 20px;
-    margin-top: 20px;
+    margin-top: 0;
     font-size: 18px;
     font-weight: $fw-semibold;
   }
@@ -65,20 +76,4 @@
 
 .total {
   flex: 1;
-}
-
-.cart {
-  display: flex;
-  margin: 10px 20px;
-  margin-bottom: 30px;
-
-  @include mobile-tablet {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  @include laptop {
-    flex-direction: column;
-    justify-content: center;
-  }
 }

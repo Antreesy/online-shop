@@ -1,7 +1,8 @@
-import { FC, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import cn from "classnames"
 
 import { Icon } from "UI/Icon"
+
 import s from "./fileUpload.module.scss"
 
 interface FileUploadProps {
@@ -17,7 +18,7 @@ interface FileUploadProps {
   disabled?: boolean
 }
 
-const FileUpload: FC<FileUploadProps> = (props) => {
+const FileUpload: React.FC<FileUploadProps> = (props) => {
   const {
     title = "Select or Drag Image",
     formats = ["jpg", "png", "jpeg"],

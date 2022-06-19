@@ -1,7 +1,7 @@
 import { Button } from "UI"
 import { CartItem, CartItemProps } from "./CartItem/CartItem"
 
-import s from "./CartItemList.module.scss"
+import s from "./cartItemList.module.scss"
 
 interface CartListProps {
   list: CartItemProps[]
@@ -15,11 +15,11 @@ export const CartItemList: React.FC<CartListProps> = ({ list }) => {
           return <CartItem {...item} />
         })
       ) : (
-        <div className={s.noItemBox}>
+        <div className={s.empty_wrapper}>
           <Button
             icon
             iconLeft="basket"
-            className={s.cartNoItemsBtn}
+            className={s.empty_button}
             variant="text"
           />
           <p className={s.title}>There are no items in your cart</p>

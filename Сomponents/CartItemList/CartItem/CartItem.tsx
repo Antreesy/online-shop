@@ -3,7 +3,7 @@ import { useState } from "react"
 import Image, { ImageProps } from "next/image"
 import { Button, ItemCounter, Price } from "UI"
 
-import s from "./CartItem.module.scss"
+import s from "../cartItemList.module.scss"
 
 export interface CartItemProps {
   title: string
@@ -22,18 +22,18 @@ export const CartItem: React.FC<CartItemProps> = (props) => {
   const total = price * currentAmount
 
   return (
-    <div className={s.cartItem}>
-      <div className={s.productItem}>
+    <div className={s.cart_item}>
+      <div className={s.item}>
         <Button
           icon
           iconLeft="trash_can"
           variant="text"
-          className={s.trashBtn}
+          className={s.delete_button}
         />
-        <span className={s.imageWrapper}>
-          <Image src={imageSrc} className={s.productImage} />
+        <span className={s.image_wrapper}>
+          <Image src={imageSrc} />
         </span>
-        <span className={s.productInfo}>
+        <span className={s.product_info}>
           <span className={s.title}>{title}</span>
           <span className={s.subtitle}>{subtitle}</span>
           <span className={s.description}>
@@ -45,22 +45,23 @@ export const CartItem: React.FC<CartItemProps> = (props) => {
             price={price}
             oldPrice={oldPrice}
             type="sale"
-            className={s.mobilePrice}
+            className={s.price_mobile}
           />
         </span>
       </div>
-      <div className={s.price}>
+
+      <div className={s.price_desktop}>
         <Price
           price={price}
           oldPrice={oldPrice}
           type="sale"
-          className={s.priceBlock}
+          className={s.price}
         />
       </div>
       <div className={s.counter}>
         <ItemCounter initValue={amount} onChange={setCurrentAmount} />
       </div>
-      <div className={s.amountPrice}>
+      <div className={s.amount}>
         <h3>Order amount</h3>
         <Price price={total} />
       </div>

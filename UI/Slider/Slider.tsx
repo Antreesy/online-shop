@@ -3,7 +3,7 @@ import cn from "classnames"
 
 import { Box, Slider } from "@mui/material"
 
-import s from "./Slider.module.scss"
+import s from "./slider.module.scss"
 
 interface SliderProps {
   min?: number
@@ -30,10 +30,10 @@ const CustomSlider: React.FC<SliderProps> = (props) => {
     setValue(newValue as number[])
   }
 
-  const sliderWrapperClassname = cn(s.sliderWrapper, className)
+  const sliderWrapperClassName = cn(s.slider_wrapper, className)
 
   return (
-    <Box className={sliderWrapperClassname}>
+    <Box className={sliderWrapperClassName}>
       <Slider
         color="secondary"
         getAriaLabel={() => "range"}
@@ -48,7 +48,7 @@ const CustomSlider: React.FC<SliderProps> = (props) => {
         classes={{
           rail: s.rail,
           mark: s.mark,
-          markLabel: s.markLabel,
+          markLabel: s.mark_label,
         }}
       />
     </Box>
