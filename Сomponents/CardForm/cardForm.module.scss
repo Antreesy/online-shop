@@ -1,6 +1,6 @@
 @import "/styles/style.scss";
 
-.cardForm {
+.form {
   max-width: 1280px;
   margin-bottom: 80px;
   padding-left: 20px;
@@ -17,7 +17,7 @@
   }
 }
 
-.cardInputs {
+.input_wrapper {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@
   }
 }
 
-.longInput {
+.input_long {
   max-width: 100%;
   width: 30vw;
 
@@ -38,7 +38,7 @@
   }
 }
 
-.shortInput {
+.input_short {
   max-width: 100%;
   width: 13vw;
 
@@ -47,7 +47,7 @@
   }
 }
 
-.flex {
+.flex_row {
   max-width: 100%;
   display: flex;
   gap: 4vw;
@@ -62,7 +62,7 @@
   }
 }
 
-.desktopButton {
+.button_desktop {
   margin-top: 25px;
   width: 250px;
 
@@ -71,7 +71,7 @@
   }
 }
 
-.mobileButton {
+.button_mobile {
   display: none;
 
   @include mobile-tablet {

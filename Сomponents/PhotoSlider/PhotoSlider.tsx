@@ -1,10 +1,11 @@
 import { useState } from "react"
+import cn from "classnames"
+
 import Image, { ImageProps } from "next/image"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { FreeMode, Thumbs, Pagination } from "swiper"
-import cn from "classnames"
 
-import s from "./PhotoSlider.module.scss"
+import s from "./photoSlider.module.scss"
 
 interface PhotoSliderProps {
   photos: ImageProps["src"][]

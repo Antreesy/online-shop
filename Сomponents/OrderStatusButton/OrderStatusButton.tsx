@@ -4,7 +4,7 @@ import cn from "classnames"
 import { Icon } from "UI"
 import { IconType } from "shared/interfaces/iconTypes"
 
-import s from "./OrderStatusButton.module.scss"
+import s from "./orderStatusButton.module.scss"
 
 export interface OrderStatusButtonProps {
   icon: IconType
@@ -35,16 +35,16 @@ const OrderStatusButton: React.FC<OrderStatusButtonProps> = (props) => {
         [s.white]: appearance === "white",
       })}
     >
-      <div className={s.insideBig}>
-        <div className={s.squareBig}>
-          <Icon type={icon} className={s.squareIconBig} />
+      <div className={s.wrapper}>
+        <div className={s.icon_wrapper}>
+          <Icon type={icon} className={s.icon} />
         </div>
-        <div className={s.rectangleBig}>
+        <div className={s.info_wrapper}>
           <h3>
             {" "}
             {title} : {orderNumbers}{" "}
           </h3>
-          <div className={s.smallText}>
+          <div className={s.description}>
             <p>
               {" "}
               Last Day: <b> {lastDay} </b>

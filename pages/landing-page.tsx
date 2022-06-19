@@ -25,7 +25,7 @@ export async function getStaticProps(props: { locale: string }) {
         "common",
         "header",
         "footer",
-        "landing"
+        "landing",
       ])),
     },
   }

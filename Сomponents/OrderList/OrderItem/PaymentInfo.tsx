@@ -31,7 +31,7 @@ export const PaymentInfo: React.FC<PaymentInfoProps> = (props) => {
           <Price price={total} />
         </span>
       </p>
-      <p className={s.amountPaid}>
+      <p className={s.amount}>
         <span>Amount Paid :</span>
         <span>
           <Price price={total} />
