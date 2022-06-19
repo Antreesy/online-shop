@@ -1,6 +1,6 @@
 @import "styles/style.scss";
 
-.swiperBtn {
+.swiper_button {
   position: absolute;
   z-index: 2;
   background-color: $color-purple-a60;
@@ -10,7 +10,7 @@
   transition: opacity ease-in 0.1s;
 }
 
-.swiperBtn:active {
+.swiper_button:active {
   opacity: 0.7;
 }
 
@@ -44,7 +44,7 @@
   padding: 0 10px;
 }
 
-.isEmptyText {
+.no_items {
   font-size: 2rem;
   width: fit-content;
 }
@@ -65,7 +65,7 @@
     height: 40px;
   }
 
-  .swiperBtn {
+  .swiper_button {
     background-color: $color-purple;
     color: $color-white;
     border: none;

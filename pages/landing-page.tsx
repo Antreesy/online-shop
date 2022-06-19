@@ -25,6 +25,7 @@ export async function getStaticProps(props: { locale: string }) {
         "common",
         "header",
         "footer",
+        "landing"
       ])),
     },
   }
@@ -64,7 +65,7 @@ const BrandCard = () => (
 )
 
 const LandingPage: NextPage = (props) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation("landing")
   return (
     <>
       <Head>
@@ -84,7 +85,7 @@ const LandingPage: NextPage = (props) => {
                 <p className={s.info_number}>01</p>
               </div>
 
-              <Button className={s.content_button}>Go to Store</Button>
+              <Button className={s.content_button}>{t("go_to_store")}</Button>
 
               <div>
                 <h3 className={s.descr_caption}>Lorem ipsum dolor sit amet,</h3>
@@ -103,7 +104,7 @@ const LandingPage: NextPage = (props) => {
 
         <div className={s.container}>
           <div className={s.text_content}>
-            <h2 className={s.heading}>Featured Influencer’s Shops</h2>
+            <h2 className={s.heading}>{t("influencers_shop")}</h2>
             <p className={s.description}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
               lacinia, lacus mattis semper lacinia, metus urna dapibus quam, eu
@@ -129,12 +130,12 @@ const LandingPage: NextPage = (props) => {
               slidesDesktop={4}
             />
 
-            <Button className={s.button_more}>Show All</Button>
+            <Button className={s.button_more}>{t("show_all")}</Button>
           </div>
 
           <div className={s.brands_wrapper}>
             <div className={s.brand_content}>
-              <h2 className={s.heading}>Featured Brands</h2>
+              <h2 className={s.heading}>{t("brands")}</h2>
               <p className={s.description}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
                 lacinia, lacus mattis semper lacinia, metus urna dapibus quam,
@@ -183,7 +184,7 @@ const LandingPage: NextPage = (props) => {
           </div>
 
           <div className={s.testimonials_wrapper}>
-            <h2 className={s.heading}>Testimonials</h2>
+            <h2 className={s.heading}>{t("testimonials")}</h2>
             <p className={s.description}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
               lacinia, lacus mattis semper lacinia, metus urna dapibus quam, eu
@@ -206,7 +207,7 @@ const LandingPage: NextPage = (props) => {
               <Pagination pagesCount={5} isShort />
             </div>
 
-            <Button className={s.button_more}>Show All</Button>
+            <Button className={s.button_more}>{t("show_all")}</Button>
           </div>
         </div>
       </main>

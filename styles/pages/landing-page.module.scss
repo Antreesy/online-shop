@@ -46,7 +46,7 @@
   padding: 330px 0 100px;
   width: 80vw;
   margin: 0 auto;
-  height: 940px;
+  height: 1080px;
 
   @include tablet-laptop {
     width: 90vw;
@@ -54,7 +54,7 @@
 
   @include mobile {
     padding: 260px 0 50px;
-    height: 560px;
+    height: 660px;
   }
 }
 
@@ -411,6 +411,10 @@
   position: relative;
   max-width: 100% !important;
 
+  @include mobile {
+    width: fit-content;
+  }
+
   & > span {
     position: relative;
     z-index: 1;
@@ -427,7 +431,8 @@
 
     @include mobile {
       left: auto;
-      right: 0;
+      top: -5px;
+      right: -10px;
       width: 19px;
       height: 19px;
     }
