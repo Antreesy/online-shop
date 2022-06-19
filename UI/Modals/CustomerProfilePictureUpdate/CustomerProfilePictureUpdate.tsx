@@ -2,22 +2,20 @@ import React, { useState } from "react"
 import s from "./CustomerProfilePictureUpdate.module.scss"
 import { Button } from "../../Button"
 import { FileSelect } from "../../FileSelect"
-import ModalWindow from "../../ModalWindow/ModalWindow"
-import { CustomerProfilePictureUpdateSuccess } from "./CustomerProfilePictureUpdateSuccess"
+import {useTranslation} from "next-i18next";
 
 interface CustomerProfilePictureUpdate {
-  labels: {
-    tittle: string
+    title: string
     content: string
     nextModalPage: boolean
     setNextModalPage: React.Dispatch<React.SetStateAction<boolean>>
-  }
 }
 
 export const CustomerProfilePictureUpdate: React.FC<
   CustomerProfilePictureUpdate
-> = ({ labels }) => {
+> = ({ title, content, setNextModalPage, nextModalPage }) => {
   const [value, setValue] = useState<File | null>(null)
+    const { t } = useTranslation("modal")
   return (
     <div className={s.flex_box}>
       <div>
@@ -26,10 +24,10 @@ export const CustomerProfilePictureUpdate: React.FC<
 
       <div className={s.container}>
         <div className={s.tittle}>
-          <p>{labels.tittle}</p>
+          <p>{t("CustomerProfilePictureUpdateTitle")}</p>
         </div>
         <div className={s.content}>
-          <p>{labels.content}</p>
+          <p>{t("CustomerProfilePictureUpdateContent")}</p>
         </div>
         <div className={s.select}>
           <FileSelect value={value} setValue={setValue} />
@@ -40,9 +38,9 @@ export const CustomerProfilePictureUpdate: React.FC<
         </div>
         <div className={s.button}>
           <Button
-            onClick={() => labels.setNextModalPage(!labels.nextModalPage)}
+            onClick={() => setNextModalPage(!nextModalPage)}
           >
-            Save
+              {t("CustomerProfilePictureUpdateButton")}
           </Button>
         </div>
       </div>

@@ -1,27 +1,27 @@
 import React from "react"
 import s from "./CustomerProfileUpdate.module.scss"
 import { Button } from "../../Button"
+import {useTranslation} from "next-i18next";
 
 interface CustomerProfileUpdate {
-  labels: {
-    tittle: string
+    title: string
     content: string
-  }
 }
 
 export const CustomerProfileUpdate: React.FC<CustomerProfileUpdate> = ({
-  labels,
+  title, content,
 }) => {
+    const { t } = useTranslation("modal")
   return (
     <>
       <div className={s.tittle}>
-        <p>{labels.tittle}</p>
+        <p>{t("CustomerProfileUpdateTitle")}</p>
       </div>
       <div className={s.content}>
-        <p>{labels.content}</p>
+        <p>{t("CustomerProfileUpdateContent")}</p>
       </div>
       <div className={s.button}>
-        <Button>All Right</Button>
+        <Button>{t("CustomerProfileUpdateButton")}</Button>
       </div>
     </>
   )

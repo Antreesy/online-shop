@@ -1,27 +1,30 @@
 import React from "react"
 import s from "./memberAynIPopup.module.scss"
 import { Button } from "../../Button"
+import { useTranslation } from "next-i18next"
+
+
 
 interface MemberAynPopupDesktopProps {
-  labels: {
-    tittle: string
-    content: string
-  }
+  title: string
+  content: string
 }
 
 export const MemberAynPopupDesktop: React.FC<MemberAynPopupDesktopProps> = ({
-  labels,
+  title,
+  content,
 }) => {
+  const { t } = useTranslation("modal")
   return (
     <>
       <div className={s.tittle}>
-        <p>{labels.tittle}</p>
+        <p>{t("memberTitle")}</p>
       </div>
       <div className={s.content}>
-        <p>{labels.content}</p>
+        <p>{t("memberContent")}</p>
       </div>
       <div className={s.button}>
-        <Button>All Right</Button>
+        <Button>{t("memberButton")}</Button>
       </div>
     </>
   )

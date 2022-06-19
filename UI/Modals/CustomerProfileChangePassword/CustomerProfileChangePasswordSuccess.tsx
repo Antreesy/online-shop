@@ -3,22 +3,20 @@ import s from "./CustomerProfileChangePassword.module.scss"
 import { Button } from "../../Button"
 
 interface CustomerProfilePictureUpdateSuccess {
-  labels: {
-    tittle: string
+    title: string
     content: string
-  }
 }
 
 export const CustomerProfileChangePasswordSuccess: React.FC<
   CustomerProfilePictureUpdateSuccess
-> = ({ labels }) => {
+> = ({ title, content }) => {
   return (
     <>
       <div className={s.tittle}>
-        <p>{labels.tittle}</p>
+        <p>{title}</p>
       </div>
       <div className={s.content}>
-        <p>{labels.content}</p>
+        <p>{content}</p>
       </div>
       <div className={s.button}>
         <Button>All Right</Button>

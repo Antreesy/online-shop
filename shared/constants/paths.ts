@@ -16,4 +16,5 @@ export const commonWithBcPaths = [
   "order-info",
   "product-info",
   "visual-operations",
+    "modals-example",
 ]
