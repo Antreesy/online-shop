@@ -2,9 +2,9 @@ import cn from "classnames"
 
 import Image, { ImageProps } from "next/image"
 import { Button } from "UI"
-import BgInput from "./BgInput"
+import BackgroundInput from "./BackgroundInput"
 
-import s from "./Background.module.scss"
+import s from "./background.module.scss"
 
 interface BackgroundProps {
   image?: ImageProps["src"]
@@ -31,8 +31,8 @@ const Background: React.FC<BackgroundProps> = (props) => {
   } = props
 
   const addButtonClass = cn(
-    s.fallbackItem,
-    gradientBg === "none" ? s.noneGradientBg : s.blackGradientBg,
+    s.fallback_item,
+    gradientBg === "none" ? s.no_gradient : s.black_gradient,
     className,
   )
 
@@ -44,12 +44,8 @@ const Background: React.FC<BackgroundProps> = (props) => {
       }}
     >
       {isEditable && (
-        <div className={s.addImageButton}>
-          <Button
-            variant="outlined"
-            iconLeft="plus"
-            className={s.coverImgBtn}
-          />
+        <div className={s.add_button_wrapper}>
+          <Button variant="outlined" iconLeft="plus" className={s.add_button} />
           <p>Cover image</p>
         </div>
       )}
@@ -58,23 +54,23 @@ const Background: React.FC<BackgroundProps> = (props) => {
         {image && <Image src={image} layout="fill" />}
       </div>
       <div className={s.btn}>
-        <Button className={s.bgButton} variant="outlined">
+        <Button className={s.bg_button} variant="outlined">
           {actionText}
         </Button>
       </div>
       <div className={s.content}>
-        <div className={s.titleBox}>
-          <BgInput
+        <div className={s.title_box}>
+          <BackgroundInput
             value={title}
             className={s.title}
             isEditable={isEditable}
             gradientBg={gradientBg}
           />
-          <BgInput
-            className={s.linkMobile}
+          <BackgroundInput
+            className={s.link_mobile}
             value={"@" + link}
             isEditable={isEditable}
-            boxClassname={s.boxLinkMobile}
+            boxClassName={s.boxlink_mobile}
             reverse
           />
         </div>

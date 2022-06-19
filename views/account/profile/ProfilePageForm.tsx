@@ -129,8 +129,8 @@ export const ProfilePageForm = () => {
           </div>
         </div>
       </div>
-      <div className={s.btns}>
-        <Link href="#">Change Password</Link>
+      <div className={s.buttons_wrapper}>
+        <Button variant="text">Change Password</Button>
         <Button onClick={onSubmit}>Update</Button>
       </div>
     </form>

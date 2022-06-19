@@ -20,40 +20,38 @@ const ProductInfo: React.FC<ProductInfoProps> = (props) => {
 
   return (
     <div className={s.product}>
-      <div className={s.productInfo}>
+      <div className={s.information}>
         <div className={s.swiper}>
           <PhotoSlider photos={[productImage, productImage, productImage]} />
         </div>
-        <div className={s.productInfoText}>
+        <div className={s.text_wrapper}>
           <span className={s.title}>{title}</span>
           <span className={s.subtitle}>{subtitle}</span>
           <span className={s.description}>{description}</span>
           <div className={s.price}>
             <Price {...price} />
           </div>
-          <div className={s.colorPickers}>
-            <span className={s.colorPickerTitle}>
-              {productInfo.colorPickerTitle}
-            </span>
+          <div className={s.color_picker}>
+            <span className={s.caption}>{productInfo.colorPickerTitle}</span>
             <ColorPicker colors={colors} />
           </div>
-          <div className={s.sizePicker}>
-            <div className={s.sizePickerTitles}>
+          <div className={s.size_picker}>
+            <div className={s.caption}>
               <span>{productInfo.sizePickerTitle}</span>
-              <div className={s.sizeChart}>
+              <div className={s.charts}>
                 <Icon type="size" />
                 <span>{productInfo.sizeChartTitle}</span>
               </div>
             </div>
             <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
           </div>
-          <Button className={s.addToMyCard}>
+          <Button className={s.add_button}>
             <Icon type="basket" />
             {productInfo.buttonText}
           </Button>
         </div>
       </div>
-      <div className={s.productDetails}>
+      <div className={s.details}>
         <h3>{productInfo.cargoDetailTitle}</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed

@@ -2,7 +2,7 @@ import { useState } from "react"
 
 import { Accordion, Button, CheckboxGroup, Input } from "UI"
 
-import s from "./OrderSummary.module.scss"
+import s from "./orderSummary.module.scss"
 
 interface OrderSummaryProps {
   subtotal: number
@@ -53,17 +53,17 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
             <li key={data.name} className={s.price}>
               <p className={s.name}>{data.name}</p>
               <p className={s.dots}>:</p>
-              <p className={s.priceValue}>
+              <p className={s.price_value}>
                 <>₺{data.value}</>
               </p>
             </li>
           ))}
         </ul>
 
-        <div className={s.submitField}>
-          <div className={s.totalField}>
-            <p className={s.total}>Total:</p>
-            <p className={s.totalPrice}>₺{sum}</p>
+        <div className={s.submit_field}>
+          <div className={s.total_wrapper}>
+            <p className={s.caption}>Total:</p>
+            <p className={s.price}>₺{sum}</p>
           </div>
 
           <CheckboxGroup
@@ -73,7 +73,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
               "I have read and approved the Preliminary Information Form and the Distance Sales Agreement."
             }
           />
-          <Button className={s.submitBtn}>Complete Order</Button>
+          <Button className={s.submit_button}>Complete Order</Button>
         </div>
       </div>
     </div>

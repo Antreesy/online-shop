@@ -27,8 +27,8 @@ const Notification: React.FC<NotificationProps> = (props) => {
         className={s.accordion}
         header={<span className={titleClass}>{title}</span>}
         headerClassName={s.title}
-        openTitle="Detail"
-        openTitleClassName={s.openTitle}
+        openTitle={subtitle || "Detail"}
+        openTitleClassName={s.open_title}
         onClick={() => {
           setIsRead(true)
         }}

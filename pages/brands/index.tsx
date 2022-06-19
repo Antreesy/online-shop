@@ -35,92 +35,87 @@ const brands: NextPage = () => {
         <title>ILONSI SHOP | Influencers</title>
       </Head>
 
-      <div className={s.main}>
-        <div className={s.wrapper_bcg}>
-          <div className={s.desktop_image}>
-            <Background
-              image={picture}
-              title="Tuana Yücel"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed pretium enim. Cras faucibus velit risus, nec pharetra ex scelerisque non. Aenean quis porttitor elit. Sed eu dignissim ex. Proin non laoreet risus. Donec volutpat.
+      <div className={s.desktop_image}>
+        <Background
+          image={picture}
+          title="Tuana Yücel"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed pretium enim. Cras faucibus velit risus, nec pharetra ex scelerisque non. Aenean quis porttitor elit. Sed eu dignissim ex. Proin non laoreet risus. Donec volutpat.
             "
-              link="tuanaycl"
-              isEditable={true}
-            />
-          </div>
+          link="tuanaycl"
+          isEditable={true}
+        />
+      </div>
 
-          <div className={s.mobile_image}>
-            <Background
-              className={s.background}
-              image={picture_mobile}
-              title="Tuana Yücel"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed pretium enim. Cras faucibus velit rise.
+      <div className={s.mobile_image}>
+        <Background
+          className={s.background}
+          image={picture_mobile}
+          title="Tuana Yücel"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed pretium enim. Cras faucibus velit rise.
               "
-              link="tuanaycl"
-              isEditable={true}
-            />
+          link="tuanaycl"
+          isEditable={true}
+        />
+      </div>
+
+      <div className={s.breadcrumbs_mobile}>
+        <Breadcrumbs />
+      </div>
+      <div className={s.container}>
+        <div className={s.return_button}>
+          <div onClick={() => router.push("/")}>
+            <span></span>
           </div>
+          <div>Return Your Shop</div>
+        </div>
+        <div className={s.wrapper_toolbar}>
+          <Button
+            disabled={path === "products"}
+            variant="outlined"
+            className={path === "products" ? s.button_active : ""}
+            onClick={() => {
+              toggleButton("products")
+            }}
+          >
+            Products ({PRODUCTS_AMOUNT})
+          </Button>
+          <Button
+            disabled={path === "brands"}
+            variant="outlined"
+            className={path === "brands" ? s.button_active : ""}
+            onClick={() => {
+              toggleButton("brands")
+            }}
+          >
+            Brands ({BRANDS_AMOUNT})
+          </Button>
+          <Toolbar className={s.toolbar} values={[]} />
         </div>
 
-        <div className={s.background} />
-        <div className={s.breadcrumbs_mobile}>
-          <Breadcrumbs />
-        </div>
-        <div className={s.container}>
-          <div className={s.return_button}>
-            <div onClick={() => router.push("/")}>
-              <span></span>
-            </div>
-            <div>Return Your Shop</div>
-          </div>
-          <div className={s.wrapper_toolbar}>
-            <Button
-              disabled={path === "products"}
-              variant="outlined"
-              className={path === "products" ? s.button_active : ""}
-              onClick={() => {
-                toggleButton("products")
-              }}
+        <Grid container spacing={2} className={s.card_wrapper}>
+          {Array.from(Array(24)).map((item) => (
+            <Grid
+              item
+              key={item}
+              xs={6}
+              sm={4}
+              md={3}
+              lg={2}
+              xl={2}
+              justifyContent="space-evenly"
             >
-              Products ({PRODUCTS_AMOUNT})
-            </Button>
-            <Button
-              disabled={path === "brands"}
-              variant="outlined"
-              className={path === "brands" ? s.button_active : ""}
-              onClick={() => {
-                toggleButton("brands")
-              }}
-            >
-              Brands ({BRANDS_AMOUNT})
-            </Button>
-            <Toolbar className={s.toolbar} values={[]} />
-          </div>
-
-          <Grid container spacing={2} className={s.card_wrapper}>
-            {Array.from(Array(24)).map((item) => (
-              <Grid
-                item
-                key={item}
-                xs={6}
-                sm={4}
-                md={3}
-                lg={2}
-                xl={2}
-                justifyContent="space-evenly"
-              >
-                <Card
-                  onClick={() => goToBrand("zara")}
-                  className={s.card}
-                  imageSrc={card_image}
-                  buttonTitle={"Go to Brand"}
-                  isButtonHidden={true}
-                />
-                <p className={s.card_caption}>Zara</p>
-              </Grid>
-            ))}
-          </Grid>
-          <Pagination className={s.pagination} pagesCount={4} isShort />
-        </div>
+              <Card
+                onClick={() => goToBrand("zara")}
+                className={s.card}
+                imageSrc={card_image}
+                buttonTitle={"Go to Brand"}
+                isButtonHidden={true}
+              />
+              <p className={s.card_caption}>Zara</p>
+            </Grid>
+          ))}
+        </Grid>
+        <Pagination className={s.pagination} pagesCount={4} isShort />
       </div>
     </>
   )

@@ -18,7 +18,7 @@
     height: $header-mobile-height;
   }
 
-  &.withBreadcrumbs {
+  &.with_breadcrumbs {
     height: $header-with-breadcrumbs-desktop-height;
     @include mobile {
       height: $header-with-breadcrumbs-mobile-height;

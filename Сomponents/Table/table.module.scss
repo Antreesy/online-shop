@@ -5,8 +5,6 @@
   font-weight: $fw-medium;
   line-height: 1.18;
 
-  // &__header {}
-
   &__control {
     color: $color-black;
     display: flex;
@@ -35,10 +33,10 @@
   margin-left: 10px;
   gap: 3.5px;
   cursor: pointer;
-}
 
-.reversedArrow {
-  transform: rotate(180deg);
+  .arrow_down {
+    transform: rotate(180deg);
+  }
 }
 
 .cell {

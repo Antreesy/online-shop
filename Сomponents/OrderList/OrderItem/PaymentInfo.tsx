@@ -1,7 +1,7 @@
 import { Price } from "UI"
 import { PaymentInfoProps } from "shared/interfaces/orderProps"
 
-import s from "./OrderItem.module.scss"
+import s from "./orderItem.module.scss"
 
 export const PaymentInfo: React.FC<PaymentInfoProps> = (props) => {
   const { type, cardNumber, orderAmount, shipping, total } = props
@@ -31,7 +31,7 @@ export const PaymentInfo: React.FC<PaymentInfoProps> = (props) => {
           <Price price={total} />
         </span>
       </p>
-      <p className={s.amountPaid}>
+      <p className={s.amount}>
         <span>Amount Paid :</span>
         <span>
           <Price price={total} />

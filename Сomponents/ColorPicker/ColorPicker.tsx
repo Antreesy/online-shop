@@ -1,7 +1,4 @@
-import { Checkbox, Grid } from "@mui/material"
-import { styled } from "@mui/material/styles"
-
-import s from "./colorPicker.module.scss"
+import { Checkbox, Grid, styled } from "@mui/material"
 
 const BpIcon = styled("span")(({ color }) => ({
   display: "block",
