@@ -91,8 +91,8 @@ const CardForm: React.FC = () => {
   const onSubmit = () => reset()
 
   return (
-    <form className={s.cardForm} onSubmit={handleSubmit(onSubmit)}>
-      <div className={s.cardInputs}>
+    <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
+      <div className={s.input_wrapper}>
         <Controller
           name={"cardNumber"}
           control={control}
@@ -105,7 +105,7 @@ const CardForm: React.FC = () => {
               placeholder={"0000 0000 0000 0000"}
               type={"tel"}
               isRequired={true}
-              className={s.longInput}
+              className={s.input_long}
               errorText={"This field cannot be left blank"}
               validation={cardNumberValidation}
             />
@@ -123,14 +123,14 @@ const CardForm: React.FC = () => {
               placeholder={"Yalçın Topkaya"}
               type={"text"}
               isRequired={true}
-              className={s.longInput}
+              className={s.input_long}
               errorText={"This field cannot be left blank"}
               validation={cardholderNameValidation}
             />
           )}
         />
 
-        <div className={s.flex}>
+        <div className={s.flex_row}>
           <Controller
             name={"cardExpiration"}
             control={control}
@@ -142,7 +142,7 @@ const CardForm: React.FC = () => {
                 placeholder={"06/2026"}
                 type={"tel"}
                 isRequired={true}
-                className={s.shortInput}
+                className={s.input_short}
                 errorText={"This field cannot be left blank"}
                 validation={cardExpirationValidation}
               />
@@ -160,21 +160,23 @@ const CardForm: React.FC = () => {
                 placeholder={"CVC/CVV"}
                 type={"password"}
                 isRequired={true}
-                className={s.shortInput}
+                className={s.input_short}
                 errorText={"This field cannot be left blank"}
                 validation={cardSecurityValidation}
               />
             )}
           />
         </div>
+
         <Button
           disabled={!isValid}
           onClick={handleSubmit(onSubmit)}
-          className={s.desktopButton}
+          className={s.button_desktop}
         >
           Save
         </Button>
       </div>
+
       <CreditCard
         size={width < 768 ? 210 : 300}
         isColored
@@ -187,7 +189,7 @@ const CardForm: React.FC = () => {
           reset()
         }}
       />
-      <Button disabled={!isValid} className={s.mobileButton}>
+      <Button disabled={!isValid} className={s.button_mobile}>
         Save
       </Button>
     </form>

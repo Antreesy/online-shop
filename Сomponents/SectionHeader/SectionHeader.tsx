@@ -14,8 +14,8 @@ const SectionHeader: React.FC<SectionHeaderProps> = (props) => {
   const { title, actionItem, className, onActionClick, noDecor } = props
 
   const sectionHeaderClass = cn(
-    s.sectionHeader,
-    { [s.sectionHeader_with_decor]: !noDecor },
+    s.section_header,
+    { [s.with_decor]: !noDecor },
     className,
   )
 
@@ -26,7 +26,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = (props) => {
         <a
           href="#"
           onClick={onActionClick}
-          className={cn({ [s.actionText]: typeof actionItem === "string" })}
+          className={cn({ [s.action_text]: typeof actionItem === "string" })}
         >
           {actionItem}
         </a>

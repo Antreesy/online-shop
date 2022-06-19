@@ -37,7 +37,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = (props) => {
   return (
     <>
       <Button
-        className={s.openButton}
+        className={s.open_button}
         disableElevation
         icon
         onClick={toggleMenu}
@@ -51,35 +51,31 @@ const BurgerMenu: React.FC<BurgerMenuProps> = (props) => {
         }}
       >
         <Box
-          className={s.drawerBox}
+          className={s.drawer}
           role="presentation"
           onClick={closeDrawer()}
           onKeyDown={closeDrawer()}
         >
-          <div className={s.drawerBox_header}>
+          <div className={s.drawer_header}>
             <Link href={"/"}>
-              <a className={s.drawerBox_logo}>
+              <a className={s.drawer_logo}>
                 <Logo type="dark" />
               </a>
             </Link>
             <Button
-              className={s.closeButton}
+              className={s.close_button}
               disableElevation
               iconLeft="close_cross"
               onClick={toggleMenu}
             />
           </div>
 
-          <div className={s.drawerBox_main}>
-            <List className={s.drawerBox_menu}>
+          <div className={s.drawer_main}>
+            <List className={s.drawer_menu}>
               {items.map((item, index) => (
-                <ListItem
-                  key={index}
-                  className={s.drawerBox_item}
-                  disablePadding
-                >
+                <ListItem key={index} className={s.drawer_item} disablePadding>
                   <Link href={item.href}>
-                    <a className={s.drawerBox_link}>
+                    <a className={s.drawer_link}>
                       <span>{item.text}</span>
                       <span />
                     </a>

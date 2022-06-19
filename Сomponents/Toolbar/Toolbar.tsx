@@ -21,7 +21,7 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
   return (
     <div className={cn(s.toolbar, className)}>
       <div className={s.search}>
-        <Icon type="search" className={s.searchIcon} />
+        <Icon type="search" className={s.search_icon} />
         <Input
           variant="black_outline"
           value={inputValue}
@@ -34,7 +34,7 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
       <Select
         className={s.select_wrapper}
         selectClassName={s.select}
-        iconClassName={s.selectIcon}
+        iconClassName={s.select_icon}
         values={values}
         placeholder={"Filter"}
         onChange={onChangeSelect}

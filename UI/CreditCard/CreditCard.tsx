@@ -6,7 +6,7 @@ import { Icon } from "UI"
 
 import { creditcardConsts } from "shared/constants/creditcard"
 
-import s from "./creditcard.module.scss"
+import s from "./creditCard.module.scss"
 
 export interface CreditCardProps {
   size?: number
@@ -31,25 +31,22 @@ const CreditCard: React.FC<CreditCardProps> = ({
 }) => {
   const sizeNumber =
     size < creditcardConsts.MIN_HEIGHT ? creditcardConsts.MIN_HEIGHT : size
-  const cardClasses = isColored ? s.cardColored : s.cardDefault
-  const cardRightSideClasses = onDelete
-    ? cn(s.withButton, s.cardLeftSide)
-    : cn(s.withoutButton, s.cardLeftSide)
+  const cardRightSideClasses = cn(s.right_group, { [s.with_button]: onDelete })
 
   const getRatio = (baseIndex: number): number => {
     return (size / baseIndex) * creditcardConsts.ASPECT_RATIO
   }
   return (
     <Card
-      className={cardClasses}
+      className={isColored ? s.card_colored : s.card_default}
       style={{
         width: sizeNumber * creditcardConsts.ASPECT_RATIO,
         height: sizeNumber,
       }}
     >
-      <CardContent className={s.cardContent}>
+      <CardContent className={s.content}>
         <div
-          className={s.cardLeftSideClasses}
+          className={s.left_group}
           style={{
             fontSize: `${getRatio(creditcardConsts.BASE_CARD_NUMBER_INDEX)}px`,
           }}
@@ -57,10 +54,11 @@ const CreditCard: React.FC<CreditCardProps> = ({
           <div>{isHidden ? creditcardConsts.HIDDEN_MASK : cardNumber}</div>
           <div>{cardHolder}</div>
         </div>
+
         <div className={cardRightSideClasses}>
           {onDelete && id && (
             <IconButton
-              className={s.deleteBtn}
+              className={s.delete_btn}
               style={{
                 width: getRatio(creditcardConsts.BASE_DELETE_BTN_INDEX),
                 height: getRatio(creditcardConsts.BASE_DELETE_BTN_INDEX),
@@ -81,7 +79,7 @@ const CreditCard: React.FC<CreditCardProps> = ({
               }}
             ></Card>
             <div
-              className={s.expireDate}
+              className={s.expire_date}
               style={{
                 fontSize: `${getRatio(
                   creditcardConsts.BASE_EXPIRENUMBER_INDEX,

@@ -1,0 +1,76 @@
+@import "styles/style.scss";
+
+.add_button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85px;
+  background: $color-white;
+  color: $color-black;
+
+  &:hover {
+    background-color: $color-white;
+  }
+
+  @include mobile {
+    min-height: 54px;
+  }
+
+  &.color_primary {
+    color: $color-purple;
+  }
+
+  &.back_color_grey {
+    background: $color-grey-e2;
+
+    &:hover {
+      background: $color-grey-e2;
+    }
+  }
+}
+
+.large {
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  @include mobile {
+    min-height: 80px;
+  }
+}
+
+.icon_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  color: $color-purple;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+
+  &.large {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+  }
+
+  @include mobile {
+    width: 25px;
+    height: 25px;
+    margin-bottom: 0px;
+  }
+}
+
+.title {
+  line-height: 18px;
+  font-size: 20px;
+
+  @include mobile {
+    line-height: 13px;
+    font-size: 14px;
+  }
+}

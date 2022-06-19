@@ -7,9 +7,9 @@ import { Button, Icon, Input, Select } from "UI"
 import { SelectItem } from "UI/Select/Select"
 
 import { countriesForSelect } from "shared/constants/countries"
+import { Roles } from "shared/enums/roles"
 
 import s from "./addressForm.module.scss"
-import { Roles } from "shared/enums/roles"
 
 interface AddressFormProps {
   onClose?: () => void
@@ -55,6 +55,7 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
 
   const onSubmit = handleSubmit((data) => {
     console.log(data)
+    onClose?.()
   })
 
   return (
