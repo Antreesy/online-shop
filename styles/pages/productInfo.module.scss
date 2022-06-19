@@ -1,0 +1,142 @@
+@import "/styles/style.scss";
+
+.button_wrapper {
+  margin-bottom: 70px;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.container {
+  padding: 50px 0;
+}
+
+.heading {
+  margin-bottom: 50px;
+  font-size: 38px;
+  font-weight: $fw-medium;
+  line-height: 1;
+  color: $color-black;
+
+  @include mobile {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+}
+
+.input_wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  gap: 25px;
+
+  @include mobile-laptop {
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+
+  .row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+}
+
+.input {
+  width: 100%;
+  min-height: 86px;
+
+  @include mobile {
+    font-size: 12px;
+    min-height: 39px;
+
+    & > div {
+      height: 39px;
+    }
+  }
+}
+
+.exclamation {
+  margin-bottom: 50px;
+
+  @include mobile {
+    margin-bottom: 25px;
+  }
+
+  & .exclamation_caption {
+    font-size: 16px;
+    font-weight: $fw-bold;
+    color: $color-purple;
+
+    @include mobile {
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+
+    .exclamation_span_desktop {
+      font-size: 11px;
+      font-weight: $fw-medium;
+      color: $color-black;
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  .exclamation_span_mobile {
+    display: none;
+
+    @include mobile {
+      display: block;
+      font-size: 9px;
+      line-height: 15px;
+      font-weight: $fw-medium;
+      color: $color-black;
+    }
+  }
+}
+
+.exclamation_card {
+  min-height: 230px;
+  padding: 25px;
+  font-size: 15px;
+  line-height: 2;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
+
+  @include mobile {
+    min-height: 100px;
+    margin-bottom: 10px;
+    padding: 14px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.features {
+  .select_wrapper {
+    display: flex;
+    margin-bottom: 50px;
+    gap: 25px;
+
+    @include mobile {
+      flex-direction: column;
+      margin-bottom: 25px;
+    }
+  }
+
+  .select {
+    width: 100%;
+    min-height: 86px;
+
+    @include mobile {
+      min-height: 39px;
+      font-size: 12px;
+    }
+  }
+}
