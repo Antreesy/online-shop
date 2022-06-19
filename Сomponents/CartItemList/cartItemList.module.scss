@@ -79,7 +79,7 @@
   min-width: 120px;
   width: 120px;
   padding: 10px 25px;
-  background: #f4f4f4;
+  background: $color-grey-f4;
   margin-right: 15px;
   display: flex;
   align-items: center;
@@ -117,7 +117,7 @@
     font-size: 12px;
     width: 100%;
     line-height: 1.67;
-    color: #888;
+    color: $color-grey-8;
     text-align: justify;
 
     @include mobile-tablet {
@@ -159,7 +159,7 @@
     left: 0;
     height: 60px;
     width: 2px;
-    background-color: #d0d0d0;
+    background-color: $color-grey-d0;
 
     @include tablet {
       display: none;
@@ -200,7 +200,7 @@
     left: 0;
     height: 60px;
     width: 2px;
-    background-color: #d0d0d0;
+    background-color: $color-grey-d0;
 
     @include tablet {
       display: none;

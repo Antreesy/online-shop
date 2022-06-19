@@ -1,53 +1,105 @@
 @import "styles/style.scss";
 
 .main {
-  border-radius: 10px;
-  box-shadow: 0 3px 20px 0 rgb(0 0 0 / 10%);
-  border: 3px solid $color-white;
   display: flex;
-  cursor: pointer;
-  width: 536px;
-  height: 159px;
   align-items: center;
+  min-width: 530px;
+  max-width: 540px;
+  width: 100%;
+  height: 159px;
+  padding: 30px;
+  border-radius: 7px;
+  box-shadow: 0 0 10px 0 #e8e8e8;
+  border: 3px solid $color-white;
+  cursor: pointer;
+
+  @include mobile-tablet {
+    min-width: 300px;
+    max-width: 300px;
+    width: 100%;
+    padding: 25px;
+  }
 }
 
 .wrapper {
   height: 95px;
-  margin-left: 32px;
   display: flex;
+  width: 100%;
 
   .icon_wrapper {
-    width: 95px;
-    height: 95px;
-    border-radius: 9px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: $color-white;
 
-    .icon {
-      font-size: 57.11px;
-      color: $color-purple-light;
+    &.desktop {
+      width: 95px;
+      height: 95px;
+      margin-right: 15px;
+      border-radius: 9px;
+
+      .icon {
+        font-size: 57px;
+        color: $color-purple-light;
+      }
+
+      @include mobile-tablet {
+        display: none;
+      }
+    }
+
+    &.mobile {
+      width: 39px;
+      height: 39px;
+      border-radius: 5px;
+
+      .icon {
+        font-size: 25px;
+        color: $color-purple-light;
+      }
+
+      @include laptop-desktop {
+        display: none;
+      }
     }
   }
 
   .info_wrapper {
     width: auto;
     display: grid;
-    padding-left: 15px;
 
-    h3 {
-      font-size: 30px;
-      font-weight: $fw-bold;
+    .title_row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      h3 {
+        font-size: 30px;
+        font-weight: $fw-bold;
+        @include mobile-tablet {
+          font-size: 16px;
+        }
+      }
     }
 
-    .description {
+    .description_row {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+
+      .icon {
+        color: $color-white;
+      }
 
       p {
-        padding-right: 60px;
         font-size: 18px;
+        font-weight: $fw-regular;
+        white-space: nowrap;
+
+        @include mobile-tablet {
+          font-size: 13px;
+        }
       }
     }
   }
@@ -68,5 +120,9 @@
 
   .icon_wrapper {
     background-color: $color-light-pink;
+  }
+
+  .description_row .icon {
+    color: $color-black !important;
   }
 }

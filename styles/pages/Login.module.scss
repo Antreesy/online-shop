@@ -9,7 +9,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  //background-color: #ededed;
 
   @include mobile {
     padding: $header-mobile-height - 25px 35px 32px;
@@ -73,7 +72,7 @@
   line-height: 1.5;
   letter-spacing: -0.6px;
   text-align: left;
-  color: #a3a3a3;
+  color: $color-grey-a3;
 }
 
 .inputs {
