@@ -44,7 +44,7 @@ const CustomAccordion: React.FC<AccordionProps> = (props) => {
     openTitleClassName,
     arrowColor = "#8100ef",
     onClick,
-    iconClassName
+    iconClassName,
   } = props
 
   const accordionClass = cn(s.accordion, className)

@@ -30,10 +30,8 @@ const CustomSlider: React.FC<SliderProps> = (props) => {
     setValue(newValue as number[])
   }
 
-  const sliderWrapperClassName = cn(s.slider_wrapper, className)
-
   return (
-    <Box className={sliderWrapperClassName}>
+    <Box className={cn(s.slider_wrapper, className)}>
       <Slider
         color="secondary"
         getAriaLabel={() => "range"}
@@ -49,6 +47,7 @@ const CustomSlider: React.FC<SliderProps> = (props) => {
           rail: s.rail,
           mark: s.mark,
           markLabel: s.mark_label,
+          valueLabel: s.value_label,
         }}
       />
     </Box>

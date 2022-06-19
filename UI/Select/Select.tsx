@@ -55,7 +55,7 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
   const selectIcon = () => <Icon type="arrow_down" className={iconClass} />
 
   return (
-    <div className={className}>
+    <div className={cn(s.select_wrapper, className)}>
       {label && (
         <InputLabel className={s.select_label} id="select-label">
           {label}

@@ -1,31 +1,22 @@
 @import "/styles/style.scss";
 
-.wrapper_bcg {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.desktop_image {
+  @include fullwidth-in-container;
+  margin-bottom: 70px;
 
-  & > .desktop_image {
-    @include mobile {
-      display: none;
-    }
+  @include mobile-tablet {
+    display: none;
+  }
 
-    & > div:nth-child(1) {
-      height: 500px;
-      margin-bottom: 70px;
+  & > div:nth-child(1) {
+    height: 500px;
 
-      & > div:nth-child(2) > span {
-        height: 500px !important;
-        color: #8100ef;
+    & > div:nth-child(2) > span {
+      height: 500px !important;
+      color: #8100ef;
 
-        & img {
-          object-fit: cover;
-        }
-      }
-
-      & > div:nth-child(3) {
-        visibility: hidden;
+      & img {
+        object-fit: cover;
       }
     }
   }
@@ -67,11 +58,12 @@
     }
   }
 
-  @include mobile {
+  @include mobile-tablet {
     display: block;
     z-index: -1;
     margin: -50px 0 20px 0;
     width: 100vw;
+    @include fullwidth-in-container;
   }
 }
 
@@ -82,13 +74,11 @@
 .background {
   width: 100vw;
   height: 500px;
-  margin-bottom: 40px;
   background-image: url("../../public/assets/img/background-influencers.png");
   background-size: cover;
   background-position: 30%;
 
   @include mobile-tablet {
-    margin-bottom: 0;
     height: 328px;
     background-image: url("../../public/assets/img/background-influencers-mobile.png");
     background-position: center;
@@ -100,6 +90,7 @@
 
   @include mobile-tablet {
     display: block;
+    @include fullwidth-in-container;
     margin-top: -20px;
     margin-bottom: 22px;
   }
@@ -110,14 +101,6 @@
   width: 100%;
   margin: 0 auto;
   background-color: white;
-
-  @include tablet-laptop {
-    padding: 0 30px;
-  }
-
-  @include mobile {
-    padding: 0 15px;
-  }
 
   &__content {
     display: flex;
@@ -145,45 +128,20 @@
   width: 210px;
   margin-right: 91px;
 
-  & > div {
-    margin-bottom: 14px;
+  @include mobile-tablet {
+    display: none;
   }
 
-  & > div > div {
-    padding-left: 0;
-  }
-
-  span {
+  & span {
     font-size: 20px;
   }
 
-  div:nth-child(4) {
-    div {
-      div {
-        div {
-          flex-direction: column;
-        }
-      }
-    }
-  }
-
-  div:nth-child(6) {
+  & > div:nth-last-child(2) {
     width: 210px;
     margin-bottom: 64px;
   }
 
-  @include mobile {
-    display: none;
-  }
-
   &__accordion {
-    div:nth-child(1) {
-      div > div {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-
     div:nth-child(2) {
       div {
         padding: 0 !important;
@@ -234,7 +192,7 @@
   &__price_slider {
     span {
       font-size: 20px;
-      color: #8100ef;
+      color: $color-purple;
       font-weight: 600;
     }
   }
@@ -247,6 +205,7 @@
 .items {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   gap: 24px;
 
   & > div {
