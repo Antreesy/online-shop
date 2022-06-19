@@ -1,4 +1,5 @@
 import { Checkbox, Grid, styled } from "@mui/material"
+import { Color } from "shared/interfaces/colorProps"
 
 const BpIcon = styled("span")(({ color }) => ({
   display: "block",
@@ -13,12 +14,13 @@ const BpCheckedIcon = styled(BpIcon)(() => ({
 }))
 
 interface ColorPickerProps {
-  colors: { name: string; color: string }[]
+  colors: Color[]
+  className?: string
 }
 
-const ColorPicker: React.FC<ColorPickerProps> = ({ colors }) => {
+const ColorPicker: React.FC<ColorPickerProps> = ({ colors, className }) => {
   return (
-    <Grid container>
+    <Grid container className={className}>
       <Grid item md={8} sm={6} xs={4}>
         {colors.map((item) => (
           <Checkbox

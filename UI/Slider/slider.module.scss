@@ -11,9 +11,13 @@
 
 .mark_label {
   font-size: 20px;
-  font-weight: $fw-regular;
-  color: $color-black;
+  font-weight: $fw-regular !important;
+  color: $color-black !important;
   border-radius: 1px;
+}
+
+.value_label {
+  background-color: $color-grey-f4;
 }
 
 .slider span[data-index="0"],

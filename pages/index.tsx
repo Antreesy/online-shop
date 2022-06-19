@@ -84,7 +84,9 @@ const Index: NextPage = (props) => {
             </Link>
             <span className={s.title__miss}>Specific Brand Product</span>
             <span className={s.title__miss}>Dashboard (3 screens)</span>
-            <span className={s.title__miss}>Products</span>
+            <Link href="/products-page">
+              <a className={s.title__link}>Products</a>
+            </Link>
           </div>
 
           <div className={s.flex_column}>
