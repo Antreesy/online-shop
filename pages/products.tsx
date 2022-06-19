@@ -15,8 +15,32 @@ import bg from "public/assets/img/fallback-pic.png"
 import img from "public/assets/img/product-img.png"
 
 import s from "styles/pages/Products.module.scss"
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import {useTranslation} from "next-i18next";
+
+
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "app",
+        "profile",
+        "header",
+        "footer",
+        "sidebar",
+        "modal",
+        "product",
+        "orderCart"
+      ])),
+    },
+  }
+}
+
+
 
 const Products: NextPage = () => {
+  const { t } = useTranslation("product")
   return (
     <>
       <Background
@@ -37,31 +61,28 @@ const Products: NextPage = () => {
           </div>
           <div className={s.productInfo}>
             <p className={s.title}>Prada</p>
-            <p className={s.subtitle}>Black long sleeve men’s jacket</p>
-            <p className={s.description}>
-              Lorem amet voluptatibus autem, magnam nulla ad. Quo non vel . Hic,
-              commodi et!
-            </p>
+            <p className={s.subtitle}>{t("productSuTitle")}</p>
+            <p className={s.description}>{t("productDescription")}</p>
             <div className={s.price}>
               <Price price={2020} oldPrice={2050} type="sale_black" />
             </div>
-            <h3>Color :</h3>
+            <h3>{t("productColor")} :</h3>
             <div className={s.colorPicker}>
               <ColorPicker colors={colors} />
             </div>
             <h2>
-              <span>Size :</span>{" "}
+              <span>{t("productSize")} :</span>
               <span>
-                <Icon type="size" /> Size chart
+                <Icon type="size" /> {t("productSizeChart")}
               </span>
             </h2>
             <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
             <Button className={s.button} iconLeft="basket">
-              Add to my cart
+              {t("productButton")}
             </Button>
           </div>
         </div>
-        <h3>Product Detail:</h3>
+        <h3>{t("productDetail")}:</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
           pretium enim. Cras faucibus velit risus, nec pharetra ex scelerisque
@@ -79,7 +100,7 @@ const Products: NextPage = () => {
           ligula sed bibendum laoreet, dui tellus iaculis est, sit amet rhoncus
           risus felis
         </p>
-        <h3>Product Detail:</h3>
+        <h3>{t("productDetail")}:</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
     </>

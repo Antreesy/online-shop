@@ -1,0 +1,13 @@
+{
+  "orderCartProductName": "Name Of The Product",
+  "orderPrice": "Price",
+  "orderPiece": "piece",
+  "orderTotal": "Total",
+  "orderSubTitle":"Knitted dress with metallic thread",
+  "orderAmount": "Order Amount",
+  "orderSummary": "Order Summary",
+  "orderDiscountCoupon": "Use discount coupon",
+  "orderCouponButton": "Apply",
+  "orderWarning": "I have read and approved the Preliminary Information Form and the Distance Sales Agreement",
+  "orderComplete": "Complete Order"
+}

@@ -11,8 +11,8 @@ export const CartItemList: React.FC<CartListProps> = ({ list }) => {
   return (
     <>
       {list.length ? (
-        list.map((item) => {
-          return <CartItem {...item} />
+        list.map((item,index) => {
+          return <CartItem {...item} index={index}/>
         })
       ) : (
         <div className={s.noItemBox}>

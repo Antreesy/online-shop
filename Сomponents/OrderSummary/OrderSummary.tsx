@@ -3,6 +3,7 @@ import { useState } from "react"
 import { Accordion, Button, CheckboxGroup, Input } from "UI"
 
 import s from "./OrderSummary.module.scss"
+import {useTranslation} from "next-i18next";
 
 interface OrderSummaryProps {
   subtotal: number
@@ -21,13 +22,14 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
     { name: "Discount", value: discount },
     { name: "KDV", value: kdv },
   ]
+  const { t } = useTranslation("orderCart")
 
   return (
     <div className={s.order_wrapper}>
-      <h3 className={s.title}>Order Summary</h3>
+      <h3 className={s.title}>{t("orderSummary")}</h3>
       <div className={s.coupon}>
         <Accordion
-          header={"Use discount coupon"}
+          header={t("orderDiscountCoupon")}
           headerClassName={s.accordion_header}
           headerActiveClassName={s.accordion_header_active}
           arrowColor="#000"
@@ -42,7 +44,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
                 className={s.input}
               />
             </div>
-            <Button className={s.button}>Apply</Button>
+            <Button className={s.button}>{t("orderCouponButton")}</Button>
           </div>
         </Accordion>
       </div>
@@ -70,10 +72,10 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
             className={s.checkbox}
             rounded
             labels={
-              "I have read and approved the Preliminary Information Form and the Distance Sales Agreement."
+              t("orderWarning")
             }
           />
-          <Button className={s.submitBtn}>Complete Order</Button>
+          <Button className={s.submitBtn}>{t("orderComplete")}</Button>
         </div>
       </div>
     </div>
