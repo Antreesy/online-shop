@@ -39,6 +39,7 @@ const influencers: NextPage = () => {
                 className={s.card}
                 imageSrc={card_image}
                 buttonTitle={"Go to store"}
+                buttonHref={"/products-page"}
                 isButtonHidden={true}
               />
               <p className={s.card_caption}>Tuana Yücel</p>

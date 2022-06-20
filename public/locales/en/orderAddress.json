@@ -1,0 +1,14 @@
+{
+  "deliveryInformation": "Delivery Information",
+  "buttonTitle": "Add New Address",
+  "deliveryAddress": "Delivery address",
+  "myBillingAddress": "My billing address is the same",
+  "AddressTitle": "Address Title",
+  "name": "Name*",
+  "surname": "Surname*",
+  "countryCode": "Country Code*",
+  "phoneNumber": "Phone Number",
+  "city": "City*",
+  "something": "Something",
+  "street": "Street*"
+}

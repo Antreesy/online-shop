@@ -32,7 +32,7 @@ interface AddressType {
 }
 
 const AddressForm: React.FC<AddressFormProps> = (props) => {
-  const { t } = useTranslation("address")
+  const { t } = useTranslation("orderAddress")
   const { onClose, role } = props
 
   const { handleSubmit, control } = useForm<AddressType>({
@@ -76,10 +76,10 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label={t("Address Title")}
+                  label={t("AddressTitle")}
                   setValue={onChange}
                   value={value}
-                  placeholder={t("Address Title")}
+                  placeholder={t("AddressTitle")}
                 />
               )}
             />
@@ -93,10 +93,10 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label={t("Name*")}
+                  label={t("name")}
                   setValue={onChange}
                   value={value}
-                  placeholder={t("Name*")}
+                  placeholder={t("name")}
                 />
               )}
             />
@@ -107,10 +107,10 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label={t("Surname*")}
+                  label={t("surname")}
                   setValue={onChange}
                   value={value}
-                  placeholder={t("Surname*")}
+                  placeholder={t("surname")}
                 />
               )}
             />
@@ -125,8 +125,8 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
               render={({ field: { onChange, value } }) => (
                 <Select
                   className={s.input_20}
-                  label={t("Country Code")}
-                  placeholder={t("Country Code")}
+                  label={t("countryCode")}
+                  placeholder={t("countryCode")}
                   initValue={value.value}
                   values={countriesForSelect()}
                   onChange={onChange}
@@ -140,10 +140,10 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
               render={({ field: { onChange, value } }) => (
                 <Input
                   className={s.input_30}
-                  label={t("Phone Number")}
+                  label={t("phoneNumber")}
                   setValue={onChange}
                   value={value}
-                  placeholder={t("Phone Number")}
+                  placeholder={t("phoneNumber")}
                 />
               )}
             />
@@ -155,8 +155,8 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Select
-                  label={t("City*")}
-                  placeholder={t("City*")}
+                  label={t("city")}
+                  placeholder={t("city")}
                   initValue={value.value}
                   values={[]}
                   onChange={onChange}
@@ -173,10 +173,10 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label={t("Something")}
+                  label={t("something")}
                   setValue={onChange}
                   value={value}
-                  placeholder={t("Something")}
+                  placeholder={t("something")}
                 />
               )}
             />
@@ -187,10 +187,10 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label={t("Street*")}
+                  label={t("street")}
                   setValue={onChange}
                   value={value}
-                  placeholder={t("Street*")}
+                  placeholder={t("street")}
                 />
               )}
             />

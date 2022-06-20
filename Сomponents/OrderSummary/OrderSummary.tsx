@@ -1,18 +1,21 @@
 import { useState } from "react"
 
+import Link from "next/link"
 import { Accordion, Button, CheckboxGroup, Input } from "UI"
 
 import s from "./orderSummary.module.scss"
+import { useTranslation } from "next-i18next"
 
 interface OrderSummaryProps {
   subtotal: number
   shipping: number
   discount: number
   kdv: number
+  buttonHref?: string
 }
 
 const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
-  const { subtotal, shipping, discount, kdv } = props
+  const { subtotal, shipping, discount, kdv, buttonHref = "" } = props
   const [inputValue, setInputValue] = useState<string>("")
   const sum = subtotal + shipping + discount + kdv
   const getData = [
@@ -21,13 +24,14 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
     { name: "Discount", value: discount },
     { name: "KDV", value: kdv },
   ]
+  const { t } = useTranslation("orderCart")
 
   return (
     <div className={s.order_wrapper}>
-      <h3 className={s.title}>Order Summary</h3>
+      <h3 className={s.title}>{t("orderSummary")}</h3>
       <div className={s.coupon}>
         <Accordion
-          header={"Use discount coupon"}
+          header={t("orderDiscountCoupon")}
           headerClassName={s.accordion_header}
           headerActiveClassName={s.accordion_header_active}
           arrowColor="#000"
@@ -42,7 +46,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
                 className={s.input}
               />
             </div>
-            <Button className={s.button}>Apply</Button>
+            <Button className={s.button}>{t("orderCouponButton")}</Button>
           </div>
         </Accordion>
       </div>
@@ -69,11 +73,11 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
           <CheckboxGroup
             className={s.checkbox}
             rounded
-            labels={
-              "I have read and approved the Preliminary Information Form and the Distance Sales Agreement."
-            }
+            labels={t("orderWarning")}
           />
-          <Button className={s.submit_button}>Complete Order</Button>
+          <Link href={buttonHref}>
+            <Button className={s.submit_button}>{t("orderComplete")}</Button>
+          </Link>
         </div>
       </div>
     </div>

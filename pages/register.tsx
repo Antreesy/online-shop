@@ -48,6 +48,7 @@ const Home: NextPage = () => {
                 className={s.card_brand}
                 imageSrc={picForBrands}
                 buttonTitle="FOR BRANDS"
+                buttonHref="/register-page"
               />
               <Card
                 className={s.card}

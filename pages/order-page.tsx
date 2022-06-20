@@ -22,6 +22,10 @@ export async function getStaticProps({ locale }: { locale: string }) {
         "header",
         "footer",
         "sidebar",
+        "modal",
+        "product",
+        "orderCart",
+        "orderAddress"
       ])),
     },
   }
@@ -32,7 +36,7 @@ const OrderPage: NextPage = () => {
   const [showAddressForm, setShowAddressForm] = useState<boolean>(false)
   const [showCardForm, setShowCardForm] = useState<boolean>(false)
   const [showSavedCards, setShowSavedCards] = useState<boolean>(true)
-  const { t } = useTranslation("address")
+  const { t } = useTranslation("orderAddress")
 
   const toggleBilling = () => {
     setShowBilling((prev) => !prev)
@@ -59,11 +63,10 @@ const OrderPage: NextPage = () => {
       <div className={s.content}>
         <div className={s.main}>
           <section className={s.section_delivery}>
-            <h3 className={s.heading}>Delivery Information</h3>
+            <h3 className={s.heading}>{t("deliveryInformation")}</h3>
             <AddButton
               color="secondary"
               className={s.add_button}
-              title="Add New Address"
               large={false}
               onClick={toggleAddressForm}
             />
@@ -71,11 +74,11 @@ const OrderPage: NextPage = () => {
             {showAddressForm ? (
               <div className={s.form_wrapper}>
                 <div className={s.address_header}>
-                  <h3 className={s.heading}>Delivery address</h3>
+                  <h3 className={s.heading}>{t("deliveryAddress")}</h3>
 
                   <CheckboxGroup
                     rounded
-                    labels={["My billing address is the same"]}
+                    labels={t("myBillingAddress")}
                     value={showBilling}
                     setValue={toggleBilling}
                   />
@@ -194,7 +197,7 @@ const OrderPage: NextPage = () => {
         </div>
 
         <div className={s.aside}>
-          <OrderSummary subtotal={123} discount={12} shipping={10} kdv={10} />
+          <OrderSummary subtotal={123} discount={12} shipping={10} kdv={10} buttonHref="/order-success" />
         </div>
       </div>
     </>

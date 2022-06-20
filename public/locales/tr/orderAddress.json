@@ -1,0 +1,14 @@
+{
+  "deliveryInformation": "Teslimat Bilgileri",
+  "buttonTitle": "Yeni Adres Ekle",
+  "deliveryAddress": "Teslimat adresi",
+  "myBillingAddress": "Fatura adresim aynı",
+  "AddressTitle": "Adres Başlığı",
+  "name": "İsim*",
+  "surname": "Soyadı*",
+  "countryCode": "Ülke Kodu*",
+  "phoneNumber": "Telefon Numarası",
+  "city": "Şehir*",
+  "something": "Bir şey",
+  "street": "Sokak*"
+}

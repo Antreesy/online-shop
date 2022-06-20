@@ -1,0 +1,43 @@
+@import "styles/style.scss";
+
+.title {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: $fw-bold;
+
+  @include mobile {
+    font-size: 16px;
+  }
+}
+
+.content {
+  margin-bottom: 30px;
+  font-size: 15px;
+  text-align: center;
+
+  @include mobile {
+    margin-bottom: 15px;
+  }
+}
+
+.button_wrapper {
+  width: 465px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  @include mobile {
+    width: 270px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 18px;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+}

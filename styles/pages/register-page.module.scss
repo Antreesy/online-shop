@@ -105,5 +105,19 @@
   input {
     width: 270px;
     box-shadow: 0 0 30px $color-grey-ed;
+
+    &::placeholder {
+      color: $color-black;
+      opacity: 1;
+    }
+  }
+
+  .select {
+    width: 100%;
+    font-weight: $fw-regular;
+
+    & > div {
+      text-align: left;
+    }
   }
 }
