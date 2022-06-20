@@ -1,7 +1,7 @@
 import cn from "classnames"
+import { useTranslation } from "next-i18next"
 
 import s from "./sectionHeader.module.scss"
-import {useTranslation} from "next-i18next";
 
 interface SectionHeaderProps {
   title?: string

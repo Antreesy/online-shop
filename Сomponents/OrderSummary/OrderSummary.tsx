@@ -1,10 +1,10 @@
 import { useState } from "react"
+import { useRouter } from "next/router"
+import { useTranslation } from "next-i18next"
 
-import Link from "next/link"
 import { Accordion, Button, CheckboxGroup, Input } from "UI"
 
 import s from "./orderSummary.module.scss"
-import { useTranslation } from "next-i18next"
 
 interface OrderSummaryProps {
   subtotal: number
@@ -25,6 +25,11 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
     { name: "KDV", value: kdv },
   ]
   const { t } = useTranslation("orderCart")
+
+  const router = useRouter()
+  const handleClick = () => {
+    router.push(buttonHref)
+  }
 
   return (
     <div className={s.order_wrapper}>
@@ -75,9 +80,9 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
             rounded
             labels={t("orderWarning")}
           />
-          <Link href={buttonHref}>
-            <Button className={s.submit_button}>{t("orderComplete")}</Button>
-          </Link>
+          <Button className={s.submit_button} onClick={handleClick}>
+            {t("orderComplete")}
+          </Button>
         </div>
       </div>
     </div>

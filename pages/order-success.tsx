@@ -1,14 +1,13 @@
 import type { NextPage } from "next"
 import Head from "next/head"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { useTranslation } from "next-i18next"
 
 import { orderSuccess } from "shared/constants/order-success"
 import { Card, Icon } from "UI"
 import { SectionHeader } from "Сomponents"
 
 import s from "styles/pages/OrderSuccess.module.scss"
-import {serverSideTranslations} from "next-i18next/serverSideTranslations";
-import {useTranslation} from "next-i18next";
-
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
@@ -22,7 +21,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
         "modal",
         "product",
         "orderCart",
-        "orderSuccess"
+        "orderSuccess",
       ])),
     },
   }
@@ -59,44 +58,42 @@ const OrderSuccess: NextPage = () => {
             <p className={s.description}>{t("textContent")}</p>
           </div>
 
-          <SectionHeader
-            className={s.section}
-          />
+          <SectionHeader className={s.section} />
           <div className={s.order}>
             <div className={s.orderTitle}>
               <span>{t("orderNumber")}: </span>
               {orderNumber}
             </div>
-            <table className={s.table}>
+            <div className={s.table}>
               <div>
-                <tr>
-                  <td>{t("orderDate")}</td>
-                  <td>{orderDate}</td>
-                </tr>
-                <tr>
-                  <td>{t("situation")}</td>
-                  <td>{situation}</td>
-                </tr>
-                <tr>
-                  <td>{t("paymentMethod")}</td>
-                  <td>{paymentMethod}</td>
-                </tr>
+                <div className={s.row}>
+                  <div className={s.cell}>{t("orderDate")}</div>
+                  <div className={s.cell}>{orderDate}</div>
+                </div>
+                <div className={s.row}>
+                  <div className={s.cell}>{t("situation")}</div>
+                  <div className={s.cell}>{situation}</div>
+                </div>
+                <div className={s.row}>
+                  <div className={s.cell}>{t("paymentMethod")}</div>
+                  <div className={s.cell}>{paymentMethod}</div>
+                </div>
               </div>
               <div>
-                <tr>
-                  <td>{t("sendingDate")}</td>
-                  <td>{sendingDate}</td>
-                </tr>
-                <tr>
-                  <td>{t("shoppingNumber")}</td>
-                  <td>{shopingNumber}</td>
-                </tr>
-                <tr>
-                  <td>{t("helpline")}</td>
-                  <td>{helpline}</td>
-                </tr>
+                <div className={s.row}>
+                  <div className={s.cell}>{t("sendingDate")}</div>
+                  <div className={s.cell}>{sendingDate}</div>
+                </div>
+                <div className={s.row}>
+                  <div className={s.cell}>{t("shoppingNumber")}</div>
+                  <div className={s.cell}>{shopingNumber}</div>
+                </div>
+                <div className={s.row}>
+                  <div className={s.cell}>{t("helpline")}</div>
+                  <div className={s.cell}>{helpline}</div>
+                </div>
               </div>
-            </table>
+            </div>
           </div>
 
           <div className={s.cards}>

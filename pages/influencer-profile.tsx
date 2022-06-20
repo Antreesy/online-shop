@@ -37,7 +37,7 @@ const AddProduct: NextPage = () => {
         </div>
       ) : null}
 
-      <div className={s.addProduct_addbutton}>
+      <div className={s.addProduct_addButton}>
         <AddButton
           title="Add Product"
           bgColor="white"

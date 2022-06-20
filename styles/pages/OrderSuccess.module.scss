@@ -83,6 +83,37 @@
     margin-top: 0;
     flex-direction: column;
   }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cell {
+    text-align: end;
+    font-size: 18px;
+    font-weight: $fw-medium;
+    white-space: nowrap;
+
+    @include mobile {
+      font-size: 16px;
+    }
+
+    &:first-child {
+      display: flex;
+      justify-content: space-between;
+
+      &::after {
+        content: ":";
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
+
+    &:last-child {
+      color: $color-purple;
+    }
+  }
 }
 
 .table > div {
@@ -96,37 +127,6 @@
       background-color: $color-grey-c;
     }
   }
-}
-
-.table tr {
-  display: flex;
-  justify-content: space-between;
-}
-
-.table td {
-  text-align: end;
-  font-size: 18px;
-  font-weight: $fw-medium;
-  white-space: nowrap;
-
-  @include mobile {
-    font-size: 16px;
-  }
-}
-
-.table > div > tr > td:first-child {
-  display: flex;
-  justify-content: space-between;
-
-  &::after {
-    content: ":";
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-}
-
-.table > div > tr > td:last-child {
-  color: $color-purple;
 }
 
 .cards {

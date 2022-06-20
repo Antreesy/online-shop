@@ -1,14 +1,13 @@
 import { useState } from "react"
 import { NextPage } from "next"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { useTranslation } from "next-i18next"
 
 import Head from "next/head"
 import { BackButton } from "Сomponents"
 import { Input, Select } from "UI"
 
 import s from "styles/pages/productInfo.module.scss"
-import {serverSideTranslations} from "next-i18next/serverSideTranslations";
-import {useTranslation} from "next-i18next";
-
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
@@ -23,12 +22,11 @@ export async function getStaticProps({ locale }: { locale: string }) {
         "product",
         "orderCart",
         "orderSuccess",
-          "productInfo"
+        "productInfo",
       ])),
     },
   }
 }
-
 
 const ProductInfo: NextPage = () => {
   const { t } = useTranslation("productInfo")
@@ -102,9 +100,7 @@ const ProductInfo: NextPage = () => {
         <div className={s.exclamation}>
           <p className={s.exclamation_caption}>
             {t("Exclamation")}
-            <span className={s.exclamation_span_desktop}>
-              ({t("text")})
-            </span>
+            <span className={s.exclamation_span_desktop}>({t("text")})</span>
           </p>
 
           <p className={s.exclamation_card}>
@@ -118,9 +114,7 @@ const ProductInfo: NextPage = () => {
             molestias sequi!
           </p>
 
-          <p className={s.exclamation_span_mobile}>
-            ({t("text")})
-          </p>
+          <p className={s.exclamation_span_mobile}>({t("text")})</p>
         </div>
 
         <div className={s.features}>
