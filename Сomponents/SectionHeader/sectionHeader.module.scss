@@ -1,6 +1,6 @@
 @import "styles/style.scss";
 
-.sectionHeader {
+.section_header {
   position: relative;
   max-width: 1278px;
   width: 100%;
@@ -12,7 +12,7 @@
   border-radius: 5px;
   padding: 0 25px;
 
-  &_with_decor::after {
+  .with_decor::after {
     content: "";
     position: absolute;
     top: 0;
@@ -38,7 +38,7 @@
   }
 }
 
-.actionText {
+.action_text {
   display: block;
   margin-right: 64px;
   font-weight: $fw-semibold;

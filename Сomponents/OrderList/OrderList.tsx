@@ -1,4 +1,4 @@
-import { OrderItem } from "Сomponents"
+import OrderItem from "./OrderItem/OrderItem"
 
 import { OrderItemProps } from "shared/interfaces/orderProps"
 

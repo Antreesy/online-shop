@@ -1,6 +1,6 @@
 @import "styles/style.scss";
 
-.profileSidebar {
+.sidebar_wrapper {
   width: 317px;
   border-radius: 0 0 30px 0;
   background-color: $color-white;
@@ -14,7 +14,7 @@
   }
 }
 
-.headerSidebar {
+.header_block {
   background-color: $color-white;
   height: 103px;
   max-width: 100%;
@@ -37,7 +37,7 @@
   box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.05);
 }
 
-.sidebar_title {
+.title {
   padding: 37px 110px 37px 50px;
   font-size: 25px;
   font-weight: $fw-semibold;
@@ -58,7 +58,7 @@
   }
 }
 
-.menuSidebar {
+.menu_block {
   margin-top: 49px;
   max-width: 100%;
 
@@ -108,11 +108,12 @@
     font-size: 18px;
     padding: 16px 16px 0 0;
   }
-  .AccordionLi {
-    margin-top: 0;
-    padding-bottom: 0;
-    border: none;
-  }
+  // TODO check class
+  // .AccordionLi {
+  //   margin-top: 0;
+  //   padding-bottom: 0;
+  //   border: none;
+  // }
   &:hover:last-child {
     color: $color-grey-c;
   }

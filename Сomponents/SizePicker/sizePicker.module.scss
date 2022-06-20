@@ -1,6 +1,6 @@
 @import "styles/style.scss";
 
-.sizePicker {
+.size_picker {
   flex-direction: row;
 
   & > label {
@@ -21,7 +21,7 @@
   }
 }
 
-.radioIcon {
+.radio_icon {
   width: 50px;
   height: 50px;
   border: none;
@@ -29,11 +29,11 @@
   transition: background-color 0.2s ease;
 }
 
-input:hover + .radioIcon {
+input:hover + .radio_icon {
   background-color: $color-grey-c;
 }
 
-.radioIconChecked {
+.radio_icon_checked {
   border: 2px solid $color-black;
   width: 50px;
   height: 50px;
@@ -41,6 +41,6 @@ input:hover + .radioIcon {
   transition: background-color 0.2s ease;
 }
 
-input:hover + .radioIconChecked {
+input:hover + .radio_icon_checked {
   background-color: $color-grey-c;
 }

@@ -2,7 +2,7 @@ import cn from "classnames"
 
 import { Checkbox, FormGroup, FormControlLabel } from "@mui/material"
 
-import s from "./checkBoxGroup.module.scss"
+import s from "./checkboxGroup.module.scss"
 
 interface CheckboxProps {
   labels: string | string[]
@@ -11,6 +11,7 @@ interface CheckboxProps {
   checkboxClassName?: string
   color?: string
   colorChecked?: string
+  inColumn?: boolean
   value?: boolean
   setValue?: (newValue: boolean) => void
 }
@@ -84,13 +85,14 @@ const CheckboxGroup: React.FC<CheckboxProps> = (props) => {
     checkboxClassName,
     color,
     colorChecked,
+    inColumn,
     value,
     setValue,
   } = props
 
   const labelsArray = typeof labels === "string" ? [labels] : labels
 
-  const groupClass = cn(s.group, className)
+  const groupClass = cn(s.group, { [s.column]: inColumn }, className)
   const checkboxClass = cn(s.checkbox, checkboxClassName)
 
   return (

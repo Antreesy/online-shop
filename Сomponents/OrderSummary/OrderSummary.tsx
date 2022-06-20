@@ -2,7 +2,7 @@ import { useState } from "react"
 
 import { Accordion, Button, CheckboxGroup, Input } from "UI"
 
-import s from "./OrderSummary.module.scss"
+import s from "./orderSummary.module.scss"
 import {useTranslation} from "next-i18next";
 
 interface OrderSummaryProps {
@@ -55,17 +55,17 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
             <li key={data.name} className={s.price}>
               <p className={s.name}>{data.name}</p>
               <p className={s.dots}>:</p>
-              <p className={s.priceValue}>
+              <p className={s.price_value}>
                 <>₺{data.value}</>
               </p>
             </li>
           ))}
         </ul>
 
-        <div className={s.submitField}>
-          <div className={s.totalField}>
-            <p className={s.total}>Total:</p>
-            <p className={s.totalPrice}>₺{sum}</p>
+        <div className={s.submit_field}>
+          <div className={s.total_wrapper}>
+            <p className={s.caption}>Total:</p>
+            <p className={s.price}>₺{sum}</p>
           </div>
 
           <CheckboxGroup
@@ -75,7 +75,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
               t("orderWarning")
             }
           />
-          <Button className={s.submitBtn}>{t("orderComplete")}</Button>
+          <Button className={s.submit_button}>{t("orderComplete")}</Button>
         </div>
       </div>
     </div>

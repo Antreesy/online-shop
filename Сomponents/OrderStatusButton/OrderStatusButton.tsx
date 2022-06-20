@@ -4,7 +4,7 @@ import cn from "classnames"
 import { Icon } from "UI"
 import { IconType } from "shared/interfaces/iconTypes"
 
-import s from "./OrderStatusButton.module.scss"
+import s from "./orderStatusButton.module.scss"
 
 export interface OrderStatusButtonProps {
   icon: IconType
@@ -35,22 +35,26 @@ const OrderStatusButton: React.FC<OrderStatusButtonProps> = (props) => {
         [s.white]: appearance === "white",
       })}
     >
-      <div className={s.insideBig}>
-        <div className={s.squareBig}>
-          <Icon type={icon} className={s.squareIconBig} />
+      <div className={s.wrapper}>
+        <div className={cn(s.icon_wrapper, s.desktop)}>
+          <Icon type={icon} className={s.icon} />
         </div>
-        <div className={s.rectangleBig}>
-          <h3>
-            {" "}
-            {title} : {orderNumbers}{" "}
-          </h3>
-          <div className={s.smallText}>
+        <div className={s.info_wrapper}>
+          <div className={s.title_row}>
+            <div className={cn(s.icon_wrapper, s.mobile)}>
+              <Icon type={icon} className={s.icon} />
+            </div>
+            <h3>
+              {title} : {orderNumbers}
+            </h3>
+          </div>
+          <div className={s.description_row}>
+            <Icon type="exclamation" className={s.icon} />
             <p>
-              {" "}
               Last Day: <b> {lastDay} </b>
             </p>
+            <Icon type="exclamation" className={s.icon} />
             <p>
-              {" "}
               Delays: <b> {delays} </b>
             </p>
           </div>

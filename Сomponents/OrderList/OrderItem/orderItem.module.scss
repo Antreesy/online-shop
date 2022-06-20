@@ -1,6 +1,6 @@
 @import "styles/style.scss";
 
-.orderItem {
+.order_item {
   padding: 35px;
   background: $color-white;
   box-shadow: 0 3px 25px 0 rgba(0, 0, 0, 0.06);
@@ -133,7 +133,7 @@
   }
 }
 
-.detailBtn {
+.detail_button {
   height: 55px;
   font-size: 18px;
   padding-left: 60px;
@@ -151,7 +151,7 @@
   white-space: nowrap;
 }
 
-.orderDetails {
+.order_details {
   padding: 0;
   background: $color-white;
   box-shadow: 0 3px 25px 0 rgba(0, 0, 0, 0.06);
@@ -183,7 +183,7 @@
   }
 }
 
-.ordersInformation {
+.orders_info {
   display: flex;
   padding: 35px 100px;
 
@@ -198,7 +198,7 @@
   }
 }
 
-.deliveryInfo {
+.delivery_info {
   width: 50%;
   border-right: 1px solid #d0d0d0;
 
@@ -225,7 +225,7 @@
   }
 }
 
-.paymentInfo {
+.payment_info {
   width: 50%;
   padding-left: 120px;
 
@@ -255,12 +255,12 @@
   }
 }
 
-.amountPaid {
+.amount {
   color: $color-purple;
   padding-top: 20px;
 }
 
-.cardsArea {
+.cards_wrapper {
   padding: 30px;
 
   > p {

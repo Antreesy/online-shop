@@ -1,9 +1,10 @@
 import React from "react"
 import cn from "classnames"
-import s from "./InventoryButton.module.scss"
 
 import { Icon } from "UI"
 import { IconType } from "shared/interfaces/iconTypes"
+
+import s from "./inventoryButton.module.scss"
 
 export interface InventoryButtonProps {
   onClick: () => void
@@ -29,14 +30,17 @@ const InventoryButton: React.FC<InventoryButtonProps> = (props) => {
         [s.white]: appearance === "white",
       })}
     >
-      <div className={s.insideSmall}>
-        <div className={s.squareSmall}>
-          <Icon type={icon} className={s.squareIcon} />
+      <div className={s.wrapper}>
+        <div className={s.icon_wrapper}>
+          <Icon type={icon} className={s.icon} />
         </div>
-        <div className={s.totalNumber}>{number}</div>
-        <div className={s.totalText}>{text}</div>
-        <div className={s.rightImage}>
-          <Icon type={icon} className={s.rightIcon} />
+        <div className={s.total_num}>{number}</div>
+        <div className={s.total_text}>
+          <span>{text}</span>{" "}
+          <span className={cn(s.total_mobile)}>{number}</span>{" "}
+        </div>
+        <div className={s.bg_icon_wrapper}>
+          <Icon type={icon} className={s.bg_icon} />
         </div>
       </div>
     </div>

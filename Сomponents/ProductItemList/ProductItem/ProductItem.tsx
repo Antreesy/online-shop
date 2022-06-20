@@ -37,21 +37,21 @@ const ProductItem: React.FC<ProductItemProps> = (props) => {
   const [isAddButton, toggleAddButton] = useState<boolean>(addButton)
 
   return (
-    <div className={s.product_item_container}>
-      <div className={s.product_item_top}>
+    <div className={s.container}>
+      <div className={s.top_group}>
         {toggleFavorite && (
           <div
-            className={cn(s.product_favorites, { [s.isFavorite]: isFavorite })}
+            className={cn(s.favorites, { [s.is_favorite]: isFavorite })}
             onClick={() => toggleFavorite(id)}
           >
             <Icon type={"heart"} color={"inherit"} />
           </div>
         )}
-        <div className={s.product_item_image}>
-          <Image src={imageSrc} className={s.img} alt={title} layout="fill" />
+        <div className={s.image}>
+          <Image src={imageSrc} alt={title} layout="fill" />
         </div>
       </div>
-      <div className={s.product_item_bottom}>
+      <div className={s.bottom_group}>
         {onAddClick && (
           <div
             onClick={() => {
@@ -64,10 +64,10 @@ const ProductItem: React.FC<ProductItemProps> = (props) => {
           </div>
         )}
 
-        <div className={s.product_item_description}>
-          <div className={s.product_title}> {title} </div>
-          <div className={s.product_subtitle}> {subtitle} </div>
-          <p className={s.product_description}> {description} </p>
+        <div className={s.info_wrapper}>
+          <div className={s.title}> {title} </div>
+          <div className={s.subtitle}> {subtitle} </div>
+          <p className={s.description}> {description} </p>
         </div>
 
         <div className={s.price}>

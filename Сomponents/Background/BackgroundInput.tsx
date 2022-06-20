@@ -3,26 +3,26 @@ import cn from "classnames"
 
 import { Button } from "UI"
 
-import s from "./Background.module.scss"
+import s from "./background.module.scss"
 
 interface InputProps {
   value?: string
   className?: string
   isEditable?: boolean
-  boxClassname?: string
+  boxClassName?: string
   reverse?: boolean
   gradientBg?: "none" | "black"
 }
 
-const BgInput: React.FC<InputProps> = (props) => {
-  const { value, className, isEditable, boxClassname, reverse, gradientBg } =
+const BackgroundInput: React.FC<InputProps> = (props) => {
+  const { value, className, isEditable, boxClassName, reverse, gradientBg } =
     props
   const [currentValue, setCurrentValue] = useState(value)
   const [isEditing, setIsEditing] = useState(false)
 
   const inputIcon = isEditable ? (
     <Button
-      className={s.editButton}
+      className={s.edit_button}
       iconLeft="edit"
       onClick={() => {
         setIsEditing(true)
@@ -31,12 +31,12 @@ const BgInput: React.FC<InputProps> = (props) => {
   ) : null
 
   const colorButtonClass = cn(
-    s.inputEditer,
-    gradientBg === "none" ? s.noneGradientBg : s.blackGradientBg,
+    s.input_editor,
+    gradientBg === "none" ? s.no_gradient : s.black_gradient,
   )
 
   return isEditing ? (
-    <div className={cn(s.area, boxClassname)}>
+    <div className={cn(s.area, boxClassName)}>
       <input
         type="text"
         className={colorButtonClass}
@@ -49,13 +49,13 @@ const BgInput: React.FC<InputProps> = (props) => {
         onClick={() => {
           setIsEditing(false)
         }}
-        className={s.editBtn}
+        className={s.cancel_button}
       >
         edit
       </button>
     </div>
   ) : (
-    <div className={cn(s.area, boxClassname)}>
+    <div className={cn(s.area, boxClassName)}>
       <div className={cn(className, { [s.reverse]: reverse })}>
         <span>{inputIcon}</span>
         <span>{currentValue}</span>
@@ -63,4 +63,4 @@ const BgInput: React.FC<InputProps> = (props) => {
     </div>
   )
 }
-export default BgInput
+export default BackgroundInput

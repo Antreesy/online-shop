@@ -17,6 +17,7 @@
 
 .mobile_image {
   display: none;
+  @include fullwidth-in-container;
 
   & .background {
     display: flex;
@@ -52,38 +53,31 @@
   @include mobile {
     display: block;
     z-index: -1;
-    margin: -50px 0 20px 0;
     width: 100vw;
   }
 }
 
-.wrapper_bcg {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.desktop_image {
+  @include fullwidth-in-container;
+  @include mobile {
+    display: none;
+  }
 
-  & > .desktop_image {
-    @include mobile {
-      display: none;
+  & > div:nth-child(1) {
+    height: 500px;
+    margin-bottom: 30px;
+
+    & > div:nth-child(2) > span {
+      height: 500px !important;
+      color: $color-purple;
+
+      & img {
+        object-fit: cover;
+      }
     }
 
-    & > div:nth-child(1) {
-      height: 500px;
-      margin-bottom: 30px;
-
-      & > div:nth-child(2) > span {
-        height: 500px !important;
-        color: #8100ef;
-
-        & img {
-          object-fit: cover;
-        }
-      }
-
-      & > div:nth-child(3) {
-        visibility: hidden;
-      }
+    & > div:nth-child(3) {
+      visibility: hidden;
     }
   }
 
@@ -96,7 +90,7 @@
     height: 5px;
     -o-object-fit: contain;
     object-fit: contain;
-    background-image: linear-gradient(90deg, #00f5ff 0%, #8100ef 100%);
+    background-image: linear-gradient(90deg, $color-cyan 0%, $color-purple 100%);
   }
 }
 
@@ -114,8 +108,8 @@
 
   @include mobile-tablet {
     display: block;
+    @include fullwidth-in-container;
     margin-bottom: 30px;
-    margin-top: -30px;
   }
 }
 
@@ -125,7 +119,7 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  height: 12vw;
+  height: 160px;
   min-height: 100px;
   font-size: 20px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
@@ -395,19 +389,18 @@
 }
 
 .brand_bgr {
-  & > div {
-    & div:nth-child(2) {
-      visibility: hidden;
-      opacity: 0;
-    }
-  }
+  @include fullwidth-in-container;
 
   & > div {
     height: 500px;
-    margin-bottom: 30px;
 
     @include mobile-tablet {
       height: 300px;
+    }
+
+    & div:nth-child(2) {
+      visibility: hidden;
+      opacity: 0;
     }
   }
 }

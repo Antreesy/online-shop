@@ -1,13 +1,5 @@
 @import "/styles/style.scss";
 
-.main {
-  //padding-top: $header-desktop-height;
-
-  @include mobile {
-    padding-top: $header-mobile-height;
-  }
-}
-
 .container {
   max-width: 1780px;
   width: 100%;
@@ -24,12 +16,12 @@
 }
 
 .background {
-  width: 100vw;
   height: 500px;
   margin-bottom: 40px;
   background-image: url("../../public/assets/img/background-influencers.png");
   background-size: cover;
   background-position: 30%;
+  @include fullwidth-in-container;
 
   @include mobile-tablet {
     margin-bottom: 0;
@@ -41,6 +33,7 @@
 
 .breadcrumbs_mobile {
   display: none;
+  @include fullwidth-in-container;
 
   @include mobile-tablet {
     display: block;

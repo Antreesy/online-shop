@@ -7,7 +7,7 @@ import { PaymentInfo } from "./PaymentInfo"
 
 import { OrderItemProps } from "shared/interfaces/orderProps"
 
-import s from "./OrderItem.module.scss"
+import s from "./orderItem.module.scss"
 
 const OrderItem: React.FC<OrderItemProps> = (props) => {
   const {
@@ -23,7 +23,7 @@ const OrderItem: React.FC<OrderItemProps> = (props) => {
   const [detailVisible, setdetailVisible] = useState(false)
   return (
     <div>
-      <div className={s.orderItem}>
+      <div className={s.order_item}>
         <div className={s.top_group}>
           <div className={s.top_left_group}>
             <div className={s.text_block}>
@@ -52,7 +52,7 @@ const OrderItem: React.FC<OrderItemProps> = (props) => {
             <span>Was delivered</span>
           </div>
           <Button
-            className={s.detailBtn}
+            className={s.detail_button}
             onClick={() => setdetailVisible(!detailVisible)}
           >
             Order Detail
@@ -61,17 +61,17 @@ const OrderItem: React.FC<OrderItemProps> = (props) => {
       </div>
 
       {detailVisible && (
-        <div className={s.orderDetails}>
+        <div className={s.order_details}>
           <p className={s.order_subheader}>
             My Orders Detail <span>Order Date: 17.12.2021 - 12:39</span>
           </p>
-          <div className={s.ordersInformation}>
-            <div className={s.deliveryInfo}>
+          <div className={s.orders_info}>
+            <div className={s.delivery_info}>
               <h2>Delivery information</h2>
               <p>{deliveryInfo}</p>
             </div>
 
-            <div className={s.paymentInfo}>
+            <div className={s.payment_info}>
               <h2>Payment information</h2>
               <PaymentInfo {...paymentInfo} />
             </div>
@@ -80,7 +80,7 @@ const OrderItem: React.FC<OrderItemProps> = (props) => {
             Seller: {seller}
             <span>Invoice Expense</span>
           </p>
-          <div className={s.cardsArea}>
+          <div className={s.cards_wrapper}>
             <p>Was delivered</p>
 
             <div className={s.cards}>

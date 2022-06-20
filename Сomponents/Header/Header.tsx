@@ -21,7 +21,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ role, withBreadcrumbs }) => {
   const { t } = useTranslation("header")
   return (
-    <header className={cn(s.header, { [s.withBreadcrumbs]: withBreadcrumbs })}>
+    <header className={cn(s.header, { [s.with_breadcrumbs]: withBreadcrumbs })}>
       <div className={s.top_group}>
         <Link href="mailto:info@ilonsi.com">
           <a className={s.email}>info@ilonsi.com</a>

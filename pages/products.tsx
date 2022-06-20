@@ -5,7 +5,7 @@ import {
   ColorPicker,
   PhotoSlider,
   SizePicker,
-  ProductReturn,
+  ReturnButton,
 } from "Сomponents"
 import { Button, Icon, Price } from "UI"
 
@@ -54,7 +54,7 @@ const Products: NextPage = () => {
         actionText={"button"}
       />
       <div className={s.container}>
-        <ProductReturn />
+        <ReturnButton />
         <div className={s.productsSection}>
           <div className={s.photoslider}>
             <PhotoSlider photos={[img, img, img]} />
