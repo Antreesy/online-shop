@@ -1,4 +1,5 @@
 import cn from "classnames"
+import { useTranslation } from "next-i18next"
 
 import s from "./sectionHeader.module.scss"
 
@@ -12,6 +13,7 @@ interface SectionHeaderProps {
 
 const SectionHeader: React.FC<SectionHeaderProps> = (props) => {
   const { title, actionItem, className, onActionClick, noDecor } = props
+  const { t } = useTranslation("orderSuccess")
 
   const sectionHeaderClass = cn(
     s.section_header,
@@ -21,7 +23,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = (props) => {
 
   return (
     <div className={sectionHeaderClass}>
-      <p className={s.title}>{title}</p>
+      <p className={s.title}>{t("orderInformationDetails")}</p>
       {!!actionItem && (
         <a
           href="#"

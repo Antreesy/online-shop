@@ -12,7 +12,7 @@ export const CartItemList: React.FC<CartListProps> = ({ list }) => {
     <>
       {list.length ? (
         list.map((item, index) => {
-          return <CartItem {...item} index={index} />
+          return <CartItem {...item} key={index} />
         })
       ) : (
         <div className={s.empty_wrapper}>

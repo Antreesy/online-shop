@@ -25,11 +25,14 @@ const AddButton: React.FC<AddButtonProps> = ({
   className,
 }) => {
   const { t } = useTranslation("orderAddress")
+  
   const addButtonClass = cn(
     s.add_button,
     {
       [s.color_primary]: color === "primary",
+      [s.color_secondary]: color === "secondary",
       [s.back_color_grey]: bgColor === "grey",
+      [s.back_color_white]: bgColor === "white",
       [s.large]: large,
     },
     className,

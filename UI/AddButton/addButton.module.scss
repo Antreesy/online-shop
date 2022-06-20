@@ -6,8 +6,6 @@
   justify-content: center;
   align-items: center;
   min-height: 85px;
-  background: $color-white;
-  color: $color-black;
 
   &:hover {
     background-color: $color-white;
@@ -21,6 +19,10 @@
     color: $color-purple;
   }
 
+  &.color_secondary {
+    color: $color-black;
+  }
+
   &.back_color_grey {
     background: $color-grey-e2;
 
@@ -28,14 +30,22 @@
       background: $color-grey-e2;
     }
   }
-}
 
-.large {
-  display: flex;
-  flex-direction: column;
-  min-height: 250px;
-  @include mobile {
-    min-height: 80px;
+  &.back_color_white {
+    background: $color-white;
+
+    &:hover {
+      background: $color-grey-e2;
+    }
+  }
+
+  &.large {
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    @include mobile {
+      min-height: 80px;
+    }
   }
 }
 

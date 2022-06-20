@@ -1,7 +1,7 @@
 import cn from "classnames"
+import { useRouter } from "next/router"
 
 import Image, { ImageProps } from "next/image"
-import Link from "next/link"
 import { Button } from "UI"
 
 import s from "./card.module.scss"
@@ -24,12 +24,18 @@ const Card: React.FC<CardProps> = (props) => {
     title = "",
     className,
     buttonTitle,
-    buttonHref = "",
+    buttonHref,
     isButtonHidden = false,
     onClick,
     topButtonTitle,
     onClickTopButton,
   } = props
+
+  const router = useRouter()
+  const handleClick = () => {
+    onClick?.()
+    buttonHref && router.push(buttonHref)
+  }
 
   const cardClass = cn(s.card, className)
   const contentClass = cn(s.content, { [s.content_hidden]: isButtonHidden })
@@ -41,11 +47,9 @@ const Card: React.FC<CardProps> = (props) => {
       <div className={s.hidden_wrapper}>
         <div className={contentClass}>
           <p className={s.title}>{title}</p>
-          <Link href={buttonHref}>
-            <Button className={s.button} onClick={onClick}>
-              {buttonTitle}
-            </Button>
-          </Link>
+          <Button className={s.button} onClick={handleClick}>
+            {buttonTitle}
+          </Button>
         </div>
       </div>
 

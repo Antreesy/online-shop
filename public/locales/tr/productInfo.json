@@ -1,0 +1,20 @@
+{
+  "buttonBack": "Geri",
+  "productInformation": "Ürün Bilgileri",
+  "productName": "Ürün İsmi",
+  "modelCode": "Model Kodu",
+  "Barcode": "Barkod",
+  "Category": "Kategori",
+  "approvalStatus": "Onay Durumu",
+  "stockCode": "Stok Kodu",
+  "Brand": "Marka",
+  "Exclamation": "Ünlem",
+  "text": "Bu alana html içeriği girerseniz, düzenlenmiş bir biçimde ürün kartına aktarılır.",
+  "productFeatures": "Ürün Özellikleri",
+  "Material": "Malzeme",
+  "Form": "Form",
+  "Feature": "Özellik",
+  "Size": "Boyut",
+  "Gender": "Cinsiyet",
+  "ageGroup": "Yaş Grubu"
+}
