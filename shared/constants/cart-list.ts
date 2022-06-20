@@ -3,6 +3,7 @@ import img from "public/assets/img/product-img.png"
 
 export const cartList: CartItemProps[] = [
   {
+    index: 1,
     title: "Baymen",
     subtitle: "Knitted dress with metallic thread",
     imageSrc: img,
@@ -13,6 +14,7 @@ export const cartList: CartItemProps[] = [
     amount: 2,
   },
   {
+    index: 2,
     title: "Baymen",
     subtitle: "Knitted dress with metallic thread",
     imageSrc: img,
@@ -23,6 +25,7 @@ export const cartList: CartItemProps[] = [
     amount: 2,
   },
   {
+    index: 3,
     title: "Baymen",
     subtitle: "Knitted dress with metallic thread",
     imageSrc: img,
@@ -33,6 +36,7 @@ export const cartList: CartItemProps[] = [
     amount: 2,
   },
   {
+    index: 4,
     title: "Baymen",
     subtitle: "Knitted dress with metallic thread",
     imageSrc: img,

@@ -2,7 +2,6 @@ import { useTranslation } from "next-i18next"
 import { Button, FileUpload, Input } from "UI"
 
 import s from "styles/pages/account/profile.module.scss"
-import Link from "next/link"
 import CustomRadioGroup from "../../../UI/RadioGroup/RadioGroup"
 import { Controller, useForm } from "react-hook-form"
 

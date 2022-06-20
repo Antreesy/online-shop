@@ -74,10 +74,10 @@ const Products: NextPage = () => {
               </span>
             </h2>
             <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
-            <Link href="/order-cart" >
-            <Button className={s.button} iconLeft="basket">
-              {t("productButton")}
-            </Button>
+            <Link href="/order-cart">
+              <Button className={s.button} iconLeft="basket">
+                {t("productButton")}
+              </Button>
             </Link>
           </div>
         </div>

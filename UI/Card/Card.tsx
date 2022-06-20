@@ -42,15 +42,17 @@ const Card: React.FC<CardProps> = (props) => {
         <div className={contentClass}>
           <p className={s.title}>{title}</p>
           <Link href={buttonHref}>
-          <Button className={s.button} onClick={onClick}>
-            {buttonTitle}
-          </Button>
+            <Button className={s.button} onClick={onClick}>
+              {buttonTitle}
+            </Button>
           </Link>
         </div>
       </div>
 
       {!!topButtonTitle && (
-        <span className={s.top_button}>{topButtonTitle}</span>
+        <span className={s.top_button} onClick={onClickTopButton}>
+          {topButtonTitle}
+        </span>
       )}
     </div>
   )

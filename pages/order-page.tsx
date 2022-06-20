@@ -25,7 +25,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
         "modal",
         "product",
         "orderCart",
-        "orderAddress"
+        "orderAddress",
       ])),
     },
   }
@@ -197,7 +197,13 @@ const OrderPage: NextPage = () => {
         </div>
 
         <div className={s.aside}>
-          <OrderSummary subtotal={123} discount={12} shipping={10} kdv={10} buttonHref="/order-success" />
+          <OrderSummary
+            subtotal={123}
+            discount={12}
+            shipping={10}
+            kdv={10}
+            buttonHref="/order-success"
+          />
         </div>
       </div>
     </>

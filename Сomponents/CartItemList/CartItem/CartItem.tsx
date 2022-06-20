@@ -4,7 +4,7 @@ import Image, { ImageProps } from "next/image"
 import { Button, ItemCounter, Price } from "UI"
 
 import s from "../cartItemList.module.scss"
-import {useTranslation} from "next-i18next";
+import { useTranslation } from "next-i18next"
 
 export interface CartItemProps {
   title: string
@@ -13,13 +13,21 @@ export interface CartItemProps {
   imageSrc: ImageProps["src"]
   price: number
   oldPrice?: number
-  amount: number,
-  index:number
+  amount: number
+  index: number
 }
 
 export const CartItem: React.FC<CartItemProps> = (props) => {
-  const { title, subtitle, imageSrc, description, price, oldPrice, amount, index } =
-    props
+  const {
+    title,
+    subtitle,
+    imageSrc,
+    description,
+    price,
+    oldPrice,
+    amount,
+    index,
+  } = props
   const [currentAmount, setCurrentAmount] = useState<number>(amount)
   const total = price * currentAmount
   const { t } = useTranslation("orderCart")
