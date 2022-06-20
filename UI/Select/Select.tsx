@@ -5,12 +5,9 @@ import cn from "classnames"
 import { InputLabel, MenuItem, Select } from "@mui/material"
 import { Icon } from "UI"
 
-import s from "./select.module.scss"
+import { SelectItem } from "shared/interfaces/selectProps"
 
-export type SelectItem = {
-  title: string
-  value: string | number
-}
+import s from "./select.module.scss"
 
 interface SelectProps {
   className?: string

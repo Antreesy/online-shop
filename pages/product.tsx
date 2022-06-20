@@ -30,7 +30,6 @@ export async function getStaticProps({ locale }: { locale: string }) {
         "sidebar",
         "modal",
         "product",
-        "orderCart",
       ])),
     },
   }

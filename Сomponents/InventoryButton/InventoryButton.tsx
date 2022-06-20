@@ -7,7 +7,7 @@ import { IconType } from "shared/interfaces/iconTypes"
 import s from "./inventoryButton.module.scss"
 
 export interface InventoryButtonProps {
-  onClick: () => void
+  onClick?: () => void
   appearance?: "purple" | "white"
   text?: string
   number?: number

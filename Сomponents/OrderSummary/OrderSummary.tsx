@@ -17,14 +17,15 @@ interface OrderSummaryProps {
 const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
   const { subtotal, shipping, discount, kdv, buttonHref = "" } = props
   const [inputValue, setInputValue] = useState<string>("")
+  const { t } = useTranslation(["order", "common"])
+
   const sum = subtotal + shipping + discount + kdv
-  const getData = [
-    { name: "Subtotal", value: subtotal },
-    { name: "Shipping cost", value: shipping },
-    { name: "Discount", value: discount },
-    { name: "KDV", value: kdv },
+  const dataFields = [
+    { name: t("subtotal"), value: subtotal },
+    { name: t("shippingCost"), value: shipping },
+    { name: t("discount"), value: discount },
+    { name: t("kdv"), value: kdv },
   ]
-  const { t } = useTranslation("orderCart")
 
   const router = useRouter()
   const handleClick = () => {
@@ -36,7 +37,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
       <h3 className={s.title}>{t("orderSummary")}</h3>
       <div className={s.coupon}>
         <Accordion
-          header={t("orderDiscountCoupon")}
+          header={t("useDiscountCoupon")}
           headerClassName={s.accordion_header}
           headerActiveClassName={s.accordion_header_active}
           arrowColor="#000"
@@ -51,19 +52,19 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
                 className={s.input}
               />
             </div>
-            <Button className={s.button}>{t("orderCouponButton")}</Button>
+            <Button className={s.button}>{t("common:apply")}</Button>
           </div>
         </Accordion>
       </div>
 
       <div className={s.reciept}>
         <ul className={s.prices}>
-          {getData.map((data) => (
+          {dataFields.map((data) => (
             <li key={data.name} className={s.price}>
               <p className={s.name}>{data.name}</p>
               <p className={s.dots}>:</p>
               <p className={s.price_value}>
-                <>₺{data.value}</>
+                <>{data.value}</>
               </p>
             </li>
           ))}
@@ -71,17 +72,17 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
 
         <div className={s.submit_field}>
           <div className={s.total_wrapper}>
-            <p className={s.caption}>Total:</p>
-            <p className={s.price}>₺{sum}</p>
+            <p className={s.caption}>{t("total")}</p>
+            <p className={s.price}>{sum}</p>
           </div>
 
           <CheckboxGroup
             className={s.checkbox}
             rounded
-            labels={t("orderWarning")}
+            labels={t("iHaveRead")}
           />
           <Button className={s.submit_button} onClick={handleClick}>
-            {t("orderComplete")}
+            {t("completeOrder")}
           </Button>
         </div>
       </div>

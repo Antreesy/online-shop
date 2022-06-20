@@ -4,8 +4,8 @@ import cn from "classnames"
 
 import { SectionHeader } from "Сomponents"
 import { Button, Icon, Input, Select } from "UI"
-import { SelectItem } from "UI/Select/Select"
 
+import { SelectItem } from "shared/interfaces/selectProps"
 import { countriesForSelect } from "shared/constants/countries"
 import { Roles } from "shared/enums/roles"
 
@@ -32,7 +32,7 @@ interface AddressType {
 }
 
 const AddressForm: React.FC<AddressFormProps> = (props) => {
-  const { t } = useTranslation("address")
+  const { t } = useTranslation(["address", "common"])
   const { onClose, role } = props
 
   const { handleSubmit, control } = useForm<AddressType>({
@@ -273,7 +273,7 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
         )}
 
         <Button onClick={onSubmit} className={s.save_btn}>
-          {t("save")}
+          {t("common:save")}
         </Button>
       </form>
     </>

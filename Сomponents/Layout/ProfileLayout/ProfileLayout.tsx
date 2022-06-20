@@ -26,7 +26,7 @@ const ProfileLayout: React.FC<ProfileLayoutProps> = ({ children, role }) => {
         <div className={s.container}>
           <aside className={s.aside}>
             <ProfileSidebar
-              title={t("my-account")}
+              title={t("myAccount")}
               labels={sidebarTabs[role]}
             />
           </aside>

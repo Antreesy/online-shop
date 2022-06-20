@@ -1,8 +1,5 @@
 {
   "myAddressInformation": "Моя информация об адресе",
-  "save": "Сохранить",
-  "cancel": "Отмена",
-  "addCard": "Добавить карту",
 
   "addNewAddress": "Добавить новый адрес",
   "addAddress": "Добавить адрес",
@@ -19,13 +16,5 @@
   "invoiceAddress": "Адрес для счёта",
   "companyName": "Название компании",
   "taxNumber": "Налоговый номер",
-  "taxAdministration": "Налоговая служба",
-
-  "deliveryInformation": "Информация о доставке",
-  "deliveryAddress": "Адрес доставки",
-  "billingAddress": "Адрес для счёта",
-  "myBillingAddressIsTheSame": "Адреса для счёта и доставки совпадают",
-  "paymentMethods": "Методы оплаты",
-  "payWithMySavedCards": "Оплатить сохранёнными картами",
-  "payWithNewCard": "Оплатить новой картой"
+  "taxAdministration": "Налоговая служба"
 }

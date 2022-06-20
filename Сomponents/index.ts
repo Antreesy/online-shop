@@ -22,11 +22,6 @@ import { PhotoSlider } from "./PhotoSlider"
 import { ReturnButton } from "./ReturnButton"
 import { ProductItem, ProductItemList } from "./ProductItemList"
 import { ProfileSidebar } from "./ProfileSidebar"
-import {
-  RegisterFormsStepTwo,
-  RegisterFormStepOne,
-  RegisterFormsStepThree,
-} from "./RegisterForms"
 import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
 import { Step1, Step2, Step3 } from "./AddProductSteps"
@@ -60,9 +55,6 @@ export {
   ProductItem,
   ProductItemList,
   ProfileSidebar,
-  RegisterFormsStepTwo,
-  RegisterFormStepOne,
-  RegisterFormsStepThree,
   SectionHeader,
   SizePicker,
   Step1,

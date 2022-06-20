@@ -13,29 +13,26 @@ export async function getStaticProps({ locale }: { locale: string }) {
     props: {
       ...(await serverSideTranslations(locale, [
         "app",
-        "profile",
+        "common",
         "header",
         "footer",
-        "sidebar",
-        "modal",
-        "product",
-        "orderCart",
+        "order",
       ])),
     },
   }
 }
 
 const Cart: NextPage = () => {
-  const { t } = useTranslation("orderCart")
+  const { t } = useTranslation("order")
   return (
     <div className={s.cart}>
       <div className={s.cartItemlist}>
-        <p>My cart - {cartList.length} items</p>
+        <p>{t("myCart", {number: cartList.length})}</p>
         <div className={s.cartItemsHeader}>
-          <p className={s.names}>{t("orderCartProductName")}</p>
-          <p className={s.price}>{t("orderPrice")}</p>
-          <p className={s.piece}>{t("orderPiece")}</p>
-          <p className={s.total}>{t("orderTotal")}</p>
+          <p className={s.names}>{t("nameOfTheProduct")}</p>
+          <p className={s.price}>{t("price")}</p>
+          <p className={s.piece}>{t("piece")}</p>
+          <p className={s.total}>{t("total")}</p>
         </div>
         <CartItemList list={cartList} />
       </div>

@@ -30,7 +30,7 @@ export const CartItem: React.FC<CartItemProps> = (props) => {
   } = props
   const [currentAmount, setCurrentAmount] = useState<number>(amount)
   const total = price * currentAmount
-  const { t } = useTranslation("orderCart")
+  const { t } = useTranslation("order")
 
   return (
     <div className={s.cart_item} key={index}>

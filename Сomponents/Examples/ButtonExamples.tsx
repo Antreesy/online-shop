@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Button, Pagination } from "UI"
 
-import { ModalWindow } from "UI/ModalWindow"
+import { ModalWindow } from "UI"
 
 import s from "styles/pages/components-example.module.scss"
 

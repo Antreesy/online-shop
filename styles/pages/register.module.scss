@@ -201,3 +201,69 @@
     background-repeat: no-repeat;
   }
 }
+
+.step_wrapper {
+  width: 483px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 30px $color-grey-de;
+  background-color: $color-white;
+  padding: 40px 60px;
+
+  .caption_step {
+    margin-bottom: 10px;
+    color: $color-purple;
+    font-size: 28px;
+    font-weight: $fw-semibold;
+
+    span {
+      color: $color-grey-ed;
+    }
+  }
+
+  .caption {
+    margin-bottom: 10px;
+    color: $color-purple;
+  }
+
+  .input {
+    width: 100%;
+
+    input::placeholder {
+      color: $color-black;
+      opacity: 1;
+    }
+  }
+
+  .select {
+    width: 100%;
+    font-weight: $fw-regular;
+
+    & > div {
+      text-align: left;
+    }
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .checkboxes span {
+    font-size: 12px;
+    text-align: left;
+    color: $color-grey-a3;
+  }
+
+  .agreement {
+    font-size: 13px;
+
+    span {
+      color: $color-purple;
+      font-weight: $fw-semibold;
+    }
+  }
+}

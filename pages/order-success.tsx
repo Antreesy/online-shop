@@ -14,31 +14,25 @@ export async function getStaticProps({ locale }: { locale: string }) {
     props: {
       ...(await serverSideTranslations(locale, [
         "app",
-        "profile",
+        "common",
         "header",
         "footer",
-        "sidebar",
-        "modal",
-        "product",
-        "orderCart",
-        "orderSuccess",
+        "order",
       ])),
     },
   }
 }
 
 const OrderSuccess: NextPage = () => {
-  const { t } = useTranslation("orderSuccess")
+  const { t } = useTranslation(["order", "common"])
   const {
-    title,
-    textContent,
     order: {
       orderNumber,
       orderDate,
       situation,
       paymentMethod,
       sendingDate,
-      shopingNumber,
+      shippingNumber,
       helpline,
     },
     influencerRecomendations,
@@ -54,8 +48,8 @@ const OrderSuccess: NextPage = () => {
         <div className={s.container}>
           <Icon className={s.icon} type="mark" wrapped />
           <div className={s.textContent}>
-            <h1 className={s.title}>{t("title")}</h1>
-            <p className={s.description}>{t("textContent")}</p>
+            <h1 className={s.title}>{t("yourOrder", {number: 12345})}</h1>
+            <p className={s.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet ligula sit amet ex pulvinar laoreet eu in odio. Nulla cursus condimentum augue accumsan placerat. Etiam mattis sit amet elit et dignissim. Vestibulum vel convallis diam. Vivamus rutrum diam a orci vestibulum vehicula. Nulla facilisi. Nam bibendum sit amet velit sit amet luctus</p>
           </div>
 
           <SectionHeader className={s.section} />
@@ -85,8 +79,8 @@ const OrderSuccess: NextPage = () => {
                   <div className={s.cell}>{sendingDate}</div>
                 </div>
                 <div className={s.row}>
-                  <div className={s.cell}>{t("shoppingNumber")}</div>
-                  <div className={s.cell}>{shopingNumber}</div>
+                  <div className={s.cell}>{t("shippingNumber")}</div>
+                  <div className={s.cell}>{shippingNumber}</div>
                 </div>
                 <div className={s.row}>
                   <div className={s.cell}>{t("helpline")}</div>
@@ -104,7 +98,7 @@ const OrderSuccess: NextPage = () => {
                   className={s.card}
                   imageSrc="/assets/img/picture_2.png"
                   title={title}
-                  buttonTitle="Go To Store"
+                  buttonTitle={t("common:goToStore")}
                   isButtonHidden
                 />
               )

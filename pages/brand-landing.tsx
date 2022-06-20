@@ -38,31 +38,28 @@ const BrandLanding: React.FC = () => {
             <OrderStatusButton
               icon={"hanger"}
               appearance={"purple"}
-              title={`${t("All Orders")}`}
+              title={t("All Orders")}
               orderNumbers={3547}
               lastDay={20000}
               delays={200}
-              onClick={() => console.log("hello")}
             />
 
             <OrderStatusButton
               icon={"getting_ready"}
               appearance={"white"}
-              title={`${t("Getting Ready")}`}
+              title={t("Getting Ready")}
               orderNumbers={1679}
               lastDay={20000}
               delays={200}
-              onClick={() => console.log("hello")}
             />
 
             <OrderStatusButton
               icon={"delivery_ready"}
               appearance={"white"}
-              title={`${t("Delivery Ready")}`}
+              title={t("Delivery Ready")}
               orderNumbers={2500}
               lastDay={20000}
               delays={200}
-              onClick={() => console.log("hello")}
             />
           </div>
         </SimpleBar>
@@ -74,38 +71,33 @@ const BrandLanding: React.FC = () => {
         <SimpleBar className={s.scrollbar}>
           <div className={s.inventory_wrapper}>
             <InventoryButton
-              onClick={() => console.log("hello")}
               icon={"bell_outlined"}
               appearance={"purple"}
-              text={`${t("Total Product")}`}
+              text={t("Total Product")}
               number={1399}
             />
             <InventoryButton
-              onClick={() => console.log("hello")}
               icon={"brand_display_name"}
               appearance={"white"}
-              text={`${t("Products on Sale")}`}
+              text={t("Products on Sale")}
               number={9876}
             />
             <InventoryButton
-              onClick={() => console.log("hello")}
               icon={"discount"}
               appearance={"white"}
-              text={`${t("Critical Stock Level")}`}
+              text={t("Critical Stock Level")}
               number={2798}
             />
             <InventoryButton
-              onClick={() => console.log("hello")}
               icon={"exclamation"}
               appearance={"white"}
-              text={`${t("Out of Stock Products")}`}
+              text={t("Out of Stock Products")}
               number={5609}
             />
             <InventoryButton
-              onClick={() => console.log("hello")}
               icon={"out_of_stock"}
               appearance={"white"}
-              text={`${t("Off-Sale Products")}`}
+              text={t("Off-Sale Products")}
               number={76}
             />
           </div>

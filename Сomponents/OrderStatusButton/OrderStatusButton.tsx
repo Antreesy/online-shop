@@ -13,7 +13,7 @@ export interface OrderStatusButtonProps {
   orderNumbers?: number
   lastDay: number
   delays: number
-  onClick: () => void
+  onClick?: () => void
 }
 
 const OrderStatusButton: React.FC<OrderStatusButtonProps> = (props) => {

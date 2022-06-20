@@ -1,8 +1,5 @@
 {
   "myAddressInformation": "My Address Information",
-  "save": "Save",
-  "cancel": "Cancel",
-  "addCard": "Add Card",
 
   "addNewAddress": "Add New Address",
   "addAddress": "Add Address",
@@ -19,13 +16,5 @@
   "invoiceAddress": "Invoice Address",
   "companyName": "Company Name",
   "taxNumber": "Tax Number",
-  "taxAdministration": "Tax Administration",
-
-  "deliveryInformation": "Delivery Information",
-  "deliveryAddress": "Delivery Address",
-  "billingAddress": "Billing Address",
-  "myBillingAddressIsTheSame": "My billing address is the same",
-  "paymentMethods": "Payment Methods",
-  "payWithMySavedCards": "Pay with my saved cards",
-  "payWithNewCard": "Pay with new card"
+  "taxAdministration": "Tax Administration"
 }

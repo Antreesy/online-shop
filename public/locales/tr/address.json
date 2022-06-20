@@ -1,8 +1,5 @@
 {
   "myAddressInformation": "Adres bilgilerim",
-  "save": "Kaydet",
-  "cancel": "İptal",
-  "addCard": "Kart ekle",
 
   "addNewAddress": "Yeni adres ekle",
   "addAddress": "Adres ekle",
@@ -19,13 +16,5 @@
   "invoiceAddress": "Fatura adresi",
   "companyName": "Şirket Adı",
   "taxNumber": "Vergi Numarası",
-  "taxAdministration": "Vergi İdaresi",
-
-  "deliveryInformation": "Teslimat Bilgileri",
-  "deliveryAddress": "Teslimat adresi",
-  "billingAddress": "Fatura Adresi",
-  "myBillingAddressIsTheSame": "Fatura adresim aynı",
-  "paymentMethods": "Ödeme metodları",
-  "payWithMySavedCards": "Kayıtlı kartlarımla öde",
-  "payWithNewCard": "Yeni kartla öde"
+  "taxAdministration": "Vergi İdaresi"
 }

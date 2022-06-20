@@ -1,22 +1,11 @@
 import type { NextPage } from "next"
-import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import { useTranslation } from "next-i18next"
 
 import Head from "next/head"
 import Link from "next/link"
 
-import s from "styles/pages/Index.module.scss"
+import s from "styles/pages/index.module.scss"
 
-export async function getStaticProps(props: { locale: string }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(props.locale, ["app", "common"])),
-    },
-  }
-}
-
-const Index: NextPage = (props) => {
-  const { t } = useTranslation()
+const Index: NextPage = () => {
 
   return (
     <>
@@ -24,9 +13,6 @@ const Index: NextPage = (props) => {
         <title>ILONSI SHOP | Homepage</title>
       </Head>
       <div className={s.main}>
-        {/* TEST */}
-        <p>{t("hello")}</p>
-
         <div className={s.flex_row}>
           <div className={s.flex_column}>
             <h3 className={s.description}>Common:</h3>
@@ -58,7 +44,7 @@ const Index: NextPage = (props) => {
             <Link href="/influencers">
               <a className={s.title__link}>Influencers</a>
             </Link>
-            <Link href="/cart">
+            <Link href="/order-cart">
               <a className={s.title__link}>Order - cart</a>
             </Link>
             <Link href="/order-page">
@@ -99,9 +85,6 @@ const Index: NextPage = (props) => {
               <a className={s.title__link}>
                 Register page (for brands / influencers)
               </a>
-            </Link>
-            <Link href="/register-page">
-              <a className={s.title__link}>Register page</a>
             </Link>
             <Link href="/visual-operations">
               <a className={s.title__link}>Visual operations</a>

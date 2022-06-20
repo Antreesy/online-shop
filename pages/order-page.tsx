@@ -18,9 +18,11 @@ export async function getStaticProps({ locale }: { locale: string }) {
     props: {
       ...(await serverSideTranslations(locale, [
         "app",
+        "common",
         "header",
         "footer",
         "address",
+        "order",
       ])),
     },
   }
@@ -31,7 +33,7 @@ const OrderPage: NextPage = () => {
   const [showAddressForm, setShowAddressForm] = useState<boolean>(false)
   const [showCardForm, setShowCardForm] = useState<boolean>(false)
   const [showSavedCards, setShowSavedCards] = useState<boolean>(true)
-  const { t } = useTranslation("address")
+  const { t } = useTranslation(["order", "common"])
 
   const toggleBilling = () => {
     setShowBilling((prev) => !prev)
@@ -86,7 +88,7 @@ const OrderPage: NextPage = () => {
                   className={s.save_btn}
                   variant="outlined"
                 >
-                  {t("cancel")}
+                  {t("common:cancel")}
                 </Button>
               </div>
             ) : (
