@@ -1,13 +1,14 @@
 import React from "react"
 import cn from "classnames"
+import { useTranslation } from "next-i18next"
 
 import { Button } from "UI"
 import { Icon } from "UI"
 
 import s from "./addButton.module.scss"
-import {useTranslation} from "next-i18next";
 
 interface AddButtonProps {
+  title?: string
   color?: "primary" | "secondary"
   bgColor?: "grey" | "white"
   large?: boolean
@@ -16,6 +17,7 @@ interface AddButtonProps {
 }
 
 const AddButton: React.FC<AddButtonProps> = ({
+  title,
   color = "primary",
   bgColor = "grey",
   large,
@@ -44,7 +46,7 @@ const AddButton: React.FC<AddButtonProps> = ({
       <div className={iconClass}>
         <Icon type="plus" />
       </div>
-      {t("buttonTitle") && <div className={s.title}>{t("buttonTitle")}</div>}
+      {title && <div className={s.title}>{t("buttonTitle")}</div>}
     </Button>
   )
 }
