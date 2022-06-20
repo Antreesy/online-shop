@@ -39,7 +39,7 @@ const ModalWindow: FC<ModalWindowProps> = (props) => {
               </div>
             ) : null}
             <div className={s.title}>{title}</div>
-            <div className={s.textContent}>{children}</div>
+            <div className={s.inner_content}>{children}</div>
           </Box>
         </Modal>,
         document.getElementById("modal__root")!,

@@ -38,8 +38,12 @@
 }
 
 .icon_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85px;
+  width: 85px;
   margin-bottom: 20px;
-  padding: 20px;
   box-shadow: 0 2px 25px rgba(0, 0, 0, 0.15);
   border-radius: 100%;
 }
@@ -47,4 +51,11 @@
 .icon_wrapper > span {
   font-size: 40px;
   color: $color-purple;
+}
+
+.inner_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }

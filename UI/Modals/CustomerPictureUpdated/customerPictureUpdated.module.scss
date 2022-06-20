@@ -1,0 +1,109 @@
+@import "styles/style.scss";
+
+.wrapper {
+  display: flex;
+  gap: 40px;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+.image {
+  position: relative;
+  flex-shrink: 0;
+  width: 270px;
+  height: 300px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: $color-grey-c;
+
+  @include mobile {
+    width: 170px;
+    height: 200px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 400px;
+  padding-top: 25px;
+
+  @include mobile-tablet {
+    width: 270px;
+  }
+
+  @include mobile {
+    padding-top: 0;
+    align-items: center;
+  }
+}
+
+.title {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: $fw-bold;
+
+  @include mobile {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+}
+
+.content {
+  margin-bottom: 15px;
+  max-width: 330px;
+  font-size: 15px;
+  font-weight: $fw-regular;
+  color: $color-grey-8;
+
+  @include mobile {
+    margin-bottom: 10px;
+    color: $color-black;
+    text-align: center;
+  }
+}
+
+.select {
+  width: 100%;
+  margin-bottom: 15px;
+
+  @include mobile {
+    font-size: 13px;
+  }
+
+  & > div {
+    & > input {
+      width: 70%;
+    }
+
+    & > button {
+      width: 30%;
+    }
+  }
+}
+
+.take_photo {
+  display: block;
+  margin-bottom: 5px;
+  text-decoration: underline;
+  font-size: 18px;
+  font-weight: $fw-bold;
+
+  @include mobile {
+    margin-bottom: 30px;
+  }
+}
+
+.button {
+  align-self: flex-end;
+  width: 30%;
+
+  @include mobile {
+    width: 100%;
+  }
+}
