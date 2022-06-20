@@ -7,7 +7,7 @@ import { orderSuccess } from "shared/constants/order-success"
 import { Card, Icon } from "UI"
 import { SectionHeader } from "Сomponents"
 
-import s from "styles/pages/OrderSuccess.module.scss"
+import s from "styles/pages/order-success.module.scss"
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {

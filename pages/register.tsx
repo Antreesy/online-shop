@@ -7,7 +7,7 @@ import { Card } from "UI"
 import picForBrands from "public/assets/img/pic_for_brands.png"
 import picForInfluencers from "public/assets/img/pic_for_influencers.png"
 
-import s from "styles/pages/Register.module.scss"
+import s from "styles/pages/register.module.scss"
 
 const Home: NextPage = () => {
   return (

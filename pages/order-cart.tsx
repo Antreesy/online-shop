@@ -1,12 +1,12 @@
 import { NextPage } from "next"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { useTranslation } from "next-i18next"
 
 import { CartItemList, OrderSummary } from "Сomponents"
 
 import { cartList } from "shared/constants/cart-list"
 
-import s from "styles/pages/orderCart.module.scss"
-import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import { useTranslation } from "next-i18next"
+import s from "styles/pages/order-cart.module.scss"
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {

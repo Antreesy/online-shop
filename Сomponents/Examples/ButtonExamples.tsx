@@ -3,7 +3,7 @@ import { Button, Pagination } from "UI"
 
 import { ModalWindow } from "UI/ModalWindow"
 
-import s from "styles/pages/ComponentsExample.module.scss"
+import s from "styles/pages/components-example.module.scss"
 
 const ButtonExamples: React.FC = () => {
   const [open, setOpen] = useState(false)

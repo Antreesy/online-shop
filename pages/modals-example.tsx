@@ -1,8 +1,11 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import { NextPage } from "next"
-import ModalWindow from "../UI/ModalWindow/ModalWindow"
-import { Button } from "../UI"
-import s from "../styles/pages/ComponentsExample.module.scss"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+
+import {Button, ModalWindow} from "UI"
+
+import s from "styles/pages/components-example.module.scss"
+
 import {
   AccountCreated,
   CustomerPictureSuccess,
@@ -13,8 +16,7 @@ import {
   CustomerPictureUpdated,
   CustomerPasswordChange,
   CustomerPasswordSuccess,
-} from "../UI/Modals"
-import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+} from "UI/Modals"
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {

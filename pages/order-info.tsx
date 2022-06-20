@@ -13,7 +13,7 @@ import {
   invoiceInfo,
 } from "../shared/constants/orderinfoitems"
 
-import s from "../styles/pages/orderInfo.module.scss"
+import s from "../styles/pages/order-info.module.scss"
 
 export interface LabelInfo {
   label: string

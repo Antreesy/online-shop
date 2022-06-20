@@ -1,6 +1,5 @@
 import React from "react"
 import cn from "classnames"
-import { useTranslation } from "next-i18next"
 
 import { Button } from "UI"
 import { Icon } from "UI"
@@ -24,7 +23,6 @@ const AddButton: React.FC<AddButtonProps> = ({
   onClick,
   className,
 }) => {
-  const { t } = useTranslation("orderAddress")
   
   const addButtonClass = cn(
     s.add_button,
@@ -49,7 +47,7 @@ const AddButton: React.FC<AddButtonProps> = ({
       <div className={iconClass}>
         <Icon type="plus" />
       </div>
-      {title && <div className={s.title}>{t("buttonTitle")}</div>}
+      {title && <div className={s.title}>{title}</div>}
     </Button>
   )
 }
