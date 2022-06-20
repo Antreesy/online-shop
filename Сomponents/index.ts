@@ -30,6 +30,7 @@ import { PhotoSlider } from "./PhotoSlider"
 import { Chart } from "./Chart"
 import { OrderStatusButton } from "./OrderStatusButton"
 import { InventoryButton } from "./InventoryButton"
+import { AddProductBrand } from "./AddProductBrand"
 
 export {
   PhotoSlider,
@@ -65,4 +66,5 @@ export {
   Step3,
   Toolbar,
   Chart,
+  AddProductBrand,
 }

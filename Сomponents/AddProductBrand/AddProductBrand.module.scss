@@ -1,0 +1,100 @@
+@import "styles/style.scss";
+
+
+.addProductBrand {
+    max-width: 1300px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 76px 20px;
+    padding: 50px;
+    &_input {
+        width: 575px;
+        height: 86px;
+    }
+    &_input_large {
+        width: 1170px;
+        height: 237px;
+    }
+    &_input_medium {
+        width: 1170px;
+        height: 86px;
+    }
+    .button_black_down{
+        background: $color-black;
+        color: $color-white;
+        width: 293px;
+        height: 55px;
+        &:hover {
+          background-color: $color-purple-a20;
+        }
+      }
+    .uploadImg {
+        width: 575px;
+        height: 442px;
+        padding: 40px 25px;
+        display: flex;
+        flex-wrap: wrap;
+        border: 7px;
+        box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 8%);
+        h2 {
+            width: 100%;
+            font-size: 21px;
+            text-align: center;
+        }
+        &_upload {
+            width: 100%;
+            height: 147px;
+            border-radius: 7px;
+            font-size: 17px;
+        }
+        .fileGallery {
+            display: flex;
+            gap: 0px 20px;
+            .uploadImg_uploadGallery {
+                border-radius: 7px;
+                width: 160px;
+                height: 147px;
+                font-size: 11px;
+            }
+        }
+
+        p{
+            font-size: 11px;
+            span{
+                font-size: 11px;
+                color: $color-purple;
+            }
+        }
+        .button_black{
+            background: $color-black;
+            color: $color-white;
+            width: 100%;
+            &:hover {
+              background-color: $color-purple-a20;
+            }
+          }
+    }
+    .article{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    h1{
+        width: 100%;
+        font-weight: $fw-bold;
+        margin-bottom: 21px;
+        font-size: 25px;
+    }
+    p{
+        font-size: 15px;
+        width: 100%;
+        a {
+            font-size: 15px;
+            cursor: pointer;
+            color: $color-purple;
+        }
+    }
+
+    }
+}
+

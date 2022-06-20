@@ -38,6 +38,7 @@ import {
   OrderSummary,
   PhotoSlider,
   Chart,
+  AddProductBrand,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
@@ -276,6 +277,7 @@ const Home: NextPage = () => {
           ]}
         />
       </main>
+      <AddProductBrand />
     </>
   )
 }
