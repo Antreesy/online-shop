@@ -6,8 +6,30 @@ import { Card, Icon } from "UI"
 import { SectionHeader } from "Сomponents"
 
 import s from "styles/pages/OrderSuccess.module.scss"
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import {useTranslation} from "next-i18next";
+
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "app",
+        "profile",
+        "header",
+        "footer",
+        "sidebar",
+        "modal",
+        "product",
+        "orderCart",
+        "orderSuccess"
+      ])),
+    },
+  }
+}
 
 const OrderSuccess: NextPage = () => {
+  const { t } = useTranslation("orderSuccess")
   const {
     title,
     textContent,
@@ -33,45 +55,44 @@ const OrderSuccess: NextPage = () => {
         <div className={s.container}>
           <Icon className={s.icon} type="mark" wrapped />
           <div className={s.textContent}>
-            <h1 className={s.title}>{title}</h1>
-            <p className={s.description}>{textContent}</p>
+            <h1 className={s.title}>{t("title")}</h1>
+            <p className={s.description}>{t("textContent")}</p>
           </div>
 
           <SectionHeader
             className={s.section}
-            title="Order Information & Details"
           />
           <div className={s.order}>
             <div className={s.orderTitle}>
-              <span>Order number: </span>
+              <span>{t("orderNumber")}: </span>
               {orderNumber}
             </div>
             <table className={s.table}>
               <div>
                 <tr>
-                  <td>Order date</td>
+                  <td>{t("orderDate")}</td>
                   <td>{orderDate}</td>
                 </tr>
                 <tr>
-                  <td>Situation</td>
+                  <td>{t("situation")}</td>
                   <td>{situation}</td>
                 </tr>
                 <tr>
-                  <td>Payment method</td>
+                  <td>{t("paymentMethod")}</td>
                   <td>{paymentMethod}</td>
                 </tr>
               </div>
               <div>
                 <tr>
-                  <td>Sending date</td>
+                  <td>{t("sendingDate")}</td>
                   <td>{sendingDate}</td>
                 </tr>
                 <tr>
-                  <td>Shoping number</td>
+                  <td>{t("shoppingNumber")}</td>
                   <td>{shopingNumber}</td>
                 </tr>
                 <tr>
-                  <td>Helpline</td>
+                  <td>{t("helpline")}</td>
                   <td>{helpline}</td>
                 </tr>
               </div>

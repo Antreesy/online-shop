@@ -1,0 +1,13 @@
+{
+  "title": "Your Order No. XXX has been successfully completed.",
+  "textContent": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet ligula sit amet ex pulvinar laoreet eu in odio. Nulla cursus condimentum augue accumsan placerat. Etiam mattis sit amet elit et dignissim. Vestibulum vel convallis diam. Vivamus rutrum diam a orci vestibulum vehicula. Nulla facilisi. Nam bibendum sit amet velit sit amet luctus",
+  "orderInformationDetails": "Order Information & Details",
+  "orderNumber": "Order number",
+  "orderDate": "Order date",
+  "situation": "Situation",
+  "paymentMethod": "Payment method",
+  "sendingDate": "Sending date",
+  "shoppingNumber": "Shopping number",
+  "helpline": "Helpline"
+}
+

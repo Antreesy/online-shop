@@ -6,8 +6,32 @@ import { BackButton } from "Сomponents"
 import { Input, Select } from "UI"
 
 import s from "styles/pages/productInfo.module.scss"
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import {useTranslation} from "next-i18next";
+
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "app",
+        "profile",
+        "header",
+        "footer",
+        "sidebar",
+        "modal",
+        "product",
+        "orderCart",
+        "orderSuccess",
+          "productInfo"
+      ])),
+    },
+  }
+}
+
 
 const ProductInfo: NextPage = () => {
+  const { t } = useTranslation("productInfo")
   const [inputValue, setInputValue] = useState<string>("")
 
   return (
@@ -21,12 +45,12 @@ const ProductInfo: NextPage = () => {
           <BackButton />
         </div>
 
-        <h3 className={s.heading}>Product Information</h3>
+        <h3 className={s.heading}>{t("productInformation")}</h3>
 
         <div className={s.input_wrapper}>
           <Input
             className={s.input}
-            label={"Product Name"}
+            label={t("productName")}
             setValue={setInputValue}
             value={inputValue}
           />
@@ -36,19 +60,19 @@ const ProductInfo: NextPage = () => {
           <div className={s.row}>
             <Input
               className={s.input}
-              label={"Model Code"}
+              label={t("modelCode")}
               setValue={setInputValue}
               value={inputValue}
             />
             <Input
               className={s.input}
-              label={"Barcode"}
+              label={t("Barcode")}
               setValue={setInputValue}
               value={inputValue}
             />
             <Input
               className={s.input}
-              label={"Category"}
+              label={t("Category")}
               setValue={setInputValue}
               value={inputValue}
             />
@@ -56,19 +80,19 @@ const ProductInfo: NextPage = () => {
           <div className={s.row}>
             <Input
               className={s.input}
-              label={"Approval Status"}
+              label={t("approvalStatus")}
               setValue={setInputValue}
               value={inputValue}
             />
             <Input
               className={s.input}
-              label={"Stock Code"}
+              label={t("stockCode")}
               setValue={setInputValue}
               value={inputValue}
             />
             <Input
               className={s.input}
-              label={"Brand"}
+              label={t("Brand")}
               setValue={setInputValue}
               value={inputValue}
             />
@@ -77,10 +101,9 @@ const ProductInfo: NextPage = () => {
 
         <div className={s.exclamation}>
           <p className={s.exclamation_caption}>
-            Exclamation{" "}
+            {t("Exclamation")}
             <span className={s.exclamation_span_desktop}>
-              (If you enter html content in this field, it will be transferred
-              to the product card in an edited form.)
+              ({t("text")})
             </span>
           </p>
 
@@ -96,24 +119,23 @@ const ProductInfo: NextPage = () => {
           </p>
 
           <p className={s.exclamation_span_mobile}>
-            (If you enter html content in this field, it will be transferred to
-            the product card in an edited form.)
+            ({t("text")})
           </p>
         </div>
 
         <div className={s.features}>
-          <h3 className={s.heading}>Product Features</h3>
+          <h3 className={s.heading}>{t("productFeatures")}</h3>
 
           <div className={s.select_wrapper}>
-            <Select label="Material" className={s.select} values={[]} />
-            <Select label="Form" className={s.select} values={[]} />
-            <Select label="Feature" className={s.select} values={[]} />
+            <Select label={t("Material")} className={s.select} values={[]} />
+            <Select label={t("Form")} className={s.select} values={[]} />
+            <Select label={t("Feature")} className={s.select} values={[]} />
           </div>
 
           <div className={s.select_wrapper}>
-            <Select label="Size" className={s.select} values={[]} />
-            <Select label="Gender" className={s.select} values={[]} />
-            <Select label="Age Group" className={s.select} values={[]} />
+            <Select label={t("Size")} className={s.select} values={[]} />
+            <Select label={t("Gender")} className={s.select} values={[]} />
+            <Select label={t("ageGroup")} className={s.select} values={[]} />
           </div>
         </div>
       </div>
