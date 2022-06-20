@@ -11,21 +11,18 @@ import { AddButton, CreditCard, CheckboxGroup, Button } from "UI"
 import { creditcardsData } from "shared/constants/creditcardsData"
 import { addresses, billingAddress } from "shared/constants/orderPage"
 
-import s from "styles/pages/orderPage.module.scss"
+import s from "styles/pages/order-page.module.scss"
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
       ...(await serverSideTranslations(locale, [
         "app",
-        "profile",
+        "common",
         "header",
         "footer",
-        "sidebar",
-        "modal",
-        "product",
-        "orderCart",
-        "orderAddress",
+        "address",
+        "order",
       ])),
     },
   }
@@ -36,7 +33,7 @@ const OrderPage: NextPage = () => {
   const [showAddressForm, setShowAddressForm] = useState<boolean>(false)
   const [showCardForm, setShowCardForm] = useState<boolean>(false)
   const [showSavedCards, setShowSavedCards] = useState<boolean>(true)
-  const { t } = useTranslation("orderAddress")
+  const { t } = useTranslation(["order", "common"])
 
   const toggleBilling = () => {
     setShowBilling((prev) => !prev)
@@ -78,7 +75,7 @@ const OrderPage: NextPage = () => {
 
                   <CheckboxGroup
                     rounded
-                    labels={t("myBillingAddress")}
+                    labels={t("myBillingAddressIsTheSame")}
                     value={showBilling}
                     setValue={toggleBilling}
                   />
@@ -91,13 +88,13 @@ const OrderPage: NextPage = () => {
                   className={s.save_btn}
                   variant="outlined"
                 >
-                  {t("Cancel")}
+                  {t("common:cancel")}
                 </Button>
               </div>
             ) : (
               <div className={s.address_cards_wrapper}>
                 <div>
-                  <h3 className={s.heading}>Delivery address</h3>
+                  <h3 className={s.heading}>{t("deliveryAddress")}</h3>
 
                   {!showAddressForm &&
                     addresses.map((el, i) => (
@@ -115,7 +112,7 @@ const OrderPage: NextPage = () => {
                         <div className={s.address_card_checkbox}>
                           <CheckboxGroup
                             rounded
-                            labels={["My billing address is the same"]}
+                            labels={t("myBillingAddressIsTheSame")}
                             value={showBilling}
                             setValue={toggleBilling}
                           />
@@ -126,7 +123,7 @@ const OrderPage: NextPage = () => {
 
                 {showBilling ? (
                   <div>
-                    <h3 className={s.heading}>Billing address</h3>
+                    <h3 className={s.heading}>{t("billingAddress")}</h3>
                     {billingAddress.map((el, i) => (
                       <div className={s.address_card} key={i + 100}>
                         <AddressCard
@@ -148,16 +145,16 @@ const OrderPage: NextPage = () => {
 
           <section className={s.section_payment}>
             <div className={s.payment_header}>
-              <h3 className={s.heading}>Payment methods</h3>
+              <h3 className={s.heading}>{t("paymentMethods")}</h3>
               <CheckboxGroup
                 rounded
-                labels={["Pay with my saved cards"]}
+                labels={t("payWithMySavedCards")}
                 value={showSavedCards}
                 setValue={toggleSavedCards}
               />
               <CheckboxGroup
                 rounded
-                labels={["Pay with New Card"]}
+                labels={t("payWithNewCard")}
                 value={showCardForm}
                 setValue={toggleCardForm}
               />
@@ -186,7 +183,7 @@ const OrderPage: NextPage = () => {
                 <AddButton
                   color="secondary"
                   className={s.add_button}
-                  title="Add Card"
+                  title={t("addCard")}
                   large={false}
                   onClick={toggleCardForm}
                 />

@@ -17,7 +17,7 @@ import { colors } from "shared/constants/colors"
 import bg from "public/assets/img/fallback-pic.png"
 import img from "public/assets/img/product-img.png"
 
-import s from "styles/pages/Products.module.scss"
+import s from "styles/pages/product.module.scss"
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
@@ -30,7 +30,6 @@ export async function getStaticProps({ locale }: { locale: string }) {
         "sidebar",
         "modal",
         "product",
-        "orderCart",
       ])),
     },
   }

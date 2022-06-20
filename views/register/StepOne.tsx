@@ -2,7 +2,7 @@ import { useState } from "react"
 
 import { Button, Input, Select } from "UI"
 
-import s from "styles/pages/register-page.module.scss"
+import s from "styles/pages/register.module.scss"
 
 const items = [
   { title: "one", value: 1 },
@@ -10,30 +10,32 @@ const items = [
   { title: "three", value: 3 },
 ]
 
-interface RegisterFormStepOneProps {
+interface StepOneProps {
   setStep: (step: number) => void
 }
 
-export const RegisterFormStepOne: React.FC<RegisterFormStepOneProps> = (
-  props,
-) => {
-  const { setStep } = props
+export const StepOne: React.FC<StepOneProps> = ({ setStep }) => {
   const [email, setEmail] = useState<string>("")
   const [name, setName] = useState<string>("")
   const [instagram, setInstagram] = useState<string>("")
   const [password, setPassword] = useState<string>("")
   const handleClickNextStep = () => setStep(2)
   return (
-    <form className={s.step_one}>
-      <h4>Create your shop, and get eaaly access</h4>
+    <form className={s.step_wrapper}>
+      <h4 className={s.caption}>Create your shop, and get early access</h4>
 
-      <Input value={name} setValue={setName} label="" placeholder="Name" />
-
-      <div className={s.blank}></div>
       <Input
+        className={s.input}
+        value={name}
+        setValue={setName}
+        label=""
+        placeholder="Name"
+      />
+
+      <Input
+        className={s.input}
         value={email}
         setValue={setEmail}
-        label=""
         placeholder="Email"
         isRequired={false}
       />
@@ -48,27 +50,28 @@ export const RegisterFormStepOne: React.FC<RegisterFormStepOneProps> = (
       />
 
       <Input
+        className={s.input}
         value={instagram}
         setValue={setInstagram}
-        label=""
         placeholder="@Instagram"
       />
 
-      <div className={s.blank}></div>
       <Input
+        className={s.input}
         value={password}
         setValue={setPassword}
-        label=""
         placeholder="Password"
         isRequired={false}
       />
 
-      <div className={s.blank}></div>
-      <div className={s.blank}></div>
-      <div className={s.blank}></div>
-      <Button onClick={handleClickNextStep}>Create Account</Button>
+      <Button className={s.button} onClick={handleClickNextStep}>
+        Create Account
+      </Button>
 
-      <p className={s.one}></p>
+      <p className={s.agreement}>
+        By clicking “Create Account”, I agree to Ilonsi Shop’s
+        <span>Terms&Condition</span>
+      </p>
     </form>
   )
 }

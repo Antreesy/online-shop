@@ -8,22 +8,22 @@ import Link from "next/link"
 import { Counter } from "Сomponents"
 
 //Project Styles
-import styles from "styles/pages/Index.module.scss"
+import s from "styles/pages/index.module.scss"
 
 const ReduxExample: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div className={s.container}>
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
 
-      <main className={styles.main}>
+      <main className={s.main}>
         <h1>Redux page</h1>
 
-        <p className={styles.description}>
+        <p className={s.description}>
           Go back to{" "}
           <Link href="/">
-            <a className={styles.title__link}>/index</a>
+            <a className={s.title__link}>/index</a>
           </Link>{" "}
           page
         </p>
@@ -31,14 +31,14 @@ const ReduxExample: NextPage = () => {
         <Counter />
       </main>
 
-      <footer className={styles.footer}>
+      <footer className={s.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
         >
           Powered by{" "}
-          <span className={styles.logo}>
+          <span className={s.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>

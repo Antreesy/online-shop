@@ -1,0 +1,34 @@
+{
+  "orderSummary": "Описание заказа",
+  "useDiscountCoupon": "Использовать купон",
+  "total": "Итого",
+  "iHaveRead": "Я прочитал и одобрил Предварительную информационную форму и Договор дистанционной продажи",
+  "completeOrder": "Завершить заказ",
+  "subtotal": "Стоимость",
+  "shippingCost": "Доставка",
+  "discount": "Скидка",
+  "kdv": "Налог",
+
+  "myCart": "Моя корзина - {{number}} позиции",
+  "nameOfTheProduct": "Название Продукта",
+  "price": "Цена",
+  "piece": "Кол-во",
+
+  "deliveryInformation": "Информация о доставке",
+  "deliveryAddress": "Адрес доставки",
+  "billingAddress": "Адрес для счёта",
+  "myBillingAddressIsTheSame": "Адреса для счёта и доставки совпадают",
+  "paymentMethods": "Методы оплаты",
+  "payWithMySavedCards": "Оплатить сохранёнными картами",
+  "payWithNewCard": "Оплатить новой картой",
+  "addCard": "Добавить карту",
+
+  "yourOrder": "Ваш заказ No. {{number}} был успешно выполнен.",
+  "orderNumber": "Номер заказа",
+  "orderDate": "Дата заказа",
+  "situation": "Ситуация",
+  "paymentMethod": "Метод оплаты",
+  "sendingDate": "Дата отправки",
+  "shippingNumber": "Номер отправки",
+  "helpline": "Помощь"
+}

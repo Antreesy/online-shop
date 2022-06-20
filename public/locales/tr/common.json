@@ -1,3 +1,7 @@
 {
-  "hello": "türkçe metin"
+  "hello": "türkçe metin",
+  "save": "Kaydetmek",
+  "cancel": "İptal",
+  "apply": "Uygulamak",
+  "goToStore": "Mağazaya git"
 }

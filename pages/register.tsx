@@ -1,15 +1,41 @@
+import { useState } from "react"
 import type { NextPage } from "next"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
 import Head from "next/head"
+import { ModalWindow } from "UI"
+import { AccountCreated } from "UI/Modals"
+import { StepNull, StepOne, StepTwo, StepThree } from "views/register"
 
-import { Card } from "UI"
+import s from "styles/pages/register.module.scss"
 
-import picForBrands from "public/assets/img/pic_for_brands.png"
-import picForInfluencers from "public/assets/img/pic_for_influencers.png"
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["app", "common", "modal"])),
+    },
+  }
+}
 
-import s from "styles/pages/Register.module.scss"
+const Register: NextPage = () => {
+  const [showModal, setShowModal] = useState<boolean>(false)
+  const [step, setStep] = useState<number>(0)
+  const handleModalClose = () => setShowModal(false)
 
-const Home: NextPage = () => {
+  const RenderStep = () => {
+    switch (step) {
+      case 1:
+        return <StepOne setStep={setStep} />
+      case 2:
+        return <StepTwo setStep={setStep} />
+      case 3:
+        return <StepThree setShowModal={setShowModal} setStep={setStep} />
+
+      default:
+        return <StepNull setStep={setStep} />
+    }
+  }
+
   return (
     <>
       <Head>
@@ -19,50 +45,26 @@ const Home: NextPage = () => {
       <main className={s.main}>
         <div className={s.scrollContainer}>
           <div className={s.container}>
-            <h1 className={s.heading}>
-              <span>Featured Influencer’s Shops</span>
-            </h1>
-            <p className={s.description}>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Aspernatur ipsam modi fugiat autem earum aliquam delectus eaque
-              facilis eum, harum consequuntur vero nisi! Mollitia, quo.
-              Sapiente, eaque? Et, maiores nisi. Doloribus corporis repellat
-              eveniet maiores. Impedit temporibus perspiciatis animi expedita
-              tenetur tempore maxime odio saepe repudiandae sed accusamus
-              commodi voluptatem, eos inventore quaerat ut nihil aliquam,
-              consequuntur, ad repellendus.
-              <br />
-              <br />
-              Corporis? Perspiciatis dignissimos atque, maxime dolor, earum
-              perferendis magnam beatae voluptatum asperiores non praesentium
-              laboriosam ipsam velit similique modi eum facere optio nisi sed.
-              Atque, incidunt maxime. Consequuntur reprehenderit modi ratione?
-              Debitis, saepe esse obcaecati eum laboriosam rem maxime deserunt
-              placeat provident! Corporis dicta dolore consectetur modi nesciunt
-              optio illum similique corrupti, consequuntur quae nihil ut,
-              repellat quas cupiditate odit pariatur!
-            </p>
-
-            <div className={s.card_wrapper}>
-              <Card
-                className={s.card_brand}
-                imageSrc={picForBrands}
-                buttonTitle="FOR BRANDS"
-                buttonHref="/register-page"
-              />
-              <Card
-                className={s.card}
-                imageSrc={picForInfluencers}
-                buttonTitle="FOR INFLUENCERS"
-              />
-            </div>
+            <RenderStep />
           </div>
         </div>
       </main>
+
+      <ModalWindow
+        isOpen={showModal}
+        onClose={handleModalClose}
+        iconType="okay"
+      >
+        <AccountCreated
+          title="You are now ready"
+          content="We received the request to create a membership. We will get back to you via  e-mail within 24 hours."
+          onClick={handleModalClose}
+        />
+      </ModalWindow>
 
       <div className={s.circle}></div>
     </>
   )
 }
 
-export default Home
+export default Register

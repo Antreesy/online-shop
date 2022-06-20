@@ -2,7 +2,7 @@ import { useState } from "react"
 import cn from "classnames"
 
 import { Icon, Input, Select } from "UI"
-import { SelectItem } from "UI/Select/Select"
+import { SelectItem } from "shared/interfaces/selectProps"
 
 import s from "./toolbar.module.scss"
 

@@ -7,7 +7,7 @@ import Head from "next/head"
 import { BackButton } from "Сomponents"
 import { Input, Select } from "UI"
 
-import s from "styles/pages/productInfo.module.scss"
+import s from "styles/pages/product-info.module.scss"
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
@@ -20,8 +20,6 @@ export async function getStaticProps({ locale }: { locale: string }) {
         "sidebar",
         "modal",
         "product",
-        "orderCart",
-        "orderSuccess",
         "productInfo",
       ])),
     },

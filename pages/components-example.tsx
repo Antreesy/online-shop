@@ -49,7 +49,7 @@ import { Currency } from "shared/enums/currency"
 
 import productImage from "public/assets/img/product-img.png"
 
-import s from "styles/pages/ComponentsExample.module.scss"
+import s from "styles/pages/components-example.module.scss"
 
 const longText = `
 Switch an order to preparing status

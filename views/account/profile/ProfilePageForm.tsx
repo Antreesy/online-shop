@@ -1,9 +1,9 @@
+import { Controller, useForm } from "react-hook-form"
 import { useTranslation } from "next-i18next"
-import { Button, FileUpload, Input } from "UI"
+
+import { Button, FileUpload, Input, RadioGroup } from "UI"
 
 import s from "styles/pages/account/profile.module.scss"
-import CustomRadioGroup from "../../../UI/RadioGroup/RadioGroup"
-import { Controller, useForm } from "react-hook-form"
 
 interface FormType {
   name: string
@@ -95,7 +95,7 @@ export const ProfilePageForm = () => {
                   name={"gender"}
                   control={control}
                   render={({ field: { onChange, value } }) => (
-                    <CustomRadioGroup
+                    <RadioGroup
                       setValue={onChange}
                       initialValue={value}
                       elements={[
