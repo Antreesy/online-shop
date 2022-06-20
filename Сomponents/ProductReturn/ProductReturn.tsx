@@ -2,6 +2,7 @@ import { Button } from "UI"
 
 import s from "styles/pages/Products.module.scss"
 import {useTranslation} from "next-i18next";
+import React from "react";
 
 const ProductReturn: React.FC = () => {
     const { t } = useTranslation("product")

@@ -67,7 +67,6 @@ const OrderPage: NextPage = () => {
             <AddButton
               color="secondary"
               className={s.add_button}
-              title={t("buttonTitle")}
               large={false}
               onClick={toggleAddressForm}
             />
