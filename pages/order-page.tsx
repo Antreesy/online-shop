@@ -197,7 +197,7 @@ const OrderPage: NextPage = () => {
         </div>
 
         <div className={s.aside}>
-          <OrderSummary subtotal={123} discount={12} shipping={10} kdv={10} />
+          <OrderSummary subtotal={123} discount={12} shipping={10} kdv={10} buttonHref="/order-success" />
         </div>
       </div>
     </>

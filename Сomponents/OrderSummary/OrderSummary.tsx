@@ -1,19 +1,21 @@
 import { useState } from "react"
 
+import Link from "next/link"
 import { Accordion, Button, CheckboxGroup, Input } from "UI"
 
 import s from "./orderSummary.module.scss"
-import {useTranslation} from "next-i18next";
+import { useTranslation } from "next-i18next"
 
 interface OrderSummaryProps {
   subtotal: number
   shipping: number
   discount: number
   kdv: number
+  buttonHref?: string
 }
 
 const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
-  const { subtotal, shipping, discount, kdv } = props
+  const { subtotal, shipping, discount, kdv, buttonHref = "" } = props
   const [inputValue, setInputValue] = useState<string>("")
   const sum = subtotal + shipping + discount + kdv
   const getData = [
@@ -71,11 +73,11 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
           <CheckboxGroup
             className={s.checkbox}
             rounded
-            labels={
-              t("orderWarning")
-            }
+            labels={t("orderWarning")}
           />
-          <Button className={s.submit_button}>{t("orderComplete")}</Button>
+          <Link href={buttonHref}>
+            <Button className={s.submit_button}>{t("orderComplete")}</Button>
+          </Link>
         </div>
       </div>
     </div>

@@ -142,6 +142,7 @@ const ProductsPage: NextPage = () => {
                 <ProductItem
                   title="Yves Saint Laurent"
                   subtitle="Black long sleeve men’s jacket"
+                  itemHref="/products"
                   description="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
                   id={1}
                   price={{

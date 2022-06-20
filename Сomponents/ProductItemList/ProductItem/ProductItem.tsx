@@ -2,6 +2,7 @@ import { useState } from "react"
 import cn from "classnames"
 
 import Image, { ImageProps } from "next/image"
+import Link from "next/link"
 import { Icon, Price } from "UI"
 import { PriceProps } from "shared/interfaces/orderProps"
 
@@ -11,6 +12,7 @@ export interface ProductItemProps {
   title: string
   subtitle: string
   description: string
+  itemHref?: string
   id: number
   price: PriceProps
   imageSrc: ImageProps["src"]
@@ -25,6 +27,7 @@ const ProductItem: React.FC<ProductItemProps> = (props) => {
     title,
     subtitle,
     description,
+    itemHref = "",
     id,
     price,
     imageSrc,
@@ -47,9 +50,11 @@ const ProductItem: React.FC<ProductItemProps> = (props) => {
             <Icon type={"heart"} color={"inherit"} />
           </div>
         )}
-        <div className={s.image}>
-          <Image src={imageSrc} alt={title} layout="fill" />
-        </div>
+        <Link href={itemHref}>
+          <div className={s.image}>
+            <Image src={imageSrc} alt={title} layout="fill" />
+          </div>
+        </Link>
       </div>
       <div className={s.bottom_group}>
         {onAddClick && (
@@ -65,7 +70,9 @@ const ProductItem: React.FC<ProductItemProps> = (props) => {
         )}
 
         <div className={s.info_wrapper}>
-          <div className={s.title}> {title} </div>
+          <Link href={itemHref}>
+            <a className={s.title}> {title} </a>
+          </Link>
           <div className={s.subtitle}> {subtitle} </div>
           <p className={s.description}> {description} </p>
         </div>

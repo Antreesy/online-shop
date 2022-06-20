@@ -1,5 +1,8 @@
 import { NextPage } from "next"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { useTranslation } from "next-i18next"
 
+import Link from "next/link"
 import {
   Background,
   ColorPicker,
@@ -15,10 +18,6 @@ import bg from "public/assets/img/fallback-pic.png"
 import img from "public/assets/img/product-img.png"
 
 import s from "styles/pages/Products.module.scss"
-import {serverSideTranslations} from "next-i18next/serverSideTranslations";
-import {useTranslation} from "next-i18next";
-
-
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
@@ -31,13 +30,11 @@ export async function getStaticProps({ locale }: { locale: string }) {
         "sidebar",
         "modal",
         "product",
-        "orderCart"
+        "orderCart",
       ])),
     },
   }
 }
-
-
 
 const Products: NextPage = () => {
   const { t } = useTranslation("product")
@@ -47,7 +44,7 @@ const Products: NextPage = () => {
         className={s.fallback}
         image={bg}
         description={
-          "cbjsbckjdslcjnslacnlscnlsncjcc hfib fuhj uifibsdkflj dfjkf jfgsdlk hfkjsd kjh"
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, ut velit officia."
         }
         title={"some-title"}
         link={"some-link"}
@@ -77,9 +74,11 @@ const Products: NextPage = () => {
               </span>
             </h2>
             <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
+            <Link href="/order-cart" >
             <Button className={s.button} iconLeft="basket">
               {t("productButton")}
             </Button>
+            </Link>
           </div>
         </div>
         <h3>{t("productDetail")}:</h3>

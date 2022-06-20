@@ -30,29 +30,33 @@ const Index: NextPage = (props) => {
         <div className={s.flex_row}>
           <div className={s.flex_column}>
             <h3 className={s.description}>Common:</h3>
+            <Link href="/landing-page">
+              <a className={s.title__link}>Landing page</a>
+            </Link>
             <Link href="/login">
               <a className={s.title__link}>Login page</a>
             </Link>
-            <Link href="/components-example">
-              <a className={s.title__link}>Сomponents examples</a>
+            <Link href="/products-page">
+              <a className={s.title__link}>Product List</a>
+            </Link>
+            <Link href="/products">
+              <a className={s.title__link}>Specific Product</a>
             </Link>
             <Link href="/some-wrong-link">
               <a className={s.title__link}>404 page</a>
             </Link>
-            <Link href="/landing-page">
-              <a className={s.title__link}>Landing page</a>
+            <Link href="/components-example">
+              <a className={s.title__link}>Сomponents examples</a>
             </Link>
-            <span className={s.title__miss}>Modals</span>
+            <Link href="/modals-example">
+              <a className={s.title__link}>Modals example</a>
+            </Link>{" "}
           </div>
 
           <div className={s.flex_column}>
             <h3 className={s.description}>Customer:</h3>
             <Link href="/influencers">
               <a className={s.title__link}>Influencers</a>
-            </Link>
-            <span className={s.title__miss}>Products List</span>
-            <Link href="/products">
-              <a className={s.title__link}>Specific Products</a>
             </Link>
             <Link href="/cart">
               <a className={s.title__link}>Order - cart</a>
@@ -63,15 +67,6 @@ const Index: NextPage = (props) => {
             <Link href="/order-success">
               <a className={s.title__link}>Order - success page</a>
             </Link>
-            <Link href="/order-info">
-              <a className={s.title__link}>order-info</a>
-            </Link>{" "}
-            <Link href="/product-info">
-              <a className={s.title__link}>product-info</a>
-            </Link>{" "}
-            <Link href="/modals-example">
-              <a className={s.title__link}>modals-example</a>
-            </Link>{" "}
           </div>
 
           <div className={s.flex_column}>
@@ -91,11 +86,8 @@ const Index: NextPage = (props) => {
             <Link href="/brands/1">
               <a className={s.title__link}>Specific Brand</a>
             </Link>
-            <span className={s.title__miss}>Specific Brand Product</span>
+
             <span className={s.title__miss}>Dashboard (3 screens)</span>
-            <Link href="/products-page">
-              <a className={s.title__link}>Products</a>
-            </Link>
           </div>
 
           <div className={s.flex_column}>
@@ -152,7 +144,6 @@ const Index: NextPage = (props) => {
               <a className={s.title__link}>Payment</a>
             </Link>
             <span className={s.title__miss}>Dashboard (influencer)</span>
-            <span className={s.title__miss}>Profile (brand)</span>
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
-import React, { useState } from "react"
+import { useState } from "react"
+
 import { Button, Input, Select } from "UI"
-import s from "../../styles/pages/register-page.module.scss"
+
+import s from "styles/pages/register-page.module.scss"
 
 const items = [
   { title: "one", value: 1 },

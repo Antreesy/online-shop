@@ -4,7 +4,7 @@ import { CartItemList, OrderSummary } from "Сomponents"
 
 import { cartList } from "shared/constants/cart-list"
 
-import s from "styles/pages/cart.module.scss"
+import s from "styles/pages/orderCart.module.scss"
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import {useTranslation} from "next-i18next";
 
@@ -40,7 +40,7 @@ const Cart: NextPage = () => {
         <CartItemList list={cartList} />
       </div>
       <div className={s.orderSummary}>
-        <OrderSummary discount={123} kdv={132} shipping={100} subtotal={150} />
+        <OrderSummary discount={123} kdv={132} shipping={100} subtotal={150} buttonHref="/order-page" />
       </div>
     </div>
   )
