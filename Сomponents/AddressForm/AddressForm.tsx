@@ -32,7 +32,7 @@ interface AddressType {
 }
 
 const AddressForm: React.FC<AddressFormProps> = (props) => {
-  const { t } = useTranslation("orderAddress")
+  const { t } = useTranslation("address")
   const { onClose, role } = props
 
   const { handleSubmit, control } = useForm<AddressType>({
@@ -63,7 +63,7 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
       <form className={s.form} onSubmit={onSubmit}>
         <SectionHeader
           className={s.header}
-          title={t("Add Address")}
+          title={t("addAddress")}
           actionItem={<Icon type="close_cross" color="#fff" />}
           noDecor
           onActionClick={onClose}
@@ -76,10 +76,10 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label={t("AddressTitle")}
+                  label={t("addressTitle")}
                   setValue={onChange}
                   value={value}
-                  placeholder={t("AddressTitle")}
+                  placeholder={t("addressTitle")}
                 />
               )}
             />
@@ -197,7 +197,7 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
           </div>
         </div>
 
-        <SectionHeader className={s.header} title={t("Home")} />
+        <SectionHeader className={s.header} title={t("home")} />
 
         <div className={s.row}>
           <div className={cn(s.cell, s.cell_100)}>
@@ -208,7 +208,7 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
                 <Input
                   setValue={onChange}
                   value={value}
-                  placeholder={t("Address")}
+                  placeholder={t("address")}
                 />
               )}
             />
@@ -217,7 +217,7 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
 
         {role === Roles.BRAND && (
           <>
-            <SectionHeader className={s.header} title={t("Invoice Address")} />
+            <SectionHeader className={s.header} title={t("invoiceAddress")} />
 
             <div className={s.row}>
               <div className={cn(s.cell, s.cell_100)}>
@@ -226,10 +226,10 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <Input
-                      label={t("Company Name")}
+                      label={t("companyName")}
                       setValue={onChange}
                       value={value || ""}
-                      placeholder={t("Company Name")}
+                      placeholder={t("companyName")}
                     />
                   )}
                 />
@@ -243,10 +243,10 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <Input
-                      label={t("Tax Number")}
+                      label={t("taxNumber")}
                       setValue={onChange}
                       value={value || ""}
-                      placeholder={t("Tax Number")}
+                      placeholder={t("taxNumber")}
                     />
                   )}
                 />
@@ -260,10 +260,10 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <Input
-                      label={t("Tax Administration")}
+                      label={t("taxAdministration")}
                       setValue={onChange}
                       value={value || ""}
-                      placeholder={t("Tax Administration")}
+                      placeholder={t("taxAdministration")}
                     />
                   )}
                 />
@@ -273,7 +273,7 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
         )}
 
         <Button onClick={onSubmit} className={s.save_btn}>
-          {t("Save")}
+          {t("save")}
         </Button>
       </form>
     </>
