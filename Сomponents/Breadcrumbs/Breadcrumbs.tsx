@@ -11,6 +11,7 @@ const CustomBreadcrumbs = () => {
   const activeRoute = path.slice(-1)
   const routePath = path.slice()
 
+
   return (
     <Stack className={s.wrapper} spacing={2}>
       <Breadcrumbs className={s.nav} separator={"/"} aria-label="breadcrumb">

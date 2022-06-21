@@ -118,6 +118,7 @@
 
   .button_excel {
     background: $color-green;
+
     &:hover {
       background-color: $color-green-d;
     }
@@ -146,16 +147,12 @@
 .gallery {
   padding: 0 35px 35px 35px;
   display: flex;
-  justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
   max-width: 1226px;
   height: 100%;
   box-shadow: 0 0 10px rgb(218, 218, 218);
 
-  & :last-child {
-    margin-right: auto;
-  }
 
   @include mobile-tablet {
     justify-content: center;
@@ -172,6 +169,7 @@
   height: 473px;
   box-shadow: 0 0 10px rgb(218, 218, 218);
   text-align: start;
+
   .select_input {
     width: 325px;
     height: 147px;
@@ -186,6 +184,7 @@
       background-color: $color-grey-3;
     }
   }
+
   h1 {
     text-align: center;
     font-size: 21px;
