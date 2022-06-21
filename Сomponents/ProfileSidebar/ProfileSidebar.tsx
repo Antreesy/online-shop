@@ -17,7 +17,7 @@ export type LabelTypeWithContent = LabelType & {
   content?: LabelType[]
 }
 
-interface ProfileSidebarProps {
+export interface ProfileSidebarProps {
   title: string
   labels: LabelTypeWithContent[]
 }

@@ -1,8 +1,17 @@
-import React from "react"
-import { Footer, Header } from "Сomponents"
+import dynamic from "next/dynamic"
+
+import { LayoutProps } from ".."
+import { HeaderProps } from "Сomponents/Header/Header"
+import { NavigationProps } from "Сomponents/Footer/Navigation"
+
+const Header = dynamic<HeaderProps>(() =>
+  import("Сomponents").then((module) => module.Header),
+)
+const Footer = dynamic<NavigationProps>(() =>
+  import("Сomponents").then((module) => module.Footer),
+)
 
 import { footerNav } from "shared/constants/footernav"
-import { LayoutProps } from ".."
 
 import s from "./commonWithBcLayout.module.scss"
 

@@ -7,7 +7,7 @@ import { IconType } from "shared/interfaces/iconTypes"
 
 import s from "./button.module.scss"
 
-interface ButtonProps {
+export interface ButtonProps {
   className?: string
   disabled?: boolean
   icon?: boolean

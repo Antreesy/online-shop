@@ -1,11 +1,15 @@
 import React from "react"
 import { Provider } from "react-redux"
 import type { AppProps } from "next/app"
+import dynamic from "next/dynamic"
 import Head from "next/head"
 import { appWithTranslation } from "next-i18next"
 import { store } from "store/store"
 
-import { Layout } from "Сomponents"
+import { LayoutProps } from "Сomponents/Layout"
+const Layout = dynamic<LayoutProps>(() =>
+  import("Сomponents").then((module) => module.Layout),
+)
 
 import { CacheProvider, EmotionCache } from "@emotion/react"
 import createEmotionCache from "utils/createEmotionCache"
