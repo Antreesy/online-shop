@@ -13,7 +13,7 @@ import { Roles } from "shared/enums/roles"
 
 import s from "./header.module.scss"
 
-interface HeaderProps {
+export interface HeaderProps {
   withBreadcrumbs?: boolean
   role?: Roles
 }
