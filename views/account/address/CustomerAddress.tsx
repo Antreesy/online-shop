@@ -19,7 +19,10 @@ export const CustomerAddress: React.FC<AddressProps> = (props) => {
 
   return (
     <>
-      <SectionHeader className={s.header_info} title={t("myAddressInformation")} />
+      <SectionHeader
+        className={s.header_info}
+        title={t("myAddressInformation")}
+      />
 
       <div className={s.address_wrapper}>
         {Boolean(addresses.length) &&

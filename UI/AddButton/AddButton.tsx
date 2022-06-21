@@ -15,15 +15,15 @@ interface AddButtonProps {
   className?: string
 }
 
-const AddButton: React.FC<AddButtonProps> = ({
-  title,
-  color = "primary",
-  bgColor = "grey",
-  large,
-  onClick,
-  className,
-}) => {
-  
+const AddButton: React.FC<AddButtonProps> = (props) => {
+  const {
+    title,
+    color = "primary",
+    bgColor = "grey",
+    large,
+    onClick,
+    className,
+  } = props
   const addButtonClass = cn(
     s.add_button,
     {

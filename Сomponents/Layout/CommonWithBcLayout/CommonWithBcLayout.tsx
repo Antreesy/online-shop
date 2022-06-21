@@ -10,9 +10,7 @@ const CommonWithBcLayout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Header withBreadcrumbs />
-      <main className={s.main}>
-        <div className={s.container}>{children}</div>
-      </main>
+      <main className={s.main}>{children}</main>
       <Footer links={footerNav} />
     </>
   )
