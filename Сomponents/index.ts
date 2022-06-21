@@ -1,3 +1,4 @@
+import { AddProductBrand } from "./AddProductBrand"
 import { AddressCard } from "./AddressCard"
 import { AddressForm } from "./AddressForm"
 import { Background } from "./Background"
@@ -30,10 +31,10 @@ import { PhotoSlider } from "./PhotoSlider"
 import { Chart } from "./Chart"
 import { OrderStatusButton } from "./OrderStatusButton"
 import { InventoryButton } from "./InventoryButton"
-import { AddProductBrand } from "./AddProductBrand"
+
 
 export {
-  PhotoSlider,
+  AddProductBrand,
   AddressCard,
   AddressForm,
   Background,
@@ -56,6 +57,7 @@ export {
   ProductItem,
   ProductItemList,
   ProfileSidebar,
+  PhotoSlider,
   SectionHeader,
   SizePicker,
   RegisterFormsStepTwo,
@@ -66,5 +68,4 @@ export {
   Step3,
   Toolbar,
   Chart,
-  AddProductBrand,
 }
