@@ -1,23 +1,12 @@
 @import "/styles/style.scss";
 
 .container {
-  max-width: 1780px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 70px;
-
-  @include tablet-laptop {
-    padding: 0 30px;
-  }
-
-  @include mobile {
-    padding: 0 15px;
-  }
+  @include container;
+  max-width: 1720px;
 }
 
 .mobile_image {
   display: none;
-  @include fullwidth-in-container;
 
   & .background {
     display: flex;
@@ -58,7 +47,6 @@
 }
 
 .desktop_image {
-  @include fullwidth-in-container;
   @include mobile {
     display: none;
   }
@@ -112,7 +100,6 @@
 
   @include mobile-tablet {
     display: block;
-    @include fullwidth-in-container;
     margin-bottom: 30px;
   }
 }
@@ -267,69 +254,12 @@
 }
 
 .toolbar {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  width: 100%;
-  gap: 20px;
+  margin-left: auto;
   margin-bottom: 50px;
 
   @include mobile {
-    flex-direction: column;
+    margin-left: 0;
     margin-bottom: 20px;
-  }
-}
-
-.search {
-  position: relative;
-  width: 386px;
-
-  .icon {
-    position: absolute;
-    top: 40%;
-    right: 15px;
-  }
-  & div {
-    width: 100%;
-  }
-  & label {
-    display: none;
-  }
-
-  @include mobile {
-    width: 100%;
-  }
-}
-
-.select {
-  position: relative;
-  width: 122px;
-
-  & select {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    font-size: 16px;
-    font-family: inherit;
-    height: 60px;
-    padding: 20px;
-    width: 122px;
-    border: 2px solid $color-black;
-  }
-
-  & .icon {
-    font-size: 10px;
-    position: absolute;
-    top: 40%;
-    right: 15px;
-  }
-
-  @include mobile {
-    width: 100%;
-
-    & > select {
-      width: 100%;
-    }
   }
 }
 
@@ -393,8 +323,6 @@
 }
 
 .brand_bgr {
-  @include fullwidth-in-container;
-
   & > div {
     height: 500px;
 

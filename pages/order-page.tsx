@@ -54,10 +54,10 @@ const OrderPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>ILONSI SHOP | Account</title>
+        <title>ILONSI SHOP | Payment</title>
       </Head>
 
-      <div className={s.content}>
+      <div className={s.container}>
         <div className={s.main}>
           <section className={s.section_delivery}>
             <h3 className={s.heading}>{t("deliveryInformation")}</h3>

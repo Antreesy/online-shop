@@ -41,75 +41,77 @@ const brandInformation: NextPage = () => {
         <title>ILONSI SHOP | Brand information</title>
       </Head>
 
-      <nav className={s.nav}>
-        <SimpleBar className={s.scrollbar}>
-          <ul className={s.navigation}>
-            <li>Profile</li>
-            <li>Brand Information</li>
-            <li>All Product</li>
-            <li>All Cancellations</li>
-            <li>On Sale</li>
-            <li>That Need Revision</li>
-            <li>Not On Sale</li>
-          </ul>
-        </SimpleBar>
-      </nav>
+      <div className={s.container}>
+        <nav className={s.nav}>
+          <SimpleBar className={s.scrollbar}>
+            <ul className={s.navigation}>
+              <li>Profile</li>
+              <li>Brand Information</li>
+              <li>All Product</li>
+              <li>All Cancellations</li>
+              <li>On Sale</li>
+              <li>That Need Revision</li>
+              <li>Not On Sale</li>
+            </ul>
+          </SimpleBar>
+        </nav>
 
-      <Button iconLeft="arrow_left" className={s.backBtn} variant="text">
-        Back
-      </Button>
-      <h1 className={s.heading}>Brand Informations</h1>
+        <Button iconLeft="arrow_left" className={s.backBtn} variant="text">
+          Back
+        </Button>
+        <h1 className={s.heading}>Brand Informations</h1>
 
-      <div className={s.brandInfo}>
-        <div className={s.brandItem}>
-          <div className={s.iconWrapper}>
-            <Icon type="brand_name" />
+        <div className={s.brandInfo}>
+          <div className={s.brandItem}>
+            <div className={s.iconWrapper}>
+              <Icon type="brand_name" />
+            </div>
+            <div className={s.textBlock}>
+              <p className={s.brandName}>Brand Name:</p>
+              <p className={s.description}>Saint Laurent</p>
+            </div>
           </div>
-          <div className={s.textBlock}>
-            <p className={s.brandName}>Brand Name:</p>
-            <p className={s.description}>Saint Laurent</p>
+          <div className={s.brandDisplay}>
+            <div className={s.iconWrapper}>
+              <Icon type="brand_display_name" />
+            </div>
+            <div className={s.textBlock}>
+              <p className={s.brandName}>Brand Display Name:</p>
+              <p className={s.description}> Saint Lauren</p>
+            </div>
           </div>
         </div>
-        <div className={s.brandDisplay}>
-          <div className={s.iconWrapper}>
-            <Icon type="brand_display_name" />
+
+        <div className={s.brandUploads}>
+          <div className={s.uploadLogo}>
+            <p>Brand Logo:</p>
+            <div className={s.uploader}>
+              <FileUpload
+                title="Select or Drag Image"
+                setValue={() => console.log("")}
+                className={s.fileUploader}
+              />
+            </div>
+            <Button variant="text" className={s.brandBlackBtn}>
+              Load
+            </Button>
           </div>
-          <div className={s.textBlock}>
-            <p className={s.brandName}>Brand Display Name:</p>
-            <p className={s.description}> Saint Lauren</p>
+          <div className={s.uploadBanner}>
+            <p>Brand Banner:</p>
+            <div className={s.uploader}>
+              <FileUpload
+                title="Select or Drag Image"
+                setValue={() => console.log("")}
+                className={s.fileUploader}
+              />
+            </div>
+            <Button variant="text" className={s.brandBlackBtn}>
+              Load
+            </Button>
           </div>
         </div>
+        <h1>Company Informations</h1>
       </div>
-
-      <div className={s.brandUploads}>
-        <div className={s.uploadLogo}>
-          <p>Brand Logo:</p>
-          <div className={s.uploader}>
-            <FileUpload
-              title="Select or Drag Image"
-              setValue={() => console.log("")}
-              className={s.fileUploader}
-            />
-          </div>
-          <Button variant="text" className={s.brandBlackBtn}>
-            Load
-          </Button>
-        </div>
-        <div className={s.uploadBanner}>
-          <p>Brand Banner:</p>
-          <div className={s.uploader}>
-            <FileUpload
-              title="Select or Drag Image"
-              setValue={() => console.log("")}
-              className={s.fileUploader}
-            />
-          </div>
-          <Button variant="text" className={s.brandBlackBtn}>
-            Load
-          </Button>
-        </div>
-      </div>
-      <h1>Company Informations</h1>
 
       <div className={s.formSection}>
         <form className={s.container}>
