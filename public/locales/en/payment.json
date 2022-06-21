@@ -1,0 +1,9 @@
+{
+  "title": "My Registered Cards",
+  "cardAdd": "Add New Card",
+  "cardNumber": "Card number",
+  "nameOnTheCard": "Name on the card",
+  "expirationDate": "Expiration date",
+  "securityInfo": "Security info",
+  "save": "Save"
+}

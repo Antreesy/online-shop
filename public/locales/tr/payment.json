@@ -1,0 +1,9 @@
+{
+  "title": "Kayıtlı Kartlarım",
+  "cardAdd": "Yeni Kart Ekle",
+  "cardNumber": "Kart numarası",
+  "nameOnTheCard": "Karttaki isim",
+  "expirationDate": "Son kullanma tarihi",
+  "securityInfo": "Güvenlik bilgisi",
+  "save": "Kaydetmek"
+}

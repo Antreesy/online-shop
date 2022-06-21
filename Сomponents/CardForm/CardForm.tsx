@@ -4,6 +4,7 @@ import { Button, CreditCard, Input } from "UI"
 import useResize from "shared/hooks/useResize"
 
 import s from "./cardForm.module.scss"
+import {useTranslation} from "next-i18next";
 
 interface CardInfoProps {
   cardNumber: string
@@ -14,6 +15,7 @@ interface CardInfoProps {
 
 const CardForm: React.FC = () => {
   const width = useResize(768)
+  const {t} = useTranslation("payment")
 
   const {
     handleSubmit,
@@ -99,7 +101,7 @@ const CardForm: React.FC = () => {
           rules={{ required: true, maxLength: 19 }}
           render={({ field: { onChange, value } }) => (
             <Input
-              label={"Card number"}
+              label={t("cardNumber")}
               setValue={onChange}
               value={value}
               placeholder={"0000 0000 0000 0000"}
@@ -117,7 +119,7 @@ const CardForm: React.FC = () => {
           control={control}
           render={({ field: { onChange, value } }) => (
             <Input
-              label={"Name on the card"}
+              label={t("nameOnTheCard")}
               setValue={onChange}
               value={value}
               placeholder={"Yalçın Topkaya"}
@@ -136,7 +138,7 @@ const CardForm: React.FC = () => {
             control={control}
             render={({ field: { onChange, value } }) => (
               <Input
-                label={"Expiration date"}
+                label={t("expirationDate")}
                 setValue={onChange}
                 value={value}
                 placeholder={"06/2026"}
@@ -154,7 +156,7 @@ const CardForm: React.FC = () => {
             control={control}
             render={({ field: { onChange, value } }) => (
               <Input
-                label={"Security info"}
+                label={t("securityInfo")}
                 setValue={onChange}
                 value={value}
                 placeholder={"CVC/CVV"}
@@ -173,7 +175,7 @@ const CardForm: React.FC = () => {
           onClick={handleSubmit(onSubmit)}
           className={s.button_desktop}
         >
-          Save
+          {t("save")}
         </Button>
       </div>
 
