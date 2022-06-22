@@ -1,4 +1,4 @@
-import { ProductItemProps } from "Сomponents/ProductItem/ProductItem"
+import { ProductItemProps } from "Сomponents/ProductItemList/ProductItem/ProductItem"
 
 export const productItems: ProductItemProps[] = [
   {

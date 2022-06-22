@@ -1,46 +1,45 @@
 import { AddProductBrand } from "./AddProductBrand"
 import { AddressCard } from "./AddressCard"
 import { AddressForm } from "./AddressForm"
+import { BackButton } from "./BackButton"
 import { Background } from "./Background"
 import { Breadcrumbs } from "./Breadcrumbs"
 import { BurgerMenu } from "./BurgerMenu"
 import { CardForm } from "./CardForm"
+import { CartItemList } from "./CartItemList"
+import { Chart } from "./Chart"
 import { ColorPicker } from "./ColorPicker"
 import { Counter } from "./Counter"
+import { InventoryButton } from "./InventoryButton"
 import { Footer } from "./Footer"
 import { Header, HeaderLight } from "./Header"
 import { Layout } from "./Layout"
 import { Logo } from "./Logo"
 import { Notification } from "./Notification"
-import { OrderItem } from "./OrderItem"
 import { OrderList } from "./OrderList"
+import { OrderStatusButton } from "./OrderStatusButton"
 import { OrderSummary } from "./OrderSummary"
-import { ProductItem } from "./ProductItem"
-import { ProductItemList } from "./ProductItemList"
+import { PhotoSlider } from "./PhotoSlider"
+import { ProductItem, ProductItemList } from "./ProductItemList"
 import { ProfileSidebar } from "./ProfileSidebar"
+import { ReturnButton } from "./ReturnButton"
 import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
-import {
-  RegisterFormsStepTwo,
-  RegisterFormStepOne,
-  RegisterFormsStepThree,
-} from "./RegisterForms"
 import { Step1, Step2, Step3 } from "./AddProductSteps"
+import { Table } from "./Table"
 import { Toolbar } from "./Toolbar"
-import { PhotoSlider } from "./PhotoSlider"
-import { Chart } from "./Chart"
-import { OrderStatusButton } from "./OrderStatusButton"
-import { InventoryButton } from "./InventoryButton"
-
 
 export {
   AddProductBrand,
   AddressCard,
   AddressForm,
+  BackButton,
   Background,
   Breadcrumbs,
   BurgerMenu,
   CardForm,
+  CartItemList,
+  Chart,
   ColorPicker,
   Counter,
   Footer,
@@ -50,22 +49,19 @@ export {
   Layout,
   Logo,
   Notification,
-  OrderItem,
   OrderList,
   OrderStatusButton,
   OrderSummary,
+  PhotoSlider,
   ProductItem,
   ProductItemList,
   ProfileSidebar,
-  PhotoSlider,
+  ReturnButton,
   SectionHeader,
   SizePicker,
-  RegisterFormsStepTwo,
-  RegisterFormStepOne,
-  RegisterFormsStepThree,
   Step1,
   Step2,
   Step3,
+  Table,
   Toolbar,
-  Chart,
 }

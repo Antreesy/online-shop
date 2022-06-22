@@ -1,0 +1,39 @@
+@import "styles/style.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  min-width: 270px;
+  min-height: 150px;
+  padding: 30px 30px 20px 30px;
+}
+
+.content {
+  font-weight: $fw-medium;
+  font-size: 14px;
+  text-align: center;
+}
+
+.button_group {
+  display: flex;
+  gap: 15px;
+
+  .button_right {
+    color: $color-white;
+    background: $color-black;
+  }
+}
+
+.tooltip {
+  color: $color-black;
+  max-width: 500;
+  border-radius: 7px;
+  border: 2px solid $color-purple;
+  background-color: $color-white;
+}
+
+.arrow {
+  color: $color-purple;
+}

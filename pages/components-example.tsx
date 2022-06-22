@@ -1,4 +1,5 @@
 import type { NextPage } from "next"
+import enot from "../public/enot.jpg"
 
 import Head from "next/head"
 
@@ -18,27 +19,27 @@ import {
   AlertBox,
   Card,
   Carousel,
+  Icon,
   ItemCounter,
   Range,
-  Tabs,
   Price,
-  Icon,
+  Progressbar,
   SocialIcon,
-  ProgressBar,
+  SelectProduct,
+  Tabs,
+  Tooltip,
 } from "UI"
 
 import {
   AddressCard,
+  Chart,
   Logo,
   Notification,
-  ProductItem,
   ProductItemList,
   ProfileSidebar,
   SectionHeader,
   OrderSummary,
   PhotoSlider,
-  Chart,
-  AddProductBrand,
 } from "Сomponents"
 
 import { icons } from "shared/constants/icons"
@@ -48,7 +49,12 @@ import { Currency } from "shared/enums/currency"
 
 import productImage from "public/assets/img/product-img.png"
 
-import s from "styles/pages/ComponentsExample.module.scss"
+import s from "styles/pages/components-example.module.scss"
+
+const longText = `
+Switch an order to preparing status
+Do you approve your request?
+`
 
 const SampleCard = () => (
   <Card
@@ -61,13 +67,12 @@ const SampleCard = () => (
 )
 
 const Home: NextPage = () => {
-  const currentStep = 1
-  const steps = ["1", "2", "3"]
   return (
     <>
       <Head>
         <title>ILONSI SHOP | UI Kit page</title>
       </Head>
+
       <main className={s.main}>
         <SectionHeader
           className={s.title}
@@ -75,7 +80,7 @@ const Home: NextPage = () => {
           actionItem={"All Orders"}
         />
 
-        <ProgressBar currentStep={currentStep} steps={steps} />
+        <Progressbar currentStep={1} steps={[1, 2, 3]} />
 
         <Tabs
           className={s.example_tabs}
@@ -91,6 +96,7 @@ const Home: NextPage = () => {
             "Sidebar",
             "Price",
             "Counters",
+            "SelectProduct",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -151,11 +157,21 @@ const Home: NextPage = () => {
               <ItemCounter initValue={5} />
               <ItemCounter initValue={5} large />
             </div>,
+            <div key={"SelectProduct"}>
+              <SelectProduct
+                imageSrc={enot}
+                imageTitle={"enot.png"}
+                imageSize={"690x680"}
+                date={new Date().toLocaleDateString()}
+              />
+            </div>,
           ]}
         />
-        <Chart />
         <SectionHeader className={s.title} title={"Components page"} />
-
+        <h2>Tooltip</h2>
+        <Tooltip content={longText}>
+          <div>Lorem ipsum dolor sit.</div>
+        </Tooltip>
         <Tabs
           className={s.example_tabs}
           labels={[
@@ -165,8 +181,8 @@ const Home: NextPage = () => {
             "Credit Card",
             "Card",
             "Toolbar",
-            "ProductItem",
             "ProductItemList",
+            "Chart",
           ]}
           values={[
             <div key="Notification">
@@ -237,47 +253,16 @@ const Home: NextPage = () => {
               <ToolbarExample />
             </div>,
 
-            <div key={"ProductItem"}>
-              <div className={s.grid}>
-                <ProductItem
-                  title="Yves Saint Laurent"
-                  subtitle="Black long sleeve men’s jacket"
-                  description="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
-                  id={1}
-                  price={{
-                    oldPrice: 2030,
-                    price: 2030,
-                    type: "sale",
-                  }}
-                  imageSrc="/assets/img/T_shirt.png"
-                />
-              </div>
-              <div className={s.grid} style={{ width: 300 }}>
-                <ProductItem
-                  title="Yves Saint Laurent"
-                  subtitle="Black long sleeve men’s jacket"
-                  description="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
-                  id={1}
-                  price={{
-                    oldPrice: 2030,
-                    price: 2030,
-                    type: "sale",
-                  }}
-                  imageSrc="/assets/img/T_shirt.png"
-                  isFavorite={false}
-                  onAddClick={() => console.log("onAddClick")}
-                  toggleFavorite={() => console.log("toggleFavorite")}
-                />
-              </div>
-            </div>,
-
             <div key="ProductItemLIst" className={s.grid}>
               <ProductItemList productItemList={productItems} />
+            </div>,
+
+            <div key="Chart" className={s.grid}>
+              <Chart />
             </div>,
           ]}
         />
       </main>
-      <AddProductBrand />
     </>
   )
 }

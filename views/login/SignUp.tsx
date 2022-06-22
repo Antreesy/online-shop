@@ -4,7 +4,7 @@ import cn from "classnames"
 import Link from "next/link"
 import { Button, Input } from "UI"
 
-import s from "styles/pages/Login.module.scss"
+import s from "styles/pages/login.module.scss"
 
 interface LoginType {
   email: string
@@ -65,6 +65,7 @@ const SignUp = () => {
           Sign In
         </Button>
       </form>
+
       <div className={s.form_footer}>
         <Link href="#">
           <a>Not Registered Yet ? Sign Up</a>

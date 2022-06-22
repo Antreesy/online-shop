@@ -16,7 +16,7 @@ const AlertBox: React.FC<AlertBoxProps> = (props) => {
 
   return (
     <Alert
-      className={cn(s.alertBox, className)}
+      className={cn(s.alert_box, className)}
       color={color}
       variant={variant}
       icon={false}

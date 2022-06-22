@@ -1,6 +1,6 @@
 @import "/styles/style.scss";
 
-.inputWrapper {
+.input_wrapper {
   display: flex;
 }
 
@@ -13,10 +13,11 @@
 
 .default {
   font-family: inherit;
-  font-size: 15px;
+  font-size: 16px;
 
   .label {
     color: $color-purple;
+    font-size: 1em;
     font-weight: $fw-bold;
     margin-bottom: 5px;
   }
@@ -54,7 +55,7 @@
       border-bottom-left-radius: 4px;
       border: none;
       outline: none;
-      background-color: #434343;
+      background-color: $color-grey-43;
       z-index: -1;
     }
   }
@@ -153,7 +154,7 @@
   font-family: inherit;
   font-size: 15px;
 
-  .inputWrapper {
+  .input_wrapper {
     height: 100%;
   }
 
@@ -178,7 +179,7 @@
   font-family: inherit;
   font-size: 15px;
 
-  .inputWrapper {
+  .input_wrapper {
     height: 100%;
   }
 
@@ -202,7 +203,7 @@
   border: 2px solid $color-red;
 }
 
-.errorText {
+.error_text {
   display: flex;
   align-items: center;
   gap: 4px;

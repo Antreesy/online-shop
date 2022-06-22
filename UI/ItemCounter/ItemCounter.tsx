@@ -3,11 +3,11 @@ import cn from "classnames"
 
 import { Button } from "UI"
 
-import s from "./ItemCounter.module.scss"
+import s from "./itemCounter.module.scss"
 
 interface ItemCounterProps {
   initValue?: number
-  onChange?: () => void
+  onChange?: (value: number) => void
   large?: true
 }
 
@@ -19,12 +19,12 @@ const ItemCounter: React.FC<ItemCounterProps> = (props) => {
 
   const onIncrement = () => {
     setValue((prev: number) => prev + 1)
-    onChange?.()
+    onChange?.(value + 1)
   }
 
   const onDecrement = () => {
     setValue((prev: number) => prev - 1)
-    onChange?.()
+    onChange?.(value - 1)
   }
 
   return (

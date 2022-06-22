@@ -2,8 +2,8 @@ import { useState, useEffect } from "react"
 
 import { getWindowWidth, throttle } from "utils/utils"
 
-const useResize = (initialWidth: number) => {
-  const [windowWidth, setWindowWidth] = useState(initialWidth)
+const useResize = (initialWidth?: number) => {
+  const [windowWidth, setWindowWidth] = useState(initialWidth || 1920)
 
   useEffect(() => {
     function handleResize() {

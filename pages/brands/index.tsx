@@ -1,16 +1,20 @@
+import { useState } from "react"
 import { NextPage } from "next"
-import Head from "next/head"
+import { useRouter } from "next/router"
 
+import Head from "next/head"
 import { Grid } from "@mui/material"
 import { Background, Breadcrumbs, Toolbar } from "Сomponents"
-import { Card, Pagination, Button, Icon } from "UI"
+import { Card, Pagination, Button } from "UI"
 
 import card_image from "public/assets/img/zara.png"
+import picture from "public/assets/img/fallback-pic.png"
+import picture_mobile from "public/assets/img/brands_mobile-bgr.png"
 
 import s from "styles/pages/brands/brands.module.scss"
-import { useState } from "react"
-import picture from "public/assets/img/fallback-pic.png"
-import { useRouter } from "next/router"
+
+const PRODUCTS_AMOUNT = 24187
+const BRANDS_AMOUNT = 35298
 
 const brands: NextPage = () => {
   const [path, setActivePath] = useState<string>("brands")
@@ -24,88 +28,95 @@ const brands: NextPage = () => {
   const goToBrand = (brand: string) => {
     router.push(`brands/${brand}`)
   }
+
   return (
     <>
       <Head>
         <title>ILONSI SHOP | Influencers</title>
       </Head>
 
-      <main className={s.main}>
-        <div className={s.wrapper_bcg}>
-          <Background
-            image={picture}
-            title="TITLE"
-            actionText="Follow"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos expedita saepe at ea quam dolorem mollitia soluta atque blanditiis quas in praesentium exercitationem delectus, quasi tempora porro ipsum ex voluptatum.
-          "
-            link="tuanaycl"
-          />
-          <div className={s.add_button}>
-            <Icon type="plus" />
+      <div className={s.desktop_image}>
+        <Background
+          image={picture}
+          title="Tuana Yücel"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed pretium enim. Cras faucibus velit risus, nec pharetra ex scelerisque non. Aenean quis porttitor elit. Sed eu dignissim ex. Proin non laoreet risus. Donec volutpat.
+            "
+          link="tuanaycl"
+          isEditable={true}
+        />
+      </div>
+
+      <div className={s.mobile_image}>
+        <Background
+          className={s.background}
+          image={picture_mobile}
+          title="Tuana Yücel"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed pretium enim. Cras faucibus velit rise.
+              "
+          link="tuanaycl"
+          isEditable={true}
+        />
+      </div>
+
+      <div className={s.breadcrumbs_mobile}>
+        <Breadcrumbs />
+      </div>
+      <div className={s.container}>
+        <div className={s.return_button}>
+          <div onClick={() => router.push("/")}>
+            <span></span>
           </div>
+          <div>Return Your Shop</div>
+        </div>
+        <div className={s.wrapper_toolbar}>
+          <Button
+            disabled={path === "products"}
+            variant="outlined"
+            className={path === "products" ? s.button_active : ""}
+            onClick={() => {
+              toggleButton("products")
+            }}
+          >
+            Products ({PRODUCTS_AMOUNT})
+          </Button>
+          <Button
+            disabled={path === "brands"}
+            variant="outlined"
+            className={path === "brands" ? s.button_active : ""}
+            onClick={() => {
+              toggleButton("brands")
+            }}
+          >
+            Brands ({BRANDS_AMOUNT})
+          </Button>
+          <Toolbar className={s.toolbar} values={[]} />
         </div>
 
-        <div className={s.background} />
-        <div className={s.breadcrumbs_mobile}>
-          <Breadcrumbs />
-        </div>
-        <div className={s.container}>
-          <div className={s.return_button}>
-            <div onClick={() => router.push("/")}>
-              <span></span>
-            </div>
-            <div>Return Your Shop</div>
-          </div>
-          <div className={s.wrapper_toolbar}>
-            <Button
-              disabled={path === "products"}
-              variant="outlined"
-              className={path === "products" ? s.button_active : ""}
-              onClick={() => {
-                toggleButton("products")
-              }}
+        <Grid container spacing={2} className={s.card_wrapper}>
+          {Array.from(Array(24)).map((item) => (
+            <Grid
+              item
+              key={item}
+              xs={6}
+              sm={4}
+              md={3}
+              lg={2}
+              xl={2}
+              justifyContent="space-evenly"
             >
-              Products (24187)
-            </Button>
-            <Button
-              disabled={path === "brands"}
-              variant="outlined"
-              className={path === "brands" ? s.button_active : ""}
-              onClick={() => {
-                toggleButton("brands")
-              }}
-            >
-              Brands (35298)
-            </Button>
-            <Toolbar className={s.toolbar} values={[]} />
-          </div>
-
-          <Grid container spacing={2} className={s.card_wrapper}>
-            {Array.from(Array(24)).map((item) => (
-              <Grid
-                item
-                key={item}
-                xs={6}
-                sm={4}
-                md={3}
-                lg={2}
-                xl={2}
-                justifyContent="space-evenly"
-              >
-                <Card
-                  onClick={() => goToBrand("zara")}
-                  className={s.card}
-                  imageSrc={card_image}
-                  buttonTitle={"Go to Brand"}
-                  isButtonHidden={true}
-                />
-                <p className={s.card_caption}>Zara</p>
-              </Grid>
-            ))}
-          </Grid>
-          <Pagination className={s.pagination} pagesCount={4} isShort />
-        </div>
-      </main>
+              <Card
+                onClick={() => goToBrand("zara")}
+                className={s.card}
+                imageSrc={card_image}
+                buttonTitle={"Go to Brand"}
+                isButtonHidden={true}
+              />
+              <p className={s.card_caption}>Zara</p>
+            </Grid>
+          ))}
+        </Grid>
+        <Pagination className={s.pagination} pagesCount={4} isShort />
+      </div>
     </>
   )
 }

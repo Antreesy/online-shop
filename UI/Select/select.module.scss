@@ -1,7 +1,12 @@
 @import "styles/style.scss";
 
+.select_wrapper {
+  height: 100%;
+}
+
 .select_label {
-  font-size: 16px;
+  margin-bottom: 5px;
+  font-size: 1em;
   font-weight: $fw-bold;
   color: $color-purple;
 }
@@ -11,10 +16,11 @@
   width: 100%;
   border: 1px solid transparent;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: inherit;
   font-weight: $fw-medium;
 
   & > div {
+    padding: 14px;
     border: 1px solid transparent;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
   }
@@ -37,7 +43,7 @@
   font-weight: $fw-medium;
 }
 
-.selectIcon {
+.select_icon {
   color: $color-purple;
   position: absolute;
   right: 6%;
@@ -49,7 +55,7 @@
 }
 
 .scrollbar {
-  & > div:last-child {
+  & > :global(.simplebar-vertical) {
     right: 15px;
     width: 8px;
     background-color: $color-grey-f4;

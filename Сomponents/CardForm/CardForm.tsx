@@ -1,6 +1,8 @@
 import { Controller, useForm } from "react-hook-form"
+import { useTranslation } from "next-i18next"
 
 import { Button, CreditCard, Input } from "UI"
+
 import useResize from "shared/hooks/useResize"
 
 import s from "./cardForm.module.scss"
@@ -14,6 +16,7 @@ interface CardInfoProps {
 
 const CardForm: React.FC = () => {
   const width = useResize(768)
+  const { t } = useTranslation(["payment", "common"])
 
   const {
     handleSubmit,
@@ -21,6 +24,7 @@ const CardForm: React.FC = () => {
     control,
     formState: { errors, isDirty, isValid },
     reset,
+    setValue,
     watch,
   } = useForm<CardInfoProps>({
     mode: "onChange",
@@ -36,63 +40,75 @@ const CardForm: React.FC = () => {
   const cardNumberValidation = register("cardNumber", {
     required: true,
     minLength: 19,
-    onChange: (e) =>
-      (e.target.value =
-        e.target.value.length < 19
-          ? e.target.value.replace(/[^\dA-Z]/g, "").replace(/(.{4})/g, "$1 ")
-          : e.target.value.substr(0, 19)),
+    onChange: (e) => {
+      if (e.target.value.length < 19) {
+        setValue(
+          "cardNumber",
+          e.target.value.replace(/[^\dA-Z]/g, "").replace(/(.{4})/g, "$1 "),
+        )
+      } else {
+        setValue("cardNumber", e.target.value.substr(0, 19))
+      }
+    },
   })
 
   const cardholderNameValidation = register("cardholderName", {
     required: true,
     minLength: 5,
-    onChange: (e) =>
-      (e.target.value =
-        e.target.value.length < 20
-          ? e.target.value.replace(/[^a-zA-Z ]/, "")
-          : e.target.value.substr(0, 20)),
+    onChange: (e) => {
+      if (e.target.value.length < 20) {
+        setValue("cardholderName", e.target.value.replace(/[^a-zA-Z ]/, ""))
+      } else {
+        setValue("cardholderName", e.target.value.substr(0, 20))
+      }
+    },
   })
 
   const cardExpirationValidation = register("cardExpiration", {
     required: true,
     minLength: 4,
-    onChange: (e) =>
-      (e.target.value =
-        e.target.value.length < 5
-          ? e.target.value.replace(/[^0-9]/, "").replace(/^(.{2})/, "$1/")
-          : e.target.value.substr(0, 5)),
+    onChange: (e) => {
+      if (e.target.value.length < 5) {
+        setValue(
+          "cardExpiration",
+          e.target.value.replace(/[^0-9]/, "").replace(/^(.{2})/, "$1/"),
+        )
+      } else {
+        setValue("cardExpiration", e.target.value.substr(0, 5))
+      }
+    },
   })
 
   const cardSecurityValidation = register("cardSecurity", {
     required: true,
     minLength: 3,
-    onChange: (e) =>
-      (e.target.value =
-        e.target.value.length < 3
-          ? e.target.value.replace(/[^0-9]/, "")
-          : e.target.value.substr(0, 3)),
+    onChange: (e) => {
+      if (e.target.value.length < 3) {
+        setValue("cardSecurity", e.target.value.replace(/[^0-9]/, ""))
+      } else {
+        setValue("cardSecurity", e.target.value.substr(0, 3))
+      }
+    },
   })
 
-  const onSubmit = (data: any) => {
-    reset()
-  }
+  const onSubmit = () => reset()
 
   return (
-    <form className={s.cardForm} onSubmit={handleSubmit(onSubmit)}>
-      <div className={s.cardInputs}>
+    <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
+      <div className={s.input_wrapper}>
         <Controller
           name={"cardNumber"}
           control={control}
           rules={{ required: true, maxLength: 19 }}
           render={({ field: { onChange, value } }) => (
             <Input
-              label={"Card number"}
+              label={t("cardNumber")}
               setValue={onChange}
               value={value}
               placeholder={"0000 0000 0000 0000"}
               type={"tel"}
               isRequired={true}
-              className={s.longInput}
+              className={s.input_long}
               errorText={"This field cannot be left blank"}
               validation={cardNumberValidation}
             />
@@ -104,32 +120,32 @@ const CardForm: React.FC = () => {
           control={control}
           render={({ field: { onChange, value } }) => (
             <Input
-              label={"Name on the card"}
+              label={t("nameOnTheCard")}
               setValue={onChange}
               value={value}
               placeholder={"Yalçın Topkaya"}
               type={"text"}
               isRequired={true}
-              className={s.longInput}
+              className={s.input_long}
               errorText={"This field cannot be left blank"}
               validation={cardholderNameValidation}
             />
           )}
         />
 
-        <div className={s.flex}>
+        <div className={s.flex_row}>
           <Controller
             name={"cardExpiration"}
             control={control}
             render={({ field: { onChange, value } }) => (
               <Input
-                label={"Expiration date"}
+                label={t("expirationDate")}
                 setValue={onChange}
                 value={value}
                 placeholder={"06/2026"}
                 type={"tel"}
                 isRequired={true}
-                className={s.shortInput}
+                className={s.input_short}
                 errorText={"This field cannot be left blank"}
                 validation={cardExpirationValidation}
               />
@@ -141,27 +157,29 @@ const CardForm: React.FC = () => {
             control={control}
             render={({ field: { onChange, value } }) => (
               <Input
-                label={"Security info"}
+                label={t("securityInfo")}
                 setValue={onChange}
                 value={value}
                 placeholder={"CVC/CVV"}
                 type={"password"}
                 isRequired={true}
-                className={s.shortInput}
+                className={s.input_short}
                 errorText={"This field cannot be left blank"}
                 validation={cardSecurityValidation}
               />
             )}
           />
         </div>
+
         <Button
           disabled={!isValid}
           onClick={handleSubmit(onSubmit)}
-          className={s.desktopButton}
+          className={s.button_desktop}
         >
-          Save
+          {t("common:save")}
         </Button>
       </div>
+
       <CreditCard
         size={width < 768 ? 210 : 300}
         isColored
@@ -174,7 +192,7 @@ const CardForm: React.FC = () => {
           reset()
         }}
       />
-      <Button disabled={!isValid} className={s.mobileButton}>
+      <Button disabled={!isValid} className={s.button_mobile}>
         Save
       </Button>
     </form>

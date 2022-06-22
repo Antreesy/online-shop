@@ -1,0 +1,142 @@
+@import "styles/style.scss";
+
+.main {
+  display: flex;
+  min-width: 300px;
+  max-width: 320px;
+  width: 20%;
+  height: 160px;
+
+  border-radius: 7px;
+  box-shadow: 0 0 10px 0 #e8e8e8;
+  border: 3px solid $color-white;
+  cursor: pointer;
+
+  @include mobile-tablet {
+    width: 60%;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  align-items: center;
+
+  @include mobile-tablet {
+    flex-wrap: nowrap;
+  }
+
+  .icon_wrapper {
+    width: 70px;
+    height: 70px;
+    margin: 19px 19px auto 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mobile-tablet {
+      margin: auto 10px;
+      width: 39px;
+      height: 39px;
+    }
+
+    .icon {
+      font-size: 46.12px;
+      color: $color-purple-f;
+
+      @include mobile-tablet {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .total_num {
+    margin-top: 28px;
+    font-size: 45px;
+    font-weight: $fw-bold;
+    z-index: 1;
+
+    @include mobile-tablet {
+      display: none;
+    }
+  }
+
+  .total_text {
+    font-weight: $fw-medium;
+    font-size: 23px;
+    margin-left: 19px;
+    z-index: 1;
+
+    span:first-child {
+      margin-right: 10px;
+    }
+
+    @include mobile-tablet {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+    }
+  }
+
+  .bg_icon_wrapper {
+    position: absolute;
+    right: 16.2px;
+    top: 29px;
+
+    .bg_icon {
+      font-size: 111.36px;
+    }
+
+    @include mobile-tablet {
+      display: none;
+    }
+  }
+}
+
+.total_mobile {
+  display: none;
+
+  @include mobile-tablet {
+    display: block;
+  }
+}
+
+.purple {
+  background: linear-gradient(90deg, $color-purple-light, $color-purple-f1);
+  color: $color-white;
+
+  .icon_wrapper {
+    background-color: $color-white;
+  }
+
+  .textBox p {
+    color: $color-white !important;
+  }
+
+  .bg_icon_wrapper {
+    .bg_icon {
+      color: $color-purple-f;
+    }
+  }
+}
+
+.white {
+  color: $color-black;
+  background-color: $color-white;
+
+  .icon_wrapper {
+    background-color: $color-light-pink;
+  }
+
+  .bg_icon_wrapper {
+    .bg_icon {
+      color: $color-grey-f5;
+    }
+  }
+}

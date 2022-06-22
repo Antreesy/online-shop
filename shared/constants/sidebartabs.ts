@@ -4,7 +4,7 @@ export const sidebarTabs: LabelType[][] = [
   // FOR ANONYM USER
   [],
   [
-    { link: "/account/add-product", text: "add-product", icon: "price_tag" },
+    { link: "/account/add-product", text: "addProduct", icon: "price_tag" },
     { link: "/account/profile", text: "profile", icon: "account" },
     { link: "/account/address", text: "address", icon: "location" },
     {
@@ -13,7 +13,7 @@ export const sidebarTabs: LabelType[][] = [
       icon: "bell_filled",
     },
     { link: "/account/help", text: "help", icon: "question" },
-    { link: "/account/signout", text: "signout", icon: "out_sign" },
+    { link: "/account/signout", text: "signOut", icon: "out_sign" },
   ],
   [
     { link: "/account/profile", text: "profile", icon: "account" },
@@ -27,7 +27,7 @@ export const sidebarTabs: LabelType[][] = [
     },
     { link: "/account/favorites", text: "favorites", icon: "heart" },
     { link: "/account/help", text: "help", icon: "question" },
-    { link: "/account/signout", text: "signout", icon: "out_sign" },
+    { link: "/account/signout", text: "signOut", icon: "out_sign" },
   ],
   [
     { link: "/account/profile", text: "profile", icon: "account" },
@@ -40,6 +40,6 @@ export const sidebarTabs: LabelType[][] = [
     },
     { link: "/account/dashboard", text: "dashboard", icon: "dashboard" },
     { link: "/account/help", text: "help", icon: "question" },
-    { link: "/account/signout", text: "signout", icon: "out_sign" },
+    { link: "/account/signout", text: "signOut", icon: "out_sign" },
   ],
 ]

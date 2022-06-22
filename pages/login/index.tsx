@@ -4,7 +4,7 @@ import SignUp from "views/login/SignUp"
 import SignIn from "views/login/SignIn"
 import { Tabs } from "UI"
 
-import s from "styles/pages/Login.module.scss"
+import s from "styles/pages/login.module.scss"
 
 const Login: NextPage = () => {
   return (

@@ -1,136 +1,131 @@
 @import "styles/style.scss";
 
-
 .add_product_brand {
-    max-width: 1170px;
+  max-width: 1170px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px 20px;
+  @include mobile {
+    justify-content: center;
+    gap: 45px 0;
+  }
+  @include tablet {
+    justify-content: center;
+    gap: 65px 0;
+  }
+  @include laptop {
+    justify-content: center;
+    gap: 70px 0;
+  }
+
+  .input {
+    width: 575px;
+    height: 86px;
+    @include mobile {
+      width: 100%;
+      height: 50px;
+    }
+    @include tablet {
+      width: 100%;
+      height: 65px;
+    }
+    @include laptop {
+      width: 100%;
+      height: 73px;
+    }
+  }
+  .input_large {
+    width: 100%;
+    height: 237px;
+  }
+  .input_medium {
+    width: 100%;
+    height: 86px;
+  }
+  .button_black_down {
+    background: $color-black;
+    color: $color-white;
+    width: 293px;
+    height: 55px;
+    &:hover {
+      background-color: $color-purple-a20;
+    }
+  }
+  .upload_img {
+    width: 575px;
+    height: 442px;
+    padding: 40px 25px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 7px;
+    box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 8%);
+    @include mobile {
+      width: 100%;
+    }
+    @include tablet {
+      width: 100%;
+    }
+    @include laptop {
+      width: 100%;
+    }
+    h2 {
+      width: 100%;
+      font-size: 21px;
+      text-align: center;
+    }
+    &_upload {
+      width: 100%;
+      height: 147px;
+      border-radius: 7px;
+      font-size: 17px;
+    }
+    .file_gallery {
+      width: 100%;
+      display: flex;
+      gap: 0px 20px;
+      .upload_img_gallery {
+        border-radius: 7px;
+        width: 33%;
+        height: 147px;
+        font-size: 11px;
+      }
+    }
+
+    p {
+      font-size: 11px;
+      span {
+        font-size: 11px;
+        color: $color-purple;
+      }
+    }
+    .button_black {
+      background: $color-black;
+      color: $color-white;
+      width: 100%;
+      &:hover {
+        background-color: $color-purple-a20;
+      }
+    }
+  }
+  .article {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 80px 20px;
-    @include mobile {
-        justify-content: center;
-        gap: 45px 0;
+    h1 {
+      width: 100%;
+      font-weight: $fw-bold;
+      margin-bottom: 21px;
+      font-size: 25px;
     }
-    @include tablet {
-        justify-content: center;
-        gap: 65px 0;
-    }
-    @include laptop {
-        justify-content: center;
-        gap: 70px 0;
-    }
-
-    .input {
-        width: 575px;
-        height: 86px;
-        @include mobile {
-            width: 100%;
-            height: 50px;
-        }
-        @include tablet {
-            width: 100%;
-            height: 65px;
-        }
-        @include laptop {
-            width: 100%;
-            height: 73px;
-        }
-
-
-    }
-    .input_large {
-        width: 100%;
-        height: 237px;
-    }
-    .input_medium {
-        width: 100%;
-        height: 86px;
-    }
-    .button_black_down{
-        background: $color-black;
-        color: $color-white;
-        width: 293px;
-        height: 55px;
-        &:hover {
-          background-color: $color-purple-a20;
-        }
-      }
-    .upload_img {
-        width: 575px;
-        height: 442px;
-        padding: 40px 25px;
-        display: flex;
-        flex-wrap: wrap;
-        border: 7px;
-        box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 8%);
-        @include mobile {
-            width: 100%;
-        }
-        @include tablet {
-            width: 100%;
-        }
-        @include laptop {
-            width: 100%;
-        }
-        h2 {
-            width: 100%;
-            font-size: 21px;
-            text-align: center;
-        }
-        &_upload {
-            width: 100%;
-            height: 147px;
-            border-radius: 7px;
-            font-size: 17px;
-        }
-        .file_gallery {
-            width: 100%;
-            display: flex;
-            gap: 0px 20px;
-            .upload_img_gallery {
-                border-radius: 7px;
-                width: 33%;
-                height: 147px;
-                font-size: 11px;
-            }
-        }
-
-        p{
-            font-size: 11px;
-            span{
-                font-size: 11px;
-                color: $color-purple;
-            }
-        }
-        .button_black{
-            background: $color-black;
-            color: $color-white;
-            width: 100%;
-            &:hover {
-              background-color: $color-purple-a20;
-            }
-          }
-    }
-    .article{
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-    h1{
-        width: 100%;
-        font-weight: $fw-bold;
-        margin-bottom: 21px;
-        font-size: 25px;
-    }
-    p{
+    p {
+      font-size: 15px;
+      width: 100%;
+      a {
         font-size: 15px;
-        width: 100%;
-        a {
-            font-size: 15px;
-            cursor: pointer;
-            color: $color-purple;
-        }
+        cursor: pointer;
+        color: $color-purple;
+      }
     }
-
-    }
+  }
 }
-

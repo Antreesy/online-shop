@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { useRouter } from "next/router"
+// import { useEffect } from "react"
+// import { useRouter } from "next/router"
 import cn from "classnames"
 
 import { Pagination, PaginationItem } from "@mui/material"
@@ -10,14 +11,23 @@ interface PaginationProps {
   className?: string
   pagesCount: number
   isShort?: boolean
-  onChange?: () => void
+  onChange?: (page: number) => void
+  value?: number
 }
 
 const CustomPagination: React.FC<PaginationProps> = (props) => {
-  const { className, pagesCount, isShort, onChange } = props
-  const router = useRouter()
+  const { className, pagesCount, isShort, onChange, value = 1 } = props
+  const [page, setPage] = useState<number>(value)
 
-  const [page, setPage] = useState<number>(1)
+  // TODO fix Next.js routing problem with query
+  // const router = useRouter()
+  // useEffect(() => {
+  //   if (page === 1) return
+  //   router.replace({
+  //     pathname: router.pathname,
+  //     query: { page: page },
+  //   })
+  // }, [page])
 
   const paginationClass = cn(s.pagination_wrapper, className)
 
@@ -27,9 +37,8 @@ const CustomPagination: React.FC<PaginationProps> = (props) => {
   const lastElement = () => <>&gt;&gt;</>
 
   const handleChange = (event: React.ChangeEvent<unknown>, page: number) => {
-    router.push(`${router.pathname}/?page=${page}`)
     setPage(page)
-    onChange?.()
+    onChange?.(page)
   }
 
   return (

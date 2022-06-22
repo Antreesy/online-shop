@@ -19,7 +19,10 @@ export const BrandAddress: React.FC<AddressProps> = (props) => {
 
   return (
     <>
-      <SectionHeader className={s.header_info} title={t("title")} />
+      <SectionHeader
+        className={s.header_info}
+        title={t("myAddressInformation")}
+      />
 
       <div className={s.address_wrapper}>
         {Boolean(addresses.length) &&
@@ -34,10 +37,10 @@ export const BrandAddress: React.FC<AddressProps> = (props) => {
 
       <div className={s.button_wrapper}>
         {addresses.length ? (
-          <AddButton title={t("Add New Address")} onClick={handleOpen} />
+          <AddButton title={t("addNewAddress")} onClick={handleOpen} />
         ) : (
           <AddButton
-            title={t("Add New Address")}
+            title={t("addNewAddress")}
             color="secondary"
             bgColor="white"
             large

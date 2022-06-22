@@ -1,17 +1,15 @@
-import React from "react"
-import { styled } from "@mui/material/styles"
-import Stack from "@mui/material/Stack"
-import Stepper from "@mui/material/Stepper"
-import Step from "@mui/material/Step"
-import StepLabel from "@mui/material/StepLabel"
-import StepConnector, {
+import {
+  Stack,
+  Stepper,
+  Step,
+  StepConnector,
   stepConnectorClasses,
-} from "@mui/material/StepConnector"
-import { StepIconProps } from "@mui/material/StepIcon"
+  StepLabel,
+  styled,
+  StepIconProps,
+} from "@mui/material"
 
-import s from "./progressBar.module.scss"
-
-interface ProgressBarProps {
+interface ProgressbarProps {
   steps: number[]
   currentStep: number
 }
@@ -84,7 +82,7 @@ function ColorlibStepIcon(props: StepIconProps) {
   )
 }
 
-const ProgressBar: React.FC<ProgressBarProps> = (props) => {
+const Progressbar: React.FC<ProgressbarProps> = (props) => {
   const { currentStep, steps } = props
 
   return (
@@ -104,4 +102,4 @@ const ProgressBar: React.FC<ProgressBarProps> = (props) => {
   )
 }
 
-export default ProgressBar
+export default Progressbar

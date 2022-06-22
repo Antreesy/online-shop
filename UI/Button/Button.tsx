@@ -1,16 +1,13 @@
-//Global Dependencies
 import React from "react"
 import cn from "classnames"
 
-//Project Components
 import { Button } from "@mui/material"
 import { Icon } from "UI"
 import { IconType } from "shared/interfaces/iconTypes"
-//Project Styles
-import s from "./Button.module.scss"
 
-//Local Interfaces
-interface ButtonProps {
+import s from "./button.module.scss"
+
+export interface ButtonProps {
   className?: string
   disabled?: boolean
   icon?: boolean

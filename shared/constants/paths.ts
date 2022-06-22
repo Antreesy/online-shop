@@ -1,10 +1,19 @@
-export const profilePaths = ["faq", "account"]
+export const profilePaths = ["account", "tables"]
 export const lightPaths = ["login", "register"]
-export const basePaths = [
-  "order-success",
-  "influencers",
-  "components-example",
-  "payment",
+export const commonPaths = [
   "brands",
+  "brand-information",
+  "components-example",
+  "influencers",
+  "order-cart",
+  "order-page",
+  "order-success",
+  "product",
+]
+export const commonWithBcPaths = [
   "brand-landing",
+  "order-info",
+  "product-info",
+  "visual-operations",
+  "modals-example",
 ]

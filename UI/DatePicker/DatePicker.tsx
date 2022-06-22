@@ -27,7 +27,7 @@ const DateInput: React.FC<DatePickerProps> = (props) => {
     onChange(date)
   }
 
-  const datePickerClass = cn(s.datePicker, className)
+  const datePickerClass = cn(s.date_picker, className)
 
   return (
     <LocalizationProvider dateAdapter={DateAdapter} locale={enLocale}>

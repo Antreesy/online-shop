@@ -1,8 +1,8 @@
 import { NextPage } from "next"
-import Head from "next/head"
+import { useRouter } from "next/router"
 
-import { Grid } from "@mui/material"
-import { Background, Breadcrumbs, ProductItem } from "Сomponents"
+import Head from "next/head"
+import { Background, Breadcrumbs, ProductItemList } from "Сomponents"
 import { Pagination } from "UI"
 
 import s from "styles/pages/brands/brands.module.scss"
@@ -10,10 +10,13 @@ import picture from "public/assets/img/Prada.png"
 import { brandProductItems } from "shared/constants/brandProductItem"
 
 const brand: NextPage = () => {
+  const router = useRouter()
+  const { brandId } = router.query
+
   return (
     <>
       <Head>
-        <title>ILONSI SHOP | Influencers</title>
+        <title>ILONSI SHOP | Brand {brandId}</title>
       </Head>
 
       <main className={s.main}>
@@ -53,22 +56,16 @@ const brand: NextPage = () => {
         </section>
 
         <div className={s.brands_container}>
-          <Grid container spacing={2} justifyContent="center">
-            {brandProductItems.map((item) => (
-              <Grid
-                item
-                key={item.id}
-                xs={6}
-                sm={6}
-                md={4}
-                lg={3}
-                xl={2}
-                justifyContent="space-between"
-              >
-                <ProductItem {...item} />
-              </Grid>
-            ))}
-          </Grid>
+          <ProductItemList
+            productItemList={brandProductItems}
+            justifyContent="center"
+            xs={6}
+            sm={6}
+            md={4}
+            lg={3}
+            xl={2}
+          />
+
           <Pagination className={s.pagination} pagesCount={4} isShort />
         </div>
       </main>

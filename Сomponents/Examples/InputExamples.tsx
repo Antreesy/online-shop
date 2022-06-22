@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Input } from "UI"
 
-import s from "styles/pages/ComponentsExample.module.scss"
+import s from "styles/pages/components-example.module.scss"
 
 const InputExamples: React.FC = () => {
   const [inputValue, setInputValue] = useState<string>("")

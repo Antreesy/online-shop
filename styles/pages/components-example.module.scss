@@ -1,0 +1,258 @@
+@import "styles/style.scss";
+
+.container {
+  @include container;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  padding-top: $header-desktop-height;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 42px;
+
+  @include mobile {
+    padding-top: $header-mobile-height;
+  }
+}
+.footer {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.title {
+  margin: 1rem 0;
+  line-height: 1.15;
+  font-size: 4rem;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.description {
+  margin: 1rem 0;
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.grid {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+  gap: 10px;
+
+  @include mobile {
+    width: 100%;
+    flex-direction: column;
+    padding: 1rem 20px;
+  }
+
+  @include tablet {
+    width: 100%;
+    flex-direction: column;
+    padding: 1rem 40px;
+  }
+
+  @include laptop {
+    width: 100%;
+    padding: 1rem 60px;
+  }
+
+  @include desktop {
+    width: 100%;
+    padding: 1rem 80px;
+  }
+}
+
+.grid_column {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 1200px;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+  gap: 10px;
+}
+
+.grid_inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-right: 2rem;
+
+  & > *:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+.button_back,
+.button_add {
+  background: $color-white;
+  color: $color-purple;
+
+  &:hover {
+    background-color: $color-purple-a20;
+  }
+}
+
+.button_clear,
+.button_black {
+  background: $color-black;
+
+  &:hover {
+    background-color: $color-grey-3;
+  }
+}
+
+.button_excel {
+  background: $color-green;
+
+  &:hover {
+    background-color: $color-green-d;
+  }
+}
+
+.button_search,
+.button_purple {
+  background: $color-purple;
+
+  &:hover {
+    background-color: $color-purple-d;
+  }
+}
+
+.button_clean {
+  background: $color-red;
+
+  &:hover {
+    background-color: $color-red-d;
+  }
+}
+
+.button_facebook {
+  color: $color-purple;
+  border-color: $color-purple;
+
+  &:hover {
+    border-color: $color-purple;
+    background-color: $color-purple-a20;
+  }
+}
+
+.button_smalltext {
+  font-size: 13px;
+  font-weight: $fw-regular;
+}
+
+.card_example {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 10px;
+  border: 2px solid $color-black;
+  border-radius: 10px;
+  height: 300px;
+}
+
+.icon_example {
+  width: 20%;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  > div {
+    margin: 5px;
+  }
+}
+
+.accordion_bold_black {
+  width: 400px;
+  font-weight: $fw-bold;
+}
+
+.accordion_header_bold_purple {
+  font-weight: $fw-bold;
+  color: $color-purple;
+}
+
+.black_background {
+  background-color: $color-black;
+}
+
+.dark_accordion {
+  width: 500px;
+  color: $color-grey-c;
+}
+
+.accordion_title_purple {
+  color: $color-purple;
+}
+
+.example_tabs {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.product_item_wrapper {
+  width: 390px;
+}
+
+.cards {
+  display: flex;
+}
+
+.card_big {
+  width: 380px;
+  height: 466px;
+}
+
+.card_small {
+  height: 300px;
+}
+
+.card_hor {
+  width: 655px;
+  height: 367px;
+}
+
+.carousel {
+  margin-top: 30px;
+  width: 1024px;
+}
+
+.addbuttonlist > div {
+  margin-bottom: 30px;
+}
+
+.creditcard {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 900px;
+}

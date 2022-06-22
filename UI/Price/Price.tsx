@@ -12,13 +12,14 @@ const Price: React.FC<PriceProps> = (props) => {
     currencyFirst = false,
     type = "order",
     oldPrice = null,
+    className,
   } = props
 
   const renderPrice = (price: number) =>
     currencyFirst ? `${currency} ${price}` : `${price} ${currency}`
 
   return (
-    <div className={s.price_wrapper}>
+    <div className={cn(s.price_wrapper, className)}>
       {!!oldPrice && (type === "sale" || type === "sale_black") && (
         <div className={s.price}>
           <span className={cn(s.old, s[`old-${type}`])}>

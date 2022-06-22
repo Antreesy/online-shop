@@ -11,12 +11,12 @@ type SizePickerProps = {
 const SizePicker: React.FC<SizePickerProps> = (props) => {
   const { labels } = props
 
-  const BpIcon = () => <span className={s.radioIcon} />
-  const BpCheckedIcon = () => <span className={s.radioIconChecked} />
+  const BpIcon = () => <span className={s.radio_icon} />
+  const BpCheckedIcon = () => <span className={s.radio_icon_checked} />
 
   return (
     <FormControl>
-      <RadioGroup className={s.sizePicker}>
+      <RadioGroup className={s.size_picker}>
         {labels.length ? (
           labels.map((label) => (
             <FormControlLabel
