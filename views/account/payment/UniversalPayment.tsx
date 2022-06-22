@@ -1,6 +1,4 @@
-import { NextPage } from "next"
-import Head from "next/head"
-import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { useTranslation } from "next-i18next"
 
 import { Card } from "@mui/material"
 import { CardForm, SectionHeader } from "Сomponents"
@@ -10,28 +8,12 @@ import { creditcardsData } from "shared/constants/creditcardsData"
 
 import s from "styles/pages/account/payment.module.scss"
 
-export async function getStaticProps({ locale }: { locale: string }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, [
-        "app",
-        "profile",
-        "header",
-        "footer",
-        "sidebar",
-      ])),
-    },
-  }
-}
+export const UniversalPayment: React.FC = () => {
+  const { t } = useTranslation("payment")
 
-const Profile: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>ILONSI SHOP | Account</title>
-      </Head>
-
-      <SectionHeader className={s.title} title={"My Registered Cards"} />
+      <SectionHeader className={s.title} title={t("myRegisteredCards")} />
       <Card className={s.cards}>
         {creditcardsData.map((card) => (
           <CreditCard
@@ -47,10 +29,8 @@ const Profile: NextPage = () => {
           />
         ))}
       </Card>
-      <AddButton title="Add New Card" />
+      <AddButton title={t("addNewCard")} />
       <CardForm />
     </>
   )
 }
-
-export default Profile

@@ -1,5 +1,6 @@
 import cn from "classnames"
 import { useTranslation } from "next-i18next"
+import { useRouter } from "next/router"
 
 import Link from "next/link"
 import { Button, SocialIcon } from "UI"
@@ -20,6 +21,12 @@ export interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ role, withBreadcrumbs }) => {
   const { t } = useTranslation("header")
+  const router = useRouter()
+
+  const handleBasketClick = () => {
+    router.push("/order-cart")
+  }
+
   return (
     <header className={cn(s.header, { [s.with_breadcrumbs]: withBreadcrumbs })}>
       <div className={s.top_group}>
@@ -59,6 +66,7 @@ const Header: React.FC<HeaderProps> = ({ role, withBreadcrumbs }) => {
             className={s.button_basket}
             disableElevation
             iconLeft="basket"
+            onClick={handleBasketClick}
           >
             {t("basket")}
           </Button>
@@ -76,6 +84,7 @@ const Header: React.FC<HeaderProps> = ({ role, withBreadcrumbs }) => {
             variant="outlined"
             disableElevation
             iconLeft="basket"
+            onClick={handleBasketClick}
           />
         </div>
       </div>

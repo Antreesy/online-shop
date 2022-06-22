@@ -7,7 +7,7 @@ import s from "./backButton.module.scss"
 
 const BackButton = () => {
   const router = useRouter()
-  const { t } = useTranslation("productInfo")
+  const { t } = useTranslation("common")
 
   return (
     <Button
@@ -15,7 +15,7 @@ const BackButton = () => {
       onClick={() => router.back()}
       iconLeft="arrow_left"
     >
-      {t("buttonBack")}
+      {t("back")}
     </Button>
   )
 }

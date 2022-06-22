@@ -23,6 +23,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
         "footer",
         "address",
         "order",
+        "payment",
       ])),
     },
   }

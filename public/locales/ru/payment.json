@@ -1,0 +1,8 @@
+{
+  "myRegisteredCards": "Мои зарегистрированные карты",
+  "addNewCard": "Добавить новую карту",
+  "cardNumber": "Номер карты",
+  "nameOnTheCard": "Имя держателя карты",
+  "expirationDate": "Срок действия",
+  "securityInfo": "Защитный код"
+}

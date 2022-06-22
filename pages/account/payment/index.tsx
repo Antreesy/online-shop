@@ -2,7 +2,7 @@ import { NextPage } from "next"
 import Head from "next/head"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
-import { UniversalOrders } from "views/account/orders"
+import { UniversalPayment } from "views/account/payment"
 
 import { Roles } from "shared/enums/roles"
 import { useAppSelector } from "store/hooks"
@@ -17,25 +17,23 @@ export async function getStaticProps({ locale }: { locale: string }) {
         "header",
         "footer",
         "sidebar",
-        "orders",
+        "payment",
       ])),
     },
   }
 }
 
-const Orders: NextPage = () => {
+const Profile: NextPage = () => {
   const role = useAppSelector(authRole)
-
   return (
     <>
       <Head>
         <title>ILONSI SHOP | Account</title>
       </Head>
 
-      {role === Roles.CUSTOMER && <UniversalOrders />}
-      {role === Roles.INFLUENCER && <UniversalOrders />}
+      {role === Roles.CUSTOMER && <UniversalPayment />}
     </>
   )
 }
 
-export default Orders
+export default Profile

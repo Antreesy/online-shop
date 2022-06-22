@@ -3,5 +3,6 @@
   "save": "Save",
   "cancel": "Cancel",
   "apply": "Apply",
-  "goToStore": "Go to store"
+  "goToStore": "Go to store",
+  "back": "Back"
 }
