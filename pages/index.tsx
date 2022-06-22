@@ -24,7 +24,7 @@ const Index: NextPage = () => {
             <Link href="/products-page">
               <a className={s.title__link}>Product List</a>
             </Link>
-            <Link href="/products">
+            <Link href="/product">
               <a className={s.title__link}>Specific Product</a>
             </Link>
             <Link href="/some-wrong-link">

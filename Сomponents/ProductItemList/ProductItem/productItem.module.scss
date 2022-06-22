@@ -65,6 +65,7 @@
     overflow: hidden;
     display: flex;
     width: 100%;
+    cursor: pointer;
 
     @include mobile {
       min-height: 175px;
