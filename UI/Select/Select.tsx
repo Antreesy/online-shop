@@ -1,9 +1,9 @@
-import { useState } from "react"
+import {useState} from "react"
 import SimpleBar from "simplebar-react"
 import cn from "classnames"
 
-import { InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material"
-import { Icon } from "UI"
+import {InputLabel, MenuItem, Select} from "@mui/material"
+import {Icon} from "UI"
 
 import s from "./select.module.scss"
 
@@ -24,6 +24,7 @@ interface SelectProps {
   values: SelectItem[]
   initValue?: string | number
   onChange?: (selected: string | number) => void
+  labelClassName?: string
 }
 
 const CustomSelect: React.FC<SelectProps> = (props) => {
@@ -39,6 +40,7 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
     initValue,
     isError,
     isDisabled,
+    labelClassName
   } = props
 
   const [value, setValue] = useState<string | number>(initValue ?? placeholder)
@@ -51,13 +53,14 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
   const selectClass = cn(s.select, selectClassName)
   const itemClass = cn(s.item, itemClassName)
   const iconClass = cn(s.selectIcon, iconClassName)
+  const labelClass = cn(s.select_label, labelClassName)
 
   const selectIcon = () => <Icon type="arrow_down" className={iconClass} />
 
   return (
     <div className={className}>
       {label && (
-        <InputLabel className={s.select_label} id="select-label">
+        <InputLabel className={labelClass} id="select-label">
           {label}
         </InputLabel>
       )}

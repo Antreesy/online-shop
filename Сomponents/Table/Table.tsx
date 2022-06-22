@@ -26,9 +26,10 @@ type InnerRow = InnerCell[]
 interface TableProps {
   headers: HeaderItem[]
   innerRows: InnerRow[]
+  isControl: boolean
 }
 
-const CustomTable: React.FC<TableProps> = ({ headers, innerRows = [] }) => {
+const CustomTable: React.FC<TableProps> = ({ headers, innerRows = [], isControl = false }) => {
   const [rows, setRows] = useState(innerRows)
   const [rowsPerPage, setRowsPerPage] = useState<string | number>(3)
   const [page, setPage] = useState(1)
@@ -64,7 +65,7 @@ const CustomTable: React.FC<TableProps> = ({ headers, innerRows = [] }) => {
 
   return (
     <div>
-      <div className={s.table__control}>
+      {isControl && <div className={s.table__control}>
         <Select
           className={s.date_select}
           values={[]}
@@ -95,7 +96,7 @@ const CustomTable: React.FC<TableProps> = ({ headers, innerRows = [] }) => {
           value={page}
           onChange={setPage}
         />
-      </div>
+      </div>}
       <SimpleBar className={s.scrollbar} autoHide={false}>
         <Table className={s.table} aria-label="simple table">
           <TableHead className={s.table__header}>

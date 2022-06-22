@@ -138,7 +138,9 @@ const Index: NextPage = (props) => {
             <Link href="/account/payment">
               <a className={s.title__link}>Payment</a>
             </Link>
-            <span className={s.title__miss}>Dashboard (influencer)</span>
+            <Link href="/account/dashboard">
+              <a className={s.title__link}>Dashboard (influencer)</a>
+            </Link>
             <span className={s.title__miss}>Profile (brand)</span>
           </div>
         </div>

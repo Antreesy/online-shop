@@ -1,0 +1,167 @@
+@import "/styles/style.scss";
+
+.header_info {
+  margin-bottom: 50px;
+
+  @include mobile {
+    margin-bottom: 25px;
+  }
+}
+
+.address_wrapper {
+  & > :not(:last-child) {
+    margin-bottom: 25px;
+  }
+}
+
+.button_wrapper {
+  width: 100%;
+  margin-bottom: 50px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
+
+  @include mobile {
+    margin-bottom: 25px;
+  }
+}
+
+.add_address_form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.row {
+  display: flex;
+  align-items: end;
+  gap: 24px;
+
+  div {
+    height: 65px;
+    width: 100%;
+
+    div {
+      width: 100%;
+    }
+  }
+
+  h2 {
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: bold;
+    color: #8100ef;
+    margin-bottom: 16px;
+  }
+}
+
+.row:nth-child(1) {
+  margin-bottom: 94px;
+}
+
+.row:nth-child(3) {
+  display: flex;
+  margin-top: 94px;
+  margin-bottom: 52px;
+
+  div:nth-child(1) {
+    max-width: 359px;
+  }
+
+  div:nth-child(2) {
+    max-width: 508px;
+
+    div:nth-child(1) {
+    }
+
+    div:nth-child(2) {
+      width: 142px;
+      height: 65px !important;
+    }
+  }
+
+  div:nth-child(3) {
+    div {
+      div {
+        width: 361px !important;
+        height: 65px !important;
+      }
+    }
+  }
+}
+
+.select {
+  height: 65px !important;
+}
+
+.button_excel {
+  background: $color-green;
+
+  &:hover {
+    background-color: $color-green-d;
+  }
+}
+
+.table__head {
+  display: flex;
+  justify-content: space-between;
+  height: 53px;
+  margin-bottom: 32px;
+}
+
+.table__head__title {
+  display: flex;
+  align-items: end;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.table__head__results {
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: normal;
+}
+
+.table__head__update {
+  font-size: 13px;
+  line-height: 17px;
+  font-weight: 400;
+}
+
+.select__label {
+  margin-bottom: 16px;
+}
+
+.button_black {
+  background: $color-black;
+
+  &:hover {
+    background-color: $color-grey-3;
+  }
+}
+
+.search_btn {
+  border-radius: 0 4px 4px 0 !important;
+}
+
+.clean_btn {
+  height: 65px !important;
+  width: 360px !important;
+}
+
+.search_block {
+  display: flex;
+
+  input {
+    height: 65px;
+    padding: 0;
+  }
+}
+
+.select_class {
+  height: 100%;
+}
+
+._brand {
+  height: 65px;
+  width: 625px !important;
+}
