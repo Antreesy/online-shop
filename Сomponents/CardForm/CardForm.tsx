@@ -1,10 +1,11 @@
 import { Controller, useForm } from "react-hook-form"
+import { useTranslation } from "next-i18next"
 
 import { Button, CreditCard, Input } from "UI"
+
 import useResize from "shared/hooks/useResize"
 
 import s from "./cardForm.module.scss"
-import {useTranslation} from "next-i18next";
 
 interface CardInfoProps {
   cardNumber: string
@@ -15,7 +16,7 @@ interface CardInfoProps {
 
 const CardForm: React.FC = () => {
   const width = useResize(768)
-  const {t} = useTranslation("payment")
+  const { t } = useTranslation(["payment", "common"])
 
   const {
     handleSubmit,
@@ -175,7 +176,7 @@ const CardForm: React.FC = () => {
           onClick={handleSubmit(onSubmit)}
           className={s.button_desktop}
         >
-          {t("save")}
+          {t("common:save")}
         </Button>
       </div>
 

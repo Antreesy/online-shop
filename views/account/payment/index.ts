@@ -1,4 +1,3 @@
-import {Payment} from "./Payment";
+import { UniversalPayment } from "./UniversalPayment"
 
-
-export {Payment};
+export { UniversalPayment }

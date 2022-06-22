@@ -3,5 +3,6 @@
   "save": "Kaydetmek",
   "cancel": "İptal",
   "apply": "Uygulamak",
-  "goToStore": "Mağazaya git"
+  "goToStore": "Mağazaya git",
+  "back": "Geri"
 }

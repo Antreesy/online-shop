@@ -1,15 +1,19 @@
-import { CardForm, SectionHeader } from "../../../Сomponents"
-import s from "../../../styles/pages/account/payment.module.scss"
-import { Card } from "@mui/material"
-import { creditcardsData } from "../../../shared/constants/creditcardsData"
-import { AddButton, CreditCard } from "../../../UI"
-import {useTranslation} from "next-i18next";
+import { useTranslation } from "next-i18next"
 
-export const Payment: React.FC = () => {
-    const {t} = useTranslation("payment")
+import { Card } from "@mui/material"
+import { CardForm, SectionHeader } from "Сomponents"
+import { AddButton, CreditCard } from "UI"
+
+import { creditcardsData } from "shared/constants/creditcardsData"
+
+import s from "styles/pages/account/payment.module.scss"
+
+export const UniversalPayment: React.FC = () => {
+  const { t } = useTranslation("payment")
+
   return (
     <>
-      <SectionHeader className={s.title} title={t("title")} />
+      <SectionHeader className={s.title} title={t("myRegisteredCards")} />
       <Card className={s.cards}>
         {creditcardsData.map((card) => (
           <CreditCard
@@ -25,7 +29,7 @@ export const Payment: React.FC = () => {
           />
         ))}
       </Card>
-      <AddButton title={t("cardAdd")} />
+      <AddButton title={t("addNewCard")} />
       <CardForm />
     </>
   )

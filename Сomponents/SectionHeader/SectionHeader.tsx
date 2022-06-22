@@ -13,7 +13,6 @@ interface SectionHeaderProps {
 const SectionHeader: React.FC<SectionHeaderProps> = (props) => {
   const { title, actionItem, className, onActionClick, noDecor } = props
 
-  console.log(title)
   const sectionHeaderClass = cn(
     s.section_header,
     { [s.with_decor]: !noDecor },

@@ -1,9 +1,8 @@
 {
-  "title": "My Registered Cards",
-  "cardAdd": "Add New Card",
+  "myRegisteredCards": "My Registered Cards",
+  "addNewCard": "Add new card",
   "cardNumber": "Card number",
   "nameOnTheCard": "Name on the card",
   "expirationDate": "Expiration date",
-  "securityInfo": "Security info",
-  "save": "Save"
+  "securityInfo": "Security info"
 }

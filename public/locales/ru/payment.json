@@ -1,9 +1,8 @@
 {
-  "title": "Мои Зарегистрированные Карточки",
-  "cardAdd": "Добавить Новую Карту",
+  "myRegisteredCards": "Мои зарегистрированные карты",
+  "addNewCard": "Добавить новую карту",
   "cardNumber": "Номер карты",
-  "nameOnTheCard": "Имя на карточке",
-  "expirationDate": "Срок годности",
-  "securityInfo": "Информация о безопасности",
-  "save": "Сохранить"
+  "nameOnTheCard": "Имя держателя карты",
+  "expirationDate": "Срок действия",
+  "securityInfo": "Защитный код"
 }
