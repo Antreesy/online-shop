@@ -94,9 +94,8 @@
 }
 
 .container {
-  max-width: 1780px;
-  width: 100%;
-  margin: 0 auto;
+  @include container;
+  max-width: 1720px;
   background-color: white;
 
   &__content {

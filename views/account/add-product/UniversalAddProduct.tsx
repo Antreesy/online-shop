@@ -1,53 +1,68 @@
 import { useState } from "react"
+import dynamic from "next/dynamic"
 
 import { Button, Progressbar } from "UI"
-import { Step1, Step2, Step3 } from "Сomponents"
+import { BackButton } from "Сomponents"
+import { StepOne, StepThree, StepTwo } from "./Steps"
+
+import { AddProductFormProps } from "./AddProductForm"
+const AddProductForm = dynamic<AddProductFormProps>(() =>
+  import("./").then((module) => module.AddProductForm),
+)
 
 import s from "styles/pages/account/add-product.module.scss"
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface UniversalAddProductProps {}
 
 const UniversalAddProduct = () => {
   const steps = [1, 2, 3]
   const [currentStep, setCurrentStep] = useState<number>(0)
+  const [showForm, setShowForm] = useState<boolean>(false)
+
+  const toggleForm = () => setShowForm((prev) => !prev)
   return (
     <>
-      <section className={s.main}>
-        <div className={s.container}>
-          <div className={s.content}>
-            <Button
-              iconLeft={"arrow_left"}
-              variant={"text"}
-              className={s.button_back}
-            >
-              Back
-            </Button>
-            <div className={s.add_product_header}>
-              <Progressbar steps={steps} currentStep={currentStep} />
-              <div>
-                <h1>Add product</h1>
-                <p>
-                  It is very easy to sell the products in your product list in
-                  bulk on <span>Ilonsi!</span>
-                </p>
-              </div>
-            </div>
+      <div className={s.button_wrapper}>
+        <BackButton />
+        {showForm && (
+          <Button className={s.button_add} onClick={toggleForm}>
+            Bulk Product Add
+          </Button>
+        )}
+      </div>
 
-            <div className={s.steps}>
-              <Step1
-                currentStep={currentStep}
-                setCurrentStep={setCurrentStep}
-              />
-              <Step2
-                currentStep={currentStep}
-                setCurrentStep={setCurrentStep}
-              />
-              <Step3
-                currentStep={currentStep}
-                setCurrentStep={setCurrentStep}
-              />
-            </div>
+      {!showForm ? (
+        <>
+          <div className={s.header}>
+            <Progressbar steps={steps} currentStep={currentStep} />
+            <h2>Add product</h2>
+            <p>
+              It is very easy to sell the products in your product list in bulk
+              on <a>Ilonsi!</a>
+            </p>
           </div>
-        </div>
-      </section>
+          <div className={s.steps_wrapper}>
+            <StepOne
+              currentStep={currentStep}
+              setCurrentStep={setCurrentStep}
+            />
+            <StepTwo
+              currentStep={currentStep}
+              setCurrentStep={setCurrentStep}
+            />
+            <StepThree
+              currentStep={currentStep}
+              setCurrentStep={setCurrentStep}
+            />
+          </div>
+          <Button className={s.button_add} onClick={toggleForm}>
+            Add Single Product
+          </Button>
+        </>
+      ) : (
+        <AddProductForm />
+      )}
     </>
   )
 }

@@ -1,4 +1,4 @@
-import test from "public/test.png"
+import test from "public/assets/img/test.png"
 
 export const images = [
   {

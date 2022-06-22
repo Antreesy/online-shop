@@ -5,12 +5,12 @@ import { StepProps } from "shared/interfaces/stepProps"
 
 import s from "styles/pages/account/add-product.module.scss"
 
-export const Step2: React.FC<StepProps> = (props) => {
+export const StepTwo: React.FC<StepProps> = (props) => {
   const { currentStep, setCurrentStep } = props
   return (
-    <div className={cn(s.step_two, { [s.disabled]: currentStep !== 1 })}>
+    <div className={cn(s.step, { [s.disabled]: currentStep !== 1 })}>
       <div className={s.content}>
-        <h2>To Prepare Excel Download Template</h2>
+        <h3>To Prepare Excel Download Template</h3>
         <div className={s.download}>
           <div className={s.icon}>
             <Icon type="download" />
@@ -32,8 +32,6 @@ export const Step2: React.FC<StepProps> = (props) => {
             </p>
           </div>
         </div>
-      </div>
-      <div className={s.button}>
         <Button
           variant={"contained"}
           className={s.button}

@@ -1,4 +1,3 @@
-import { AddProductBrand } from "./AddProductBrand"
 import { AddressCard } from "./AddressCard"
 import { AddressForm } from "./AddressForm"
 import { BackButton } from "./BackButton"
@@ -25,12 +24,10 @@ import { ProfileSidebar } from "./ProfileSidebar"
 import { ReturnButton } from "./ReturnButton"
 import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
-import { Step1, Step2, Step3 } from "./AddProductSteps"
 import { Table } from "./Table"
 import { Toolbar } from "./Toolbar"
 
 export {
-  AddProductBrand,
   AddressCard,
   AddressForm,
   BackButton,
@@ -59,9 +56,6 @@ export {
   ReturnButton,
   SectionHeader,
   SizePicker,
-  Step1,
-  Step2,
-  Step3,
   Table,
   Toolbar,
 }
