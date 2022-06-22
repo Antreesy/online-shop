@@ -1,0 +1,12 @@
+.aria {
+  // border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+}
+.aria::placeholder {
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
