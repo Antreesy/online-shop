@@ -4,7 +4,7 @@ export const brandProductItems: ProductItemProps[] = [
   {
     title: "Prada",
     subtitle: "Black long sleeve men’s jacket",
-    itemHref: "/products",
+    itemHref: "/product",
     description:
       "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu",
     id: 1,
@@ -18,7 +18,7 @@ export const brandProductItems: ProductItemProps[] = [
   {
     title: "Prada",
     subtitle: "Knitted dress with metallic thread",
-    itemHref: "/products",
+    itemHref: "/product",
     description:
       "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu",
     id: 2,
@@ -32,7 +32,7 @@ export const brandProductItems: ProductItemProps[] = [
   {
     title: "Prada",
     subtitle: "Black long sleeve men’s jacket",
-    itemHref: "/products",
+    itemHref: "/product",
     description:
       "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu",
     id: 3,
@@ -46,7 +46,7 @@ export const brandProductItems: ProductItemProps[] = [
   {
     title: "Prada",
     subtitle: "Knitted dress with metallic thread",
-    itemHref: "/products",
+    itemHref: "/product",
     description:
       "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu",
     id: 4,
@@ -60,7 +60,7 @@ export const brandProductItems: ProductItemProps[] = [
   {
     title: "Prada",
     subtitle: "Black long sleeve men’s jacket",
-    itemHref: "/products",
+    itemHref: "/product",
     description:
       "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu",
     id: 5,
@@ -74,7 +74,7 @@ export const brandProductItems: ProductItemProps[] = [
   {
     title: "Prada",
     subtitle: "Knitted dress with metallic thread",
-    itemHref: "/products",
+    itemHref: "/product",
     description:
       "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu",
     id: 6,
@@ -88,7 +88,7 @@ export const brandProductItems: ProductItemProps[] = [
   {
     title: "Prada",
     subtitle: "Black long sleeve men’s jacket",
-    itemHref: "/products",
+    itemHref: "/product",
     description:
       "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu",
     id: 7,
@@ -102,7 +102,7 @@ export const brandProductItems: ProductItemProps[] = [
   {
     title: "Prada",
     subtitle: "Knitted dress with metallic thread",
-    itemHref: "/products",
+    itemHref: "/product",
     description:
       "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu",
     id: 8,
@@ -116,7 +116,7 @@ export const brandProductItems: ProductItemProps[] = [
   {
     title: "Prada",
     subtitle: "Black long sleeve men’s jacket",
-    itemHref: "/products",
+    itemHref: "/product",
     description:
       "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu",
     id: 9,
@@ -130,7 +130,7 @@ export const brandProductItems: ProductItemProps[] = [
   {
     title: "Prada",
     subtitle: "Knitted dress with metallic thread",
-    itemHref: "/products",
+    itemHref: "/product",
     description:
       "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu",
     id: 10,
@@ -144,7 +144,7 @@ export const brandProductItems: ProductItemProps[] = [
   {
     title: "Prada",
     subtitle: "Black long sleeve men’s jacket",
-    itemHref: "/products",
+    itemHref: "/product",
     description:
       "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu",
     id: 11,
@@ -158,7 +158,7 @@ export const brandProductItems: ProductItemProps[] = [
   {
     title: "Prada",
     subtitle: "Knitted dress with metallic thread",
-    itemHref: "/products",
+    itemHref: "/product",
     description:
       "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu",
     id: 12,
@@ -172,7 +172,7 @@ export const brandProductItems: ProductItemProps[] = [
   {
     title: "Prada",
     subtitle: "Black long sleeve men’s jacket",
-    itemHref: "/products",
+    itemHref: "/product",
     description:
       "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu",
     id: 13,
@@ -186,7 +186,7 @@ export const brandProductItems: ProductItemProps[] = [
   {
     title: "Prada",
     subtitle: "Knitted dress with metallic thread",
-    itemHref: "/products",
+    itemHref: "/product",
     description:
       "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu",
     id: 14,
@@ -200,7 +200,7 @@ export const brandProductItems: ProductItemProps[] = [
   {
     title: "Prada",
     subtitle: "Black long sleeve men’s jacket",
-    itemHref: "/products",
+    itemHref: "/product",
     description:
       "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu",
     id: 15,
@@ -214,7 +214,7 @@ export const brandProductItems: ProductItemProps[] = [
   {
     title: "Prada",
     subtitle: "Knitted dress with metallic thread",
-    itemHref: "/products",
+    itemHref: "/product",
     description:
       "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu",
     id: 16,
@@ -228,7 +228,7 @@ export const brandProductItems: ProductItemProps[] = [
   {
     title: "Prada",
     subtitle: "Black long sleeve men’s jacket",
-    itemHref: "/products",
+    itemHref: "/product",
     description:
       "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu",
     id: 17,
@@ -242,7 +242,7 @@ export const brandProductItems: ProductItemProps[] = [
   {
     title: "Prada",
     subtitle: "Knitted dress with metallic thread",
-    itemHref: "/products",
+    itemHref: "/product",
     description:
       "Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu",
     id: 18,
