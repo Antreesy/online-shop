@@ -4,22 +4,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 50px;
   padding: 40px 0;
   background-color: $color-white;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
-
-  span {
-    font-weight: $fw-semibold;
-  }
-
-  margin-bottom: 50px;
+  font-weight: $fw-semibold;
 }
 
 .button {
+  margin-right: 10px;
+  width: 70px;
+
   border-radius: 100%;
   background: $color-white;
   color: $color-purple;
-  margin-right: 10px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
-  width: 70px;
 }
