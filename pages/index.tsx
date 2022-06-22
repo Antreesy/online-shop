@@ -6,7 +6,6 @@ import Link from "next/link"
 import s from "styles/pages/index.module.scss"
 
 const Index: NextPage = () => {
-
   return (
     <>
       <Head>

@@ -9,7 +9,9 @@
 }
 
 .container {
-  padding: 50px 0;
+  @include container;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .heading {

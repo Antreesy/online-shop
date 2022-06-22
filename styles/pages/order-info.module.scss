@@ -1,8 +1,9 @@
 @import "/styles/style.scss";
 
 .container {
-  width: 100%;
-  padding: 50px 0;
+  @include container;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .button_wrapper {
@@ -111,7 +112,6 @@
   @include mobile-laptop {
     margin: 0;
     height: 2px;
-    @include fullwidth-in-container;
     transform: none;
   }
 }

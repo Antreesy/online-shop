@@ -40,7 +40,6 @@ const Products: NextPage = () => {
   return (
     <>
       <Background
-        className={s.fallback}
         image={bg}
         description={
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, ut velit officia."
@@ -49,6 +48,7 @@ const Products: NextPage = () => {
         link={"some-link"}
         actionText={"button"}
       />
+
       <div className={s.container}>
         <ReturnButton />
         <div className={s.productsSection}>

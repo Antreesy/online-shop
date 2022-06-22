@@ -8,8 +8,7 @@ export const commonPaths = [
   "order-cart",
   "order-page",
   "order-success",
-  "payment",
-  "products",
+  "product",
 ]
 export const commonWithBcPaths = [
   "brand-landing",

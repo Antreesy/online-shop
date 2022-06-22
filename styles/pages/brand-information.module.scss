@@ -1,5 +1,10 @@
 @import "styles/style.scss";
 
+.container {
+  @include container;
+  max-width: 1720px;
+}
+
 .heading {
   font-size: 38px;
   font-weight: 500;
@@ -197,8 +202,6 @@
   padding-top: 60px;
   padding-bottom: 60px;
   margin-bottom: 145px;
-  @include fullwidth-in-container;
-  @include container-padding;
 }
 
 .firstLineInputs,

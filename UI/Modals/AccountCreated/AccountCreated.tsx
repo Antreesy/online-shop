@@ -20,7 +20,9 @@ export const AccountCreated: React.FC<AccountCreatedProps> = ({
     <>
       <p className={s.title}>{t("memberTitle")}</p>
       <p className={s.content}>{t("memberContent")}</p>
-      <Button onClick={onClick} className={s.button}>{t("memberButton")}</Button>
+      <Button onClick={onClick} className={s.button}>
+        {t("memberButton")}
+      </Button>
     </>
   )
 }
