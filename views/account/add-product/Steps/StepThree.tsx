@@ -6,16 +6,17 @@ import { StepProps } from "shared/interfaces/stepProps"
 
 import s from "styles/pages/account/add-product.module.scss"
 
-export const Step3: React.FC<StepProps> = (props) => {
+export const StepThree: React.FC<StepProps> = (props) => {
   const [file, setFile] = useState<File>()
   const { currentStep, setCurrentStep } = props
   return (
-    <div className={cn(s.step_three, { [s.disabled]: currentStep !== 2 })}>
+    <div className={cn(s.step, { [s.disabled]: currentStep !== 2 })}>
       <div className={s.content}>
-        <h2>
+        <h3>
           Your Excel <br /> Upload to System
-        </h2>
+        </h3>
         <Select
+          className={s.select}
           placeholder={"Select Download Type"}
           values={[
             { title: "one", value: 1 },
@@ -39,8 +40,6 @@ export const Step3: React.FC<StepProps> = (props) => {
           </div>
           The file template you want to upload must match the upload type.
         </div>
-      </div>
-      <div className={s.button}>
         <Button
           variant={"contained"}
           className={s.button}

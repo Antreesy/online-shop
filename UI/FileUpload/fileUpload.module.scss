@@ -24,3 +24,60 @@
   font-weight: $fw-medium;
   color: $color-red;
 }
+
+.label {
+  color: $color-purple;
+  font-size: 1em;
+  font-weight: $fw-bold;
+  margin-bottom: 5px;
+}
+
+.image_upload {
+  width: 100%;
+  min-height: 440px;
+  padding: 40px 25px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 7px;
+  box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 8%);
+  @include mobile-laptop {
+    width: 100%;
+    padding: 25px 10px;
+  }
+
+  .caption {
+    width: 100%;
+    font-size: 21px;
+    text-align: center;
+  }
+
+  .wrapper {
+    width: 100%;
+    display: flex;
+    gap: 0px 20px;
+
+    .uploader {
+      border-radius: 7px;
+      height: 147px;
+      font-size: 11px;
+    }
+  }
+
+  .text {
+    font-size: 11px;
+    a {
+      font-weight: $fw-bold;
+      color: $color-purple;
+    }
+  }
+
+  .button {
+    width: 100%;
+    background: $color-black;
+    color: $color-white;
+
+    &:hover {
+      background: $color-purple-a20;
+    }
+  }
+}

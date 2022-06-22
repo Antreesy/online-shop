@@ -8,7 +8,7 @@ import { CheckboxGroup } from "./CheckboxGroup"
 import { CreditCard } from "./CreditCard"
 import { DatePicker } from "./DatePicker"
 import { FileSelect } from "./FileSelect"
-import { FileUpload } from "./FileUpload"
+import { FileUpload, ImageUpload } from "./FileUpload"
 import { Icon } from "./Icon"
 import { Input } from "./Input"
 import { ItemCounter } from "./ItemCounter"
@@ -38,6 +38,7 @@ export {
   FileSelect,
   FileUpload,
   Icon,
+  ImageUpload,
   Input,
   ItemCounter,
   ModalWindow,

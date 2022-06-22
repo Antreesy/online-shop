@@ -1,65 +1,130 @@
 @import "/styles/style.scss";
 
-.container {
+.button_wrapper {
+  margin-bottom: 40px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: space-between;
 }
 
-.steps {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 60px;
-  justify-content: center;
+.button_add {
+  border-color: transparent;
+  background: $color-white;
+  color: $color-purple;
+
+  &:hover {
+    border-color: transparent;
+    background-color: $color-purple-a20;
+  }
 }
 
-.step_one,
-.step_two,
-.step_three {
+.header {
+  margin-bottom: 40px;
+  color: $color-black;
+
+  @include mobile {
+    margin-bottom: 30px;
+  }
+
+  & > div {
+    margin-bottom: 40px;
+
+    @include mobile {
+      margin-bottom: 30px;
+    }
+  }
+
+  & > h2 {
+    margin-bottom: 20px;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+
+    @include mobile {
+      margin-bottom: 15px;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+
+  & > p {
+    font-size: 15px;
+    font-weight: $fw-regular;
+    line-height: 18px;
+    text-align: center;
+
+    @include mobile {
+      font-size: 9px;
+    }
+  }
+
+  & a {
+    color: $color-purple;
+    font-weight: $fw-bold;
+  }
+}
+
+.form_wrapper {
+  max-width: 1170px;
+
+  & > .header {
+    & > h2,
+    & > p {
+      text-align: left;
+    }
+  }
+}
+
+.steps_wrapper {
+  display: flex;
+  gap: 75px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+// STEPS
+
+.step {
   box-shadow: 0 0 10px $color-grey-de;
-  padding: 20px;
-  width: 300px;
+  padding: 36px 24px;
+  width: 30%;
   border-radius: 10px;
   height: 530px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: left;
   .content {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     gap: 10px;
-    height: 450px;
-    h2 {
+    height: 100%;
+
+    h3 {
+      width: 80%;
+      font-size: 20px;
       text-align: center;
     }
-    .input {
-      width: 260px;
-    }
+  }
+  @include mobile-laptop {
+    max-width: 350px;
+    width: 100%;
   }
 }
 
 .disabled {
   color: $color-black-a20;
-  .exclamation {
-    .icon {
-      color: $color-red-a40;
-    }
+  .exclamation .icon {
+    color: $color-red-a40;
   }
 
-  .download {
-    .icon {
-      color: $color-purple-a40;
-    }
+  .download .icon {
+    color: $color-purple-a40;
   }
 
-  .select_disabled {
-    div {
-      color: $color-black-a40;
-    }
+  .select_disabled div {
+    color: $color-black-a40;
+  }
+
+  @include mobile-laptop {
+    display: none;
   }
 }
 
@@ -82,11 +147,14 @@
   }
 }
 
-.input {
+.input,
+.select {
+  width: 100%;
   height: 40px;
 }
 
 .button {
+  margin-top: auto;
   width: 260px;
   background: $color-black;
   border-radius: 5px;
@@ -95,9 +163,11 @@
     color: $color-black-a60;
   }
 }
+
 .download {
   display: flex;
   gap: 5px;
+  width: 100%;
   .icon {
     color: $color-purple;
   }
@@ -107,18 +177,58 @@
   }
 }
 
-.button_back {
-  box-shadow: 0 0 10px $color-grey-de;
-  color: $color-purple;
-}
+// FORM
 
-.add_product_header {
+.form {
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  margin: 40px 0;
-  span {
-    color: $color-purple;
-    font-weight: $fw-bold;
+  align-items: center;
+  gap: 80px;
+
+  @include mobile-tablet {
+    gap: 40px;
+  }
+}
+
+.form_row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+
+  @include mobile-tablet {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  @include mobile {
+    & > label {
+      font-size: 12px;
+      font-weight: $fw-bold;
+      line-height: 1.17;
+    }
+  }
+}
+
+.input,
+.select {
+  height: 56px;
+  width: 100%;
+
+  &.large {
+    max-width: 1170px;
+  }
+}
+
+.button_submit {
+  max-width: 240px;
+  width: 100%;
+  height: 55px;
+  align-self: flex-start;
+  background: $color-black;
+  color: $color-white;
+
+  &:hover {
+    background: $color-purple-a20;
   }
 }
