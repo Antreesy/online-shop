@@ -6,13 +6,13 @@ import { StepProps } from "shared/interfaces/stepProps"
 
 import s from "styles/pages/account/add-product.module.scss"
 
-export const Step1: React.FC<StepProps> = (props) => {
+export const StepOne: React.FC<StepProps> = (props) => {
   const [value, setValue] = useState<string>("")
   const { currentStep, setCurrentStep } = props
   return (
-    <div className={cn(s.step_one, { [s.disabled]: currentStep !== 0 })}>
+    <div className={cn(s.step, { [s.disabled]: currentStep !== 0 })}>
       <div className={s.content}>
-        <h2>Define Your Brand</h2>
+        <h3>Define Your Brand</h3>
         <div className={s.quote}>
           You must enter the brand name of the product you want to upload in the
           brand column of the product entry excel!
@@ -34,8 +34,6 @@ export const Step1: React.FC<StepProps> = (props) => {
           You need to search if your brand is in the system. If the brand you
           are looking for is not found in the system, you can define your brand.
         </div>
-      </div>
-      <div className={s.button}>
         <Button
           variant={"contained"}
           className={s.button}

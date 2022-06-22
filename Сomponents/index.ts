@@ -19,12 +19,11 @@ import { OrderList } from "./OrderList"
 import { OrderStatusButton } from "./OrderStatusButton"
 import { OrderSummary } from "./OrderSummary"
 import { PhotoSlider } from "./PhotoSlider"
-import { ReturnButton } from "./ReturnButton"
 import { ProductItem, ProductItemList } from "./ProductItemList"
 import { ProfileSidebar } from "./ProfileSidebar"
+import { ReturnButton } from "./ReturnButton"
 import { SectionHeader } from "./SectionHeader"
 import { SizePicker } from "./SizePicker"
-import { Step1, Step2, Step3 } from "./AddProductSteps"
 import { Table } from "./Table"
 import { Toolbar } from "./Toolbar"
 
@@ -51,15 +50,12 @@ export {
   OrderStatusButton,
   OrderSummary,
   PhotoSlider,
-  ReturnButton,
   ProductItem,
   ProductItemList,
   ProfileSidebar,
+  ReturnButton,
   SectionHeader,
   SizePicker,
-  Step1,
-  Step2,
-  Step3,
   Table,
   Toolbar,
 }
