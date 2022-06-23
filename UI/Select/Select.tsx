@@ -21,6 +21,7 @@ interface SelectProps {
   values: SelectItem[]
   initValue?: string | number
   onChange?: (selected: string | number) => void
+  labelClassName?: string
 }
 
 const CustomSelect: React.FC<SelectProps> = (props) => {
@@ -36,6 +37,7 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
     initValue,
     isError,
     isDisabled,
+    labelClassName,
   } = props
 
   const [value, setValue] = useState<string | number>(initValue ?? placeholder)
@@ -48,13 +50,14 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
   const selectClass = cn(s.select, selectClassName)
   const itemClass = cn(s.item, itemClassName)
   const iconClass = cn(s.select_icon, iconClassName)
+  const labelClass = cn(s.select_label, labelClassName)
 
   const selectIcon = () => <Icon type="arrow_down" className={iconClass} />
 
   return (
     <div className={cn(s.select_wrapper, className)}>
       {label && (
-        <InputLabel className={s.select_label} id="select-label">
+        <InputLabel className={labelClass} id="select-label">
           {label}
         </InputLabel>
       )}
