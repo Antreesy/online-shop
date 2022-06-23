@@ -2,7 +2,12 @@ import { NextPage } from "next"
 import Head from "next/head"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
-import { UniversalOrders } from "views/account/orders"
+import dynamic from "next/dynamic"
+import { UniversalOrdersProps } from "views/account/orders/UniversalOrders"
+
+const UniversalOrders = dynamic<UniversalOrdersProps>(() =>
+  import("views/account/orders").then((module) => module.UniversalOrders),
+)
 
 import { Roles } from "shared/enums/roles"
 import { useAppSelector } from "store/hooks"

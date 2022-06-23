@@ -3,7 +3,7 @@ import { Grid } from "@mui/material"
 import { Card, Pagination } from "UI"
 import s from "styles/pages/favorites.module.scss"
 import { productItems } from "shared/constants/productItems"
-
+export interface UniversalFavoritesProps {}
 const UniversalFavorites: React.FC = () => {
   return (
     <>

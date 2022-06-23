@@ -34,6 +34,8 @@ const NotificationsList: React.FC<NotificationListProps> = ({ list }) => (
   </div>
 )
 
+export interface UniversalNotificationsProps {}
+
 const UniversalNotifications: React.FC = () => {
   const { t } = useTranslation("notifications")
   return (

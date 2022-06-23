@@ -6,6 +6,8 @@ import { orderList } from "shared/constants/orderList"
 
 import s from "styles/pages/account/orders.module.scss"
 
+export interface UniversalOrdersProps {}
+
 const UniversalOrders: React.FC = () => {
   const { t } = useTranslation("orders")
   return (

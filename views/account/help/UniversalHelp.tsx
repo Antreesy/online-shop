@@ -8,6 +8,8 @@ import { questions } from "shared/constants/questions"
 
 import s from "styles/pages/account/help.module.scss"
 
+export interface UniversalHelpProps {}
+
 const UniversalHelp: React.FC = () => {
   return (
     <>
