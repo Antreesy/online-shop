@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { LocalizationProvider, DatePicker } from "@mui/lab"
+import  {DatePicker}  from "@mui/x-date-pickers"
+import {LocalizationProvider} from "@mui/x-date-pickers"
 import DateAdapter from "@mui/lab/AdapterDayjs"
 import enLocale from "dayjs/locale/en-gb"
 import cn from "classnames"
@@ -33,7 +34,6 @@ const DateInput: React.FC<DatePickerProps> = (props) => {
     <LocalizationProvider dateAdapter={DateAdapter} locale={enLocale}>
       <DatePicker
         disabled={disabled}
-        clearable={true}
         mask={"__.__.____"}
         inputFormat={"DD.MM.YYYY"}
         value={value}

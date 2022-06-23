@@ -7,23 +7,25 @@ import { Button, DatePicker, Input, Range, Select } from "UI"
 import { Currency } from "shared/enums/currency"
 
 import s from "styles/pages/account/dashboard.module.scss"
+import {useTranslation} from "next-i18next";
 
 export const CategoryBasedTab = () => {
   const [inputValue, setInputValue] = useState<string>("")
+    const { t } = useTranslation("dashboard")
 
   return (
     <div style={{ paddingTop: "47px" }}>
       <div className={s.row}>
         <Select
           values={[]}
-          label={"Select Category"}
+          label={t("selectCategory")}
           selectClassName={s.select}
           labelClassName={s.select__label}
         />
       </div>
       <div className={s.row} style={{ display: "flex" }}>
         <div>
-          <h2>Select Start Date</h2>
+          <h2>{t("selectStartDate")}</h2>
           <DatePicker
             initValue={new Date()}
             onChange={() => {
@@ -32,7 +34,7 @@ export const CategoryBasedTab = () => {
           />
         </div>
         <div>
-          <h2>Select End Date</h2>
+          <h2>{t("selectEndDate")}</h2>
           <DatePicker
             initValue={new Date()}
             onChange={() => {
@@ -41,7 +43,7 @@ export const CategoryBasedTab = () => {
           />
         </div>
         <div>
-          <h2>Price Range</h2>
+          <h2>{t("priceRange")}</h2>
           <Range
             minQuantity={10000}
             maxQuantity={1000000}
@@ -58,15 +60,15 @@ export const CategoryBasedTab = () => {
         <Input
           value={inputValue}
           setValue={setInputValue}
-          placeholder={"Enter the Product Code"}
+          placeholder={t("enterTheProductCode")}
           variant="black_button"
           buttonLabel="Search"
         />
-        <Button className={cn(s.button_black, s.clean_btn)}>Clean</Button>
+        <Button className={cn(s.button_black, s.clean_btn)}>{t("Clean")}</Button>
       </div>
       <div className={s.table__head}>
         <span className={s.table__head__title}>
-          Category Based Sales Statistics
+          {t("categoryBasedSalesStatistics")}
         </span>
         <div style={{ display: "flex" }}>
           <div
@@ -77,14 +79,14 @@ export const CategoryBasedTab = () => {
             }}
           >
             <span className={s.table__head__results}>
-              Filtering Results: Total 112230 Product Information
+              {t("filteringResults")}
             </span>
             <span className={s.table__head__update}>
-              Last Updated: 24.12.2021
+              {t("lastUpdated")}
             </span>
           </div>
           <Button className={s.button_excel} iconLeft="download">
-            Excel Download
+              {t("excelDownload")}
           </Button>
         </div>
       </div>

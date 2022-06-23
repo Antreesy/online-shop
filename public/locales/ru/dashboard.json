@@ -1,19 +1,18 @@
 {
-  "title": "My Dashboard",
-  "Add New Address": "Add New Address",
-  "Add Address": "Add adress",
-  "Address Title": "Addres Title",
-  "Name*": "Name*",
-  "Surname*": "Surname*",
-  "Country Code*": "Country Code*",
-  "Phone Number": "Phone Number",
-  "City*": "City*",
-  "Something": "Something",
-  "Street*": "Street*",
-  "Home": "Home",
-  "Address": "Address",
-  "Company Name": "Company Name",
-  "Tax Number": "Tax Number",
-  "Tax Administration": "Tax Administration",
-  "Save": "Save"
+  "selectCategory": "Выберите категорию",
+  "selectBrand": "Выберите бренд",
+  "selectStartDate": "Выберите дату начала",
+  "selectEndDate": "Выберите дату окончания",
+  "priceRange": "Ценовой диапазон",
+  "enterTheProductCode": "Введите код продукта",
+  "search": "Поиск",
+  "productBasedSalesStatistics": "Статистика продаж на основе продуктов",
+  "Clean": "Сброс",
+  "filteringResults": "Результаты фильтрации: Всего 112230 информации о продукте",
+  "lastUpdated": "Последнее обновление: 24.12.2021",
+  "excelDownload": "Excel Скачать",
+
+  "categoryBasedSalesStatistics": "Статистика продаж по категориям",
+  "brandBasedSalesStatistics": "Статистика продаж на основе бренда"
+
 }

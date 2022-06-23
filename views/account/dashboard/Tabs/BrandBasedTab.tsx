@@ -6,21 +6,23 @@ import { Button, DatePicker, Range, Select } from "UI"
 import { Currency } from "shared/enums/currency"
 
 import s from "styles/pages/account/dashboard.module.scss"
+import {useTranslation} from "next-i18next";
 
 export const BrandBasedTab = () => {
+    const { t } = useTranslation("dashboard")
   return (
     <div style={{ paddingTop: "47px" }}>
       <div className={s.row}>
         <Select
           values={[]}
-          label={"Select Category"}
+          label={t("selectCategory")}
           selectClassName={s.select}
           labelClassName={s.select__label}
         />
       </div>
       <div className={s.row} style={{ display: "flex" }}>
         <div>
-          <h2>Select Start Date</h2>
+          <h2>{t("selectStartDate")}</h2>
           <DatePicker
             initValue={new Date()}
             onChange={() => {
@@ -29,7 +31,7 @@ export const BrandBasedTab = () => {
           />
         </div>
         <div>
-          <h2>Select End Date</h2>
+          <h2>{t("selectEndDate")}</h2>
           <DatePicker
             initValue={new Date()}
             onChange={() => {
@@ -38,7 +40,7 @@ export const BrandBasedTab = () => {
           />
         </div>
         <div>
-          <h2>Price Range</h2>
+          <h2>{t("priceRange")}</h2>
           <Range
             minQuantity={10000}
             maxQuantity={1000000}
@@ -48,15 +50,15 @@ export const BrandBasedTab = () => {
       </div>
       <div className={s.row}>
         <Button variant={"outlined"} className={cn(s.clean_btn, s._brand)}>
-          Clean
+            {t("Clean")}
         </Button>
         <Button className={cn(s.button_black, s.search_btn, s._brand)}>
-          Search
+            {t("search")}
         </Button>
       </div>
       <div className={s.table__head}>
         <span className={s.table__head__title}>
-          Brand Based Sales Statistics
+          {t("brandBasedSalesStatistics")}
         </span>
         <div style={{ display: "flex" }}>
           <div
@@ -67,10 +69,10 @@ export const BrandBasedTab = () => {
             }}
           >
             <span className={s.table__head__results}>
-              Filtering Results: Total 112230 Product Information
+              {t("filteringResults")}
             </span>
             <span className={s.table__head__update}>
-              Last Updated: 24.12.2021
+              {t("lastUpdated")}
             </span>
           </div>
         </div>
