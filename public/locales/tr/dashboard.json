@@ -6,13 +6,13 @@
   "priceRange": "Fiyat Aralığı",
   "enterTheProductCode": "Ürün Kodunu girin",
   "search": "Aramak",
-  "productBasedSalesStatistics": "Ürün Bazlı Satış İstatistikleri",
   "Clean": "Clean",
-  "filteringResults": "Filtreleme Sonuçları: Toplam 112230 Ürün Bilgisi",
-  "lastUpdated": "Son Güncelleme: 24.12.2021",
+  "filteringResults": "Filtreleme Sonuçları: Toplam {{number}} Ürün Bilgisi",
+  "lastUpdated": "Son Güncelleme: {{date}}",
   "excelDownload": "Excel indir",
 
+  "productBasedSalesStatistics": "Ürün Bazlı Satış İstatistikleri",
   "categoryBasedSalesStatistics": "Kategori Bazlı Satış İstatistikleri",
-  "brandBasedSalesStatistics": "Marka Bazlı Satış İstatistikleri"
-
+  "brandBasedSalesStatistics": "Marka Bazlı Satış İstatistikleri",
+  "otherStatistics": "Diğer İstatistikler"
 }

@@ -6,13 +6,14 @@
   "priceRange": "Price Range",
   "enterTheProductCode": "Enter the Product Code",
   "search": "Search",
-  "productBasedSalesStatistics": "Product Based Sales Statistics",
   "Clean": "Clean",
-  "filteringResults": "Filtering Results: Total 112230 Product Information",
-  "lastUpdated": "Last Updated: 24.12.2021",
+  "filteringResults": "Filtering Results: Total {{number}} Product Information",
+  "lastUpdated": "Last Updated: {{date}}",
   "excelDownload": "Excel Download",
 
+  "productBasedSalesStatistics": "Product Based Sales Statistics",
   "categoryBasedSalesStatistics": "Category Based Sales Statistics",
-  "brandBasedSalesStatistics": "Brand Based Sales Statistics"
+  "brandBasedSalesStatistics": "Brand Based Sales Statistics",
+  "otherStatistics": "Other Statistics"
 
 }

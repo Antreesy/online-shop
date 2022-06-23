@@ -6,13 +6,13 @@
   "priceRange": "Ценовой диапазон",
   "enterTheProductCode": "Введите код продукта",
   "search": "Поиск",
-  "productBasedSalesStatistics": "Статистика продаж на основе продуктов",
   "Clean": "Сброс",
-  "filteringResults": "Результаты фильтрации: Всего 112230 информации о продукте",
-  "lastUpdated": "Последнее обновление: 24.12.2021",
+  "filteringResults": "Результаты фильтрации: Всего {{number}} информации о продукте",
+  "lastUpdated": "Последнее обновление: {{date}}",
   "excelDownload": "Excel Скачать",
 
+  "productBasedSalesStatistics": "Статистика продаж по продуктам",
   "categoryBasedSalesStatistics": "Статистика продаж по категориям",
-  "brandBasedSalesStatistics": "Статистика продаж на основе бренда"
-
+  "brandBasedSalesStatistics": "Статистика продаж по брендам",
+  "otherStatistics": "Другая статистика"
 }

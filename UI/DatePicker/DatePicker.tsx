@@ -1,10 +1,9 @@
 import { useState } from "react"
-import  {DatePicker}  from "@mui/x-date-pickers"
-import {LocalizationProvider} from "@mui/x-date-pickers"
 import DateAdapter from "@mui/lab/AdapterDayjs"
 import enLocale from "dayjs/locale/en-gb"
 import cn from "classnames"
 
+import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers"
 import { TextField } from "@mui/material"
 import { Icon } from "UI"
 
@@ -41,7 +40,7 @@ const DateInput: React.FC<DatePickerProps> = (props) => {
         components={{
           OpenPickerIcon: DateIcon,
         }}
-        renderInput={(params) => (
+        renderInput={(params: any) => (
           <TextField
             className={datePickerClass}
             {...params}

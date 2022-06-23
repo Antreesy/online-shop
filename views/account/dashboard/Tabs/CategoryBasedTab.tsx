@@ -19,6 +19,7 @@ export const CategoryBasedTab = () => {
         <Select
           values={[]}
           label={t("selectCategory")}
+          placeholder={t("selectCategory")}
           selectClassName={s.select}
           labelClassName={s.select__label}
         />
@@ -79,10 +80,10 @@ export const CategoryBasedTab = () => {
             }}
           >
             <span className={s.table__head__results}>
-              {t("filteringResults")}
+              {t("filteringResults", {number: "11230"})}
             </span>
             <span className={s.table__head__update}>
-              {t("lastUpdated")}
+              {t("lastUpdated", {date: "24.12.2021"})}
             </span>
           </div>
           <Button className={s.button_excel} iconLeft="download">

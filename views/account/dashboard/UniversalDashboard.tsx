@@ -1,3 +1,5 @@
+import { useTranslation } from "next-i18next"
+
 import { SectionHeader } from "Сomponents"
 import { Tabs } from "UI"
 
@@ -9,6 +11,8 @@ import s from "styles/pages/account/dashboard.module.scss"
 export interface DashboardProps {}
 
 export const UniversalDashboard: React.FC = () => {
+  const { t } = useTranslation("dashboard")
+
   return (
     <>
       <SectionHeader className={s.header_info} title={"My Dashboard"} />
@@ -18,10 +22,10 @@ export const UniversalDashboard: React.FC = () => {
           className={s.notification_tabs}
           variant="spaces"
           labels={[
-            "Product Based Sale Statistics",
-            "Category Based Sale Statistics",
-            "Brand Based Sale Statistics",
-            "Other Statistics",
+            t("productBasedSalesStatistics"),
+            t("categoryBasedSalesStatistics"),
+            t("brandBasedSalesStatistics"),
+            t("otherStatistics"),
           ]}
           values={[
             <ProductBasedTab />,
