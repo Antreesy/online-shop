@@ -1,6 +1,6 @@
 import { Accordion } from "UI"
 
-import s from "styles/pages/ComponentsExample.module.scss"
+import s from "styles/pages/components-example.module.scss"
 
 const AccordionExamples: React.FC = () => (
   <div key={"Accordion"} className={s.grid}>

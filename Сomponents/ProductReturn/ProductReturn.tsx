@@ -1,8 +1,11 @@
 import { Button } from "UI"
 
 import s from "styles/pages/Products.module.scss"
+import { useTranslation } from "next-i18next"
+import React from "react"
 
 const ProductReturn: React.FC = () => {
+  const { t } = useTranslation("product")
   return (
     <div className={s.productsReturn}>
       <Button
@@ -11,7 +14,7 @@ const ProductReturn: React.FC = () => {
         variant="text"
         className={s.productsReturnBtn}
       />
-      <span>Return to Your Shop</span>
+      <span>{t("productsTopButton")}</span>
     </div>
   )
 }

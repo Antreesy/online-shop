@@ -1,0 +1,240 @@
+@import "styles/style.scss";
+
+.container {
+  @include container;
+  max-width: 1720px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  @include mobile-laptop {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.heading {
+  margin-bottom: 23px;
+  font-size: 18px;
+  font-weight: $fw-semibold;
+  line-height: 21px;
+
+  @include mobile {
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+.add_button {
+  margin-bottom: 40px;
+  box-shadow: none;
+  background: $color-grey-f5 !important;
+}
+
+.main {
+  width: 80%;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.aside {
+  min-width: 20%;
+}
+
+.section_delivery {
+  margin-bottom: 60px;
+
+  & form {
+    margin-top: 30px;
+    & > div:nth-child(1) {
+      display: none;
+    }
+
+    & > div:nth-child(6) {
+      display: none;
+    }
+
+    & > button {
+      @include mobile {
+        margin-top: 60px;
+      }
+    }
+  }
+}
+
+.address_cards_wrapper {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  @include mobile-tablet {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  & > div {
+    width: 100%;
+    max-width: 48%;
+
+    &:nth-child(1) {
+      margin-right: 20px;
+    }
+
+    @include mobile-tablet {
+      max-width: none;
+    }
+  }
+}
+
+.address_card {
+  max-width: 659px;
+  width: 100%;
+  height: 190px;
+  position: relative;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
+  background-color: $color-white;
+  border-radius: 5px;
+  margin-top: 20px;
+
+  @include tablet-laptop {
+    max-width: none;
+    width: auto;
+  }
+
+  @include mobile-laptop {
+    max-width: none;
+    width: auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+
+  & > div:nth-child(1) {
+    height: 100%;
+
+    & > div:nth-child(1) {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  & p {
+    line-height: 1.35em;
+  }
+}
+
+.address_header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 23px;
+
+  .heading {
+    margin-bottom: 0;
+    margin-right: auto;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.address_card_checkbox {
+  position: absolute;
+  top: -55px;
+  right: -1.3%;
+
+  & > div:nth-child(1) > label > span:nth-child(2) {
+    margin-top: 4px;
+    margin-left: -4px;
+  }
+
+  @include mobile {
+    left: 0;
+  }
+}
+
+.section_payment {
+  position: relative;
+
+  @include mobile {
+    margin-top: 10px;
+  }
+}
+
+.payment_cards_wrapper {
+  & > div {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 5;
+    margin-top: 30px;
+    padding: 20px 20px;
+
+    & > div {
+      margin: 20px 20px;
+
+      @include mobile-laptop {
+        transform: scale(0.9);
+        height: 170px !important;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.payment_header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 23px;
+
+  .heading {
+    margin-bottom: 0;
+    margin-right: auto;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.form_wrapper {
+  position: relative;
+
+  .address_card_checkbox {
+    top: -10px;
+  }
+
+  .save_btn {
+    position: absolute;
+    bottom: -1px;
+    right: 300px;
+    width: 250px;
+    color: $color-purple;
+    border-color: $color-purple;
+    background-color: $color-white;
+
+    @include tablet {
+      left: 0;
+    }
+
+    @include mobile {
+      bottom: 60px;
+      left: 0;
+      width: 100%;
+    }
+
+    &:hover {
+      border-color: $color-purple;
+      background-color: $color-purple-a20;
+    }
+  }
+}

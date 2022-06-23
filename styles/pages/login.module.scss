@@ -1,0 +1,165 @@
+@import "styles/style.scss";
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  padding-top: $header-desktop-height + 35px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  @include mobile {
+    padding: $header-mobile-height - 25px 35px 32px;
+  }
+}
+
+.wrapper {
+  max-width: 483px;
+  padding: 4px;
+  border-radius: 10px;
+  box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.04);
+  //background-color: white;
+
+  @include mobile {
+    padding: 3px;
+    width: 305px;
+
+    button {
+      height: 45px;
+    }
+  }
+}
+
+.tabs {
+  width: 100%;
+
+  div {
+    button {
+      width: 231px;
+    }
+  }
+
+  @include mobile {
+    div {
+      button {
+        width: 146px;
+      }
+    }
+  }
+}
+
+.form_container {
+  max-width: 361px;
+  margin: 0 auto;
+
+  @include mobile {
+    max-width: 259px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 12px;
+  font-weight: $fw-regular;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.6px;
+  text-align: left;
+  color: $color-grey-a3;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 11px;
+  margin-top: 24px;
+
+  &__signup {
+    margin-bottom: 20px;
+  }
+
+  input {
+    box-sizing: border-box;
+    width: 361px;
+    height: 46px;
+    margin-bottom: 3px;
+  }
+
+  @include mobile {
+    margin-top: 16px;
+    margin-bottom: 23px;
+    gap: 5px;
+
+    input {
+      box-sizing: border-box;
+      width: 261px;
+      height: 40px;
+      margin-bottom: 3px;
+    }
+  }
+}
+
+.text {
+  span {
+    font-size: 12px;
+    font-weight: $fw-regular;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.6px;
+    text-align: left;
+    color: $color-grey-a3;
+  }
+}
+
+.login_text {
+  margin-top: 17px;
+  margin-bottom: 9px;
+
+  @include mobile {
+    margin-bottom: 17px;
+  }
+}
+
+.form_footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 19px 0;
+  font-size: 12px;
+  line-height: 18px;
+  width: 100%;
+
+  @include mobile {
+    padding: 11px 0 23px;
+  }
+}
+
+.btn {
+  height: 55px;
+  min-width: 100%;
+
+  &_facebook {
+    color: $color-purple;
+    border-color: $color-purple;
+    margin: 11px 0 16px 0;
+  }
+
+  &_facebook__signup {
+    margin-bottom: 32px;
+  }
+
+  @include mobile {
+    &_facebook {
+      margin: 16px 0 24px 0;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "orderSummary": "Sipariş Özeti",
+  "useDiscountCoupon": "İndirim kuponunu kullan",
+  "total": "Toplam",
+  "iHaveRead": "Ön Bilgi Formunu ve Mesafeli Satış Sözleşmesini okudum ve onayladım",
+  "completeOrder": "Siparişi Tamamla",
+  "subtotal": "ara toplam",
+  "shippingCost": "Nakliye maliyeti",
+  "discount": "İndirim",
+  "kdv": "KDV",
+
+  "myCart": "Sepetim - {{number}} ürün",
+  "nameOfTheProduct": "Ürünün Adı",
+  "price": "Fiyat",
+  "piece": "parça",
+
+  "deliveryInformation": "Teslimat Bilgileri",
+  "deliveryAddress": "Teslimat adresi",
+  "billingAddress": "Fatura Adresi",
+  "myBillingAddressIsTheSame": "Fatura adresim aynı",
+  "paymentMethods": "Ödeme metodları",
+  "payWithMySavedCards": "Kayıtlı kartlarımla öde",
+  "payWithNewCard": "Yeni kartla öde",
+  "addCard": "Kart ekle",
+
+  "yourOrder": "Sipariş No. {{number}} başarıyla tamamlandı.",
+  "orderNumber": "Sipariş numarası",
+  "orderDate": "Sipariş tarihi",
+  "situation": "Durum",
+  "paymentMethod": "Ödeme yöntemi",
+  "sendingDate": "Gönderim tarihi",
+  "shippingNumber": "Nakliye numarası",
+  "helpline": "Yardım Hattı"
+}

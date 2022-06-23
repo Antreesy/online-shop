@@ -1,5 +1,4 @@
 import type { NextPage } from "next"
-import enot from "../public/enot.jpg"
 
 import Head from "next/head"
 
@@ -19,14 +18,12 @@ import {
   AlertBox,
   Card,
   Carousel,
-  FileUpload,
   Icon,
   ItemCounter,
   Range,
   Price,
   Progressbar,
   SocialIcon,
-  SelectProduct,
   Tabs,
   Tooltip,
 } from "UI"
@@ -36,7 +33,6 @@ import {
   Chart,
   Logo,
   Notification,
-  ProductItem,
   ProductItemList,
   ProfileSidebar,
   SectionHeader,
@@ -51,7 +47,7 @@ import { Currency } from "shared/enums/currency"
 
 import productImage from "public/assets/img/product-img.png"
 
-import s from "styles/pages/ComponentsExample.module.scss"
+import s from "styles/pages/components-example.module.scss"
 
 const longText = `
 Switch an order to preparing status
@@ -98,7 +94,6 @@ const Home: NextPage = () => {
             "Sidebar",
             "Price",
             "Counters",
-            "SelectProduct",
           ]}
           values={[
             <ButtonExamples key={"Buttons"} />,
@@ -159,14 +154,6 @@ const Home: NextPage = () => {
               <ItemCounter initValue={5} />
               <ItemCounter initValue={5} large />
             </div>,
-            <div key={"SelectProduct"}>
-              <SelectProduct
-                imageSrc={enot}
-                imageTitle={"enot.png"}
-                imageSize={"690x680"}
-                date={new Date().toLocaleDateString()}
-              />
-            </div>,
           ]}
         />
         <SectionHeader className={s.title} title={"Components page"} />
@@ -183,7 +170,6 @@ const Home: NextPage = () => {
             "Credit Card",
             "Card",
             "Toolbar",
-            "ProductItem",
             "ProductItemList",
             "Chart",
           ]}
@@ -254,40 +240,6 @@ const Home: NextPage = () => {
 
             <div key={"Toolbar"}>
               <ToolbarExample />
-            </div>,
-
-            <div key={"ProductItem"}>
-              <div className={s.grid}>
-                <ProductItem
-                  title="Yves Saint Laurent"
-                  subtitle="Black long sleeve men’s jacket"
-                  description="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
-                  id={1}
-                  price={{
-                    oldPrice: 2030,
-                    price: 2030,
-                    type: "sale",
-                  }}
-                  imageSrc="/assets/img/T_shirt.png"
-                />
-              </div>
-              <div className={s.grid} style={{ width: 300 }}>
-                <ProductItem
-                  title="Yves Saint Laurent"
-                  subtitle="Black long sleeve men’s jacket"
-                  description="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu"
-                  id={1}
-                  price={{
-                    oldPrice: 2030,
-                    price: 2030,
-                    type: "sale",
-                  }}
-                  imageSrc="/assets/img/T_shirt.png"
-                  isFavorite={false}
-                  onAddClick={() => console.log("onAddClick")}
-                  toggleFavorite={() => console.log("toggleFavorite")}
-                />
-              </div>
             </div>,
 
             <div key="ProductItemLIst" className={s.grid}>

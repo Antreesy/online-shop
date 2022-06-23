@@ -1,9 +1,13 @@
 import type { NextPage } from "next"
+import dynamic from "next/dynamic"
 import { useRouter } from "next/router"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
-import { Button } from "UI"
+import { ButtonProps } from "UI/Button/Button"
+const Button = dynamic<ButtonProps>(() =>
+  import("UI").then((module) => module.Button),
+)
 
 import s from "styles/pages/page-not-found.module.scss"
 

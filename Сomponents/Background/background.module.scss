@@ -1,0 +1,232 @@
+@import "styles/style.scss";
+
+.fallback_item {
+  width: 100%;
+  height: 500px;
+  padding: 50px 72px 25px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+
+  &.no_gradient {
+    background-image: none;
+    color: $color-black;
+    background-color: $color-grey-f4;
+  }
+  &.black_gradient {
+    background-image: linear-gradient(to bottom, $color-black-a0, $color-black);
+    color: $color-white;
+  }
+
+  @include tablet {
+    padding: 50px 30px 25px;
+  }
+
+  @include mobile {
+    padding: 50px 30px 25px;
+  }
+}
+
+.image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  min-width: 100vw;
+  min-height: 100%;
+
+  & img {
+    object-fit: cover;
+  }
+}
+
+.bg_button {
+  display: inline-block;
+  opacity: 0;
+  color: $color-white;
+  border-color: $color-white;
+  cursor: default;
+}
+
+.btn {
+  display: inline-block;
+  align-self: flex-end;
+}
+
+.title_box {
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include mobile {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .title {
+    font-size: 25px;
+    width: max-content;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+
+    @include mobile {
+      margin-bottom: 0;
+    }
+  }
+
+  .link_mobile {
+    font-size: 18px;
+  }
+}
+
+.boxlink_mobile {
+  position: absolute;
+  bottom: 30px;
+  right: 70px;
+
+  @include tablet {
+    position: static;
+  }
+
+  @include mobile {
+    position: static;
+  }
+}
+
+.reverse {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.description {
+  width: 60%;
+  font-size: 16px;
+  line-height: 1.2;
+  padding-right: 10px;
+
+  @include tablet {
+    width: 100%;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.input_editor {
+  border: none;
+  outline: none;
+  background-color: transparent;
+
+  &.no_gradient {
+    color: $color-black;
+  }
+  &.black_gradient {
+    color: $color-white;
+  }
+}
+
+.icon {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+
+  @include mobile {
+    display: block;
+  }
+}
+
+.edit_button {
+  border: none;
+  display: inline-block;
+  color: $color-purple;
+  background: none;
+  box-shadow: none;
+
+  &:hover {
+    background: transparent;
+  }
+}
+
+.area {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.cancel_button {
+  display: block;
+  border: 1px solid gray;
+  background: transparent;
+  border-radius: 5px;
+  color: $color-purple;
+}
+
+.add_button_wrapper {
+  width: 200px;
+  height: 300px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @include tablet {
+    width: 150px;
+    height: 200px;
+  }
+
+  @include mobile {
+    width: 150px;
+    height: 200px;
+  }
+
+  p {
+    color: $color-black;
+    font-size: 20px;
+  }
+
+  .add_button {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 100%;
+    background-color: $color-white;
+    color: $color-purple;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border: 1px solid $color-purple;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(20deg);
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(69, 158, 218);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-20deg);
+  }
+}

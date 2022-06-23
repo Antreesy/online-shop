@@ -3,17 +3,17 @@ export const lightPaths = ["login", "register"]
 export const commonPaths = [
   "brands",
   "brand-information",
-  "brand-landing",
-  "cart",
   "components-example",
   "influencers",
+  "order-cart",
   "order-page",
   "order-success",
-  "payment",
-  "products",
+  "product",
 ]
 export const commonWithBcPaths = [
+  "brand-landing",
   "order-info",
   "product-info",
   "visual-operations",
+  "modals-example",
 ]

@@ -1,0 +1,20 @@
+{
+  "buttonBack": "Back",
+  "productInformation": "Product Information",
+  "productName": "Product Name",
+  "modelCode": "Model Code",
+  "Barcode": "Barcode",
+  "Category": "Category",
+  "approvalStatus": "Approval Status",
+  "stockCode": "Stock Code",
+  "Brand": "Brand",
+  "Exclamation": "Exclamation",
+  "text": "If you enter html content in this field, it will be transferred to the product card in an edited form.",
+  "productFeatures": "Product Features",
+  "Material": "Material",
+  "Form": "Form",
+  "Feature": "Feature",
+  "Size": "Size",
+  "Gender": "Gender",
+  "ageGroup": "Age Group"
+}

@@ -1,3 +1,8 @@
 {
-  "hello": "Text on english"
+  "hello": "Text on english",
+  "save": "Save",
+  "cancel": "Cancel",
+  "apply": "Apply",
+  "goToStore": "Go to store",
+  "back": "Back"
 }

@@ -17,7 +17,7 @@ export type LabelTypeWithContent = LabelType & {
   content?: LabelType[]
 }
 
-interface ProfileSidebarProps {
+export interface ProfileSidebarProps {
   title: string
   labels: LabelTypeWithContent[]
 }
@@ -67,7 +67,7 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = (props) => {
 
   const MenuList = ({ labels }: { labels: LabelTypeWithContent[] }) => {
     return (
-      <div className={s.menuSidebar}>
+      <div className={s.menu_block}>
         {labels.length ? (
           <ul className={s.menu_list}>
             {labels.map((label, index) =>
@@ -87,10 +87,10 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = (props) => {
 
   return (
     <>
-      <div className={s.profileSidebar}>
+      <div className={s.sidebar_wrapper}>
         <div className={s.desktop}>
-          <div className={s.headerSidebar}>
-            <p className={s.sidebar_title}>{title}</p>
+          <div className={s.header_block}>
+            <p className={s.title}>{title}</p>
           </div>
           <MenuList labels={labels} />
         </div>
@@ -99,8 +99,7 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = (props) => {
           <Accordion
             header={title}
             headerCollapsed={<MobileAccordionHeader />}
-            className={s.mobileAccordion}
-            headerClassName={s.sidebar_title}
+            headerClassName={s.title}
             summaryClassName={s.accordion_summary}
             summaryActiveClassName={s.accordion_summary_active}
             iconType="plus"

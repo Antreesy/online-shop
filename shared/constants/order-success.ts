@@ -8,7 +8,7 @@ export const orderSuccess = {
     situation: "New order",
     paymentMethod: "Credit card",
     sendingDate: "17.12.2021",
-    shopingNumber: "XYZ123",
+    shippingNumber: "XYZ123",
     helpline: "0850 222 34 45",
   },
   influencerRecomendations: [

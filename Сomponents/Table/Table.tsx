@@ -4,11 +4,11 @@ import cn from "classnames"
 import SimpleBar from "simplebar-react"
 import Image from "next/image"
 import { Table, TableBody, TableCell, TableHead, TableRow } from "@mui/material"
-import { Icon, Pagination, Select } from "../../UI"
+import { Icon, Pagination, Select } from "UI"
 
-import arrow from "../../public/assets/icons/arrow_table.svg"
+import arrow from "public/assets/icons/arrow_table.svg"
 
-import s from "./Table.module.scss"
+import s from "./table.module.scss"
 
 interface HeaderItem {
   name: string
@@ -129,7 +129,7 @@ const CustomTable: React.FC<TableProps> = ({
                             onClick={() => {
                               sortCourses(index)
                             }}
-                            className={s.reversedArrow}
+                            className={s.arrow_down}
                           />
                         </div>
                       </div>

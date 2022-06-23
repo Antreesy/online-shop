@@ -6,7 +6,7 @@ import facebook from "public/assets/icons/facebook.svg"
 import instagram from "public/assets/icons/instagram.svg"
 import youtube from "public/assets/icons/youtube.svg"
 
-import s from "./SocialIcon.module.scss"
+import s from "./socialIcon.module.scss"
 
 interface SocialIconProps {
   type: "facebook" | "instagram" | "youtube"

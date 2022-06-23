@@ -12,10 +12,11 @@ interface ModalWindowProps {
   onClose: () => void
   iconType?: IconType
   children?: ReactNode
+  title?: ReactNode
 }
 
 const ModalWindow: FC<ModalWindowProps> = (props) => {
-  const { isOpen, onClose, iconType = false, children } = props
+  const { isOpen, onClose, iconType = false, children, title } = props
 
   const [mounted, setMounted] = useState(false)
 
@@ -33,11 +34,12 @@ const ModalWindow: FC<ModalWindowProps> = (props) => {
             </IconButton>
 
             {iconType ? (
-              <div className={s.iconWrapper}>
+              <div className={s.icon_wrapper}>
                 <Icon type={iconType} />
               </div>
             ) : null}
-            {children}
+            <div className={s.title}>{title}</div>
+            <div className={s.inner_content}>{children}</div>
           </Box>
         </Modal>,
         document.getElementById("modal__root")!,

@@ -1,5 +1,3 @@
-import React from "react"
-
 import { HeaderLight } from "Сomponents/Header"
 import { LayoutProps } from ".."
 

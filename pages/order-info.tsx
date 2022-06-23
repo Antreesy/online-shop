@@ -4,16 +4,16 @@ import { NextPage } from "next"
 import Head from "next/head"
 import Image from "next/image"
 import { BackButton } from "Сomponents"
-import { Button, Icon, Price } from "../UI"
+import { Button, Icon, Price } from "UI"
 
-import cardImage from "../public/assets/img/order_card_img.png"
+import cardImage from "public/assets/img/order_card_img.png"
 import {
   customerInfo,
   orderInfo,
   invoiceInfo,
-} from "../shared/constants/orderinfoitems"
+} from "shared/constants/orderinfoitems"
 
-import s from "../styles/pages/orderInfo.module.scss"
+import s from "styles/pages/order-info.module.scss"
 
 export interface LabelInfo {
   label: string

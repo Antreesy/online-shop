@@ -1,12 +1,19 @@
 import { NextPage } from "next"
 import Head from "next/head"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import dynamic from "next/dynamic"
 
-import {
-  BrandAddress,
-  CustomerAddress,
-  InfluencerAddress,
-} from "views/account/address"
+import { AddressProps } from "shared/interfaces/addressProps"
+
+const BrandAddress = dynamic<AddressProps>(() =>
+  import("views/account/address").then((module) => module.BrandAddress),
+)
+const CustomerAddress = dynamic<AddressProps>(() =>
+  import("views/account/address").then((module) => module.CustomerAddress),
+)
+const InfluencerAddress = dynamic<AddressProps>(() =>
+  import("views/account/address").then((module) => module.InfluencerAddress),
+)
 
 import { Roles } from "shared/enums/roles"
 import { useAppSelector } from "store/hooks"
@@ -17,7 +24,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
     props: {
       ...(await serverSideTranslations(locale, [
         "app",
-        "profile",
+        "common",
         "header",
         "footer",
         "sidebar",

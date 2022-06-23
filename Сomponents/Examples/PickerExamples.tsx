@@ -5,7 +5,7 @@ import { DatePicker, FileSelect, FileUpload, Input, Select, Slider } from "UI"
 import { colors } from "shared/constants/colors"
 import { countriesForSelect } from "shared/constants/countries"
 
-import s from "styles/pages/ComponentsExample.module.scss"
+import s from "styles/pages/components-example.module.scss"
 
 const PickerExamples: React.FC = () => {
   const [value, setValue] = useState<File | null>(null)

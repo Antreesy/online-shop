@@ -23,6 +23,7 @@ interface AccordionProps {
   openTitleClassName?: string
   arrowColor?: string
   onClick?: () => void
+  iconClassName?: string
 }
 
 const CustomAccordion: React.FC<AccordionProps> = (props) => {
@@ -43,6 +44,7 @@ const CustomAccordion: React.FC<AccordionProps> = (props) => {
     openTitleClassName,
     arrowColor = "#8100ef",
     onClick,
+    iconClassName,
   } = props
 
   const accordionClass = cn(s.accordion, className)
@@ -66,7 +68,7 @@ const CustomAccordion: React.FC<AccordionProps> = (props) => {
         expandIcon={
           <Icon
             type={active ? iconOpenType : iconType}
-            className={iconWrapped ? s.icon_wrapped : s.icon}
+            className={cn(iconWrapped ? s.icon_wrapped : s.icon, iconClassName)}
             color={arrowColor}
           />
         }

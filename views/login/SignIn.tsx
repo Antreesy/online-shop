@@ -4,7 +4,7 @@ import cn from "classnames"
 import Link from "next/link"
 import { Button, CheckboxGroup, Input } from "UI"
 
-import s from "styles/pages/Login.module.scss"
+import s from "styles/pages/login.module.scss"
 
 interface LoginType {
   name: string

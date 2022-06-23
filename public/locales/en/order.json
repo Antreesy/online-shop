@@ -1,0 +1,34 @@
+{
+  "orderSummary": "Order Summary",
+  "useDiscountCoupon": "Use discount coupon",
+  "total": "Total",
+  "iHaveRead": "I have read and approved the Preliminary Information Form and the Distance Sales Agreement",
+  "completeOrder": "Complete Order",
+  "subtotal": "Subtotal",
+  "shippingCost": "Shipping cost",
+  "discount": "Discount",
+  "kdv": "KDV",
+
+  "myCart": "My cart - {{number}} items",
+  "nameOfTheProduct": "Name of the product",
+  "price": "Price",
+  "piece": "Piece",
+
+  "deliveryInformation": "Delivery Information",
+  "deliveryAddress": "Delivery Address",
+  "billingAddress": "Billing Address",
+  "myBillingAddressIsTheSame": "My billing address is the same",
+  "paymentMethods": "Payment Methods",
+  "payWithMySavedCards": "Pay with my saved cards",
+  "payWithNewCard": "Pay with new card",
+  "addCard": "Add Card",
+
+  "yourOrder": "Your Order No. {{number}} has been successfully completed.",
+  "orderNumber": "Order number",
+  "orderDate": "Order date",
+  "situation": "Situation",
+  "paymentMethod": "Payment method",
+  "sendingDate": "Sending date",
+  "shippingNumber": "Shipping number",
+  "helpline": "Helpline"
+}

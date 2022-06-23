@@ -1,6 +1,6 @@
 import { Tabs } from "UI"
 
-import s from "styles/pages/ComponentsExample.module.scss"
+import s from "styles/pages/components-example.module.scss"
 
 const TabsExamples: React.FC = () => {
   return (
