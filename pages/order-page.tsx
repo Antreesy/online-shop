@@ -33,7 +33,7 @@ const OrderPage: NextPage = () => {
   const [showBilling, setShowBilling] = useState<boolean>(false)
   const [showAddressForm, setShowAddressForm] = useState<boolean>(false)
   const [showCardForm, setShowCardForm] = useState<boolean>(false)
-  const [showSavedCards, setShowSavedCards] = useState<boolean>(true)
+  const [showSavedCards, setShowSavedCards] = useState<boolean>(false)
   const { t } = useTranslation(["order", "common"])
 
   const toggleBilling = () => {

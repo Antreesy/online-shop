@@ -62,8 +62,8 @@ const brands: NextPage = () => {
         <Breadcrumbs />
       </div>
       <div className={s.container}>
-        <div className={s.return_button}>
-          <div onClick={() => router.push("/")}>
+        <div className={s.return_button} onClick={() => router.back()}>
+          <div>
             <span></span>
           </div>
           <div>Return Your Shop</div>

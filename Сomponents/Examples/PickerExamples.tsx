@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { ColorPicker, SizePicker } from "Сomponents"
-import { DatePicker, FileSelect, FileUpload, Input, Select, Slider } from "UI"
+import { DatePicker, FileSelect, FileUpload, Select, Slider } from "UI"
 
 import { colors } from "shared/constants/colors"
 import { countriesForSelect } from "shared/constants/countries"
