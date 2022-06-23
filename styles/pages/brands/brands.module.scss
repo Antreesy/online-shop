@@ -117,6 +117,8 @@
   font-weight: $fw-bold;
   margin-bottom: 35px;
   padding-top: 10px;
+  cursor: pointer;
+
 
   @include tablet {
     height: 120px;
