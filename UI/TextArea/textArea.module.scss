@@ -1,15 +1,27 @@
-.aria {
+@import "styles/style.scss";
+
+.label {
+  color: $color-purple;
+  font-size: 1em;
+  font-weight: $fw-bold;
+  margin-bottom: 5px;
+}
+
+.textarea {
   border: none;
   outline: none;
   border-radius: 5px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
-  background-color: #fff;
+  background-color: $color-white;
   width: 100%;
-  max-height: 273px;
-}
-.aria::placeholder {
-  padding-top: 10px;
-  padding-left: 10px;
-  font-size: 18px;
-  font-weight: 500;
+  min-height: 235px;
+  padding: 35px 25px;
+  font-size: 1em;
+  font-family: inherit;
+
+  &::placeholder {
+    padding-top: 10px;
+    padding-left: 10px;
+    font-weight: $fw-medium;
+  }
 }

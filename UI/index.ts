@@ -23,8 +23,8 @@ import { SelectProduct } from "./SelectProduct"
 import { Slider } from "./Slider"
 import { SocialIcon } from "./SocialIcon"
 import { Tabs } from "./Tabs"
+import { TextArea } from "./TextArea"
 import { Tooltip } from "./Tooltip"
-import {TextArea} from "./TextArea"
 
 export {
   Accordion,
@@ -53,6 +53,6 @@ export {
   Slider,
   SocialIcon,
   Tabs,
-  Tooltip,
   TextArea,
+  Tooltip,
 }

@@ -1,7 +1,7 @@
 import { Controller, useForm } from "react-hook-form"
 import cn from "classnames"
 
-import { Button, Input, ImageUpload, Select } from "UI"
+import { Button, Input, ImageUpload, Select, TextArea } from "UI"
 
 import { SelectItem } from "shared/interfaces/selectProps"
 
@@ -162,14 +162,13 @@ export const AddProductForm: React.FC = () => {
               name={"productDetail"}
               control={control}
               render={({ field: { onChange, value } }) => (
-                <Input
-                  label="Product Detail"
-                  setValue={onChange}
-                  value={value}
-                  className={cn(s.input, s.large)}
-                  placeholder={"Product Detail"}
-                  errorText={"error"}
-                />
+                <TextArea
+                label="Product Detail"
+                value={value}
+                className={s.textarea}
+                setValue={onChange}
+                placeholder="Product Detail"
+              />
               )}
             />
           </div>

@@ -1,21 +1,24 @@
-import TextareaAutosize from "@mui/material/TextareaAutosize"
 import cn from "classnames"
+
+import { InputLabel, TextareaAutosize } from "@mui/material"
+
 import s from "./textArea.module.scss"
 
-interface TextAriaProps {
-  style?: object
+interface TextAreaProps {
+  label?: React.ReactNode
   placeholder?: string
-  className?: object
+  className?: string
   value: string
   setValue: (newValue: string) => void
   onChange?: () => void
 }
 
-const CustomTextArea: React.FC<TextAriaProps> = (props) => {
+const CustomTextArea: React.FC<TextAreaProps> = (props) => {
   const {
     value,
     placeholder = "",
     className = "",
+    label,
     onChange,
     setValue,
   } = props
@@ -26,12 +29,15 @@ const CustomTextArea: React.FC<TextAriaProps> = (props) => {
   }
 
   return (
-    <TextareaAutosize
-      onChange={handleChange}
-      value={value}
-      className={cn(s.aria, className)}
-      placeholder={placeholder}
-    />
+    <div className={className}>
+      {label && <InputLabel className={s.label}>{label}</InputLabel>}
+      <TextareaAutosize
+        onChange={handleChange}
+        value={value}
+        className={s.textarea}
+        placeholder={placeholder}
+      />
+    </div>
   )
 }
 
