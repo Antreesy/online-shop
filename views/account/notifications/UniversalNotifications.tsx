@@ -16,6 +16,9 @@ interface NotificationListProps {
   list: NotificationProps[]
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface UniversalNotificationsProps {}
+
 const NotificationsList: React.FC<NotificationListProps> = ({ list }) => (
   <div className={s.notfItem}>
     {list

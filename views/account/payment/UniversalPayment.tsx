@@ -8,6 +8,9 @@ import { creditcardsData } from "shared/constants/creditcardsData"
 
 import s from "styles/pages/account/payment.module.scss"
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface UniversalPaymentProps {}
+
 export const UniversalPayment: React.FC = () => {
   const { t } = useTranslation("payment")
 

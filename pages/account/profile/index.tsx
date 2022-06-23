@@ -1,18 +1,26 @@
 import { NextPage } from "next"
 import Head from "next/head"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import dynamic from "next/dynamic"
 
-import {
-  BrandProfile,
-  CustomerProfile,
-  InfluencerProfile,
-} from "views/account/profile"
+import { BrandProfileProps } from "shared/interfaces/profileProps"
+import { CustomerProfileProps } from "views/account/profile/CustomerProfile"
+import { InfluencerProfileProps } from "views/account/profile/InfluencerProfile"
+
+const BrandProfile = dynamic<BrandProfileProps>(() =>
+  import("views/account/profile").then((module) => module.BrandProfile),
+)
+const CustomerProfile = dynamic<CustomerProfileProps>(() =>
+  import("views/account/profile").then((module) => module.CustomerProfile),
+)
+const InfluencerProfile = dynamic<InfluencerProfileProps>(() =>
+  import("views/account/profile").then((module) => module.InfluencerProfile),
+)
 
 import { Roles } from "shared/enums/roles"
+import { accountProps } from "shared/constants/brandProfile"
 import { useAppSelector } from "store/hooks"
 import { authRole } from "store/slices/authSlice"
-
-import { accountProps } from "shared/constants/brandProfile"
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {

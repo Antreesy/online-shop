@@ -1,8 +1,12 @@
 import { NextPage } from "next"
 import Head from "next/head"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import dynamic from "next/dynamic"
 
-import { UniversalHelp } from "views/account/help"
+import { UniversalHelpProps } from "views/account/help/UniversalHelp"
+const UniversalHelp = dynamic<UniversalHelpProps>(() =>
+  import("views/account/help").then((module) => module.UniversalHelp),
+)
 
 import { Roles } from "shared/enums/roles"
 import { useAppSelector } from "store/hooks"
