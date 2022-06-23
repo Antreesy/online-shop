@@ -6,6 +6,9 @@ import { orderList } from "shared/constants/orderList"
 
 import s from "styles/pages/account/orders.module.scss"
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface UniversalOrdersProps {}
+
 const UniversalOrders: React.FC = () => {
   const { t } = useTranslation("orders")
   return (
