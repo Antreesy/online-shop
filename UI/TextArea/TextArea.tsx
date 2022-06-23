@@ -29,7 +29,7 @@ const CustomTextArea: React.FC<TextAreaProps> = (props) => {
   }
 
   return (
-    <div className={className}>
+    <div className={cn(s.wrapper, className)}>
       {label && <InputLabel className={s.label}>{label}</InputLabel>}
       <TextareaAutosize
         onChange={handleChange}

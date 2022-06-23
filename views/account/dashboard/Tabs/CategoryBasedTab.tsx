@@ -7,11 +7,11 @@ import { Button, DatePicker, Input, Range, Select } from "UI"
 import { Currency } from "shared/enums/currency"
 
 import s from "styles/pages/account/dashboard.module.scss"
-import {useTranslation} from "next-i18next";
+import { useTranslation } from "next-i18next"
 
 export const CategoryBasedTab = () => {
   const [inputValue, setInputValue] = useState<string>("")
-    const { t } = useTranslation("dashboard")
+  const { t } = useTranslation("dashboard")
 
   return (
     <div style={{ paddingTop: "47px" }}>
@@ -65,7 +65,9 @@ export const CategoryBasedTab = () => {
           variant="black_button"
           buttonLabel="Search"
         />
-        <Button className={cn(s.button_black, s.clean_btn)}>{t("Clean")}</Button>
+        <Button className={cn(s.button_black, s.clean_btn)}>
+          {t("Clean")}
+        </Button>
       </div>
       <div className={s.table__head}>
         <span className={s.table__head__title}>
@@ -80,14 +82,14 @@ export const CategoryBasedTab = () => {
             }}
           >
             <span className={s.table__head__results}>
-              {t("filteringResults", {number: "11230"})}
+              {t("filteringResults", { number: "11230" })}
             </span>
             <span className={s.table__head__update}>
-              {t("lastUpdated", {date: "24.12.2021"})}
+              {t("lastUpdated", { date: "24.12.2021" })}
             </span>
           </div>
           <Button className={s.button_excel} iconLeft="download">
-              {t("excelDownload")}
+            {t("excelDownload")}
           </Button>
         </div>
       </div>

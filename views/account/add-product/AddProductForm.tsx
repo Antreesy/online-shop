@@ -163,12 +163,12 @@ export const AddProductForm: React.FC = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <TextArea
-                label="Product Detail"
-                value={value}
-                className={s.textarea}
-                setValue={onChange}
-                placeholder="Product Detail"
-              />
+                  label="Product Detail"
+                  value={value}
+                  className={s.textarea}
+                  setValue={onChange}
+                  placeholder="Product Detail"
+                />
               )}
             />
           </div>

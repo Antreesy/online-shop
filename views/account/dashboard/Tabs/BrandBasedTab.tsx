@@ -6,10 +6,10 @@ import { Button, DatePicker, Range, Select } from "UI"
 import { Currency } from "shared/enums/currency"
 
 import s from "styles/pages/account/dashboard.module.scss"
-import {useTranslation} from "next-i18next";
+import { useTranslation } from "next-i18next"
 
 export const BrandBasedTab = () => {
-    const { t } = useTranslation("dashboard")
+  const { t } = useTranslation("dashboard")
   return (
     <div style={{ paddingTop: "47px" }}>
       <div className={s.row}>
@@ -51,10 +51,10 @@ export const BrandBasedTab = () => {
       </div>
       <div className={s.row}>
         <Button variant={"outlined"} className={cn(s.clean_btn, s._brand)}>
-            {t("Clean")}
+          {t("Clean")}
         </Button>
         <Button className={cn(s.button_black, s.search_btn, s._brand)}>
-            {t("search")}
+          {t("search")}
         </Button>
       </div>
       <div className={s.table__head}>
@@ -70,10 +70,10 @@ export const BrandBasedTab = () => {
             }}
           >
             <span className={s.table__head__results}>
-              {t("filteringResults", {number: "11230"})}
+              {t("filteringResults", { number: "11230" })}
             </span>
             <span className={s.table__head__update}>
-              {t("lastUpdated", {date: "24.12.2021"})}
+              {t("lastUpdated", { date: "24.12.2021" })}
             </span>
           </div>
         </div>

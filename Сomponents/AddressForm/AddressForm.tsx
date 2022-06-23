@@ -210,7 +210,7 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
                   setValue={onChange}
                   placeholder="Address"
                 />
-              )}  
+              )}
             />
           </div>
         </div>
