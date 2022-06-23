@@ -1,9 +1,9 @@
-import {useState} from "react"
+import { useState } from "react"
 import SimpleBar from "simplebar-react"
 import cn from "classnames"
 
-import {InputLabel, MenuItem, Select} from "@mui/material"
-import {Icon} from "UI"
+import { InputLabel, MenuItem, Select } from "@mui/material"
+import { Icon } from "UI"
 
 import s from "./select.module.scss"
 
@@ -40,7 +40,7 @@ const CustomSelect: React.FC<SelectProps> = (props) => {
     initValue,
     isError,
     isDisabled,
-    labelClassName
+    labelClassName,
   } = props
 
   const [value, setValue] = useState<string | number>(initValue ?? placeholder)
