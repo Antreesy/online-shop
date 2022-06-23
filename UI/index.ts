@@ -24,7 +24,7 @@ import { Slider } from "./Slider"
 import { SocialIcon } from "./SocialIcon"
 import { Tabs } from "./Tabs"
 import { Tooltip } from "./Tooltip"
-import {TextAria} from "./TextAria"
+import {TextArea} from "./TextArea"
 
 export {
   Accordion,
@@ -54,5 +54,5 @@ export {
   SocialIcon,
   Tabs,
   Tooltip,
-  TextAria,
+  TextArea,
 }

@@ -1,6 +1,5 @@
-import React from "react"
 import TextareaAutosize from "@mui/material/TextareaAutosize"
-import s from "./textAria.module.scss"
+import s from "./textArea.module.scss"
 
 interface TextAriaProps {
   size?: object
@@ -10,7 +9,7 @@ interface TextAriaProps {
   onChange?: () => void
 }
 
-const CustomTextAria: React.FC<TextAriaProps> = (props) => {
+const CustomTextArea: React.FC<TextAriaProps> = (props) => {
   const { value, size, placeholder = "", onChange, setValue } = props
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -29,4 +28,4 @@ const CustomTextAria: React.FC<TextAriaProps> = (props) => {
   )
 }
 
-export default CustomTextAria
+export default CustomTextArea
