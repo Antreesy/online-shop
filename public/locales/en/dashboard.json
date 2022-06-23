@@ -1,0 +1,19 @@
+{
+  "selectCategory": "Select Category",
+  "selectBrand": "Select Brand",
+  "selectStartDate": "Select Start Date",
+  "selectEndDate": "Select End Date",
+  "priceRange": "Price Range",
+  "enterTheProductCode": "Enter the Product Code",
+  "search": "Search",
+  "Clean": "Clean",
+  "filteringResults": "Filtering Results: Total {{number}} Product Information",
+  "lastUpdated": "Last Updated: {{date}}",
+  "excelDownload": "Excel Download",
+
+  "productBasedSalesStatistics": "Product Based Sales Statistics",
+  "categoryBasedSalesStatistics": "Category Based Sales Statistics",
+  "brandBasedSalesStatistics": "Brand Based Sales Statistics",
+  "otherStatistics": "Other Statistics"
+
+}

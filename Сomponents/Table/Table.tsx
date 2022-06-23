@@ -26,9 +26,14 @@ type InnerRow = InnerCell[]
 interface TableProps {
   headers: HeaderItem[]
   innerRows: InnerRow[]
+  isControl?: boolean
 }
 
-const CustomTable: React.FC<TableProps> = ({ headers, innerRows = [] }) => {
+const CustomTable: React.FC<TableProps> = ({
+  headers,
+  innerRows = [],
+  isControl = false,
+}) => {
   const [rows, setRows] = useState(innerRows)
   const [rowsPerPage, setRowsPerPage] = useState<string | number>(3)
   const [page, setPage] = useState(1)
@@ -64,38 +69,40 @@ const CustomTable: React.FC<TableProps> = ({ headers, innerRows = [] }) => {
 
   return (
     <div>
-      <div className={s.table__control}>
-        <Select
-          className={s.date_select}
-          values={[]}
-          placeholder="Order Date"
-        />
-        <Select
-          className={s.sort_select}
-          values={[]}
-          placeholder="Old to New"
-        />
-        <div className={s.page_select}>
-          <span className={s.page_select_caption}>On Every Page</span>
+      {isControl && (
+        <div className={s.table__control}>
           <Select
-            className={s.page_select_control}
-            initValue={rowsPerPage}
-            onChange={setRowsPerPage}
-            values={[
-              { title: "3 Product", value: 3 },
-              { title: "10 Product", value: 10 },
-              { title: "20 Product", value: 20 },
-              { title: "50 Product", value: 50 },
-            ]}
+            className={s.date_select}
+            values={[]}
+            placeholder="Order Date"
+          />
+          <Select
+            className={s.sort_select}
+            values={[]}
+            placeholder="Old to New"
+          />
+          <div className={s.page_select}>
+            <span className={s.page_select_caption}>On Every Page</span>
+            <Select
+              className={s.page_select_control}
+              initValue={rowsPerPage}
+              onChange={setRowsPerPage}
+              values={[
+                { title: "3 Product", value: 3 },
+                { title: "10 Product", value: 10 },
+                { title: "20 Product", value: 20 },
+                { title: "50 Product", value: 50 },
+              ]}
+            />
+          </div>
+          <Pagination
+            className={s.pagination_desktop}
+            pagesCount={pages}
+            value={page}
+            onChange={setPage}
           />
         </div>
-        <Pagination
-          className={s.pagination_desktop}
-          pagesCount={pages}
-          value={page}
-          onChange={setPage}
-        />
-      </div>
+      )}
       <SimpleBar className={s.scrollbar} autoHide={false}>
         <Table className={s.table} aria-label="simple table">
           <TableHead className={s.table__header}>

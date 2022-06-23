@@ -24,7 +24,7 @@ const AddProduct: NextPage = () => {
         />
       </div>
 
-      {!products ? (
+      {!products.length ? (
         <div className={s.addProduct_noProducts}>
           <div className={s.addProduct_noProducts_title}>
             <h1>You do not have a product</h1>
@@ -46,7 +46,7 @@ const AddProduct: NextPage = () => {
         />
       </div>
 
-      {products ? (
+      {products.length ? (
         <>
           <div className={s.addProduct_productList}>
             <ProductItemList productItemList={productItems} />

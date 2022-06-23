@@ -1,8 +1,13 @@
-import { SectionHeader, ProductItemList } from "Сomponents"
 import { Grid } from "@mui/material"
+import { SectionHeader, ProductItemList } from "Сomponents"
 import { Card, Pagination } from "UI"
-import s from "styles/pages/favorites.module.scss"
+
 import { productItems } from "shared/constants/productItems"
+
+import s from "styles/pages/favorites.module.scss"
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface UniversalFavoritesProps {}
 
 const UniversalFavorites: React.FC = () => {
   return (

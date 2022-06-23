@@ -1,0 +1,18 @@
+{
+  "selectCategory": "Kategori Seç",
+  "selectBrand": "Marka Seç",
+  "selectStartDate": "Başlangıç Tarihini seçin",
+  "selectEndDate": "Bitiş Tarihini Seçin",
+  "priceRange": "Fiyat Aralığı",
+  "enterTheProductCode": "Ürün Kodunu girin",
+  "search": "Aramak",
+  "Clean": "Clean",
+  "filteringResults": "Filtreleme Sonuçları: Toplam {{number}} Ürün Bilgisi",
+  "lastUpdated": "Son Güncelleme: {{date}}",
+  "excelDownload": "Excel indir",
+
+  "productBasedSalesStatistics": "Ürün Bazlı Satış İstatistikleri",
+  "categoryBasedSalesStatistics": "Kategori Bazlı Satış İstatistikleri",
+  "brandBasedSalesStatistics": "Marka Bazlı Satış İstatistikleri",
+  "otherStatistics": "Diğer İstatistikler"
+}

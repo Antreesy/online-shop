@@ -3,9 +3,9 @@ import Head from "next/head"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import dynamic from "next/dynamic"
 
-import { UniversalPaymentProps } from "views/account/payment/UniversalPayment"
-const UniversalPayment = dynamic<UniversalPaymentProps>(() =>
-  import("views/account/payment").then((module) => module.UniversalPayment),
+import { DashboardProps } from "views/account/dashboard/UniversalDashboard"
+const UniversalDashboard = dynamic<DashboardProps>(() =>
+  import("views/account/dashboard").then((module) => module.UniversalDashboard),
 )
 
 import { Roles } from "shared/enums/roles"
@@ -21,23 +21,24 @@ export async function getStaticProps({ locale }: { locale: string }) {
         "header",
         "footer",
         "sidebar",
-        "payment",
+        "dashboard",
       ])),
     },
   }
 }
 
-const Profile: NextPage = () => {
+const Dashboard: NextPage = () => {
   const role = useAppSelector(authRole)
+
   return (
     <>
       <Head>
         <title>ILONSI SHOP | Account</title>
       </Head>
 
-      {role === Roles.CUSTOMER && <UniversalPayment />}
+      {role === Roles.INFLUENCER && <UniversalDashboard />}
     </>
   )
 }
 
-export default Profile
+export default Dashboard

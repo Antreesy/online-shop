@@ -1,0 +1,18 @@
+{
+  "selectCategory": "Выберите категорию",
+  "selectBrand": "Выберите бренд",
+  "selectStartDate": "Выберите дату начала",
+  "selectEndDate": "Выберите дату окончания",
+  "priceRange": "Ценовой диапазон",
+  "enterTheProductCode": "Введите код продукта",
+  "search": "Поиск",
+  "Clean": "Сброс",
+  "filteringResults": "Результаты фильтрации: Всего {{number}} информации о продукте",
+  "lastUpdated": "Последнее обновление: {{date}}",
+  "excelDownload": "Excel Скачать",
+
+  "productBasedSalesStatistics": "Статистика продаж по продуктам",
+  "categoryBasedSalesStatistics": "Статистика продаж по категориям",
+  "brandBasedSalesStatistics": "Статистика продаж по брендам",
+  "otherStatistics": "Другая статистика"
+}

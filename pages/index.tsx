@@ -35,7 +35,7 @@ const Index: NextPage = () => {
             </Link>
             <Link href="/modals-example">
               <a className={s.title__link}>Modals example</a>
-            </Link>{" "}
+            </Link>
           </div>
 
           <div className={s.flex_column}>
@@ -48,7 +48,7 @@ const Index: NextPage = () => {
             </Link>
             <Link href="/order-page">
               <a className={s.title__link}>Order - payment</a>
-            </Link>{" "}
+            </Link>
             <Link href="/order-success">
               <a className={s.title__link}>Order - success page</a>
             </Link>
@@ -71,8 +71,10 @@ const Index: NextPage = () => {
             <Link href="/brands/1">
               <a className={s.title__link}>Specific Brand</a>
             </Link>
-
-            <span className={s.title__miss}>Dashboard (3 screens)</span>
+            <Link href="/account/dashboard">
+              <a className={s.title__link}>Dashboard (account)</a>
+            </Link>
+            <span className={s.title__miss}>Dashboard (other)</span>
           </div>
 
           <div className={s.flex_column}>
@@ -80,30 +82,30 @@ const Index: NextPage = () => {
             <Link href="/brand-landing">
               <a className={s.title__link}>Brand homepage</a>
             </Link>
-            <Link href="/register">
-              <a className={s.title__link}>
-                Register page (for brands / influencers)
-              </a>
+            <Link href="/account/add-product">
+              <a className={s.title__link}>Add product (account)</a>
             </Link>
             <Link href="/visual-operations">
               <a className={s.title__link}>Visual operations</a>
             </Link>
-            <span className={s.title__miss}>products - 4 step</span>
-            <span className={s.title__miss}>brand info</span>
+            <Link href="/brand-info">
+              <a className={s.title__link}>Brand Information</a>
+            </Link>
             <Link href="/order-info">
               <a className={s.title__link}>Order Detail</a>
-            </Link>{" "}
+            </Link>
             <Link href="/product-info">
               <a className={s.title__link}>Product Detail</a>
-            </Link>{" "}
-            <span className={s.title__miss}>product list</span>
+            </Link>
+            <span className={s.title__miss}>Brand Product List</span>
+            <span className={s.title__miss}>Brand Order Operations</span>
+            <span className={s.title__miss}>Brand Cancellation</span>
+            <span className={s.title__miss}>Brand Order Transactions</span>
           </div>
 
           <div className={s.flex_column}>
             <h3 className={s.description}>Account:</h3>
-            <Link href="/account/add-product">
-              <a className={s.title__link}>Add product (brands)</a>
-            </Link>
+
             <Link href="/account/address">
               <a className={s.title__link}>Address</a>
             </Link>
@@ -125,7 +127,6 @@ const Index: NextPage = () => {
             <Link href="/account/payment">
               <a className={s.title__link}>Payment</a>
             </Link>
-            <span className={s.title__miss}>Dashboard (influencer)</span>
           </div>
         </div>
       </div>
