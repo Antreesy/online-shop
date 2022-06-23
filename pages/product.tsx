@@ -10,7 +10,7 @@ import {
   SizePicker,
   ReturnButton,
 } from "Сomponents"
-import {Button, Icon, Price} from "UI"
+import { Button, Icon, Price } from "UI"
 
 import { colors } from "shared/constants/colors"
 

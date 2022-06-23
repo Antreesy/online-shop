@@ -3,7 +3,7 @@ import { useTranslation } from "next-i18next"
 import cn from "classnames"
 
 import { SectionHeader } from "Сomponents"
-import { Button, Icon, Input, Select } from "UI"
+import { Button, Icon, Input, Select, TextArea } from "UI"
 
 import { SelectItem } from "shared/interfaces/selectProps"
 import { countriesForSelect } from "shared/constants/countries"
@@ -205,10 +205,10 @@ const AddressForm: React.FC<AddressFormProps> = (props) => {
               name={"description"}
               control={control}
               render={({ field: { onChange, value } }) => (
-                <Input
-                  setValue={onChange}
+                <TextArea
                   value={value}
-                  placeholder={t("address")}
+                  setValue={onChange}
+                  placeholder="Address"
                 />
               )}
             />

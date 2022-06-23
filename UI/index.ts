@@ -23,6 +23,7 @@ import { SelectProduct } from "./SelectProduct"
 import { Slider } from "./Slider"
 import { SocialIcon } from "./SocialIcon"
 import { Tabs } from "./Tabs"
+import { TextArea } from "./TextArea"
 import { Tooltip } from "./Tooltip"
 
 export {
@@ -52,5 +53,6 @@ export {
   Slider,
   SocialIcon,
   Tabs,
+  TextArea,
   Tooltip,
 }
