@@ -1,10 +1,9 @@
 import { NextPage } from "next"
 import Head from "next/head"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-
 import dynamic from "next/dynamic"
-import { UniversalPaymentProps } from "views/account/payment/UniversalPayment"
 
+import { UniversalPaymentProps } from "views/account/payment/UniversalPayment"
 const UniversalPayment = dynamic<UniversalPaymentProps>(() =>
   import("views/account/payment").then((module) => module.UniversalPayment),
 )

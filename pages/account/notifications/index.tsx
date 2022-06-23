@@ -1,10 +1,9 @@
 import { NextPage } from "next"
 import Head from "next/head"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-
 import dynamic from "next/dynamic"
-import { UniversalNotificationsProps } from "views/account/notifications/UniversalNotifications"
 
+import { UniversalNotificationsProps } from "views/account/notifications/UniversalNotifications"
 const UniversalNotifications = dynamic<UniversalNotificationsProps>(() =>
   import("views/account/notifications").then(
     (module) => module.UniversalNotifications,

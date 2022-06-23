@@ -2,8 +2,8 @@ import { NextPage } from "next"
 import Head from "next/head"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import dynamic from "next/dynamic"
-import { UniversalFavoritesProps } from "views/account/favorites/UniversalFavorites"
 
+import { UniversalFavoritesProps } from "views/account/favorites/UniversalFavorites"
 const UniversalFavorites = dynamic<UniversalFavoritesProps>(() =>
   import("views/account/favorites").then((module) => module.UniversalFavorites),
 )

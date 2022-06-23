@@ -1,10 +1,9 @@
 import { NextPage } from "next"
 import Head from "next/head"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-
 import dynamic from "next/dynamic"
-import { UniversalHelpProps } from "views/account/help/UniversalHelp"
 
+import { UniversalHelpProps } from "views/account/help/UniversalHelp"
 const UniversalHelp = dynamic<UniversalHelpProps>(() =>
   import("views/account/help").then((module) => module.UniversalHelp),
 )

@@ -8,6 +8,7 @@ import { questions } from "shared/constants/questions"
 
 import s from "styles/pages/account/help.module.scss"
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface UniversalHelpProps {}
 
 const UniversalHelp: React.FC = () => {
