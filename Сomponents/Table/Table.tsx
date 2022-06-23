@@ -26,7 +26,7 @@ type InnerRow = InnerCell[]
 interface TableProps {
   headers: HeaderItem[]
   innerRows: InnerRow[]
-  isControl: boolean
+  isControl?: boolean
 }
 
 const CustomTable: React.FC<TableProps> = ({

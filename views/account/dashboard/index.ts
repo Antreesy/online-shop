@@ -1,5 +1,3 @@
-import { BrandDashboard } from "./BrandDashboard"
-import { CustomerDashboard } from "./CustomerDashboard"
-import { InfluencerDashboard } from "./InfluencerDashboard"
+import { UniversalDashboard } from "./UniversalDashboard"
 
-export { BrandDashboard, CustomerDashboard, InfluencerDashboard }
+export { UniversalDashboard }

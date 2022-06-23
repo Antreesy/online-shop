@@ -1,12 +1,12 @@
 import { NextPage } from "next"
 import Head from "next/head"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import dynamic from "next/dynamic"
 
-import {
-  BrandDashboard,
-  CustomerDashboard,
-  InfluencerDashboard,
-} from "views/account/dashboard"
+import { DashboardProps } from "views/account/dashboard/UniversalDashboard"
+const UniversalDashboard = dynamic<DashboardProps>(() =>
+  import("views/account/dashboard").then((module) => module.UniversalDashboard),
+)
 
 import { Roles } from "shared/enums/roles"
 import { useAppSelector } from "store/hooks"
@@ -17,11 +17,11 @@ export async function getStaticProps({ locale }: { locale: string }) {
     props: {
       ...(await serverSideTranslations(locale, [
         "app",
-        "profile",
+        "common",
         "header",
         "footer",
         "sidebar",
-        "address",
+        "dashboard",
       ])),
     },
   }
@@ -36,9 +36,7 @@ const Dashboard: NextPage = () => {
         <title>ILONSI SHOP | Account</title>
       </Head>
 
-      {role === Roles.BRAND && <BrandDashboard role={role} />}
-      {role === Roles.CUSTOMER && <CustomerDashboard />}
-      {role === Roles.INFLUENCER && <InfluencerDashboard />}
+      {role === Roles.INFLUENCER && <UniversalDashboard />}
     </>
   )
 }

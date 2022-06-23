@@ -73,7 +73,7 @@ const Tables: NextPage = () => {
   return (
     <div style={{ padding: "15px" }}>
       <div style={{ marginBottom: "50px" }}>
-        <Table headers={headers1} innerRows={innerRows1} />
+        <Table headers={headers1} innerRows={innerRows1} isControl />
       </div>
       <div style={{ maxWidth: "1279px", marginBottom: "50px" }}>
         <Table headers={headers2} innerRows={innerRows2} />

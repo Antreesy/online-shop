@@ -64,7 +64,7 @@ const BrandCard = () => (
   </div>
 )
 
-const LandingPage: NextPage = (props) => {
+const LandingPage: NextPage = () => {
   const { t } = useTranslation("landing")
   return (
     <>
