@@ -3,9 +3,10 @@ import React, { useState } from "react"
 import s from "styles/pages/brand-products.module.scss"
 import Head from "next/head"
 import { BackButton, Table } from "../Сomponents"
-import { Button, Input, Pagination, Select, Tabs } from "../UI"
+import { Button, Icon, Input, Pagination, Select, Tabs } from "../UI"
 import Image from "next/image"
 import tabImage from "public/assets/img/order_card_img.png"
+import dress from "../public/assets/img/Knitted_dress.png"
 
 const BrandProducts: React.FC = () => {
   const [inputValue, setInputValue] = useState<string>("")
@@ -119,7 +120,71 @@ const BrandProducts: React.FC = () => {
               { name: "Status" },
               { name: "Detail" },
             ]}
-            innerRows={[]}
+            innerRows={[
+              [
+                {
+                  value: (
+                    <div>
+                      <Image src={dress} width={46} height={83} />
+                    </div>
+                  ),
+                  alignCenter: true,
+                },
+                { value: "Black Printed Long Sleeve Midi Dress" },
+                { value: "BFNSKBGDHKSF" },
+                { value: "Yves Saint L" },
+                { value: "%25" },
+                { value: "$213" },
+                { value: 32132 },
+                { value: "Not available" },
+                {
+                  value: <Icon type={"exclamation"} />,
+                  alignCenter: true,
+                },
+              ],
+              [
+                {
+                  value: (
+                    <div>
+                      <Image src={dress} width={46} height={83} />
+                    </div>
+                  ),
+                  alignCenter: true,
+                },
+                { value: "Black Printed Long Sleeve Midi Dress" },
+                { value: "BFNSKBGDHKSF" },
+                { value: "Yves Saint L" },
+                { value: "%25" },
+                { value: "$213" },
+                { value: 32132 },
+                { value: "Not available" },
+                {
+                  value: <Icon type={"exclamation"} />,
+                  alignCenter: true,
+                },
+              ],
+              [
+                {
+                  value: (
+                    <div>
+                      <Image src={dress} width={46} height={83} />
+                    </div>
+                  ),
+                  alignCenter: true,
+                },
+                { value: "Black Printed Long Sleeve Midi Dress" },
+                { value: "BFNSKBGDHKSF" },
+                { value: "Yves Saint L" },
+                { value: "%25" },
+                { value: "$213" },
+                { value: 32132 },
+                { value: "Not available" },
+                {
+                  value: <Icon type={"exclamation"} />,
+                  alignCenter: true,
+                },
+              ],
+            ]}
           />
         </div>
       </div>
