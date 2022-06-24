@@ -80,7 +80,7 @@ export const ProductBasedTab = () => {
         <span className={s.table__head__title}>
           {t("productBasedSalesStatistics")}
         </span>
-        <div style={{ display: "flex" }}>
+        <div className={s.result_with_exel}>
           <div
             style={{
               display: "flex",

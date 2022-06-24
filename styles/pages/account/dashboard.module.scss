@@ -34,6 +34,10 @@
   display: flex;
   align-items: flex-end;
   gap: 24px;
+  @include mobile {
+    flex-wrap: wrap;
+    gap: 51px;
+  }
 
   div {
     max-height: 65px;
@@ -102,6 +106,22 @@
   justify-content: space-between;
   height: 53px;
   margin-bottom: 32px;
+
+  @include  mobile {
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+}
+
+.result_with_exel {
+  display: flex;
+
+  @include mobile {
+    flex-wrap: wrap;
+    button {
+      margin-top: 10px;
+    }
+  }
 }
 
 .table__head__title {
@@ -116,6 +136,7 @@
   font-size: 16px;
   line-height: 21px;
   font-weight: $fw-regular;
+
 }
 
 .table__head__update {
