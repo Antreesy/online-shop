@@ -88,7 +88,7 @@ const Index: NextPage = () => {
             <Link href="/visual-operations">
               <a className={s.title__link}>Visual operations</a>
             </Link>
-            <Link href="/brand-info">
+            <Link href="/brand-information">
               <a className={s.title__link}>Brand Information</a>
             </Link>
             <Link href="/order-info">
@@ -97,7 +97,9 @@ const Index: NextPage = () => {
             <Link href="/product-info">
               <a className={s.title__link}>Product Detail</a>
             </Link>
-            <span className={s.title__miss}>Brand Product List</span>
+            <Link href="/brand-products">
+              <a className={s.title__link}>Brand Product List</a>
+            </Link>
             <span className={s.title__miss}>Brand Order Operations</span>
             <span className={s.title__miss}>Brand Cancellation</span>
             <span className={s.title__miss}>Brand Order Transactions</span>

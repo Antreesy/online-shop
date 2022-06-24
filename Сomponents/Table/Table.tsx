@@ -12,7 +12,7 @@ import s from "./table.module.scss"
 
 interface HeaderItem {
   name: string
-  isSort: boolean
+  isSort?: boolean
   alignCenter?: boolean
 }
 

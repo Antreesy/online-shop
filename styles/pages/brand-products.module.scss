@@ -1,0 +1,73 @@
+@import "styles/style.scss";
+
+.container {
+  @include container;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.button__wrapper {
+  margin-bottom: 70px;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.content {
+  max-width: 1920px;
+  width: 90%;
+  margin: auto;
+}
+
+.content__header {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+
+  .inputs {
+    display: flex;
+    & > div {
+      margin: 0 30px 0 10px;
+      width: 230px;
+    }
+  }
+
+  .selects {
+    display: flex;
+
+    .select > div {
+      width: 230px;
+      margin: 0 30px 0 10px;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    margin: 0 10px 0 0;
+    .button_purple {
+      background: $color-purple none;
+    }
+    .button_red {
+      background: $color-red none;
+    }
+    .button_green {
+      background: $color-green none;
+    }
+  }
+}
+
+.bottom_content_header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 40px 0 40px 0;
+  & > div {
+    margin-right: 35px;
+  }
+  .bottom_content_select > div {
+    width: 230px;
+  }
+}

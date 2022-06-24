@@ -108,7 +108,7 @@
   height: 53px;
   margin-bottom: 32px;
 
-  @include  mobile {
+  @include mobile {
     flex-wrap: wrap;
     margin-bottom: 60px;
   }
@@ -137,7 +137,6 @@
   font-size: 16px;
   line-height: 21px;
   font-weight: $fw-regular;
-
 }
 
 .table__head__update {
