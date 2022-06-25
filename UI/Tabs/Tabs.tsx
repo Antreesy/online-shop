@@ -47,6 +47,7 @@ const CustomTabs: React.FC<TabsProps> = (props) => {
             )
           })}
       </Tabs>
+
       {values && values[valueIndex]}
     </div>
   )

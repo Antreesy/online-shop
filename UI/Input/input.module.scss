@@ -48,7 +48,6 @@
   }
 
   .input {
-    width: 430px;
     fieldset {
       border-radius: 0;
       border-top-left-radius: 4px;
@@ -70,7 +69,6 @@
     font-family: inherit;
     background: $color-purple;
     border: none;
-    height: 55px;
     font-size: 18px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -93,7 +91,6 @@
 
   .input {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
-    width: 430px;
     fieldset {
       border-radius: 0;
       border-top-left-radius: 4px;
@@ -110,7 +107,6 @@
     font-family: inherit;
     background: $color-black;
     border: none;
-    height: 55px;
     font-size: 18px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
