@@ -2,6 +2,7 @@
 
 .container {
   @include container;
+  max-width: 1780px;
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -16,46 +17,40 @@
 
 .content {
   max-width: 1920px;
-  width: 90%;
+  width: 100%;
   margin: auto;
+}
+
+.tabs {
+  margin-bottom: 30px;
+  height: 81px;
 }
 
 .content__header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
+  height: 53px;
+  gap: 30px;
 
-  .inputs {
-    display: flex;
-    & > div {
-      margin: 0 30px 0 10px;
-      width: 230px;
-    }
+  .input,
+  .select,
+  .button {
+    height: 53px;
+    width: 100%;
   }
 
-  .selects {
-    display: flex;
-
-    .select > div {
-      width: 230px;
-      margin: 0 30px 0 10px;
-    }
+  .button_purple {
+    max-width: 150px;
+    background: $color-purple;
   }
-
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-    width: 30%;
-    margin: 0 10px 0 0;
-    .button_purple {
-      background: $color-purple none;
-    }
-    .button_red {
-      background: $color-red none;
-    }
-    .button_green {
-      background: $color-green none;
-    }
+  .button_red {
+    max-width: 150px;
+    background: $color-red;
+  }
+  .button_green {
+    max-width: 190px;
+    background: $color-green;
   }
 }
 

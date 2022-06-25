@@ -1,12 +1,92 @@
-import React, { useState } from "react"
+import { useState } from "react"
+import cn from "classnames"
+import Head from "next/head"
+
+import Image from "next/image"
+import { BackButton, Table } from "Сomponents"
+import { Button, Icon, Input, Pagination, Select, Tabs } from "UI"
+
+import dress from "public/assets/img/Knitted_dress.png"
 
 import s from "styles/pages/brand-products.module.scss"
-import Head from "next/head"
-import { BackButton, Table } from "../Сomponents"
-import { Button, Icon, Input, Pagination, Select, Tabs } from "../UI"
-import Image from "next/image"
-import tabImage from "public/assets/img/order_card_img.png"
-import dress from "../public/assets/img/Knitted_dress.png"
+
+const tableHeaders = [
+  { name: "Product Image" },
+  { name: "Product Name" },
+  { name: "Product Code" },
+  { name: "Brand" },
+  { name: "Commission" },
+  { name: "Price" },
+  { name: "Stock" },
+  { name: "Status" },
+  { name: "Detail" },
+]
+
+const tableInnerRows = [
+  [
+    {
+      value: (
+        <div>
+          <Image src={dress} width={46} height={83} />
+        </div>
+      ),
+      alignCenter: true,
+    },
+    { value: "Black Printed Long Sleeve Midi Dress" },
+    { value: "BFNSKBGDHKSF" },
+    { value: "Yves Saint L" },
+    { value: "%25" },
+    { value: "$213" },
+    { value: 32132 },
+    { value: "Not available" },
+    {
+      value: <Icon type={"exclamation"} />,
+      alignCenter: true,
+    },
+  ],
+  [
+    {
+      value: (
+        <div>
+          <Image src={dress} width={46} height={83} />
+        </div>
+      ),
+      alignCenter: true,
+    },
+    { value: "Black Printed Long Sleeve Midi Dress" },
+    { value: "BFNSKBGDHKSF" },
+    { value: "Yves Saint L" },
+    { value: "%25" },
+    { value: "$213" },
+    { value: 32132 },
+    { value: "Not available" },
+    {
+      value: <Icon type={"exclamation"} />,
+      alignCenter: true,
+    },
+  ],
+  [
+    {
+      value: (
+        <div>
+          <Image src={dress} width={46} height={83} />
+        </div>
+      ),
+      alignCenter: true,
+    },
+    { value: "Black Printed Long Sleeve Midi Dress" },
+    { value: "BFNSKBGDHKSF" },
+    { value: "Yves Saint L" },
+    { value: "%25" },
+    { value: "$213" },
+    { value: 32132 },
+    { value: "Not available" },
+    {
+      value: <Icon type={"exclamation"} />,
+      alignCenter: true,
+    },
+  ],
+]
 
 const BrandProducts: React.FC = () => {
   const [inputValue, setInputValue] = useState<string>("")
@@ -23,8 +103,8 @@ const BrandProducts: React.FC = () => {
 
         <div className={s.content}>
           <Tabs
-            className={s.notification_tabs}
-            variant="spaces"
+            className={s.tabs}
+            variant="no_border"
             labels={[
               "All Products",
               "On Sale",
@@ -35,59 +115,48 @@ const BrandProducts: React.FC = () => {
             values={[]}
           />
           <div className={s.content__header}>
-            <div className={s.inputs}>
-              <Input
-                placeholder="Product Code"
-                setValue={setInputValue}
-                value={inputValue}
-              />
-              <Input
-                placeholder="Product Name"
-                setValue={setInputValue}
-                value={inputValue}
-              />
-            </div>
-            <div className={s.selects}>
-              <Select
-                className={s.select}
-                values={[
-                  { title: "one", value: 1 },
-                  { title: "two", value: 2 },
-                  { title: "three", value: 3 },
-                ]}
-                onChange={() => {
-                  return
-                }}
-              />
-              <Select
-                className={s.select}
-                values={[
-                  { title: "one", value: 1 },
-                  { title: "two", value: 2 },
-                  { title: "three", value: 3 },
-                ]}
-                onChange={() => {
-                  return
-                }}
-              />
-            </div>
-            <div className={s.buttons}>
-              <div>
-                <Button className={s.button_purple} iconLeft="search">
-                  Search
-                </Button>
-              </div>
-              <div>
-                <Button className={s.button_red} iconLeft="trash_can">
-                  Clean
-                </Button>
-              </div>
-              <div>
-                <Button className={s.button_green} iconLeft="download">
-                  Excel Download
-                </Button>
-              </div>
-            </div>
+            <Input
+              className={s.input}
+              placeholder="Product Code"
+              setValue={setInputValue}
+              value={inputValue}
+            />
+            <Input
+              className={s.input}
+              placeholder="Product Name"
+              setValue={setInputValue}
+              value={inputValue}
+            />
+            <Select
+              placeholder="Category"
+              className={s.select}
+              values={[
+                { title: "one", value: 1 },
+                { title: "two", value: 2 },
+                { title: "three", value: 3 },
+              ]}
+            />
+            <Select
+              placeholder="Sort by"
+              className={s.select}
+              values={[
+                { title: "one", value: 1 },
+                { title: "two", value: 2 },
+                { title: "three", value: 3 },
+              ]}
+            />
+            <Button className={cn(s.button, s.button_purple)} iconLeft="search">
+              Search
+            </Button>
+            <Button className={cn(s.button, s.button_red)} iconLeft="trash_can">
+              Clean
+            </Button>
+            <Button
+              className={cn(s.button, s.button_green)}
+              iconLeft="download"
+            >
+              Excel Download
+            </Button>
           </div>
 
           <div className={s.bottom_content_header}>
@@ -108,84 +177,7 @@ const BrandProducts: React.FC = () => {
             <Pagination className={s.pagination} pagesCount={10} />
           </div>
 
-          <Table
-            headers={[
-              { name: "Product Image" },
-              { name: "Product Name" },
-              { name: "Product Code" },
-              { name: "Brand" },
-              { name: "Commission" },
-              { name: "Price" },
-              { name: "Stock" },
-              { name: "Status" },
-              { name: "Detail" },
-            ]}
-            innerRows={[
-              [
-                {
-                  value: (
-                    <div>
-                      <Image src={dress} width={46} height={83} />
-                    </div>
-                  ),
-                  alignCenter: true,
-                },
-                { value: "Black Printed Long Sleeve Midi Dress" },
-                { value: "BFNSKBGDHKSF" },
-                { value: "Yves Saint L" },
-                { value: "%25" },
-                { value: "$213" },
-                { value: 32132 },
-                { value: "Not available" },
-                {
-                  value: <Icon type={"exclamation"} />,
-                  alignCenter: true,
-                },
-              ],
-              [
-                {
-                  value: (
-                    <div>
-                      <Image src={dress} width={46} height={83} />
-                    </div>
-                  ),
-                  alignCenter: true,
-                },
-                { value: "Black Printed Long Sleeve Midi Dress" },
-                { value: "BFNSKBGDHKSF" },
-                { value: "Yves Saint L" },
-                { value: "%25" },
-                { value: "$213" },
-                { value: 32132 },
-                { value: "Not available" },
-                {
-                  value: <Icon type={"exclamation"} />,
-                  alignCenter: true,
-                },
-              ],
-              [
-                {
-                  value: (
-                    <div>
-                      <Image src={dress} width={46} height={83} />
-                    </div>
-                  ),
-                  alignCenter: true,
-                },
-                { value: "Black Printed Long Sleeve Midi Dress" },
-                { value: "BFNSKBGDHKSF" },
-                { value: "Yves Saint L" },
-                { value: "%25" },
-                { value: "$213" },
-                { value: 32132 },
-                { value: "Not available" },
-                {
-                  value: <Icon type={"exclamation"} />,
-                  alignCenter: true,
-                },
-              ],
-            ]}
-          />
+          <Table headers={tableHeaders} innerRows={tableInnerRows} />
         </div>
       </div>
     </>
