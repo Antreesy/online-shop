@@ -28,23 +28,36 @@ const Cart: NextPage = () => {
     <div className={s.container}>
       <div className={s.cartItemlist}>
         <p>{t("myCart", { number: cartList.length })}</p>
-        <div className={s.cartItemsHeader}>
-          <p className={s.names}>{t("nameOfTheProduct")}</p>
-          <p className={s.price}>{t("price")}</p>
-          <p className={s.piece}>{t("piece")}</p>
-          <p className={s.total}>{t("total")}</p>
-        </div>
+        {cartList.length ? (
+          <>
+            <div className={s.cartItemsHeader}>
+              <p className={s.names}>{t("nameOfTheProduct")}</p>
+              <p className={s.price}>{t("price")}</p>
+              <p className={s.piece}>{t("piece")}</p>
+              <p className={s.total}>{t("total")}</p>
+            </div>
+          </>
+        ) : (
+          ""
+        )}
+
         <CartItemList list={cartList} />
       </div>
-      <div className={s.orderSummary}>
-        <OrderSummary
-          discount={123}
-          kdv={132}
-          shipping={100}
-          subtotal={150}
-          buttonHref="/order-page"
-        />
-      </div>
+      {cartList.length ? (
+        <>
+          <div className={s.orderSummary}>
+            <OrderSummary
+              discount={123}
+              kdv={132}
+              shipping={100}
+              subtotal={150}
+              buttonHref="/order-page"
+            />
+          </div>
+        </>
+      ) : (
+        ""
+      )}
     </div>
   )
 }

@@ -26,6 +26,12 @@ export const CartItemList: React.FC<CartListProps> = ({ list }) => {
           <p className={s.subtitle}>Add items to your cart to buy</p>
         </div>
       )}
+
+{/* {
+  list.map((item, index) => {
+          return <CartItem {...item} key={index} />
+        })
+} */}
     </>
   )
 }
