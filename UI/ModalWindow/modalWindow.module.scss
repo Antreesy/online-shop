@@ -59,3 +59,20 @@
   justify-content: flex-start;
   align-items: center;
 }
+
+.round {
+  background-color: $color-purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 39px;
+  min-width: 39px;
+  border-radius: 50%;
+  font-size: 14px;
+
+  @include mobile {
+    height: 26px;
+    min-width: 26px;
+    font-size: 8px;
+  }
+}

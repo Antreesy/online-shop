@@ -1,10 +1,11 @@
-import {useState} from "react"
+import {useEffect, useState} from "react"
 import cn from "classnames"
 import Head from "next/head"
 import {BackButton, Table} from "Сomponents"
 import {Button, Icon, Input, Pagination, Select, Tabs} from "UI"
 
 import s from "styles/pages/brand-products.module.scss"
+import ModalWindow from "../UI/ModalWindow/ModalWindow";
 
 const tableHeaders = [
     {name: "Orders No"},
@@ -34,11 +35,13 @@ const tableInnerRows = [
         {value: 221255},
         {value: "New Order"},
         {
-            value: <><p style={{fontSize: "32px"}}><Icon color={"#8100EF"} type={"exclamation"}/></p><p style={{marginTop: "8px"}}>New Notification</p></>,
+            value: <><p className={s.table_sign_icon}><Icon color={"#8100EF"} type={"exclamation"}/></p><p
+                style={{marginTop: "8px"}}>New Notification</p></>,
             alignCenter: true,
         },
         {
-            value: <><p style={{color: "#8100EF", marginBottom: "7px"}}>Getting Ready Pass</p><p style={{textDecoration: "underline"}}>Cancel Order</p></>
+            value: <><p style={{color: "#8100EF", marginBottom: "7px"}}>Getting Ready Pass</p><p
+                style={{textDecoration: "underline"}}>Cancel Order</p></>
         },
     ],
     [
@@ -55,11 +58,13 @@ const tableInnerRows = [
         {value: 221255},
         {value: "New Order"},
         {
-            value: <><p style={{fontSize: "32px"}}><Icon color={"#8100EF"} type={"exclamation"}/></p><p style={{marginTop: "8px"}}>New Notification</p></>,
+            value: <><p className={s.table_sign_icon}><Icon color={"#8100EF"} type={"exclamation"}/></p><p
+                style={{marginTop: "8px"}}>New Notification</p></>,
             alignCenter: true,
         },
         {
-            value: <><p style={{color: "#8100EF", marginBottom: "7px"}}>Getting Ready Pass</p><p style={{textDecoration: "underline"}}>Cancel Order</p></>
+            value: <><p style={{color: "#8100EF", marginBottom: "7px"}}>Getting Ready Pass</p><p
+                style={{textDecoration: "underline"}}>Cancel Order</p></>
         },
     ],
     [
@@ -76,11 +81,13 @@ const tableInnerRows = [
         {value: 221255},
         {value: "New Order"},
         {
-            value: <><p style={{fontSize: "32px"}}><Icon color={"#8100EF"} type={"exclamation"}/></p><p style={{marginTop: "8px"}}>New Notification</p></>,
+            value: <><p className={s.table_sign_icon}><Icon color={"#8100EF"} type={"exclamation"}/></p><p
+                style={{marginTop: "8px"}}>New Notification</p></>,
             alignCenter: true,
         },
         {
-            value: <><p style={{color: "#8100EF", marginBottom: "7px"}}>Getting Ready Pass</p><p style={{textDecoration: "underline"}}>Cancel Order</p></>
+            value: <><p style={{color: "#8100EF", marginBottom: "7px"}}>Getting Ready Pass</p><p
+                style={{textDecoration: "underline"}}>Cancel Order</p></>
         },
     ],
     [
@@ -97,11 +104,13 @@ const tableInnerRows = [
         {value: 221255},
         {value: "New Order"},
         {
-            value: <><p style={{fontSize: "32px"}}><Icon color={"#8100EF"} type={"exclamation"}/></p><p style={{marginTop: "8px"}}>New Notification</p></>,
+            value: <><p className={s.table_sign_icon}><Icon color={"#8100EF"} type={"exclamation"}/></p><p
+                style={{marginTop: "8px"}}>New Notification</p></>,
             alignCenter: true,
         },
         {
-            value: <><p style={{color: "#8100EF", marginBottom: "7px"}}>Getting Ready Pass</p><p style={{textDecoration: "underline"}}>Cancel Order</p></>
+            value: <><p style={{color: "#8100EF", marginBottom: "7px"}}>Getting Ready Pass</p><p
+                style={{textDecoration: "underline"}}>Cancel Order</p></>
         },
     ],
     [
@@ -118,11 +127,13 @@ const tableInnerRows = [
         {value: 221255},
         {value: "New Order"},
         {
-            value: <><p style={{fontSize: "32px"}}><Icon color={"#8100EF"} type={"exclamation"}/></p><p style={{marginTop: "8px"}}>New Notification</p></>,
+            value: <><p className={s.table_sign_icon}><Icon color={"#8100EF"} type={"exclamation"}/></p><p
+                style={{marginTop: "8px"}}>New Notification</p></>,
             alignCenter: true,
         },
         {
-            value: <><p style={{color: "#8100EF", marginBottom: "7px"}}>Getting Ready Pass</p><p style={{textDecoration: "underline"}}>Cancel Order</p></>
+            value: <><p style={{color: "#8100EF", marginBottom: "7px"}}>Getting Ready Pass</p><p
+                style={{textDecoration: "underline"}}>Cancel Order</p></>
         },
     ],
     [
@@ -139,11 +150,13 @@ const tableInnerRows = [
         {value: 221255},
         {value: "New Order"},
         {
-            value: <><p style={{fontSize: "32px"}}><Icon color={"#8100EF"} type={"exclamation"}/></p><p style={{marginTop: "8px"}}>New Notification</p></>,
+            value: <><p className={s.table_sign_icon}><Icon color={"#8100EF"} type={"exclamation"}/></p><p
+                style={{marginTop: "8px"}}>New Notification</p></>,
             alignCenter: true,
         },
         {
-            value: <><p style={{color: "#8100EF", marginBottom: "7px"}}>Getting Ready Pass</p><p style={{textDecoration: "underline"}}>Cancel Order</p></>
+            value: <><p style={{color: "#8100EF", marginBottom: "7px"}}>Getting Ready Pass</p><p
+                style={{textDecoration: "underline"}}>Cancel Order</p></>
         },
     ],
     [
@@ -160,17 +173,27 @@ const tableInnerRows = [
         {value: 221255},
         {value: "New Order"},
         {
-            value: <><p style={{fontSize: "32px"}}><Icon color={"#8100EF"} type={"exclamation"}/></p><p style={{marginTop: "8px"}}>New Notification</p></>,
+            value: <><p className={s.table_sign_icon}><Icon color={"#8100EF"} type={"exclamation"}/></p><p
+                style={{marginTop: "8px"}}>New Notification</p></>,
             alignCenter: true,
         },
         {
-            value: <><p style={{color: "#8100EF", marginBottom: "7px"}}>Getting Ready Pass</p><p style={{textDecoration: "underline"}}>Cancel Order</p></>
+            value: <><p style={{color: "#8100EF", marginBottom: "7px"}}>Getting Ready Pass</p><p
+                style={{textDecoration: "underline"}}>Cancel Order</p></>
         },
     ],
 ]
 
 const BrandProducts: React.FC = () => {
     const [inputValue, setInputValue] = useState<string>("")
+    const [modal, setModal] = useState<boolean>(true)
+    let isMobile
+
+    useEffect(() => {
+        isMobile = window.screen.width < 1024
+        console.log(isMobile)
+    }, [])
+
     return (
         <>
             <Head>
@@ -195,7 +218,40 @@ const BrandProducts: React.FC = () => {
                         ]}
                         values={[]}
                     />
-                    <div className={s.content__header}>
+
+                    <div className={cn(s.content__header, s._brand_orders_mobile)}>
+                        <div className={s.top_btn_mobile}>
+                            <Select
+                                placeholder={"Order date"}
+                                values={[
+                                    {title: "Order date", value: 1},
+                                ]}
+                                onChange={() => {
+                                    return
+                                }}
+                            />
+                            <Input
+                                className={s.input}
+                                placeholder="Client Name"
+                                setValue={setInputValue}
+                                value={inputValue}
+                            />
+                        </div>
+
+                        <div className={s.bot_btn_mobile}>
+                            <Button className={cn(s.button, s.button_purple)} iconLeft="search">
+                                Search
+                            </Button>
+                            <Button
+                                className={cn(s.button, s.button_green)}
+                                iconLeft="download"
+                            >
+                                Excel Download
+                            </Button>
+                        </div>
+                    </div>
+
+                    <div className={cn(s.content__header, s._brand_orders)}>
                         <Input
                             className={s.input}
                             placeholder="Orders Code"
@@ -234,7 +290,7 @@ const BrandProducts: React.FC = () => {
                         </Button>
                     </div>
 
-                    <div className={s.bottom_content_header}>
+                    <div className={cn(s.bottom_content_header, s._brand_orders)}>
                         <Select
                             placeholder={"Order date"}
                             values={[
@@ -268,9 +324,61 @@ const BrandProducts: React.FC = () => {
                         <Pagination className={s.pagination} pagesCount={10}/>
                     </div>
 
+                    <div className={cn(s.bottom_content_header, s._brand_orders_mobile_bot)}>
+                        <Select
+                            placeholder={"20 product"}
+                            values={[
+                                {title: "20 product", value: 1},
+                            ]}
+                            onChange={() => {
+                                return
+                            }}
+                        />
+                        <Select
+                            placeholder={"Order date"}
+                            values={[
+                                {title: "Order date", value: 1},
+                            ]}
+                            onChange={() => {
+                                return
+                            }}
+                        />
+                        <Select
+                            placeholder={"Old to New"}
+                            values={[
+                                {title: "Old to New", value: 1},
+                            ]}
+                            onChange={() => {
+                                return
+                            }}
+                        />
+                    </div>
+
                     <Table headers={tableHeaders} innerRows={tableInnerRows}/>
                 </div>
             </div>
+            <ModalWindow isOpen={modal} onClose={() => {
+                setModal(false)
+            }}>
+                <div className={s.modal}>
+                    <p className={s.modal__title}>Do you approve your request to cancel the order? If you want to
+                        continue the transaction, please select your reason for cancellation.</p>
+                    <Select
+                        selectClassName={s.modal_select}
+                        initValue={1}
+                        values={[
+                            {title: "Body Incompatibility", value: 1},
+                        ]}
+                        onChange={() => {
+                            return
+                        }}
+                    />
+                    <div className={s.modal__btns}>
+                        <Button variant={"outlined"}>Cancel Order</Button>
+                        <Button>Refuse</Button>
+                    </div>
+                </div>
+            </ModalWindow>
         </>
     )
 }
