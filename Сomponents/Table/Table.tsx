@@ -145,7 +145,7 @@ const CustomTable: React.FC<TableProps> = ({
               {splitRows.map((row, index) => (
                 <TableRow
                   key={index}
-                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  sx={{"&:last-child td": { borderBottom: "1px solid $color-grey-de" } }}
                 >
                   {row.map((el, index) => (
                     <TableCell

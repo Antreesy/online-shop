@@ -44,13 +44,21 @@
     max-width: 150px;
     background: $color-purple;
   }
+
   .button_red {
     max-width: 150px;
     background: $color-red;
   }
+
   .button_green {
     max-width: 190px;
     background: $color-green;
+  }
+
+  .button_black {
+    width: 53px;
+    margin-left: 93px;
+    background: $color-black;
   }
 }
 
@@ -59,9 +67,11 @@
   justify-content: flex-end;
   align-items: center;
   margin: 40px 0 40px 0;
+
   & > div {
     margin-right: 35px;
   }
+
   .bottom_content_select > div {
     width: 230px;
   }
