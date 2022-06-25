@@ -1,4 +1,5 @@
 import cn from "classnames"
+import { useTranslation } from "next-i18next"
 
 import { Table } from "Сomponents"
 import { Button, DatePicker, Range, Select } from "UI"
@@ -6,73 +7,55 @@ import { Button, DatePicker, Range, Select } from "UI"
 import { Currency } from "shared/enums/currency"
 
 import s from "styles/pages/account/dashboard.module.scss"
-import { useTranslation } from "next-i18next"
 
 export const BrandBasedTab = () => {
   const { t } = useTranslation("dashboard")
   return (
-    <div style={{ paddingTop: "47px" }}>
+    <div className={s.wrapper}>
       <div className={s.row}>
         <Select
           values={[]}
           label={t("selectCategory")}
           placeholder={t("selectCategory")}
           selectClassName={s.select}
-          labelClassName={s.select__label}
         />
       </div>
-      <div className={s.row} style={{ display: "flex" }}>
-        <div>
-          <h2>{t("selectStartDate")}</h2>
+      <div className={cn(s.row, s.row_wrap)}>
+        <div className={s.inner_row}>
           <DatePicker
+            label={t("selectStartDate")}
+            initValue={new Date()}
+            onChange={() => {
+              return
+            }}
+          />
+          <DatePicker
+            label={t("selectEndDate")}
             initValue={new Date()}
             onChange={() => {
               return
             }}
           />
         </div>
-        <div>
-          <h2>{t("selectEndDate")}</h2>
-          <DatePicker
-            initValue={new Date()}
-            onChange={() => {
-              return
-            }}
-          />
-        </div>
-        <div>
-          <h2>{t("priceRange")}</h2>
-          <Range
-            minQuantity={10000}
-            maxQuantity={1000000}
-            currency={Currency.RUB}
-          />
-        </div>
+        <Range
+          label={t("priceRange")}
+          minQuantity={10000}
+          maxQuantity={1000000}
+          currency={Currency.RUB}
+        />
       </div>
       <div className={s.row}>
-        <Button variant={"outlined"} className={cn(s.clean_btn, s._brand)}>
-          {t("Clean")}
-        </Button>
-        <Button className={cn(s.button_black, s.search_btn, s._brand)}>
-          {t("search")}
-        </Button>
+        <Button className={s.button_clean}>{t("Clean")}</Button>
+        <Button className={s.button_black}>{t("search")}</Button>
       </div>
       <div className={s.table__head}>
-        <span className={s.table__head__title}>
-          {t("brandBasedSalesStatistics")}
-        </span>
-        <div style={{ display: "flex" }}>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              marginRight: "25px",
-            }}
-          >
-            <span className={s.table__head__results}>
+        <h4 className={s.title}>{t("brandBasedSalesStatistics")}</h4>
+        <div className={cn(s.results, s.desktop)}>
+          <div>
+            <span className={s.filtering}>
               {t("filteringResults", { number: "11230" })}
             </span>
-            <span className={s.table__head__update}>
+            <span className={s.update}>
               {t("lastUpdated", { date: "24.12.2021" })}
             </span>
           </div>
@@ -91,6 +74,16 @@ export const BrandBasedTab = () => {
         ]}
         innerRows={[]}
       />
+      <div className={cn(s.results, s.mobile)}>
+        <div>
+          <span className={s.filtering}>
+            {t("filteringResults", { number: "11230" })}
+          </span>
+          <span className={s.update}>
+            {t("lastUpdated", { date: "24.12.2021" })}
+          </span>
+        </div>
+      </div>
     </div>
   )
 }
