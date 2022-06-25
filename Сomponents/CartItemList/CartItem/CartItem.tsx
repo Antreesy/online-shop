@@ -1,10 +1,10 @@
 import { useState } from "react"
+import { useTranslation } from "next-i18next"
 
 import Image, { ImageProps } from "next/image"
 import { Button, ItemCounter, Price } from "UI"
 
 import s from "../cartItemList.module.scss"
-import { useTranslation } from "next-i18next"
 
 export interface CartItemProps {
   title: string
