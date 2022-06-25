@@ -98,15 +98,3 @@
     width: 100%;
   }
 }
-
-.scrollbar {
-  & > :global(.simplebar-horizontal) {
-    background-color: $color-grey-f4;
-    border-radius: 5px;
-
-    & > div::before {
-      opacity: 1;
-      background: $color-purple;
-    }
-  }
-}
