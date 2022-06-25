@@ -3,13 +3,7 @@
 .header_info {
   margin-bottom: 50px;
 
-  @include mobile {
-    margin-bottom: 25px;
-  }
-}
-
-.address_wrapper {
-  & > :not(:last-child) {
+  @include mobile-laptop {
     margin-bottom: 25px;
   }
 }
@@ -19,82 +13,133 @@
   margin-bottom: 50px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
 
-  @include mobile {
+  @include mobile-laptop {
     margin-bottom: 25px;
   }
 }
 
-.add_address_form {
+.wrapper {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  gap: 60px;
+  padding-top: 50px;
+
+  @include mobile-laptop {
+    gap: 40px;
+  }
 }
 
 .row {
   display: flex;
   align-items: flex-end;
-  gap: 24px;
-  @include mobile {
+  gap: 25px;
+  min-height: 65px;
+  @include mobile-tablet {
     flex-wrap: wrap;
-    gap: 51px;
+    gap: 40px;
   }
 
-  div {
-    max-height: 65px;
+  &.row_wrap {
+    @include laptop {
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+  }
+
+  & > div {
     width: 100%;
-    justify-content: flex-end;
+  }
 
-    div {
+  & > .inner_row {
+    width: 200%;
+    display: flex;
+    align-items: flex-end;
+    gap: 25px;
+    min-height: 65px;
+    @include mobile-tablet {
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    & > div {
       width: 100%;
-    }
-  }
-
-  h2 {
-    font-size: 16px;
-    line-height: 21px;
-    font-weight: $fw-bold;
-    color: $color-purple;
-    margin-bottom: 16px;
-  }
-}
-
-.row:nth-child(1) {
-  margin-bottom: 94px;
-}
-
-.row:nth-child(3) {
-  display: flex;
-  margin-top: 94px;
-  margin-bottom: 52px;
-
-  div:nth-child(1) {
-    max-width: 359px;
-  }
-
-  div:nth-child(2) {
-    max-width: 508px;
-
-    div:nth-child(2) {
-      width: 142px;
-      height: 65px !important;
-    }
-  }
-
-  div:nth-child(3) {
-    div {
-      div {
-        width: 361px !important;
-        height: 65px !important;
-      }
     }
   }
 }
 
 .select {
+  min-width: 250px;
+  & > div {
+    height: 65px !important;
+  }
+}
+
+.input {
   height: 65px !important;
 }
 
+.table__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 53px;
+
+  @include mobile-laptop {
+    flex-wrap: wrap;
+  }
+
+  .title {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: $fw-bold;
+  }
+}
+
+.results {
+  display: flex;
+  gap: 25px;
+
+  &.mobile {
+    display: none;
+  }
+
+  @include mobile-laptop {
+    &.desktop {
+      display: none;
+    }
+
+    &.mobile {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    @include mobile-laptop {
+      align-items: flex-start;
+    }
+  }
+
+  .filtering {
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: $fw-regular;
+  }
+
+  .update {
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: $fw-semibold;
+  }
+}
+
 .button_excel {
+  max-width: 375px;
+  width: 100%;
   background: $color-green;
 
   &:hover {
@@ -102,55 +147,11 @@
   }
 }
 
-.table__head {
-  display: flex;
-  justify-content: space-between;
-  height: 53px;
-  margin-bottom: 32px;
-
-  @include  mobile {
-    flex-wrap: wrap;
-    margin-bottom: 60px;
-  }
-}
-
-.result_with_exel {
-  display: flex;
-
-  @include mobile {
-    flex-wrap: wrap;
-    button {
-      margin-top: 10px;
-    }
-  }
-}
-
-.table__head__title {
-  display: flex;
-  align-items: flex-end;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: $fw-bold;
-}
-
-.table__head__results {
-  font-size: 16px;
-  line-height: 21px;
-  font-weight: $fw-regular;
-
-}
-
-.table__head__update {
-  font-size: 13px;
-  line-height: 17px;
-  font-weight: 400;
-}
-
-.select__label {
-  margin-bottom: 16px;
-}
-
 .button_black {
+  min-height: 65px;
+  height: 100%;
+  min-width: 360px;
+  width: 100%;
   background: $color-black;
 
   &:hover {
@@ -158,29 +159,15 @@
   }
 }
 
-.search_btn {
-  border-radius: 0 4px 4px 0 !important;
-}
-
-.clean_btn {
-  height: 65px !important;
-  width: 360px !important;
-}
-
-.search_block {
-  display: flex;
-
-  input {
-    height: 65px;
-    padding: 0;
-  }
-}
-
-.select_class {
+.button_clean {
+  min-height: 65px;
   height: 100%;
-}
+  min-width: 360px;
+  width: 100%;
+  background: $color-grey-f4;
+  color: $color-black;
 
-._brand {
-  height: 65px;
-  width: 625px !important;
+  &:hover {
+    background-color: $color-grey-c;
+  }
 }

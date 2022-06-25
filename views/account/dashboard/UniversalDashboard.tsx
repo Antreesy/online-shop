@@ -17,25 +17,18 @@ export const UniversalDashboard: React.FC = () => {
     <>
       <SectionHeader className={s.header_info} title={"My Dashboard"} />
 
-      <div className={s.address_wrapper}>
-        <Tabs
-          className={s.notification_tabs}
-          variant="spaces"
-          labels={[
-            t("productBasedSalesStatistics"),
-            t("categoryBasedSalesStatistics"),
-            t("brandBasedSalesStatistics"),
-            t("otherStatistics"),
-          ]}
-          values={[
-            <ProductBasedTab />,
-
-            <CategoryBasedTab />,
-
-            <BrandBasedTab />,
-          ]}
-        />
-      </div>
+      <Tabs
+        className={s.notification_tabs}
+        variant="spaces"
+        labels={[
+          t("productBasedSalesStatistics"),
+          t("categoryBasedSalesStatistics"),
+          t("brandBasedSalesStatistics"),
+          t("otherStatistics"),
+        ]}
+        isScrollable
+        values={[<ProductBasedTab />, <CategoryBasedTab />, <BrandBasedTab />]}
+      />
     </>
   )
 }
