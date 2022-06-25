@@ -4,6 +4,7 @@
   @include container;
   max-width: 1720px;
   display: flex;
+  gap: 20px;
   padding-top: 30px;
   padding-bottom: 50px;
 
@@ -13,41 +14,8 @@
   }
 }
 
-.cartItemsHeader {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  color: $color-white;
-  background-color: $color-black;
-  padding: 25px;
-  border-radius: 5px;
-  position: relative;
-  overflow: hidden;
-
-  &::after {
-    content: "";
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    top: -40px;
-    right: -40px;
-    border-radius: 100%;
-
-    background-image: linear-gradient(
-      257deg,
-      $color-purple 92%,
-      $color-cyan 5%
-    );
-  }
-
-  @include mobile-tablet {
-    display: none;
-  }
-}
-
 .cartItemlist {
   width: 100%;
-  padding-right: 20px;
 
   > p {
     margin-bottom: 20px;
@@ -61,21 +29,32 @@
   }
 }
 
-.names {
-  flex: 3;
-  text-align: left;
+.empty_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  margin-bottom: 30px;
+  line-height: 1.2;
+
+  .title {
+    font-weight: $fw-bold;
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    color: $color-grey-c;
+  }
 }
 
-.price {
-  flex: 1;
-  margin-right: 60px;
-}
-
-.piece {
-  flex: 1;
-  margin-right: 60px;
-}
-
-.total {
-  flex: 1;
+.empty_button {
+  font-size: 40px;
+  padding: 25px;
+  border-radius: 100%;
+  background: $color-white;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  padding-top: 20px;
+  text-align: center;
+  color: $color-purple;
+  margin-bottom: 20px;
 }
