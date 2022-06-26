@@ -173,6 +173,8 @@
 .pagination_mobile {
   margin-left: auto;
   padding-top: 10px;
+  font-size: 13px;
+  line-height: 15px;
   @include laptop-desktop {
     display: none;
   }

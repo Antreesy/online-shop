@@ -30,6 +30,10 @@
         outline: 2px solid $color-purple;
         border-radius: 4px;
       }
+
+      &::placeholder {
+        opacity: 1;
+      }
     }
 
     fieldset {

@@ -12,7 +12,7 @@ import s from "./table.module.scss"
 
 interface HeaderItem {
   name: string
-  isSort: boolean
+  isSort?: boolean
   alignCenter?: boolean
 }
 
@@ -145,7 +145,12 @@ const CustomTable: React.FC<TableProps> = ({
               {splitRows.map((row, index) => (
                 <TableRow
                   key={index}
-                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  sx={{
+                    "&:last-child td": {
+                      borderBottom: "1px solid $color-grey-de",
+                    },
+                    "&:nth-of-type(odd)": { backgroundColor: "#FAFAFA" },
+                  }}
                 >
                   {row.map((el, index) => (
                     <TableCell

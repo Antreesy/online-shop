@@ -46,7 +46,7 @@ const DateInput: React.FC<DatePickerProps> = (props) => {
         </InputLabel>
       )}
 
-      <LocalizationProvider dateAdapter={DateAdapter} locale={enLocale}>
+      <LocalizationProvider dateAdapter={DateAdapter} adapterLocale={enLocale}>
         <DatePicker
           disabled={disabled}
           mask={"__.__.____"}

@@ -5,6 +5,11 @@
 }
 .tabs {
   border-radius: 10px;
+
+  & div {
+    height: 100%;
+  }
+
   .tab {
     flex-grow: 2;
     font-weight: $fw-semibold;
@@ -74,10 +79,6 @@
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   box-shadow: 3px -3px 5px $color-grey-e2;
-
-  button {
-    width: 100%;
-  }
 
   .tab {
     font-weight: $fw-semibold;
