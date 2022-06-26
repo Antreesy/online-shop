@@ -31,7 +31,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 30px;
-  background-color: #FDFAFF;
+  background-color: #fdfaff;
   padding: 29px 36px;
 
   @include mobile-tablet {
@@ -136,7 +136,6 @@
     }
   }
 }
-
 
 ._brand_orders {
   @include mobile-tablet {
