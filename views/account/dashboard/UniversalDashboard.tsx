@@ -26,7 +26,6 @@ export const UniversalDashboard: React.FC = () => {
           t("brandBasedSalesStatistics"),
           t("otherStatistics"),
         ]}
-        isScrollable
         values={[<ProductBasedTab />, <CategoryBasedTab />, <BrandBasedTab />]}
       />
     </>

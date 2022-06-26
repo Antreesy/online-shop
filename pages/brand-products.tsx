@@ -2,91 +2,11 @@ import { useState } from "react"
 import cn from "classnames"
 import Head from "next/head"
 
-import Image from "next/image"
 import { BackButton, Table } from "Сomponents"
-import { Button, Icon, Input, Pagination, Select, Tabs } from "UI"
-
-import dress from "public/assets/img/Knitted_dress.png"
+import { Button, Input, Pagination, Select, Tabs } from "UI"
 
 import s from "styles/pages/brand-products.module.scss"
-
-const tableHeaders = [
-  { name: "Product Image" },
-  { name: "Product Name" },
-  { name: "Product Code" },
-  { name: "Brand" },
-  { name: "Commission" },
-  { name: "Price" },
-  { name: "Stock" },
-  { name: "Status" },
-  { name: "Detail" },
-]
-
-const tableInnerRows = [
-  [
-    {
-      value: (
-        <div>
-          <Image src={dress} width={46} height={83} />
-        </div>
-      ),
-      alignCenter: true,
-    },
-    { value: "Black Printed Long Sleeve Midi Dress" },
-    { value: "BFNSKBGDHKSF" },
-    { value: "Yves Saint L" },
-    { value: "%25" },
-    { value: "$213" },
-    { value: 32132 },
-    { value: "Not available" },
-    {
-      value: <Icon type={"exclamation"} />,
-      alignCenter: true,
-    },
-  ],
-  [
-    {
-      value: (
-        <div>
-          <Image src={dress} width={46} height={83} />
-        </div>
-      ),
-      alignCenter: true,
-    },
-    { value: "Black Printed Long Sleeve Midi Dress" },
-    { value: "BFNSKBGDHKSF" },
-    { value: "Yves Saint L" },
-    { value: "%25" },
-    { value: "$213" },
-    { value: 32132 },
-    { value: "Not available" },
-    {
-      value: <Icon type={"exclamation"} />,
-      alignCenter: true,
-    },
-  ],
-  [
-    {
-      value: (
-        <div>
-          <Image src={dress} width={46} height={83} />
-        </div>
-      ),
-      alignCenter: true,
-    },
-    { value: "Black Printed Long Sleeve Midi Dress" },
-    { value: "BFNSKBGDHKSF" },
-    { value: "Yves Saint L" },
-    { value: "%25" },
-    { value: "$213" },
-    { value: 32132 },
-    { value: "Not available" },
-    {
-      value: <Icon type={"exclamation"} />,
-      alignCenter: true,
-    },
-  ],
-]
+import { brandProductsTableContent } from "shared/constants/brandTables"
 
 const BrandProducts: React.FC = () => {
   const [inputValue, setInputValue] = useState<string>("")
@@ -177,7 +97,10 @@ const BrandProducts: React.FC = () => {
             <Pagination className={s.pagination} pagesCount={10} />
           </div>
 
-          <Table headers={tableHeaders} innerRows={tableInnerRows} />
+          <Table
+            headers={brandProductsTableContent.headers}
+            innerRows={brandProductsTableContent.rows}
+          />
         </div>
       </div>
     </>

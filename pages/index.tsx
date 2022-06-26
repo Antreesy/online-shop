@@ -72,7 +72,7 @@ const Index: NextPage = () => {
               <a className={s.title__link}>Specific Brand</a>
             </Link>
             <Link href="/account/dashboard">
-              <a className={s.title__link}>Dashboard (account)</a>
+              <a className={s.title__link}>Dashboard (in account)</a>
             </Link>
             <span className={s.title__miss}>Dashboard (other)</span>
           </div>
@@ -83,7 +83,7 @@ const Index: NextPage = () => {
               <a className={s.title__link}>Brand homepage</a>
             </Link>
             <Link href="/account/add-product">
-              <a className={s.title__link}>Add product (account)</a>
+              <a className={s.title__link}>Add product (in account)</a>
             </Link>
             <Link href="/visual-operations">
               <a className={s.title__link}>Visual operations</a>
@@ -100,9 +100,15 @@ const Index: NextPage = () => {
             <Link href="/brand-products">
               <a className={s.title__link}>Brand Product List</a>
             </Link>
-            <span className={s.title__miss}>Brand Order Operations</span>
-            <span className={s.title__miss}>Brand Cancellation</span>
-            <span className={s.title__miss}>Brand Order Transactions</span>
+            <Link href="/brand-orders-operations">
+              <a className={s.title__link}>Brand Order Operations</a>
+            </Link>
+            <Link href="/brand-orders-transactions">
+              <a className={s.title__link}>Brand Order Transactions</a>
+            </Link>
+            <Link href="/brand-cancellation">
+              <a className={s.title__link}>Brand Cancellation</a>
+            </Link>
           </div>
 
           <div className={s.flex_column}>

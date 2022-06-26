@@ -149,7 +149,7 @@ const CustomTable: React.FC<TableProps> = ({
                     "&:last-child td": {
                       borderBottom: "1px solid $color-grey-de",
                     },
-                    "&:nth-child(odd)": { backgroundColor: "#FAFAFA" },
+                    "&:nth-of-type(odd)": { backgroundColor: "#FAFAFA" },
                   }}
                 >
                   {row.map((el, index) => (

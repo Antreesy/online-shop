@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import cn from "classnames"
+
 import Head from "next/head"
-import { BackButton, Table } from "Сomponents"
 import { Button, Icon, Input, ModalWindow, Pagination, Select, Tabs } from "UI"
-import { brandCancelTableContent } from "shared/constants/brandTables"
+import { BackButton, Table } from "Сomponents"
+import { brandOrdOpsTableContent } from "shared/constants/brandTables"
 
 import s from "styles/pages/brand-products.module.scss"
 
@@ -14,6 +15,7 @@ const BrandProducts: React.FC = () => {
 
   useEffect(() => {
     isMobile = window.screen.width < 1024
+    console.log(isMobile)
   }, [])
 
   return (
@@ -31,7 +33,13 @@ const BrandProducts: React.FC = () => {
           <Tabs
             className={s.tabs}
             variant="no_border"
-            labels={["All Cancellation", "Customer Canceled", "Canceled"]}
+            labels={[
+              "All Products",
+              "New Orders",
+              "Prepared Orders",
+              "Ready to Delivery Orders",
+              "Delivered Orders",
+            ]}
             values={[]}
           />
 
@@ -83,13 +91,13 @@ const BrandProducts: React.FC = () => {
             />
             <Input
               className={s.input}
-              placeholder="Cancellation Start Date"
+              placeholder="Order Start Date"
               setValue={setInputValue}
               value={inputValue}
             />
             <Input
               className={s.input}
-              placeholder="Cancellation Order End Date"
+              placeholder="Order End Date"
               setValue={setInputValue}
               value={inputValue}
             />
@@ -162,8 +170,8 @@ const BrandProducts: React.FC = () => {
           </div>
 
           <Table
-            headers={brandCancelTableContent.headers}
-            innerRows={brandCancelTableContent.rows}
+            headers={brandOrdOpsTableContent.headers}
+            innerRows={brandOrdOpsTableContent.rows}
           />
         </div>
       </div>
