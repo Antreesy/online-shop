@@ -3,6 +3,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useTranslation } from "next-i18next"
 
 import { CartItemList, OrderSummary } from "Сomponents"
+import { Button } from "UI"
 
 import { cartList } from "shared/constants/cart-list"
 
@@ -24,27 +25,39 @@ export async function getStaticProps({ locale }: { locale: string }) {
 
 const Cart: NextPage = () => {
   const { t } = useTranslation("order")
+
   return (
     <div className={s.container}>
       <div className={s.cartItemlist}>
         <p>{t("myCart", { number: cartList.length })}</p>
-        <div className={s.cartItemsHeader}>
-          <p className={s.names}>{t("nameOfTheProduct")}</p>
-          <p className={s.price}>{t("price")}</p>
-          <p className={s.piece}>{t("piece")}</p>
-          <p className={s.total}>{t("total")}</p>
+
+        {cartList.length ? (
+          <CartItemList list={cartList} />
+        ) : (
+          <div className={s.empty_wrapper}>
+            <Button
+              icon
+              iconLeft="basket"
+              className={s.empty_button}
+              variant="text"
+            />
+            <p className={s.title}>There are no items in your cart</p>
+            <p className={s.subtitle}>Add items to your cart to buy</p>
+          </div>
+        )}
+      </div>
+
+      {cartList.length ? (
+        <div className={s.orderSummary}>
+          <OrderSummary
+            discount={123}
+            kdv={132}
+            shipping={100}
+            subtotal={150}
+            buttonHref="/order-page"
+          />
         </div>
-        <CartItemList list={cartList} />
-      </div>
-      <div className={s.orderSummary}>
-        <OrderSummary
-          discount={123}
-          kdv={132}
-          shipping={100}
-          subtotal={150}
-          buttonHref="/order-page"
-        />
-      </div>
+      ) : null}
     </div>
   )
 }
