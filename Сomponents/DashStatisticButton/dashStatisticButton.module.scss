@@ -1,0 +1,134 @@
+@import "styles/style.scss";
+
+.main {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 400px;
+  max-width: 410px;
+  width: 100%;
+  height: 159px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 #e8e8e8;
+  border: 3px solid $color-white;
+  cursor: pointer;
+
+  @include mobile-tablet {
+    min-width: 300px;
+    max-width: 340px;
+    width: 100%;
+    height: 120px;
+    padding: 20px;
+  }
+}
+
+.icon_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95px;
+  height: 95px;
+  margin-right: 15px;
+  border-radius: 9px;
+  background-color: $color-white;
+
+  .icon {
+    font-size: 57px;
+    color: $color-purple-light;
+  }
+
+  @include mobile-tablet {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+
+    .icon {
+      font-size: 47px;
+    }
+  }
+}
+
+.info_wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  .title {
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: $fw-regular;
+    line-height: 20px;
+
+    @include mobile-tablet {
+      margin-bottom: 6px;
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+  .title_value {
+    margin-bottom: 13px;
+    font-size: 20px;
+    font-weight: $fw-bold;
+    line-height: 23px;
+    color: $color-purple;
+
+    @include mobile-tablet {
+      margin-bottom: 6px;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+  .date {
+    font-size: 12px;
+    font-weight: $fw-medium;
+    line-height: 14px;
+    white-space: nowrap;
+
+    @include mobile-tablet {
+      font-size: 9px;
+      line-height: 11px;
+    }
+  }
+}
+
+.right_icon_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+
+  .icon {
+    font-size: 77.55px;
+    color: $color-grey-f5;
+  }
+
+  @include mobile-tablet {
+    right: 7px;
+    bottom: 7px;
+    .icon {
+      font-size: 65px;
+    }
+  }
+}
+
+.purple {
+  background: linear-gradient(90deg, $color-purple-light, $color-purple-f1);
+  color: $color-white;
+
+  .icon_wrapper {
+    background-color: $color-white;
+  }
+}
+
+.white {
+  color: $color-black;
+  background-color: $color-white;
+
+  .icon_wrapper {
+    background-color: $color-light-pink;
+  }
+}

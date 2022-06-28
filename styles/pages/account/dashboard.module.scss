@@ -23,6 +23,9 @@
   flex-direction: column;
   gap: 60px;
   padding-top: 50px;
+  &.others_wrapper {
+    gap: 30px;
+  }
 
   @include mobile-laptop {
     gap: 40px;
@@ -64,6 +67,17 @@
     & > div {
       width: 100%;
     }
+  }
+}
+
+.others_row {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+
+  @include mobile-laptop {
+    padding: 20px 5px;
+    gap: 8px;
   }
 }
 
@@ -169,5 +183,17 @@
 
   &:hover {
     background-color: $color-grey-c;
+  }
+}
+
+.scrollbar {
+  & > :global(.simplebar-horizontal) {
+    background-color: $color-grey-f4;
+    border-radius: 5px;
+
+    & > div::before {
+      opacity: 1;
+      background: $color-purple;
+    }
   }
 }

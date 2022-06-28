@@ -7,29 +7,42 @@
   background-color: $color-white;
   box-shadow: 0 0 20px 0 $color-black-a70;
   border-radius: 10px;
-  margin-right: 10px;
-  width: 300px;
-  height: 400px;
+  max-width: 300px;
+  min-height: 400px;
+
+  @include mobile-tablet {
+    max-width: 165px;
+    min-height: 230px;
+  }
 }
 .pie_item {
-  padding: 0 30px;
+  padding: 30px;
   display: block;
   h2 {
-    padding-top: 30px;
     font-size: 18px;
     font-weight: $fw-semibold;
   }
+
+  @include mobile-tablet {
+    padding: 15px;
+    h2 {
+      font-size: 14px;
+    }
+  }
 }
 .content {
-  width: 250px;
+  max-width: 250px;
+  width: 100%;
   margin-top: -60px;
+
+  @include mobile-tablet {
+    margin-top: -40px;
+  }
 }
 
 .info {
-  min-width: 240px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin-bottom: 10px;
 }
 .info_inner {
@@ -39,19 +52,37 @@
   align-items: center;
 }
 .box {
+  flex-shrink: 0;
   width: 33px;
   height: 33px;
   margin-right: 15px;
   border-radius: 4px;
+
+  @include mobile-tablet {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
 }
 .title {
   font-size: 18px;
   font-weight: $fw-medium;
+  white-space: nowrap;
+
+  @include mobile-tablet {
+    font-size: 12px;
+    line-height: 14px;
+  }
 }
 .num {
   font-size: 18px;
   font-weight: $fw-bold;
-  margin-left: 110px;
+  margin-left: auto;
+
+  @include mobile-tablet {
+    font-size: 12px;
+    line-height: 14px;
+  }
 }
 
 .rotate {

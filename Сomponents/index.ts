@@ -9,6 +9,7 @@ import { CartItemList } from "./CartItemList"
 import { Chart } from "./Chart"
 import { ColorPicker } from "./ColorPicker"
 import { Counter } from "./Counter"
+import { DashStatisticButton } from "./DashStatisticButton"
 import { InventoryButton } from "./InventoryButton"
 import { Footer } from "./Footer"
 import { Header, HeaderLight } from "./Header"
@@ -39,6 +40,7 @@ export {
   Chart,
   ColorPicker,
   Counter,
+  DashStatisticButton,
   Footer,
   Header,
   HeaderLight,
