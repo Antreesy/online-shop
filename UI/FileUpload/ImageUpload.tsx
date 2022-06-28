@@ -1,3 +1,5 @@
+import { useTranslation } from "next-i18next"
+
 import { InputLabel } from "@mui/material"
 import { FileUpload, Button } from "UI"
 
@@ -9,32 +11,32 @@ interface ImageUploadProps {
 }
 
 const ImageUpload: React.FC<ImageUploadProps> = ({ label, amount = 1 }) => {
+  const { t } = useTranslation("common")
+
   return (
     <div>
       {label && <InputLabel className={s.label}>{label}</InputLabel>}
       <div className={s.image_upload}>
-        <h4 className={s.caption}>Select New Image or Drag</h4>
+        <h4 className={s.caption}>{t("imageUpload.selectNewImage")}</h4>
         <div className={s.wrapper}>
           {Array.from(Array(amount)).map((item, index) => (
             <FileUpload
               key={index}
               className={s.uploader}
-              title="(JPG, JPEG, PNG,
-            Minimum 600x800)"
+              title={t("imageUpload.JPGJPEGPNG")}
             />
           ))}
         </div>
         <p className={s.text}>
-          The image you upload must be in JPEG or PNG format
+        {t("imageUpload.theImageFormat")}
         </p>
         <p className={s.text}>
-          The image you upload must have a minimum 600x800 standard and a
-          maximum size of 5MB.
+        {t("imageUpload.theImageSize")}
         </p>
         <p className={s.text}>
-          <a>Click</a> to view visual rules
+          <a>{t("click")}</a>{" "}{t("imageUpload.toViewVisualRules")}
         </p>
-        <Button className={s.button}>Load</Button>
+        <Button className={s.button}>{t("load")}</Button>
       </div>
     </div>
   )

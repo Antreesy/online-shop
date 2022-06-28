@@ -1,13 +1,26 @@
 import React from "react"
 import { useTranslation } from "next-i18next"
 import Head from "next/head"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
 import SimpleBar from "simplebar-react"
 import { OrderStatusButton, InventoryButton } from "Сomponents"
 import { Icon } from "UI"
 
 import s from "styles/pages/brand-landing.module.scss"
-
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "app",
+        "common",
+        "header",
+        "footer",
+        "brandLanding"
+      ])),
+    },
+  }
+}
 const BrandLanding: React.FC = () => {
   const { t } = useTranslation("brandLanding")
 
@@ -23,12 +36,12 @@ const BrandLanding: React.FC = () => {
         <nav className={s.navigation}>
           <SimpleBar className={s.scrollbar}>
             <ul>
-              <li>{t("Add Product")}</li>
-              <li>{t("Brand Information")}</li>
-              <li>{t("All Products")}</li>
-              <li>{t("All Cancellations")}</li>
-              <li>{t("On Sale")}</li>
-              <li>{t("Brand Visual Operations")}</li>
+              <li>{t("addProduct")}</li>
+              <li>{t("brandInformation")}</li>
+              <li>{t("allProducts")}</li>
+              <li>{t("allCancellations")}</li>
+              <li>{t("onSale")}</li>
+              <li>{t("brandVisualOperations")}</li>
             </ul>
           </SimpleBar>
         </nav>
@@ -38,7 +51,7 @@ const BrandLanding: React.FC = () => {
             <OrderStatusButton
               icon={"hanger"}
               appearance={"purple"}
-              title={t("All Orders")}
+              title={t("allOrders")}
               orderNumbers={3547}
               lastDay={20000}
               delays={200}
@@ -47,7 +60,7 @@ const BrandLanding: React.FC = () => {
             <OrderStatusButton
               icon={"getting_ready"}
               appearance={"white"}
-              title={t("Getting Ready")}
+              title={t("gettingReady")}
               orderNumbers={1679}
               lastDay={20000}
               delays={200}
@@ -56,7 +69,7 @@ const BrandLanding: React.FC = () => {
             <OrderStatusButton
               icon={"delivery_ready"}
               appearance={"white"}
-              title={t("Delivery Ready")}
+              title={t("deliveryReady")}
               orderNumbers={2500}
               lastDay={20000}
               delays={200}
@@ -65,7 +78,7 @@ const BrandLanding: React.FC = () => {
         </SimpleBar>
 
         <div className={s.caption}>
-          <h3>{t("Inventory")}</h3>
+          <h3>{t("inventory")}</h3>
         </div>
 
         <SimpleBar className={s.scrollbar}>
@@ -73,38 +86,38 @@ const BrandLanding: React.FC = () => {
             <InventoryButton
               icon={"bell_outlined"}
               appearance={"purple"}
-              text={t("Total Product")}
+              text={t("totalProduct")}
               number={1399}
             />
             <InventoryButton
               icon={"brand_display_name"}
               appearance={"white"}
-              text={t("Products on Sale")}
+              text={t("productsOnSale")}
               number={9876}
             />
             <InventoryButton
               icon={"discount"}
               appearance={"white"}
-              text={t("Critical Stock Level")}
+              text={t("criticalStockLevel")}
               number={2798}
             />
             <InventoryButton
               icon={"exclamation"}
               appearance={"white"}
-              text={t("Out of Stock Products")}
+              text={t("outOfStockProducts")}
               number={5609}
             />
             <InventoryButton
               icon={"out_of_stock"}
               appearance={"white"}
-              text={t("Off-Sale Products")}
+              text={t("offSaleProducts")}
               number={76}
             />
           </div>
         </SimpleBar>
 
         <div className={s.caption}>
-          <h3>{t("Customer Demands")}</h3>
+          <h3>{t("customerDemands")}</h3>
         </div>
 
         <div className={s.demands_wrapper}>
@@ -113,7 +126,7 @@ const BrandLanding: React.FC = () => {
               <Icon type={"out_of_stock"} className={s.icon} />
             </div>
             <div className={s.text}>
-              {t("Cancellation Requests")}: <span>{cancellation}</span>
+              {t("cancellationRequests")}: <span>{cancellation}</span>
             </div>
           </div>
           <div className={s.demands_button}>
@@ -121,7 +134,7 @@ const BrandLanding: React.FC = () => {
               <Icon type={"critical_stock"} className={s.icon} />
             </div>
             <div className={s.text}>
-              {t("Refund Requests")}: <span>{refunds}</span>
+              {t("refundRequests")}: <span>{refunds}</span>
             </div>
           </div>
         </div>

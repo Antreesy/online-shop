@@ -1,5 +1,6 @@
 import { useState } from "react"
 import cn from "classnames"
+import { useTranslation } from "next-i18next"
 
 import { Button, Icon, Input } from "UI"
 import { StepProps } from "shared/interfaces/stepProps"
@@ -9,20 +10,21 @@ import s from "styles/pages/account/add-product.module.scss"
 export const StepOne: React.FC<StepProps> = (props) => {
   const [value, setValue] = useState<string>("")
   const { currentStep, setCurrentStep } = props
+
+  const { t } = useTranslation(["addProduct", "common"])
   return (
     <div className={cn(s.step, { [s.disabled]: currentStep !== 0 })}>
       <div className={s.content}>
-        <h3>Define Your Brand</h3>
+        <h3>{t("stepOne.defineYourBrand")}</h3>
         <div className={s.quote}>
-          You must enter the brand name of the product you want to upload in the
-          brand column of the product entry excel!
+          {t("stepOne.youMustEnter")}
         </div>
         <div className={s.input}>
           <Input
             value={value}
             setValue={setValue}
             variant="gray_outline"
-            placeholder="Search for your brand"
+            placeholder={t("stepOne.searchForBrandPlaceholder")}
             disabled={currentStep !== 0}
           ></Input>
         </div>
@@ -31,8 +33,7 @@ export const StepOne: React.FC<StepProps> = (props) => {
           <div className={s.icon}>
             <Icon type="exclamation" />
           </div>
-          You need to search if your brand is in the system. If the brand you
-          are looking for is not found in the system, you can define your brand.
+          {t("stepOne.youNeedToSearch")}
         </div>
         <Button
           variant={"contained"}
@@ -40,7 +41,7 @@ export const StepOne: React.FC<StepProps> = (props) => {
           onClick={() => setCurrentStep(1)}
           disabled={currentStep !== 0}
         >
-          Continue
+          {t("common:continue")}
         </Button>
       </div>
     </div>

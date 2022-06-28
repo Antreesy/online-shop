@@ -1,0 +1,44 @@
+{
+  "addProduct": "Ürün ekle",
+  "addSingleProduct": "Tek Ürün Ekle",
+  "bulkAddProduct": "Toplu Ürün Ekle",
+  "textEasy": "Ürün listenizdeki ürünleri toplu halde satmak çok kolay.",
+  "stepOne": {
+    "defineYourBrand": "Markanızı Tanımlayın",
+    "youMustEnter": "Ürün girişi excel'in marka sütununa yüklemek istediğiniz ürünün markasını girmelisiniz!",
+    "youNeedToSearch": "Markanızın sistemde olup olmadığını araştırmanız gerekir. Aradığınız marka sistemde yoksa markanızı tanımlayabilirsiniz.",
+    "searchForBrandPlaceholder": "Markanızı arayın"
+  },
+  "stepTwo": {
+    "prepareExcel": "Excel İndirme Şablonu Hazırlamak İçin",
+    "excelEntry": "Excel Ürün Girişi",
+    "youCanUploadText": "Kategori seçerek ürünleri yükleyebilirsiniz.",
+    "stockNpriceUpdate": "Stok ve Fiyat Güncellemesi",
+    "enteringInfo": "Barkod bilgisi fiyat (TSF), üstü çizili fiyat (PSF) ve stok bilgileri guncellenebilir"
+  },
+  "stepThree": {
+    "yourExcel": "Excel'iniz",
+    "uploadToSystem": "Sisteme Yükle",
+    "selectDownloadType": "İndirme Türünü Seçin",
+    "options": {},
+    "selectFolder": "Dosya Seç",
+    "templateMustMatch": "Yüklemek istediğiniz dosya şablonu, yükleme türüyle eşleşmelidir."
+  },
+  "form": {
+    "productBrand": "Ürün Markası",
+     "productName": "Ürün Adı",
+     "category": "Kategori",
+     "description": "Açıklama",
+     "color": "Renk",
+     "size": "Boyut",
+     "productDetail": "Ürün Detayı",
+     "cargoDetail": "Kargo Detayı",
+     "normalPrice": "Normal Fiyat",
+     "discountedPrice": "İndirimli Fiyat",
+     "discountEndTime": "İndirim Bitiş Zamanı",
+     "stockCode": "Stok Kodu",
+     "stockStatus": "Stok Durumu",
+     "image": "Resim",
+     "imageGallery": "Resim Galerisi"
+  }
+}

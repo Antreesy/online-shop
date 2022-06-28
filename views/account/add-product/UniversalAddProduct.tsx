@@ -1,5 +1,6 @@
 import { useState } from "react"
 import dynamic from "next/dynamic"
+import { useTranslation } from "next-i18next"
 
 import { Button, Progressbar } from "UI"
 import { BackButton } from "Сomponents"
@@ -21,13 +22,15 @@ const UniversalAddProduct = () => {
   const [showForm, setShowForm] = useState<boolean>(false)
 
   const toggleForm = () => setShowForm((prev) => !prev)
+
+  const { t } = useTranslation("addProduct")
   return (
     <>
       <div className={s.button_wrapper}>
         <BackButton />
         {showForm && (
           <Button className={s.button_add} onClick={toggleForm}>
-            Bulk Product Add
+            {t("bulkAddProduct")}
           </Button>
         )}
       </div>
@@ -36,10 +39,9 @@ const UniversalAddProduct = () => {
         <>
           <div className={s.header}>
             <Progressbar steps={steps} currentStep={currentStep} />
-            <h2>Add product</h2>
+            <h2>{t("addProduct")} </h2>
             <p>
-              It is very easy to sell the products in your product list in bulk
-              on <a>Ilonsi!</a>
+              {t("textEasy")} <a>Ilonsi!</a>
             </p>
           </div>
           <div className={s.steps_wrapper}>
@@ -57,7 +59,7 @@ const UniversalAddProduct = () => {
             />
           </div>
           <Button className={s.button_add} onClick={toggleForm}>
-            Add Single Product
+            {t("addSingleProduct")}
           </Button>
         </>
       ) : (

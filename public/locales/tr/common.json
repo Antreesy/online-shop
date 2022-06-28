@@ -1,8 +1,19 @@
 {
-  "hello": "türkçe metin",
-  "save": "Kaydetmek",
-  "cancel": "İptal",
   "apply": "Uygulamak",
+  "back": "Geri",
+  "cancel": "İptal",
+  "click": "Tıklamak",
+  "continue": "Devam et",
+  "follow": "Takip et",
   "goToStore": "Mağazaya git",
-  "back": "Geri"
+  "hello": "türkçe metin",
+  "load": "yüklemek",
+  "save": "Kaydetmek",
+  "imageUpload": {
+    "selectNewImage": "Yeni Resim Seç veya Sürükle",
+    "JPGJPEGPNG": "(JPG, JPEG, PNG, minimum 600x800)",
+    "theImageFormat": "Yüklediğiniz resim JPEG veya PNG formatında olmalıdır",
+    "theImageSize": "Yüklediğiniz resim minimum 600x800 standart ve maksimum 5MB boyutunda olmalıdır.",
+    "toViewVisualRules": "görsel kuralları görüntülemek için"
+  }
 }

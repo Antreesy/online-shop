@@ -88,7 +88,8 @@
   padding: 36px 24px;
   width: 30%;
   border-radius: 10px;
-  height: 530px;
+  min-height: 530px;
+  
   .content {
     display: flex;
     flex-direction: column;

@@ -1,5 +1,6 @@
 import { Controller, useForm } from "react-hook-form"
 import cn from "classnames"
+import { useTranslation } from "next-i18next"
 
 import { Button, Input, ImageUpload, Select, TextArea } from "UI"
 
@@ -47,6 +48,7 @@ export const AddProductForm: React.FC = () => {
       stockCode2: "",
     },
   })
+  const { t } = useTranslation(["addProduct", "common"])
 
   const onSubmit = handleSubmit((data) => {
     console.log(data)
@@ -56,10 +58,9 @@ export const AddProductForm: React.FC = () => {
     <>
       <div className={s.form_wrapper}>
         <div className={s.header}>
-          <h2>Add product</h2>
+          <h2>{t("addProduct")} </h2>
           <p>
-            It is very easy to sell the products in your product list in bulk on{" "}
-            <a>Ilonsi!</a>
+            {t("textEasy")} <a>Ilonsi!</a>
           </p>
         </div>
         <form className={s.form} onSubmit={onSubmit}>
@@ -69,11 +70,11 @@ export const AddProductForm: React.FC = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label="Product Brand"
+                  label={t("form.productBrand")}
                   setValue={onChange}
                   value={value}
                   className={s.input}
-                  placeholder={"Product Brand*"}
+                  placeholder={t("form.productBrand")}
                   errorText={"error"}
                 />
               )}
@@ -84,11 +85,11 @@ export const AddProductForm: React.FC = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label="Product Name"
+                  label={t("form.productName")}
                   setValue={onChange}
                   value={value}
                   className={s.input}
-                  placeholder={"Product Name*"}
+                  placeholder={t("form.productName")}
                   errorText={"error"}
                 />
               )}
@@ -101,9 +102,9 @@ export const AddProductForm: React.FC = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Select
-                  label="Category"
+                  label={t("form.category")}
                   className={s.select}
-                  placeholder="Category"
+                  placeholder={t("form.category")}
                   initValue={value.value}
                   values={[]}
                   onChange={onChange}
@@ -116,11 +117,11 @@ export const AddProductForm: React.FC = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label="Description"
+                  label={t("form.description")}
                   setValue={onChange}
                   value={value}
                   className={s.input}
-                  placeholder={"Description"}
+                  placeholder={t("form.description")}
                   errorText={"error"}
                 />
               )}
@@ -132,9 +133,9 @@ export const AddProductForm: React.FC = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Select
-                  label="Color"
+                  label={t("form.color")}
                   className={s.select}
-                  placeholder="Color"
+                  placeholder={t("form.color")}
                   initValue={value.value}
                   values={[]}
                   onChange={onChange}
@@ -147,9 +148,9 @@ export const AddProductForm: React.FC = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Select
-                  label="Size"
+                  label={t("form.size")}
                   className={s.select}
-                  placeholder="Size"
+                  placeholder={t("form.size")}
                   initValue={value.value}
                   values={[]}
                   onChange={onChange}
@@ -163,11 +164,11 @@ export const AddProductForm: React.FC = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <TextArea
-                  label="Product Detail"
+                  label={t("form.productDetail")}
                   value={value}
                   className={s.textarea}
                   setValue={onChange}
-                  placeholder="Product Detail"
+                  placeholder={t("form.productDetail")}
                 />
               )}
             />
@@ -179,11 +180,11 @@ export const AddProductForm: React.FC = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label="Cargo Detail"
+                  label={t("form.cargoDetail")}
                   setValue={onChange}
                   value={value}
                   className={cn(s.input, s.large)}
-                  placeholder={"Cargo Detail"}
+                  placeholder={t("form.cargoDetail")}
                   errorText={"error"}
                 />
               )}
@@ -195,11 +196,11 @@ export const AddProductForm: React.FC = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label="Normal Price"
+                  label={t("form.normalPrice")}
                   setValue={onChange}
                   value={value}
                   className={s.input}
-                  placeholder={"Normal Price*"}
+                  placeholder={t("form.normalPrice")}
                   errorText={"error"}
                 />
               )}
@@ -210,11 +211,11 @@ export const AddProductForm: React.FC = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label="Discounted Price"
+                  label={t("form.discountedPrice")}
                   setValue={onChange}
                   value={value}
                   className={s.input}
-                  placeholder={"Discounted Price*"}
+                  placeholder={t("form.discountedPrice")}
                   errorText={"error"}
                 />
               )}
@@ -226,11 +227,11 @@ export const AddProductForm: React.FC = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label="Discount End Time"
+                  label={t("form.discountEndTime")}
                   setValue={onChange}
                   value={value}
                   className={s.input}
-                  placeholder={"Discount End Time*"}
+                  placeholder={t("form.discountEndTime")}
                   errorText={"error"}
                 />
               )}
@@ -241,25 +242,26 @@ export const AddProductForm: React.FC = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label="Stock Code"
+                  label={t("form.stockCode")}
                   setValue={onChange}
                   value={value}
                   className={s.input}
-                  placeholder={"Stock Code*"}
+                  placeholder={t("form.stockCode")}
                   errorText={"error"}
                 />
               )}
             />
           </div>
+
           <div className={s.form_row}>
             <Controller
               name={"stockStatus"}
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Select
-                  label="Stock Status"
+                  label={t("form.stockStatus")}
                   className={s.select}
-                  placeholder="Stock Status"
+                  placeholder={t("form.stockStatus")}
                   initValue={value.value}
                   values={[]}
                   onChange={onChange}
@@ -272,11 +274,11 @@ export const AddProductForm: React.FC = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label="Stock Code"
+                  label={t("form.stockCode")}
                   setValue={onChange}
                   value={value}
                   className={s.input}
-                  placeholder={"Stock Code*"}
+                  placeholder={t("form.stockCode")}
                   errorText={"error"}
                 />
               )}
@@ -284,11 +286,11 @@ export const AddProductForm: React.FC = () => {
           </div>
 
           <div className={s.form_row}>
-            <ImageUpload label="Image" />
-            <ImageUpload label="Image Gallery" amount={3} />
+            <ImageUpload label={t("form.image")} />
+            <ImageUpload label={t("form.imageGallery")} amount={3} />
           </div>
 
-          <Button className={s.button_submit}>Load</Button>
+          <Button className={s.button_submit}>{t("common:load")}</Button>
         </form>
       </div>
     </>

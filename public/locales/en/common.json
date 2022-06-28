@@ -1,8 +1,19 @@
 {
-  "hello": "Text on english",
-  "save": "Save",
-  "cancel": "Cancel",
   "apply": "Apply",
+  "back": "Back",
+  "cancel": "Cancel",
+  "click": "Click",
+  "continue": "Continue",
+  "follow": "Follow",
+  "load": "Load",
   "goToStore": "Go to store",
-  "back": "Back"
+  "hello": "Hello",
+  "save": "Save",
+  "imageUpload": {
+    "selectNewImage": "Select New Image or Drag",
+    "JPGJPEGPNG": "(JPG, JPEG, PNG, minimum 600x800)",
+    "theImageFormat": "The image you upload must be in JPEG or PNG format",
+    "theImageSize": "The image you upload must have a minimum 600x800 standard and a maximum size of 5MB.",
+    "toViewVisualRules": "to view visual rules"
+  }
 }

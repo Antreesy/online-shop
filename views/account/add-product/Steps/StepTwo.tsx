@@ -1,4 +1,5 @@
 import cn from "classnames"
+import { useTranslation } from "next-i18next"
 
 import { Button, Icon } from "UI"
 import { StepProps } from "shared/interfaces/stepProps"
@@ -7,17 +8,19 @@ import s from "styles/pages/account/add-product.module.scss"
 
 export const StepTwo: React.FC<StepProps> = (props) => {
   const { currentStep, setCurrentStep } = props
+
+  const { t } = useTranslation(["addProduct", "common"])
   return (
     <div className={cn(s.step, { [s.disabled]: currentStep !== 1 })}>
       <div className={s.content}>
-        <h3>To Prepare Excel Download Template</h3>
+        <h3>{t('stepTwo.prepareExcel')}</h3>
         <div className={s.download}>
           <div className={s.icon}>
             <Icon type="download" />
           </div>
           <div>
-            <h4>Excel Product Entry</h4>
-            <p>You can upload products by selecting a category.</p>
+            <h4>{t("stepTwo.excelEntry")}</h4>
+            <p>{t("stepTwo.youCanUploadText")}</p>
           </div>
         </div>
         <div className={s.download}>
@@ -25,10 +28,9 @@ export const StepTwo: React.FC<StepProps> = (props) => {
             <Icon type="download" />
           </div>
           <div>
-            <h4>Stock & Price Update</h4>
+            <h4>{t("stepTwo.stockNpriceUpdate")}</h4>
             <p>
-              Barkod bilgisi girerek fiyat (TSF), üstü çizili fiyat (PSF) ve
-              stok bilgileri güncellenebilir
+              {t("stepTwo.enteringInfo")}
             </p>
           </div>
         </div>
@@ -38,7 +40,7 @@ export const StepTwo: React.FC<StepProps> = (props) => {
           onClick={() => setCurrentStep(2)}
           disabled={currentStep !== 1}
         >
-          Continue
+          {t("common:continue")}
         </Button>
       </div>
     </div>

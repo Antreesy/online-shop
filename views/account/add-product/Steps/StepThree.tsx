@@ -1,5 +1,6 @@
 import { useState } from "react"
 import cn from "classnames"
+import { useTranslation } from "next-i18next"
 
 import { Button, FileUpload, Icon, Select } from "UI"
 import { StepProps } from "shared/interfaces/stepProps"
@@ -9,15 +10,17 @@ import s from "styles/pages/account/add-product.module.scss"
 export const StepThree: React.FC<StepProps> = (props) => {
   const [file, setFile] = useState<File>()
   const { currentStep, setCurrentStep } = props
+
+  const { t } = useTranslation(["addProduct", "common"])
   return (
     <div className={cn(s.step, { [s.disabled]: currentStep !== 2 })}>
       <div className={s.content}>
         <h3>
-          Your Excel <br /> Upload to System
+          {t("stepThree.yourExcel")} <br /> {t("stepThree.uploadToSystem")}
         </h3>
         <Select
           className={s.select}
-          placeholder={"Select Download Type"}
+          placeholder={t("stepThree.selectDownloadType")}
           values={[
             { title: "one", value: 1 },
             { title: "two", value: 2 },
@@ -29,7 +32,7 @@ export const StepThree: React.FC<StepProps> = (props) => {
           isDisabled={currentStep !== 2}
         />
         <FileUpload
-          title={"Select Folder"}
+          title={t("stepThree.selectFolder")}
           setValue={setFile}
           disabled={currentStep !== 2}
         />
@@ -38,7 +41,7 @@ export const StepThree: React.FC<StepProps> = (props) => {
           <div className={s.icon}>
             <Icon type="exclamation" />
           </div>
-          The file template you want to upload must match the upload type.
+          {t("stepThree.templateMustMatch")}
         </div>
         <Button
           variant={"contained"}
@@ -46,7 +49,7 @@ export const StepThree: React.FC<StepProps> = (props) => {
           onClick={() => setCurrentStep(0)}
           disabled={currentStep !== 2}
         >
-          Load
+          {t("common:load")}
         </Button>
       </div>
     </div>

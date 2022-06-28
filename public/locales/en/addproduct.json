@@ -1,0 +1,44 @@
+{
+  "addProduct": "Add product",
+  "addSingleProduct": "Add Single Product",
+  "bulkAddProduct": "Bulk Product Add",
+  "textEasy": "It is very easy to sell the products in your product list in bulk on",
+  "stepOne": {
+    "defineYourBrand": "Define Your Brand",
+    "youMustEnter": "You must enter the brand name of the product you want to upload in the brand column of the product entry excel!",
+    "youNeedToSearch": "You need to search if your brand is in the system. If the brand you are looking for is not found in the system, you can define your brand.",
+    "searchForBrandPlaceholder": "Search for your brand"
+  },
+  "stepTwo": {
+    "prepareExcel": "To Prepare Excel Download Template",
+    "excelEntry": "Excel Product Entry",
+    "youCanUploadText": "You can upload products by selecting a category.",
+    "stockNpriceUpdate": "Stock & Price Update",
+    "enteringInfo": "By entering barcode information, price (TSF), strikethrough price (PSF), and stock information can be updated"
+  },
+  "stepThree": {
+    "yourExcel": "Your Excel",
+    "uploadToSystem": "Upload to System",
+    "selectDownloadType": "Select Download Type",
+    "options": {},
+    "selectFolder": "Select Folder",
+    "templateMustMatch": "The file template you want to upload must match the upload type."
+  },
+  "form": {
+    "productBrand": "Product Brand",
+    "productName": "Product Name",
+    "category": "Category",
+    "description": "Description",
+    "color": "Color",
+    "size": "Size",
+    "productDetail": "Product Detail",
+    "cargoDetail": "Cargo Detail",
+    "normalPrice": "Normal Price",
+    "discountedPrice": "Discounted Price",
+    "discountEndTime": "Discount End Time",
+    "stockCode": "Stock Code",
+    "stockStatus": "Stock Status",
+    "image": "Image",
+    "imageGallery": "Image Gallery"
+  }
+}

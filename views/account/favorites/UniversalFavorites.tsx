@@ -1,21 +1,26 @@
 import { Grid } from "@mui/material"
 import { SectionHeader, ProductItemList } from "Сomponents"
 import { Card, Pagination } from "UI"
+import { useTranslation } from "next-i18next"
 
 import { productItems } from "shared/constants/productItems"
+import cardImage from "public/assets/img/picture_1.png"
 
 import s from "styles/pages/favorites.module.scss"
+
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface UniversalFavoritesProps {}
 
 const UniversalFavorites: React.FC = () => {
+  const { t } = useTranslation(["favorites", "common"])
+
   return (
     <>
       <section className={s.main}>
         <div className={s.container}>
           <div className={s.content}>
-            <SectionHeader className={s.sectionHeader} title="Favorites" />
+            <SectionHeader className={s.sectionHeader} title={t("favorites")} />
             <div className={s.products}>
               <ProductItemList productItemList={productItems} />
             </div>
@@ -23,7 +28,7 @@ const UniversalFavorites: React.FC = () => {
             <Pagination className={s.pagination} pagesCount={4} isShort />
             <SectionHeader
               className={s.sectionHeader}
-              title="Followed Collections"
+              title={t("followedCollections")}
             />
 
             <div className={s.collections}>
@@ -44,10 +49,10 @@ const UniversalFavorites: React.FC = () => {
                   >
                     <Card
                       className={s.card}
-                      imageSrc="/../public/assets/img/picture_1.png"
+                      imageSrc={cardImage}
                       title="Gizem Sancak"
-                      buttonTitle="Go To Store"
-                      topButtonTitle="Follow"
+                      buttonTitle={t("common:goToStore")}
+                      topButtonTitle={t("common:follow")}
                     />
                   </Grid>
                 ))}
