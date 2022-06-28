@@ -43,6 +43,7 @@ import {
 import { icons } from "shared/constants/icons"
 import { productItems } from "shared/constants/productItems"
 import { sidebarTabs } from "shared/constants/sidebartabs"
+import { chartData } from "shared/constants/charts"
 import { Currency } from "shared/enums/currency"
 
 import productImage from "public/assets/img/product-img.png"
@@ -247,7 +248,7 @@ const Home: NextPage = () => {
             </div>,
 
             <div key="Chart" className={s.grid}>
-              <Chart />
+              <Chart caption={chartData[0].caption} data={chartData[0].data} />
             </div>,
           ]}
         />
