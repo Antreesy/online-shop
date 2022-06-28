@@ -28,13 +28,35 @@
 
 .close {
   position: absolute;
-  right: 0;
-  top: 0;
-  margin: 10px;
-  width: 24px;
-  height: 24px;
+  right: 10px;
+  top: 10px;
   user-select: none;
   cursor: pointer;
+
+  .round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 39px;
+    min-width: 39px;
+    border-radius: 50%;
+    font-size: 14px;
+    background-color: $color-black;
+
+    @include mobile {
+      height: 26px;
+      min-width: 26px;
+      font-size: 10px;
+      background-color: transparent;
+    }
+  }
+
+  .icon {
+    color: $color-white;
+    @include mobile {
+      color: $color-black;
+    }
+  }
 }
 
 .icon_wrapper {
@@ -58,21 +80,4 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-}
-
-.round {
-  background-color: $color-purple;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 39px;
-  min-width: 39px;
-  border-radius: 50%;
-  font-size: 14px;
-
-  @include mobile {
-    height: 26px;
-    min-width: 26px;
-    font-size: 8px;
-  }
 }

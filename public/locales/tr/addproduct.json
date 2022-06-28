@@ -26,19 +26,19 @@
   },
   "form": {
     "productBrand": "Ürün Markası",
-     "productName": "Ürün Adı",
-     "category": "Kategori",
-     "description": "Açıklama",
-     "color": "Renk",
-     "size": "Boyut",
-     "productDetail": "Ürün Detayı",
-     "cargoDetail": "Kargo Detayı",
-     "normalPrice": "Normal Fiyat",
-     "discountedPrice": "İndirimli Fiyat",
-     "discountEndTime": "İndirim Bitiş Zamanı",
-     "stockCode": "Stok Kodu",
-     "stockStatus": "Stok Durumu",
-     "image": "Resim",
-     "imageGallery": "Resim Galerisi"
+    "productName": "Ürün Adı",
+    "category": "Kategori",
+    "description": "Açıklama",
+    "color": "Renk",
+    "size": "Boyut",
+    "productDetail": "Ürün Detayı",
+    "cargoDetail": "Kargo Detayı",
+    "normalPrice": "Normal Fiyat",
+    "discountedPrice": "İndirimli Fiyat",
+    "discountEndTime": "İndirim Bitiş Zamanı",
+    "stockCode": "Stok Kodu",
+    "stockStatus": "Stok Durumu",
+    "image": "Resim",
+    "imageGallery": "Resim Galerisi"
   }
 }

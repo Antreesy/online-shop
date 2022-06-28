@@ -1,0 +1,25 @@
+@import "styles/style.scss";
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000;
+  width: 440px;
+}
+
+.btnContainer {
+  margin: 20px 40px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  width: 160px;
+}

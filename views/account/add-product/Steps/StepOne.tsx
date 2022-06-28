@@ -16,9 +16,7 @@ export const StepOne: React.FC<StepProps> = (props) => {
     <div className={cn(s.step, { [s.disabled]: currentStep !== 0 })}>
       <div className={s.content}>
         <h3>{t("stepOne.defineYourBrand")}</h3>
-        <div className={s.quote}>
-          {t("stepOne.youMustEnter")}
-        </div>
+        <div className={s.quote}>{t("stepOne.youMustEnter")}</div>
         <div className={s.input}>
           <Input
             value={value}

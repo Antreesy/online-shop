@@ -27,14 +27,10 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ label, amount = 1 }) => {
             />
           ))}
         </div>
+        <p className={s.text}>{t("imageUpload.theImageFormat")}</p>
+        <p className={s.text}>{t("imageUpload.theImageSize")}</p>
         <p className={s.text}>
-        {t("imageUpload.theImageFormat")}
-        </p>
-        <p className={s.text}>
-        {t("imageUpload.theImageSize")}
-        </p>
-        <p className={s.text}>
-          <a>{t("click")}</a>{" "}{t("imageUpload.toViewVisualRules")}
+          <a>{t("click")}</a> {t("imageUpload.toViewVisualRules")}
         </p>
         <Button className={s.button}>{t("load")}</Button>
       </div>

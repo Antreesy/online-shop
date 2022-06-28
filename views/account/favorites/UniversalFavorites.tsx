@@ -8,7 +8,6 @@ import cardImage from "public/assets/img/picture_1.png"
 
 import s from "styles/pages/favorites.module.scss"
 
-
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface UniversalFavoritesProps {}
 

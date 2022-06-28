@@ -13,7 +13,7 @@ export const StepTwo: React.FC<StepProps> = (props) => {
   return (
     <div className={cn(s.step, { [s.disabled]: currentStep !== 1 })}>
       <div className={s.content}>
-        <h3>{t('stepTwo.prepareExcel')}</h3>
+        <h3>{t("stepTwo.prepareExcel")}</h3>
         <div className={s.download}>
           <div className={s.icon}>
             <Icon type="download" />
@@ -29,9 +29,7 @@ export const StepTwo: React.FC<StepProps> = (props) => {
           </div>
           <div>
             <h4>{t("stepTwo.stockNpriceUpdate")}</h4>
-            <p>
-              {t("stepTwo.enteringInfo")}
-            </p>
+            <p>{t("stepTwo.enteringInfo")}</p>
           </div>
         </div>
         <Button

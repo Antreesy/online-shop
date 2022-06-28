@@ -1,6 +1,5 @@
-import React from "react"
-import { useTranslation } from "next-i18next"
 import Head from "next/head"
+import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
 import SimpleBar from "simplebar-react"
@@ -16,7 +15,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
         "common",
         "header",
         "footer",
-        "brandLanding"
+        "brandLanding",
       ])),
     },
   }
