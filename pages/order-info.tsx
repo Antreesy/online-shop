@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { NextPage } from "next"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { useTranslation } from "next-i18next"
 
 import Head from "next/head"
 import Image from "next/image"
@@ -25,8 +27,23 @@ interface OrderInfoProps {
   order: LabelInfo
 }
 
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "app",
+        "common",
+        "header",
+        "footer",
+        "orderInfo",
+      ])),
+    },
+  }
+}
+
 const OrderInfoPage: NextPage<OrderInfoProps> = () => {
   const [IsActive, setIsActive] = useState<boolean>(false)
+  const { t } = useTranslation(["orderInfo", "common"])
 
   return (
     <>
@@ -41,12 +58,12 @@ const OrderInfoPage: NextPage<OrderInfoProps> = () => {
 
         <div className={s.content}>
           <div className={s.content_info}>
-            <h3 className={s.heading}>Customer Information</h3>
+            <h3 className={s.heading}>{t("customerInformation")}</h3>
             <div className={s.labels}>
               {customerInfo.length
                 ? customerInfo.map((item, index) => (
                     <div key={index} className={s.label_wrapper}>
-                      <p>{item.label}</p>
+                      <p>{t(item.label)}</p>
                       <p>:</p>
                       <p>{item.content}</p>
                     </div>
@@ -54,12 +71,12 @@ const OrderInfoPage: NextPage<OrderInfoProps> = () => {
                 : null}
             </div>
 
-            <h3 className={s.heading}>Order Information</h3>
+            <h3 className={s.heading}>{t("orderInformation")}</h3>
             <div className={s.labels}>
               {orderInfo.length
                 ? orderInfo.map((item, index) => (
                     <div key={index} className={s.label_wrapper}>
-                      <p>{item.label}</p>
+                      <p>{t(item.label)}</p>
                       <p>:</p>
                       <p>{item.content}</p>
                     </div>
@@ -67,12 +84,12 @@ const OrderInfoPage: NextPage<OrderInfoProps> = () => {
                 : null}
             </div>
 
-            <h3 className={s.heading}>Invoice Information</h3>
+            <h3 className={s.heading}>{t("invoiceInformation")}</h3>
             <div className={s.labels}>
               {invoiceInfo.length
                 ? invoiceInfo.map((item, index) => (
                     <div key={index} className={s.label_wrapper}>
-                      <p>{item.label}</p>
+                      <p>{t(item.label)}</p>
                       <p>:</p>
                       <p>{item.content}</p>
                     </div>
@@ -91,29 +108,27 @@ const OrderInfoPage: NextPage<OrderInfoProps> = () => {
 
               <div className={s.card_content}>
                 <div className={s.title_wrapper}>
-                  <p className={s.title}>Prada</p>
+                  <p className={s.title}>{"Prada"}</p>
                   <div
                     className={s.button}
                     onClick={() => setIsActive(!IsActive)}
                   >
                     <Icon className={s.icon} type="close_cross" wrapped />
-                    Cancel
+                    {t("common:cancel")}
                   </div>
                 </div>
-                <p className={s.card_description}>
-                  Green zero sleeve women’s dress
-                </p>
+                <p className={s.card_description}>{"Green zero sleeve women’s dress"}</p>
 
                 <div className={s.price_wrapper}>
                   <div className={s.group}>
                     <div className={s.row}>
-                      <p>Number</p>
+                      <p>{t("number")}</p>
                       <p>:</p>
                       <p>1</p>
                     </div>
 
                     <div className={s.row}>
-                      <p>Net Price</p>
+                      <p>{t("price")}</p>
                       <p>:</p>
                       <Price oldPrice={2030} price={1930} type="order" />
                     </div>
@@ -121,13 +136,13 @@ const OrderInfoPage: NextPage<OrderInfoProps> = () => {
 
                   <div className={s.group}>
                     <div className={s.row}>
-                      <p>VAT %18</p>
+                      <p>{t("VAT")} %18</p>
                       <p>:</p>
                       <p>1</p>
                     </div>
 
                     <div className={s.row}>
-                      <p className={s.total}>TOTAL</p>
+                      <p className={s.total}>{t("total")}</p>
                       <p className={s.total}>:</p>
                       <Price oldPrice={2030} price={1930} type="cart" />
                     </div>
@@ -138,17 +153,15 @@ const OrderInfoPage: NextPage<OrderInfoProps> = () => {
 
             {IsActive && (
               <div className={s.approve}>
-                <p className={s.approve_text}>
-                  Are you confirming that your orders are being cancelled?
-                </p>
+                <p className={s.approve_text}>{t("areYouConfirming")}</p>
 
                 <div className={s.button_wrapper}>
-                  <Button className={s.button_purple}>Approve</Button>
+                  <Button className={s.button_purple}>{t("common:approve")}</Button>
                   <Button
                     className={s.button_black}
                     onClick={() => setIsActive(!IsActive)}
                   >
-                    Reject
+                    {t("common:reject")}
                   </Button>
                 </div>
               </div>

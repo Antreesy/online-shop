@@ -1,0 +1,19 @@
+{
+  "customerInformation": "Информация о клиенте",
+  "orderInformation": "Информация о заказе",
+  "invoiceInformation": "Информация о счете-фактуре",
+
+	"nameSurname": "Имя, Фамилия",
+	"address": "Адрес",
+	"phone": "Телефон",
+	"email": "E-Mail",
+	"orderNumber": "Номер заказа",
+	"orderDate": "Дата заказа",
+	"deliveryMethod": "Метод доставки",
+
+  "number": "Количество",
+  "price": "Цена",
+  "VAT": "НДС",
+  "total": "ИТОГО",
+  "areYouConfirming": "Вы подтверждаете отмену ваших заказов?"
+}

@@ -1,0 +1,19 @@
+{
+  "customerInformation": "Müşteri Bilgileri",
+  "orderInformation": "Sipariş Bilgileri",
+  "invoiceInformation": "Fatura Bilgileri",
+
+  "nameSurname": "Ad Soyadı",
+  "address": "Adres",
+  "phone": "Telefon",
+  "email": "E-posta",
+  "orderNumber": "Sipariş Numarası",
+  "orderDate": "Sipariş Tarihi",
+  "deliveryMethod": "Delivery Method",
+
+  "number": "Numara",
+  "price": "Net Fiyat",
+  "VAT": "KDV",
+  "total": "TOPLAM",
+  "areYouConfirming": "Siparişlerinizin iptal edildiğini onaylıyor musunuz?"
+}

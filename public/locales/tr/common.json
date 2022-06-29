@@ -1,5 +1,6 @@
 {
   "apply": "Uygulamak",
+  "approve": "Onaylamak mı?",
   "back": "Geri",
   "cancel": "İptal",
   "click": "Tıklamak",
@@ -8,7 +9,9 @@
   "goToStore": "Mağazaya git",
   "hello": "türkçe metin",
   "load": "yüklemek",
+  "reject": "Reddetmek",
   "save": "Kaydetmek",
+
   "imageUpload": {
     "selectNewImage": "Yeni Resim Seç veya Sürükle",
     "JPGJPEGPNG": "(JPG, JPEG, PNG, minimum 600x800)",

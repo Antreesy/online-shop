@@ -1,0 +1,19 @@
+{
+  "customerInformation": "Customer Information",
+  "orderInformation": "Order Information",
+  "invoiceInformation": "Invoice Information",
+
+	"nameSurname": "Name Surname",
+	"address": "Address",
+	"phone": "Phone",
+	"email": "E-Mail",
+	"orderNumber": "Order Number",
+	"orderDate": "Order Date",
+	"deliveryMethod": "Delivery Method",
+
+  "number": "Number",
+  "price": "Net Price",
+  "VAT": "VAT",
+  "total": "TOTAL",
+  "areYouConfirming": " Are you confirming that your orders are being cancelled?"
+}

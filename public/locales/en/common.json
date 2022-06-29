@@ -1,14 +1,17 @@
 {
   "apply": "Apply",
+  "approve": "Approve",
   "back": "Back",
   "cancel": "Cancel",
   "click": "Click",
   "continue": "Continue",
   "follow": "Follow",
-  "load": "Load",
   "goToStore": "Go to store",
   "hello": "Hello",
+  "load": "Load",
+  "reject": "Reject",
   "save": "Save",
+
   "imageUpload": {
     "selectNewImage": "Select New Image or Drag",
     "JPGJPEGPNG": "(JPG, JPEG, PNG, minimum 600x800)",
