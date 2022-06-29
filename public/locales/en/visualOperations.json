@@ -1,0 +1,12 @@
+{
+  "activeImages": "Active Images {{number}}",
+  "rejectedImages": "Rejected Images {{number}}",
+  "searchAnyProduct": "Search any product...",
+  "selectAllAndDownload": "Select All and Download",
+  "selectAllAndDelete": "Select All and Delete",
+  "deleteSelected": "Delete Selected",
+  "delete": "Delete {{number}}",
+  "excelDownload": "Excel Download",
+  "allRestore": "Select All and Restore",
+  "restore": "Restore the selected"
+}

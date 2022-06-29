@@ -1,0 +1,13 @@
+{
+  "activeImages": "Активные изображения {{number}}",
+  "rejectedImages": "Отклоненные изображения {{number}}",
+  "searchAnyProduct": "Найдите любой продукт...",
+  "selectAllAndDownload": "Выбрать все и загрузить",
+  "selectAllAndDelete": "Выбрать все и удалить",
+  "deleteSelected": "Удалить выбранные",
+  "delete": "Удалить {{number}}",
+  "excelDownload": "Скачать Excel",
+  
+  "allRestore": "Выбрать все и восстановить",
+  "restore": "Восстановить выбранныe"
+}

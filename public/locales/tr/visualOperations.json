@@ -1,0 +1,12 @@
+{
+  "activeImages": "Aktif Görüntüler {{number}}",
+  "rejectedImages": "Reddedilen Resimler {{number}}",
+  "searchAnyProduct": "Herhangi bir ürünü arayın...",
+  "selectAllAndDownload": "Tümünü Seç ve İndir",
+  "selectAllAndDelete": "Tümünü Seç ve Sil",
+  "deleteSelected": "Seçileni Sil",
+  "delete": "Silmek {{number}}",
+  "excelDownload": "Excel indir",
+  "allRestore": "Tümünü Seç ve Geri Yükle",
+  "restore": "Seçileni geri yükle"
+}
