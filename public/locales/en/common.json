@@ -3,6 +3,7 @@
   "approve": "Approve",
   "back": "Back",
   "cancel": "Cancel",
+  "clean": "Clean",
   "click": "Click",
   "continue": "Continue",
   "follow": "Follow",
@@ -11,6 +12,7 @@
   "load": "Load",
   "reject": "Reject",
   "save": "Save",
+  "search": "Search",
 
   "imageUpload": {
     "selectNewImage": "Select New Image or Drag",

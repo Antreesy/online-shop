@@ -1,0 +1,23 @@
+{
+  "profile": "Profile",
+  "brandInformation": "Brand Information",
+  "allProduct": "All Product",
+  "allCancellations": "All Cancellations",
+  "onSale": "On Sale",
+  "thatNeedRevision": "That Need Revision",
+  "notOnSale": "Not On Sale",
+
+  "brandInformations": "Brand Informations",
+  "brandName": "Brand Name",
+  "brandDisplayName": "Brand Display Name",
+  "brandLogo": "Brand Logo",
+  "brandBanner": "Brand Banner",
+
+  "companyInformations": "Company Informations",
+  "currentTitle": "Cari Ünvan",
+  "sellerID": "Seller ID",
+  "mersisNo": "Mersis No",
+  "taxAdministration": "Tax Administration",
+  "KEPAddress": "KEP Address",
+  "taxNumber": "Tax number"
+}

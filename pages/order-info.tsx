@@ -117,7 +117,9 @@ const OrderInfoPage: NextPage<OrderInfoProps> = () => {
                     {t("common:cancel")}
                   </div>
                 </div>
-                <p className={s.card_description}>{"Green zero sleeve women’s dress"}</p>
+                <p className={s.card_description}>
+                  {"Green zero sleeve women’s dress"}
+                </p>
 
                 <div className={s.price_wrapper}>
                   <div className={s.group}>
@@ -156,7 +158,9 @@ const OrderInfoPage: NextPage<OrderInfoProps> = () => {
                 <p className={s.approve_text}>{t("areYouConfirming")}</p>
 
                 <div className={s.button_wrapper}>
-                  <Button className={s.button_purple}>{t("common:approve")}</Button>
+                  <Button className={s.button_purple}>
+                    {t("common:approve")}
+                  </Button>
                   <Button
                     className={s.button_black}
                     onClick={() => setIsActive(!IsActive)}

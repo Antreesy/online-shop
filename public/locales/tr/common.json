@@ -3,6 +3,7 @@
   "approve": "Onaylamak mı?",
   "back": "Geri",
   "cancel": "İptal",
+  "clean": "Temiz",
   "click": "Tıklamak",
   "continue": "Devam et",
   "follow": "Takip et",
@@ -11,6 +12,7 @@
   "load": "yüklemek",
   "reject": "Reddetmek",
   "save": "Kaydetmek",
+  "search": "Arama",
 
   "imageUpload": {
     "selectNewImage": "Yeni Resim Seç veya Sürükle",

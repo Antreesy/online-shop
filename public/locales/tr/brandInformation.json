@@ -1,0 +1,23 @@
+{
+  "profile": "Profilli",
+  "brandInformation": "Marka Bilgileri",
+  "allProduct": "Tüm Ürün",
+  "allCancellations": "Tüm İptaller",
+  "onSale": "Satışta",
+  "thatNeedRevision": "Bu Revizyona İhtiyaç Duyuyor",
+  "notOnSale": "Satışta Değil",
+
+  "brandInformations": "Marka Bilgileri",
+  "brandName": "Marka Adı",
+  "brandDisplayName": "Marka Görünen Adı",
+  "brandLogo": "Marka Logosu",
+  "brandBanner": "Marka Afiş",
+
+  "companyInformations": "Şirket Bilgileri",
+  "currentTitle": "Current Title",
+  "sellerID": "Satıcı Kimliği",
+  "mersisNo": "Mersis Hayır",
+  "taxAdministration": "Vergi Dairesi",
+  "KEPAddress": "KEP Adresi",
+  "taxNumber": "Vergi numarası"
+}

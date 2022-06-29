@@ -3,14 +3,17 @@
   "approve": "Подтвердить",
   "back": "Назад",
   "cancel": "Отмена",
+  "clean": "Очистить",
   "click": "Нажать",
   "continue": "Продолжить",
   "follow": "Следить",
   "goToStore": "В магазин",
-  "load": "Загрузить",
   "hello": "Привет",
+  "load": "Загрузить",
   "reject": "Отклонить",
   "save": "Сохранить",
+  "search": "Найти",
+
   "imageUpload": {
     "selectNewImage": "Выбрать или перетащить изображение",
     "JPGJPEGPNG": "(JPG, JPEG, PNG, минимум 600x800)",

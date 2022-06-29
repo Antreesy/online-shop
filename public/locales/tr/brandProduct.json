@@ -1,0 +1,21 @@
+{
+  "allProducts": "Tüm Ürüns",
+  "onSale": "Satışta",
+  "soldOut": "Hepsi satılıp tükenmiş",
+  "whatYouNeedToRevise": "Gözden Geçirmeniz Gerekenler",
+  "notAvailable": "Mevcut değil",
+
+  "productCode": "Ürün Kodu",
+  "productName": "Ürün İsmi",
+  "category": "Kategori",
+  "sortBy": "Sıralama ölçütü",
+  "excelDownload": "Excel indir",
+  "onEveryPage": "Her Sayfada",
+  "productImage": "Ürün Resmi",
+  "brand": "Marka",
+  "commission": "Komisyon",
+  "price": "Fiyat",
+  "stock": "Stok",
+  "status": "Durum",
+  "detail": "Detay"
+}

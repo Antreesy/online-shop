@@ -1,0 +1,21 @@
+{
+  "allProducts": "All Products",
+  "onSale": "On Sale",
+  "soldOut": "Sold Out",
+  "whatYouNeedToRevise": "What You Need to Revise",
+  "notAvailable": "Not Available",
+
+  "productCode": "Product Code",
+  "productName": "Product Name",
+  "category": "Category",
+  "sortBy": "Sort by",
+  "excelDownload": "Excel Download",
+  "onEveryPage": "On Every Page",
+  "productImage": "Product Image",
+  "brand": "Brand",
+  "commission": "Commission",
+  "price": "Price",
+  "stock": "Stock",
+  "status": "Status",
+  "detail": "Detail"
+}

@@ -1,0 +1,21 @@
+{
+  "allProducts": "Все продукты",
+  "onSale": "В продаже",
+  "soldOut": "Продано",
+  "whatYouNeedToRevise": "Нуждается в пересмотре",
+  "notAvailable": "Не доступно",
+
+  "productCode": "Код продукта",
+  "productName": "Название продукта",
+  "category": "Категория",
+  "sortBy": "Сортировать по",
+  "excelDownload": "Скачать Excel",
+  "onEveryPage": "На Каждой Странице",
+  "productImage": "Изображение продукта",
+  "brand": "Марка",
+  "commission": "Комиссия",
+  "price": "Цена",
+  "stock": "Склад",
+  "status": "Статус",
+  "detail": "Детали"
+}

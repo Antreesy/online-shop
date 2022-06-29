@@ -5,15 +5,15 @@ import s from "styles/pages/brand-products.module.scss"
 
 export const brandProductsTableContent = {
   headers: [
-    { name: "Product Image" },
-    { name: "Product Name" },
-    { name: "Product Code" },
-    { name: "Brand" },
-    { name: "Commission" },
-    { name: "Price" },
-    { name: "Stock" },
-    { name: "Status" },
-    { name: "Detail" },
+    { name: "productImage" },
+    { name: "productName" },
+    { name: "productCode" },
+    { name: "brand" },
+    { name: "commission" },
+    { name: "price" },
+    { name: "stock" },
+    { name: "status" },
+    { name: "detail" },
   ],
   rows: [
     [

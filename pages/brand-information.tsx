@@ -1,12 +1,15 @@
 import { NextPage } from "next"
 import { Controller, useForm } from "react-hook-form"
 import cn from "classnames"
+import { useTranslation } from "next-i18next"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
 import Head from "next/head"
 import SimpleBar from "simplebar-react"
 import { Button, FileUpload, Icon, Input } from "UI"
 
 import s from "styles/pages/brand-information.module.scss"
+import { BackButton } from "Сomponents"
 
 interface BrandsType {
   brandName: string
@@ -16,6 +19,20 @@ interface BrandsType {
   taxAdmin: string
   kepAddress: string
   taxNumber: string
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "app",
+        "common",
+        "header",
+        "footer",
+        "brandInformation",
+      ])),
+    },
+  }
 }
 
 const brandInformation: NextPage = () => {
@@ -31,6 +48,7 @@ const brandInformation: NextPage = () => {
       taxNumber: "",
     },
   })
+  const { t } = useTranslation(["brandInformation", "common"])
   const onSubmit = handleSubmit((data) => {
     console.log(data)
   })
@@ -45,21 +63,21 @@ const brandInformation: NextPage = () => {
         <nav className={s.nav}>
           <SimpleBar className={s.scrollbar}>
             <ul className={s.navigation}>
-              <li>Profile</li>
-              <li>Brand Information</li>
-              <li>All Product</li>
-              <li>All Cancellations</li>
-              <li>On Sale</li>
-              <li>That Need Revision</li>
-              <li>Not On Sale</li>
+              <li>{t("profile")}</li>
+              <li>{t("brandInformation")}</li>
+              <li>{t("allProduct")}</li>
+              <li>{t("allCancellations")}</li>
+              <li>{t("onSale")}</li>
+              <li>{t("thatNeedRevision")}</li>
+              <li>{t("notOnSale")}</li>
             </ul>
           </SimpleBar>
         </nav>
 
-        <Button iconLeft="arrow_left" className={s.backBtn} variant="text">
-          Back
-        </Button>
-        <h1 className={s.heading}>Brand Informations</h1>
+        <div className={s.back_button}>
+          <BackButton />
+        </div>
+        <h1 className={s.heading}>{t("brandInformations")}</h1>
 
         <div className={s.brandInfo}>
           <div className={s.brandItem}>
@@ -67,8 +85,8 @@ const brandInformation: NextPage = () => {
               <Icon type="brand_name" />
             </div>
             <div className={s.textBlock}>
-              <p className={s.brandName}>Brand Name:</p>
-              <p className={s.description}>Saint Laurent</p>
+              <p className={s.brandName}>{t("brandName")}:</p>
+              <p className={s.description}>{"Saint Laurent"}</p>
             </div>
           </div>
           <div className={s.brandDisplay}>
@@ -76,41 +94,41 @@ const brandInformation: NextPage = () => {
               <Icon type="brand_display_name" />
             </div>
             <div className={s.textBlock}>
-              <p className={s.brandName}>Brand Display Name:</p>
-              <p className={s.description}> Saint Lauren</p>
+              <p className={s.brandName}>{t("brandDisplayName")}:</p>
+              <p className={s.description}> {"Saint Laurent"}</p>
             </div>
           </div>
         </div>
 
         <div className={s.brandUploads}>
           <div className={s.uploadLogo}>
-            <p>Brand Logo:</p>
+            <p>{t("brandLogo")}:</p>
             <div className={s.uploader}>
               <FileUpload
-                title="Select or Drag Image"
+                title={t("common:imageUpload.selectNewImage")}
                 setValue={() => console.log("")}
                 className={s.fileUploader}
               />
             </div>
             <Button variant="text" className={s.brandBlackBtn}>
-              Load
+              {t("common:load")}
             </Button>
           </div>
           <div className={s.uploadBanner}>
-            <p>Brand Banner:</p>
+            <p>{t("brandBanner")}:</p>
             <div className={s.uploader}>
               <FileUpload
-                title="Select or Drag Image"
+                title={t("common:imageUpload.selectNewImage")}
                 setValue={() => console.log("")}
                 className={s.fileUploader}
               />
             </div>
             <Button variant="text" className={s.brandBlackBtn}>
-              Load
+              {t("common:load")}
             </Button>
           </div>
         </div>
-        <h1>Company Informations</h1>
+        <h1>{t("companyInformations")}</h1>
       </div>
 
       <div className={s.formSection}>
@@ -121,10 +139,10 @@ const brandInformation: NextPage = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label={"Brand Name"}
+                  label={t("brandName")}
                   setValue={onChange}
                   value={value}
-                  placeholder={"Brand Name"}
+                  placeholder={t("brandName")}
                   className={s.input}
                 />
               )}
@@ -134,10 +152,10 @@ const brandInformation: NextPage = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label={"Cari Ünvan"}
+                  label={t("currentTitle")}
                   setValue={onChange}
                   value={value}
-                  placeholder={"Cari Ünvan"}
+                  placeholder={t("currentTitle")}
                   className={s.input}
                 />
               )}
@@ -147,10 +165,10 @@ const brandInformation: NextPage = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label={"Seller ID"}
+                  label={t("sellerID")}
                   setValue={onChange}
                   value={value}
-                  placeholder={"Seller ID"}
+                  placeholder={t("sellerID")}
                   className={s.input}
                 />
               )}
@@ -162,10 +180,10 @@ const brandInformation: NextPage = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label={"Mersis No"}
+                  label={t("mersisNo")}
                   setValue={onChange}
                   value={value}
-                  placeholder={"Mersis No"}
+                  placeholder={t("mersisNo")}
                   className={s.input}
                 />
               )}
@@ -175,10 +193,10 @@ const brandInformation: NextPage = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label={"Tax Administration"}
+                  label={t("taxAdministration")}
                   setValue={onChange}
                   value={value}
-                  placeholder={"Tax Administration"}
+                  placeholder={t("taxAdministration")}
                   className={s.input}
                 />
               )}
@@ -188,10 +206,10 @@ const brandInformation: NextPage = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
-                  label={"KEP Address"}
+                  label={t("KEPAddress")}
                   setValue={onChange}
                   value={value}
-                  placeholder={"KEP Address"}
+                  placeholder={t("KEPAddress")}
                   className={s.input}
                 />
               )}
@@ -202,10 +220,10 @@ const brandInformation: NextPage = () => {
             control={control}
             render={({ field: { onChange, value } }) => (
               <Input
-                label={"Tax number"}
+                label={t("taxNumber")}
                 setValue={onChange}
                 value={value}
-                placeholder={"Tax number"}
+                placeholder={t("taxNumber")}
                 className={s.inputTextArea}
               />
             )}
@@ -215,7 +233,7 @@ const brandInformation: NextPage = () => {
             className={cn(s.brandBlackBtn, s.saveBtn)}
             onClick={onSubmit}
           >
-            Save
+            {t("common:save")}
           </Button>
         </form>
       </div>

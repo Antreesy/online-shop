@@ -1,0 +1,23 @@
+{
+  "profile": "Профиль",
+  "brandInformation": "Информация о бренде",
+  "allProduct": "Все продукты",
+  "allCancellations": "Все отмены",
+  "onSale": "На продаже",
+  "thatNeedRevision": "Нуждается в пересмотре",
+  "notOnSale": "Не на продаже",
+
+  "brandInformations": "Информация о бренде",
+  "brandName": "Название бренда",
+  "brandDisplayName": "Видимое название бренда",
+  "brandLogo": "Логотип бренда",
+  "brandBanner": "Баннер бренда",
+
+  "companyInformations": "Информация о компании",
+  "currentTitle": "Текущее название",
+  "sellerID": "Идентификатор продавца",
+  "mersisNo": "Mersis №",
+  "taxAdministration": "Налоговая служба",
+  "KEPAddress": "Адрес KEP",
+  "taxNumber": "Налоговый номер"
+}

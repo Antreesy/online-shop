@@ -1,6 +1,8 @@
 import { useState } from "react"
 import cn from "classnames"
 import Head from "next/head"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { useTranslation } from "next-i18next"
 
 import { BackButton, Table } from "Сomponents"
 import { Button, Input, Pagination, Select, Tabs } from "UI"
@@ -8,7 +10,22 @@ import { Button, Input, Pagination, Select, Tabs } from "UI"
 import s from "styles/pages/brand-products.module.scss"
 import { brandProductsTableContent } from "shared/constants/brandTables"
 
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "app",
+        "common",
+        "header",
+        "footer",
+        "brandProduct",
+      ])),
+    },
+  }
+}
+
 const BrandProducts: React.FC = () => {
+  const { t } = useTranslation(["brandProduct", "common"])
   const [inputValue, setInputValue] = useState<string>("")
   return (
     <>
@@ -26,29 +43,29 @@ const BrandProducts: React.FC = () => {
             className={s.tabs}
             variant="no_border"
             labels={[
-              "All Products",
-              "On Sale",
-              "Sold Out",
-              "What You Need to Revise",
-              "Not Available",
+              t("allProducts"),
+              t("onSale"),
+              t("soldOut"),
+              t("whatYouNeedToRevise"),
+              t("notAvailable"),
             ]}
             values={[]}
           />
           <div className={s.content__header}>
             <Input
               className={s.input}
-              placeholder="Product Code"
+              placeholder={t("productCode")}
               setValue={setInputValue}
               value={inputValue}
             />
             <Input
               className={s.input}
-              placeholder="Product Name"
+              placeholder={t("productName")}
               setValue={setInputValue}
               value={inputValue}
             />
             <Select
-              placeholder="Category"
+              placeholder={t("category")}
               className={s.select}
               values={[
                 { title: "one", value: 1 },
@@ -57,7 +74,7 @@ const BrandProducts: React.FC = () => {
               ]}
             />
             <Select
-              placeholder="Sort by"
+              placeholder={t("sortBy")}
               className={s.select}
               values={[
                 { title: "one", value: 1 },
@@ -66,22 +83,22 @@ const BrandProducts: React.FC = () => {
               ]}
             />
             <Button className={cn(s.button, s.button_purple)} iconLeft="search">
-              Search
+              {t("common:search")}
             </Button>
             <Button className={cn(s.button, s.button_red)} iconLeft="trash_can">
-              Clean
+              {t("common:clean")}
             </Button>
             <Button
               className={cn(s.button, s.button_green)}
               iconLeft="download"
             >
-              Excel Download
+              {t("excelDownload")}
             </Button>
           </div>
 
           <div className={s.bottom_content_header}>
             <div>
-              <p>On Every Page</p>
+              <p>{t("onEveryPage")}</p>
             </div>
             <Select
               className={s.bottom_content_select}
@@ -98,7 +115,9 @@ const BrandProducts: React.FC = () => {
           </div>
 
           <Table
-            headers={brandProductsTableContent.headers}
+            headers={brandProductsTableContent.headers.map((header) => {
+              return { name: t(header.name) }
+            })}
             innerRows={brandProductsTableContent.rows}
           />
         </div>
