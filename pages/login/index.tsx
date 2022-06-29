@@ -1,8 +1,9 @@
 import { NextPage } from "next"
 
-import SignUp from "views/login/SignUp"
-import SignIn from "views/login/SignIn"
 import { Tabs } from "UI"
+
+import SignIn from "views/login/SignIn"
+import SignUp from "views/login/SignUp"
 
 import s from "styles/pages/login.module.scss"
 

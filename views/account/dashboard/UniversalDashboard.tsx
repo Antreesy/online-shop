@@ -3,7 +3,12 @@ import { useTranslation } from "next-i18next"
 import { SectionHeader } from "Сomponents"
 import { Tabs } from "UI"
 
-import { BrandBasedTab, CategoryBasedTab, OthersTab, ProductBasedTab } from "./Tabs"
+import {
+  BrandBasedTab,
+  CategoryBasedTab,
+  OthersTab,
+  ProductBasedTab,
+} from "./Tabs"
 
 import s from "styles/pages/account/dashboard.module.scss"
 
@@ -26,7 +31,12 @@ export const UniversalDashboard: React.FC = () => {
           t("brandBasedSalesStatistics"),
           t("otherStatistics"),
         ]}
-        values={[<ProductBasedTab />, <CategoryBasedTab />, <BrandBasedTab />, <OthersTab />]}
+        values={[
+          <ProductBasedTab />,
+          <CategoryBasedTab />,
+          <BrandBasedTab />,
+          <OthersTab />,
+        ]}
       />
     </>
   )
