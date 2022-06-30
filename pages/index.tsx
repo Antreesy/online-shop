@@ -74,7 +74,6 @@ const Index: NextPage = () => {
             <Link href="/account/dashboard">
               <a className={s.title__link}>Dashboard (in account)</a>
             </Link>
-            <span className={s.title__miss}>Dashboard (other)</span>
           </div>
 
           <div className={s.flex_column}>
