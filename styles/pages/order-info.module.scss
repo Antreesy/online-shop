@@ -16,7 +16,7 @@
 
 .content {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 45px;
 
   @include mobile-laptop {

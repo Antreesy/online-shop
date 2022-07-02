@@ -95,7 +95,6 @@
 
 .container {
   @include container;
-  max-width: 1720px;
   background-color: white;
 
   &__content {
