@@ -46,7 +46,7 @@ const Products: NextPage = () => {
         }
         title={"some-title"}
         link={"some-link"}
-        actionText={"button"}
+        actionText={"Follow"}
       />
 
       <div className={s.container}>

@@ -15,6 +15,7 @@
     color: $color-black;
     background-color: $color-grey-f4;
   }
+
   &.black_gradient {
     background-image: linear-gradient(to bottom, $color-black-a0, $color-black);
     color: $color-white;
@@ -45,10 +46,11 @@
 
 .bg_button {
   display: inline-block;
-  opacity: 0;
   color: $color-white;
   border-color: $color-white;
   cursor: default;
+  padding-left:30px ;
+  padding-right:30px ;
 }
 
 .btn {
@@ -128,6 +130,7 @@
   &.no_gradient {
     color: $color-black;
   }
+
   &.black_gradient {
     color: $color-white;
   }

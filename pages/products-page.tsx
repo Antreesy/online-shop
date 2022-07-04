@@ -32,6 +32,7 @@ const ProductsPage: NextPage = () => {
             "
           link={"tuanaycl"}
           className={s.background__desktop}
+          actionText={'Follow'}
         />
       </div>
 
@@ -151,6 +152,7 @@ const ProductsPage: NextPage = () => {
                     type: "sale",
                   }}
                   imageSrc="/assets/img/T_shirt.png"
+                  toggleFavorite={() => console.log("toggleFavorite")}
                 />
               </Grid>
             ))}

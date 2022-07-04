@@ -49,9 +49,9 @@ const Background: React.FC<BackgroundProps> = (props) => {
         {image && <Image src={image} layout="fill" />}
       </div>
       <div className={s.btn}>
-        <Button className={s.bg_button} variant="outlined">
+        {actionText && <Button className={s.bg_button} variant="outlined">
           {actionText}
-        </Button>
+        </Button>}
       </div>
       <div className={s.content}>
         <div className={s.title_box}>
