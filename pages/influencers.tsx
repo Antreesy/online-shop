@@ -42,13 +42,14 @@ const influencers: NextPage = () => {
                 buttonHref={"/products-page"}
                 isButtonHidden={true}
                 topButtonTitle={"Follow"}
-
               />
               <p className={s.card_caption}>Tuana Yücel</p>
             </Grid>
           ))}
         </Grid>
-        <Pagination className={s.pagination} pagesCount={4} isShort />
+        <div className={s.wrapper_pagination}>
+          <Pagination className={s.pagination} pagesCount={4} isShort />
+        </div>
       </div>
     </>
   )

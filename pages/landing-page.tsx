@@ -104,7 +104,9 @@ const LandingPage: NextPage = () => {
 
         <div className={s.container}>
           <div className={s.text_content}>
-            <h2 className={s.heading}>{t("influencers_shop")}</h2>
+            <h2 className={cn(s.heading, s.heading_bubble_right)}>
+              <span>{t("influencers_shop")}</span>
+            </h2>
             <p className={s.description}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
               lacinia, lacus mattis semper lacinia, metus urna dapibus quam, eu
@@ -156,7 +158,7 @@ const LandingPage: NextPage = () => {
           </div>
 
           <div className={s.text_content}>
-            <h2 className={cn(s.heading, s.heading_bubble)}>
+            <h2 className={cn(s.heading, s.heading_bubble_left)}>
               <span>Lorem Ipsum Dolor Sit Amet</span>
             </h2>
             <p className={s.description}>
@@ -184,7 +186,9 @@ const LandingPage: NextPage = () => {
           </div>
 
           <div className={s.testimonials_wrapper}>
-            <h2 className={s.heading}>{t("testimonials")}</h2>
+            <h2 className={cn(s.heading, s.heading_bubble_testimonials)}>
+              <span>{t("testimonials")}</span>
+            </h2>
             <p className={s.description}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
               lacinia, lacus mattis semper lacinia, metus urna dapibus quam, eu

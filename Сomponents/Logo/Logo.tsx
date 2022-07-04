@@ -1,7 +1,7 @@
 import Image from "next/image"
 
-import LightLogo from "public/assets/img/LightLogo.svg"
-import DarkLogo from "public/assets/img/DarkLogo.svg"
+import LightLogo from "public/assets/img/LightLogo.png"
+import DarkLogo from "public/assets/img/DarkLogo.png"
 
 interface LogoProps {
   className?: string

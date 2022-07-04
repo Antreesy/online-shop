@@ -9,7 +9,7 @@ import s from "styles/pages/account/add-product.module.scss"
 export const StepTwo: React.FC<StepProps> = (props) => {
   const { currentStep, setCurrentStep } = props
 
-  const { t } = useTranslation(["addProduct", "common"])
+  const { t } = useTranslation(["addproduct", "common"])
   return (
     <div className={cn(s.step, { [s.disabled]: currentStep !== 1 })}>
       <div className={s.content}>

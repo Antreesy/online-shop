@@ -101,6 +101,13 @@
 
 .button {
   white-space: nowrap;
+
+  @include laptop {
+    font-size: 15px;
+  }
+  @include mobile-tablet {
+    font-size: 15px;
+  }
 }
 
 .button_outlined {

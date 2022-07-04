@@ -30,11 +30,12 @@ const CustomBreadcrumbs = () => {
             {route}
           </Link>
         ))}
-        {activeRoute[0] !== "" && (
-          <Typography className={cn(s.active, s.breadcrumb)} key={"active"}>
-            {activeRoute}
-          </Typography>
-        )}
+        {activeRoute[0] !== "" &&
+          activeRoute.map((route) => (
+            <Typography className={cn(s.active, s.breadcrumb)} key={"active"}>
+              {route.replace("-", " ")}
+            </Typography>
+          ))}
       </Breadcrumbs>
     </Stack>
   )

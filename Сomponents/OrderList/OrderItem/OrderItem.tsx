@@ -84,9 +84,10 @@ const OrderItem: React.FC<OrderItemProps> = (props) => {
             <p>Was delivered</p>
 
             <div className={s.cards}>
-              {productItems.map((item) => {
+              {productItems.map((item, index) => {
                 return (
                   <ProductItem
+                    key={index}
                     description={item.description}
                     id={item.id}
                     imageSrc={item.imageSrc}

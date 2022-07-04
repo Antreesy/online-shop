@@ -30,9 +30,7 @@ const ModalWindow: FC<ModalWindowProps> = (props) => {
         <Modal classes={{ root: s.modal }} open={isOpen} onClose={onClose}>
           <Box className={s.content} onClick={(e) => e.stopPropagation()}>
             <IconButton className={s.close} onClick={onClose}>
-              <div className={s.round}>
-                <Icon className={s.icon} type="close_cross" />
-              </div>
+              <Icon className={s.icon} type="close_cross" />
             </IconButton>
 
             {iconType ? (

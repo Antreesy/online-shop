@@ -52,6 +52,9 @@
   }
 
   .input {
+    background-color: $color-grey-43;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
     fieldset {
       border-radius: 0;
       border-top-left-radius: 4px;

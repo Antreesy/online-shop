@@ -12,20 +12,20 @@
   border-radius: 5px;
   padding: 0 25px;
 
-  .with_decor::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 40px;
-    height: 35px;
-    background: $main-gradient;
-    border-radius: 0 5px 0 100%;
-  }
-
   @include mobile {
     height: 45px;
   }
+}
+
+.with_decor::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 35px;
+  background: $main-gradient;
+  border-radius: 0 5px 0 100%;
 }
 
 .title {

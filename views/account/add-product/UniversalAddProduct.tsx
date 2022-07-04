@@ -23,7 +23,7 @@ const UniversalAddProduct = () => {
 
   const toggleForm = () => setShowForm((prev) => !prev)
 
-  const { t } = useTranslation("addProduct")
+  const { t } = useTranslation("addproduct")
   return (
     <>
       <div className={s.button_wrapper}>

@@ -61,6 +61,7 @@ export const StepThree: React.FC<StepThreeProps> = (props) => {
       </Button>
 
       <CheckboxGroup
+        rounded={true}
         className={s.checkboxes}
         labels={[
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pellentesqueşartlarını okudum ve kabul ediyorum.",

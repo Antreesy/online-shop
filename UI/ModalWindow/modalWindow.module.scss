@@ -33,26 +33,9 @@
   user-select: none;
   cursor: pointer;
 
-  .round {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 39px;
-    min-width: 39px;
-    border-radius: 50%;
-    font-size: 14px;
-    background-color: $color-black;
-
-    @include mobile {
-      height: 26px;
-      min-width: 26px;
-      font-size: 10px;
-      background-color: transparent;
-    }
-  }
-
   .icon {
-    color: $color-white;
+    color: $color-black;
+    font-size: 20px;
     @include mobile {
       color: $color-black;
     }

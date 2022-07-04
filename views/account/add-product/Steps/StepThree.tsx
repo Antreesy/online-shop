@@ -11,7 +11,7 @@ export const StepThree: React.FC<StepProps> = (props) => {
   const [file, setFile] = useState<File>()
   const { currentStep, setCurrentStep } = props
 
-  const { t } = useTranslation(["addProduct", "common"])
+  const { t } = useTranslation(["addproduct", "common"])
   return (
     <div className={cn(s.step, { [s.disabled]: currentStep !== 2 })}>
       <div className={s.content}>

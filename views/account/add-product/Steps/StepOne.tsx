@@ -11,7 +11,7 @@ export const StepOne: React.FC<StepProps> = (props) => {
   const [value, setValue] = useState<string>("")
   const { currentStep, setCurrentStep } = props
 
-  const { t } = useTranslation(["addProduct", "common"])
+  const { t } = useTranslation(["addproduct", "common"])
   return (
     <div className={cn(s.step, { [s.disabled]: currentStep !== 0 })}>
       <div className={s.content}>

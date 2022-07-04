@@ -408,13 +408,10 @@
   background-color: $color-white;
 }
 
-.heading_bubble {
+.heading_bubble_left {
   position: relative;
   max-width: 100% !important;
-
-  @include mobile {
-    width: fit-content;
-  }
+  width: fit-content;
 
   & > span {
     position: relative;
@@ -429,6 +426,65 @@
     height: 47px;
     border-radius: 47px;
     background: $main-gradient;
+
+    @include mobile {
+      left: auto;
+      top: -5px;
+      right: -10px;
+      width: 19px;
+      height: 19px;
+    }
+  }
+}
+
+.heading_bubble_right {
+  position: relative;
+  max-width: 100% !important;
+  width: fit-content;
+
+  & > span {
+    position: relative;
+    z-index: 1;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    right: -20px;
+    width: 47px;
+    height: 47px;
+    border-radius: 47px;
+    background: $light-gradient;
+
+    @include mobile {
+      left: auto;
+      top: -5px;
+      right: -10px;
+      width: 19px;
+      height: 19px;
+    }
+  }
+}
+
+.heading_bubble_testimonials {
+  position: relative;
+  max-width: 100% !important;
+  width: fit-content;
+  margin: 0 auto 20px;
+
+  & > span {
+    position: relative;
+    z-index: 1;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: -20px;
+    width: 47px;
+    height: 47px;
+    border-radius: 47px;
+    background: $light-gradient;
 
     @include mobile {
       left: auto;

@@ -1,11 +1,13 @@
 import Link from "next/link"
 import { Logo } from "Сomponents"
-import { Button, SocialIcon } from "UI"
+import { Button, Input, SocialIcon } from "UI"
 import { Navigation, NavigationProps } from "./Navigation"
 
 import s from "./footer.module.scss"
+import { useState } from "react"
 
 const Footer: React.FC<NavigationProps> = ({ links }) => {
+  const [value, setValue] = useState<string>("")
   return (
     <>
       <footer className={s.footer}>
@@ -40,14 +42,14 @@ const Footer: React.FC<NavigationProps> = ({ links }) => {
                 industry’
               </p>
               <form className={s.news_letter_form}>
-                <input
-                  className={s.news_letter_input}
-                  type="email"
-                  placeholder="E-mail"
+                <Input
+                  variant="footer"
+                  value={value}
+                  setValue={setValue}
+                  buttonLabel={"Send"}
+                  placeholder={"E-mail"}
+                  className={s.footer_input}
                 />
-                <Button className={s.news_letter_button} disableElevation>
-                  Send
-                </Button>
               </form>
             </div>
 
@@ -57,7 +59,6 @@ const Footer: React.FC<NavigationProps> = ({ links }) => {
       </footer>
       <div className={s.copyright}>
         <span>ILONSI © Copyright</span>
-        <span>Bigfil Project House</span>
       </div>
     </>
   )

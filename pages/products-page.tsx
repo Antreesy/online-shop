@@ -32,7 +32,7 @@ const ProductsPage: NextPage = () => {
             "
           link={"tuanaycl"}
           className={s.background__desktop}
-          actionText={'Follow'}
+          actionText={"Follow"}
         />
       </div>
 

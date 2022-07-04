@@ -48,7 +48,7 @@ export const AddProductForm: React.FC = () => {
       stockCode2: "",
     },
   })
-  const { t } = useTranslation(["addProduct", "common"])
+  const { t } = useTranslation(["addproduct", "common"])
 
   const onSubmit = handleSubmit((data) => {
     console.log(data)
