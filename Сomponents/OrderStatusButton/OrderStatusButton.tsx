@@ -8,7 +8,6 @@ import s from "./orderStatusButton.module.scss"
 
 export interface OrderStatusButtonProps {
   icon: IconType
-  appearance: "purple" | "white"
   title: string
   orderNumbers?: number
   lastDay: number
@@ -23,17 +22,13 @@ const OrderStatusButton: React.FC<OrderStatusButtonProps> = (props) => {
     orderNumbers = 0,
     lastDay = 0,
     delays = 0,
-    appearance = "white",
     onClick,
   } = props
 
   return (
     <div
       onClick={onClick}
-      className={cn(s.main, {
-        [s.purple]: appearance === "purple",
-        [s.white]: appearance === "white",
-      })}
+      className={s.main}
     >
       <div className={s.wrapper}>
         <div className={cn(s.icon_wrapper, s.desktop)}>

@@ -13,6 +13,8 @@
   border-radius: 10px;
   box-shadow: 0 0 10px 0 #e8e8e8;
   border: 3px solid $color-white;
+  color: $color-black;
+  background-color: $color-white;
   cursor: pointer;
 
   @include mobile-tablet {
@@ -21,6 +23,19 @@
     width: 100%;
     height: 120px;
     padding: 20px;
+  }
+
+  &:hover {
+    background: linear-gradient(90deg, $color-purple-light, $color-purple-f1);
+    color: $color-white;
+
+    .icon_wrapper {
+      background-color: $color-white;
+    }
+
+    .title_value {
+      color: $color-white;
+    }
   }
 }
 
@@ -32,7 +47,7 @@
   height: 95px;
   margin-right: 15px;
   border-radius: 9px;
-  background-color: $color-white;
+  background-color: $color-light-pink;
 
   .icon {
     font-size: 57px;
@@ -112,23 +127,5 @@
     .icon {
       font-size: 65px;
     }
-  }
-}
-
-.purple {
-  background: linear-gradient(90deg, $color-purple-light, $color-purple-f1);
-  color: $color-white;
-
-  .icon_wrapper {
-    background-color: $color-white;
-  }
-}
-
-.white {
-  color: $color-black;
-  background-color: $color-white;
-
-  .icon_wrapper {
-    background-color: $color-light-pink;
   }
 }

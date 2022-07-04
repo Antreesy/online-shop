@@ -49,7 +49,6 @@ const BrandLanding: React.FC = () => {
           <div className={s.order_wrapper}>
             <OrderStatusButton
               icon={"hanger"}
-              appearance={"purple"}
               title={t("allOrders")}
               orderNumbers={3547}
               lastDay={20000}
@@ -58,7 +57,6 @@ const BrandLanding: React.FC = () => {
 
             <OrderStatusButton
               icon={"getting_ready"}
-              appearance={"white"}
               title={t("gettingReady")}
               orderNumbers={1679}
               lastDay={20000}
@@ -67,7 +65,6 @@ const BrandLanding: React.FC = () => {
 
             <OrderStatusButton
               icon={"delivery_ready"}
-              appearance={"white"}
               title={t("deliveryReady")}
               orderNumbers={2500}
               lastDay={20000}
@@ -84,31 +81,26 @@ const BrandLanding: React.FC = () => {
           <div className={s.inventory_wrapper}>
             <InventoryButton
               icon={"bell_outlined"}
-              appearance={"purple"}
               text={t("totalProduct")}
               number={1399}
             />
             <InventoryButton
               icon={"brand_display_name"}
-              appearance={"white"}
               text={t("productsOnSale")}
               number={9876}
             />
             <InventoryButton
               icon={"discount"}
-              appearance={"white"}
               text={t("criticalStockLevel")}
               number={2798}
             />
             <InventoryButton
               icon={"exclamation"}
-              appearance={"white"}
               text={t("outOfStockProducts")}
               number={5609}
             />
             <InventoryButton
               icon={"out_of_stock"}
-              appearance={"white"}
               text={t("offSaleProducts")}
               number={76}
             />

@@ -13,6 +13,30 @@
   border: 3px solid $color-white;
   cursor: pointer;
 
+  color: $color-black;
+  background-color: $color-white;
+
+  .icon_wrapper {
+    background-color: $color-light-pink;
+  }
+
+  .description_row .icon {
+    color: $color-black !important;
+  }
+
+
+  &:hover{
+      background: linear-gradient(90deg, $color-purple-light, $color-purple-f1);
+      color: $color-white;
+
+      .icon_wrapper {
+        background-color: $color-white;
+      }
+    .description_row .icon {
+      color: $color-white !important;
+    }
+  }
+
   @include mobile-tablet {
     min-width: 300px;
     max-width: 300px;
@@ -21,10 +45,12 @@
   }
 }
 
+
 .wrapper {
   height: 95px;
   display: flex;
   width: 100%;
+
 
   .icon_wrapper {
     display: flex;
@@ -105,24 +131,3 @@
   }
 }
 
-.purple {
-  background: linear-gradient(90deg, $color-purple-light, $color-purple-f1);
-  color: $color-white;
-
-  .icon_wrapper {
-    background-color: $color-white;
-  }
-}
-
-.white {
-  color: $color-black;
-  background-color: $color-white;
-
-  .icon_wrapper {
-    background-color: $color-light-pink;
-  }
-
-  .description_row .icon {
-    color: $color-black !important;
-  }
-}

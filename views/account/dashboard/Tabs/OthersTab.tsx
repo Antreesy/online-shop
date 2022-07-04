@@ -19,7 +19,6 @@ export const OthersTab = () => {
           <div className={s.others_row}>
             <DashStatisticButton
               icon={"shop"}
-              appearance={"white"}
               title={"Total Shop view"}
               value={54327892}
               lastUpdated={"24.12.2021"}
@@ -27,7 +26,6 @@ export const OthersTab = () => {
 
             <DashStatisticButton
               icon={"bookmark"}
-              appearance={"purple"}
               title={"Total Saved Products"}
               value={452312}
               lastUpdated={"24.12.2021"}
@@ -35,7 +33,6 @@ export const OthersTab = () => {
 
             <DashStatisticButton
               icon={"discount"}
-              appearance={"white"}
               title={"Total Campaigns Attended"}
               value={859}
               lastUpdated={"24.12.2021"}
@@ -61,7 +58,6 @@ export const OthersTab = () => {
           <div className={s.others_row}>
             <DashStatisticButton
               icon={"coupon"}
-              appearance={"white"}
               title={"Coupon Code"}
               value={5148932}
               lastUpdated={"24.12.2021"}
@@ -69,7 +65,6 @@ export const OthersTab = () => {
 
             <DashStatisticButton
               icon={"discount"}
-              appearance={"white"}
               title={"Percentage Discount"}
               value={9023}
               lastUpdated={"24.12.2021"}
@@ -77,7 +72,6 @@ export const OthersTab = () => {
 
             <DashStatisticButton
               icon={"lira_discount"}
-              appearance={"white"}
               title={"1000TL over 75TL Discount"}
               value={19482091}
               lastUpdated={"24.12.2021"}
