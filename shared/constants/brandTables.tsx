@@ -1,7 +1,9 @@
 import Image from "next/image"
-import { Icon } from "UI"
+import { Icon, Tooltip } from "UI"
 import dress from "public/assets/img/Knitted_dress.png"
 import s from "styles/pages/brand-products.module.scss"
+ const text = 'Switch an order to preparing status Do you approve your request?'
+
 
 export const brandProductsTableContent = {
   headers: [
@@ -394,9 +396,11 @@ export const brandOrdTransTableContent = {
       {
         value: (
           <>
-            <p style={{ color: "#8100EF", marginBottom: "7px" }}>
-              Getting Ready Pass
-            </p>
+            <Tooltip content={text}>
+              <p style={{ color: "#8100EF", marginBottom: "7px" }}>
+                Getting Ready Pass
+              </p>
+            </Tooltip>
             <p style={{ textDecoration: "underline" }}>Cancel Order</p>
           </>
         ),
@@ -439,9 +443,11 @@ export const brandOrdTransTableContent = {
       {
         value: (
           <>
-            <p style={{ color: "#8100EF", marginBottom: "7px" }}>
-              Getting Ready Pass
-            </p>
+            <Tooltip content={text}>
+              <p style={{ color: "#8100EF", marginBottom: "7px" }}>
+                Getting Ready Pass
+              </p>
+            </Tooltip>
             <p style={{ textDecoration: "underline" }}>Cancel Order</p>
           </>
         ),
@@ -484,9 +490,11 @@ export const brandOrdTransTableContent = {
       {
         value: (
           <>
-            <p style={{ color: "#8100EF", marginBottom: "7px" }}>
-              Getting Ready Pass
-            </p>
+             <Tooltip content={text}>
+              <p style={{ color: "#8100EF", marginBottom: "7px" }}>
+                Getting Ready Pass
+              </p>
+            </Tooltip>
             <p style={{ textDecoration: "underline" }}>Cancel Order</p>
           </>
         ),
@@ -529,9 +537,11 @@ export const brandOrdTransTableContent = {
       {
         value: (
           <>
-            <p style={{ color: "#8100EF", marginBottom: "7px" }}>
-              Getting Ready Pass
-            </p>
+            <Tooltip content={text}>
+              <p style={{ color: "#8100EF", marginBottom: "7px" }}>
+                Getting Ready Pass
+              </p>
+            </Tooltip>
             <p style={{ textDecoration: "underline" }}>Cancel Order</p>
           </>
         ),
@@ -574,9 +584,11 @@ export const brandOrdTransTableContent = {
       {
         value: (
           <>
-            <p style={{ color: "#8100EF", marginBottom: "7px" }}>
-              Getting Ready Pass
-            </p>
+             <Tooltip content={text}>
+              <p style={{ color: "#8100EF", marginBottom: "7px" }}>
+                Getting Ready Pass
+              </p>
+            </Tooltip>
             <p style={{ textDecoration: "underline" }}>Cancel Order</p>
           </>
         ),
@@ -619,9 +631,11 @@ export const brandOrdTransTableContent = {
       {
         value: (
           <>
-            <p style={{ color: "#8100EF", marginBottom: "7px" }}>
-              Getting Ready Pass
-            </p>
+             <Tooltip content={text}>
+              <p style={{ color: "#8100EF", marginBottom: "7px" }}>
+                Getting Ready Pass
+              </p>
+            </Tooltip>
             <p style={{ textDecoration: "underline" }}>Cancel Order</p>
           </>
         ),
@@ -664,9 +678,11 @@ export const brandOrdTransTableContent = {
       {
         value: (
           <>
-            <p style={{ color: "#8100EF", marginBottom: "7px" }}>
-              Getting Ready Pass
-            </p>
+            <Tooltip content={text}>
+              <p style={{ color: "#8100EF", marginBottom: "7px" }}>
+                Getting Ready Pass
+              </p>
+            </Tooltip>
             <p style={{ textDecoration: "underline" }}>Cancel Order</p>
           </>
         ),

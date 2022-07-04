@@ -4,7 +4,7 @@ import { Button } from "UI"
 import s from "./tooltip.module.scss"
 
 interface CustomTooltipProps {
-  content: React.ReactNode
+  content?: React.ReactNode
   children: React.ReactNode
   position?: TooltipProps["placement"]
 }
