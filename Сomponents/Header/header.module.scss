@@ -270,7 +270,7 @@
   background-color: $color-grey-f4;
 
   @include mobile {
-    top: $header-mobile-height !important;
+    top: 100px !important;
     left: auto !important;
     right: 0;
   }
