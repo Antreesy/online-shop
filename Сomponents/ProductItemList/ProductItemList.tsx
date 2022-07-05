@@ -2,6 +2,7 @@ import React from "react"
 
 import { Grid } from "@mui/material"
 import ProductItem, { ProductItemProps } from "./ProductItem/ProductItem"
+import s from "./producItemList.module.scss"
 
 interface ProductItemListProps {
   productItemList: ProductItemProps[]
@@ -35,6 +36,7 @@ export const ProductItemList: React.FC<ProductItemListProps> = (props) => {
           lg={lg}
           xl={xl}
           justifyContent="space-around"
+          className={s.grid}
         >
           <ProductItem {...item} />
         </Grid>
