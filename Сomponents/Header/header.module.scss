@@ -1,7 +1,8 @@
 @import "styles/style.scss";
 
 .header,
-.header_light {
+.header_light,
+.header_mobile {
   position: fixed;
   top: 0;
   left: 0;
@@ -51,6 +52,38 @@
 
   @include mobile-tablet {
     height: $header-light-mobile-height;
+  }
+}
+
+.header_mobile {
+  height: $header-mobile-mobile-height;
+  background-color: transparent;
+  box-shadow: none;
+  .container {
+    height: 88px;
+    padding: 16px;
+    background-color: $color-grey-f4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .button {
+    font-size: 32px;
+    background: transparent;
+    color: $color-black;
+    box-shadow: none;
+  }
+
+  .logo {
+    margin: 0;
+    height: 40px;
+  }
+
+  .heading {
+    font-size: 17px;
+    font-weight: $fw-bold;
+    line-height: 20px;
   }
 }
 

@@ -24,10 +24,10 @@ interface AccordionProps {
   arrowColor?: string
   onClick?: () => void
   iconClassName?: string
+  initialOpen?: boolean
 }
 
 const CustomAccordion: React.FC<AccordionProps> = (props) => {
-  const [active, setActive] = useState(false)
   const {
     children,
     header,
@@ -45,7 +45,10 @@ const CustomAccordion: React.FC<AccordionProps> = (props) => {
     arrowColor = "#8100ef",
     onClick,
     iconClassName,
+    initialOpen = false,
   } = props
+
+  const [active, setActive] = useState(false)
 
   const accordionClass = cn(s.accordion, className)
   const summaryClass = cn(s.summary, summaryClassName, {
@@ -61,7 +64,7 @@ const CustomAccordion: React.FC<AccordionProps> = (props) => {
   }
 
   return (
-    <Accordion className={accordionClass}>
+    <Accordion defaultExpanded={initialOpen} className={accordionClass}>
       <AccordionSummary
         className={summaryClass}
         onClick={handleClick}

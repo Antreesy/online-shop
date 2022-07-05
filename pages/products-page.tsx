@@ -5,13 +5,12 @@ import { Grid } from "@mui/material"
 import {
   Background,
   Breadcrumbs,
-  ColorPicker,
+  FilterSidebar,
   ProductItem,
   Toolbar,
 } from "Сomponents"
-import { Accordion, Button, CheckboxGroup, Pagination, Slider } from "UI"
+import { Pagination } from "UI"
 
-import { colors } from "shared/constants/colors"
 import picture from "public/assets/img/products-background.png"
 import picture_mobile from "public/assets/img/products-page-mob.png"
 
@@ -52,91 +51,7 @@ const ProductsPage: NextPage = () => {
       <div className={s.container}>
         <Toolbar className={s.toolbar} values={[]} />
         <div className={s.container__content}>
-          <div className={s.sidebar}>
-            <Accordion
-              header={"Gender"}
-              className={s.sidebar__accordion}
-              summaryClassName={s.sidebar__accordion__summary}
-              iconClassName={s.sidebar__accordion__icon}
-            >
-              <CheckboxGroup
-                inColumn
-                rounded
-                labels={["Men", "Women", "Unisex"]}
-              />
-            </Accordion>
-            <Accordion
-              header={"Category"}
-              className={s.sidebar__accordion}
-              summaryClassName={s.sidebar__accordion__summary}
-              iconClassName={s.sidebar__accordion__icon}
-            >
-              <CheckboxGroup
-                inColumn
-                rounded
-                labels={[
-                  "Dress",
-                  "Shoes",
-                  "Clothing",
-                  "Dress",
-                  "Shoes",
-                  "Clothing",
-                ]}
-              />
-            </Accordion>
-            <Accordion
-              header={"Brand"}
-              className={s.sidebar__accordion}
-              summaryClassName={s.sidebar__accordion__summary}
-              iconClassName={s.sidebar__accordion__icon}
-            >
-              <CheckboxGroup
-                inColumn
-                rounded
-                labels={[
-                  "Adidas",
-                  "Beymen",
-                  "Nike",
-                  "Dolce&Gabbana",
-                  "Adidas",
-                  "Nike",
-                ]}
-              />
-            </Accordion>
-            <Accordion
-              header={"Size"}
-              className={s.sidebar__accordion}
-              summaryClassName={s.sidebar__accordion__summary}
-              iconClassName={s.sidebar__accordion__icon}
-            >
-              <CheckboxGroup
-                inColumn
-                rounded
-                labels={["S", "M", "L", "XL", "XXL"]}
-              />
-            </Accordion>
-            <Accordion
-              header={"Color"}
-              className={s.sidebar__accordion}
-              summaryClassName={s.sidebar__accordion__summary}
-              iconClassName={s.sidebar__accordion__icon}
-            >
-              <ColorPicker
-                className={s.sidebar__color_picker}
-                colors={colors}
-              />
-            </Accordion>
-            <div className={s.sidebar__price_slider}>
-              <span>Price</span>
-              <Slider
-                min={0}
-                max={50}
-                value={[0, 50]}
-                className={s.sidebar__price_slider_wrapper}
-              />
-            </div>
-            <Button className={s.sidebar__btn}>Apply</Button>
-          </div>
+          <FilterSidebar />
           <div className={s.items}>
             {Array.from(Array(24)).map((item, index) => (
               <Grid item key={index} xs={2.4} justifyContent="space-evenly">

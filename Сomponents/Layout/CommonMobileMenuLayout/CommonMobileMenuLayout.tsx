@@ -2,10 +2,14 @@ import dynamic from "next/dynamic"
 
 import { LayoutProps } from ".."
 import { HeaderProps } from "Сomponents/Header/Header"
+import { HeaderMobileProps } from "Сomponents/Header/HeaderMobile"
 import { FooterProps } from "Сomponents/Footer/Footer"
 
 const Header = dynamic<HeaderProps>(() =>
   import("Сomponents").then((module) => module.Header),
+)
+const HeaderMobile = dynamic<HeaderMobileProps>(() =>
+  import("Сomponents").then((module) => module.HeaderMobile),
 )
 const Footer = dynamic<FooterProps>(() =>
   import("Сomponents").then((module) => module.Footer),
@@ -13,16 +17,17 @@ const Footer = dynamic<FooterProps>(() =>
 
 import { footerNav } from "shared/constants/footernav"
 
-import s from "./commonlayout.module.scss"
+import s from "./commonMobileMenuLayout.module.scss"
 
-const CommonLayout: React.FC<LayoutProps> = ({ children }) => {
+const CommonMobileMenuLayout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <Header />
+      <Header className={s.desktop} withBreadcrumbs />
+      <HeaderMobile className={s.mobile} />
       <main className={s.main}>{children}</main>
-      <Footer links={footerNav} />
+      <Footer className={s.desktop} links={footerNav} />
     </>
   )
 }
 
-export default CommonLayout
+export default CommonMobileMenuLayout

@@ -3,13 +3,13 @@ import dynamic from "next/dynamic"
 
 import { LayoutProps } from ".."
 import { HeaderProps } from "Сomponents/Header/Header"
-import { NavigationProps } from "Сomponents/Footer/Navigation"
+import { FooterProps } from "Сomponents/Footer/Footer"
 import { ProfileSidebarProps } from "Сomponents/ProfileSidebar/ProfileSidebar"
 
 const Header = dynamic<HeaderProps>(() =>
   import("Сomponents").then((module) => module.Header),
 )
-const Footer = dynamic<NavigationProps>(() =>
+const Footer = dynamic<FooterProps>(() =>
   import("Сomponents").then((module) => module.Footer),
 )
 const ProfileSidebar = dynamic<ProfileSidebarProps>(() =>

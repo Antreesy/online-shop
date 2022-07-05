@@ -8,8 +8,8 @@ interface HeaderLightProps {
   withLine?: boolean
 }
 
-const HeaderLight: React.FC<HeaderLightProps> = (props) => {
-  const headerClassName = cn(s.header_light, props.withLine ? s.line : "")
+const HeaderLight: React.FC<HeaderLightProps> = ({ withLine }) => {
+  const headerClassName = cn(s.header_light, { [s.line]: withLine })
 
   return (
     <header className={headerClassName}>

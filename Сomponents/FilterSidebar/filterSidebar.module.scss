@@ -1,0 +1,164 @@
+@import "styles/style.scss";
+
+.sidebar {
+  width: 210px;
+  margin-right: 91px;
+
+  @include mobile-tablet {
+    width: 100%;
+  }
+
+  & span {
+    font-size: 20px;
+  }
+
+  & > div:nth-last-child(2) {
+    width: 210px;
+    margin-bottom: 64px;
+  }
+
+  &__accordion {
+    div:nth-child(2) {
+      div {
+        padding: 0 !important;
+      }
+    }
+
+    &__summary {
+      padding: 16px 0;
+      font-weight: $fw-bold;
+      color: $color-purple;
+    }
+
+    &__icon {
+      font-size: 10px !important;
+    }
+  }
+
+  &__color_picker {
+    div {
+      min-width: 100%;
+      flex-direction: row !important;
+      flex-wrap: wrap;
+
+      span {
+        span {
+          height: 27px !important;
+          width: 27px !important;
+        }
+      }
+    }
+
+    div {
+      padding: 0 !important;
+    }
+  }
+
+  &__price_slider_wrapper {
+    padding: 0 0 0 10px !important;
+
+    span[data-index="0"]:nth-child(4) {
+      left: 12px !important;
+    }
+
+    span[data-index="1"]:nth-child(6) {
+      left: auto !important;
+      right: -66px;
+    }
+  }
+
+  &__price_slider {
+    span {
+      font-size: 20px;
+      color: $color-purple;
+      font-weight: 600;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+  }
+}
+
+.checkboxes {
+  @include mobile-tablet {
+    flex-direction: row !important;
+  }
+}
+
+.open_button {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: $fw-regular;
+
+  & > span {
+    font-size: 10px;
+  }
+}
+
+.drawer {
+  margin-top: 48px;
+  width: 415px;
+  height: 100vh;
+  overflow: hidden;
+  border-bottom-right-radius: 10px;
+  background-color: $color-grey-ed;
+
+  @include mobile {
+    margin-top: 0;
+    width: 100vw;
+    height: 100%;
+    border-radius: 0;
+  }
+}
+
+.drawer_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 16px;
+  background-color: $color-grey-f4;
+
+  .button {
+    font-size: 32px;
+    background: transparent;
+    color: $color-black;
+    box-shadow: none;
+  }
+
+  .heading {
+    font-size: 17px;
+    font-weight: $fw-bold;
+    line-height: 20px;
+  }
+
+  .link {
+    font-size: 13px;
+    font-weight: $fw-bold;
+    line-height: 15px;
+    color: $color-purple;
+    text-decoration: underline;
+  }
+}
+
+.drawer_main {
+  overflow: auto;
+  height: 100%;
+  padding: 0 16px;
+}
+
+.desktop {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.mobile {
+  @include tablet-desktop {
+    display: none !important;
+  }
+}

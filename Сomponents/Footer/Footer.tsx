@@ -1,16 +1,22 @@
+import cn from "classnames"
+
 import Link from "next/link"
 import { Logo } from "Сomponents"
-import { Button, Input, SocialIcon } from "UI"
+import { Input, SocialIcon } from "UI"
 import { Navigation, NavigationProps } from "./Navigation"
 
 import s from "./footer.module.scss"
 import { useState } from "react"
 
-const Footer: React.FC<NavigationProps> = ({ links }) => {
+export interface FooterProps extends NavigationProps {
+  className?: string
+}
+
+const Footer: React.FC<FooterProps> = ({ links, className }) => {
   const [value, setValue] = useState<string>("")
   return (
     <>
-      <footer className={s.footer}>
+      <footer className={cn(s.footer, className)}>
         <div className={s.content}>
           <div className={s.left_group}>
             <div className={s.left_top_group}>

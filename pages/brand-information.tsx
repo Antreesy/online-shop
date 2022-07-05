@@ -1,15 +1,18 @@
-import { NextPage } from "next"
-import { Controller, useForm } from "react-hook-form"
+import { useEffect } from "react"
 import cn from "classnames"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { useAppDispatch } from "store/hooks"
+import { changeRoute } from "store/slices/routeSlice"
 
+import { NextPage } from "next"
 import Head from "next/head"
+import { Controller, useForm } from "react-hook-form"
 import SimpleBar from "simplebar-react"
+import { BackButton } from "Сomponents"
 import { Button, FileUpload, Icon, Input } from "UI"
 
 import s from "styles/pages/brand-information.module.scss"
-import { BackButton } from "Сomponents"
 
 interface BrandsType {
   brandName: string
@@ -36,6 +39,12 @@ export async function getStaticProps({ locale }: { locale: string }) {
 }
 
 const brandInformation: NextPage = () => {
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(changeRoute("Product List"))
+  }, [])
+
   const { handleSubmit, control } = useForm<BrandsType>({
     criteriaMode: "all",
     defaultValues: {

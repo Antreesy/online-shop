@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 
 import { CommonLayout } from "./CommonLayout"
 import { CommonWithBcLayout } from "./CommonWithBcLayout"
+import { CommonMobileMenuLayout } from "./CommonMobileMenuLayout"
 import { ProfileLayout } from "./ProfileLayout"
 import { LightLayout } from "./LightLayout"
 
@@ -11,6 +12,7 @@ import {
   lightPaths,
   commonPaths,
   commonWithBcPaths,
+  commonMobileMenuPaths,
 } from "shared/constants/paths"
 
 import { useAppSelector } from "store/hooks"
@@ -35,6 +37,8 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     return <CommonLayout>{children}</CommonLayout>
   } else if (commonWithBcPaths.find(findPath)) {
     return <CommonWithBcLayout>{children}</CommonWithBcLayout>
+  } else if (commonMobileMenuPaths.find(findPath)) {
+    return <CommonMobileMenuLayout>{children}</CommonMobileMenuLayout>
   } else {
     return children
   }

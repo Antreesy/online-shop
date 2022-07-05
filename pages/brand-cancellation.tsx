@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react"
 import cn from "classnames"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { useAppDispatch } from "store/hooks"
+import { changeRoute } from "store/slices/routeSlice"
+
 import Head from "next/head"
 import { BackButton, Table } from "Сomponents"
 import { Button, Icon, Input, ModalWindow, Pagination, Select, Tabs } from "UI"
@@ -7,7 +11,26 @@ import { brandCancelTableContent } from "shared/constants/brandTables"
 
 import s from "styles/pages/brand-products.module.scss"
 
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "app",
+        "common",
+        "header",
+        "footer",
+      ])),
+    },
+  }
+}
+
 const BrandProducts: React.FC = () => {
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(changeRoute("Product List"))
+  }, [])
+
   const [inputValue, setInputValue] = useState<string>("")
   const [modal, setModal] = useState<boolean>(false)
   let isMobile

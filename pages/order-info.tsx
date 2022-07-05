@@ -1,7 +1,9 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { NextPage } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useTranslation } from "next-i18next"
+import { useAppDispatch } from "store/hooks"
+import { changeRoute } from "store/slices/routeSlice"
 
 import Head from "next/head"
 import Image from "next/image"
@@ -42,6 +44,12 @@ export async function getStaticProps({ locale }: { locale: string }) {
 }
 
 const OrderInfoPage: NextPage<OrderInfoProps> = () => {
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(changeRoute("Product List"))
+  }, [])
+
   const [IsActive, setIsActive] = useState<boolean>(false)
   const { t } = useTranslation(["orderInfo", "common"])
 

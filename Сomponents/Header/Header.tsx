@@ -15,11 +15,16 @@ import { Roles } from "shared/enums/roles"
 import s from "./header.module.scss"
 
 export interface HeaderProps {
+  className?: string
   withBreadcrumbs?: boolean
   role?: Roles
 }
 
-const Header: React.FC<HeaderProps> = ({ role, withBreadcrumbs }) => {
+const Header: React.FC<HeaderProps> = ({
+  className,
+  role,
+  withBreadcrumbs,
+}) => {
   const { t } = useTranslation("header")
   const router = useRouter()
 
@@ -28,7 +33,13 @@ const Header: React.FC<HeaderProps> = ({ role, withBreadcrumbs }) => {
   }
 
   return (
-    <header className={cn(s.header, { [s.with_breadcrumbs]: withBreadcrumbs })}>
+    <header
+      className={cn(
+        s.header,
+        { [s.with_breadcrumbs]: withBreadcrumbs },
+        className,
+      )}
+    >
       <div className={s.top_group}>
         <Link href="mailto:info@ilonsi.com">
           <a className={s.email}>info@ilonsi.com</a>

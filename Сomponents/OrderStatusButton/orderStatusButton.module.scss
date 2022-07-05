@@ -24,14 +24,13 @@
     color: $color-black !important;
   }
 
+  &:hover {
+    background: linear-gradient(90deg, $color-purple-light, $color-purple-f1);
+    color: $color-white;
 
-  &:hover{
-      background: linear-gradient(90deg, $color-purple-light, $color-purple-f1);
-      color: $color-white;
-
-      .icon_wrapper {
-        background-color: $color-white;
-      }
+    .icon_wrapper {
+      background-color: $color-white;
+    }
     .description_row .icon {
       color: $color-white !important;
     }
@@ -45,12 +44,10 @@
   }
 }
 
-
 .wrapper {
   height: 95px;
   display: flex;
   width: 100%;
-
 
   .icon_wrapper {
     display: flex;
@@ -130,4 +127,3 @@
     }
   }
 }
-

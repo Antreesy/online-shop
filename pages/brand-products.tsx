@@ -1,5 +1,8 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import cn from "classnames"
+import { useAppDispatch } from "store/hooks"
+import { changeRoute } from "store/slices/routeSlice"
+
 import Head from "next/head"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useTranslation } from "next-i18next"
@@ -25,6 +28,12 @@ export async function getStaticProps({ locale }: { locale: string }) {
 }
 
 const BrandProducts: React.FC = () => {
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(changeRoute("Product List"))
+  }, [])
+
   const { t } = useTranslation(["brandProduct", "common"])
   const [inputValue, setInputValue] = useState<string>("")
   return (

@@ -1,3 +1,7 @@
+import { useEffect } from "react"
+import { useAppDispatch } from "store/hooks"
+import { changeRoute } from "store/slices/routeSlice"
+
 import Head from "next/head"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
@@ -7,6 +11,7 @@ import { OrderStatusButton, InventoryButton } from "Сomponents"
 import { Icon } from "UI"
 
 import s from "styles/pages/brand-landing.module.scss"
+
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
@@ -21,6 +26,12 @@ export async function getStaticProps({ locale }: { locale: string }) {
   }
 }
 const BrandLanding: React.FC = () => {
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(changeRoute("Brand"))
+  }, [])
+
   const { t } = useTranslation("brandLanding")
 
   const refunds = 67899

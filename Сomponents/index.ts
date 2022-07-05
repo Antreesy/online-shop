@@ -11,8 +11,9 @@ import { ColorPicker } from "./ColorPicker"
 import { Counter } from "./Counter"
 import { DashStatisticButton } from "./DashStatisticButton"
 import { InventoryButton } from "./InventoryButton"
+import { FilterSidebar } from "./FilterSidebar"
 import { Footer } from "./Footer"
-import { Header, HeaderLight } from "./Header"
+import { Header, HeaderLight, HeaderMobile } from "./Header"
 import { Layout } from "./Layout"
 import { Logo } from "./Logo"
 import { Notification } from "./Notification"
@@ -41,9 +42,11 @@ export {
   ColorPicker,
   Counter,
   DashStatisticButton,
+  FilterSidebar,
   Footer,
   Header,
   HeaderLight,
+  HeaderMobile,
   InventoryButton,
   Layout,
   Logo,

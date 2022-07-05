@@ -26,10 +26,7 @@ const OrderStatusButton: React.FC<OrderStatusButtonProps> = (props) => {
   } = props
 
   return (
-    <div
-      onClick={onClick}
-      className={s.main}
-    >
+    <div onClick={onClick} className={s.main}>
       <div className={s.wrapper}>
         <div className={cn(s.icon_wrapper, s.desktop)}>
           <Icon type={icon} className={s.icon} />
