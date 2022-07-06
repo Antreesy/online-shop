@@ -1,4 +1,7 @@
-import {LabelType, LabelTypeWithContent} from "Сomponents/ProfileSidebar/ProfileSidebar"
+import {
+  LabelType,
+  LabelTypeWithContent,
+} from "Сomponents/ProfileSidebar/ProfileSidebar"
 
 export const sidebarTabs: LabelTypeWithContent[][] = [
   // FOR ANONYM USER
@@ -38,11 +41,15 @@ export const sidebarTabs: LabelTypeWithContent[][] = [
       text: "notifications",
       icon: "bell_filled",
     },
-    { link: "/account/dashboard", text: "dashboard", icon: "dashboard",
+    {
+      link: "/account/dashboard",
+      text: "dashboard",
+      icon: "dashboard",
       content: [
-        { link: "", text: "Product Based Sale Statistics"},
-        { link: "", text: "Category Based Sales Statistics"},
-        { link: "", text: "Brand Based Sales Statistics"},
+        { link: "/account/dashboard", text: "Product Based Sale Statistics" },
+        { link: "/account/dashboard", text: "Category Based Sales Statistics" },
+        { link: "/account/dashboard", text: "Brand Based Sales Statistics" },
+        { link: "/account/dashboard", text: "Other Statistics" },
       ],
     },
     { link: "/account/help", text: "help", icon: "question" },

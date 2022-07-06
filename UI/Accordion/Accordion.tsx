@@ -20,6 +20,8 @@ interface AccordionProps {
   summaryActiveClassName?: string
   headerClassName?: string
   headerActiveClassName?: string
+  detailsClassName?: string
+  detailsActiveClassName?: string
   openTitleClassName?: string
   arrowColor?: string
   onClick?: () => void
@@ -41,6 +43,8 @@ const CustomAccordion: React.FC<AccordionProps> = (props) => {
     summaryActiveClassName,
     headerClassName,
     headerActiveClassName,
+    detailsClassName,
+    detailsActiveClassName,
     openTitleClassName,
     arrowColor = "#8100ef",
     onClick,
@@ -56,6 +60,10 @@ const CustomAccordion: React.FC<AccordionProps> = (props) => {
   })
   const headerClass = cn(s.header, headerClassName, {
     [headerActiveClassName || s.active]: active,
+  })
+
+  const detailsClass = cn(s.details, detailsClassName, {
+    [detailsActiveClassName || s.active]: active,
   })
 
   const handleClick = () => {
@@ -79,7 +87,7 @@ const CustomAccordion: React.FC<AccordionProps> = (props) => {
         <span className={headerClass}>{active ? header : headerCollapsed}</span>
         <span className={openTitleClassName}>{openTitle}</span>
       </AccordionSummary>
-      <AccordionDetails className={s.details}>{children}</AccordionDetails>
+      <AccordionDetails className={detailsClass}>{children}</AccordionDetails>
     </Accordion>
   )
 }

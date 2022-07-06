@@ -35,7 +35,7 @@ const Range: React.FC<RangeProps> = (props) => {
 
   const handleMaxValue = (value: string | number) => {
     if (Number(value) && value >= minValue && value <= maxValue) {
-      setMinValue(value)
+      setMaxValue(value)
     }
   }
 

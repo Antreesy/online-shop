@@ -66,7 +66,9 @@ export const Input: React.FC<InputProps> = (props) => {
           disabled={disabled}
           type={type}
           InputProps={{
-            endAdornment: <InputAdornment position="start">{adornment}</InputAdornment>,
+            endAdornment: (
+              <InputAdornment position="start">{adornment}</InputAdornment>
+            ),
           }}
           {...validation}
         />

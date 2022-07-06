@@ -55,8 +55,20 @@ export const ProfileSidebar: React.FC<ProfileSidebarProps> = (props) => {
 
   const AccordionSidebarItem = ({ label }: { label: LabelTypeWithContent }) => {
     return (
-      <Accordion className={s.accordion} header={t(label.text)}>
-        <ul>
+      <Accordion
+        className={s.accordion}
+        headerClassName={pathname === label.link ? `${s.active}` : ""}
+        header={
+          <>
+            {label.icon && pathname === label.link ? (
+              <Icon type={label.icon} />
+            ) : null}{" "}
+            {t(label.text)}
+          </>
+        }
+        detailsClassName={s.accordion_details}
+      >
+        <ul className={s.dropdown_menu}>
           {label.content?.map((item, index) => (
             <SidebarItem key={index} label={item} />
           ))}
