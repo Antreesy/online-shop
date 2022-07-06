@@ -1,6 +1,8 @@
+import React, { useState } from "react"
 import cn from "classnames"
 
 import { InputLabel } from "@mui/material"
+import { Input } from "UI/Input"
 
 import { Currency } from "shared/enums/currency"
 
@@ -17,11 +19,25 @@ interface RangeProps {
 const Range: React.FC<RangeProps> = (props) => {
   const {
     minQuantity = 0,
-    maxQuantity = 1000000,
+    maxQuantity = 10000000,
     currency = Currency.USD,
     label,
     className,
   } = props
+  const [minValue, setMinValue] = useState<string | number>(minQuantity)
+  const [maxValue, setMaxValue] = useState<string | number>(maxQuantity)
+
+  const handleMinValue = (value: string | number) => {
+    if (Number(value) && value >= minValue && value <= maxValue) {
+      setMinValue(value)
+    }
+  }
+
+  const handleMaxValue = (value: string | number) => {
+    if (Number(value) && value >= minValue && value <= maxValue) {
+      setMinValue(value)
+    }
+  }
 
   return (
     <div className={cn(s.wrapper, className)}>
@@ -31,15 +47,21 @@ const Range: React.FC<RangeProps> = (props) => {
         </InputLabel>
       )}
       <div className={s.box}>
-        <span className={s.min}>
-          {minQuantity}
-          {currency}
-        </span>
+        <Input
+          className={s.input}
+          value={minValue}
+          setValue={handleMinValue}
+          adornment={currency}
+          placeholder={`${minQuantity}`}
+        />
         <span className={s.space}>-</span>
-        <span className={s.max}>
-          {maxQuantity}
-          {currency}
-        </span>
+        <Input
+          className={s.input}
+          value={maxValue}
+          setValue={handleMaxValue}
+          adornment={currency}
+          placeholder={`${maxQuantity}`}
+        />
       </div>
     </div>
   )

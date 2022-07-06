@@ -15,16 +15,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 65px;
   background-color: $color-white;
-  padding: 15px;
   border-radius: 5px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.07);
 
-  font-size: 18px;
-  font-weight: $fw-bold;
-  color: $color-black;
+  .space {
+    font-size: 18px;
+    font-weight: $fw-bold;
+    color: $color-black;
+  }
 
-  & :not(:last-child) {
-    margin-right: 20px;
+  .input {
+    box-shadow: none;
+
+    input {
+      padding: 4px;
+      margin-right: 4px;
+      text-align: end;
+      max-width: 80px;
+      font-size: 18px;
+      font-weight: $fw-bold;
+      color: $color-black;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: $fw-bold;
+      color: $color-black; 
+    }
   }
 }

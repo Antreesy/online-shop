@@ -1,14 +1,14 @@
 import cn from "classnames"
 
-import { InputLabel, TextField } from "@mui/material"
+import { InputAdornment, InputLabel, TextField } from "@mui/material"
 import { Button, Icon } from "UI"
 
 import s from "./input.module.scss"
 
 interface InputProps {
   label?: React.ReactNode
-  setValue: (newValue: string) => void
-  value: string
+  setValue: (newValue: string | number) => void
+  value: string | number
   disabled?: boolean
   placeholder?: string
   className?: string
@@ -25,6 +25,7 @@ interface InputProps {
   errorText?: React.ReactNode
   validation?: object
   onChange?: () => void
+  adornment?: string
 }
 
 export const Input: React.FC<InputProps> = (props) => {
@@ -42,6 +43,7 @@ export const Input: React.FC<InputProps> = (props) => {
     errorText = "",
     validation,
     onChange,
+    adornment,
   } = props
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -63,6 +65,9 @@ export const Input: React.FC<InputProps> = (props) => {
           required={isRequired}
           disabled={disabled}
           type={type}
+          InputProps={{
+            endAdornment: <InputAdornment position="start">{adornment}</InputAdornment>,
+          }}
           {...validation}
         />
         {variant === "footer" || variant === "black_button" ? (

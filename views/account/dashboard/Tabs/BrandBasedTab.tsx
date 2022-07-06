@@ -14,7 +14,12 @@ export const BrandBasedTab = () => {
     <div className={s.wrapper}>
       <div className={s.row}>
         <Select
-          values={[]}
+          values={[
+              {title: "one", value: 1},
+              {title: "two", value: 2},
+              {title: "three", value: 3},
+              {title: "for", value: 4},
+          ]}
           label={t("selectCategory")}
           placeholder={t("selectCategory")}
           selectClassName={s.select}
