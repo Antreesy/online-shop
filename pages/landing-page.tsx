@@ -2,10 +2,10 @@ import { NextPage } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useTranslation } from "next-i18next"
 import cn from "classnames"
-
+import { Swiper, SwiperSlide } from "swiper/react"
 import Head from "next/head"
 import Image from "next/image"
-import { Button, Card, Carousel, Pagination } from "UI"
+import { Button, Card, Carousel } from "UI"
 import { Breadcrumbs, Footer, Header } from "Сomponents"
 
 import { footerNav } from "shared/constants/footernav"
@@ -14,6 +14,7 @@ import img2 from "public/assets/img/İlayda-Akçatepe.png"
 import armani_logo from "public/assets/img/armani_logo.png"
 import play from "public/assets/img/play.svg"
 import testim from "public/assets/img/testimonials.png"
+import { Autoplay, Pagination } from "swiper"
 
 import s from "styles/pages/landing-page.module.scss"
 
@@ -66,6 +67,7 @@ const BrandCard = () => (
 
 const LandingPage: NextPage = () => {
   const { t } = useTranslation("landing")
+
   return (
     <>
       <Head>
@@ -75,29 +77,154 @@ const LandingPage: NextPage = () => {
       <Header />
 
       <main className={s.main}>
-        <div className={s.hero}>
-          <div className={s.content}>
-            <Image className={s.content_image} src={img2} />
+        <div className={s.slider}>
+          <div className={cn(s.pag, "swiper-pagination")}></div>
 
-            <div className={s.content_wrapper}>
-              <div>
-                <h3 className={s.info_title}>Autumn Collection</h3>
-                <p className={s.info_number}>01</p>
+          <Swiper
+            style={{ width: "100%", maxHeight: "100vh" }}
+            modules={[Pagination, Autoplay]}
+            loop={true}
+            centeredSlides={true}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+            }}
+            direction={"vertical"}
+            pagination={{
+              el: ".swiper-pagination",
+              clickable: true,
+              renderBullet: function (index, className) {
+                return (
+                  '<div class="' +
+                  className +
+                  '" style=color:#fff;width:5px;height:30px;border-radius:0;margin-bottom:5px;background:#fff' +
+                  ">" +
+                  "</div>"
+                )
+              },
+            }}
+          >
+            <SwiperSlide className="sw">
+              <div className={s.hero}>
+                <div className={s.content}>
+                  <Image className={s.content_image} src={img2} />
+
+                  <div className={s.content_wrapper}>
+                    <div>
+                      <h3 className={s.info_title}>Autumn Collection</h3>
+                      <p className={s.info_number}>01</p>
+                    </div>
+
+                    <Button className={s.content_button}>
+                      {t("go_to_store")}
+                    </Button>
+
+                    <div>
+                      <h3 className={s.descr_caption}>
+                        Lorem ipsum dolor sit amet,
+                      </h3>
+                      <p className={s.descr_text}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Integer lacinia, lacus mattis semper lacinia, metus urna
+                        dapibus quam, eu maximus sapien ipsum at justo. In
+                        varius accumsan magna, vel eleifend nisi maximus et.{" "}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
+            </SwiperSlide>
+            <SwiperSlide className="sw">
+              <div className={s.hero}>
+                <div className={s.content}>
+                  <Image className={s.content_image} src={img2} />
 
-              <Button className={s.content_button}>{t("go_to_store")}</Button>
+                  <div className={s.content_wrapper}>
+                    <div>
+                      <h3 className={s.info_title}>Autumn Collection</h3>
+                      <p className={s.info_number}>02</p>
+                    </div>
 
-              <div>
-                <h3 className={s.descr_caption}>Lorem ipsum dolor sit amet,</h3>
-                <p className={s.descr_text}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer lacinia, lacus mattis semper lacinia, metus urna
-                  dapibus quam, eu maximus sapien ipsum at justo. In varius
-                  accumsan magna, vel eleifend nisi maximus et.{" "}
-                </p>
+                    <Button className={s.content_button}>
+                      {t("go_to_store")}
+                    </Button>
+
+                    <div>
+                      <h3 className={s.descr_caption}>
+                        Lorem ipsum dolor sit amet,
+                      </h3>
+                      <p className={s.descr_text}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Integer lacinia, lacus mattis semper lacinia, metus urna
+                        dapibus quam, eu maximus sapien ipsum at justo. In
+                        varius accumsan magna, vel eleifend nisi maximus et.{" "}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+            </SwiperSlide>
+            <SwiperSlide className="sw">
+              <div className={s.hero}>
+                <div className={s.content}>
+                  <Image className={s.content_image} src={img2} />
+
+                  <div className={s.content_wrapper}>
+                    <div>
+                      <h3 className={s.info_title}>Autumn Collection</h3>
+                      <p className={s.info_number}>03</p>
+                    </div>
+
+                    <Button className={s.content_button}>
+                      {t("go_to_store")}
+                    </Button>
+
+                    <div>
+                      <h3 className={s.descr_caption}>
+                        Lorem ipsum dolor sit amet,
+                      </h3>
+                      <p className={s.descr_text}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Integer lacinia, lacus mattis semper lacinia, metus urna
+                        dapibus quam, eu maximus sapien ipsum at justo. In
+                        varius accumsan magna, vel eleifend nisi maximus et.{" "}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="sw">
+              <div className={s.hero}>
+                <div className={s.content}>
+                  <Image className={s.content_image} src={img2} />
+
+                  <div className={s.content_wrapper}>
+                    <div>
+                      <h3 className={s.info_title}>Autumn Collection</h3>
+                      <p className={s.info_number}>04</p>
+                    </div>
+
+                    <Button className={s.content_button}>
+                      {t("go_to_store")}
+                    </Button>
+
+                    <div>
+                      <h3 className={s.descr_caption}>
+                        Lorem ipsum dolor sit amet,
+                      </h3>
+                      <p className={s.descr_text}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Integer lacinia, lacus mattis semper lacinia, metus urna
+                        dapibus quam, eu maximus sapien ipsum at justo. In
+                        varius accumsan magna, vel eleifend nisi maximus et.{" "}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
         </div>
 
         <Breadcrumbs />
@@ -208,7 +335,7 @@ const LandingPage: NextPage = () => {
             <div className={s.testim_mobile}>
               <TestimonialsCard />
               <TestimonialsCard />
-              <Pagination pagesCount={5} isShort />
+              {/* <Pagination pagesCount={5} isShort /> */}
             </div>
 
             <Button className={s.button_more}>{t("show_all")}</Button>
