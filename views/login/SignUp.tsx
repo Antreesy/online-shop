@@ -15,7 +15,11 @@ interface LoginType {
   isPromo: boolean
 }
 
-const SignUp = () => {
+interface SignProps {
+  tabSwitch: () => void
+}
+
+const SignUp: React.FC<SignProps> = ({ tabSwitch }) => {
   const { handleSubmit, control } = useForm<LoginType>({
     criteriaMode: "all",
     defaultValues: {
@@ -134,9 +138,13 @@ const SignUp = () => {
         </Button>
       </form>
       <div className={s.form_footer}>
-        <Link href="#">
-          <a>Registered Already ? Sign In</a>
-        </Link>
+        <Button
+          variant="text"
+          onClick={tabSwitch}
+          className={s.tab_switcher}
+        >
+          Registered Already? Sign In
+        </Button>
         <Button
           variant={"outlined"}
           className={cn(s.btn_facebook, s.btn)}

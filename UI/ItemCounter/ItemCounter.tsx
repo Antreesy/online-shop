@@ -23,10 +23,10 @@ const ItemCounter: React.FC<ItemCounterProps> = (props) => {
     setValue((prev: number) => {
       if (prev >= min && prev < max) {
         onChange?.(prev + 1)
-        return (prev + 1)
+        return prev + 1
       }
       onChange?.(prev)
-      return (prev)
+      return prev
     })
   }
 
@@ -34,10 +34,10 @@ const ItemCounter: React.FC<ItemCounterProps> = (props) => {
     setValue((prev: number) => {
       if (prev > min && prev <= max) {
         onChange?.(prev - 1)
-        return (prev - 1)
+        return prev - 1
       }
       onChange?.(prev)
-      return (prev)
+      return prev
     })
   }
 

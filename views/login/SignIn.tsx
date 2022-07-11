@@ -11,7 +11,11 @@ interface LoginType {
   password: string
 }
 
-const SignIn = () => {
+interface SignProps {
+  tabSwitch: () => void
+}
+
+const SignIn: React.FC<SignProps> = ({ tabSwitch }) => {
   const { handleSubmit, control } = useForm<LoginType>({
     criteriaMode: "all",
     defaultValues: {
@@ -67,9 +71,13 @@ const SignIn = () => {
       </form>
 
       <div className={s.form_footer}>
-        <Link href="#">
-          <a>Not Registered Yet ? Sign Up</a>
-        </Link>
+        <Button
+          variant="text"
+          onClick={tabSwitch}
+          className={s.tab_switcher}
+        >
+          Not Registered Yet ? Sign Up
+        </Button>
         <Button
           variant={"outlined"}
           className={cn(s.btn_facebook, s.btn, s.btn_facebook__signup)}
