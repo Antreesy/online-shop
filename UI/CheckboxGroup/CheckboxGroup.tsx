@@ -2,7 +2,7 @@ import cn from "classnames"
 
 import { Checkbox, FormGroup, FormControlLabel } from "@mui/material"
 
-import s from "./checkboxGroup.module.scss"
+import s from "./CheckboxGroup.module.scss"
 
 interface CheckboxProps {
   labels: string | string[]
