@@ -13,6 +13,7 @@
   "nameOfTheProduct": "Название Продукта",
   "price": "Цена",
   "piece": "Кол-во",
+  "orderAmount": "Стоимость заказа",
 
   "deliveryInformation": "Информация о доставке",
   "deliveryAddress": "Адрес доставки",

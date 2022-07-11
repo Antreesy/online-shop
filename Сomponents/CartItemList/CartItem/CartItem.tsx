@@ -44,9 +44,9 @@ export const CartItem: React.FC<CartItemProps> = (props) => {
         <span className={s.image_wrapper}>
           <Image src={imageSrc} />
         </span>
-        <span className={s.product_info}>
+        <div className={s.product_info}>
           <span className={s.title}>{title}</span>
-          <span className={s.subtitle}>{t("orderSubTitle")}</span>
+          <span className={s.subtitle}>{subtitle}</span>
           <span className={s.description}>
             {description}
             Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer
@@ -58,7 +58,7 @@ export const CartItem: React.FC<CartItemProps> = (props) => {
             type="sale"
             className={s.price_mobile}
           />
-        </span>
+        </div>
       </div>
 
       <div className={s.price_desktop}>
@@ -69,9 +69,11 @@ export const CartItem: React.FC<CartItemProps> = (props) => {
           className={s.price}
         />
       </div>
+
       <div className={s.counter}>
         <ItemCounter initValue={amount} onChange={setCurrentAmount} />
       </div>
+
       <div className={s.amount}>
         <h3>{t("orderAmount")}</h3>
         <Price price={total} />

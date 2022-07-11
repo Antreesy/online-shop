@@ -8,7 +8,6 @@ import { CardForm } from "./CardForm"
 import { CartItemList } from "./CartItemList"
 import { Chart } from "./Chart"
 import { ColorPicker } from "./ColorPicker"
-import { Counter } from "./Counter"
 import { DashStatisticButton } from "./DashStatisticButton"
 import { InventoryButton } from "./InventoryButton"
 import { FilterSidebar } from "./FilterSidebar"
@@ -40,7 +39,6 @@ export {
   CartItemList,
   Chart,
   ColorPicker,
-  Counter,
   DashStatisticButton,
   FilterSidebar,
   Footer,

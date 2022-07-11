@@ -61,7 +61,7 @@
   padding: 10px 30px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
 
-  @include mobile-tablet {
+  @include mobile {
     flex-direction: column;
     padding: 10px 10px;
   }
@@ -117,6 +117,7 @@
 .product_info {
   display: flex;
   flex-direction: column;
+  padding-right: 30px;
 
   .title {
     color: $color-purple;
@@ -148,11 +149,11 @@
   }
 
   .price_mobile {
-    display: none;
+    flex-direction: column-reverse;
+    align-items: flex-start;
 
-    @include mobile-tablet {
-      display: inline-block;
-      flex-direction: column-reverse;
+    @include tablet-desktop {
+      display: none;
     }
   }
 }
@@ -160,19 +161,23 @@
 .price_desktop {
   position: relative;
   padding-left: 30px;
-  margin-right: 60px;
   flex: 1;
 
-  @include mobile-tablet {
+  @include mobile {
     display: none;
   }
 
   .price {
     display: flex;
     flex-direction: column-reverse;
+    align-items: flex-start;
+
+    div:first-child span {
+      color: $color-black;
+    }
   }
 
-  &::after {
+  &::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -181,10 +186,6 @@
     height: 60px;
     width: 2px;
     background-color: $color-grey-d0;
-
-    @include tablet {
-      display: none;
-    }
 
     @include mobile {
       display: none;
@@ -195,11 +196,10 @@
 .counter {
   position: relative;
   padding-left: 30px;
-  margin-right: 60px;
   flex: 1;
 
-  @include mobile-tablet {
-    min-width: 150px;
+  @include mobile {
+    min-width: 300px;
     max-width: 90%;
     padding-left: 0;
     margin: auto;
@@ -223,10 +223,6 @@
     width: 2px;
     background-color: $color-grey-d0;
 
-    @include tablet {
-      display: none;
-    }
-
     @include mobile {
       display: none;
     }
@@ -235,6 +231,10 @@
 
 .amount {
   flex: 1;
+
+  h3 {
+    white-space: nowrap;
+  }
 
   @include mobile-tablet {
     display: none;

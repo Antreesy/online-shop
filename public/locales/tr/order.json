@@ -13,6 +13,7 @@
   "nameOfTheProduct": "Ürünün Adı",
   "price": "Fiyat",
   "piece": "parça",
+  "orderAmount": "Sipariş Tutarı",
 
   "deliveryInformation": "Teslimat Bilgileri",
   "deliveryAddress": "Teslimat adresi",

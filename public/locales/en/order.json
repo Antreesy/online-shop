@@ -13,6 +13,7 @@
   "nameOfTheProduct": "Name of the product",
   "price": "Price",
   "piece": "Piece",
+  "orderAmount": "Order Amount",
 
   "deliveryInformation": "Delivery Information",
   "deliveryAddress": "Delivery Address",
