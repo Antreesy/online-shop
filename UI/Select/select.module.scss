@@ -13,6 +13,8 @@
 
 .select {
   position: relative;
+  display: flex;
+  align-items: center;
   width: 100%;
   border: 1px solid transparent;
   border-radius: 5px;

@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import cn from "classnames"
 
 import { InputLabel } from "@mui/material"
-import { Input } from "UI/Input"
+import { NumberInput } from "UI"
 
 import { Currency } from "shared/enums/currency"
 
@@ -24,16 +24,16 @@ const Range: React.FC<RangeProps> = (props) => {
     label,
     className,
   } = props
-  const [minValue, setMinValue] = useState<string | number>(minQuantity)
-  const [maxValue, setMaxValue] = useState<string | number>(maxQuantity)
+  const [minValue, setMinValue] = useState<number>(minQuantity)
+  const [maxValue, setMaxValue] = useState<number>(maxQuantity)
 
-  const handleMinValue = (value: string | number) => {
+  const handleMinValue = (value: number) => {
     if (Number(value) && value >= minValue && value <= maxValue) {
       setMinValue(value)
     }
   }
 
-  const handleMaxValue = (value: string | number) => {
+  const handleMaxValue = (value: number) => {
     if (Number(value) && value >= minValue && value <= maxValue) {
       setMaxValue(value)
     }
@@ -47,7 +47,7 @@ const Range: React.FC<RangeProps> = (props) => {
         </InputLabel>
       )}
       <div className={s.box}>
-        <Input
+        <NumberInput
           className={s.input}
           value={minValue}
           setValue={handleMinValue}
@@ -55,7 +55,7 @@ const Range: React.FC<RangeProps> = (props) => {
           placeholder={`${minQuantity}`}
         />
         <span className={s.space}>-</span>
-        <Input
+        <NumberInput
           className={s.input}
           value={maxValue}
           setValue={handleMaxValue}

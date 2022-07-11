@@ -14,13 +14,7 @@ interface TabsProps {
 }
 
 const CustomTabs: React.FC<TabsProps> = (props) => {
-  const {
-    labels,
-    variant = "default",
-    values,
-    value,
-    className,
-  } = props
+  const { labels, variant = "default", values, value, className } = props
 
   const [tabIndex, setTabIndex] = useState<number>(value || 0)
   const [tabValue, setTabValue] = useState<number>(value || 0)

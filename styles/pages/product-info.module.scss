@@ -32,7 +32,13 @@
   justify-content: space-between;
   margin-bottom: 50px;
   gap: 25px;
-
+  div {
+    padding: 0;
+  }
+  input {
+    padding: 0 14px;
+    height: 100%;
+  }
   @include mobile-laptop {
     flex-direction: column;
     margin-bottom: 25px;
@@ -52,7 +58,7 @@
 
 .input {
   width: 100%;
-  min-height: 86px;
+  min-height: 70px;
 
   @include mobile {
     font-size: 12px;
@@ -130,15 +136,20 @@
       flex-direction: column;
       margin-bottom: 25px;
     }
-  }
 
-  .select {
-    width: 100%;
-    min-height: 86px;
-
-    @include mobile {
-      min-height: 39px;
-      font-size: 12px;
+    .select {
+      width: 100%;
+      min-height: 70px;
+      div {
+        height: 70px;
+      }
+      @include mobile {
+        min-height: 39px;
+        font-size: 12px;
+        div {
+          height: 39px;
+        }
+      }
     }
   }
 }

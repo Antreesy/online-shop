@@ -138,11 +138,7 @@ const SignUp: React.FC<SignProps> = ({ tabSwitch }) => {
         </Button>
       </form>
       <div className={s.form_footer}>
-        <Button
-          variant="text"
-          onClick={tabSwitch}
-          className={s.tab_switcher}
-        >
+        <Button variant="text" onClick={tabSwitch} className={s.tab_switcher}>
           Registered Already? Sign In
         </Button>
         <Button

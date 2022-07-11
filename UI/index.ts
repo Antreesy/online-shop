@@ -13,6 +13,7 @@ import { Icon } from "./Icon"
 import { Input } from "./Input"
 import { ItemCounter } from "./ItemCounter"
 import { ModalWindow } from "./ModalWindow"
+import { NumberInput } from "./NumberInput"
 import { Pagination } from "./Pagination"
 import { Price } from "./Price"
 import { Progressbar } from "./Progressbar"
@@ -43,6 +44,7 @@ export {
   Input,
   ItemCounter,
   ModalWindow,
+  NumberInput,
   Pagination,
   Price,
   Progressbar,

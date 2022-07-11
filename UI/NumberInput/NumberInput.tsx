@@ -3,12 +3,12 @@ import cn from "classnames"
 import { InputAdornment, InputLabel, TextField } from "@mui/material"
 import { Button, Icon } from "UI"
 
-import s from "./input.module.scss"
+import s from "./numberInput.module.scss"
 
 interface InputProps {
   label?: React.ReactNode
-  setValue: (newValue: string) => void
-  value: string
+  setValue: (newValue: number) => void
+  value: number
   disabled?: boolean
   placeholder?: string
   className?: string
@@ -28,7 +28,7 @@ interface InputProps {
   adornment?: string
 }
 
-export const Input: React.FC<InputProps> = (props) => {
+export const NumberInput: React.FC<InputProps> = (props) => {
   const {
     label,
     setValue,
@@ -47,7 +47,7 @@ export const Input: React.FC<InputProps> = (props) => {
   } = props
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value)
+    setValue(Number(event.target.value))
     onChange?.()
   }
 
