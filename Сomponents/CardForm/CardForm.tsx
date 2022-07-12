@@ -57,7 +57,7 @@ const CardForm: React.FC = () => {
     minLength: 5,
     onChange: (e) => {
       if (e.target.value.length < 20) {
-        setValue("cardholderName", e.target.value.replace(/[^a-zA-Z ]/, ""))
+        setValue("cardholderName", e.target.value.replace(/^\p{L}/, ""))
       } else {
         setValue("cardholderName", e.target.value.substr(0, 20))
       }
@@ -123,7 +123,7 @@ const CardForm: React.FC = () => {
               label={t("nameOnTheCard")}
               setValue={onChange}
               value={value}
-              placeholder={"Yalçın Topkaya"}
+              placeholder={"Cardholder Name"}
               type={"text"}
               isRequired={true}
               className={s.input_long}
@@ -186,7 +186,7 @@ const CardForm: React.FC = () => {
         key={4}
         id={8375}
         cardNumber={watch("cardNumber") || "0000 0000 0000 0000"}
-        cardHolder={watch("cardholderName") || "Yalçın Topkaya"}
+        cardHolder={watch("cardholderName") || "Cardholder Name"}
         expireDate={watch("cardExpiration") || "06/26"}
         onDelete={() => {
           reset()

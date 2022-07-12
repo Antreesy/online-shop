@@ -1,6 +1,7 @@
 import { NextPage } from "next"
-import Head from "next/head"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
+import Head from "next/head"
 import { Grid } from "@mui/material"
 import {
   Background,
@@ -15,6 +16,19 @@ import picture from "public/assets/img/products-background.png"
 import picture_mobile from "public/assets/img/products-page-mob.png"
 
 import s from "styles/pages/products-page.module.scss"
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "app",
+        "common",
+        "header",
+        "footer",
+      ])),
+    },
+  }
+}
 
 const ProductsPage: NextPage = () => {
   return (

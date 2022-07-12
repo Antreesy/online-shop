@@ -12,9 +12,10 @@ export const OrderList: React.FC<OrderListProps> = (props) => {
   return (
     <div className={className}>
       {orderList.length ? (
-        orderList.map((item) => {
+        orderList.map((item, index) => {
           return (
             <OrderItem
+              key={index}
               date={item.date}
               buyerName={item.buyerName}
               orderAmount={item.orderAmount}

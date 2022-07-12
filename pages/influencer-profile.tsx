@@ -1,4 +1,5 @@
 import { NextPage } from "next"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
 import { Background, ProductItemList } from "Сomponents"
 import { AddButton } from "UI"
@@ -6,6 +7,19 @@ import { AddButton } from "UI"
 import { productItems } from "shared/constants/productItems"
 
 import s from "styles/pages/influencer-profile.module.scss"
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "app",
+        "common",
+        "header",
+        "footer",
+      ])),
+    },
+  }
+}
 
 const AddProduct: NextPage = () => {
   const products = productItems

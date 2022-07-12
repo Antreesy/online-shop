@@ -6,7 +6,7 @@ import s from "./breadcrumbs.module.scss"
 
 const CustomBreadcrumbs = () => {
   const router = useRouter()
-  const path = router.pathname.split("/")
+  const path = router.asPath.split("/")
   const newPath = path.slice(1)
   const activeRoute = path.slice(-1)
   const routePath = path.slice()

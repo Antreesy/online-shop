@@ -1,6 +1,7 @@
 import { NextPage } from "next"
-import Head from "next/head"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
+import Head from "next/head"
 import { Grid } from "@mui/material"
 import { Breadcrumbs, Toolbar } from "Сomponents"
 import { Card, Pagination } from "UI"
@@ -8,6 +9,19 @@ import { Card, Pagination } from "UI"
 import card_image from "public/assets/img/card.png"
 
 import s from "styles/pages/influencers.module.scss"
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "app",
+        "common",
+        "header",
+        "footer",
+      ])),
+    },
+  }
+}
 
 const influencers: NextPage = () => {
   return (

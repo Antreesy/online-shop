@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { NextPage } from "next"
 import { useRouter } from "next/router"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
 import Head from "next/head"
 import { Grid } from "@mui/material"
@@ -12,6 +13,19 @@ import picture from "public/assets/img/fallback-pic.png"
 import picture_mobile from "public/assets/img/brands_mobile-bgr.png"
 
 import s from "styles/pages/brands/brands.module.scss"
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "app",
+        "common",
+        "header",
+        "footer",
+      ])),
+    },
+  }
+}
 
 const PRODUCTS_AMOUNT = 24187
 const BRANDS_AMOUNT = 35298

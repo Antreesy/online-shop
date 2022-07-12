@@ -1,13 +1,28 @@
 import { NextPage } from "next"
 import { useRouter } from "next/router"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
 import Head from "next/head"
 import { Background, Breadcrumbs, ProductItemList } from "Сomponents"
 import { Pagination } from "UI"
 
-import s from "styles/pages/brands/brands.module.scss"
 import picture from "public/assets/img/Prada.png"
 import { brandProductItems } from "shared/constants/brandProductItem"
+
+import s from "styles/pages/brands/brands.module.scss"
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        "app",
+        "common",
+        "header",
+        "footer",
+      ])),
+    },
+  }
+}
 
 const brand: NextPage = () => {
   const router = useRouter()
