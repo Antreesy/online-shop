@@ -42,6 +42,7 @@ export const Navigation: React.FC<NavigationProps> = ({ links }) => (
             header={group.title}
             className={s.accordion}
             headerClassName={s.accordion_header}
+            initialOpen
           >
             <List>
               {!!group.content.length &&

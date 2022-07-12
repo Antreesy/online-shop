@@ -75,7 +75,7 @@ export const Input: React.FC<InputProps> = (props) => {
           {...validation}
         />
         {variant === "footer" || variant === "black_button" ? (
-          <Button>{buttonLabel}</Button>
+          <Button disableElevation>{buttonLabel}</Button>
         ) : null}
         {className === "error" && (
           <div className={s.error_text}>

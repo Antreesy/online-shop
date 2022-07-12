@@ -54,7 +54,7 @@ const Footer: React.FC<FooterProps> = ({ links, className }) => {
                   setValue={setValue}
                   buttonLabel={"Send"}
                   placeholder={"E-mail"}
-                  className={s.footer_input}
+                  className={s.news_letter_input}
                 />
               </form>
             </div>
@@ -65,6 +65,7 @@ const Footer: React.FC<FooterProps> = ({ links, className }) => {
       </footer>
       <div className={s.copyright}>
         <span>ILONSI © Copyright</span>
+        <span>Bigfil Project House</span>
       </div>
     </>
   )
