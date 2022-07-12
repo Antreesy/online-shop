@@ -1,11 +1,11 @@
 import { useEffect } from "react"
 import { useAppDispatch } from "store/hooks"
 import { changeRoute } from "store/slices/routeSlice"
-
-import Head from "next/head"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
+import Head from "next/head"
+import Link from "next/link";
 import SimpleBar from "simplebar-react"
 import { OrderStatusButton, InventoryButton } from "Сomponents"
 import { Icon } from "UI"
@@ -46,12 +46,12 @@ const BrandLanding: React.FC = () => {
         <nav className={s.navigation}>
           <SimpleBar className={s.scrollbar}>
             <ul>
-              <li>{t("addProduct")}</li>
-              <li>{t("brandInformation")}</li>
-              <li>{t("allProducts")}</li>
-              <li>{t("allCancellations")}</li>
-              <li>{t("onSale")}</li>
-              <li>{t("brandVisualOperations")}</li>
+              <li><Link href={"/account/add-product"}>{t("addProduct")}</Link></li>
+              <li><Link href={"/brand-information"}>{t("brandInformation")}</Link></li>
+              <li><Link href={"/brand-products"}>{t("allProducts")}</Link></li>
+              <li><Link href={"/brand-cancellation"}>{t("allCancellations")}</Link></li>
+              <li><Link href={"/brand-products"}>{t("onSale")}</Link></li>
+              <li><Link href={"/visual-operations"}>{t("brandVisualOperations")}</Link></li>
             </ul>
           </SimpleBar>
         </nav>
