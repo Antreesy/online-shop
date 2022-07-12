@@ -1,8 +1,10 @@
+import React, { useState } from "react"
 import { NextPage } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useTranslation } from "next-i18next"
 import cn from "classnames"
-import { Swiper, SwiperSlide } from "swiper/react"
+
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react"
 import Head from "next/head"
 import Image from "next/image"
 import { Button, Card, Carousel } from "UI"
@@ -65,6 +67,17 @@ const BrandCard = () => (
   </div>
 )
 
+const SlideNum = () => {
+  const swiper = useSwiper()
+  const [index, setIndex] = useState<number>(swiper.activeIndex)
+
+  setInterval(() => {
+    setIndex(swiper.activeIndex)
+  }, 500)
+
+  return <div className={s.pag_num}>{`0${index + 1}`}</div>
+}
+
 const LandingPage: NextPage = () => {
   const { t } = useTranslation("landing")
 
@@ -78,12 +91,10 @@ const LandingPage: NextPage = () => {
 
       <main className={s.main}>
         <div className={s.slider}>
-          <div className={cn(s.pag, "swiper-pagination")}></div>
+          <div className={cn(s.pag_thumb, "swiper-pagination")} />
 
           <Swiper
-            style={{ width: "100%", maxHeight: "100vh" }}
             modules={[Pagination, Autoplay]}
-            loop={true}
             centeredSlides={true}
             autoplay={{
               delay: 5000,
@@ -97,14 +108,16 @@ const LandingPage: NextPage = () => {
                 return (
                   '<div class="' +
                   className +
-                  '" style=color:#fff;width:5px;height:30px;border-radius:0;margin-bottom:5px;background:#fff' +
+                  '" style=color:#fff;width:3px;height:32px;border-radius:0;margin-bottom:5px;background:#fff;transition:height 1s' +
                   ">" +
                   "</div>"
                 )
               },
             }}
           >
-            <SwiperSlide className="sw">
+            <SlideNum />
+
+            <SwiperSlide>
               <div className={s.hero}>
                 <div className={s.content}>
                   <Image className={s.content_image} src={img2} />
@@ -134,7 +147,7 @@ const LandingPage: NextPage = () => {
                 </div>
               </div>
             </SwiperSlide>
-            <SwiperSlide className="sw">
+            <SwiperSlide>
               <div className={s.hero}>
                 <div className={s.content}>
                   <Image className={s.content_image} src={img2} />
@@ -164,7 +177,7 @@ const LandingPage: NextPage = () => {
                 </div>
               </div>
             </SwiperSlide>
-            <SwiperSlide className="sw">
+            <SwiperSlide>
               <div className={s.hero}>
                 <div className={s.content}>
                   <Image className={s.content_image} src={img2} />
@@ -194,7 +207,7 @@ const LandingPage: NextPage = () => {
                 </div>
               </div>
             </SwiperSlide>
-            <SwiperSlide className="sw">
+            <SwiperSlide>
               <div className={s.hero}>
                 <div className={s.content}>
                   <Image className={s.content_image} src={img2} />
