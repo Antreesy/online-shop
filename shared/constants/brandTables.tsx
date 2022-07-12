@@ -395,12 +395,12 @@ export const brandOrdTransTableContent = {
       {
         value: (
           <>
+            <p style={{ color: "#8100EF", marginBottom: "7px" }}>
+              Getting Ready Pass
+            </p>
             <Tooltip content={text}>
-              <p style={{ color: "#8100EF", marginBottom: "7px" }}>
-                Getting Ready Pass
-              </p>
+              <p style={{ textDecoration: "underline" }}>Cancel Order</p>
             </Tooltip>
-            <p style={{ textDecoration: "underline" }}>Cancel Order</p>
           </>
         ),
       },
@@ -442,12 +442,12 @@ export const brandOrdTransTableContent = {
       {
         value: (
           <>
+            <p style={{ color: "#8100EF", marginBottom: "7px" }}>
+              Getting Ready Pass
+            </p>
             <Tooltip content={text}>
-              <p style={{ color: "#8100EF", marginBottom: "7px" }}>
-                Getting Ready Pass
-              </p>
+              <p style={{ textDecoration: "underline" }}>Cancel Order</p>
             </Tooltip>
-            <p style={{ textDecoration: "underline" }}>Cancel Order</p>
           </>
         ),
       },
@@ -489,12 +489,12 @@ export const brandOrdTransTableContent = {
       {
         value: (
           <>
+            <p style={{ color: "#8100EF", marginBottom: "7px" }}>
+              Getting Ready Pass
+            </p>
             <Tooltip content={text}>
-              <p style={{ color: "#8100EF", marginBottom: "7px" }}>
-                Getting Ready Pass
-              </p>
+              <p style={{ textDecoration: "underline" }}>Cancel Order</p>
             </Tooltip>
-            <p style={{ textDecoration: "underline" }}>Cancel Order</p>
           </>
         ),
       },
@@ -536,12 +536,12 @@ export const brandOrdTransTableContent = {
       {
         value: (
           <>
+            <p style={{ color: "#8100EF", marginBottom: "7px" }}>
+              Getting Ready Pass
+            </p>
             <Tooltip content={text}>
-              <p style={{ color: "#8100EF", marginBottom: "7px" }}>
-                Getting Ready Pass
-              </p>
+              <p style={{ textDecoration: "underline" }}>Cancel Order</p>
             </Tooltip>
-            <p style={{ textDecoration: "underline" }}>Cancel Order</p>
           </>
         ),
       },
@@ -583,12 +583,12 @@ export const brandOrdTransTableContent = {
       {
         value: (
           <>
+            <p style={{ color: "#8100EF", marginBottom: "7px" }}>
+              Getting Ready Pass
+            </p>
             <Tooltip content={text}>
-              <p style={{ color: "#8100EF", marginBottom: "7px" }}>
-                Getting Ready Pass
-              </p>
+              <p style={{ textDecoration: "underline" }}>Cancel Order</p>
             </Tooltip>
-            <p style={{ textDecoration: "underline" }}>Cancel Order</p>
           </>
         ),
       },
@@ -630,12 +630,12 @@ export const brandOrdTransTableContent = {
       {
         value: (
           <>
+            <p style={{ color: "#8100EF", marginBottom: "7px" }}>
+              Getting Ready Pass
+            </p>
             <Tooltip content={text}>
-              <p style={{ color: "#8100EF", marginBottom: "7px" }}>
-                Getting Ready Pass
-              </p>
+              <p style={{ textDecoration: "underline" }}>Cancel Order</p>
             </Tooltip>
-            <p style={{ textDecoration: "underline" }}>Cancel Order</p>
           </>
         ),
       },
@@ -677,12 +677,12 @@ export const brandOrdTransTableContent = {
       {
         value: (
           <>
+            <p style={{ color: "#8100EF", marginBottom: "7px" }}>
+              Getting Ready Pass
+            </p>
             <Tooltip content={text}>
-              <p style={{ color: "#8100EF", marginBottom: "7px" }}>
-                Getting Ready Pass
-              </p>
+              <p style={{ textDecoration: "underline" }}>Cancel Order</p>
             </Tooltip>
-            <p style={{ textDecoration: "underline" }}>Cancel Order</p>
           </>
         ),
       },

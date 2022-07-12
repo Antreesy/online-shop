@@ -44,8 +44,8 @@ const Products: NextPage = () => {
         description={
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, ut velit officia."
         }
-        title={"some-title"}
-        link={"some-link"}
+        title={"Tuana Yücel"}
+        link={"tuanaycl"}
         actionText={"Follow"}
       />
 
