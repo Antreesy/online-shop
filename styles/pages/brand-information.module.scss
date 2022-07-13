@@ -2,6 +2,10 @@
 
 .container {
   @include container;
+
+  @include mobile-tablet {
+    max-width: 800px;
+  }
 }
 
 .heading {

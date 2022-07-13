@@ -100,7 +100,12 @@ const LandingPage: NextPage = () => {
               delay: 5000,
               disableOnInteraction: false,
             }}
-            direction={"vertical"}
+            direction={"horizontal"}
+            breakpoints={{
+              768: {
+                direction: "vertical",
+              },
+            }}
             pagination={{
               el: ".swiper-pagination",
               clickable: true,

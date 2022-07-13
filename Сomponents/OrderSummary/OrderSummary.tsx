@@ -43,15 +43,13 @@ const OrderSummary: React.FC<OrderSummaryProps> = (props) => {
           arrowColor="#000"
         >
           <div className={s.details}>
-            <div>
-              <Input
-                label={null}
-                setValue={setInputValue}
-                value={inputValue}
-                placeholder={"HZDASK2410AS"}
-                className={s.input}
-              />
-            </div>
+            <Input
+              label={null}
+              setValue={setInputValue}
+              value={inputValue}
+              placeholder={"HZDASK2410AS"}
+              className={s.input}
+            />
             <Button className={s.button}>{t("common:apply")}</Button>
           </div>
         </Accordion>

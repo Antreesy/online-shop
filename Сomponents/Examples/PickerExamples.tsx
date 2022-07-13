@@ -22,7 +22,7 @@ const PickerExamples: React.FC = () => {
       <h2>Color Picker</h2>
       <ColorPicker colors={colors} />
       <h2>Size Picker</h2>
-      <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
+      <SizePicker labels={["S", "M", "L", "XL", "2XL", "3XL"]} />
       <h2>Select</h2>
       <Select
         values={[

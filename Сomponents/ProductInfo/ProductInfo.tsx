@@ -43,7 +43,7 @@ const ProductInfo: React.FC<ProductInfoProps> = (props) => {
                 <span>{productInfo.sizeChartTitle}</span>
               </div>
             </div>
-            <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
+            <SizePicker labels={["S", "M", "L", "XL", "2XL", "3XL"]} />
           </div>
           <Button className={s.add_button}>
             <Icon type="basket" />

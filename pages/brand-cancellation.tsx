@@ -33,11 +33,6 @@ const BrandProducts: React.FC = () => {
 
   const [inputValue, setInputValue] = useState<string>("")
   const [modal, setModal] = useState<boolean>(false)
-  let isMobile
-
-  useEffect(() => {
-    isMobile = window.screen.width < 1024
-  }, [])
 
   return (
     <>
@@ -57,61 +52,34 @@ const BrandProducts: React.FC = () => {
             labels={["All Cancellation", "Customer Canceled", "Canceled"]}
             values={[]}
           />
+          <Tabs
+            className={s.tabs_mobile}
+            variant="spaces"
+            labels={["All Cancellation", "Customer Canceled", "Canceled"]}
+            values={[]}
+          />
 
-          <div className={cn(s.content__header, s._brand_orders_mobile)}>
-            <div className={s.top_btn_mobile}>
-              <Select
-                placeholder={"Order date"}
-                values={[{ title: "Order date", value: 1 }]}
-                onChange={() => {
-                  return
-                }}
-              />
-              <Input
-                className={s.input}
-                placeholder="Client Name"
-                setValue={setInputValue}
-                value={inputValue}
-              />
-            </div>
-
-            <div className={s.bot_btn_mobile}>
-              <Button
-                className={cn(s.button, s.button_purple)}
-                iconLeft="search"
-              >
-                Search
-              </Button>
-              <Button
-                className={cn(s.button, s.button_green)}
-                iconLeft="download"
-              >
-                Excel Download
-              </Button>
-            </div>
-          </div>
-
-          <div className={cn(s.content__header, s._brand_orders)}>
+          <div className={s.content__header}>
             <Input
-              className={s.input}
+              inputClassName={s.input}
               placeholder="Orders Code"
               setValue={setInputValue}
               value={inputValue}
             />
             <Input
-              className={s.input}
+              inputClassName={s.input}
               placeholder="Client Name"
               setValue={setInputValue}
               value={inputValue}
             />
             <Input
-              className={s.input}
+              inputClassName={s.input}
               placeholder="Cancellation Start Date"
               setValue={setInputValue}
               value={inputValue}
             />
             <Input
-              className={s.input}
+              inputClassName={s.input}
               placeholder="Cancellation Order End Date"
               setValue={setInputValue}
               value={inputValue}
@@ -130,7 +98,7 @@ const BrandProducts: React.FC = () => {
             </Button>
           </div>
 
-          <div className={cn(s.bottom_content_header, s._brand_orders)}>
+          <div className={s.bottom_content_header}>
             <Select
               placeholder={"Order date"}
               values={[{ title: "Order date", value: 1 }]}
@@ -156,32 +124,6 @@ const BrandProducts: React.FC = () => {
               }}
             />
             <Pagination className={s.pagination} pagesCount={10} />
-          </div>
-
-          <div
-            className={cn(s.bottom_content_header, s._brand_orders_mobile_bot)}
-          >
-            <Select
-              placeholder={"20 product"}
-              values={[{ title: "20 product", value: 1 }]}
-              onChange={() => {
-                return
-              }}
-            />
-            <Select
-              placeholder={"Order date"}
-              values={[{ title: "Order date", value: 1 }]}
-              onChange={() => {
-                return
-              }}
-            />
-            <Select
-              placeholder={"Old to New"}
-              values={[{ title: "Old to New", value: 1 }]}
-              onChange={() => {
-                return
-              }}
-            />
           </div>
 
           <Table

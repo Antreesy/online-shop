@@ -39,15 +39,14 @@
     & > div {
       width: 100%;
     }
+  }
 
-    & > .input {
-      &_20 {
-        width: 40%;
-      }
+  & .input {
+    height: 53px;
 
-      &_30 {
-        width: 60%;
-      }
+    &_30 {
+      height: 53px;
+      width: 60%;
     }
   }
 

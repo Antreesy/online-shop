@@ -2,12 +2,12 @@
 
 .main {
   position: relative;
-  padding-top: $header-with-breadcrumbs-desktop-height;
+  padding-top: $header-desktop-height;
   min-height: 100vh;
   width: 100%;
 
   @include mobile {
-    padding-top: $header-with-breadcrumbs-mobile-height;
+    padding-top: $header-mobile-mobile-height;
     min-height: fit-content;
   }
 }

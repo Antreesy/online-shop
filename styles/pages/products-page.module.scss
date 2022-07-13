@@ -114,11 +114,12 @@
   gap: 20px;
   margin-bottom: 60px;
 
-  @include mobile {
+  @include mobile-tablet {
     flex-direction: column;
     margin-bottom: 22px;
     div {
       height: 36px;
+      max-width: 100%;
     }
     & > div:last-child {
       display: none;

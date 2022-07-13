@@ -29,26 +29,24 @@ const Login: NextPage = () => {
     <>
       <main className={s.main}>
         <div className={s.wrapper}>
-          <div className={s.tabs}>
-            <Tabs
-              labels={["Sign In", "Sign Up"]}
-              value={value}
-              values={[
-                <SignIn
-                  key={"Sign In"}
-                  tabSwitch={() => {
-                    setValue(1)
-                  }}
-                />,
-                <SignUp
-                  key={"Sign Up"}
-                  tabSwitch={() => {
-                    setValue(0)
-                  }}
-                />,
-              ]}
-            />
-          </div>
+          <Tabs
+            labels={["Sign In", "Sign Up"]}
+            value={value}
+            values={[
+              <SignIn
+                key={"Sign In"}
+                tabSwitch={() => {
+                  setValue(1)
+                }}
+              />,
+              <SignUp
+                key={"Sign Up"}
+                tabSwitch={() => {
+                  setValue(0)
+                }}
+              />,
+            ]}
+          />
         </div>
       </main>
     </>

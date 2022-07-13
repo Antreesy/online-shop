@@ -31,21 +31,22 @@ const ProductItem: React.FC<ProductItemProps> = (props) => {
     id,
     price,
     imageSrc,
-    isFavorite = true,
+    isFavorite = false,
     onAddClick,
     addButton = false,
     toggleFavorite,
   } = props
 
   const [isAddButton, toggleAddButton] = useState<boolean>(addButton)
+  const [favorite, setFavorite] = useState<boolean>(isFavorite)
 
   return (
     <div className={s.container}>
       <div className={s.top_group}>
         {toggleFavorite && (
           <div
-            className={cn(s.favorites, { [s.is_favorite]: isFavorite })}
-            onClick={() => toggleFavorite(id)}
+            className={cn(s.favorites, { [s.is_favorite]: favorite })}
+            onClick={() => setFavorite((prev) => !prev)}
           >
             <Icon type={"heart"} color={"inherit"} />
           </div>

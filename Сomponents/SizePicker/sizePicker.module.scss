@@ -2,9 +2,19 @@
 
 .size_picker {
   flex-direction: row;
+  gap: 25px;
+
+  @include mobile {
+    gap: 16px;
+  }
 
   & > label {
     position: relative;
+    margin: 0;
+
+    & > span:first-child {
+      padding: 0 !important;
+    }
 
     & > span:last-child {
       position: absolute;
@@ -27,6 +37,11 @@
   border: none;
   background-color: $color-grey-f4;
   transition: background-color 0.2s ease;
+
+  @include mobile {
+    width: 44px;
+    height: 44px;
+  }
 }
 
 input:hover + .radio_icon {

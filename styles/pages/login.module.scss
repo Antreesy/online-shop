@@ -16,36 +16,17 @@
 }
 
 .wrapper {
+  width: 100%;
   max-width: 483px;
   padding: 4px;
   border-radius: 10px;
   box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.04);
-  //background-color: white;
 
   @include mobile {
-    padding: 3px;
-    width: 305px;
+    max-width: 305px;
 
     button {
       height: 45px;
-    }
-  }
-}
-
-.tabs {
-  width: 100%;
-
-  div {
-    button {
-      width: 231px;
-    }
-  }
-
-  @include mobile {
-    div {
-      button {
-        width: 146px;
-      }
     }
   }
 }
@@ -55,7 +36,7 @@
   margin: 0 auto;
 
   @include mobile {
-    max-width: 259px;
+    max-width: 261px;
   }
 }
 
@@ -65,6 +46,7 @@
   justify-content: center;
   align-items: center;
 
+  padding-top: 25px;
   font-size: 12px;
   font-weight: $fw-regular;
   font-stretch: normal;
@@ -79,12 +61,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 11px;
-  margin-top: 24px;
-
-  &__sign_in {
-    margin-bottom: 20px;
-  }
+  margin-bottom: 20px;
 
   input {
     box-sizing: border-box;
@@ -94,8 +71,7 @@
   }
 
   @include mobile {
-    margin-top: 16px;
-    margin-bottom: 23px;
+    margin-bottom: 20px;
     gap: 5px;
 
     input {

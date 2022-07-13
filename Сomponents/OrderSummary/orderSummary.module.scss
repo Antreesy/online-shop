@@ -35,6 +35,7 @@
 .details {
   display: flex;
   flex-direction: row;
+  gap: 10px;
   justify-content: space-between;
   padding: 22px 0 26px;
   border-top: solid 2px $color-grey-ed;

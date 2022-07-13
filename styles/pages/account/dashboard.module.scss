@@ -67,6 +67,10 @@
     & > div {
       width: 100%;
     }
+
+    & :global(.MuiInputBase-root) {
+      height: 65px;
+    }
   }
 }
 

@@ -99,14 +99,15 @@ const OrderSuccess: NextPage = () => {
         <div className={s.cards}>
           {influencerRecomendations.map(({ id, title }) => {
             return (
-              <Card
-                key={id}
-                className={s.card}
-                imageSrc="/assets/img/picture_2.png"
-                title={title}
-                buttonTitle={t("common:goToStore")}
-                isButtonHidden
-              />
+              <div className={s.card}>
+                <Card
+                  key={id}
+                  imageSrc="/assets/img/picture_2.png"
+                  buttonTitle={t("common:goToStore")}
+                  isButtonHidden
+                />
+                <span>{title}</span>
+              </div>
             )
           })}
         </div>

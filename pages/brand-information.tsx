@@ -4,9 +4,10 @@ import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useAppDispatch } from "store/hooks"
 import { changeRoute } from "store/slices/routeSlice"
-
 import { NextPage } from "next"
+
 import Head from "next/head"
+import Link from "next/link"
 import { Controller, useForm } from "react-hook-form"
 import SimpleBar from "simplebar-react"
 import { BackButton } from "Сomponents"
@@ -71,14 +72,29 @@ const brandInformation: NextPage = () => {
       <div className={s.container}>
         <nav className={s.nav}>
           <SimpleBar className={s.scrollbar}>
-            <ul className={s.navigation}>
-              <li>{t("profile")}</li>
-              <li>{t("brandInformation")}</li>
-              <li>{t("allProduct")}</li>
-              <li>{t("allCancellations")}</li>
-              <li>{t("onSale")}</li>
-              <li>{t("thatNeedRevision")}</li>
-              <li>{t("notOnSale")}</li>
+            <ul>
+              <li>
+                <Link href={"/account/add-product"}>{t("addProduct")}</Link>
+              </li>
+              <li>
+                <Link href={"/brand-information"}>{t("brandInformation")}</Link>
+              </li>
+              <li>
+                <Link href={"/brand-products"}>{t("allProducts")}</Link>
+              </li>
+              <li>
+                <Link href={"/brand-cancellation"}>
+                  {t("allCancellations")}
+                </Link>
+              </li>
+              <li>
+                <Link href={"/brand-products"}>{t("onSale")}</Link>
+              </li>
+              <li>
+                <Link href={"/visual-operations"}>
+                  {t("brandVisualOperations")}
+                </Link>
+              </li>
             </ul>
           </SimpleBar>
         </nav>

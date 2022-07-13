@@ -130,12 +130,43 @@
 .cards {
   width: 100%;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 40px;
+
+  @include mobile {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
 }
 
 .card {
-  width: 260px;
-  height: 280px;
+  max-width: 260px;
+  width: 100%;
+
+  & > div {
+    height: 280px;
+    margin-bottom: 20px;
+  }
+
+  & > span {
+    font-size: 17px;
+    font-weight: $fw-bold;
+    line-height: 20px;
+  }
+
+  @include mobile {
+    max-width: 162px;
+    width: 50%;
+
+    & > div {
+      height: 175px;
+      margin-bottom: 10px;
+    }
+
+    & > span {
+      font-size: 13px;
+      line-height: 15px;
+    }
+  }
 }

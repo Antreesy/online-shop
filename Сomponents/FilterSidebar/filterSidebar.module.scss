@@ -152,13 +152,13 @@
 }
 
 .desktop {
-  @include mobile {
+  @include mobile-tablet {
     display: none !important;
   }
 }
 
 .mobile {
-  @include tablet-desktop {
+  @include laptop-desktop {
     display: none !important;
   }
 }

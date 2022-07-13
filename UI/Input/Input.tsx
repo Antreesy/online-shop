@@ -12,6 +12,7 @@ interface InputProps {
   disabled?: boolean
   placeholder?: string
   className?: string
+  inputClassName?: string
   variant?:
     | "default"
     | "footer"
@@ -36,6 +37,7 @@ export const Input: React.FC<InputProps> = (props) => {
     disabled,
     placeholder = "",
     className = "",
+    inputClassName = "",
     variant = "default",
     buttonLabel = "",
     isRequired = false,
@@ -59,8 +61,7 @@ export const Input: React.FC<InputProps> = (props) => {
           variant="outlined"
           onChange={handleChange}
           value={value}
-          classes={{ root: className }}
-          className={s.input}
+          className={cn(s.input, inputClassName)}
           placeholder={placeholder}
           required={isRequired}
           disabled={disabled}

@@ -60,15 +60,27 @@ const BrandProducts: React.FC = () => {
             ]}
             values={[]}
           />
+          <Tabs
+            className={s.tabs_mobile}
+            variant="spaces"
+            labels={[
+              t("allProducts"),
+              t("onSale"),
+              t("soldOut"),
+              t("whatYouNeedToRevise"),
+              t("notAvailable"),
+            ]}
+            values={[]}
+          />
           <div className={s.content__header}>
             <Input
-              className={s.input}
+              inputClassName={s.input}
               placeholder={t("productCode")}
               setValue={setInputValue}
               value={inputValue}
             />
             <Input
-              className={s.input}
+              inputClassName={s.input}
               placeholder={t("productName")}
               setValue={setInputValue}
               value={inputValue}

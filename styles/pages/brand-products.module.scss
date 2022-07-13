@@ -23,6 +23,24 @@
 .tabs {
   margin-bottom: 30px;
   height: 81px;
+
+  @include mobile-tablet {
+    display: none;
+  }
+}
+
+.tabs_mobile {
+  margin-bottom: 30px;
+  height: 20px;
+  box-shadow: none;
+
+  & button {
+    font-size: 13px !important;
+  }
+
+  @include laptop-desktop {
+    display: none;
+  }
 }
 
 .content__header {
@@ -31,21 +49,28 @@
   align-items: center;
   gap: 30px;
   background-color: #fdfaff;
-  padding: 29px 36px;
 
-  @include mobile-tablet {
-    padding: 16px 17px;
-  }
-
-  div {
-    height: 53px;
-  }
-
-  .input,
-  .select,
-  .button {
-    height: 53px;
+  & > div,
+  & .input,
+  & > button {
     width: 100%;
+    height: 53px;
+  }
+
+  @include mobile-laptop {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    & > div,
+    & > button {
+      width: 30%;
+      @include tablet {
+        width: 22%;
+      }
+
+      @include mobile {
+        width: 45%;
+      }
+    }
   }
 
   .button_purple {
@@ -59,13 +84,13 @@
   }
 
   .button_green {
+    min-width: 178px;
     max-width: 190px;
     background: $color-green;
   }
 
   .button_black {
     width: 53px;
-    margin-left: 93px;
     background: $color-black;
     @include tablet-laptop {
       margin-left: 0;
@@ -85,6 +110,18 @@
 
   .bottom_content_select > div {
     width: 230px;
+  }
+
+  @include mobile {
+    p {
+      display: none;
+    }
+  }
+}
+
+.pagination {
+  @include mobile-tablet {
+    display: none;
   }
 }
 
@@ -132,89 +169,6 @@
       button:nth-child(2) {
         background: $color-purple;
       }
-    }
-  }
-}
-
-._brand_orders {
-  @include mobile-tablet {
-    display: none;
-  }
-}
-
-._brand_orders_mobile {
-  display: none;
-
-  @include mobile-tablet {
-    display: flex;
-    justify-content: space-between;
-
-    .top_btn_mobile {
-      display: flex;
-      gap: 30px;
-    }
-    .bot_btn_mobile {
-      display: flex;
-      gap: 30px;
-
-      button {
-        width: 100%;
-      }
-    }
-  }
-
-  @include mobile {
-    flex-direction: column;
-    gap: 44px;
-
-    .top_btn_mobile {
-      height: 33px;
-      width: 100%;
-      font-size: 12px;
-
-      div {
-        width: 100%;
-        height: 33px;
-
-        input {
-          font-size: 12px;
-        }
-
-        div {
-          height: 33px;
-        }
-      }
-    }
-    .bot_btn_mobile {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-
-      button {
-        min-width: 48%;
-        height: 33px;
-      }
-    }
-  }
-}
-
-._brand_orders_mobile_bot {
-  display: none;
-
-  @include mobile-tablet {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 26px;
-    margin-bottom: 24px;
-  }
-
-  @include mobile {
-    margin-top: 19px;
-    font-size: 12px;
-    div {
-      width: 95px;
     }
   }
 }

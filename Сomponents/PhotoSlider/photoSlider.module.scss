@@ -13,10 +13,6 @@
   aspect-ratio: 1;
   margin-bottom: 15px;
 
-  @include mobile {
-    height: 320px;
-  }
-
   & > div {
     box-sizing: border-box;
   }
@@ -31,10 +27,6 @@
   display: flex;
   margin-bottom: 30px;
 
-  @include mobile {
-    height: 110px;
-  }
-
   & > div {
     box-sizing: border-box;
   }
@@ -43,7 +35,7 @@
 .slide {
   width: 100%;
   height: 100%;
-  padding: 40px;
+  padding: 5%;
   background-color: $color-grey-f4;
 
   .slide_wrapper {

@@ -62,17 +62,20 @@ const Products: NextPage = () => {
             <div className={s.price}>
               <Price price={2020} oldPrice={2050} type="sale_black" />
             </div>
-            <h3>{t("productColor")} :</h3>
+            <h3 className={s.filter_label}>{t("productColor")} :</h3>
             <div className={s.colorPicker}>
               <ColorPicker colors={colors} />
             </div>
-            <h2>
+            <h3 className={s.filter_label}>
               <span>{t("productSize")} :</span>
               <span>
                 <Icon type="size" /> {t("productSizeChart")}
               </span>
-            </h2>
-            <SizePicker labels={["S", "M", "L", "XL", "XXL", "3XL"]} />
+            </h3>
+            <SizePicker
+              className={s.size_picker}
+              labels={["S", "M", "L", "XL", "2XL", "3XL"]}
+            />
             <Link href="/order-cart">
               <Button className={s.button} iconLeft="basket">
                 {t("productButton")}

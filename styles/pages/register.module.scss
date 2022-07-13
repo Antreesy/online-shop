@@ -203,7 +203,8 @@
 }
 
 .step_wrapper {
-  width: 483px;
+  width: 100%;
+  max-width: 483px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -213,6 +214,12 @@
   box-shadow: 0 0 30px $color-grey-de;
   background-color: $color-white;
   padding: 40px 60px;
+
+  @include mobile {
+    max-width: 305px;
+    padding: 20px;
+    padding-bottom: 35px;
+  }
 
   .caption_step {
     margin-bottom: 10px;
@@ -228,10 +235,20 @@
   .caption {
     margin-bottom: 10px;
     color: $color-purple;
+
+    @include mobile {
+      font-size: 14px;
+      max-width: 135px;
+    }
   }
 
   .input {
     width: 100%;
+    height: 46px;
+
+    @include mobile {
+      height: 40px;
+    }
 
     input::placeholder {
       color: $color-black;
@@ -241,15 +258,34 @@
 
   .select {
     width: 100%;
+    height: 46px;
     font-weight: $fw-regular;
 
-    & > div {
-      text-align: left;
+    & > div > div {
+      padding: 10.5px;
     }
+
+    @include mobile {
+      height: 40px;
+
+      & > div > div {
+        padding: 7.5px;
+      }
+    }
+
+    // & > div {
+    //   text-align: left;
+    // }
   }
 
   .button {
     width: 100%;
+    height: 55px;
+
+    @include mobile {
+      height: 45px;
+      font-size: 15px;
+    }
   }
 
   .checkboxes span {
@@ -260,6 +296,10 @@
 
   .agreement {
     font-size: 13px;
+
+    @include mobile {
+      max-width: 220px;
+    }
 
     span {
       color: $color-purple;

@@ -24,6 +24,13 @@ export async function getStaticProps({ locale }: { locale: string }) {
   }
 }
 
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: true,
+  }
+}
+
 const brand: NextPage = () => {
   const router = useRouter()
   const { brandId } = router.query

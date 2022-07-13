@@ -4,13 +4,17 @@
   @include container;
   max-width: 1860px;
   padding-top: 50px;
-  padding-bottom: 100px;
+  padding-bottom: 75px;
 
-  > h3 {
+  @include mobile {
+    padding-bottom: 30px;
+  }
+
+  > h3:not(:last-child) {
     margin-bottom: 30px;
   }
 
-  > p {
+  > p:not(:last-child) {
     margin-bottom: 40px;
   }
 }
@@ -51,7 +55,7 @@
 }
 
 .photoslider {
-  width: 50%;
+  width: 45%;
 
   @include mobile-tablet {
     width: 100% !important;
@@ -60,61 +64,65 @@
 }
 
 .productInfo {
-  width: 50%;
+  width: 55%;
   position: relative;
 
   @include mobile-tablet {
-    width: 100%;
-  }
-
-  h2 {
-    display: flex;
-    justify-content: space-between;
-    font-size: 30px;
-    width: 400px;
-
-    @include mobile {
-      width: 100%;
-    }
-  }
-
-  h3 {
-    font-size: 30px;
+    width: fit-content;
   }
 }
 
 .title {
+  margin-bottom: 15px;
+
   font-size: 35px;
+  font-weight: $fw-bold;
+  line-height: 41px;
   color: $color-purple;
 }
 
-.subtitle,
-.description {
+.subtitle {
+  margin-bottom: 20px;
   font-size: 25px;
-  line-height: 1.2;
-  padding-bottom: 20px;
+  font-weight: $fw-medium;
+  line-height: 30px;
 }
 
 .description {
-  color: $color-grey-c;
-  padding-bottom: 40px;
+  margin-bottom: 40px;
+  font-size: 25px;
+  line-height: 37px;
+  color: $color-grey-8;
+
+  @include mobile-tablet {
+    width: 100%;
+    max-width: 430px;
+  }
+}
+
+.filter_label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  font-weight: $fw-medium;
+  width: 100%;
+  max-width: 430px;
+}
+
+.size_picker {
+  margin-bottom: 50px;
 }
 
 .button {
   max-width: 510px;
   width: 100%;
-  padding: 20px 110px;
-  margin-top: 50px;
-
-  @include mobile-laptop {
-    width: 100%;
-    margin: 0 auto;
-  }
+  padding: 20px;
 }
 
 .colorPicker {
   margin-bottom: 50px;
   width: 100%;
+  max-width: 430px;
 
   div {
     div {
@@ -127,9 +135,9 @@
 .price {
   margin-bottom: 50px;
 
-  @include tablet {
-    position: absolute;
-    top: 0;
-    right: 10px;
-  }
+  // @include tablet {
+  //   position: absolute;
+  //   top: 0;
+  //   right: 10px;
+  // }
 }

@@ -58,7 +58,7 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = () => {
           className={s.checkboxes}
           inColumn
           color="#000"
-          labels={["Dress", "Shoes", "Clothing", "Dress", "Shoes", "Clothing"]}
+          labels={["Dress", "Shoes", "Clothing", "Skirt", "Shorts", "Hats"]}
         />
       </Accordion>
       <Accordion
@@ -77,8 +77,8 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = () => {
             "Beymen",
             "Nike",
             "Dolce&Gabbana",
-            "Adidas",
-            "Nike",
+            "Reebok",
+            "Pull & Bear",
           ]}
         />
       </Accordion>
