@@ -32,6 +32,7 @@ const Login: NextPage = () => {
           <Tabs
             labels={["Sign In", "Sign Up"]}
             value={value}
+            onChange={setValue}
             values={[
               <SignIn
                 key={"Sign In"}

@@ -1,56 +1,171 @@
 @import "styles/style.scss";
 
-.card_colored {
-  max-width: 100%;
-  background: $main-gradient;
-}
-
-.card_default {
-  max-width: 100%;
-  background: $color-grey-c;
-}
-
-.content {
+.card {
+  position: relative;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 26px;
-  height: 100%;
-  font-weight: $fw-bold;
+  max-width: 375px;
+  width: 100%;
+  aspect-ratio: 15 / 8;
+  padding: 40px 30px;
+  border-radius: 4px;
+  color: $color-white;
+  background-color: $color-grey-d5;
 
   @include mobile {
-    padding: 20px;
+    max-width: 305px;
+    padding: 30px 25px;
   }
+}
+
+.active {
+  background: $main-gradient;
 }
 
 .left_group {
   display: flex;
   flex-direction: column;
-  color: $color-white;
-  margin-bottom: 15px;
+  align-items: flex-start;
 }
 
 .right_group {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  height: 100%;
-  color: $color-white;
+  align-items: flex-end;
+}
 
-  &.with_button {
-    align-self: flex-start;
-    justify-content: space-between;
+.card_number {
+  margin-bottom: 20px;
+  font-size: 23px;
+  font-weight: $fw-bold;
+  line-height: 26px;
+  white-space: nowrap;
+
+  @include mobile {
+    margin-bottom: 15px;
+    font-size: 17px;
+    line-height: 20px;
+  }
+}
+
+.card_holder {
+  font-size: 19px;
+  font-weight: $fw-bold;
+  line-height: 22px;
+  white-space: nowrap;
+
+  @include mobile {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.secure_code {
+  width: 62px;
+  height: 42px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  background-color: $color-white;
+
+  @include mobile {
+    width: 50px;
+    height: 35px;
+    margin-bottom: 15px;
   }
 }
 
 .expire_date {
-  color: $color-white;
-  font-weight: $fw-regular;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  font-size: 15px;
+  font-weight: $fw-medium;
+  line-height: 18px;
+  white-space: nowrap;
+
+  @include mobile {
+    font-size: 11px;
+    line-height: 13px;
+  }
 }
 
 .delete_btn {
-  align-self: flex-end;
-  color: $color-white;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  padding: 0;
+  font-size: 19px;
+
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+.large {
+  max-width: 560px;
+  padding: 60px 45px;
+
+  @include tablet-laptop {
+    max-width: 450px;
+    padding: 35px 25px;
+  }
+
+  @include mobile {
+    max-width: 345px;
+    padding: 35px 25px;
+  }
+
+  .card_number {
+    margin-bottom: 30px;
+    font-size: 25px;
+    line-height: 30px;
+
+    @include mobile {
+      margin-bottom: 20px;
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+
+  .card_holder {
+    font-size: 28px;
+    line-height: 32px;
+
+    @include mobile {
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+
+  .secure_code {
+    width: 93px;
+    height: 63px;
+    margin-bottom: 30px;
+
+    @include mobile {
+      width: 56px;
+      height: 38px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .expire_date {
+    font-size: 22px;
+    line-height: 26px;
+
+    @include mobile {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  .delete_btn {
+    top: 25px;
+    right: 50px;
+    font-size: 24px;
+
+    @include mobile {
+      top: 15px;
+      right: 25px;
+      font-size: 18px;
+    }
+  }
 }

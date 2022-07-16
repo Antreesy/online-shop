@@ -4,12 +4,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 160px;
   margin-bottom: 50px;
-  padding: 40px 0;
   background-color: $color-white;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
   font-weight: $fw-semibold;
   cursor: pointer;
+
+  span {
+    font-size: 20px;
+    font-weight: $fw-semibold;
+    line-height: 23px;
+  }
+
+  @include mobile-tablet {
+    height: 52px;
+    margin-bottom: 30px;
+
+    span {
+      font-size: 13px;
+      line-height: 15px;
+    }
+  }
 }
 
 .button {
@@ -20,4 +36,8 @@
   background: $color-white;
   color: $color-purple;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
+
+  @include mobile-tablet {
+    width: 25px;
+  }
 }

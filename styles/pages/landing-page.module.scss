@@ -59,12 +59,21 @@
 
 .pag_thumb {
   position: absolute;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+  -ms-flex-direction: column !important;
+  flex-direction: column !important;
   left: 100px !important;
   top: 285px !important;
+  -webkit-transform: none !important;
   transform: none !important;
+  min-width: 20px;
   width: 20px;
+  max-width: 20px;
   z-index: 5;
-  // color: #fff;
 
   @include mobile {
     left: 20px !important;

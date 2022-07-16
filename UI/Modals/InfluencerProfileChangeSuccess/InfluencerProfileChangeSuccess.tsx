@@ -3,10 +3,10 @@ import s from "./InfluencerProfileChangeSuccess.module.scss"
 import { Button } from "UI/Button"
 
 interface InfluencerProfileChangeSuccessProps {
-  title: String
-  text: String
+  title: string
+  text: string
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
-  btnName: String
+  btnName: string
 }
 
 export const InfluencerProfileChangeSuccess: React.FC<

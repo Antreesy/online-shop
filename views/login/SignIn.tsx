@@ -35,10 +35,7 @@ const SignIn: React.FC<SignProps> = ({ tabSwitch }) => {
   return (
     <div className={s.form_container}>
       <form className={s.form}>
-        <div
-          className={cn(s.inputs, s.inputs__sign_in)}
-          style={{ marginBottom: "" }}
-        >
+        <div className={cn(s.inputs, s.inputs__sign_in)}>
           <Controller
             name={"email"}
             control={control}

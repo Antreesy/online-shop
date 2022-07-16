@@ -6,13 +6,11 @@ import { Button, Input } from "UI"
 import s from "./customerPasswordChange.module.scss"
 
 interface CustomerPasswordChangeProps {
-  content: string
   nextModal: boolean
   setNextModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const CustomerPasswordChange: React.FC<CustomerPasswordChangeProps> = ({
-  content,
   nextModal,
   setNextModal,
 }) => {

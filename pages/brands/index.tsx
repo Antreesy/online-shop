@@ -5,7 +5,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 
 import Head from "next/head"
 import { Grid } from "@mui/material"
-import { Background, Breadcrumbs, Toolbar } from "Сomponents"
+import { Background, Breadcrumbs, ReturnButton, Toolbar } from "Сomponents"
 import { Card, Pagination, Button } from "UI"
 
 import card_image from "public/assets/img/zara.png"
@@ -22,6 +22,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
         "common",
         "header",
         "footer",
+        "product",
       ])),
     },
   }
@@ -46,7 +47,7 @@ const brands: NextPage = () => {
   return (
     <>
       <Head>
-        <title>ILONSI SHOP | Influencers</title>
+        <title>ILONSI SHOP | Brands</title>
       </Head>
 
       <div className={s.desktop_image}>
@@ -76,12 +77,7 @@ const brands: NextPage = () => {
         <Breadcrumbs />
       </div>
       <div className={s.container}>
-        <div className={s.return_button} onClick={() => router.back()}>
-          <div>
-            <span></span>
-          </div>
-          <div>Return Your Shop</div>
-        </div>
+        <ReturnButton />
         <div className={s.wrapper_toolbar}>
           <Button
             disabled={path === "products"}

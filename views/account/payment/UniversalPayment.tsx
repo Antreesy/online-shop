@@ -1,6 +1,6 @@
+import { useState } from "react"
 import { useTranslation } from "next-i18next"
 
-import { Card } from "@mui/material"
 import { CardForm, SectionHeader } from "Сomponents"
 import { AddButton, CreditCard } from "UI"
 
@@ -13,27 +13,40 @@ export interface UniversalPaymentProps {}
 
 export const UniversalPayment: React.FC = () => {
   const { t } = useTranslation("payment")
+  const [active, setActive] = useState<number>(0)
+  const [isOpen, setIsOpen] = useState<boolean>(false)
 
   return (
     <>
       <SectionHeader className={s.title} title={t("myRegisteredCards")} />
-      <Card className={s.cards}>
-        {creditcardsData.map((card) => (
+      <div className={s.cards}>
+        {creditcardsData.map((card, index) => (
           <CreditCard
-            size={card.size}
-            key={card.id}
+            key={index}
             isHidden={card.isHidden}
-            isColored={card.isColored}
+            isActive={index === active}
             id={card.id}
             cardNumber={card.cardNumber}
             cardHolder={card.cardHolder}
             expireDate={card.expireDate}
             onDelete={card.onDelete}
+            onClick={() => setActive(index)}
           />
         ))}
-      </Card>
-      <AddButton title={t("addNewCard")} />
-      <CardForm />
+      </div>
+      <AddButton
+        title={t("addNewCard")}
+        onClick={() => {
+          setIsOpen((prev) => !prev)
+        }}
+      />
+      {isOpen && (
+        <CardForm
+          onClose={() => {
+            setIsOpen((prev) => !prev)
+          }}
+        />
+      )}
     </>
   )
 }

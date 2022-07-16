@@ -1,22 +1,9 @@
 import { useTranslation } from "next-i18next"
-import dynamic from "next/dynamic"
 
 import { LayoutProps } from ".."
-import { HeaderProps } from "Сomponents/Header/Header"
-import { FooterProps } from "Сomponents/Footer/Footer"
-import { ProfileSidebarProps } from "Сomponents/ProfileSidebar/ProfileSidebar"
-
-const Header = dynamic<HeaderProps>(() =>
-  import("Сomponents").then((module) => module.Header),
-)
-const Footer = dynamic<FooterProps>(() =>
-  import("Сomponents").then((module) => module.Footer),
-)
-const ProfileSidebar = dynamic<ProfileSidebarProps>(() =>
-  import("Сomponents").then((module) => module.ProfileSidebar),
-)
 
 import { RoleSwitcher } from "Сomponents/Examples/RoleSwitcher"
+import { Breadcrumbs, Footer, Header, ProfileSidebar } from "Сomponents"
 
 import { Roles } from "shared/enums/roles"
 import { footerNav } from "shared/constants/footernav"
@@ -32,11 +19,12 @@ const ProfileLayout: React.FC<ProfileLayoutProps> = ({ children, role }) => {
   const { t } = useTranslation("sidebar")
   return (
     <>
-      <Header withBreadcrumbs role={role} />
+      <Header role={role} />
       {/* // TODO delete after auth fix */}
       <RoleSwitcher />
 
       <main className={s.main}>
+        <Breadcrumbs />
         <div className={s.container}>
           <aside className={s.aside}>
             <ProfileSidebar title={t("myAccount")} labels={sidebarTabs[role]} />

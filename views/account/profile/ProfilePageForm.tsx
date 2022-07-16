@@ -117,9 +117,6 @@ export const ProfilePageForm = () => {
               render={({ field: { onChange } }) => (
                 <FileUpload
                   setValue={onChange}
-                  img={
-                    "https://static.wikia.nocookie.net/residentevil/images/f/f3/Re2AdaRender.png/revision/latest/scale-to-width-down/144?cb=20210221202627&path-prefix=ru"
-                  }
                   minWidth={359}
                   minHeight={379}
                 />

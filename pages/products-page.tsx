@@ -34,7 +34,7 @@ const ProductsPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>ILONSI SHOP | Influencers</title>
+        <title>ILONSI SHOP | Products</title>
       </Head>
 
       <div className={s.desktop_image}>

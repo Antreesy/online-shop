@@ -2,7 +2,6 @@ import React from "react"
 import { useRouter } from "next/router"
 
 import { CommonLayout } from "./CommonLayout"
-import { CommonWithBcLayout } from "./CommonWithBcLayout"
 import { CommonMobileMenuLayout } from "./CommonMobileMenuLayout"
 import { ProfileLayout } from "./ProfileLayout"
 import { LightLayout } from "./LightLayout"
@@ -11,7 +10,6 @@ import {
   profilePaths,
   lightPaths,
   commonPaths,
-  commonWithBcPaths,
   commonMobileMenuPaths,
 } from "shared/constants/paths"
 
@@ -35,8 +33,6 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     return <LightLayout>{children}</LightLayout>
   } else if (commonPaths.find(findPath)) {
     return <CommonLayout>{children}</CommonLayout>
-  } else if (commonWithBcPaths.find(findPath)) {
-    return <CommonWithBcLayout>{children}</CommonWithBcLayout>
   } else if (commonMobileMenuPaths.find(findPath)) {
     return <CommonMobileMenuLayout>{children}</CommonMobileMenuLayout>
   } else {

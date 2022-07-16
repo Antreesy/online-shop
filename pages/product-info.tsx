@@ -53,7 +53,7 @@ const ProductInfo: NextPage = () => {
 
         <div className={s.input_wrapper}>
           <Input
-            className={s.input}
+            inputClassName={s.input}
             label={t("productName")}
             setValue={setInputValue}
             value={inputValue}
@@ -63,19 +63,19 @@ const ProductInfo: NextPage = () => {
         <div className={s.input_wrapper}>
           <div className={s.row}>
             <Input
-              className={s.input}
+              inputClassName={s.input}
               label={t("modelCode")}
               setValue={setInputValue}
               value={inputValue}
             />
             <Input
-              className={s.input}
+              inputClassName={s.input}
               label={t("Barcode")}
               setValue={setInputValue}
               value={inputValue}
             />
             <Input
-              className={s.input}
+              inputClassName={s.input}
               label={t("Category")}
               setValue={setInputValue}
               value={inputValue}
@@ -83,19 +83,19 @@ const ProductInfo: NextPage = () => {
           </div>
           <div className={s.row}>
             <Input
-              className={s.input}
+              inputClassName={s.input}
               label={t("approvalStatus")}
               setValue={setInputValue}
               value={inputValue}
             />
             <Input
-              className={s.input}
+              inputClassName={s.input}
               label={t("stockCode")}
               setValue={setInputValue}
               value={inputValue}
             />
             <Input
-              className={s.input}
+              inputClassName={s.input}
               label={t("Brand")}
               setValue={setInputValue}
               value={inputValue}

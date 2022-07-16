@@ -5,16 +5,10 @@ import { Button } from "UI"
 import s from "./accountCreated.module.scss"
 
 interface AccountCreatedProps {
-  title: string
-  content: string
   onClick?: () => void
 }
 
-export const AccountCreated: React.FC<AccountCreatedProps> = ({
-  title,
-  content,
-  onClick,
-}) => {
+export const AccountCreated: React.FC<AccountCreatedProps> = ({ onClick }) => {
   const { t } = useTranslation("modal")
   return (
     <>

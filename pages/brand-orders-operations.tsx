@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react"
 import cn from "classnames"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { useTranslation } from "next-i18next"
 import { useAppDispatch } from "store/hooks"
 import { changeRoute } from "store/slices/routeSlice"
 
 import Head from "next/head"
-import { Button, Icon, Input, ModalWindow, Pagination, Select, Tabs } from "UI"
+import { Button, Icon, Input, Pagination, Select, Tabs } from "UI"
 import { BackButton, Table } from "Сomponents"
+import useResize from "shared/hooks/useResize"
 import { brandOrdOpsTableContent } from "shared/constants/brandTables"
 
 import s from "styles/pages/brand-products.module.scss"
@@ -19,6 +21,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
         "common",
         "header",
         "footer",
+        "brandProduct",
       ])),
     },
   }
@@ -31,19 +34,83 @@ const BrandProducts: React.FC = () => {
     dispatch(changeRoute("Product List"))
   }, [])
 
+  const width = useResize()
+  const { t } = useTranslation(["brandProduct", "common"])
   const [inputValue, setInputValue] = useState<string>("")
-  const [modal, setModal] = useState<boolean>(false)
-  let isMobile
 
-  useEffect(() => {
-    isMobile = window.screen.width < 1024
-    console.log(isMobile)
-  }, [])
+  const TabContent = () => (
+    <>
+      <div className={s.content__header}>
+        <Input
+          inputClassName={s.input}
+          placeholder="Orders Code"
+          setValue={setInputValue}
+          value={inputValue}
+        />
+        <Input
+          inputClassName={s.input}
+          placeholder="Client Name"
+          setValue={setInputValue}
+          value={inputValue}
+        />
+        <Input
+          inputClassName={s.input}
+          placeholder="Order Start Date"
+          setValue={setInputValue}
+          value={inputValue}
+        />
+        <Input
+          inputClassName={s.input}
+          placeholder="Order End Date"
+          setValue={setInputValue}
+          value={inputValue}
+        />
+        <Button className={cn(s.button, s.button_black)}>
+          <Icon type={"close_cross"} />
+        </Button>
+        <Button className={cn(s.button, s.button_purple)} iconLeft="search">
+          {t("common:search")}
+        </Button>
+        <Button className={cn(s.button, s.button_green)} iconLeft="download">
+          {t("excelDownload")}
+        </Button>
+      </div>
+
+      <div className={s.bottom_content_header}>
+        <Select
+          className={s.select_bottom}
+          values={[{ title: "Order date", value: 1 }]}
+          initValue={1}
+        />
+        <Select
+          className={s.select_bottom}
+          values={[{ title: "Old to New", value: 1 }]}
+          initValue={1}
+        />
+        <p>{t("onEveryPage")}</p>
+        <Select
+          className={s.select_bottom}
+          values={[
+            { title: "10 products", value: 1 },
+            { title: "20 products", value: 2 },
+            { title: "50 products", value: 3 },
+          ]}
+          initValue={2}
+        />
+        <Pagination className={s.pagination} pagesCount={5} />
+      </div>
+
+      <Table
+        headers={brandOrdOpsTableContent.headers}
+        innerRows={brandOrdOpsTableContent.rows}
+      />
+    </>
+  )
 
   return (
     <>
       <Head>
-        <title>ILONSI SHOP | Brand Products</title>
+        <title>ILONSI SHOP | Brand Operations</title>
       </Head>
 
       <div className={s.container}>
@@ -54,7 +121,7 @@ const BrandProducts: React.FC = () => {
         <div className={s.content}>
           <Tabs
             className={s.tabs}
-            variant="no_border"
+            variant={width > 1024 ? "no_border" : "spaces"}
             labels={[
               "All Products",
               "New Orders",
@@ -62,118 +129,16 @@ const BrandProducts: React.FC = () => {
               "Ready to Delivery Orders",
               "Delivered Orders",
             ]}
-            values={[]}
-          />
-          <Tabs
-            className={s.tabs_mobile}
-            variant="spaces"
-            labels={[
-              "All Products",
-              "New Orders",
-              "Prepared Orders",
-              "Ready to Delivery Orders",
-              "Delivered Orders",
+            values={[
+              <TabContent key={"All Products"} />,
+              <TabContent key={"New Orders"} />,
+              <TabContent key={"Prepared Orders"} />,
+              <TabContent key={"Ready to Delivery Orders"} />,
+              <TabContent key={"Delivered Orders"} />,
             ]}
-            values={[]}
-          />
-
-          <div className={s.content__header}>
-            <Input
-              inputClassName={s.input}
-              placeholder="Orders Code"
-              setValue={setInputValue}
-              value={inputValue}
-            />
-            <Input
-              inputClassName={s.input}
-              placeholder="Client Name"
-              setValue={setInputValue}
-              value={inputValue}
-            />
-            <Input
-              inputClassName={s.input}
-              placeholder="Order Start Date"
-              setValue={setInputValue}
-              value={inputValue}
-            />
-            <Input
-              inputClassName={s.input}
-              placeholder="Order End Date"
-              setValue={setInputValue}
-              value={inputValue}
-            />
-            <Button className={cn(s.button, s.button_black)}>
-              <Icon type={"close_cross"} />
-            </Button>
-            <Button className={cn(s.button, s.button_purple)} iconLeft="search">
-              Search
-            </Button>
-            <Button
-              className={cn(s.button, s.button_green)}
-              iconLeft="download"
-            >
-              Excel Download
-            </Button>
-          </div>
-
-          <div className={s.bottom_content_header}>
-            <Select
-              placeholder={"Order date"}
-              values={[{ title: "Order date", value: 1 }]}
-              onChange={() => {
-                return
-              }}
-            />
-            <Select
-              placeholder={"Old to New"}
-              values={[{ title: "Old to New", value: 1 }]}
-              onChange={() => {
-                return
-              }}
-            />
-            <p>On Every Page</p>
-            <Select
-              placeholder={"20 product"}
-              values={[{ title: "20 product", value: 1 }]}
-              onChange={() => {
-                return
-              }}
-            />
-            <Pagination className={s.pagination} pagesCount={10} />
-          </div>
-
-          <Table
-            headers={brandOrdOpsTableContent.headers}
-            innerRows={brandOrdOpsTableContent.rows}
           />
         </div>
       </div>
-      <ModalWindow
-        isOpen={modal}
-        onClose={() => {
-          setModal(false)
-        }}
-      >
-        <div className={s.modal}>
-          <p className={s.modal__title}>
-            Do you approve your request to cancel the order? If you want to
-            continue the transaction, please select your reason for
-            cancellation.
-          </p>
-          <Select
-            selectClassName={s.modal_select}
-            initValue={1}
-            values={[{ title: "Body Incompatibility", value: 1 }]}
-            onChange={() => {
-              return
-            }}
-          />
-          <div className={s.modal__btns}>
-            <Button variant={"outlined"}>Cancel Order</Button>
-            <Button>Refuse</Button>
-          </div>
-        </div>
-      </ModalWindow>
     </>
   )
 }

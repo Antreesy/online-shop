@@ -1,11 +1,11 @@
 {
   "profile": "Profilli",
+  "addProduct": "Geri Ödeme Talepleri",
   "brandInformation": "Marka Bilgileri",
-  "allProduct": "Tüm Ürün",
+  "allProducts": "Tüm ürünler",
   "allCancellations": "Tüm İptaller",
-  "onSale": "Satışta",
-  "thatNeedRevision": "Bu Revizyona İhtiyaç Duyuyor",
-  "notOnSale": "Satışta Değil",
+  "onSale": "Satılık",
+  "brandVisualOperations": "Marka Görsel İşlemleri",
 
   "brandInformations": "Marka Bilgileri",
   "brandName": "Marka Adı",

@@ -71,10 +71,7 @@ const ModalsExample: NextPage = () => {
             onClose={() => setAccountCreated(!accountCreated)}
             iconType="okay"
           >
-            <AccountCreated
-              title="You are now ready"
-              content="We received the request to create a membership. We will get back to you via  e-mail within 24 hours."
-            />
+            <AccountCreated />
           </ModalWindow>
 
           <Button onClick={() => setCustomerCardDeleted(!customerCardDeleted)}>
@@ -85,7 +82,7 @@ const ModalsExample: NextPage = () => {
             onClose={() => setCustomerCardDeleted(!customerCardDeleted)}
             iconType="okay"
           >
-            <CustomerCardDeleted title="The card has been successfully deleted" />
+            <CustomerCardDeleted />
           </ModalWindow>
 
           <Button
@@ -102,10 +99,7 @@ const ModalsExample: NextPage = () => {
             }
             iconType="okay"
           >
-            <CustomerShoppingCompleted
-              title="Your shopping is complete"
-              content="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem"
-            />
+            <CustomerShoppingCompleted />
           </ModalWindow>
 
           <Button
@@ -118,10 +112,7 @@ const ModalsExample: NextPage = () => {
             onClose={() => setCustomerProductAdded(!customerProductAdded)}
             iconType="okay"
           >
-            <CustomerProductAdded
-              title="The product has been added to your store"
-              content="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem"
-            />
+            <CustomerProductAdded />
           </ModalWindow>
 
           <Button
@@ -134,10 +125,7 @@ const ModalsExample: NextPage = () => {
             onClose={() => setCustomerProfileUpdated(!customerProfileUpdated)}
             iconType="okay"
           >
-            <CustomerProfileUpdated
-              title="Changes Successfully Updated"
-              content="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem"
-            />
+            <CustomerProfileUpdated />
           </ModalWindow>
 
           <Button
@@ -178,7 +166,6 @@ const ModalsExample: NextPage = () => {
             iconType="exclamation"
           >
             <CustomerPasswordChange
-              content="Lorem ipsum dolor sit amet, consectetur ad adipiscing elit. Integer lacinia, lacu sit amet, consectet lorem"
               nextModal={nextPasswordModal}
               setNextModal={setNextPasswordModal}
             />

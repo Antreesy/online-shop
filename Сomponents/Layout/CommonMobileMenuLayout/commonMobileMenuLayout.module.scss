@@ -9,6 +9,10 @@
   @include mobile {
     padding-top: $header-mobile-mobile-height;
     min-height: fit-content;
+
+    & > div:first-child {
+      background-color: $color-white;
+    }
   }
 }
 

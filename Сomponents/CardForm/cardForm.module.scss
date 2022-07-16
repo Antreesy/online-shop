@@ -3,13 +3,12 @@
 .form {
   max-width: 1280px;
   margin-bottom: 80px;
-  padding-left: 20px;
-  padding-right: 20px;
   margin-top: 50px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 15px;
 
   @include mobile-tablet {
     flex-direction: column;
@@ -59,6 +58,22 @@
   @media screen and (min-width: 2000px) {
     gap: 25px;
     flex-direction: column;
+  }
+}
+
+.card_wrapper {
+  width: 100%;
+  padding-top: 28px;
+
+  & > div {
+    margin-left: auto;
+  }
+
+  @include mobile-tablet {
+    padding-top: 0;
+    & > div {
+      margin: auto;
+    }
   }
 }
 

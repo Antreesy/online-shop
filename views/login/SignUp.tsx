@@ -128,7 +128,7 @@ const SignUp: React.FC<SignProps> = ({ tabSwitch }) => {
             You can reach ilonsi.com Personal Data Protection and Processing
             Conditions within the scope of
             <Link href="#">
-              <a style={{ textDecoration: "underline" }}> KVKK here</a>
+              <a> KVKK here</a>
             </Link>
             .
           </span>

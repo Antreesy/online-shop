@@ -70,7 +70,7 @@ const brandInformation: NextPage = () => {
       </Head>
 
       <div className={s.container}>
-        <nav className={s.nav}>
+        <nav className={s.navigation}>
           <SimpleBar className={s.scrollbar}>
             <ul>
               <li>

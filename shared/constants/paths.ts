@@ -2,7 +2,6 @@ export const profilePaths = ["account"]
 export const lightPaths = ["login", "register"]
 export const commonPaths = [
   "brands",
-  "brand-information",
   "components-example",
   "influencers",
   "order-cart",
@@ -10,10 +9,10 @@ export const commonPaths = [
   "order-success",
   "product",
 ]
-export const commonWithBcPaths = []
 export const commonMobileMenuPaths = [
   "brand-landing",
   "brand-products",
+  "brand-information",
   "brand-orders-operations",
   "brand-orders-transactions",
   "brand-cancellation",

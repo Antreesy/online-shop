@@ -2,6 +2,7 @@
 
 .container {
   @include container;
+  padding-top: 60px;
 
   @include mobile-tablet {
     max-width: 800px;
@@ -21,13 +22,30 @@
   }
 }
 
-.nav {
+.navigation {
   width: 100%;
-  overflow-x: auto;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
+
+  & ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    font-size: 18px;
+    font-weight: $fw-regular;
+
+    @include mobile-tablet {
+      width: 1000px;
+    }
+  }
+
+  @include mobile-tablet {
+    margin-bottom: 30px;
+  }
 }
 
 .scrollbar {
+  margin-bottom: 45px;
+
   & > :global(.simplebar-horizontal) {
     background-color: $color-grey-f4;
     border-radius: 5px;
@@ -37,30 +55,18 @@
       background: $color-purple;
     }
   }
-}
-
-.navigation {
-  width: 100%;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: space-between;
-  list-style: none;
-  padding: 60px 0;
-  overflow-x: auto;
 
   @include mobile-tablet {
-    padding: 20px 0;
-    width: 1000px;
-  }
-
-  li {
-    font-size: 18px;
+    margin-bottom: 20px;
   }
 }
 
 .back_button {
   margin-bottom: 50px;
+
+  @include mobile {
+    display: none;
+  }
 }
 
 .brandInfo {
@@ -200,7 +206,6 @@
   background: #fafafa;
   padding-top: 60px;
   padding-bottom: 60px;
-  margin-bottom: 145px;
 }
 
 .firstLineInputs,

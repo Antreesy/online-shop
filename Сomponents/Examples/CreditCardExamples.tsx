@@ -6,8 +6,7 @@ const CreditCardExamples: React.FC = () => {
   return (
     <div className={s.creditcard}>
       <CreditCard
-        size={200}
-        isColored
+        isActive
         key={1}
         isHidden
         id={8375}
@@ -19,7 +18,6 @@ const CreditCardExamples: React.FC = () => {
         }}
       />
       <CreditCard
-        size={250}
         key={2}
         isHidden
         id={7335}
@@ -28,10 +26,9 @@ const CreditCardExamples: React.FC = () => {
         expireDate="01/2023"
       />
       <CreditCard
-        size={300}
         key={3}
         id={2341}
-        isColored
+        isHidden
         cardNumber="1234 1234 1234 1234"
         cardHolder="Test Test"
         expireDate="01/2023"

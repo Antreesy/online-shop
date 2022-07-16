@@ -6,8 +6,22 @@
   padding-bottom: 50px;
 
   @include mobile-tablet {
-    padding-top: 0;
+    padding-top: 20px;
     padding-bottom: 20px;
+  }
+}
+
+.tabs {
+  button {
+    font-size: 23px !important;
+  }
+
+  @include mobile-tablet {
+    box-shadow: none;
+
+    button {
+      font-size: 15px !important;
+    }
   }
 }
 
@@ -39,10 +53,10 @@
 
   @include mobile-tablet {
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   @include mobile {
-    justify-content: space-between;
     padding-top: 0px;
     margin-bottom: 25px;
   }
@@ -50,12 +64,9 @@
   .search {
     position: relative;
     width: 40%;
-    height: 55px;
     margin-right: auto;
 
-    @include mobile {
-      height: 33px;
-      min-width: 164px;
+    @include mobile-tablet {
       margin-right: 0;
     }
 
@@ -69,63 +80,76 @@
       }
     }
 
-    input {
+    .input {
+      height: 53px;
       font-size: 15px;
       font-weight: $fw-medium;
       line-height: 1.2;
-      padding-left: 45px;
 
-      @include mobile {
-        padding: 6px 0 6px 10px;
-        font-size: 12px;
+      @include mobile-tablet {
+        height: 33px;
+        min-width: 140px;
+        width: 100%;
       }
 
-      &::placeholder {
-        opacity: 1;
-        font-weight: $fw-medium;
+      & input {
+        padding-left: 45px;
+        font-size: 12px;
+
+        @include mobile-tablet {
+          padding-left: 10px;
+        }
+
+        & ::placeholder {
+          opacity: 1;
+          font-weight: $fw-medium;
+        }
       }
     }
   }
 
   .button_container {
     display: flex;
+    gap: 30px;
+
+    @include laptop {
+      gap: 15px;
+    }
 
     @include mobile-tablet {
       width: 100%;
       justify-content: center;
       order: 1;
+      gap: 8px;
+    }
+  }
+
+  .button_text {
+    text-decoration: underline;
+    font-size: 17px;
+    font-weight: $fw-medium;
+    white-space: nowrap;
+
+    @include tablet {
+      font-size: 13px;
     }
 
-    .buttons {
-      display: flex;
-
-      .button {
-        text-decoration: underline;
-        font-size: 15px;
-        font-weight: $fw-medium;
-        line-height: 1.2;
-
-        @include mobile-tablet {
-          font-size: 13px;
-          font-weight: $fw-medium;
-          line-height: 1.22;
-        }
-
-        @include mobile {
-          font-size: 9px;
-        }
-      }
+    @include mobile {
+      font-size: 11px;
     }
   }
 
   .button_excel {
+    height: 53px;
     background: $color-green;
+    white-space: nowrap;
+    font-size: 17px;
 
     &:hover {
       background-color: $color-green-d;
     }
 
-    @include mobile {
+    @include mobile-tablet {
       font-size: 12px;
       height: 33px;
       width: 164px;
@@ -148,7 +172,7 @@
 }
 
 .gallery {
-  padding: 0 35px 35px 35px;
+  padding: 35px;
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
@@ -189,11 +213,10 @@
   height: 100%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 35px;
 
   @include mobile-tablet {
-    flex-direction: column;
-    align-items: center;
+    gap: 15px;
   }
 }

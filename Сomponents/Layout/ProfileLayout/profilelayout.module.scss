@@ -1,11 +1,11 @@
 @import "styles/style.scss";
 
 .main {
-  padding-top: $header-with-breadcrumbs-desktop-height;
+  padding-top: $header-desktop-height;
   min-height: 100vh;
 
   @include mobile {
-    padding-top: $header-with-breadcrumbs-mobile-height;
+    padding-top: $header-mobile-height;
     min-height: fit-content;
   }
 }

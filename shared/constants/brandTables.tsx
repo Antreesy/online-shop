@@ -399,7 +399,9 @@ export const brandOrdTransTableContent = {
               Getting Ready Pass
             </p>
             <Tooltip content={text}>
-              <p style={{ textDecoration: "underline" }}>Cancel Order</p>
+              <p style={{ textDecoration: "underline", cursor: "pointer" }}>
+                Cancel Order
+              </p>
             </Tooltip>
           </>
         ),
@@ -446,7 +448,9 @@ export const brandOrdTransTableContent = {
               Getting Ready Pass
             </p>
             <Tooltip content={text}>
-              <p style={{ textDecoration: "underline" }}>Cancel Order</p>
+              <p style={{ textDecoration: "underline", cursor: "pointer" }}>
+                Cancel Order
+              </p>
             </Tooltip>
           </>
         ),
@@ -493,7 +497,9 @@ export const brandOrdTransTableContent = {
               Getting Ready Pass
             </p>
             <Tooltip content={text}>
-              <p style={{ textDecoration: "underline" }}>Cancel Order</p>
+              <p style={{ textDecoration: "underline", cursor: "pointer" }}>
+                Cancel Order
+              </p>
             </Tooltip>
           </>
         ),
@@ -540,7 +546,9 @@ export const brandOrdTransTableContent = {
               Getting Ready Pass
             </p>
             <Tooltip content={text}>
-              <p style={{ textDecoration: "underline" }}>Cancel Order</p>
+              <p style={{ textDecoration: "underline", cursor: "pointer" }}>
+                Cancel Order
+              </p>
             </Tooltip>
           </>
         ),
@@ -587,7 +595,9 @@ export const brandOrdTransTableContent = {
               Getting Ready Pass
             </p>
             <Tooltip content={text}>
-              <p style={{ textDecoration: "underline" }}>Cancel Order</p>
+              <p style={{ textDecoration: "underline", cursor: "pointer" }}>
+                Cancel Order
+              </p>
             </Tooltip>
           </>
         ),
@@ -634,7 +644,9 @@ export const brandOrdTransTableContent = {
               Getting Ready Pass
             </p>
             <Tooltip content={text}>
-              <p style={{ textDecoration: "underline" }}>Cancel Order</p>
+              <p style={{ textDecoration: "underline", cursor: "pointer" }}>
+                Cancel Order
+              </p>
             </Tooltip>
           </>
         ),
@@ -681,7 +693,9 @@ export const brandOrdTransTableContent = {
               Getting Ready Pass
             </p>
             <Tooltip content={text}>
-              <p style={{ textDecoration: "underline" }}>Cancel Order</p>
+              <p style={{ textDecoration: "underline", cursor: "pointer" }}>
+                Cancel Order
+              </p>
             </Tooltip>
           </>
         ),
@@ -737,7 +751,9 @@ export const brandCancelTableContent = {
             <p style={{ color: "#8100EF", marginBottom: "7px" }}>
               Customer Reason
             </p>
-            <p style={{ textDecoration: "underline" }}>Small Size</p>
+            <p style={{ textDecoration: "underline", cursor: "pointer" }}>
+              Small Size
+            </p>
           </>
         ),
       },
@@ -777,7 +793,9 @@ export const brandCancelTableContent = {
             <p style={{ color: "#8100EF", marginBottom: "7px" }}>
               Customer Reason
             </p>
-            <p style={{ textDecoration: "underline" }}>Small Size</p>
+            <p style={{ textDecoration: "underline", cursor: "pointer" }}>
+              Small Size
+            </p>
           </>
         ),
       },
@@ -817,7 +835,9 @@ export const brandCancelTableContent = {
             <p style={{ color: "#8100EF", marginBottom: "7px" }}>
               Customer Reason
             </p>
-            <p style={{ textDecoration: "underline" }}>Small Size</p>
+            <p style={{ textDecoration: "underline", cursor: "pointer" }}>
+              Small Size
+            </p>
           </>
         ),
       },
@@ -857,7 +877,9 @@ export const brandCancelTableContent = {
             <p style={{ color: "#8100EF", marginBottom: "7px" }}>
               Customer Reason
             </p>
-            <p style={{ textDecoration: "underline" }}>Small Size</p>
+            <p style={{ textDecoration: "underline", cursor: "pointer" }}>
+              Small Size
+            </p>
           </>
         ),
       },
@@ -897,7 +919,9 @@ export const brandCancelTableContent = {
             <p style={{ color: "#8100EF", marginBottom: "7px" }}>
               Customer Reason
             </p>
-            <p style={{ textDecoration: "underline" }}>Small Size</p>
+            <p style={{ textDecoration: "underline", cursor: "pointer" }}>
+              Small Size
+            </p>
           </>
         ),
       },
@@ -937,7 +961,9 @@ export const brandCancelTableContent = {
             <p style={{ color: "#8100EF", marginBottom: "7px" }}>
               Customer Reason
             </p>
-            <p style={{ textDecoration: "underline" }}>Small Size</p>
+            <p style={{ textDecoration: "underline", cursor: "pointer" }}>
+              Small Size
+            </p>
           </>
         ),
       },

@@ -76,10 +76,11 @@
   border-radius: 100px;
   width: 340px;
   height: 55px;
+  white-space: nowrap;
 
   @include mobile-tablet {
     width: 180px;
     height: 40px;
-    font-size: 12px;
+    font-size: 12px !important;
   }
 }

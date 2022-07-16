@@ -1,11 +1,11 @@
 {
   "profile": "Профиль",
-  "brandInformation": "Информация о бренде",
-  "allProduct": "Все продукты",
-  "allCancellations": "Все отмены",
+  "addProduct": "Добавить товар",
+  "brandInformation": "Информация по бренду",
+  "allProducts": "Все продукты",
+  "allCancellations": "Отказы",
   "onSale": "На продаже",
-  "thatNeedRevision": "Нуждается в пересмотре",
-  "notOnSale": "Не на продаже",
+  "brandVisualOperations": "Визуальные операции с брендом",
 
   "brandInformations": "Информация о бренде",
   "brandName": "Название бренда",

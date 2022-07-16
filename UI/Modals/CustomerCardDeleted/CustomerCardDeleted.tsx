@@ -4,13 +4,10 @@ import { Button } from "UI"
 
 import s from "./customerCardDeleted.module.scss"
 
-interface CustomerCardDeletedProps {
-  title: string
-}
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+interface CustomerCardDeletedProps {}
 
-export const CustomerCardDeleted: React.FC<CustomerCardDeletedProps> = ({
-  title,
-}) => {
+export const CustomerCardDeleted: React.FC<CustomerCardDeletedProps> = () => {
   const { t } = useTranslation("modal")
   return (
     <>

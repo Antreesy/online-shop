@@ -4,7 +4,7 @@ import cn from "classnames"
 
 import Link from "next/link"
 import { Button } from "UI"
-import { Breadcrumbs, BurgerMenu, Logo } from "Сomponents"
+import { BurgerMenu, Logo } from "Сomponents"
 import { DrawerItems } from "shared/constants/menuItems"
 
 import s from "./header.module.scss"
@@ -46,7 +46,6 @@ const HeaderMobile: React.FC<HeaderMobileProps> = ({ className }) => {
 
           <BurgerMenu items={DrawerItems} />
         </div>
-        <Breadcrumbs />
       </header>
     </>
   )

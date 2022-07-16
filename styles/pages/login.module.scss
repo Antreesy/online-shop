@@ -100,6 +100,10 @@
   margin-top: 17px;
   margin-bottom: 9px;
 
+  & a {
+    text-decoration: underline;
+  }
+
   @include mobile {
     margin-bottom: 17px;
   }

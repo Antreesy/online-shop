@@ -27,8 +27,14 @@
   .input {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
     border-radius: 4px;
-    input {
+
+    & > div {
+      padding-right: 0;
+    }
+
+    & input {
       height: 100%;
+      box-sizing: border-box;
 
       &:focus {
         outline: 2px solid $color-purple;
@@ -40,7 +46,7 @@
       }
     }
 
-    fieldset {
+    & fieldset {
       border: none;
       outline: none;
     }

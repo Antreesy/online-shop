@@ -4,7 +4,6 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useTranslation } from "next-i18next"
 
 import Head from "next/head"
-import { Card } from "@mui/material"
 import { AddressCard, AddressForm, CardForm, OrderSummary } from "Сomponents"
 import { AddButton, CreditCard, CheckboxGroup, Button } from "UI"
 
@@ -34,6 +33,7 @@ const OrderPage: NextPage = () => {
   const [showAddressForm, setShowAddressForm] = useState<boolean>(false)
   const [showCardForm, setShowCardForm] = useState<boolean>(false)
   const [showSavedCards, setShowSavedCards] = useState<boolean>(false)
+  const [activeCard, setActiveCard] = useState<number>(0)
   const { t } = useTranslation(["order", "common"])
 
   const toggleBilling = () => {
@@ -163,21 +163,21 @@ const OrderPage: NextPage = () => {
 
             {showSavedCards ? (
               <div className={s.payment_cards_wrapper}>
-                <Card className={s.cards}>
-                  {creditcardsData.map((card) => (
-                    <CreditCard
-                      size={card.size}
-                      key={card.id}
-                      isHidden={card.isHidden}
-                      isColored={card.isColored}
-                      id={card.id}
-                      cardNumber={card.cardNumber}
-                      cardHolder={card.cardHolder}
-                      expireDate={card.expireDate}
-                      onDelete={card.onDelete}
-                    />
-                  ))}
-                </Card>
+                {creditcardsData.map((card, index) => (
+                  <CreditCard
+                    key={index}
+                    isHidden={card.isHidden}
+                    isActive={index === activeCard}
+                    id={card.id}
+                    cardNumber={card.cardNumber}
+                    cardHolder={card.cardHolder}
+                    expireDate={card.expireDate}
+                    onDelete={card.onDelete}
+                    onClick={() => {
+                      setActiveCard(index)
+                    }}
+                  />
+                ))}
               </div>
             ) : (
               <>

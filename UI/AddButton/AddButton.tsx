@@ -39,11 +39,7 @@ const AddButton: React.FC<AddButtonProps> = (props) => {
   const iconClass = cn(s.icon_wrapper, { [s.large]: large })
 
   return (
-    <Button
-      onClick={onClick}
-      className={addButtonClass}
-      disableElevation={large}
-    >
+    <Button onClick={onClick} className={addButtonClass} disableElevation>
       <div className={iconClass}>
         <Icon type="plus" />
       </div>

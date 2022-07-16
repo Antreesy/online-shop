@@ -2,39 +2,33 @@ import { CreditCardProps } from "UI/CreditCard/CreditCard"
 
 export const creditcardsData: CreditCardProps[] = [
   {
-    size: 164,
     isHidden: true,
-    isColored: false,
     id: 7346,
-    cardNumber: "1234 8547 7294 3959",
-    cardHolder: "Test Test",
+    cardNumber: "1234 5678 9012 3456",
+    cardHolder: "Alsyn Topkaya",
     expireDate: "01/2024",
     onDelete: () => {
-      console.log("test")
+      console.log("delete")
     },
   },
   {
-    size: 164,
     isHidden: true,
-    isColored: true,
     id: 3274,
-    cardNumber: "1234 8547 7294 3959",
-    cardHolder: "Test Test",
-    expireDate: "01/2023",
+    cardNumber: "1234 1234 1234 1234",
+    cardHolder: "Ilonsi Customer",
+    expireDate: "08/2031",
     onDelete: () => {
-      console.log("test")
+      console.log("delete")
     },
   },
   {
-    size: 164,
     isHidden: true,
-    isColored: false,
     id: 6837,
-    cardNumber: "1234 8547 7294 3959",
-    cardHolder: "Test Test",
-    expireDate: "01/2023",
+    cardNumber: "1234 5678 0000 8765",
+    cardHolder: "Test Tester",
+    expireDate: "11/2029",
     onDelete: () => {
-      console.log("test")
+      console.log("delete")
     },
   },
 ]

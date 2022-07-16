@@ -9,9 +9,10 @@ import { useTranslation } from "next-i18next"
 
 import { BackButton, Table } from "Сomponents"
 import { Button, Input, Pagination, Select, Tabs } from "UI"
+import useResize from "shared/hooks/useResize"
+import { brandProductsTableContent } from "shared/constants/brandTables"
 
 import s from "styles/pages/brand-products.module.scss"
-import { brandProductsTableContent } from "shared/constants/brandTables"
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
@@ -34,8 +35,77 @@ const BrandProducts: React.FC = () => {
     dispatch(changeRoute("Product List"))
   }, [])
 
+  const width = useResize()
   const { t } = useTranslation(["brandProduct", "common"])
   const [inputValue, setInputValue] = useState<string>("")
+
+  const TabContent = () => (
+    <>
+      <div className={s.content__header}>
+        <Input
+          inputClassName={s.input}
+          placeholder={t("productCode")}
+          setValue={setInputValue}
+          value={inputValue}
+        />
+        <Input
+          inputClassName={s.input}
+          placeholder={t("productName")}
+          setValue={setInputValue}
+          value={inputValue}
+        />
+        <Select
+          placeholder={t("category")}
+          className={s.select}
+          values={[
+            { title: "clothes", value: 1 },
+            { title: "shoes", value: 2 },
+            { title: "hats", value: 3 },
+          ]}
+        />
+        <Select
+          placeholder={t("sortBy")}
+          className={s.select}
+          values={[
+            { title: "brand", value: 1 },
+            { title: "price", value: 2 },
+            { title: "name", value: 3 },
+          ]}
+        />
+        <Button className={cn(s.button, s.button_purple)} iconLeft="search">
+          {t("common:search")}
+        </Button>
+        <Button className={cn(s.button, s.button_red)} iconLeft="trash_can">
+          {t("common:clean")}
+        </Button>
+        <Button className={cn(s.button, s.button_green)} iconLeft="download">
+          {t("excelDownload")}
+        </Button>
+      </div>
+
+      <div className={s.bottom_content_header}>
+        <p>{t("onEveryPage")}</p>
+        <Select
+          className={s.select_bottom}
+          values={[
+            { title: "10 products", value: 1 },
+            { title: "20 products", value: 2 },
+            { title: "50 products", value: 3 },
+          ]}
+          initValue={2}
+        />
+        <Pagination className={s.pagination} pagesCount={5} />
+      </div>
+
+      <Table
+        headers={brandProductsTableContent.headers.map((header) => {
+          return { name: t(header.name) }
+        })}
+        innerRows={brandProductsTableContent.rows}
+      />
+    </>
+  )
+
   return (
     <>
       <Head>
@@ -50,7 +120,7 @@ const BrandProducts: React.FC = () => {
         <div className={s.content}>
           <Tabs
             className={s.tabs}
-            variant="no_border"
+            variant={width > 1024 ? "no_border" : "spaces"}
             labels={[
               t("allProducts"),
               t("onSale"),
@@ -58,88 +128,13 @@ const BrandProducts: React.FC = () => {
               t("whatYouNeedToRevise"),
               t("notAvailable"),
             ]}
-            values={[]}
-          />
-          <Tabs
-            className={s.tabs_mobile}
-            variant="spaces"
-            labels={[
-              t("allProducts"),
-              t("onSale"),
-              t("soldOut"),
-              t("whatYouNeedToRevise"),
-              t("notAvailable"),
+            values={[
+              <TabContent key={"allProducts"} />,
+              <TabContent key={"onSale"} />,
+              <TabContent key={"soldOut"} />,
+              <TabContent key={"whatYouNeedToRevise"} />,
+              <TabContent key={"notAvailable"} />,
             ]}
-            values={[]}
-          />
-          <div className={s.content__header}>
-            <Input
-              inputClassName={s.input}
-              placeholder={t("productCode")}
-              setValue={setInputValue}
-              value={inputValue}
-            />
-            <Input
-              inputClassName={s.input}
-              placeholder={t("productName")}
-              setValue={setInputValue}
-              value={inputValue}
-            />
-            <Select
-              placeholder={t("category")}
-              className={s.select}
-              values={[
-                { title: "one", value: 1 },
-                { title: "two", value: 2 },
-                { title: "three", value: 3 },
-              ]}
-            />
-            <Select
-              placeholder={t("sortBy")}
-              className={s.select}
-              values={[
-                { title: "one", value: 1 },
-                { title: "two", value: 2 },
-                { title: "three", value: 3 },
-              ]}
-            />
-            <Button className={cn(s.button, s.button_purple)} iconLeft="search">
-              {t("common:search")}
-            </Button>
-            <Button className={cn(s.button, s.button_red)} iconLeft="trash_can">
-              {t("common:clean")}
-            </Button>
-            <Button
-              className={cn(s.button, s.button_green)}
-              iconLeft="download"
-            >
-              {t("excelDownload")}
-            </Button>
-          </div>
-
-          <div className={s.bottom_content_header}>
-            <div>
-              <p>{t("onEveryPage")}</p>
-            </div>
-            <Select
-              className={s.bottom_content_select}
-              values={[
-                { title: "one", value: 1 },
-                { title: "two", value: 2 },
-                { title: "three", value: 3 },
-              ]}
-              onChange={() => {
-                return
-              }}
-            />
-            <Pagination className={s.pagination} pagesCount={10} />
-          </div>
-
-          <Table
-            headers={brandProductsTableContent.headers.map((header) => {
-              return { name: t(header.name) }
-            })}
-            innerRows={brandProductsTableContent.rows}
           />
         </div>
       </div>

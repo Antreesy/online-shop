@@ -14,7 +14,6 @@ interface FileUploadProps {
   minHeight?: number
   filesNumber?: number
   setValue?: (newValue: File) => void
-  img?: string
   disabled?: boolean
 }
 
@@ -28,7 +27,6 @@ const FileUpload: React.FC<FileUploadProps> = (props) => {
     minHeight = 1080,
     className,
     setValue,
-    img,
     disabled,
   } = props
 

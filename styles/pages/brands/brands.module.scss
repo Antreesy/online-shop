@@ -38,7 +38,7 @@
     }
   }
 
-  @include mobile {
+  @include mobile-tablet {
     display: block;
     z-index: -1;
     width: 100vw;
@@ -46,9 +46,11 @@
 }
 
 .desktop_image {
-  @include mobile {
+  @include mobile-tablet {
     display: none;
   }
+
+  margin-bottom: 50px;
 
   & > div:nth-child(1) {
     height: 500px;
@@ -94,11 +96,10 @@
 }
 
 .breadcrumbs_mobile {
-  display: none;
+  margin-bottom: 20px;
 
-  @include mobile-tablet {
-    display: block;
-    margin-bottom: 30px;
+  @include laptop-desktop {
+    display: none;
   }
 }
 

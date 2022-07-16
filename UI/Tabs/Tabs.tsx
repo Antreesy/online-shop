@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import cn from "classnames"
 
 import { Tab, Tabs } from "@mui/material"
@@ -11,16 +11,28 @@ interface TabsProps {
   values: React.ReactNode[]
   value?: number
   className?: string
+  onChange?: (value: number) => void
 }
 
 const CustomTabs: React.FC<TabsProps> = (props) => {
-  const { labels, variant = "default", values, value, className } = props
+  const {
+    labels,
+    variant = "default",
+    values,
+    value = 0,
+    onChange,
+    className,
+  } = props
 
-  const [tabIndex, setTabIndex] = useState<number>(value || 0)
-  const [tabValue, setTabValue] = useState<number>(value || 0)
+  const [tabValue, setTabValue] = useState<number>(value)
+
+  useEffect(() => {
+    setTabValue(value)
+  }, [value])
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setTabValue(newValue)
+    onChange?.(newValue)
   }
 
   const tabsClass = cn(
@@ -36,8 +48,10 @@ const CustomTabs: React.FC<TabsProps> = (props) => {
   return (
     <div className={s.tabs_container}>
       <Tabs
-        value={value || tabValue}
+        value={tabValue}
         onChange={handleChange}
+        variant="scrollable"
+        scrollButtons="auto"
         className={tabsClass}
       >
         {labels &&
@@ -48,14 +62,14 @@ const CustomTabs: React.FC<TabsProps> = (props) => {
                 label={label}
                 className={`${s.tab} ${index === tabValue && s.active}`}
                 onClick={() => {
-                  setTabIndex(index)
+                  setTabValue(index)
                 }}
               />
             )
           })}
       </Tabs>
 
-      {values && values[value || tabIndex]}
+      {values && values[tabValue]}
     </div>
   )
 }

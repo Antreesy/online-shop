@@ -16,15 +16,10 @@ import s from "./header.module.scss"
 
 export interface HeaderProps {
   className?: string
-  withBreadcrumbs?: boolean
   role?: Roles
 }
 
-const Header: React.FC<HeaderProps> = ({
-  className,
-  role,
-  withBreadcrumbs,
-}) => {
+const Header: React.FC<HeaderProps> = ({ className, role }) => {
   const { t } = useTranslation("header")
   const router = useRouter()
 
@@ -33,13 +28,7 @@ const Header: React.FC<HeaderProps> = ({
   }
 
   return (
-    <header
-      className={cn(
-        s.header,
-        { [s.with_breadcrumbs]: withBreadcrumbs },
-        className,
-      )}
-    >
+    <header className={cn(s.header, className)}>
       <div className={s.top_group}>
         <Link href="mailto:info@ilonsi.com">
           <a className={s.email}>info@ilonsi.com</a>
@@ -99,8 +88,6 @@ const Header: React.FC<HeaderProps> = ({
           />
         </div>
       </div>
-
-      {withBreadcrumbs && <Breadcrumbs />}
     </header>
   )
 }

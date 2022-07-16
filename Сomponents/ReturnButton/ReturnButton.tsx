@@ -10,7 +10,7 @@ const ReturnButton: React.FC = () => {
   return (
     <div className={s.button_wrapper} onClick={() => router.back()}>
       <Button icon iconLeft="arrow_left" className={s.button} />
-      {t("productsTopButton")}
+      <span>{t("productsTopButton")}</span>
     </div>
   )
 }

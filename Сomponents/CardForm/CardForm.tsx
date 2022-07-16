@@ -3,9 +3,11 @@ import { useTranslation } from "next-i18next"
 
 import { Button, CreditCard, Input } from "UI"
 
-import useResize from "shared/hooks/useResize"
-
 import s from "./cardForm.module.scss"
+
+interface CardFormProps {
+  onClose?: () => void
+}
 
 interface CardInfoProps {
   cardNumber: string
@@ -14,8 +16,7 @@ interface CardInfoProps {
   cardSecurity: string
 }
 
-const CardForm: React.FC = () => {
-  const width = useResize(768)
+const CardForm: React.FC<CardFormProps> = ({ onClose }) => {
   const { t } = useTranslation(["payment", "common"])
 
   const {
@@ -91,7 +92,10 @@ const CardForm: React.FC = () => {
     },
   })
 
-  const onSubmit = () => reset()
+  const onSubmit = () => {
+    onClose?.()
+    reset()
+  }
 
   return (
     <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
@@ -123,7 +127,7 @@ const CardForm: React.FC = () => {
               label={t("nameOnTheCard")}
               setValue={onChange}
               value={value}
-              placeholder={"Cardholder Name"}
+              placeholder={"CARDHOLDER NAME"}
               type={"text"}
               isRequired={true}
               className={s.input_long}
@@ -142,7 +146,7 @@ const CardForm: React.FC = () => {
                 label={t("expirationDate")}
                 setValue={onChange}
                 value={value}
-                placeholder={"06/2026"}
+                placeholder={"01/22"}
                 type={"tel"}
                 isRequired={true}
                 className={s.input_short}
@@ -180,19 +184,25 @@ const CardForm: React.FC = () => {
         </Button>
       </div>
 
-      <CreditCard
-        size={width < 768 ? 210 : 300}
-        isColored
-        key={4}
-        id={8375}
-        cardNumber={watch("cardNumber") || "0000 0000 0000 0000"}
-        cardHolder={watch("cardholderName") || "Cardholder Name"}
-        expireDate={watch("cardExpiration") || "06/26"}
-        onDelete={() => {
-          reset()
-        }}
-      />
-      <Button disabled={!isValid} className={s.button_mobile}>
+      <div className={s.card_wrapper}>
+        <CreditCard
+          isActive
+          large
+          id={1}
+          cardNumber={watch("cardNumber") || "0000 0000 0000 0000"}
+          cardHolder={watch("cardholderName") || "CARDHOLDER NAME"}
+          expireDate={watch("cardExpiration") || "01/22"}
+          onDelete={() => {
+            reset()
+          }}
+        />
+      </div>
+
+      <Button
+        disabled={!isValid}
+        className={s.button_mobile}
+        onClick={handleSubmit(onSubmit)}
+      >
         Save
       </Button>
     </form>

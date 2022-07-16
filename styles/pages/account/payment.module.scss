@@ -8,19 +8,17 @@
 
 .cards {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
-  padding: 55px;
+  gap: 25px;
+  padding: 55px 25px;
   background-color: $color-white;
   width: 100%;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
 
-  > div {
-    margin-bottom: 18px;
-  }
-
-  @include mobile-tablet {
+  @include mobile-laptop {
     padding: 18px;
+    gap: 15px;
   }
 }
 

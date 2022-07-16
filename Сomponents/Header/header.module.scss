@@ -18,13 +18,6 @@
   @include mobile {
     height: $header-mobile-height;
   }
-
-  &.with_breadcrumbs {
-    height: $header-with-breadcrumbs-desktop-height;
-    @include mobile {
-      height: $header-with-breadcrumbs-mobile-height;
-    }
-  }
 }
 
 .line::after {

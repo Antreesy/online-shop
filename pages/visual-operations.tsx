@@ -50,6 +50,7 @@ const VisualOperations: NextPage = () => {
 
         <div className={s.page_content}>
           <Tabs
+            className={s.tabs}
             labels={[
               t("activeImages", { number: images.length }),
               t("rejectedImages", { number: images.length }),
@@ -61,6 +62,7 @@ const VisualOperations: NextPage = () => {
                   <div className={s.search}>
                     <Icon type="search" className={s.searchIcon} />
                     <Input
+                      inputClassName={s.input}
                       variant="default"
                       value={inputValue}
                       setValue={setInputValue}
@@ -69,31 +71,30 @@ const VisualOperations: NextPage = () => {
                   </div>
 
                   <div className={s.button_container}>
-                    <div className={s.buttons}>
-                      <Button
-                        onClick={() => setSelect(!select)}
-                        className={s.button}
-                        variant="text"
-                      >
-                        {t("selectAllAndDownload")}
-                      </Button>
-                      <Button
-                        onClick={() => setSelect(!select)}
-                        className={s.button}
-                        variant="text"
-                      >
-                        {t("selectAllAndDelete")}
-                      </Button>
-                      <Button className={s.button} variant="text">
-                        {t("delete", { number: delet.length })}
-                      </Button>
-                    </div>
+                    <Button
+                      onClick={() => setSelect(!select)}
+                      className={s.button_text}
+                      variant="text"
+                    >
+                      {t("selectAllAndDownload")}
+                    </Button>
+                    <Button
+                      onClick={() => setSelect(!select)}
+                      className={s.button_text}
+                      variant="text"
+                    >
+                      {t("selectAllAndDelete")}
+                    </Button>
+                    <Button className={s.button_text} variant="text">
+                      {t("delete", { number: delet.length })}
+                    </Button>
                   </div>
 
                   <Button className={s.button_excel} iconLeft="download">
                     {t("excelDownload")}
                   </Button>
                 </div>
+
                 <div className={s.content}>
                   <div className={s.gallery}>
                     {images.map((im) => (
@@ -119,6 +120,7 @@ const VisualOperations: NextPage = () => {
                   <div className={s.search}>
                     <Icon type="search" className={s.searchIcon} />
                     <Input
+                      inputClassName={s.input}
                       variant="default"
                       value={inputValue}
                       setValue={setInputValue}

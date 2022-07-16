@@ -4,14 +4,7 @@ import { Button } from "UI"
 
 import s from "./customerShoppingCompleted.module.scss"
 
-interface CustomerShoppingCompletedProps {
-  title: string
-  content: string
-}
-
-export const CustomerShoppingCompleted: React.FC<
-  CustomerShoppingCompletedProps
-> = ({ title, content }) => {
+export const CustomerShoppingCompleted: React.FC = () => {
   const { t } = useTranslation("modal")
   return (
     <>

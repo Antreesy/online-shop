@@ -1,7 +1,7 @@
 import React from "react"
 import cn from "classnames"
 
-import { Card, CardContent, IconButton } from "@mui/material"
+import { IconButton } from "@mui/material"
 import { Icon } from "UI"
 
 import { creditcardConsts } from "shared/constants/creditcard"
@@ -9,89 +9,57 @@ import { creditcardConsts } from "shared/constants/creditcard"
 import s from "./creditCard.module.scss"
 
 export interface CreditCardProps {
-  size?: number
-  isColored?: boolean
+  id: number
   cardNumber: string
   cardHolder: string
   expireDate: string
   isHidden?: boolean
-  id?: number
+  isActive?: boolean
+  large?: boolean
+  onClick?: () => void
   onDelete?: (id: number) => void
+  className?: string
 }
 
 const CreditCard: React.FC<CreditCardProps> = ({
-  size = creditcardConsts.MIN_HEIGHT,
-  isColored = false,
+  id,
   cardNumber,
   cardHolder,
   expireDate,
   isHidden = false,
-  id,
+  isActive = false,
+  large = false,
+  onClick,
   onDelete,
+  className,
 }) => {
-  const sizeNumber =
-    size < creditcardConsts.MIN_HEIGHT ? creditcardConsts.MIN_HEIGHT : size
-  const cardRightSideClasses = cn(s.right_group, { [s.with_button]: onDelete })
-
-  const getRatio = (baseIndex: number): number => {
-    return (size / baseIndex) * creditcardConsts.ASPECT_RATIO
-  }
   return (
-    <Card
-      className={isColored ? s.card_colored : s.card_default}
-      style={{
-        width: sizeNumber * creditcardConsts.ASPECT_RATIO,
-        height: sizeNumber,
-      }}
+    <div
+      className={cn(
+        s.card,
+        { [s.active]: isActive, [s.large]: large },
+        className,
+      )}
+      onClick={onClick}
     >
-      <CardContent className={s.content}>
-        <div
-          className={s.left_group}
-          style={{
-            fontSize: `${getRatio(creditcardConsts.BASE_CARD_NUMBER_INDEX)}px`,
-          }}
-        >
-          <div>{isHidden ? creditcardConsts.HIDDEN_MASK : cardNumber}</div>
-          <div>{cardHolder}</div>
-        </div>
+      <div className={s.left_group}>
+        <span className={s.card_number}>
+          {isHidden ? creditcardConsts.HIDDEN_MASK : cardNumber}
+        </span>
+        <span className={s.card_holder}>{cardHolder}</span>
+      </div>
 
-        <div className={cardRightSideClasses}>
-          {onDelete && id && (
-            <IconButton
-              className={s.delete_btn}
-              style={{
-                width: getRatio(creditcardConsts.BASE_DELETE_BTN_INDEX),
-                height: getRatio(creditcardConsts.BASE_DELETE_BTN_INDEX),
-              }}
-              onClick={() => onDelete(id)}
-            >
-              <Icon type="trash_can" />
-            </IconButton>
-          )}
-          <div>
-            <Card
-              style={{
-                width:
-                  (sizeNumber * creditcardConsts.ASPECT_RATIO) /
-                  creditcardConsts.WIDTH_DIVISOR,
-                height: sizeNumber / creditcardConsts.HEIGHT_DIVISOR,
-                marginRight: creditcardConsts.CARD_MARGIN_RATIO,
-              }}
-            ></Card>
-            <div
-              className={s.expire_date}
-              style={{
-                fontSize: `${getRatio(
-                  creditcardConsts.BASE_EXPIRENUMBER_INDEX,
-                )}px`,
-              }}
-            >
-              {expireDate}
-            </div>
-          </div>
-        </div>
-      </CardContent>
-    </Card>
+      <div className={s.right_group}>
+        <div className={s.secure_code} />
+        <span className={s.expire_date}>{expireDate}</span>
+      </div>
+
+      {onDelete && (
+        <IconButton className={s.delete_btn} onClick={() => onDelete(id)}>
+          <Icon type="trash_can" color="#fff" />
+        </IconButton>
+      )}
+    </div>
   )
 }
 

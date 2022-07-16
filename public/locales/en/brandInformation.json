@@ -1,11 +1,11 @@
 {
   "profile": "Profile",
+  "addProduct": "Add Product",
   "brandInformation": "Brand Information",
-  "allProduct": "All Product",
+  "allProducts": "All Products",
   "allCancellations": "All Cancellations",
   "onSale": "On Sale",
-  "thatNeedRevision": "That Need Revision",
-  "notOnSale": "Not On Sale",
+  "brandVisualOperations": "Brand Visual Operations",
 
   "brandInformations": "Brand Informations",
   "brandName": "Brand Name",

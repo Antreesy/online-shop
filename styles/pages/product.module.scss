@@ -1,5 +1,13 @@
 @import "styles/style.scss";
 
+.breadcrumbs_mobile {
+  margin-bottom: 20px;
+
+  @include laptop-desktop {
+    display: none;
+  }
+}
+
 .container {
   @include container;
   max-width: 1860px;

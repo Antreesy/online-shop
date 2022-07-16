@@ -13,7 +13,7 @@ const CustomBreadcrumbs = () => {
 
   return (
     <Stack className={s.wrapper} spacing={2}>
-      <Breadcrumbs className={s.nav} separator={"/"} aria-label="breadcrumb">
+      <Breadcrumbs className={s.nav} separator={"-"} aria-label="breadcrumb">
         <Link
           className={cn(s.breadcrumb, newPath[0] === "" ? s.active : s.route)}
           key="1"

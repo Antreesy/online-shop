@@ -22,9 +22,9 @@ export interface UniversalNotificationsProps {}
 const NotificationsList: React.FC<NotificationListProps> = ({ list }) => (
   <div className={s.notfItem}>
     {list
-      ? list.map((element) => (
+      ? list.map((element, index) => (
           <Notification
-            key={element.id}
+            key={index}
             id={element.id}
             isRead={element.isRead}
             title={element.title}

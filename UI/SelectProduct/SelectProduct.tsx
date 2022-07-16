@@ -40,7 +40,7 @@ const SelectProduct: React.FC<SelectProduct> = (props) => {
       onClick={select ? unselectProduct : selectProduct}
     >
       <div className={s.image_container}>
-        <Image src={imageSrc} width="289" height="290" />
+        <Image src={imageSrc} layout="fill" />
       </div>
       <span className={s.image_name}>{imageTitle}</span>
       <span className={s.image_info}>

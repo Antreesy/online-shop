@@ -5,6 +5,7 @@ import { useTranslation } from "next-i18next"
 import Link from "next/link"
 import {
   Background,
+  Breadcrumbs,
   ColorPicker,
   PhotoSlider,
   SizePicker,
@@ -48,6 +49,10 @@ const Products: NextPage = () => {
         link={"tuanaycl"}
         actionText={"Follow"}
       />
+
+      <div className={s.breadcrumbs_mobile}>
+        <Breadcrumbs />
+      </div>
 
       <div className={s.container}>
         <ReturnButton />
