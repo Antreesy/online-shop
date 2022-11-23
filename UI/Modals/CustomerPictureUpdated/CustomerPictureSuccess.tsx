@@ -1,6 +1,6 @@
 import { Button } from "UI"
 
-import s from "./CustomerPictureSuccess.module.scss"
+import s from "./customerPictureSuccess.module.scss"
 
 interface CustomerPictureSuccessProps {
   title: string
